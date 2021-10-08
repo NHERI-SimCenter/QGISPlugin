@@ -1,25 +1,6 @@
-QT += core widgets gui xml network sql svg concurrent printsupport webengine webenginewidgets
 
-DEFINES += Q_WS_MAC HAVE_STATIC_PROVIDERS #WITH_QTWEBKIT
-
-DEFINES += TEST_DATA_DIR=\\\"$$PWD/tests/testdata\\\"
-
-CONFIG += c++17
-
-PATH_TO_QGIS=/Users/steve/Desktop/C++Libraries/QGIS/QGIS
-PATH_TO_QGIS_SRC=$$PATH_TO_QGIS/src
-PATH_TO_QGIS_DEPS=/opt/QGIS/qgis-deps-0.8.0/stage/include
-PATH_TO_QGIS_BUILD=/Users/steve/Desktop/C++Libraries/QGIS/build
-
-# You can make your code fail to compile if it uses deprecated APIs.
-# In order to do so, uncomment the following line.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    QGISVisualizationWidget.cpp \
-        QgisApp.cpp \
-        main.cpp \
-        mainwindow.cpp \
         $$PATH_TO_QGIS_SRC/app/browser/qgsinbuiltdataitemproviders.cpp  \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolreverseline.cpp  \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolselectionhandler.cpp \
@@ -309,15 +290,10 @@ SOURCES += \
         $$PATH_TO_QGIS/external/libdxfrw/libdxfrw.cpp \
         $$PATH_TO_QGIS/external/qt-unix-signals/sigwatch.cpp \
 
-#ifdef3d
-#$$PATH_TO_QGIS_SRC/app/layout/qgslayout3dmapwidget.cpp \
-
+#HEADERS += \
+#        $$PATH_TO_QGIS/Install/include/qgis_app.h \
 
 HEADERS += \
-    QGISVisualizationWidget.h \
-        QgisApp.h \
-        mainwindow.h \
-        /Users/steve/Desktop/C++Libraries/QGIS/Install/include/qgis_app.h \
         $$PATH_TO_QGIS_SRC/app/browser/qgsinbuiltdataitemproviders.h  \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolreverseline.h  \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolselectionhandler.h \
@@ -615,13 +591,6 @@ HEADERS += \
         $$PATH_TO_QGIS/external/qt-unix-signals/sigwatch.h \
 
 
-#ifdef 3d
-#$$PATH_TO_QGIS_SRC/app/layout/qgslayout3dmapwidget.h \
-
-FORMS += \
-    mainwindow.ui
-
-
 INCLUDEPATH +=  $$PATH_TO_QGIS_BUILD \
                 $$PATH_TO_QGIS/external \
                 $$PATH_TO_QGIS/external/astyle \
@@ -633,8 +602,7 @@ INCLUDEPATH +=  $$PATH_TO_QGIS_BUILD \
                 $$PATH_TO_QGIS/external/qt-unix-signals \
                 $$PATH_TO_QGIS_BUILD/src/app \
                 $$PATH_TO_QGIS_BUILD/src/ui \
-                $$PATH_TO_QGIS_DEPS \
-                $$PATH_TO_QGIS_DEPS \
+                $$PATH_TO_QGIS_DEPS_INC \
                 $$PATH_TO_QGIS_SRC/analysis \
                 $$PATH_TO_QGIS_SRC/app \
                 $$PATH_TO_QGIS_SRC/app/browser \
@@ -661,10 +629,9 @@ INCLUDEPATH +=  $$PATH_TO_QGIS_BUILD \
                 $$PATH_TO_QGIS_SRC/gui \
                 $$PATH_TO_QGIS_SRC/gui/attributetable \
                 $$PATH_TO_QGIS_SRC/gui/layout \
+                $$PATH_TO_QGIS_SRC/gui/symbology \
                 $$PATH_TO_QGIS_SRC/providers/arcgisrest \
                 $$PATH_TO_QGIS_SRC/providers/wms \
-
-
 
 
 # Default rules for deployment.
@@ -672,24 +639,16 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-
-
-INCLUDEPATH += $$PWD/../../../C++Libraries/QGIS/Install/include/qgis
-INCLUDEPATH += $$PWD/../../../C++Libraries/QGIS/Install/include
-DEPENDPATH += $$PWD/../../../C++Libraries/QGIS/Install/include
-
-INCLUDEPATH += $$PWD/../../../../../../opt/QGIS/qgis-deps-0.8.0/stage/include/qt5keychain
-
-#INCLUDEPATH += $$PWD/../../../../../../opt/QGIS/qgis-deps-0.8.0/stage/include
-
+INCLUDEPATH += $$PATH_TO_QGIS_ROOT/Install/include/qgis
+INCLUDEPATH += $$PATH_TO_QGIS_ROOT/Install/include
 
 # Frameworks
-QMAKE_LFLAGS += -F/opt/QGIS/qgis-deps-0.8.0/stage/lib
-INCLUDEPATH += /opt/QGIS/qgis-deps-0.8.0/stage/lib/qca-qt5.framework/Headers
+QMAKE_LFLAGS += -F$$PATH_TO_QGIS_DEPS/lib
+INCLUDEPATH += $$PATH_TO_QGIS_DEPS/lib/qca-qt5.framework/Headers
 LIBS += -framework qca-qt5
 
-QMAKE_LFLAGS += -F/opt/QGIS/qgis-deps-0.8.0/stage/lib
-INCLUDEPATH += /opt/QGIS/qgis-deps-0.8.0/stage/lib/qwt.framework/Headers
+QMAKE_LFLAGS += -F$$PATH_TO_QGIS_DEPS/lib
+INCLUDEPATH += $$PATH_TO_QGIS_DEPS/lib/qwt.framework/Headers
 LIBS += -framework qwt
 
 
@@ -698,69 +657,49 @@ INCLUDEPATH += /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platf
 LIBS += -framework opencl
 
 
-#QMAKE_LFLAGS += -F/opt/QGIS/qgis-deps-0.8.0/stage/lib
-#INCLUDEPATH += /opt/QGIS/qgis-deps-0.8.0/stage/lib/QtWebKit.framework/Headers
-#LIBS += -framework qtwebkit
+#### QGIS libs ####
+win32:CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/release/ -lqgis_core.3.21.0
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/debug/ -lqgis_core.3.21.0
+else:unix: LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/ -lqgis_core.3.21.0
 
-#QMAKE_LFLAGS += -F/opt/QGIS/qgis-deps-0.8.0/stage/lib
-#INCLUDEPATH += /opt/QGIS/qgis-deps-0.8.0/stage/lib/QtWebKitWidgets.framework/Headers
-#LIBS += -framework qtwebkitwidgets
+win32:CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/release/ -lqgis_gui.3.21.0
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/debug/ -lqgis_gui.3.21.0
+else:unix: LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/ -lqgis_gui.3.21.0 -lqgis_analysis.3.21.0
 
-# QGIS libs
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/release/ -lqgis_core.3.21.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/debug/ -lqgis_core.3.21.0
-else:unix: LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/ -lqgis_core.3.21.0
+win32:CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/release/ -lqgis_native.3.21.0
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/debug/ -lqgis_native.3.21.0
+else:unix: LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/ -lqgis_native.3.21.0
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/release/ -lqgis_gui.3.21.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/debug/ -lqgis_gui.3.21.0
-else:unix: LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/ -lqgis_gui.3.21.0 -lqgis_analysis.3.21.0
+win32:CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/release/ -lqgisgrass7.3.21.0
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/debug/ -lqgisgrass7.3.21.0
+else:unix: LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/ -lqgisgrass7.3.21.0
 
-# External libs
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/gdal/3.3.1_3/lib/release/ -lgdal.29
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/gdal/3.3.1_3/lib/debug/ -lgdal.29
-else:unix: LIBS += -L$$PWD/../../../../../../usr/local/Cellar/gdal/3.3.1_3/lib/ -lgdal.29
+#### External libs ####
+win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/gdal/3.3.2_2/lib/release/ -lgdal.29
+else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/gdal/3.3.2_2/lib/debug/ -lgdal.29
+else:unix: LIBS += -L/usr/local/Cellar/gdal/3.3.2_2/lib/ -lgdal.29
 
-INCLUDEPATH += $$PWD/../../../../../../usr/local/Cellar/gdal/3.3.1_3/include
-DEPENDPATH += $$PWD/../../../../../../usr/local/Cellar/gdal/3.3.1_3/include
+INCLUDEPATH += /usr/local/Cellar/gdal/3.3.2_2/include
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/qscintilla2/2.12.1/lib/release/ -lqscintilla2_qt5.15.0.1
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/qscintilla2/2.12.1/lib/debug/ -lqscintilla2_qt5.15.0.1
-else:unix: LIBS += -L$$PWD/../../../../../../usr/local/Cellar/qscintilla2/2.12.1/lib/ -lqscintilla2_qt5.15.0.1
+win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/release/ -lqscintilla2_qt5.15.0.1
+else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/debug/ -lqscintilla2_qt5.15.0.1
+else:unix: LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/ -lqscintilla2_qt5.15.0.1
 
-INCLUDEPATH += $$PWD/../../../../../../usr/local/Cellar/qscintilla2/2.12.1/include
-DEPENDPATH += $$PWD/../../../../../../usr/local/Cellar/qscintilla2/2.12.1/include
+INCLUDEPATH += /usr/local/Cellar/qscintilla2/2.12.1/include
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/release/ -lqgis_native.3.21.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/debug/ -lqgis_native.3.21.0
-else:unix: LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/ -lqgis_native.3.21.0
+win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/release/ -lproj.22
+else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/debug/ -lproj.22
+else:unix: LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/ -lproj.22
 
-INCLUDEPATH += $$PWD/../../../C++Libraries/QGIS/Install/include
-DEPENDPATH += $$PWD/../../../C++Libraries/QGIS/Install/include
+INCLUDEPATH += /usr/local/Cellar/proj/8.1.0/include
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/release/ -lqgisgrass7.3.21.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/debug/ -lqgisgrass7.3.21.0
-else:unix: LIBS += -L$$PWD/../../../C++Libraries/QGIS/Install/lib/ -lqgisgrass7.3.21.0
-
-INCLUDEPATH += $$PWD/../../../C++Libraries/QGIS/Install/include
-DEPENDPATH += $$PWD/../../../C++Libraries/QGIS/Install/include
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/proj/8.1.0/lib/release/ -lproj.22
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/proj/8.1.0/lib/debug/ -lproj.22
-else:unix: LIBS += -L$$PWD/../../../../../../usr/local/Cellar/proj/8.1.0/lib/ -lproj.22
-
-INCLUDEPATH += $$PWD/../../../../../../usr/local/Cellar/proj/8.1.0/include
-DEPENDPATH += $$PWD/../../../../../../usr/local/Cellar/proj/8.1.0/include
-
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../C++Libraries/sqlite/Install/lib/release/ -lsqlite3.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../C++Libraries/sqlite/Install/lib/debug/ -lsqlite3.0
+win32:CONFIG(release, debug|release): LIBS += -L/Users/steve/Desktop/C++Libraries/sqlite/Install/lib/release/ -lsqlite3.0
+else:win32:CONFIG(debug, debug|release): LIBS += -L/Users/steve/Desktop/C++Libraries/sqlite/Install/lib/debug/ -lsqlite3.0
 else:unix: LIBS += -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib -lsqlite3
 
+win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/qtkeychain/0.12.0_1/lib/release/ -lqt5keychain.0.12.0
+else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/qtkeychain/0.12.0_1/lib/debug/ -lqt5keychain.0.12.0
+else:unix: LIBS += -L/usr/local/Cellar/qtkeychain/0.12.0_1/lib/ -lqt5keychain.0.12.0
 
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/qtkeychain/0.12.0_1/lib/release/ -lqt5keychain.0.12.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../../../../../usr/local/Cellar/qtkeychain/0.12.0_1/lib/debug/ -lqt5keychain.0.12.0
-else:unix: LIBS += -L$$PWD/../../../../../../usr/local/Cellar/qtkeychain/0.12.0_1/lib/ -lqt5keychain.0.12.0
-
-INCLUDEPATH += $$PWD/../../../../../../usr/local/Cellar/qtkeychain/0.12.0_1/include
-DEPENDPATH += $$PWD/../../../../../../usr/local/Cellar/qtkeychain/0.12.0_1/include
+INCLUDEPATH +=  /usr/local/Cellar/qtkeychain/0.12.0_1/include \
+                /usr/local/Cellar/qtkeychain/0.12.0_1/include/qt5keychain \

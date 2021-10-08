@@ -1647,13 +1647,11 @@ typedef SInt32 SRefCon;
 //  return retval;
 //}
 
+#include "mainwindow.h"
 
 #include <QApplication>
 #include "qgisapp.h"
-#include "mainwindow.h"
-
-#include <qgsapplication.h>
-
+#include "qgsapplication.h"
 
 #ifdef Q_OS_MACX
 #include <ApplicationServices/ApplicationServices.h>
@@ -1664,6 +1662,7 @@ typedef SInt32 SRefCon;
 #include <sys/resource.h>
 #include <limits.h>
 #endif
+
 int main(int argc, char *argv[])
 {
 

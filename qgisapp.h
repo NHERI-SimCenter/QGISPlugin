@@ -171,7 +171,6 @@ class QgsNetworkLoggerWidgetFactory;
 #include "qgsmaptoolselect.h"
 #include "ogr/qgsvectorlayersaveasdialog.h"
 #include "qgis.h"
-#include "ui_qgisapp.h"
 #include "qgis_app.h"
 #include "qgsvectorlayerref.h"
 #include "devtools/qgsappdevtoolutils.h"
@@ -194,12 +193,12 @@ class QgsGeoreferencerMainWindow;
  * \class QgisApp
  * \brief Main window for the QGIS application
  */
-class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
+class APP_EXPORT QgisApp : public QMainWindow
 {
     Q_OBJECT
   public:
     //! Constructor
-    QgisApp( QSplashScreen *splash, bool restorePlugins = true,
+    QgisApp( QMainWindow *mainWindow, bool restorePlugins = true,
              bool skipVersionCheck = false, const QString &rootProfileLocation = QString(),
              const QString &activeProfile = QString(),
              QWidget *parent = nullptr, Qt::WindowFlags fl = Qt::Window );
@@ -868,7 +867,19 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
      */
     void setGpsPanelConnection( QgsGpsConnection *connection );
 
-  public slots:
+    QList< QgsMapLayer * > addSublayers( const QList< QgsProviderSublayerDetails> &layers, const QString &baseName, const QString &groupName );
+
+    //! deselect features from all layers
+    void deselectAll();
+
+public slots:
+
+    //! Identify feature(s) on the currently selected layer
+    void identify();
+
+    //! zoom to extent of layer
+    void zoomToLayerExtent();
+
     //! save current vector layer
     QString saveAsFile( QgsMapLayer *layer = nullptr, bool onlySelected = false, bool defaultToAddToMap = true );
 
@@ -877,6 +888,15 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
      * format, and then replacing the layer's data source in place.
      */
     void makeMemoryLayerPermanent( QgsVectorLayer *layer );
+
+    //! activates the polygon selection tool
+    void selectByPolygon();
+
+    //! Sets map tool to pan
+    void pan();
+
+    //! activates the rectangle selection tool
+    void selectFeatures();
 
     //! save qml style for the current layer
     void saveStyleFile( QgsMapLayer *layer = nullptr );
@@ -1089,7 +1109,7 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
     void addVirtualLayer();
 
     //! Remove a layer from the map and legend
-    void removeLayer();
+    void removeLayer(bool promptConfirmation = true);
 
     //! Duplicate map layer(s) in legend
     void duplicateLayers( const QList<QgsMapLayer *> &lyrList = QList<QgsMapLayer *>() );
@@ -1312,8 +1332,6 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
 
     //! QGIS Sponsors
     void sponsors();
-    //! About QGIS
-    void about();
 
     //! Add a list of database layers to the map
     void addDatabaseLayers( QStringList const &layerPathList, QString const &providerKey );
@@ -1335,8 +1353,7 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
      */
     void userRotation();
 
-    //! zoom to extent of layer
-    void zoomToLayerExtent();
+
     //! zoom to actual size of raster layer
     void zoomActualSize();
 
@@ -1680,21 +1697,11 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
     //! activates the tool
     void setMapTool( QgsMapTool *tool, bool clean = false );
 
-
-    //! activates the rectangle selection tool
-    void selectFeatures();
-
-    //! activates the polygon selection tool
-    void selectByPolygon();
-
     //! activates the freehand selection tool
     void selectByFreehand();
 
     //! activates the radius selection tool
     void selectByRadius();
-
-    //! deselect features from all layers
-    void deselectAll();
 
     //! deselect features from the current active layer
     void deselectActiveLayer();
@@ -1777,10 +1784,7 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
     void zoomOut();
     //! Sets map tool to Zoom in
     void zoomIn();
-    //! Sets map tool to pan
-    void pan();
-    //! Identify feature(s) on the currently selected layer
-    void identify();
+
     //! Measure distance
     void measure();
     //! Measure area
@@ -2084,8 +2088,6 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
       AbortLoading
     };
     SublayerHandling shouldAskUserForSublayers( const QList< QgsProviderSublayerDetails > &layers, bool hasNonLayerItems = false ) const;
-
-    QList< QgsMapLayer * > addSublayers( const QList< QgsProviderSublayerDetails> &layers, const QString &baseName, const QString &groupName );
 
     void postProcessAddedLayer( QgsMapLayer *layer );
 
@@ -2419,7 +2421,7 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
 
     QgsMapTool *mNonEditMapTool = nullptr;
 
-    QgsTaskManagerStatusBarWidget *mTaskManagerWidget = nullptr;
+//    QgsTaskManagerStatusBarWidget *mTaskManagerWidget = nullptr;
 
     QgsStatusBarScaleWidget *mScaleWidget = nullptr;
 
@@ -2438,7 +2440,7 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
     //! Widget that will live in the statusbar to show progress of operations
     QProgressBar *mProgressBar = nullptr;
     //! Widget used to suppress rendering
-    QCheckBox *mRenderSuppressionCBox = nullptr;
+//    QCheckBox *mRenderSuppressionCBox = nullptr;
     //! Widget in status bar used to show current project CRS
     QLabel *mOnTheFlyProjectionStatusLabel = nullptr;
     //! Widget in status bar used to show status of on the fly projection
@@ -2618,8 +2620,6 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
 
     QDateTime mProjectLastModified;
 
-    QStackedWidget *mCentralContainer = nullptr;
-
     QHash< QgsPrintLayout *, QgsMapLayerAction * > mAtlasFeatureActions;
 
 
@@ -2671,6 +2671,302 @@ class APP_EXPORT QgisApp : public QMainWindow, private Ui::MainWindowQGIS
     QgsScopedOptionsWidgetFactory mCodeEditorWidgetFactory;
     QgsScopedOptionsWidgetFactory mBabelGpsDevicesWidgetFactory;
     QgsScopedOptionsWidgetFactory m3DOptionsWidgetFactory;
+
+    QAction *mActionNewProject = nullptr;
+    QAction *mActionOpenProject = nullptr;
+    QAction *mActionSaveProject = nullptr;
+    QAction *mActionSaveProjectAs = nullptr;
+    QAction *mActionSaveMapAsImage = nullptr;
+    QAction *mActionSaveMapAsPdf = nullptr;
+    QAction *mActionNewMapCanvas = nullptr;
+    QAction *mActionExit = nullptr;
+    QAction *mActionUndo = nullptr;
+    QAction *mActionRedo = nullptr;
+    QAction *mActionCutFeatures = nullptr;
+    QAction *mActionCopyFeatures = nullptr;
+    QAction *mActionPasteFeatures = nullptr;
+    QAction *mActionAddFeature = nullptr;
+    QAction *mActionMoveFeature = nullptr;
+    QAction *mActionReshapeFeatures = nullptr;
+    QAction *mActionSplitFeatures = nullptr;
+    QAction *mActionSplitParts = nullptr;
+    QAction *mActionDeleteSelected = nullptr;
+    QAction *mActionAddRing = nullptr;
+    QAction *mActionAddPart = nullptr;
+    QAction *mActionSimplifyFeature = nullptr;
+    QAction *mActionDeleteRing = nullptr;
+    QAction *mActionDeletePart = nullptr;
+    QAction *mActionMergeFeatures = nullptr;
+    QAction *mActionMergeFeatureAttributes = nullptr;
+    QAction *mActionVertexTool = nullptr;
+    QAction *mActionRotatePointSymbols = nullptr;
+    QAction *mActionOffsetPointSymbol = nullptr;
+    QAction *mActionReverseLine = nullptr;
+    QAction *mActionTrimExtendFeature = nullptr;
+    QAction *mActionSnappingOptions = nullptr;
+    QAction *mActionPan = nullptr;
+    QAction *mActionZoomIn = nullptr;
+    QAction *mActionZoomOut = nullptr;
+    QAction *mActionSelectFeatures = nullptr;
+    QAction *mActionSelectPolygon = nullptr;
+    QAction *mActionSelectFreehand = nullptr;
+    QAction *mActionSelectRadius = nullptr;
+    QAction *mActionDeselectAll = nullptr;
+    QAction *mActionDeselectActiveLayer = nullptr;
+    QAction *mActionSelectAll = nullptr;
+    QAction *mActionInvertSelection = nullptr;
+    QAction *mActionIdentify = nullptr;
+    QAction *mActionMeasure = nullptr;
+    QAction *mActionMeasureArea = nullptr;
+    QAction *mActionMeasureAngle = nullptr;
+    QAction *mActionZoomFullExtent = nullptr;
+    QAction *mActionZoomToLayer = nullptr;
+    QAction *mActionZoomToLayers = nullptr;
+    QAction *mActionZoomToSelected = nullptr;
+    QAction *mActionZoomLast = nullptr;
+    QAction *mActionZoomNext = nullptr;
+    QAction *mActionZoomActualSize = nullptr;
+    QAction *mActionMapTips = nullptr;
+    QAction *mActionNewBookmark = nullptr;
+    QAction *mActionShowBookmarks = nullptr;
+    QAction *mActionShowBookmarkManager = nullptr;
+    QAction *mActionDraw = nullptr;
+    QAction *mActionTextAnnotation = nullptr;
+    QAction *mActionFormAnnotation = nullptr;
+    QAction *mActionAnnotation = nullptr;
+    QAction *mActionLabeling = nullptr;
+    QAction *mActionNewVectorLayer = nullptr;
+    QAction *mActionNewSpatiaLiteLayer = nullptr;
+    QAction *mActionShowRasterCalculator = nullptr;
+    QAction *mActionAddOgrLayer = nullptr;
+    QAction *mActionAddRasterLayer = nullptr;
+    QAction *mActionAddPgLayer = nullptr;
+    QAction *mActionAddSpatiaLiteLayer = nullptr;
+    QAction *mActionAddMssqlLayer = nullptr;
+    QAction *mActionAddOracleLayer = nullptr;
+    QAction *mActionAddHanaLayer = nullptr;
+    QAction *mActionAddWmsLayer = nullptr;
+    QAction *mActionOpenTable = nullptr;
+    QAction *mActionOpenTableSelected = nullptr;
+    QAction *mActionOpenTableVisible = nullptr;
+    QAction *mActionOpenTableEdited = nullptr;
+    QAction *mActionToggleEditing = nullptr;
+    QAction *mActionSaveEdits = nullptr;
+    QAction *mActionLayerSaveAs = nullptr;
+    QAction *mActionRemoveLayer = nullptr;
+    QAction *mActionSetLayerCRS = nullptr;
+    QAction *mActionSetProjectCRSFromLayer = nullptr;
+    QAction *mActionLayerProperties = nullptr;
+    QAction *mActionLayerSubsetString = nullptr;
+    QAction *mActionAddToOverview = nullptr;
+    QAction *mActionAddAllToOverview = nullptr;
+    QAction *mActionRemoveAllFromOverview = nullptr;
+    QAction *mActionShowAllLayers = nullptr;
+    QAction *mActionHideAllLayers = nullptr;
+    QAction *mActionManagePlugins = nullptr;
+    QAction *mActionToggleFullScreen = nullptr;
+    QAction *mActionTogglePanelsVisibility = nullptr;
+    QAction *mActionToggleMapOnly = nullptr;
+    QAction *mActionProjectProperties = nullptr;
+    QAction *mActionOptions = nullptr;
+    QAction *mActionCustomProjection = nullptr;
+    QAction *mActionConfigureShortcuts = nullptr;
+    QAction *mActionLocalHistogramStretch = nullptr;
+    QAction *mActionHelpContents = nullptr;
+    QAction *mActionHelpAPI = nullptr;
+    QAction *mActionQgisHomePage = nullptr;
+    QAction *mActionCheckQgisVersion = nullptr;
+    QAction *mActionAbout = nullptr;
+    QAction *mActionSponsors = nullptr;
+    QAction *mActionMoveLabel = nullptr;
+    QAction *mActionRotateLabel = nullptr;
+    QAction *mActionChangeLabelProperties = nullptr;
+    QAction *mActionStyleManager = nullptr;
+    QAction *mActionShowPythonDialog = nullptr;
+    QAction *mActionFullHistogramStretch = nullptr;
+    QAction *mActionAddLayerSeparator = nullptr;
+    QAction *mActionCustomization = nullptr;
+    QAction *actionActionCatchForCustomization = nullptr;
+    QAction *mActionEmbedLayers = nullptr;
+    QAction *mActionDecorationTitle = nullptr;
+    QAction *mActionDecorationCopyright = nullptr;
+    QAction *mActionDecorationImage = nullptr;
+    QAction *mActionDecorationNorthArrow = nullptr;
+    QAction *mActionDecorationScaleBar = nullptr;
+    QAction *mActionAddWfsLayer = nullptr;
+    QAction *mActionFeatureAction = nullptr;
+    QAction *mActionPanToSelected = nullptr;
+    QAction *mActionOffsetCurve = nullptr;
+    QAction *mActionCopyStyle = nullptr;
+    QAction *mActionPasteStyle = nullptr;
+    QAction *mActionAddWcsLayer = nullptr;
+    QAction *mActionDecorationGrid = nullptr;
+    QAction *mActionPinLabels = nullptr;
+    QAction *mActionShowPinnedLabels = nullptr;
+    QAction *mActionNewBlankProject = nullptr;
+    QAction *mActionLocalCumulativeCutStretch = nullptr;
+    QAction *mActionFullCumulativeCutStretch = nullptr;
+    QAction *mActionShowHideLabels = nullptr;
+    QAction *mActionHtmlAnnotation = nullptr;
+    QAction *mActionDuplicateLayer = nullptr;
+    QAction *mActionSvgAnnotation = nullptr;
+    QAction *mActionSaveAllEdits = nullptr;
+    QAction *mActionRollbackAllEdits = nullptr;
+    QAction *mActionCancelAllEdits = nullptr;
+    QAction *mActionRollbackEdits = nullptr;
+    QAction *mActionAllEdits = nullptr;
+    QAction *mActionCancelEdits = nullptr;
+    QAction *mActionSaveLayerEdits = nullptr;
+    QAction *mActionScaleFeature = nullptr;
+    QAction *mActionRotateFeature = nullptr;
+    QAction *mActionIncreaseBrightness = nullptr;
+    QAction *mActionDecreaseBrightness = nullptr;
+    QAction *mActionIncreaseContrast = nullptr;
+    QAction *mActionDecreaseContrast = nullptr;
+    QAction *mActionSelectByExpression = nullptr;
+    QAction *mActionNeedSupport = nullptr;
+    QAction *mActionOpenFieldCalc = nullptr;
+    QAction *mActionAddDelimitedText = nullptr;
+    QAction *mActionAddVirtualLayer = nullptr;
+    QAction *mActionPasteAsNewVector = nullptr;
+    QAction *mActionPasteAsNewMemoryVector = nullptr;
+    QAction *mActionDxfExport = nullptr;
+    QAction *mActionDwgImport = nullptr;
+    QAction *mActionFillRing = nullptr;
+    QAction *mActionAddLayerDefinition = nullptr;
+    QAction *mActionSaveLayerDefinition = nullptr;
+    QAction *mActionPreviewModeOff = nullptr;
+    QAction *mActionPreviewModeMono = nullptr;
+    QAction *mActionPreviewModeGrayscale = nullptr;
+    QAction *mActionPreviewProtanope = nullptr;
+    QAction *mActionPreviewDeuteranope = nullptr;
+    QAction *mActionPreviewTritanope = nullptr;
+    QAction *mActionSetLayerScaleVisibility = nullptr;
+    QAction *mActionShowSelectedLayers = nullptr;
+    QAction *mActionHideSelectedLayers = nullptr;
+    QAction *mActionToggleSelectedLayers = nullptr;
+    QAction *mActionToggleSelectedLayersIndependently = nullptr;
+    QAction *mActionHideDeselectedLayers = nullptr;
+    QAction *mActionNewMemoryLayer = nullptr;
+    QAction *mActionStatisticalSummary = nullptr;
+    QAction *mActionShowAlignRasterTool = nullptr;
+    QAction *mActionCircularStringCurvePoint = nullptr;
+    QAction *mActionCircularStringRadius = nullptr;
+    QAction *mActionReportaBug = nullptr;
+    QAction *mActionDiagramProperties = nullptr;
+    QAction *mActionNewGeoPackageLayer = nullptr;
+    QAction *mActionMultiEditAttributes = nullptr;
+    QAction *mActionAddAfsLayer = nullptr;
+    QAction *mActionSelectByForm = nullptr;
+    QAction *mActionMoveFeatureCopy = nullptr;
+    QAction *mActionDecorationLayoutExtent = nullptr;
+    QAction *mActionDataSourceManager = nullptr;
+    QAction *mActionCircle2Points = nullptr;
+    QAction *mActionCircle3Points = nullptr;
+    QAction *mActionCircleCenterPoint = nullptr;
+    QAction *mActionEllipseCenter2Points = nullptr;
+    QAction *mActionEllipseCenterPoint = nullptr;
+    QAction *mActionEllipseExtent = nullptr;
+    QAction *mActionEllipseFoci = nullptr;
+    QAction *mActionRectangleExtent = nullptr;
+    QAction *mActionRectangleCenterPoint = nullptr;
+    QAction *mActionRegularPolygonCenterPoint = nullptr;
+    QAction *mActionRegularPolygon2Points = nullptr;
+    QAction *mActionCircle3Tangents = nullptr;
+    QAction *mActionRectangle3PointsDistance = nullptr;
+    QAction *mActionCircle2TangentsPoint = nullptr;
+    QAction *mActionRegularPolygonCenterCorner = nullptr;
+    QAction *mActionNew3DMapCanvas = nullptr;
+    QAction *mActionShowLayoutManager = nullptr;
+    QAction *mActionNewPrintLayout = nullptr;
+    QAction *mActionNewReport = nullptr;
+    QAction *mActionCloseProject = nullptr;
+    QAction *mActionRevertProject = nullptr;
+    QAction *mActionCopyLayer = nullptr;
+    QAction *mActionPasteLayer = nullptr;
+    QAction *mActionVertexToolActiveLayer = nullptr;
+    QAction *mActionRectangle3PointsProjected = nullptr;
+    QAction *mActionShowMeshCalculator = nullptr;
+    QAction *mActionAddMeshLayer = nullptr;
+    QAction *mActionNewVirtualLayer = nullptr;
+    QAction *mActionShowUnplacedLabels = nullptr;
+    QAction *mActionReselect = nullptr;
+    QAction *mActionTemporalController = nullptr;
+    QAction *mActionAddXyzLayer = nullptr;
+    QAction *mActionAddVectorTileLayer = nullptr;
+    QAction *mActionShowGeoreferencer = nullptr;
+    QAction *mActionDecreaseGamma = nullptr;
+    QAction *mActionIncreaseGamma = nullptr;
+    QAction *mActionDigitizeWithCurve = nullptr;
+    QAction *mActionAddPointCloudLayer = nullptr;
+    QAction *mActionStreamDigitize = nullptr;
+    QAction *mActionMeasureBearing = nullptr;
+    QAction *mActionNewMeshLayer = nullptr;
+    QAction *mActionNewGpxLayer = nullptr;
+
+    void setupActions();
+
+    QMenu *menubar = nullptr;
+    QMenu *mProjectMenu = nullptr;
+    QMenu *mRecentProjectsMenu = nullptr;
+    QMenu *mLayoutsMenu = nullptr;
+    QMenu *mProjectFromTemplateMenu = nullptr;
+    QMenu *mProjectToStorageMenu = nullptr;
+    QMenu *mProjectFromStorageMenu = nullptr;
+    QMenu *mViewMenu = nullptr;
+    QMenu *mMenuMeasure = nullptr;
+    QMenu *mMenuDecorations = nullptr;
+    QMenu *mMenuPreviewMode = nullptr;
+    QMenu *mMenuLayerVisibility = nullptr;
+    QMenu *mLayerMenu = nullptr;
+    QMenu *mNewLayerMenu = nullptr;
+    QMenu *mAddLayerMenu = nullptr;
+    QMenu *mMenuFilterTable = nullptr;
+    QMenu *mPluginMenu = nullptr;
+    QMenu *mHelpMenu = nullptr;
+    QMenu *mMenuPluginHelp = nullptr;
+    QMenu *mSettingsMenu = nullptr;
+    QMenu *mRasterMenu = nullptr;
+    QMenu *mVectorMenu = nullptr;
+    QMenu *mEditMenu = nullptr;
+    QMenu *mMenuSelect = nullptr;
+    QMenu *mMenuPasteAs = nullptr;
+    QMenu *mMenuCircle = nullptr;
+    QMenu *mMenuEllipse = nullptr;
+    QMenu *mMenuRectangle = nullptr;
+    QMenu *mMenuRegularPolygon = nullptr;
+    QMenu *mMenuAnnotation = nullptr;
+    QMenu *mMenuEditAttributes = nullptr;
+    QMenu *mMenuEditGeometry = nullptr;
+    QMenu *mMeshMenu = nullptr;
+    QStatusBar *statusbar = nullptr;
+
+    QStackedWidget* mCentralContainer = nullptr;
+
+    void setupMenus(QMainWindow *mainWindow);
+
+    QToolBar *mFileToolBar = nullptr;
+    QToolBar *mLayerToolBar = nullptr;
+    QToolBar *mDigitizeToolBar = nullptr;
+    QToolBar *mAdvancedDigitizeToolBar = nullptr;
+    QToolBar *mMapNavToolBar = nullptr;
+    QToolBar *mAttributesToolBar = nullptr;
+    QToolBar *mPluginToolBar = nullptr;
+    QToolBar *mHelpToolBar = nullptr;
+    QToolBar *mRasterToolBar = nullptr;
+    QToolBar *mLabelToolBar = nullptr;
+    QToolBar *mVectorToolBar = nullptr;
+    QToolBar *mDatabaseToolBar = nullptr;
+    QToolBar *mWebToolBar = nullptr;
+    QToolBar *mSnappingToolBar = nullptr;
+    QToolBar *mDataSourceManagerToolBar = nullptr;
+    QToolBar *mShapeDigitizeToolBar = nullptr;
+    QToolBar *mSelectionToolBar = nullptr;
+    QToolBar *mMeshToolBar = nullptr;
+
+    void setupToolBars();
+
+    bool isBeingDeleted = false;
 
     class QgsCanvasRefreshBlocker
     {

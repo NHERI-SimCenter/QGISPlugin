@@ -9,8 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    auto visWidget = new QGISVisualizationWidget(this);
-    this->setCentralWidget(visWidget);
+    visWidget = std::make_unique<QGISVisualizationWidget>(this);
+    this->setCentralWidget(visWidget.get());
 }
 
 MainWindow::~MainWindow()
