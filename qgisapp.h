@@ -15,6 +15,8 @@
  *                                                                         *
  ***************************************************************************/
 
+// Modified to work as a plugin for SimCenter tools by Dr. Stevan Gavrilovic
+
 #ifndef QGISAPP_H
 #define QGISAPP_H
 

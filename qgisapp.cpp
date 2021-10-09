@@ -17,6 +17,8 @@
  *                                                                         *
  ***************************************************************************/
 
+// Modified to work as a plugin for SimCenter tools by Dr. Stevan Gavrilovic
+
 #include <QObject>
 #include <QAction>
 #include <QApplication>

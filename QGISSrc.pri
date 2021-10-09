@@ -211,6 +211,41 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/qgsversioninfo.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsversionmigration.cpp \
         $$PATH_TO_QGIS_SRC/app/qgswelcomepage.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3danimationexportdialog.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3danimationwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dapputils.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dicongenerator.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapcanvas.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapcanvasdockwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapconfigwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmaptool.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmaptoolidentify.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmaptoolmeasureline.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmeasuredialog.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmodelsourcelineedit.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dnavigationwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3doptions.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsgoochmaterialwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgslightswidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsline3dsymbolwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsmap3dexportwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsmaterialwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsmesh3dsymbolwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsmeshlayer3drendererwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsnullmaterialwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsphongmaterialwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsphongtexturedmaterialwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgspoint3dsymbolwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgspointcloud3dsymbolwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgspointcloudlayer3drendererwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgspolygon3dsymbolwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsrulebased3drendererwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsshadowrenderingsettingswidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgssimplelinematerialwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsskyboxrenderingsettingswidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgssymbol3dwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsvectorlayer3dpropertieswidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsvectorlayer3drendererwidget.cpp \
         $$PATH_TO_QGIS_SRC/app/vectortile/qgsvectortilelayerproperties.cpp \
         $$PATH_TO_QGIS_SRC/app/vertextool/qgslockedfeature.cpp \
         $$PATH_TO_QGIS_SRC/app/vertextool/qgsvertexeditor.cpp \
@@ -257,6 +292,7 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/locator/qgslayoutlocatorfilter.cpp \
         $$PATH_TO_QGIS_SRC/app/locator/qgslocatoroptionswidget.cpp \
         $$PATH_TO_QGIS_SRC/app/layout/qgslayoutmanagerdialog.cpp \
+        $$PATH_TO_QGIS_SRC/app/layout/qgslayout3dmapwidget.cpp \
         $$PATH_TO_QGIS_SRC/app/layout/qgslayoutdesignerdialog.cpp \
         $$PATH_TO_QGIS_SRC/app/layout/qgsreportsectionmodel.cpp \
         $$PATH_TO_QGIS_SRC/app/layout/qgslayoutappmenuprovider.cpp \
@@ -268,27 +304,27 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsbearingitem.cpp \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsmarker.cpp \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsinformationwidget.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader21.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader24.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader15.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader27.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader18.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/rscodec.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/drw_textcodec.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/drw_dbg.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgutil.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dxfreader.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgbuffer.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dxfwriter.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/drw_base.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/drw_header.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/libdwgr.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/drw_entities.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/drw_classes.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/drw_objects.cpp \
-        $$PATH_TO_QGIS/external/libdxfrw/libdxfrw.cpp \
-        $$PATH_TO_QGIS/external/qt-unix-signals/sigwatch.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader21.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader24.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader15.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader27.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader18.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/rscodec.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/drw_textcodec.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/drw_dbg.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgutil.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dxfreader.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgbuffer.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dxfwriter.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/drw_base.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/drw_header.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/libdwgr.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/drw_entities.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/drw_classes.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/drw_objects.cpp \
+        $$PATH_TO_QGIS_EXT/libdxfrw/libdxfrw.cpp \
+        $$PATH_TO_QGIS_EXT/qt-unix-signals/sigwatch.cpp \
 
 #HEADERS += \
 #        $$PATH_TO_QGIS/Install/include/qgis_app.h \
@@ -504,6 +540,41 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/qgsversioninfo.h \
         $$PATH_TO_QGIS_SRC/app/qgsversionmigration.h \
         $$PATH_TO_QGIS_SRC/app/qgswelcomepage.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3danimationexportdialog.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3danimationwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dapputils.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dicongenerator.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapcanvas.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapcanvasdockwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapconfigwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmaptool.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmaptoolidentify.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmaptoolmeasureline.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmeasuredialog.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmodelsourcelineedit.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dnavigationwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3doptions.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsgoochmaterialwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgslightswidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsline3dsymbolwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsmap3dexportwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsmaterialwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsmesh3dsymbolwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsmeshlayer3drendererwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsnullmaterialwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsphongmaterialwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsphongtexturedmaterialwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgspoint3dsymbolwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgspointcloud3dsymbolwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgspointcloudlayer3drendererwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgspolygon3dsymbolwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsrulebased3drendererwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsshadowrenderingsettingswidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgssimplelinematerialwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsskyboxrenderingsettingswidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgssymbol3dwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsvectorlayer3dpropertieswidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgsvectorlayer3drendererwidget.h \
         $$PATH_TO_QGIS_SRC/app/vectortile/qgsvectortilelayerproperties.h \
         $$PATH_TO_QGIS_SRC/app/vertextool/qgslockedfeature.h \
         $$PATH_TO_QGIS_SRC/app/vertextool/qgsvertexeditor.h \
@@ -541,7 +612,7 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/pointcloud/qgspointcloudelevationpropertieswidget.h \
         $$PATH_TO_QGIS_SRC/app/locator/qgslayertreelocatorfilter.h \
         $$PATH_TO_QGIS_SRC/app/locator/qgsbookmarklocatorfilter.h \
-        $$PATH_TO_QGIS_SRC/app/locator/qgsnominatimlocatorfilter.h \
+        $$PATH_TO_QGIS_SRC/app/locator/qgsnominatimlocatorfilter.h \        
         $$PATH_TO_QGIS_SRC/app/locator/qgsactionlocatorfilter.h \
         $$PATH_TO_QGIS_SRC/app/locator/qgsgotolocatorfilter.h \
         $$PATH_TO_QGIS_SRC/app/locator/qgsexpressioncalculatorlocatorfilter.h \
@@ -551,6 +622,7 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/locator/qgslayoutlocatorfilter.h \
         $$PATH_TO_QGIS_SRC/app/locator/qgslocatoroptionswidget.h \
         $$PATH_TO_QGIS_SRC/app/layout/qgslayoutmanagerdialog.h \
+        $$PATH_TO_QGIS_SRC/app/layout/qgslayout3dmapwidget.h \
         $$PATH_TO_QGIS_SRC/app/layout/qgslayoutdesignerdialog.h \
         $$PATH_TO_QGIS_SRC/app/layout/qgsreportsectionmodel.h \
         $$PATH_TO_QGIS_SRC/app/layout/qgslayoutappmenuprovider.h \
@@ -562,49 +634,50 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsbearingitem.h \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsmarker.h \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsinformationwidget.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/drw_cptable950.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader21.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/drw_cptable932.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader24.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader15.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/drw_cptable936.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader27.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader18.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/drw_cptable949.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/rscodec.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/drw_textcodec.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/drw_dbg.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgutil.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dxfreader.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgreader.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dwgbuffer.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/dxfwriter.h \
-        $$PATH_TO_QGIS/external/libdxfrw/intern/drw_cptables.h \
-        $$PATH_TO_QGIS/external/libdxfrw/drw_interface.h \
-        $$PATH_TO_QGIS/external/libdxfrw/drw_base.h \
-        $$PATH_TO_QGIS/external/libdxfrw/drw_header.h \
-        $$PATH_TO_QGIS/external/libdxfrw/libdwgr.h \
-        $$PATH_TO_QGIS/external/libdxfrw/drw_entities.h \
-        $$PATH_TO_QGIS/external/libdxfrw/drw_classes.h \
-        $$PATH_TO_QGIS/external/libdxfrw/drw_objects.h \
-        $$PATH_TO_QGIS/external/libdxfrw/libdxfrw.h \
-        $$PATH_TO_QGIS/external/qt-unix-signals/sigwatch.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/drw_cptable950.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader21.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/drw_cptable932.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader24.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader15.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/drw_cptable936.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader27.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader18.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/drw_cptable949.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/rscodec.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/drw_textcodec.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/drw_dbg.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgutil.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dxfreader.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgbuffer.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/dxfwriter.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/intern/drw_cptables.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/drw_interface.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/drw_base.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/drw_header.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/libdwgr.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/drw_entities.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/drw_classes.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/drw_objects.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/libdxfrw.h \
+        $$PATH_TO_QGIS_EXT/qt-unix-signals/sigwatch.h \
 
 
-INCLUDEPATH +=  $$PATH_TO_QGIS_BUILD \
-                $$PATH_TO_QGIS/external \
-                $$PATH_TO_QGIS/external/astyle \
-                $$PATH_TO_QGIS/external/inja \
-                $$PATH_TO_QGIS/external/kdbush \
-                $$PATH_TO_QGIS/external/nmea \
-                $$PATH_TO_QGIS/external/libdxfrw \
-                $$PATH_TO_QGIS/external/libdxfrw/intern \
-                $$PATH_TO_QGIS/external/qt-unix-signals \
-                $$PATH_TO_QGIS_BUILD/src/app \
-                $$PATH_TO_QGIS_BUILD/src/ui \
+INCLUDEPATH +=  $$PATH_TO_QGIS_EXT \
+                $$PATH_TO_QGIS_EXT/astyle \
+                $$PATH_TO_QGIS_EXT/inja \
+                $$PATH_TO_QGIS_EXT/kdbush \
+                $$PATH_TO_QGIS_EXT/nmea \
+                $$PATH_TO_QGIS_EXT/libdxfrw \
+                $$PATH_TO_QGIS_EXT/libdxfrw/intern \
+                $$PATH_TO_QGIS_EXT/qt-unix-signals \
+                $$PATH_TO_QGIS_EXT/opencl-clhpp/include \
+                $$PATH_TO_QGIS_SRC/app \
+                $$PATH_TO_QGIS_SRC/ui \
                 $$PATH_TO_QGIS_DEPS_INC \
                 $$PATH_TO_QGIS_SRC/analysis \
                 $$PATH_TO_QGIS_SRC/app \
+                $$PATH_TO_QGIS_SRC/app/3d \
                 $$PATH_TO_QGIS_SRC/app/browser \
                 $$PATH_TO_QGIS_SRC/app/decorations \
                 $$PATH_TO_QGIS_SRC/app/devtools \
@@ -622,6 +695,14 @@ INCLUDEPATH +=  $$PATH_TO_QGIS_BUILD \
                 $$PATH_TO_QGIS_SRC/app/pointcloud \
                 $$PATH_TO_QGIS_SRC/app/pluginmanager \
                 $$PATH_TO_QGIS_SRC/app/vectortile \
+                $$PATH_TO_QGIS_SRC/3d \
+                $$PATH_TO_QGIS_SRC/3d/chunks \
+                $$PATH_TO_QGIS_SRC/3d/materials \
+                $$PATH_TO_QGIS_SRC/3d/mesh \
+                $$PATH_TO_QGIS_SRC/3d/processing \
+                $$PATH_TO_QGIS_SRC/3d/shaders \
+                $$PATH_TO_QGIS_SRC/3d/symbols \
+                $$PATH_TO_QGIS_SRC/3d/terrain \
                 $$PATH_TO_QGIS_SRC/core \
                 $$PATH_TO_QGIS_SRC/core/labeling \
                 $$PATH_TO_QGIS_SRC/core/raster \
@@ -639,47 +720,47 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-INCLUDEPATH += $$PATH_TO_QGIS_ROOT/Install/include/qgis
-INCLUDEPATH += $$PATH_TO_QGIS_ROOT/Install/include
+INCLUDEPATH += $$PATH_TO_INSTALL/include/qgis
+INCLUDEPATH += $$PATH_TO_INSTALL/include
 
-# Frameworks
-QMAKE_LFLAGS += -F$$PATH_TO_QGIS_DEPS/lib
-INCLUDEPATH += $$PATH_TO_QGIS_DEPS/lib/qca-qt5.framework/Headers
+
+# Frameworks - only for mac
+mac {
+
+QMAKE_LFLAGS += -F/opt/QGIS/qgis-deps-0.8.0/stage/lib
+INCLUDEPATH += /opt/QGIS/qgis-deps-0.8.0/stage/lib/qca-qt5.framework/Headers
 LIBS += -framework qca-qt5
-
-QMAKE_LFLAGS += -F$$PATH_TO_QGIS_DEPS/lib
-INCLUDEPATH += $$PATH_TO_QGIS_DEPS/lib/qwt.framework/Headers
-LIBS += -framework qwt
-
 
 QMAKE_LFLAGS += -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
 INCLUDEPATH += /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenCL.framework/Headers
 LIBS += -framework opencl
 
+QMAKE_LFLAGS += -F/opt/QGIS/qgis-deps-0.8.0/stage/lib
+INCLUDEPATH += /opt/QGIS/qgis-deps-0.8.0/stage/lib/qwt.framework/Headers
+LIBS += -framework qwt
+
+} else {
+
+
+
+}
+
 
 #### QGIS libs ####
-win32:CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/release/ -lqgis_core.3.21.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/debug/ -lqgis_core.3.21.0
-else:unix: LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/ -lqgis_core.3.21.0
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/release/ -lqgis_gui.3.21.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/debug/ -lqgis_gui.3.21.0
-else:unix: LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/ -lqgis_gui.3.21.0 -lqgis_analysis.3.21.0
+win32:CONFIG(release, debug|release): LIBS += -L$$PATH_TO_INSTALL/lib/release/
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_INSTALL/lib/debug/
+else:unix: LIBS += -L$$PATH_TO_INSTALL/lib/ -lqgis_core -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgisgrass7
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/release/ -lqgis_native.3.21.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/debug/ -lqgis_native.3.21.0
-else:unix: LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/ -lqgis_native.3.21.0
-
-win32:CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/release/ -lqgisgrass7.3.21.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/debug/ -lqgisgrass7.3.21.0
-else:unix: LIBS += -L$$PATH_TO_QGIS_ROOT/Install/lib/ -lqgisgrass7.3.21.0
 
 #### External libs ####
+
+INCLUDEPATH += $$PATH_TO_QGIS_DEPS/include
+
 win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/gdal/3.3.2_2/lib/release/ -lgdal.29
 else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/gdal/3.3.2_2/lib/debug/ -lgdal.29
-else:unix: LIBS += -L/usr/local/Cellar/gdal/3.3.2_2/lib/ -lgdal.29
+else:unix: LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lgdal -lproj
 
-INCLUDEPATH += /usr/local/Cellar/gdal/3.3.2_2/include
 
 win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/release/ -lqscintilla2_qt5.15.0.1
 else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/debug/ -lqscintilla2_qt5.15.0.1
@@ -687,11 +768,11 @@ else:unix: LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/ -lqscintilla2_qt5
 
 INCLUDEPATH += /usr/local/Cellar/qscintilla2/2.12.1/include
 
-win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/release/ -lproj.22
-else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/debug/ -lproj.22
-else:unix: LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/ -lproj.22
+#win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/release/ -lproj.22
+#else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/debug/ -lproj.22
+#else:unix: LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/ -lproj.22
 
-INCLUDEPATH += /usr/local/Cellar/proj/8.1.0/include
+#INCLUDEPATH += /usr/local/Cellar/proj/8.1.0/include
 
 win32:CONFIG(release, debug|release): LIBS += -L/Users/steve/Desktop/C++Libraries/sqlite/Install/lib/release/ -lsqlite3.0
 else:win32:CONFIG(debug, debug|release): LIBS += -L/Users/steve/Desktop/C++Libraries/sqlite/Install/lib/debug/ -lsqlite3.0
@@ -703,3 +784,7 @@ else:unix: LIBS += -L/usr/local/Cellar/qtkeychain/0.12.0_1/lib/ -lqt5keychain.0.
 
 INCLUDEPATH +=  /usr/local/Cellar/qtkeychain/0.12.0_1/include \
                 /usr/local/Cellar/qtkeychain/0.12.0_1/include/qt5keychain \
+
+
+
+
