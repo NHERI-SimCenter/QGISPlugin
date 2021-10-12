@@ -1,0 +1,223 @@
+.TH r.mask 1 "" "GRASS 7.8.6RC3" "GRASS GIS User's Manual"
+.SH NAME
+\fI\fBr.mask.py\fR\fR  \- Creates a MASK for limiting raster operation.
+.SH KEYWORDS
+raster, mask
+.SH SYNOPSIS
+\fBr.mask.py\fR
+.br
+\fBr.mask.py \-\-help\fR
+.br
+\fBr.mask.py\fR [\-\fBir\fR]  [\fBraster\fR=\fIname\fR]   [\fBmaskcats\fR=\fIstring\fR]   [\fBvector\fR=\fIname\fR]   [\fBlayer\fR=\fIstring\fR]   [\fBcats\fR=\fIrange\fR]   [\fBwhere\fR=\fIsql_query\fR]   [\-\-\fBoverwrite\fR]  [\-\-\fBhelp\fR]  [\-\-\fBverbose\fR]  [\-\-\fBquiet\fR]  [\-\-\fBui\fR]
+.SS Flags:
+.IP "\fB\-i\fR" 4m
+.br
+Create inverse mask
+.IP "\fB\-r\fR" 4m
+.br
+Remove existing mask (overrides other options)
+.IP "\fB\-\-overwrite\fR" 4m
+.br
+Allow output files to overwrite existing files
+.IP "\fB\-\-help\fR" 4m
+.br
+Print usage summary
+.IP "\fB\-\-verbose\fR" 4m
+.br
+Verbose module output
+.IP "\fB\-\-quiet\fR" 4m
+.br
+Quiet module output
+.IP "\fB\-\-ui\fR" 4m
+.br
+Force launching GUI dialog
+.SS Parameters:
+.IP "\fBraster\fR=\fIname\fR" 4m
+.br
+Name of raster map to use as mask
+.IP "\fBmaskcats\fR=\fIstring\fR" 4m
+.br
+Raster values to use for mask
+.br
+Format: 1 2 3 thru 7 *
+.br
+Default: \fI*\fR
+.IP "\fBvector\fR=\fIname\fR" 4m
+.br
+Name of vector map to use as mask
+.br
+Or data source for direct OGR access
+.IP "\fBlayer\fR=\fIstring\fR" 4m
+.br
+Layer number or name (vector)
+.br
+Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.
+.br
+Default: \fI1\fR
+.IP "\fBcats\fR=\fIrange\fR" 4m
+.br
+Category values (vector)
+.br
+Example: 1,3,7\-9,13
+.IP "\fBwhere\fR=\fIsql_query\fR" 4m
+.br
+WHERE conditions of SQL statement without \(cqwhere\(cq keyword (vector)
+.br
+Example: income < 1000 and population >= 10000
+.SH DESCRIPTION
+\fI\fBr.mask\fR\fR \- Facilitates creation of a raster \(dqMASK\(dq map to
+control raster operations.
+.PP
+The MASK is applied when \fIreading\fR an existing GRASS raster map,
+for example when used as an input map in a module. The MASK will block out
+certain areas of a raster map from analysis and/or display, by \(dqhiding\(dq them
+from sight of other GRASS modules. Data falling within the boundaries of the
+MASK can be modified and operated upon by other GRASS raster modules; data
+falling outside the MASK is treated as if it were NULL.
+.PP
+By default, \fIr.mask\fR converts any non\-NULL value in the input map,
+including zero, to 1. All these areas will be part of the MASK (see the notes
+for more details). To only convert specific values (or range of values) to 1
+and the rest to NULL, use the \fImaskcats\fR parameter.
+.PP
+Because the MASK created with \fIr.mask\fR is actually only a reclass map
+named \(dqMASK\(dq, it can be copied, renamed, removed, and used in analyses, just
+like other GRASS raster map layers.
+.PP
+The user should be aware that a MASK remains in place until a user renames it
+to something other than \(dqMASK\(dq, or removes it. To remove a mask and restore
+raster operations to normal (i.e., all cells of the current region), remove the
+MASK by setting the \fB\-r\fR remove MASK flag (r.mask \-r).
+Alternatively, a mask can be removed using \fIg.remove\fR or by renaming it
+to any other name with \fIg.rename\fR.
+.SH NOTES
+The above method for specifying a \(dqmask\(dq may seem counterintuitive. Areas
+inside the MASK are not hidden; areas outside the MASK will be ignored until
+the MASK file is removed.
+.PP
+\fIr.mask\fR uses \fIr.reclass\fR to create a reclassification of an
+existing raster map and name it MASK. A reclass map takes up less
+space, but is affected by any changes to the underlying map from which it was
+created. The user can select category values from the input raster to use in the
+MASK with the \fImaskcats\fR parameter; if \fIr.mask\fR is run from the
+command line, the category values listed in \fImaskcats\fR must be quoted
+(see example below). Note that the \fImaskcats\fR can only be used if the
+input map is an integer map.
+.SS Different ways to create a MASK
+The \fIr.mask\fR function creates a MASK with values 1 and NULL. But note
+that a MASK can also be created using other functions that have a raster as
+output, by naming the output raster \(cqMASK\(cq. Such layers could have other
+values than 1 and NULL. The user should therefore be aware that grid cells
+in the MASK map containing NULL or 0 will replace data with
+NULL, while cells containing other values will allow data to pass through
+unaltered. This means that:
+.PP
+If a binary map with [0,1] values is used as input in \fIr.mask\fR, all
+raster cells with 0 and 1 will be part of the MASK. This is because
+\fIr.mask\fR converts all non\-NULL cells to 1.
+.br
+.nf
+\fC
+r.mapcalc \-s \(dqmap1 = round(rand(0,1))\(dq
+r.mask raster=map1
+\fR
+.fi
+On the other hand, if a binary map is used as an input in \fIg.copy\fR to create a MASK,
+only the raster cells with value 1 will be part of the MASK.
+.br
+.nf
+\fC
+r.mapcalc \-s \(dqmap2 = round(rand(0,1))\(dq
+g.copy raster=map2,MASK
+\fR
+.fi
+.SS Handling of floating\-point maps
+\fIr.mask\fR treats floating\-point maps the same as integer maps (except that
+floating maps are not allowed in combination with the \fImaskcats\fR
+parameter); all non\-NULL values of the input raster map are converted to 1 and
+are thus part of the MASK. In the example below, all raster cells are part of
+the MASK, i.e., nothing is blocked out from analysis and/or display.
+.br
+.nf
+\fC
+r.mapcalc \-s \(dqmap3 = rand(0.0,1.0)\(dq
+r.mask raster=map3
+\fR
+.fi
+However, when using another method than \fIr.mask\fR to create a mask,
+the user should be aware that the MASK is read as an integer map. If MASK is
+a floating\-point map, the values will be converted to integers using
+the map\(cqs quantisation rules (this defaults to round\-to\-nearest, but can be
+changed with r.quant).
+.br
+.nf
+\fC
+r.mapcalc \-s \(dqmap4 = rand(0.0,1.0)\(dq
+g.copy raster=map4,MASK
+\fR
+.fi
+In the example above, raster cells with a rounded value of 1 are part of
+the MASK, while raster cells with a rounded value of 0 are converted to NULL
+and consequently blocked out from analysis and/or display.
+.SH EXAMPLES
+The examples are based on the North Carolina sample dataset.
+.PP
+Create a raster mask, for contraining the calculation of
+univariate statistics of the elevation values for \(dqlakes\(dq:
+.br
+.nf
+\fC
+# set computation region to lakes raster map
+g.region raster=lakes \-p
+# use lakes as MASK
+r.mask raster=lakes
+# get statistics for elevation pixels of lakes:
+r.univar elevation
+\fR
+.fi
+Remove the raster mask (\(dqMASK\(dq map) with the \-r flag:
+.br
+.nf
+\fC
+r.mask \-r
+\fR
+.fi
+Creating a mask from selected categories in the North Carolina
+\(cqgeology_30m\(cq raster map:
+.br
+.nf
+\fC
+g.region raster=geology_30m \-p
+r.category geology_30m
+d.mon wx0
+d.rast geology_30m
+r.mask raster=geology_30m maskcats=\(dq217 thru 720\(dq
+d.mon wx0
+d.rast geology_30m
+\fR
+.fi
+.SH SEE ALSO
+\fI
+g.region,
+r.mapcalc,
+r.reclass,
+g.remove,
+g.rename
+r.quant
+\fR
+.SH AUTHOR
+Michael Barton, Arizona State University
+.SH SOURCE CODE
+.PP
+Available at: r.mask source code (history)
+.PP
+Main index |
+Raster index |
+Topics index |
+Keywords index |
+Graphical index |
+Full index
+.PP
+© 2003\-2021
+GRASS Development Team,
+GRASS GIS 7.8.6RC3 Reference Manual

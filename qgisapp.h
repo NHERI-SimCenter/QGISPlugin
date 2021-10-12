@@ -171,7 +171,7 @@ class QgsNetworkLoggerWidgetFactory;
 #include "qgsattributetablefiltermodel.h"
 #include "qgsmasterlayoutinterface.h"
 #include "qgsmaptoolselect.h"
-#include "ogr/qgsvectorlayersaveasdialog.h"
+#include "qgsvectorlayersaveasdialog.h"
 #include "qgis.h"
 #include "qgis_app.h"
 #include "qgsvectorlayerref.h"
@@ -181,9 +181,11 @@ class QgsNetworkLoggerWidgetFactory;
 #include <QGestureEvent>
 #include <QTapAndHoldGesture>
 
-#ifdef Q_OS_WIN
-#include <windows.h>
-#endif
+//#ifdef Q_OS_WIN
+//#define NOMINMAX
+//#include <windows.h>
+//#undef NOMINMAX
+//#endif
 
 class QgsLegendFilterButton;
 

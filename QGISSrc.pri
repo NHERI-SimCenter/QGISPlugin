@@ -250,34 +250,6 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/vertextool/qgslockedfeature.cpp \
         $$PATH_TO_QGIS_SRC/app/vertextool/qgsvertexeditor.cpp \
         $$PATH_TO_QGIS_SRC/app/vertextool/qgsvertextool.cpp \
-        $$PATH_TO_QGIS_SRC/core/network/qgsnetworkaccessmanager.cpp \
-        $$PATH_TO_QGIS_SRC/core/network/qgsnetworkdiskcache.cpp \
-        $$PATH_TO_QGIS_SRC/gui/auth/qgsauthsettingswidget.cpp \
-        $$PATH_TO_QGIS_SRC/gui/qgsdatasourcemanagerdialog.cpp \
-        $$PATH_TO_QGIS_SRC/gui/qgsdatumtransformdialog.cpp \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsafsfeatureiterator.cpp \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsafsprovider.cpp \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsafsshareddata.cpp \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsamsprovider.cpp \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsarcgisrestdataitemguiprovider.cpp \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsarcgisrestdataitems.cpp \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsarcgisrestsourceselect.cpp \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsarcgisrestsourcewidget.cpp \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsnewarcgisrestconnection.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgstilescalewidget.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmscapabilities.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmsconnection.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmsdataitemguiproviders.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmsdataitems.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmsprovider.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmsprovidergui.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmssourceselect.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmstsettingswidget.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmtsdimensions.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgsxyzconnection.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgsxyzconnectiondialog.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgsxyzsourceselect.cpp \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgsxyzsourcewidget.cpp \
         $$PATH_TO_QGIS_SRC/app/pointcloud/qgspointcloudlayerstylewidget.cpp \
         $$PATH_TO_QGIS_SRC/app/pointcloud/qgspointcloudelevationpropertieswidget.cpp \
         $$PATH_TO_QGIS_SRC/app/locator/qgslayertreelocatorfilter.cpp \
@@ -324,10 +296,14 @@ SOURCES += \
         $$PATH_TO_QGIS_EXT/libdxfrw/drw_classes.cpp \
         $$PATH_TO_QGIS_EXT/libdxfrw/drw_objects.cpp \
         $$PATH_TO_QGIS_EXT/libdxfrw/libdxfrw.cpp \
-        $$PATH_TO_QGIS_EXT/qt-unix-signals/sigwatch.cpp \
+        $$PATH_TO_QGIS_EXT/nmea/context.c \
+        $$PATH_TO_QGIS_EXT/nmea/gmath.c \
+        $$PATH_TO_QGIS_EXT/nmea/info.c \
+        $$PATH_TO_QGIS_EXT/nmea/parse.c \
+        $$PATH_TO_QGIS_EXT/nmea/sentence.c \
+        $$PATH_TO_QGIS_EXT/nmea/time.c \
+        $$PATH_TO_QGIS_EXT/nmea/tok.c \
 
-#HEADERS += \
-#        $$PATH_TO_QGIS/Install/include/qgis_app.h \
 
 HEADERS += \
         $$PATH_TO_QGIS_SRC/app/browser/qgsinbuiltdataitemproviders.h  \
@@ -579,35 +555,6 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/vertextool/qgslockedfeature.h \
         $$PATH_TO_QGIS_SRC/app/vertextool/qgsvertexeditor.h \
         $$PATH_TO_QGIS_SRC/app/vertextool/qgsvertextool.h \
-        $$PATH_TO_QGIS_SRC/core/network/qgsnetworkaccessmanager.h \
-        $$PATH_TO_QGIS_SRC/core/network/qgsnetworkdiskcache.h \
-        $$PATH_TO_QGIS_SRC/core/qgswebview.h \
-        $$PATH_TO_QGIS_SRC/gui/auth/qgsauthsettingswidget.h \
-        $$PATH_TO_QGIS_SRC/gui/qgsdatasourcemanagerdialog.h \
-        $$PATH_TO_QGIS_SRC/gui/qgsdatumtransformdialog.h \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsafsfeatureiterator.h \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsafsprovider.h \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsafsshareddata.h \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsamsprovider.h \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsarcgisrestdataitemguiprovider.h \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsarcgisrestdataitems.h \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsarcgisrestsourceselect.h \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsarcgisrestsourcewidget.h \
-        $$PATH_TO_QGIS_SRC/providers/arcgisrest/qgsnewarcgisrestconnection.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgstilescalewidget.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmscapabilities.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmsconnection.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmsdataitemguiproviders.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmsdataitems.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmsprovider.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmsprovidergui.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmssourceselect.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmstsettingswidget.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgswmtsdimensions.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgsxyzconnection.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgsxyzconnectiondialog.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgsxyzsourceselect.h \
-        $$PATH_TO_QGIS_SRC/providers/wms/qgsxyzsourcewidget.h \
         $$PATH_TO_QGIS_SRC/app/pointcloud/qgspointcloudlayerstylewidget.h \
         $$PATH_TO_QGIS_SRC/app/pointcloud/qgspointcloudelevationpropertieswidget.h \
         $$PATH_TO_QGIS_SRC/app/locator/qgslayertreelocatorfilter.h \
@@ -659,8 +606,27 @@ HEADERS += \
         $$PATH_TO_QGIS_EXT/libdxfrw/drw_entities.h \
         $$PATH_TO_QGIS_EXT/libdxfrw/drw_classes.h \
         $$PATH_TO_QGIS_EXT/libdxfrw/drw_objects.h \
-        $$PATH_TO_QGIS_EXT/libdxfrw/libdxfrw.h \
+        $$PATH_TO_QGIS_EXT/libdxfrw/libdxfrw.h \      
+        $$PATH_TO_QGIS_EXT/nmea/context.h \
+        $$PATH_TO_QGIS_EXT/nmea/gmath.h \
+        $$PATH_TO_QGIS_EXT/nmea/info.h \
+        $$PATH_TO_QGIS_EXT/nmea/nmeatime.h \
+        $$PATH_TO_QGIS_EXT/nmea/parse.h \
+        $$PATH_TO_QGIS_EXT/nmea/parser.h \
+        $$PATH_TO_QGIS_EXT/nmea/README \
+        $$PATH_TO_QGIS_EXT/nmea/sentence.h \
+        $$PATH_TO_QGIS_EXT/nmea/tok.h \
+        $$PATH_TO_QGIS_EXT/nmea/units.h \
+
+mac {
+
+SOURCES += \
+        $$PATH_TO_QGIS_EXT/qt-unix-signals/sigwatch.cpp \
+
+HEADERS += \
         $$PATH_TO_QGIS_EXT/qt-unix-signals/sigwatch.h \
+
+}
 
 
 INCLUDEPATH +=  $$PATH_TO_QGIS_EXT \
@@ -674,9 +640,6 @@ INCLUDEPATH +=  $$PATH_TO_QGIS_EXT \
                 $$PATH_TO_QGIS_EXT/opencl-clhpp/include \
                 $$PATH_TO_QGIS_SRC/app \
                 $$PATH_TO_QGIS_SRC/ui \
-                $$PATH_TO_QGIS_DEPS_INC \
-                $$PATH_TO_QGIS_SRC/analysis \
-                $$PATH_TO_QGIS_SRC/app \
                 $$PATH_TO_QGIS_SRC/app/3d \
                 $$PATH_TO_QGIS_SRC/app/browser \
                 $$PATH_TO_QGIS_SRC/app/decorations \
@@ -695,24 +658,6 @@ INCLUDEPATH +=  $$PATH_TO_QGIS_EXT \
                 $$PATH_TO_QGIS_SRC/app/pointcloud \
                 $$PATH_TO_QGIS_SRC/app/pluginmanager \
                 $$PATH_TO_QGIS_SRC/app/vectortile \
-                $$PATH_TO_QGIS_SRC/3d \
-                $$PATH_TO_QGIS_SRC/3d/chunks \
-                $$PATH_TO_QGIS_SRC/3d/materials \
-                $$PATH_TO_QGIS_SRC/3d/mesh \
-                $$PATH_TO_QGIS_SRC/3d/processing \
-                $$PATH_TO_QGIS_SRC/3d/shaders \
-                $$PATH_TO_QGIS_SRC/3d/symbols \
-                $$PATH_TO_QGIS_SRC/3d/terrain \
-                $$PATH_TO_QGIS_SRC/core \
-                $$PATH_TO_QGIS_SRC/core/labeling \
-                $$PATH_TO_QGIS_SRC/core/raster \
-                $$PATH_TO_QGIS_SRC/core/scalebar \
-                $$PATH_TO_QGIS_SRC/gui \
-                $$PATH_TO_QGIS_SRC/gui/attributetable \
-                $$PATH_TO_QGIS_SRC/gui/layout \
-                $$PATH_TO_QGIS_SRC/gui/symbology \
-                $$PATH_TO_QGIS_SRC/providers/arcgisrest \
-                $$PATH_TO_QGIS_SRC/providers/wms \
 
 
 # Default rules for deployment.
@@ -720,9 +665,11 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-INCLUDEPATH += $$PATH_TO_INSTALL/include/qgis
 INCLUDEPATH += $$PATH_TO_INSTALL/include
 
+#### QGIS libs ####
+win32: LIBS += -L$$PATH_TO_INSTALL\lib\ -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgis_core
+else:unix: LIBS += -L$$PATH_TO_INSTALL/lib/ -lqgis_core -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgisgrass7
 
 # Frameworks - only for mac
 mac {
@@ -739,51 +686,37 @@ QMAKE_LFLAGS += -F/opt/QGIS/qgis-deps-0.8.0/stage/lib
 INCLUDEPATH += /opt/QGIS/qgis-deps-0.8.0/stage/lib/qwt.framework/Headers
 LIBS += -framework qwt
 
+LIBS += -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib -lsqlite3
+
+LIBS += -L/usr/local/Cellar/qtkeychain/0.12.0_1/lib/ -lqt5keychain.0.12.0
+
+INCLUDEPATH +=  /usr/local/Cellar/qtkeychain/0.12.0_1/include \
+                /usr/local/Cellar/qtkeychain/0.12.0_1/include/qt5keychain \
+
+
+LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lgdal -lproj
+
+LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/ -lqscintilla2_qt5.15.0.1
+
+INCLUDEPATH += /usr/local/Cellar/qscintilla2/2.12.1/include
+
 } else {
 
+CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_DEPS/apps/Qt5/lib/ -lqca-qt5 -lqwt -lqt5keychain -lqscintilla2
+CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_DEPS/apps/Qt5/lib/ -lqca-qt5d -lqwtd -lqt5keychaind -lqscintilla2d
 
+LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lproj -lgdal_i -lsqlite3_i -lopencl
+
+INCLUDEPATH +=  $$PATH_TO_QGIS_DEPS/include \
+                $$PATH_TO_QGIS_DEPS/apps/Qt5/include \
+                $$PATH_TO_QGIS_DEPS/apps/Qt5/include/QtCrypto \
+                $$PATH_TO_QGIS_DEPS/apps/Qt5/include/qt5keychain \
+                $$PATH_TO_QGIS_DEPS/apps/Qt5/include/qwt6 \
 
 }
 
 
-#### QGIS libs ####
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PATH_TO_INSTALL/lib/release/
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_INSTALL/lib/debug/
-else:unix: LIBS += -L$$PATH_TO_INSTALL/lib/ -lqgis_core -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgisgrass7
-
-
-#### External libs ####
-
-INCLUDEPATH += $$PATH_TO_QGIS_DEPS/include
-
-win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/gdal/3.3.2_2/lib/release/ -lgdal.29
-else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/gdal/3.3.2_2/lib/debug/ -lgdal.29
-else:unix: LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lgdal -lproj
-
-
-win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/release/ -lqscintilla2_qt5.15.0.1
-else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/debug/ -lqscintilla2_qt5.15.0.1
-else:unix: LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/ -lqscintilla2_qt5.15.0.1
-
-INCLUDEPATH += /usr/local/Cellar/qscintilla2/2.12.1/include
-
-#win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/release/ -lproj.22
-#else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/debug/ -lproj.22
-#else:unix: LIBS += -L/usr/local/Cellar/proj/8.1.0/lib/ -lproj.22
-
-#INCLUDEPATH += /usr/local/Cellar/proj/8.1.0/include
-
-win32:CONFIG(release, debug|release): LIBS += -L/Users/steve/Desktop/C++Libraries/sqlite/Install/lib/release/ -lsqlite3.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L/Users/steve/Desktop/C++Libraries/sqlite/Install/lib/debug/ -lsqlite3.0
-else:unix: LIBS += -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib -lsqlite3
-
-win32:CONFIG(release, debug|release): LIBS += -L/usr/local/Cellar/qtkeychain/0.12.0_1/lib/release/ -lqt5keychain.0.12.0
-else:win32:CONFIG(debug, debug|release): LIBS += -L/usr/local/Cellar/qtkeychain/0.12.0_1/lib/debug/ -lqt5keychain.0.12.0
-else:unix: LIBS += -L/usr/local/Cellar/qtkeychain/0.12.0_1/lib/ -lqt5keychain.0.12.0
-
-INCLUDEPATH +=  /usr/local/Cellar/qtkeychain/0.12.0_1/include \
-                /usr/local/Cellar/qtkeychain/0.12.0_1/include/qt5keychain \
 
 
 

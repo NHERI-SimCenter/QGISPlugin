@@ -1,0 +1,518 @@
+cyrilc|Cyrillic|0|C:\OSGeo4W\apps\grass\grass78\fonts\cyrilc.hmp|0|utf-8|
+gothgbt|Gothic Great Britain triplex|0|C:\OSGeo4W\apps\grass\grass78\fonts\gothgbt.hmp|0|utf-8|
+gothgrt|Gothic German triplex|0|C:\OSGeo4W\apps\grass\grass78\fonts\gothgrt.hmp|0|utf-8|
+gothitt|Gothic Italian triplex|0|C:\OSGeo4W\apps\grass\grass78\fonts\gothitt.hmp|0|utf-8|
+greekc|Greek complex|0|C:\OSGeo4W\apps\grass\grass78\fonts\greekc.hmp|0|utf-8|
+greekcs|Greek complex script|0|C:\OSGeo4W\apps\grass\grass78\fonts\greekcs.hmp|0|utf-8|
+greekp|Greek plain|0|C:\OSGeo4W\apps\grass\grass78\fonts\greekp.hmp|0|utf-8|
+greeks|Greek simplex|0|C:\OSGeo4W\apps\grass\grass78\fonts\greeks.hmp|0|utf-8|
+italicc|Italian complex|0|C:\OSGeo4W\apps\grass\grass78\fonts\italicc.hmp|0|utf-8|
+italiccs|Italian complex small|0|C:\OSGeo4W\apps\grass\grass78\fonts\italiccs.hmp|0|utf-8|
+italict|Italian triplex|0|C:\OSGeo4W\apps\grass\grass78\fonts\italict.hmp|0|utf-8|
+romanc|Roman complex|0|C:\OSGeo4W\apps\grass\grass78\fonts\romanc.hmp|0|utf-8|
+romancs|Roman complex small|0|C:\OSGeo4W\apps\grass\grass78\fonts\romancs.hmp|0|utf-8|
+romand|Roman duplex|0|C:\OSGeo4W\apps\grass\grass78\fonts\romand.hmp|0|utf-8|
+romans|Roman simplex|0|C:\OSGeo4W\apps\grass\grass78\fonts\romans.hmp|0|utf-8|
+romant|Roman triplex|0|C:\OSGeo4W\apps\grass\grass78\fonts\romant.hmp|0|utf-8|
+scriptc|Script complex|0|C:\OSGeo4W\apps\grass\grass78\fonts\scriptc.hmp|0|utf-8|
+scripts|Script simplex|0|C:\OSGeo4W\apps\grass\grass78\fonts\scripts.hmp|0|utf-8|
+AGENCYB|Agency FB Bold|1|C:\WINDOWS\Fonts\AGENCYB.TTF|0|utf-8|
+AGENCYR|Agency FB Regular|1|C:\WINDOWS\Fonts\AGENCYR.TTF|0|utf-8|
+ALGER|Algerian Regular|1|C:\WINDOWS\Fonts\ALGER.TTF|0|utf-8|
+ANTQUAB|Book Antiqua Bold|1|C:\WINDOWS\Fonts\ANTQUAB.TTF|0|utf-8|
+ANTQUABI|Book Antiqua Bold Italic|1|C:\WINDOWS\Fonts\ANTQUABI.TTF|0|utf-8|
+ANTQUAI|Book Antiqua Italic|1|C:\WINDOWS\Fonts\ANTQUAI.TTF|0|utf-8|
+arial|Arial Regular|1|C:\WINDOWS\Fonts\arial.ttf|0|utf-8|
+arialbd|Arial Bold|1|C:\WINDOWS\Fonts\arialbd.ttf|0|utf-8|
+arialbi|Arial Bold Italic|1|C:\WINDOWS\Fonts\arialbi.ttf|0|utf-8|
+ariali|Arial Italic|1|C:\WINDOWS\Fonts\ariali.ttf|0|utf-8|
+ARIALN|Arial Narrow|1|C:\WINDOWS\Fonts\ARIALN.TTF|0|utf-8|
+ARIALNB|Arial Narrow Bold|1|C:\WINDOWS\Fonts\ARIALNB.TTF|0|utf-8|
+ARIALNBI|Arial Narrow Bold Italic|1|C:\WINDOWS\Fonts\ARIALNBI.TTF|0|utf-8|
+ARIALNI|Arial Narrow Italic|1|C:\WINDOWS\Fonts\ARIALNI.TTF|0|utf-8|
+ARIALUNI|Arial Unicode MS Regular|1|C:\WINDOWS\Fonts\ARIALUNI.TTF|0|utf-8|
+ariblk|Arial Black|1|C:\WINDOWS\Fonts\ariblk.ttf|0|utf-8|
+ARLRDBD|Arial Rounded MT Bold Regular|1|C:\WINDOWS\Fonts\ARLRDBD.TTF|0|utf-8|
+bahnschrift|Bahnschrift Regular|1|C:\WINDOWS\Fonts\bahnschrift.ttf|0|utf-8|
+BASKVILL|Baskerville Old Face Regular|1|C:\WINDOWS\Fonts\BASKVILL.TTF|0|utf-8|
+BAUHS93|Bauhaus 93 Regular|1|C:\WINDOWS\Fonts\BAUHS93.TTF|0|utf-8|
+bcsdatamatrix|BCSDatamatrix Regular|1|C:\WINDOWS\Fonts\bcsdatamatrix.ttf|0|utf-8|
+BELL|Bell MT Regular|1|C:\WINDOWS\Fonts\BELL.TTF|0|utf-8|
+BELLB|Bell MT Bold|1|C:\WINDOWS\Fonts\BELLB.TTF|0|utf-8|
+BELLI|Bell MT Italic|1|C:\WINDOWS\Fonts\BELLI.TTF|0|utf-8|
+BERNHC|Bernard MT Condensed Regular|1|C:\WINDOWS\Fonts\BERNHC.TTF|0|utf-8|
+BKANT|Book Antiqua Regular|1|C:\WINDOWS\Fonts\BKANT.TTF|0|utf-8|
+BOD_B|Bodoni MT Bold|1|C:\WINDOWS\Fonts\BOD_B.TTF|0|utf-8|
+BOD_BI|Bodoni MT Bold Italic|1|C:\WINDOWS\Fonts\BOD_BI.TTF|0|utf-8|
+BOD_BLAI|Bodoni MT Black Italic|1|C:\WINDOWS\Fonts\BOD_BLAI.TTF|0|utf-8|
+BOD_BLAR|Bodoni MT Black|1|C:\WINDOWS\Fonts\BOD_BLAR.TTF|0|utf-8|
+BOD_CB|Bodoni MT Condensed Bold|1|C:\WINDOWS\Fonts\BOD_CB.TTF|0|utf-8|
+BOD_CBI|Bodoni MT Condensed Bold Italic|1|C:\WINDOWS\Fonts\BOD_CBI.TTF|0|utf-8|
+BOD_CI|Bodoni MT Condensed Italic|1|C:\WINDOWS\Fonts\BOD_CI.TTF|0|utf-8|
+BOD_CR|Bodoni MT Condensed|1|C:\WINDOWS\Fonts\BOD_CR.TTF|0|utf-8|
+BOD_I|Bodoni MT Italic|1|C:\WINDOWS\Fonts\BOD_I.TTF|0|utf-8|
+BOD_PSTC|Bodoni MT Poster Compressed|1|C:\WINDOWS\Fonts\BOD_PSTC.TTF|0|utf-8|
+BOD_R|Bodoni MT Regular|1|C:\WINDOWS\Fonts\BOD_R.TTF|0|utf-8|
+BOOKOS|Bookman Old Style Regular|1|C:\WINDOWS\Fonts\BOOKOS.TTF|0|utf-8|
+BOOKOSB|Bookman Old Style Bold|1|C:\WINDOWS\Fonts\BOOKOSB.TTF|0|utf-8|
+BOOKOSBI|Bookman Old Style Bold Italic|1|C:\WINDOWS\Fonts\BOOKOSBI.TTF|0|utf-8|
+BOOKOSI|Bookman Old Style Italic|1|C:\WINDOWS\Fonts\BOOKOSI.TTF|0|utf-8|
+BRADHITC|Bradley Hand ITC Regular|1|C:\WINDOWS\Fonts\BRADHITC.TTF|0|utf-8|
+BRITANIC|Britannic Bold Regular|1|C:\WINDOWS\Fonts\BRITANIC.TTF|0|utf-8|
+BRLNSB|Berlin Sans FB Bold|1|C:\WINDOWS\Fonts\BRLNSB.TTF|0|utf-8|
+BRLNSDB|Berlin Sans FB Demi Bold|1|C:\WINDOWS\Fonts\BRLNSDB.TTF|0|utf-8|
+BRLNSR|Berlin Sans FB Regular|1|C:\WINDOWS\Fonts\BRLNSR.TTF|0|utf-8|
+BROADW|Broadway Regular|1|C:\WINDOWS\Fonts\BROADW.TTF|0|utf-8|
+BRUSHSCI|Brush Script MT Italic|1|C:\WINDOWS\Fonts\BRUSHSCI.TTF|0|utf-8|
+BSSYM7|Bookshelf Symbol 7 Regular|1|C:\WINDOWS\Fonts\BSSYM7.TTF|0|utf-8|
+calibri|Calibri Regular|1|C:\WINDOWS\Fonts\calibri.ttf|0|utf-8|
+calibrib|Calibri Bold|1|C:\WINDOWS\Fonts\calibrib.ttf|0|utf-8|
+calibrii|Calibri Italic|1|C:\WINDOWS\Fonts\calibrii.ttf|0|utf-8|
+calibril|Calibri Light|1|C:\WINDOWS\Fonts\calibril.ttf|0|utf-8|
+calibrili|Calibri Light Italic|1|C:\WINDOWS\Fonts\calibrili.ttf|0|utf-8|
+calibriz|Calibri Bold Italic|1|C:\WINDOWS\Fonts\calibriz.ttf|0|utf-8|
+CALIFB|Californian FB Bold|1|C:\WINDOWS\Fonts\CALIFB.TTF|0|utf-8|
+CALIFI|Californian FB Italic|1|C:\WINDOWS\Fonts\CALIFI.TTF|0|utf-8|
+CALIFR|Californian FB Regular|1|C:\WINDOWS\Fonts\CALIFR.TTF|0|utf-8|
+CALIST|Calisto MT Regular|1|C:\WINDOWS\Fonts\CALIST.TTF|0|utf-8|
+CALISTB|Calisto MT Bold|1|C:\WINDOWS\Fonts\CALISTB.TTF|0|utf-8|
+CALISTBI|Calisto MT Bold Italic|1|C:\WINDOWS\Fonts\CALISTBI.TTF|0|utf-8|
+CALISTI|Calisto MT Italic|1|C:\WINDOWS\Fonts\CALISTI.TTF|0|utf-8|
+cambria|Cambria Regular|1|C:\WINDOWS\Fonts\cambria.ttc|0|utf-8|
+cambriab|Cambria Bold|1|C:\WINDOWS\Fonts\cambriab.ttf|0|utf-8|
+cambriai|Cambria Italic|1|C:\WINDOWS\Fonts\cambriai.ttf|0|utf-8|
+cambriaz|Cambria Bold Italic|1|C:\WINDOWS\Fonts\cambriaz.ttf|0|utf-8|
+Candara|Candara Regular|1|C:\WINDOWS\Fonts\Candara.ttf|0|utf-8|
+Candarab|Candara Bold|1|C:\WINDOWS\Fonts\Candarab.ttf|0|utf-8|
+Candarai|Candara Italic|1|C:\WINDOWS\Fonts\Candarai.ttf|0|utf-8|
+Candaral|Candara Light|1|C:\WINDOWS\Fonts\Candaral.ttf|0|utf-8|
+Candarali|Candara Light Italic|1|C:\WINDOWS\Fonts\Candarali.ttf|0|utf-8|
+Candaraz|Candara Bold Italic|1|C:\WINDOWS\Fonts\Candaraz.ttf|0|utf-8|
+CASTELAR|Castellar Regular|1|C:\WINDOWS\Fonts\CASTELAR.TTF|0|utf-8|
+CENSCBK|Century Schoolbook Regular|1|C:\WINDOWS\Fonts\CENSCBK.TTF|0|utf-8|
+CENTAUR|Centaur Regular|1|C:\WINDOWS\Fonts\CENTAUR.TTF|0|utf-8|
+CENTURY|Century Regular|1|C:\WINDOWS\Fonts\CENTURY.TTF|0|utf-8|
+CHILLER|Chiller Regular|1|C:\WINDOWS\Fonts\CHILLER.TTF|0|utf-8|
+COB_____|Courant Bold|1|C:\WINDOWS\Fonts\COB_____.ttf|0|utf-8|
+COBO____|Courant Bold Italic|1|C:\WINDOWS\Fonts\COBO____.ttf|0|utf-8|
+COLONNA|Colonna MT Regular|1|C:\WINDOWS\Fonts\COLONNA.TTF|0|utf-8|
+comic|Comic Sans MS Regular|1|C:\WINDOWS\Fonts\comic.ttf|0|utf-8|
+comicbd|Comic Sans MS Bold|1|C:\WINDOWS\Fonts\comicbd.ttf|0|utf-8|
+comici|Comic Sans MS Italic|1|C:\WINDOWS\Fonts\comici.ttf|0|utf-8|
+comicz|Comic Sans MS Bold Italic|1|C:\WINDOWS\Fonts\comicz.ttf|0|utf-8|
+CON_____|Courant Regular|1|C:\WINDOWS\Fonts\CON_____.ttf|0|utf-8|
+consola|Consolas Regular|1|C:\WINDOWS\Fonts\consola.ttf|0|utf-8|
+consolab|Consolas Bold|1|C:\WINDOWS\Fonts\consolab.ttf|0|utf-8|
+consolai|Consolas Italic|1|C:\WINDOWS\Fonts\consolai.ttf|0|utf-8|
+consolaz|Consolas Bold Italic|1|C:\WINDOWS\Fonts\consolaz.ttf|0|utf-8|
+constan|Constantia Regular|1|C:\WINDOWS\Fonts\constan.ttf|0|utf-8|
+constanb|Constantia Bold|1|C:\WINDOWS\Fonts\constanb.ttf|0|utf-8|
+constani|Constantia Italic|1|C:\WINDOWS\Fonts\constani.ttf|0|utf-8|
+constanz|Constantia Bold Italic|1|C:\WINDOWS\Fonts\constanz.ttf|0|utf-8|
+COO_____|Courant Italic|1|C:\WINDOWS\Fonts\COO_____.ttf|0|utf-8|
+COOPBL|Cooper Black Regular|1|C:\WINDOWS\Fonts\COOPBL.TTF|0|utf-8|
+COPRGTB|Copperplate Gothic Bold Regular|1|C:\WINDOWS\Fonts\COPRGTB.TTF|0|utf-8|
+COPRGTL|Copperplate Gothic Light Regular|1|C:\WINDOWS\Fonts\COPRGTL.TTF|0|utf-8|
+corbel|Corbel Regular|1|C:\WINDOWS\Fonts\corbel.ttf|0|utf-8|
+corbelb|Corbel Bold|1|C:\WINDOWS\Fonts\corbelb.ttf|0|utf-8|
+corbeli|Corbel Italic|1|C:\WINDOWS\Fonts\corbeli.ttf|0|utf-8|
+corbell|Corbel Light|1|C:\WINDOWS\Fonts\corbell.ttf|0|utf-8|
+corbelli|Corbel Light Italic|1|C:\WINDOWS\Fonts\corbelli.ttf|0|utf-8|
+corbelz|Corbel Bold Italic|1|C:\WINDOWS\Fonts\corbelz.ttf|0|utf-8|
+cour|Courier New Regular|1|C:\WINDOWS\Fonts\cour.ttf|0|utf-8|
+courbd|Courier New Bold|1|C:\WINDOWS\Fonts\courbd.ttf|0|utf-8|
+courbi|Courier New Bold Italic|1|C:\WINDOWS\Fonts\courbi.ttf|0|utf-8|
+couri|Courier New Italic|1|C:\WINDOWS\Fonts\couri.ttf|0|utf-8|
+CURLZ___|Curlz MT Regular|1|C:\WINDOWS\Fonts\CURLZ___.TTF|0|utf-8|
+DejaVuSans|DejaVu Sans Book|1|C:\WINDOWS\Fonts\DejaVuSans.ttf|0|utf-8|
+DejaVuSans-Bold|DejaVu Sans Bold|1|C:\WINDOWS\Fonts\DejaVuSans-Bold.ttf|0|utf-8|
+DejaVuSans-BoldOblique|DejaVu Sans Bold Oblique|1|C:\WINDOWS\Fonts\DejaVuSans-BoldOblique.ttf|0|utf-8|
+DejaVuSans-ExtraLight|DejaVu Sans ExtraLight|1|C:\WINDOWS\Fonts\DejaVuSans-ExtraLight.ttf|0|utf-8|
+DejaVuSans-Oblique|DejaVu Sans Oblique|1|C:\WINDOWS\Fonts\DejaVuSans-Oblique.ttf|0|utf-8|
+DejaVuSansCondensed|DejaVu Sans Condensed|1|C:\WINDOWS\Fonts\DejaVuSansCondensed.ttf|0|utf-8|
+DejaVuSansCondensed-Bold|DejaVu Sans Condensed Bold|1|C:\WINDOWS\Fonts\DejaVuSansCondensed-Bold.ttf|0|utf-8|
+DejaVuSansCondensed-BoldOblique|DejaVu Sans Condensed Bold Oblique|1|C:\WINDOWS\Fonts\DejaVuSansCondensed-BoldOblique.ttf|0|utf-8|
+DejaVuSansCondensed-Oblique|DejaVu Sans Condensed Oblique|1|C:\WINDOWS\Fonts\DejaVuSansCondensed-Oblique.ttf|0|utf-8|
+DejaVuSansMono|DejaVu Sans Mono Book|1|C:\WINDOWS\Fonts\DejaVuSansMono.ttf|0|utf-8|
+DejaVuSansMono-Bold|DejaVu Sans Mono Bold|1|C:\WINDOWS\Fonts\DejaVuSansMono-Bold.ttf|0|utf-8|
+DejaVuSansMono-BoldOblique|DejaVu Sans Mono Bold Oblique|1|C:\WINDOWS\Fonts\DejaVuSansMono-BoldOblique.ttf|0|utf-8|
+DejaVuSansMono-Oblique|DejaVu Sans Mono Oblique|1|C:\WINDOWS\Fonts\DejaVuSansMono-Oblique.ttf|0|utf-8|
+DejaVuSerif|DejaVu Serif Book|1|C:\WINDOWS\Fonts\DejaVuSerif.ttf|0|utf-8|
+DejaVuSerif-Bold|DejaVu Serif Bold|1|C:\WINDOWS\Fonts\DejaVuSerif-Bold.ttf|0|utf-8|
+DejaVuSerif-BoldItalic|DejaVu Serif Bold Italic|1|C:\WINDOWS\Fonts\DejaVuSerif-BoldItalic.ttf|0|utf-8|
+DejaVuSerif-Italic|DejaVu Serif Italic|1|C:\WINDOWS\Fonts\DejaVuSerif-Italic.ttf|0|utf-8|
+DejaVuSerifCondensed|DejaVu Serif Condensed|1|C:\WINDOWS\Fonts\DejaVuSerifCondensed.ttf|0|utf-8|
+DejaVuSerifCondensed-Bold|DejaVu Serif Condensed Bold|1|C:\WINDOWS\Fonts\DejaVuSerifCondensed-Bold.ttf|0|utf-8|
+DejaVuSerifCondensed-BoldItalic|DejaVu Serif Condensed Bold Italic|1|C:\WINDOWS\Fonts\DejaVuSerifCondensed-BoldItalic.ttf|0|utf-8|
+DejaVuSerifCondensed-Italic|DejaVu Serif Condensed Italic|1|C:\WINDOWS\Fonts\DejaVuSerifCondensed-Italic.ttf|0|utf-8|
+ebrima|Ebrima Regular|1|C:\WINDOWS\Fonts\ebrima.ttf|0|utf-8|
+ebrimabd|Ebrima Bold|1|C:\WINDOWS\Fonts\ebrimabd.ttf|0|utf-8|
+ELEPHNT|Elephant Regular|1|C:\WINDOWS\Fonts\ELEPHNT.TTF|0|utf-8|
+ELEPHNTI|Elephant Italic|1|C:\WINDOWS\Fonts\ELEPHNTI.TTF|0|utf-8|
+ENGR|Engravers MT Regular|1|C:\WINDOWS\Fonts\ENGR.TTF|0|utf-8|
+ERASBD|Eras Bold ITC Regular|1|C:\WINDOWS\Fonts\ERASBD.TTF|0|utf-8|
+ERASDEMI|Eras Demi ITC Regular|1|C:\WINDOWS\Fonts\ERASDEMI.TTF|0|utf-8|
+ERASLGHT|Eras Light ITC Regular|1|C:\WINDOWS\Fonts\ERASLGHT.TTF|0|utf-8|
+ERASMD|Eras Medium ITC Regular|1|C:\WINDOWS\Fonts\ERASMD.TTF|0|utf-8|
+ESSTIX10|ESSTIXTen Regular|1|C:\WINDOWS\Fonts\ESSTIX10.TTF|0|utf-8|
+ESSTIX11|ESSTIXEleven Regular|1|C:\WINDOWS\Fonts\ESSTIX11.TTF|0|utf-8|
+ESSTIX12|ESSTIXTwelve Regular|1|C:\WINDOWS\Fonts\ESSTIX12.TTF|0|utf-8|
+ESSTIX13|ESSTIXThirteen Regular|1|C:\WINDOWS\Fonts\ESSTIX13.TTF|0|utf-8|
+ESSTIX14|ESSTIXFourteen Regular|1|C:\WINDOWS\Fonts\ESSTIX14.TTF|0|utf-8|
+ESSTIX15|ESSTIXFifteen Regular|1|C:\WINDOWS\Fonts\ESSTIX15.TTF|0|utf-8|
+ESSTIX16|ESSTIXSixteen Regular|1|C:\WINDOWS\Fonts\ESSTIX16.TTF|0|utf-8|
+ESSTIX17|ESSTIXSeventeen Regular|1|C:\WINDOWS\Fonts\ESSTIX17.TTF|0|utf-8|
+ESSTIX1_|ESSTIXOne Regular|1|C:\WINDOWS\Fonts\ESSTIX1_.TTF|0|utf-8|
+ESSTIX2_|ESSTIXTwo Regular|1|C:\WINDOWS\Fonts\ESSTIX2_.TTF|0|utf-8|
+ESSTIX3_|ESSTIXThree Regular|1|C:\WINDOWS\Fonts\ESSTIX3_.TTF|0|utf-8|
+ESSTIX4_|ESSTIXFour Regular|1|C:\WINDOWS\Fonts\ESSTIX4_.TTF|0|utf-8|
+ESSTIX5_|ESSTIXFive Regular|1|C:\WINDOWS\Fonts\ESSTIX5_.TTF|0|utf-8|
+ESSTIX6_|ESSTIXSix Regular|1|C:\WINDOWS\Fonts\ESSTIX6_.TTF|0|utf-8|
+ESSTIX7_|ESSTIXSeven Regular|1|C:\WINDOWS\Fonts\ESSTIX7_.TTF|0|utf-8|
+ESSTIX8_|ESSTIXEight Regular|1|C:\WINDOWS\Fonts\ESSTIX8_.TTF|0|utf-8|
+ESSTIX9_|ESSTIXNine Regular|1|C:\WINDOWS\Fonts\ESSTIX9_.TTF|0|utf-8|
+euclid|Euclid Regular|1|C:\WINDOWS\Fonts\euclid.ttf|0|utf-8|
+euclid_01|Euclid Regular|1|C:\WINDOWS\Fonts\euclid_01.ttf|0|utf-8|
+euclid_02|Euclid Regular|1|C:\WINDOWS\Fonts\euclid_02.ttf|0|utf-8|
+euclid_03|Euclid Regular|1|C:\WINDOWS\Fonts\euclid_03.ttf|0|utf-8|
+euclid_04|Euclid Regular|1|C:\WINDOWS\Fonts\euclid_04.ttf|0|utf-8|
+euclidb|Euclid Bold|1|C:\WINDOWS\Fonts\euclidb.ttf|0|utf-8|
+euclidb_01|Euclid Bold|1|C:\WINDOWS\Fonts\euclidb_01.ttf|0|utf-8|
+euclidb_02|Euclid Bold|1|C:\WINDOWS\Fonts\euclidb_02.ttf|0|utf-8|
+euclidb_03|Euclid Bold|1|C:\WINDOWS\Fonts\euclidb_03.ttf|0|utf-8|
+euclidb_04|Euclid Bold|1|C:\WINDOWS\Fonts\euclidb_04.ttf|0|utf-8|
+euclidbi|Euclid Bold Italic|1|C:\WINDOWS\Fonts\euclidbi.ttf|0|utf-8|
+euclidbi_01|Euclid Bold Italic|1|C:\WINDOWS\Fonts\euclidbi_01.ttf|0|utf-8|
+euclidbi_02|Euclid Bold Italic|1|C:\WINDOWS\Fonts\euclidbi_02.ttf|0|utf-8|
+euclidbi_03|Euclid Bold Italic|1|C:\WINDOWS\Fonts\euclidbi_03.ttf|0|utf-8|
+euclidbi_04|Euclid Bold Italic|1|C:\WINDOWS\Fonts\euclidbi_04.ttf|0|utf-8|
+euclidi|Euclid Italic|1|C:\WINDOWS\Fonts\euclidi.ttf|0|utf-8|
+euclidi_01|Euclid Italic|1|C:\WINDOWS\Fonts\euclidi_01.ttf|0|utf-8|
+euclidi_02|Euclid Italic|1|C:\WINDOWS\Fonts\euclidi_02.ttf|0|utf-8|
+euclidi_03|Euclid Italic|1|C:\WINDOWS\Fonts\euclidi_03.ttf|0|utf-8|
+euclidi_04|Euclid Italic|1|C:\WINDOWS\Fonts\euclidi_04.ttf|0|utf-8|
+eucsym|Euclid Symbol Regular|1|C:\WINDOWS\Fonts\eucsym.ttf|0|utf-8|
+eucsym_01|Euclid Symbol Regular|1|C:\WINDOWS\Fonts\eucsym_01.ttf|0|utf-8|
+eucsym_02|Euclid Symbol Regular|1|C:\WINDOWS\Fonts\eucsym_02.ttf|0|utf-8|
+eucsym_03|Euclid Symbol Regular|1|C:\WINDOWS\Fonts\eucsym_03.ttf|0|utf-8|
+eucsym_04|Euclid Symbol Regular|1|C:\WINDOWS\Fonts\eucsym_04.ttf|0|utf-8|
+eucsymb|Euclid Symbol Bold|1|C:\WINDOWS\Fonts\eucsymb.ttf|0|utf-8|
+eucsymb_01|Euclid Symbol Bold|1|C:\WINDOWS\Fonts\eucsymb_01.ttf|0|utf-8|
+eucsymb_02|Euclid Symbol Bold|1|C:\WINDOWS\Fonts\eucsymb_02.ttf|0|utf-8|
+eucsymb_03|Euclid Symbol Bold|1|C:\WINDOWS\Fonts\eucsymb_03.ttf|0|utf-8|
+eucsymb_04|Euclid Symbol Bold|1|C:\WINDOWS\Fonts\eucsymb_04.ttf|0|utf-8|
+eucsymbi|Euclid Symbol Bold Italic|1|C:\WINDOWS\Fonts\eucsymbi.ttf|0|utf-8|
+eucsymbi_01|Euclid Symbol Bold Italic|1|C:\WINDOWS\Fonts\eucsymbi_01.ttf|0|utf-8|
+eucsymbi_02|Euclid Symbol Bold Italic|1|C:\WINDOWS\Fonts\eucsymbi_02.ttf|0|utf-8|
+eucsymbi_03|Euclid Symbol Bold Italic|1|C:\WINDOWS\Fonts\eucsymbi_03.ttf|0|utf-8|
+eucsymbi_04|Euclid Symbol Bold Italic|1|C:\WINDOWS\Fonts\eucsymbi_04.ttf|0|utf-8|
+eucsymi|Euclid Symbol Italic|1|C:\WINDOWS\Fonts\eucsymi.ttf|0|utf-8|
+eucsymi_01|Euclid Symbol Italic|1|C:\WINDOWS\Fonts\eucsymi_01.ttf|0|utf-8|
+eucsymi_02|Euclid Symbol Italic|1|C:\WINDOWS\Fonts\eucsymi_02.ttf|0|utf-8|
+eucsymi_03|Euclid Symbol Italic|1|C:\WINDOWS\Fonts\eucsymi_03.ttf|0|utf-8|
+eucsymi_04|Euclid Symbol Italic|1|C:\WINDOWS\Fonts\eucsymi_04.ttf|0|utf-8|
+euextra|Euclid Extra Regular|1|C:\WINDOWS\Fonts\euextra.ttf|0|utf-8|
+euextra_01|Euclid Extra Regular|1|C:\WINDOWS\Fonts\euextra_01.ttf|0|utf-8|
+euextra_02|Euclid Extra Regular|1|C:\WINDOWS\Fonts\euextra_02.ttf|0|utf-8|
+euextra_03|Euclid Extra Regular|1|C:\WINDOWS\Fonts\euextra_03.ttf|0|utf-8|
+euextra_04|Euclid Extra Regular|1|C:\WINDOWS\Fonts\euextra_04.ttf|0|utf-8|
+euextrab|Euclid Extra Bold|1|C:\WINDOWS\Fonts\euextrab.ttf|0|utf-8|
+euextrab_01|Euclid Extra Bold|1|C:\WINDOWS\Fonts\euextrab_01.ttf|0|utf-8|
+euextrab_02|Euclid Extra Bold|1|C:\WINDOWS\Fonts\euextrab_02.ttf|0|utf-8|
+euextrab_03|Euclid Extra Bold|1|C:\WINDOWS\Fonts\euextrab_03.ttf|0|utf-8|
+euextrab_04|Euclid Extra Bold|1|C:\WINDOWS\Fonts\euextrab_04.ttf|0|utf-8|
+eufrak|Euclid Fraktur Regular|1|C:\WINDOWS\Fonts\eufrak.ttf|0|utf-8|
+eufrak_01|Euclid Fraktur Regular|1|C:\WINDOWS\Fonts\eufrak_01.ttf|0|utf-8|
+eufrak_02|Euclid Fraktur Regular|1|C:\WINDOWS\Fonts\eufrak_02.ttf|0|utf-8|
+eufrak_03|Euclid Fraktur Regular|1|C:\WINDOWS\Fonts\eufrak_03.ttf|0|utf-8|
+eufrak_04|Euclid Fraktur Regular|1|C:\WINDOWS\Fonts\eufrak_04.ttf|0|utf-8|
+eufrakb|Euclid Fraktur Bold|1|C:\WINDOWS\Fonts\eufrakb.ttf|0|utf-8|
+eufrakb_01|Euclid Fraktur Bold|1|C:\WINDOWS\Fonts\eufrakb_01.ttf|0|utf-8|
+eufrakb_02|Euclid Fraktur Bold|1|C:\WINDOWS\Fonts\eufrakb_02.ttf|0|utf-8|
+eufrakb_03|Euclid Fraktur Bold|1|C:\WINDOWS\Fonts\eufrakb_03.ttf|0|utf-8|
+eufrakb_04|Euclid Fraktur Bold|1|C:\WINDOWS\Fonts\eufrakb_04.ttf|0|utf-8|
+eumat1|Euclid Math One Regular|1|C:\WINDOWS\Fonts\eumat1.ttf|0|utf-8|
+eumat1_01|Euclid Math One Regular|1|C:\WINDOWS\Fonts\eumat1_01.ttf|0|utf-8|
+eumat1_02|Euclid Math One Regular|1|C:\WINDOWS\Fonts\eumat1_02.ttf|0|utf-8|
+eumat1_03|Euclid Math One Regular|1|C:\WINDOWS\Fonts\eumat1_03.ttf|0|utf-8|
+eumat1_04|Euclid Math One Regular|1|C:\WINDOWS\Fonts\eumat1_04.ttf|0|utf-8|
+eumat1b|Euclid Math One Bold|1|C:\WINDOWS\Fonts\eumat1b.ttf|0|utf-8|
+eumat1b_01|Euclid Math One Bold|1|C:\WINDOWS\Fonts\eumat1b_01.ttf|0|utf-8|
+eumat1b_02|Euclid Math One Bold|1|C:\WINDOWS\Fonts\eumat1b_02.ttf|0|utf-8|
+eumat1b_03|Euclid Math One Bold|1|C:\WINDOWS\Fonts\eumat1b_03.ttf|0|utf-8|
+eumat1b_04|Euclid Math One Bold|1|C:\WINDOWS\Fonts\eumat1b_04.ttf|0|utf-8|
+eumat2|Euclid Math Two Regular|1|C:\WINDOWS\Fonts\eumat2.ttf|0|utf-8|
+eumat2_01|Euclid Math Two Regular|1|C:\WINDOWS\Fonts\eumat2_01.ttf|0|utf-8|
+eumat2_02|Euclid Math Two Regular|1|C:\WINDOWS\Fonts\eumat2_02.ttf|0|utf-8|
+eumat2_03|Euclid Math Two Regular|1|C:\WINDOWS\Fonts\eumat2_03.ttf|0|utf-8|
+eumat2_04|Euclid Math Two Regular|1|C:\WINDOWS\Fonts\eumat2_04.ttf|0|utf-8|
+eumat2b|Euclid Math Two Bold|1|C:\WINDOWS\Fonts\eumat2b.ttf|0|utf-8|
+eumat2b_01|Euclid Math Two Bold|1|C:\WINDOWS\Fonts\eumat2b_01.ttf|0|utf-8|
+eumat2b_02|Euclid Math Two Bold|1|C:\WINDOWS\Fonts\eumat2b_02.ttf|0|utf-8|
+eumat2b_03|Euclid Math Two Bold|1|C:\WINDOWS\Fonts\eumat2b_03.ttf|0|utf-8|
+eumat2b_04|Euclid Math Two Bold|1|C:\WINDOWS\Fonts\eumat2b_04.ttf|0|utf-8|
+FELIXTI|Felix Titling Regular|1|C:\WINDOWS\Fonts\FELIXTI.TTF|0|utf-8|
+fences|Fences Plain|1|C:\WINDOWS\Fonts\fences.ttf|0|utf-8|
+fences_01|Fences Plain|1|C:\WINDOWS\Fonts\fences_01.ttf|0|utf-8|
+fences_02|Fences Plain|1|C:\WINDOWS\Fonts\fences_02.ttf|0|utf-8|
+fences_03|Fences Plain|1|C:\WINDOWS\Fonts\fences_03.ttf|0|utf-8|
+fences_04|Fences Plain|1|C:\WINDOWS\Fonts\fences_04.ttf|0|utf-8|
+FORTE|Forte Regular|1|C:\WINDOWS\Fonts\FORTE.TTF|0|utf-8|
+FRABK|Franklin Gothic Book Regular|1|C:\WINDOWS\Fonts\FRABK.TTF|0|utf-8|
+FRABKIT|Franklin Gothic Book Italic|1|C:\WINDOWS\Fonts\FRABKIT.TTF|0|utf-8|
+FRADM|Franklin Gothic Demi Regular|1|C:\WINDOWS\Fonts\FRADM.TTF|0|utf-8|
+FRADMCN|Franklin Gothic Demi Cond Regular|1|C:\WINDOWS\Fonts\FRADMCN.TTF|0|utf-8|
+FRADMIT|Franklin Gothic Demi Italic|1|C:\WINDOWS\Fonts\FRADMIT.TTF|0|utf-8|
+FRAHV|Franklin Gothic Heavy Regular|1|C:\WINDOWS\Fonts\FRAHV.TTF|0|utf-8|
+FRAHVIT|Franklin Gothic Heavy Italic|1|C:\WINDOWS\Fonts\FRAHVIT.TTF|0|utf-8|
+framd|Franklin Gothic Medium Regular|1|C:\WINDOWS\Fonts\framd.ttf|0|utf-8|
+FRAMDCN|Franklin Gothic Medium Cond Regular|1|C:\WINDOWS\Fonts\FRAMDCN.TTF|0|utf-8|
+framdit|Franklin Gothic Medium Italic|1|C:\WINDOWS\Fonts\framdit.ttf|0|utf-8|
+FREESCPT|Freestyle Script Regular|1|C:\WINDOWS\Fonts\FREESCPT.TTF|0|utf-8|
+FRSCRIPT|French Script MT Regular|1|C:\WINDOWS\Fonts\FRSCRIPT.TTF|0|utf-8|
+FTLTLT|Footlight MT Light Regular|1|C:\WINDOWS\Fonts\FTLTLT.TTF|0|utf-8|
+Gabriola|Gabriola Regular|1|C:\WINDOWS\Fonts\Gabriola.ttf|0|utf-8|
+gadugi|Gadugi Regular|1|C:\WINDOWS\Fonts\gadugi.ttf|0|utf-8|
+gadugib|Gadugi Bold|1|C:\WINDOWS\Fonts\gadugib.ttf|0|utf-8|
+GARA|Garamond Regular|1|C:\WINDOWS\Fonts\GARA.TTF|0|utf-8|
+GARABD|Garamond Bold|1|C:\WINDOWS\Fonts\GARABD.TTF|0|utf-8|
+GARAIT|Garamond Italic|1|C:\WINDOWS\Fonts\GARAIT.TTF|0|utf-8|
+georgia|Georgia Regular|1|C:\WINDOWS\Fonts\georgia.ttf|0|utf-8|
+georgiab|Georgia Bold|1|C:\WINDOWS\Fonts\georgiab.ttf|0|utf-8|
+georgiai|Georgia Italic|1|C:\WINDOWS\Fonts\georgiai.ttf|0|utf-8|
+georgiaz|Georgia Bold Italic|1|C:\WINDOWS\Fonts\georgiaz.ttf|0|utf-8|
+GIGI|Gigi Regular|1|C:\WINDOWS\Fonts\GIGI.TTF|0|utf-8|
+GIL_____|Gill Sans MT Regular|1|C:\WINDOWS\Fonts\GIL_____.TTF|0|utf-8|
+GILB____|Gill Sans MT Bold|1|C:\WINDOWS\Fonts\GILB____.TTF|0|utf-8|
+GILBI___|Gill Sans MT Bold Italic|1|C:\WINDOWS\Fonts\GILBI___.TTF|0|utf-8|
+GILC____|Gill Sans MT Condensed Regular|1|C:\WINDOWS\Fonts\GILC____.TTF|0|utf-8|
+GILI____|Gill Sans MT Italic|1|C:\WINDOWS\Fonts\GILI____.TTF|0|utf-8|
+GILLUBCD|Gill Sans Ultra Bold Condensed Regular|1|C:\WINDOWS\Fonts\GILLUBCD.TTF|0|utf-8|
+GILSANUB|Gill Sans Ultra Bold Regular|1|C:\WINDOWS\Fonts\GILSANUB.TTF|0|utf-8|
+GLECB|Gloucester MT Extra Condensed Regular|1|C:\WINDOWS\Fonts\GLECB.TTF|0|utf-8|
+GLSNECB|Gill Sans MT Ext Condensed Bold Regular|1|C:\WINDOWS\Fonts\GLSNECB.TTF|0|utf-8|
+GOTHIC|Century Gothic Regular|1|C:\WINDOWS\Fonts\GOTHIC.TTF|0|utf-8|
+GOTHICB|Century Gothic Bold|1|C:\WINDOWS\Fonts\GOTHICB.TTF|0|utf-8|
+GOTHICBI|Century Gothic Bold Italic|1|C:\WINDOWS\Fonts\GOTHICBI.TTF|0|utf-8|
+GOTHICI|Century Gothic Italic|1|C:\WINDOWS\Fonts\GOTHICI.TTF|0|utf-8|
+GOUDOS|Goudy Old Style Regular|1|C:\WINDOWS\Fonts\GOUDOS.TTF|0|utf-8|
+GOUDOSB|Goudy Old Style Bold|1|C:\WINDOWS\Fonts\GOUDOSB.TTF|0|utf-8|
+GOUDOSI|Goudy Old Style Italic|1|C:\WINDOWS\Fonts\GOUDOSI.TTF|0|utf-8|
+GOUDYSTO|Goudy Stout Regular|1|C:\WINDOWS\Fonts\GOUDYSTO.TTF|0|utf-8|
+HARLOWSI|Harlow Solid Italic Italic|1|C:\WINDOWS\Fonts\HARLOWSI.TTF|0|utf-8|
+HARNGTON|Harrington Regular|1|C:\WINDOWS\Fonts\HARNGTON.TTF|0|utf-8|
+HATTEN|Haettenschweiler Regular|1|C:\WINDOWS\Fonts\HATTEN.TTF|0|utf-8|
+HEB_____|Helonia Bold|1|C:\WINDOWS\Fonts\HEB_____.ttf|0|utf-8|
+HEBO____|Helonia Bold Italic|1|C:\WINDOWS\Fonts\HEBO____.ttf|0|utf-8|
+HEN_____|Helonia Regular|1|C:\WINDOWS\Fonts\HEN_____.ttf|0|utf-8|
+HEO_____|Helonia Italic|1|C:\WINDOWS\Fonts\HEO_____.ttf|0|utf-8|
+himalaya|Microsoft Himalaya Regular|1|C:\WINDOWS\Fonts\himalaya.ttf|0|utf-8|
+holomdl2|HoloLens MDL2 Assets Regular|1|C:\WINDOWS\Fonts\holomdl2.ttf|0|utf-8|
+HTOWERT|High Tower Text Regular|1|C:\WINDOWS\Fonts\HTOWERT.TTF|0|utf-8|
+HTOWERTI|High Tower Text Italic|1|C:\WINDOWS\Fonts\HTOWERTI.TTF|0|utf-8|
+impact|Impact Regular|1|C:\WINDOWS\Fonts\impact.ttf|0|utf-8|
+IMPRISHA|Imprint MT Shadow Regular|1|C:\WINDOWS\Fonts\IMPRISHA.TTF|0|utf-8|
+INFROMAN|Informal Roman Regular|1|C:\WINDOWS\Fonts\INFROMAN.TTF|0|utf-8|
+Inkfree|Ink Free Regular|1|C:\WINDOWS\Fonts\Inkfree.ttf|0|utf-8|
+ITCBLKAD|Blackadder ITC Regular|1|C:\WINDOWS\Fonts\ITCBLKAD.TTF|0|utf-8|
+ITCEDSCR|Edwardian Script ITC Regular|1|C:\WINDOWS\Fonts\ITCEDSCR.TTF|0|utf-8|
+ITCKRIST|Kristen ITC Regular|1|C:\WINDOWS\Fonts\ITCKRIST.TTF|0|utf-8|
+javatext|Javanese Text Regular|1|C:\WINDOWS\Fonts\javatext.ttf|0|utf-8|
+JOKERMAN|Jokerman Regular|1|C:\WINDOWS\Fonts\JOKERMAN.TTF|0|utf-8|
+JUICE___|Juice ITC Regular|1|C:\WINDOWS\Fonts\JUICE___.TTF|0|utf-8|
+KUNSTLER|Kunstler Script Regular|1|C:\WINDOWS\Fonts\KUNSTLER.TTF|0|utf-8|
+l_10646|Lucida Sans Unicode Regular|1|C:\WINDOWS\Fonts\l_10646.ttf|0|utf-8|
+LATINWD|Wide Latin Regular|1|C:\WINDOWS\Fonts\LATINWD.TTF|0|utf-8|
+LBRITE|Lucida Bright Regular|1|C:\WINDOWS\Fonts\LBRITE.TTF|0|utf-8|
+LBRITED|Lucida Bright Demibold|1|C:\WINDOWS\Fonts\LBRITED.TTF|0|utf-8|
+LBRITEDI|Lucida Bright Demibold Italic|1|C:\WINDOWS\Fonts\LBRITEDI.TTF|0|utf-8|
+LBRITEI|Lucida Bright Italic|1|C:\WINDOWS\Fonts\LBRITEI.TTF|0|utf-8|
+LCALLIG|Lucida Calligraphy Italic|1|C:\WINDOWS\Fonts\LCALLIG.TTF|0|utf-8|
+LeelaUIb|Leelawadee UI Bold|1|C:\WINDOWS\Fonts\LeelaUIb.ttf|0|utf-8|
+LeelawUI|Leelawadee UI Regular|1|C:\WINDOWS\Fonts\LeelawUI.ttf|0|utf-8|
+LeelUIsl|Leelawadee UI Semilight|1|C:\WINDOWS\Fonts\LeelUIsl.ttf|0|utf-8|
+LFAX|Lucida Fax Regular|1|C:\WINDOWS\Fonts\LFAX.TTF|0|utf-8|
+LFAXD|Lucida Fax Demibold|1|C:\WINDOWS\Fonts\LFAXD.TTF|0|utf-8|
+LFAXDI|Lucida Fax Demibold Italic|1|C:\WINDOWS\Fonts\LFAXDI.TTF|0|utf-8|
+LFAXI|Lucida Fax Italic|1|C:\WINDOWS\Fonts\LFAXI.TTF|0|utf-8|
+LHANDW|Lucida Handwriting Italic|1|C:\WINDOWS\Fonts\LHANDW.TTF|0|utf-8|
+LSANS|Lucida Sans Regular|1|C:\WINDOWS\Fonts\LSANS.TTF|0|utf-8|
+LSANSD|Lucida Sans Demibold Roman|1|C:\WINDOWS\Fonts\LSANSD.TTF|0|utf-8|
+LSANSDI|Lucida Sans Demibold Italic|1|C:\WINDOWS\Fonts\LSANSDI.TTF|0|utf-8|
+LSANSI|Lucida Sans Italic|1|C:\WINDOWS\Fonts\LSANSI.TTF|0|utf-8|
+LTYPE|Lucida Sans Typewriter Regular|1|C:\WINDOWS\Fonts\LTYPE.TTF|0|utf-8|
+LTYPEB|Lucida Sans Typewriter Bold|1|C:\WINDOWS\Fonts\LTYPEB.TTF|0|utf-8|
+LTYPEBO|Lucida Sans Typewriter Bold Oblique|1|C:\WINDOWS\Fonts\LTYPEBO.TTF|0|utf-8|
+LTYPEO|Lucida Sans Typewriter Oblique|1|C:\WINDOWS\Fonts\LTYPEO.TTF|0|utf-8|
+lucon|Lucida Console Regular|1|C:\WINDOWS\Fonts\lucon.ttf|0|utf-8|
+MAGNETOB|Magneto Bold|1|C:\WINDOWS\Fonts\MAGNETOB.TTF|0|utf-8|
+MAIAN|Maiandra GD Regular|1|C:\WINDOWS\Fonts\MAIAN.TTF|0|utf-8|
+malgun|Malgun Gothic Regular|1|C:\WINDOWS\Fonts\malgun.ttf|0|utf-8|
+malgunbd|Malgun Gothic Bold|1|C:\WINDOWS\Fonts\malgunbd.ttf|0|utf-8|
+malgunsl|Malgun Gothic Semilight|1|C:\WINDOWS\Fonts\malgunsl.ttf|0|utf-8|
+MaplePi|MaplePi Regular|1|C:\WINDOWS\Fonts\MaplePi.ttf|0|utf-8|
+marlett|Marlett Regular|1|C:\WINDOWS\Fonts\marlett.ttf|0|utf-8|
+MATURASC|Matura MT Script Capitals Regular|1|C:\WINDOWS\Fonts\MATURASC.TTF|0|utf-8|
+micross|Microsoft Sans Serif Regular|1|C:\WINDOWS\Fonts\micross.ttf|0|utf-8|
+mingliub|MingLiU-ExtB Regular|1|C:\WINDOWS\Fonts\mingliub.ttc|0|utf-8|
+MISTRAL|Mistral Regular|1|C:\WINDOWS\Fonts\MISTRAL.TTF|0|utf-8|
+mmrtext|Myanmar Text Regular|1|C:\WINDOWS\Fonts\mmrtext.ttf|0|utf-8|
+mmrtextb|Myanmar Text Bold|1|C:\WINDOWS\Fonts\mmrtextb.ttf|0|utf-8|
+MOD20|Modern No. 20 Regular|1|C:\WINDOWS\Fonts\MOD20.TTF|0|utf-8|
+monbaiti|Mongolian Baiti Regular|1|C:\WINDOWS\Fonts\monbaiti.ttf|0|utf-8|
+MP______|MaplePi Regular|1|C:\WINDOWS\Fonts\MP______.ttf|0|utf-8|
+msgothic|MS Gothic Regular|1|C:\WINDOWS\Fonts\msgothic.ttc|0|utf-8|
+msjh|Microsoft JhengHei Regular|1|C:\WINDOWS\Fonts\msjh.ttc|0|utf-8|
+msjhbd|Microsoft JhengHei Bold|1|C:\WINDOWS\Fonts\msjhbd.ttc|0|utf-8|
+msjhl|Microsoft JhengHei Light|1|C:\WINDOWS\Fonts\msjhl.ttc|0|utf-8|
+msyh|Microsoft YaHei Regular|1|C:\WINDOWS\Fonts\msyh.ttc|0|utf-8|
+msyhbd|Microsoft YaHei Bold|1|C:\WINDOWS\Fonts\msyhbd.ttc|0|utf-8|
+msyhl|Microsoft YaHei Light|1|C:\WINDOWS\Fonts\msyhl.ttc|0|utf-8|
+msyi|Microsoft Yi Baiti Regular|1|C:\WINDOWS\Fonts\msyi.ttf|0|utf-8|
+Mt Extra Tiger|MT Extra Tiger Regular|1|C:\WINDOWS\Fonts\Mt Extra Tiger.ttf|0|utf-8|
+Mt Extra Tiger_01|MT Extra Tiger Regular|1|C:\WINDOWS\Fonts\Mt Extra Tiger_01.ttf|0|utf-8|
+Mt Extra Tiger_02|MT Extra Tiger Regular|1|C:\WINDOWS\Fonts\Mt Extra Tiger_02.ttf|0|utf-8|
+Mt Extra Tiger_03|MT Extra Tiger Regular|1|C:\WINDOWS\Fonts\Mt Extra Tiger_03.ttf|0|utf-8|
+Mt Extra Tiger_04|MT Extra Tiger Regular|1|C:\WINDOWS\Fonts\Mt Extra Tiger_04.ttf|0|utf-8|
+MTCORSVA|Monotype Corsiva Regular|1|C:\WINDOWS\Fonts\MTCORSVA.TTF|0|utf-8|
+mtextra|MT Extra Regular|1|C:\WINDOWS\Fonts\mtextra.ttf|0|utf-8|
+mtextra_01|MT Extra Regular|1|C:\WINDOWS\Fonts\mtextra_01.ttf|0|utf-8|
+mtextra_02|MT Extra Regular|1|C:\WINDOWS\Fonts\mtextra_02.ttf|0|utf-8|
+mtextra_03|MT Extra Regular|1|C:\WINDOWS\Fonts\mtextra_03.ttf|0|utf-8|
+mtextra_04|MT Extra Regular|1|C:\WINDOWS\Fonts\mtextra_04.ttf|0|utf-8|
+mvboli|MV Boli Regular|1|C:\WINDOWS\Fonts\mvboli.ttf|0|utf-8|
+NIAGENG|Niagara Engraved Regular|1|C:\WINDOWS\Fonts\NIAGENG.TTF|0|utf-8|
+NIAGSOL|Niagara Solid Regular|1|C:\WINDOWS\Fonts\NIAGSOL.TTF|0|utf-8|
+Nirmala|Nirmala UI Regular|1|C:\WINDOWS\Fonts\Nirmala.ttf|0|utf-8|
+NirmalaB|Nirmala UI Bold|1|C:\WINDOWS\Fonts\NirmalaB.ttf|0|utf-8|
+NirmalaS|Nirmala UI Semilight|1|C:\WINDOWS\Fonts\NirmalaS.ttf|0|utf-8|
+ntailu|Microsoft New Tai Lue Regular|1|C:\WINDOWS\Fonts\ntailu.ttf|0|utf-8|
+ntailub|Microsoft New Tai Lue Bold|1|C:\WINDOWS\Fonts\ntailub.ttf|0|utf-8|
+OCRAEXT|OCR A Extended Regular|1|C:\WINDOWS\Fonts\OCRAEXT.TTF|0|utf-8|
+OLDENGL|Old English Text MT Regular|1|C:\WINDOWS\Fonts\OLDENGL.TTF|0|utf-8|
+ONYX|Onyx Regular|1|C:\WINDOWS\Fonts\ONYX.TTF|0|utf-8|
+OUTLOOK|MS Outlook Regular|1|C:\WINDOWS\Fonts\OUTLOOK.TTF|0|utf-8|
+pala|Palatino Linotype Regular|1|C:\WINDOWS\Fonts\pala.ttf|0|utf-8|
+palab|Palatino Linotype Bold|1|C:\WINDOWS\Fonts\palab.ttf|0|utf-8|
+palabi|Palatino Linotype Bold Italic|1|C:\WINDOWS\Fonts\palabi.ttf|0|utf-8|
+palai|Palatino Linotype Italic|1|C:\WINDOWS\Fonts\palai.ttf|0|utf-8|
+PALSCRI|Palace Script MT Regular|1|C:\WINDOWS\Fonts\PALSCRI.TTF|0|utf-8|
+PAPYRUS|Papyrus Regular|1|C:\WINDOWS\Fonts\PAPYRUS.TTF|0|utf-8|
+PARCHM|Parchment Regular|1|C:\WINDOWS\Fonts\PARCHM.TTF|0|utf-8|
+PER_____|Perpetua Regular|1|C:\WINDOWS\Fonts\PER_____.TTF|0|utf-8|
+PERB____|Perpetua Bold|1|C:\WINDOWS\Fonts\PERB____.TTF|0|utf-8|
+PERBI___|Perpetua Bold Italic|1|C:\WINDOWS\Fonts\PERBI___.TTF|0|utf-8|
+PERI____|Perpetua Italic|1|C:\WINDOWS\Fonts\PERI____.TTF|0|utf-8|
+PERTIBD|Perpetua Titling MT Bold|1|C:\WINDOWS\Fonts\PERTIBD.TTF|0|utf-8|
+PERTILI|Perpetua Titling MT Light|1|C:\WINDOWS\Fonts\PERTILI.TTF|0|utf-8|
+phagspa|Microsoft PhagsPa Regular|1|C:\WINDOWS\Fonts\phagspa.ttf|0|utf-8|
+phagspab|Microsoft PhagsPa Bold|1|C:\WINDOWS\Fonts\phagspab.ttf|0|utf-8|
+PLAYBILL|Playbill Regular|1|C:\WINDOWS\Fonts\PLAYBILL.TTF|0|utf-8|
+POORICH|Poor Richard Regular|1|C:\WINDOWS\Fonts\POORICH.TTF|0|utf-8|
+PRISTINA|Pristina Regular|1|C:\WINDOWS\Fonts\PRISTINA.TTF|0|utf-8|
+RAGE|Rage Italic Regular|1|C:\WINDOWS\Fonts\RAGE.TTF|0|utf-8|
+RAVIE|Ravie Regular|1|C:\WINDOWS\Fonts\RAVIE.TTF|0|utf-8|
+REFSAN|MS Reference Sans Serif Regular|1|C:\WINDOWS\Fonts\REFSAN.TTF|0|utf-8|
+REFSPCL|MS Reference Specialty Regular|1|C:\WINDOWS\Fonts\REFSPCL.TTF|0|utf-8|
+ROCC____|Rockwell Condensed Regular|1|C:\WINDOWS\Fonts\ROCC____.TTF|0|utf-8|
+ROCCB___|Rockwell Condensed Bold|1|C:\WINDOWS\Fonts\ROCCB___.TTF|0|utf-8|
+ROCK|Rockwell Regular|1|C:\WINDOWS\Fonts\ROCK.TTF|0|utf-8|
+ROCKB|Rockwell Bold|1|C:\WINDOWS\Fonts\ROCKB.TTF|0|utf-8|
+ROCKBI|Rockwell Bold Italic|1|C:\WINDOWS\Fonts\ROCKBI.TTF|0|utf-8|
+ROCKEB|Rockwell Extra Bold Regular|1|C:\WINDOWS\Fonts\ROCKEB.TTF|0|utf-8|
+ROCKI|Rockwell Italic|1|C:\WINDOWS\Fonts\ROCKI.TTF|0|utf-8|
+SCHLBKB|Century Schoolbook Bold|1|C:\WINDOWS\Fonts\SCHLBKB.TTF|0|utf-8|
+SCHLBKBI|Century Schoolbook Bold Italic|1|C:\WINDOWS\Fonts\SCHLBKBI.TTF|0|utf-8|
+SCHLBKI|Century Schoolbook Italic|1|C:\WINDOWS\Fonts\SCHLBKI.TTF|0|utf-8|
+SCRIPTBL|Script MT Bold Regular|1|C:\WINDOWS\Fonts\SCRIPTBL.TTF|0|utf-8|
+segmdl2|Segoe MDL2 Assets Regular|1|C:\WINDOWS\Fonts\segmdl2.ttf|0|utf-8|
+segoepr|Segoe Print Regular|1|C:\WINDOWS\Fonts\segoepr.ttf|0|utf-8|
+segoeprb|Segoe Print Bold|1|C:\WINDOWS\Fonts\segoeprb.ttf|0|utf-8|
+segoesc|Segoe Script Regular|1|C:\WINDOWS\Fonts\segoesc.ttf|0|utf-8|
+segoescb|Segoe Script Bold|1|C:\WINDOWS\Fonts\segoescb.ttf|0|utf-8|
+segoeui|Segoe UI Regular|1|C:\WINDOWS\Fonts\segoeui.ttf|0|utf-8|
+segoeuib|Segoe UI Bold|1|C:\WINDOWS\Fonts\segoeuib.ttf|0|utf-8|
+segoeuii|Segoe UI Italic|1|C:\WINDOWS\Fonts\segoeuii.ttf|0|utf-8|
+segoeuil|Segoe UI Light|1|C:\WINDOWS\Fonts\segoeuil.ttf|0|utf-8|
+segoeuisl|Segoe UI Semilight|1|C:\WINDOWS\Fonts\segoeuisl.ttf|0|utf-8|
+segoeuiz|Segoe UI Bold Italic|1|C:\WINDOWS\Fonts\segoeuiz.ttf|0|utf-8|
+seguibl|Segoe UI Black|1|C:\WINDOWS\Fonts\seguibl.ttf|0|utf-8|
+seguibli|Segoe UI Black Italic|1|C:\WINDOWS\Fonts\seguibli.ttf|0|utf-8|
+seguiemj|Segoe UI Emoji Regular|1|C:\WINDOWS\Fonts\seguiemj.ttf|0|utf-8|
+seguihis|Segoe UI Historic Regular|1|C:\WINDOWS\Fonts\seguihis.ttf|0|utf-8|
+seguili|Segoe UI Light Italic|1|C:\WINDOWS\Fonts\seguili.ttf|0|utf-8|
+seguisb|Segoe UI Semibold|1|C:\WINDOWS\Fonts\seguisb.ttf|0|utf-8|
+seguisbi|Segoe UI Semibold Italic|1|C:\WINDOWS\Fonts\seguisbi.ttf|0|utf-8|
+seguisli|Segoe UI Semilight Italic|1|C:\WINDOWS\Fonts\seguisli.ttf|0|utf-8|
+seguisym|Segoe UI Symbol Regular|1|C:\WINDOWS\Fonts\seguisym.ttf|0|utf-8|
+SHOWG|Showcard Gothic Regular|1|C:\WINDOWS\Fonts\SHOWG.TTF|0|utf-8|
+simsun|SimSun Regular|1|C:\WINDOWS\Fonts\simsun.ttc|0|utf-8|
+simsunb|SimSun-ExtB Regular|1|C:\WINDOWS\Fonts\simsunb.ttf|0|utf-8|
+Sitka|Sitka Small Regular|1|C:\WINDOWS\Fonts\Sitka.ttc|0|utf-8|
+SitkaB|Sitka Small Bold|1|C:\WINDOWS\Fonts\SitkaB.ttc|0|utf-8|
+SitkaI|Sitka Small Italic|1|C:\WINDOWS\Fonts\SitkaI.ttc|0|utf-8|
+SitkaZ|Sitka Small Bold Italic|1|C:\WINDOWS\Fonts\SitkaZ.ttc|0|utf-8|
+SNAP____|Snap ITC Regular|1|C:\WINDOWS\Fonts\SNAP____.TTF|0|utf-8|
+STENCIL|Stencil Regular|1|C:\WINDOWS\Fonts\STENCIL.TTF|0|utf-8|
+sylfaen|Sylfaen Regular|1|C:\WINDOWS\Fonts\sylfaen.ttf|0|utf-8|
+symbol|Symbol Regular|1|C:\WINDOWS\Fonts\symbol.ttf|0|utf-8|
+Symbol Tiger|Symbol Tiger Regular|1|C:\WINDOWS\Fonts\Symbol Tiger.ttf|0|utf-8|
+Symbol Tiger Expert|Symbol Tiger Expert Regular|1|C:\WINDOWS\Fonts\Symbol Tiger Expert.ttf|0|utf-8|
+Symbol Tiger Expert_01|Symbol Tiger Expert Regular|1|C:\WINDOWS\Fonts\Symbol Tiger Expert_01.ttf|0|utf-8|
+Symbol Tiger Expert_02|Symbol Tiger Expert Regular|1|C:\WINDOWS\Fonts\Symbol Tiger Expert_02.ttf|0|utf-8|
+Symbol Tiger Expert_03|Symbol Tiger Expert Regular|1|C:\WINDOWS\Fonts\Symbol Tiger Expert_03.ttf|0|utf-8|
+Symbol Tiger Expert_04|Symbol Tiger Expert Regular|1|C:\WINDOWS\Fonts\Symbol Tiger Expert_04.ttf|0|utf-8|
+Symbol Tiger_01|Symbol Tiger Regular|1|C:\WINDOWS\Fonts\Symbol Tiger_01.ttf|0|utf-8|
+Symbol Tiger_02|Symbol Tiger Regular|1|C:\WINDOWS\Fonts\Symbol Tiger_02.ttf|0|utf-8|
+Symbol Tiger_03|Symbol Tiger Regular|1|C:\WINDOWS\Fonts\Symbol Tiger_03.ttf|0|utf-8|
+Symbol Tiger_04|Symbol Tiger Regular|1|C:\WINDOWS\Fonts\Symbol Tiger_04.ttf|0|utf-8|
+SYP_____|SymbolPi Regular|1|C:\WINDOWS\Fonts\SYP_____.ttf|0|utf-8|
+tahoma|Tahoma Regular|1|C:\WINDOWS\Fonts\tahoma.ttf|0|utf-8|
+tahomabd|Tahoma Bold|1|C:\WINDOWS\Fonts\tahomabd.ttf|0|utf-8|
+taile|Microsoft Tai Le Regular|1|C:\WINDOWS\Fonts\taile.ttf|0|utf-8|
+taileb|Microsoft Tai Le Bold|1|C:\WINDOWS\Fonts\taileb.ttf|0|utf-8|
+TCB_____|Tw Cen MT Bold|1|C:\WINDOWS\Fonts\TCB_____.TTF|0|utf-8|
+TCBI____|Tw Cen MT Bold Italic|1|C:\WINDOWS\Fonts\TCBI____.TTF|0|utf-8|
+TCCB____|Tw Cen MT Condensed Bold|1|C:\WINDOWS\Fonts\TCCB____.TTF|0|utf-8|
+TCCEB|Tw Cen MT Condensed Extra Bold Regular|1|C:\WINDOWS\Fonts\TCCEB.TTF|0|utf-8|
+TCCM____|Tw Cen MT Condensed Regular|1|C:\WINDOWS\Fonts\TCCM____.TTF|0|utf-8|
+TCM_____|Tw Cen MT Regular|1|C:\WINDOWS\Fonts\TCM_____.TTF|0|utf-8|
+TCMI____|Tw Cen MT Italic|1|C:\WINDOWS\Fonts\TCMI____.TTF|0|utf-8|
+TEMPSITC|Tempus Sans ITC Regular|1|C:\WINDOWS\Fonts\TEMPSITC.TTF|0|utf-8|
+THB_____|Thames Bold|1|C:\WINDOWS\Fonts\THB_____.ttf|0|utf-8|
+THBI____|Thames Bold Italic|1|C:\WINDOWS\Fonts\THBI____.ttf|0|utf-8|
+THI_____|Thames Italic|1|C:\WINDOWS\Fonts\THI_____.ttf|0|utf-8|
+THR_____|Thames Regular|1|C:\WINDOWS\Fonts\THR_____.ttf|0|utf-8|
+Tiger|Tiger Regular|1|C:\WINDOWS\Fonts\Tiger.ttf|0|utf-8|
+Tiger Expert|Tiger Expert Regular|1|C:\WINDOWS\Fonts\Tiger Expert.ttf|0|utf-8|
+Tiger Expert_01|Tiger Expert Regular|1|C:\WINDOWS\Fonts\Tiger Expert_01.ttf|0|utf-8|
+Tiger Expert_02|Tiger Expert Regular|1|C:\WINDOWS\Fonts\Tiger Expert_02.ttf|0|utf-8|
+Tiger Expert_03|Tiger Expert Regular|1|C:\WINDOWS\Fonts\Tiger Expert_03.ttf|0|utf-8|
+Tiger Expert_04|Tiger Expert Regular|1|C:\WINDOWS\Fonts\Tiger Expert_04.ttf|0|utf-8|
+Tiger_01|Tiger Regular|1|C:\WINDOWS\Fonts\Tiger_01.ttf|0|utf-8|
+Tiger_02|Tiger Regular|1|C:\WINDOWS\Fonts\Tiger_02.ttf|0|utf-8|
+Tiger_03|Tiger Regular|1|C:\WINDOWS\Fonts\Tiger_03.ttf|0|utf-8|
+Tiger_04|Tiger Regular|1|C:\WINDOWS\Fonts\Tiger_04.ttf|0|utf-8|
+times|Times New Roman Regular|1|C:\WINDOWS\Fonts\times.ttf|0|utf-8|
+timesbd|Times New Roman Bold|1|C:\WINDOWS\Fonts\timesbd.ttf|0|utf-8|
+timesbi|Times New Roman Bold Italic|1|C:\WINDOWS\Fonts\timesbi.ttf|0|utf-8|
+timesi|Times New Roman Italic|1|C:\WINDOWS\Fonts\timesi.ttf|0|utf-8|
+trebuc|Trebuchet MS Regular|1|C:\WINDOWS\Fonts\trebuc.ttf|0|utf-8|
+trebucbd|Trebuchet MS Bold|1|C:\WINDOWS\Fonts\trebucbd.ttf|0|utf-8|
+trebucbi|Trebuchet MS Bold Italic|1|C:\WINDOWS\Fonts\trebucbi.ttf|0|utf-8|
+trebucit|Trebuchet MS Italic|1|C:\WINDOWS\Fonts\trebucit.ttf|0|utf-8|
+verdana|Verdana Regular|1|C:\WINDOWS\Fonts\verdana.ttf|0|utf-8|
+verdanab|Verdana Bold|1|C:\WINDOWS\Fonts\verdanab.ttf|0|utf-8|
+verdanai|Verdana Italic|1|C:\WINDOWS\Fonts\verdanai.ttf|0|utf-8|
+verdanaz|Verdana Bold Italic|1|C:\WINDOWS\Fonts\verdanaz.ttf|0|utf-8|
+VINERITC|Viner Hand ITC Regular|1|C:\WINDOWS\Fonts\VINERITC.TTF|0|utf-8|
+VIVALDII|Vivaldi Italic|1|C:\WINDOWS\Fonts\VIVALDII.TTF|0|utf-8|
+VLADIMIR|Vladimir Script Regular|1|C:\WINDOWS\Fonts\VLADIMIR.TTF|0|utf-8|
+webdings|Webdings Regular|1|C:\WINDOWS\Fonts\webdings.ttf|0|utf-8|
+wingding|Wingdings Regular|1|C:\WINDOWS\Fonts\wingding.ttf|0|utf-8|
+WINGDNG2|Wingdings 2 Regular|1|C:\WINDOWS\Fonts\WINGDNG2.TTF|0|utf-8|
+WINGDNG3|Wingdings 3 Regular|1|C:\WINDOWS\Fonts\WINGDNG3.TTF|0|utf-8|
+YuGothB|Yu Gothic Bold|1|C:\WINDOWS\Fonts\YuGothB.ttc|0|utf-8|
+YuGothL|Yu Gothic Light|1|C:\WINDOWS\Fonts\YuGothL.ttc|0|utf-8|
+YuGothM|Yu Gothic Medium|1|C:\WINDOWS\Fonts\YuGothM.ttc|0|utf-8|
+YuGothR|Yu Gothic Regular|1|C:\WINDOWS\Fonts\YuGothR.ttc|0|utf-8|

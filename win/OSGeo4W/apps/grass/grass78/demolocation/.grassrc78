@@ -1,0 +1,4 @@
+GISDBASE: D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32
+LOCATION_NAME: demolocation
+MAPSET: PERMANENT
+GUI: text

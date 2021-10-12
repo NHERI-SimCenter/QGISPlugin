@@ -124,11 +124,11 @@
 #include "qgscameracontroller.h"
 #include "qgsflatterraingenerator.h"
 #include "qgslayoutitem3dmap.h"
-#include "processing/qgs3dalgorithms.h"
+#include "qgs3dalgorithms.h"
 #include "qgs3dmaptoolmeasureline.h"
 #include "qgs3dsymbolregistry.h"
-#include "layout/qgslayout3dmapwidget.h"
-#include "layout/qgslayoutviewrubberband.h"
+#include "qgslayout3dmapwidget.h"
+#include "qgslayoutviewrubberband.h"
 #include "qgsvectorlayer3drendererwidget.h"
 #include "qgsmeshlayer3drendererwidget.h"
 #include "qgspointcloudlayer3drendererwidget.h"
@@ -430,7 +430,7 @@ Q_GUI_EXPORT extern int qt_defaultDpiX();
 #include "browser/qgsinbuiltdataitemproviders.h"
 
 #include "qgssublayersdialog.h"
-#include "ogr/qgsvectorlayersaveasdialog.h"
+#include "qgsvectorlayersaveasdialog.h"
 
 #include "pointcloud/qgspointcloudelevationpropertieswidget.h"
 #include "pointcloud/qgspointcloudlayerstylewidget.h"
@@ -12751,7 +12751,7 @@ void QgisApp::openURL( QString url, bool useQgisDocDirectory )
     CFRelease( urlRef );
 #elif defined(Q_OS_WIN)
     if ( url.startsWith( "file://", Qt::CaseInsensitive ) )
-        ShellExecute( 0, 0, url.mid( 7 ).toLocal8Bit().constData(), 0, 0, SW_SHOWNORMAL );
+        ShellExecuteA( 0, 0, url.mid( 7 ).toLocal8Bit().constData(), 0, 0, SW_SHOWNORMAL );
     else
         QDesktopServices::openUrl( url );
 #else
