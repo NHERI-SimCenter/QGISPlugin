@@ -42,7 +42,7 @@
 #include <QtWidgets/QWidget>
 #include <qgscolorschemelist.h>
 #include <qgsvariableeditorwidget.h>
-#include "auth/qgsauthsettingswidget.h"
+#include "qgsauthsettingswidget.h"
 #include "qgsautheditorwidgets.h"
 #include "qgscollapsiblegroupbox.h"
 #include "qgscolorbutton.h"

@@ -27,7 +27,7 @@
 #include "qgscolorbutton.h"
 #include "qgsdoublespinbox.h"
 #include "qgspointcloudattributecombobox.h"
-#include "raster/qgscolorrampshaderwidget.h"
+#include "qgscolorrampshaderwidget.h"
 
 QT_BEGIN_NAMESPACE
 

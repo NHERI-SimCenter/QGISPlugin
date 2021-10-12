@@ -665,7 +665,9 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-INCLUDEPATH += $$PATH_TO_INSTALL/include
+# Install include dirs for mac and windows
+INCLUDEPATH +=  $$PATH_TO_INSTALL/include \
+                $$PATH_TO_INSTALL/include/qgis \
 
 #### QGIS libs ####
 win32: LIBS += -L$$PATH_TO_INSTALL\lib\ -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgis_core
@@ -699,6 +701,8 @@ LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lgdal -lproj
 LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/ -lqscintilla2_qt5.15.0.1
 
 INCLUDEPATH += /usr/local/Cellar/qscintilla2/2.12.1/include
+
+INCLUDEPATH +=  $$PATH_TO_QGIS_DEPS/include \
 
 } else {
 

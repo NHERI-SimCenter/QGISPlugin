@@ -34,7 +34,7 @@
 #include "qgsnewgeopackagelayerdialog.h"
 #include "qgsfileutils.h"
 #include "qgsapplication.h"
-#include "processing/qgsprojectstylealgorithms.h"
+#include "qgsprojectstylealgorithms.h"
 #include "qgsstylemanagerdialog.h"
 #include "qgsproviderregistry.h"
 #include "qgsaddattrdialog.h"

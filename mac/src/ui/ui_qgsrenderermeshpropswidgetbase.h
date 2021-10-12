@@ -18,11 +18,11 @@
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "mesh/qgsmeshrenderer3daveragingwidget.h"
-#include "mesh/qgsmeshrendereractivedatasetwidget.h"
-#include "mesh/qgsmeshrenderermeshsettingswidget.h"
-#include "mesh/qgsmeshrendererscalarsettingswidget.h"
-#include "mesh/qgsmeshrenderervectorsettingswidget.h"
+#include "qgsmeshrenderer3daveragingwidget.h"
+#include "qgsmeshrendereractivedatasetwidget.h"
+#include "qgsmeshrenderermeshsettingswidget.h"
+#include "qgsmeshrendererscalarsettingswidget.h"
+#include "qgsmeshrenderervectorsettingswidget.h"
 #include "qgsblendmodecombobox.h"
 #include "qgscollapsiblegroupbox.h"
 

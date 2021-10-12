@@ -34,7 +34,7 @@
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "effects/qgseffectstackpropertieswidget.h"
+#include "qgseffectstackpropertieswidget.h"
 #include "qgsblendmodecombobox.h"
 #include "qgscodeeditorexpression.h"
 #include "qgscollapsiblegroupbox.h"

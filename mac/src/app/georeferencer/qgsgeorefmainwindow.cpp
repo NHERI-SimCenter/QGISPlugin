@@ -51,7 +51,7 @@
 
 #include "qgsproject.h"
 #include "qgsrasterlayer.h"
-#include "../../gui/raster/qgsrasterlayerproperties.h"
+#include "qgsrasterlayerproperties.h"
 #include "qgsproviderregistry.h"
 
 #include "qgsgeorefdatapoint.h"
