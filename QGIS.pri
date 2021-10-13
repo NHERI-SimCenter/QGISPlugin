@@ -38,7 +38,10 @@ include(QGISSrc.pri)
 
 SOURCES += \
         $$PWD/QgisApp.cpp \
+        $$PWD/QGISVisualizationWidget.cpp \
 
 HEADERS += \
         $$PWD/QgisApp.h \
+        $$PWD/QGISVisualizationWidget.h \
+
 

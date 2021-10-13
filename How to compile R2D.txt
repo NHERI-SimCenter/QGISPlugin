@@ -1,9 +1,0 @@
-
-
-Under Projects->Run->Environment
-
-Add to DYLD_FRAMEWORK_PATH the following paths: /Users/steve/Desktop/SimCenter/QGISPlugin/mac/Install/lib:/Users/steve/Desktop/SimCenter/QGISPlugin/mac/qgis-deps-0.8.0/stage/lib
-
-Add to DYLD_LIBRARY_PATH the following paths: /Users/steve/Desktop/SimCenter/QGISPlugin/mac/Install/lib:/Users/steve/Desktop/SimCenter/QGISPlugin/mac/qgis-deps-0.8.0/stage
-
-Under Projects->Run->you have to uncheck the "Add build library search path to DYLD_LIBRARY_PATH and DYLD_FRAMEWORK_PATH" option
