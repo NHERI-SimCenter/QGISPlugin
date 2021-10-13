@@ -21,7 +21,7 @@ pathToInstall="/Users/steve/Desktop/SimCenter/QGISPlugin/mac/Install"
 pathBundler="/usr/local/Cellar/dylibbundler/1.0.0/bin/dylibbundler"
 
 # Export the DYLD_LIBRARY_PATH path for dylibbundler
-export DYLD_LIBRARY_PATH=/opt/QGIS/qgis-deps-0.8.0/stage/lib
+#export DYLD_LIBRARY_PATH=/opt/QGIS/qgis-deps-0.8.0/stage/lib
 
 QGISVersion="3.21.0"
 
@@ -37,13 +37,13 @@ fi
 # The name of the libs folder
 libsdir=$pathToInstall/lib
 
-# Remove the libs dir if it exists, dylib bundler will make one
-if [ -d "$libsdir" ]; then
-echo "Lib directory " $libsdir " exists, removing"
-rm -dr $libsdir
-fi
-
-mkdir $libsdir
+# # Remove the libs dir if it exists, dylib bundler will make one
+# if [ -d "$libsdir" ]; then
+# echo "Lib directory " $libsdir " exists, removing"
+# rm -dr $libsdir
+# fi
+#
+# mkdir $libsdir
 
 libsdirTemp=$pathToInstall/Temp
 
@@ -56,7 +56,7 @@ fi
 mkdir $libsdirTemp
 
 # Copy over the items from the QGIS Install libs folder into the temp folder
-cp –R $pathQGISlibs/* $libsdirTemp/
+# cp –R $pathQGISlibs/* $libsdirTemp/
 
 #cp $pathQGISlibs/libqgis_3d.$QGISVersion.dylib $libsdirTemp/
 #cp $pathQGISlibs/libqgis_analysis.$QGISVersion.dylib $libsdirTemp/
@@ -67,9 +67,16 @@ cp –R $pathQGISlibs/* $libsdirTemp/
 
 # Copy the required dependency libs into the temp folder
 cp $pathDeplibs/libgdal.28.dylib $libsdirTemp/
+
 cp $pathDeplibs/libproj.18.2.3.dylib $libsdirTemp/
+cp $pathDeplibs/libproj.18.dylib $libsdirTemp/
+
 cp $pathDeplibs/libqscintilla2_qt5.15.0.0.dylib $libsdirTemp/
+cp $pathDeplibs/libqscintilla2_qt5.15.dylib $libsdirTemp/
+
 cp $pathDeplibs/libqt5keychain.0.12.0.dylib $libsdirTemp/
+cp $pathDeplibs/libqt5keychain.1.dylib $libsdirTemp/
+
 
 # For each file in the temp folder
 for f in $libsdirTemp/*.dylib; do
