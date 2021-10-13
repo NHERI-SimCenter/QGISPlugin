@@ -661,9 +661,9 @@ INCLUDEPATH +=  $$PATH_TO_QGIS_EXT \
 
 
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+#qnx: target.path = /tmp/$${TARGET}/bin
+#else: unix:!android: target.path = /opt/$${TARGET}/bin
+#!isEmpty(target.path): INSTALLS += target
 
 # Install include dirs for mac and windows
 INCLUDEPATH +=  $$PATH_TO_INSTALL/include \
@@ -673,36 +673,28 @@ INCLUDEPATH +=  $$PATH_TO_INSTALL/include \
 win32: LIBS += -L$$PATH_TO_INSTALL\lib\ -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgis_core
 else:unix: LIBS += -L$$PATH_TO_INSTALL/lib/ -lqgis_core -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgisgrass7
 
-# Frameworks - only for mac
 mac {
 
-QMAKE_LFLAGS += -F/opt/QGIS/qgis-deps-0.8.0/stage/lib
-INCLUDEPATH += /opt/QGIS/qgis-deps-0.8.0/stage/lib/qca-qt5.framework/Headers
+# Mac frameworks
+QMAKE_LFLAGS += -F$$PATH_TO_QGIS_DEPS/lib
+INCLUDEPATH += $$PATH_TO_QGIS_DEPS/lib/qca-qt5.framework/Headers
 LIBS += -framework qca-qt5
 
+QMAKE_LFLAGS += -F$$PATH_TO_QGIS_DEPS/lib
+INCLUDEPATH += $$PATH_TO_QGIS_DEPS/lib/qwt.framework/Headers
+LIBS += -framework qwt
+
+LIBS += -L$$PATH_TO_INSTALL/lib/ -lqt5keychain.0.12.0 -lgdal.28 -lproj.18.2.3 -lqscintilla2_qt5.15.0.0
+
+INCLUDEPATH +=  $$PATH_TO_QGIS_DEPS/include \
+                $$PATH_TO_QGIS_DEPS/include/qt5keychain \
+
+# System
 QMAKE_LFLAGS += -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
 INCLUDEPATH += /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenCL.framework/Headers
 LIBS += -framework opencl
 
-QMAKE_LFLAGS += -F/opt/QGIS/qgis-deps-0.8.0/stage/lib
-INCLUDEPATH += /opt/QGIS/qgis-deps-0.8.0/stage/lib/qwt.framework/Headers
-LIBS += -framework qwt
-
 LIBS += -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib -lsqlite3
-
-LIBS += -L/usr/local/Cellar/qtkeychain/0.12.0_1/lib/ -lqt5keychain.0.12.0
-
-INCLUDEPATH +=  /usr/local/Cellar/qtkeychain/0.12.0_1/include \
-                /usr/local/Cellar/qtkeychain/0.12.0_1/include/qt5keychain \
-
-
-LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lgdal -lproj
-
-LIBS += -L/usr/local/Cellar/qscintilla2/2.12.1/lib/ -lqscintilla2_qt5.15.0.1
-
-INCLUDEPATH += /usr/local/Cellar/qscintilla2/2.12.1/include
-
-INCLUDEPATH +=  $$PATH_TO_QGIS_DEPS/include \
 
 } else {
 
