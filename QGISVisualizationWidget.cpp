@@ -113,7 +113,7 @@ QGISVisualizationWidget::QGISVisualizationWidget(QMainWindow *parent) : Visualiz
 
     qgis->mapCanvas()->setCenter(QgsPointXY(37.8717450069,-122.2609607382));
 
-    auto crs = QgsProject::instance()->crs();
+    auto crs = QgsCoordinateReferenceSystem(QStringLiteral("EPSG:3857"));
     qgis->mapCanvas()->setDestinationCrs(crs);
 
     auto leftHandWidget = new QWidget();
@@ -383,6 +383,9 @@ void QGISVisualizationWidget::handleBasemapSelection(int index)
     //    flags &= ~QgsMapLayer::Private;
 
     baseMapLayer->setFlags( flags );
+
+    auto crs = QgsCoordinateReferenceSystem(QStringLiteral("EPSG:3857"));
+    baseMapLayer->setCrs(crs);
 }
 
 
@@ -434,8 +437,8 @@ QgsRasterLayer* QGISVisualizationWidget::addRasterLayer(const QString &layerPath
 {
     auto layer = qgis->addRasterLayer(layerPath, name, providerKey);
 
-    //    if(layer != nullptr)
-    //        layer->setCrs(QgsCoordinateReferenceSystem("EPSG:4326"));
+    if(layer != nullptr)
+        layer->setCrs(QgsCoordinateReferenceSystem("EPSG:4326"));
 
     return layer;
 }
@@ -925,6 +928,8 @@ void QGISVisualizationWidget::clear(void)
 
 
     mapSelectableAssetWidgets.clear();
+
+    qgis->toggleMapOnly();
 }
 
 

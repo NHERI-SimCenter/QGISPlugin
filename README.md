@@ -14,6 +14,12 @@ To add the visualization widget in your code create an instance of the **QGISVis
 
     QGISVisualizationWidget
 
+Once compiled, to get full QGIS functionality, the following folders need to be copied into the built package:
+
+For Mac
+1) Copy the folder QGISPlugin/mac/Install/share to the folder Contents/MacOS
+2) Copy the folder QGISPlugin/mac/Install/qgis to the folder Contents/MacOS/lib
+
 
 ### How to compile R2D with QGIS
 

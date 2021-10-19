@@ -684,7 +684,7 @@ QMAKE_LFLAGS += -F$$PATH_TO_QGIS_DEPS/lib
 INCLUDEPATH += $$PATH_TO_QGIS_DEPS/lib/qwt.framework/Headers
 LIBS += -framework qwt
 
-LIBS += -L$$PATH_TO_INSTALL/lib/ -lqt5keychain.0.12.0 -lgdal.28 -lproj.18.2.3 -lqscintilla2_qt5.15.0.0
+LIBS += -L$$PATH_TO_INSTALL/lib/ -lqt5keychain.0.12.0 -lgdal.28 -lproj.18.2.3 -lqscintilla2_qt5.15.0.0 -lsqlite3.0
 
 INCLUDEPATH +=  $$PATH_TO_QGIS_DEPS/include \
                 $$PATH_TO_QGIS_DEPS/include/qt5keychain \
@@ -694,7 +694,8 @@ QMAKE_LFLAGS += -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.pl
 INCLUDEPATH += /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/OpenCL.framework/Headers
 LIBS += -framework opencl
 
-LIBS += -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib -lsqlite3
+# Do not use the system sqlite will cause a crash
+#LIBS += -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib -lsqlite3
 
 } else {
 
