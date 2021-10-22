@@ -42,6 +42,7 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 
 #include <qgsfeatureid.h>
 #include <qgsgeometry.h>
+#include <qgspointxy.h>
 #include <qgsmarkersymbollayer.h>
 #include <qgsfeatureiterator.h>
 
@@ -69,10 +70,10 @@ public:
     ~QGISVisualizationWidget();
 
     QWidget *getVisWidget();
-    double getLatFromScreenPoint(const QPointF& point);
-    double getLongFromScreenPoint(const QPointF& point);
+    double getLatFromScreenPoint(const QPointF& point, const QgsMapCanvas* canvas);
+    double getLongFromScreenPoint(const QPointF& point, const QgsMapCanvas* canvas);
 
-    QPointF getScreenPointFromLatLong(const double& latitude, const double& longitude);
+    QPointF getScreenPointFromLatLong(const double& latitude, const double& longitude, const QgsMapCanvas* canvas);
 
     void clear(void);
     void clearSelection(void);
@@ -164,6 +165,12 @@ private:
     void selectLayersInTree(const QVector<QgsMapLayer*>& layers);
 
     QMap<QString,GISSelectable*> mapSelectableAssetWidgets;
+
+    // Returns the map point in WGS84 format (lat/lon) of a screen point
+    QgsPointXY getPointFromScreenCoord(const QPoint& point, const QgsMapCanvas* canvas);
+
+    // Returns the screen point from a map point in WGS84 format (lat/lon)
+    QgsPointXY getScreenCoordFromPoint(const QgsPointXY& point, const QgsMapCanvas* canvas);
 
 };
 

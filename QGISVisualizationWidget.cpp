@@ -40,6 +40,7 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 #include "PopUpWidget.h"
 #include "SimCenterMapcanvasWidget.h"
 #include "GISSelectable.h"
+#include "CSVReaderWriter.h"
 
 // Test to delete
 #include "RectangleGrid.h"
@@ -50,6 +51,7 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 #include <qgslayertreeview.h>
 #include <qgisapp.h>
 #include <qgsmaplayer.h>
+#include <qgslayertree.h>
 #include <qgslayertreemodel.h>
 #include <qgslayertreegroup.h>
 #include <qgslayertreeviewdefaultactions.h>
@@ -232,7 +234,7 @@ SimCenterMapcanvasWidget* QGISVisualizationWidget::getMapViewWidget(const QStrin
     //    }
 
     qgis->markDirty();
-    connect( mapCanvasWidget, &QWidget::close, qgis, &QgisApp::markDirty );
+//    connect( mapCanvasWidget, &QWidget::close, qgis, &QgisApp::markDirty );
 
     mapCanvas->setInteractive(true);
 
@@ -899,21 +901,29 @@ QWidget* QGISVisualizationWidget::getVisWidget()
 }
 
 
-double QGISVisualizationWidget::getLatFromScreenPoint(const QPointF& point)
+double QGISVisualizationWidget::getLatFromScreenPoint(const QPointF& point, const QgsMapCanvas* canvas)
 {
-    return 0.0;
+    const QgsPointXY transformedPoint = getPointFromScreenCoord(point.toPoint(),canvas);
+
+    return transformedPoint.y();
 }
 
 
-double QGISVisualizationWidget::getLongFromScreenPoint(const QPointF& point)
+double QGISVisualizationWidget::getLongFromScreenPoint(const QPointF& point, const QgsMapCanvas* canvas)
 {
-    return 0.0;
+    const QgsPointXY transformedPoint = getPointFromScreenCoord(point.toPoint(),canvas);
+
+    return transformedPoint.x();
 }
 
 
-QPointF QGISVisualizationWidget::getScreenPointFromLatLong(const double& latitude, const double& longitude)
+QPointF QGISVisualizationWidget::getScreenPointFromLatLong(const double& latitude, const double& longitude, const QgsMapCanvas* canvas)
 {
-    return QPointF();
+    const QgsPointXY mapPoint(longitude,latitude);
+
+    auto screenPointXY = getScreenCoordFromPoint(mapPoint,canvas);
+
+    return QPointF(screenPointXY.x(),screenPointXY.y());
 }
 
 
@@ -926,10 +936,8 @@ void QGISVisualizationWidget::clear(void)
     for(auto&& it: selectedLayers)
         this->removeLayer(it);
 
-
-    mapSelectableAssetWidgets.clear();
-
-    qgis->toggleMapOnly();
+    // This will clear everything including background layers
+    // qgis->layerTreeView()->layerTreeModel()->rootGroup()->clear();
 }
 
 
@@ -946,6 +954,9 @@ void QGISVisualizationWidget::removeLayer(QgsMapLayer* layer)
     qgis->removeLayer(false);
 
     layer = nullptr;
+
+    // Remove the empty groups
+    qgis->layerTreeView()->layerTreeModel()->rootGroup()->removeChildrenGroupWithoutLayers();
 }
 
 
@@ -1127,3 +1138,31 @@ void QGISVisualizationWidget::handleIdentifyButton(void)
 {
     qgis->identify();
 }
+
+
+QgsPointXY QGISVisualizationWidget::getPointFromScreenCoord(const QPoint& point, const QgsMapCanvas* canvas)
+{
+    auto pointXY =canvas->mapSettings().mapToPixel().toMapCoordinates(point);
+
+    auto crs = QgsCoordinateReferenceSystem(QStringLiteral("EPSG:4326"));
+    QgsCoordinateTransform ct(canvas->mapSettings().destinationCrs(), crs, canvas->mapSettings().transformContext());
+
+    const QgsPointXY transformedPoint = ct.transform( pointXY );
+
+    return transformedPoint;
+}
+
+
+QgsPointXY QGISVisualizationWidget::getScreenCoordFromPoint(const QgsPointXY& point, const QgsMapCanvas* canvas)
+{
+    auto crs = QgsCoordinateReferenceSystem(QStringLiteral("EPSG:4326"));
+    QgsCoordinateTransform ct(crs, canvas->mapSettings().destinationCrs(), canvas->mapSettings().transformContext());
+
+    const QgsPointXY transformedPoint = ct.transform(point);
+
+    auto screenPointXY = canvas->mapSettings().mapToPixel().transform(transformedPoint);
+
+    return screenPointXY;
+}
+
+

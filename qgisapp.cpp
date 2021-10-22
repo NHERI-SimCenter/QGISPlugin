@@ -3084,7 +3084,7 @@ void QgisApp::createMenus()
     // these duplicate actions will be moved to application menus by Qt
     mProjectMenu->addAction( mActionAbout );
     QAction *actionPrefs = new QAction( tr( "Preferences…" ), this );
-    actionPrefs->setMenuRole( QAction::PreferencesRole );
+    //    actionPrefs->setMenuRole( QAction::PreferencesRole ); // SG Change so that it does not hijack the preferences menu
     actionPrefs->setIcon( mActionOptions->icon() );
     connect( actionPrefs, &QAction::triggered, this, &QgisApp::options );
     mProjectMenu->addAction( actionPrefs );
