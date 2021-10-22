@@ -34,9 +34,9 @@ During runtime the executable needs to find the QGIS library and its dependencie
 
 2) Set the DYLD_FRAMEWORK_PATH and DYLD_LIBRARY_PATH variables to point to the folders where the QGIS libraries are located. To do this in Qt Creator click on Projects->Run->Environment and under the **Build Environment** change the following:
 	
-Add to **DYLD_FRAMEWORK_PATH** the following paths (changing the paths in bold to reflect folder locations on your computer): **/Users/steve/Desktop/SimCenter**/QGISPlugin/mac/Install/lib:**/Users/steve/Desktop/SimCenter**/QGISPlugin/mac/qgis-deps-0.8.0/stage/lib
+	Add to **DYLD_FRAMEWORK_PATH** the following paths (changing the paths in bold to reflect folder locations on your computer): **/Users/steve/Desktop/SimCenter**/QGISPlugin/mac/Install/lib:**/Users/steve/Desktop/SimCenter**/QGISPlugin/mac/qgis-deps-0.8.0/stage/lib
 
-Add to **DYLD_LIBRARY_PATH** the following paths (changing the paths in bold to reflect folder locations on your computer): **/Users/steve/Desktop/SimCenter**/QGISPlugin/mac/Install/lib:**/Users/steve/Desktop/SimCenter**/QGISPlugin/mac/qgis-deps-0.8.0/stage
+	Add to **DYLD_LIBRARY_PATH** the following paths (changing the paths in bold to reflect folder locations on your computer): **/Users/steve/Desktop/SimCenter**/QGISPlugin/mac/Install/lib:**/Users/steve/Desktop/SimCenter**/QGISPlugin/mac/qgis-deps-0.8.0/stage
 
 
 Note: If you get an error during compilation, you may have to uncheck the "Add build library search path to DYLD_LIBRARY_PATH and DYLD_FRAMEWORK_PATH" option Under **Projects->Run**
