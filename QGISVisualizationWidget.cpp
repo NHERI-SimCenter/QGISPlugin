@@ -187,6 +187,32 @@ QGISVisualizationWidget::QGISVisualizationWidget(QMainWindow *parent) : Visualiz
     // Set the map tool to select
     handleClearAssetsMap();
 
+    // Now add the splitter handle
+    // Note: index 0 handle is always hidden, index 1 is between the two widgets
+    QSplitterHandle *handle = mainWidget->handle(1);
+
+    if(handle == nullptr)
+    {
+        qDebug()<<"Error getting the handle";
+        return;
+    }
+
+    auto buttonHandle = new QToolButton(handle);
+    QVBoxLayout *layout = new QVBoxLayout(handle);
+    layout->setSpacing(0);
+    layout->setMargin(0);
+
+    mainWidget->setHandleWidth(15);
+
+    buttonHandle->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    buttonHandle->setDown(false);
+    buttonHandle->setAutoRaise(false);
+    buttonHandle->setCheckable(false);
+    buttonHandle->setArrowType(Qt::RightArrow);
+    buttonHandle->setStyleSheet("QToolButton{border:0px solid}; QToolButton:pressed {border:0px solid}");
+    buttonHandle->setIconSize(buttonHandle->size());
+    layout->addWidget(buttonHandle);
+
     //        testVectorLayer();
 
     //    testNewMapCanvas();
@@ -1122,9 +1148,100 @@ QgsGeometry QGISVisualizationWidget::getPolygonGeometryFromJson(const QJsonArray
 }
 
 
+QgsGeometry QGISVisualizationWidget::getMultilineStringGeometryFromJson(const QJsonArray& geoJson)
+{
+
+    if(geoJson.size() == 0)
+        return QgsGeometry();
+
+    QgsPolylineXY polyLine;
+
+    for(auto&& it : geoJson)
+    {
+        auto points = it.toArray();
+
+        // Must be more than two points to make a polyline
+        if(points.size() < 2)
+            return QgsGeometry();
+
+        for(auto&& it2 : points)
+        {
+            auto point = it2.toArray();
+
+            double lat = point.at(0).toDouble(360.0);
+            double lon = point.at(1).toDouble(360.0);
+
+            if(lat == 360.0 || lon == 360.0)
+                return QgsGeometry();
+
+            polyLine.append(QgsPointXY(lat,lon));
+        }
+    }
+
+    QgsGeometry geom = QgsGeometry::fromPolylineXY(polyLine);
+
+    return geom;
+}
+
+
+QgsGeometry QGISVisualizationWidget::getMultilineStringGeometryFromJson(const QString& geoJson)
+{
+    QRegularExpression rx("[^\\[\\]]+(?=\\])");
+
+    QRegularExpressionMatchIterator i = rx.globalMatch(geoJson);
+
+    QStringList pointsList;
+    while (i.hasNext())
+    {
+        QRegularExpressionMatch match = i.next();
+
+        if(!match.hasMatch())
+            continue;
+
+        QString word = match.captured(0);
+        pointsList << word;
+    }
+
+    if(pointsList.empty())
+        return QgsGeometry();
+
+    QgsPolylineXY polyLine;
+
+    for(auto&& it : pointsList)
+    {
+        auto points = it.split(",");
+
+        if(points.size() < 2)
+            return QgsGeometry();
+
+        bool OK = false;
+        double lat = points.at(0).toDouble(&OK);
+
+        if(!OK)
+            return QgsGeometry();
+
+        double lon = points.at(1).toDouble(&OK);
+        if(!OK)
+            return QgsGeometry();
+
+        polyLine.append(QgsPointXY(lat,lon));
+    }
+
+    QgsGeometry geom = QgsGeometry::fromPolylineXY(polyLine);
+
+    return geom;
+}
+
+
 void QGISVisualizationWidget::registerLayerForSelection(const QString layerId, GISSelectable* widget)
 {
     mapSelectableAssetWidgets.insert(layerId,widget);
+}
+
+
+int QGISVisualizationWidget::deregisterLayerForSelection(const QString layerId)
+{
+    return mapSelectableAssetWidgets.remove(layerId);
 }
 
 

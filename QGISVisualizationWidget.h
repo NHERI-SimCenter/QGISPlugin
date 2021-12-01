@@ -80,6 +80,7 @@ public:
 
     // If you want the QGIS widget to send back selected features, you need to register the layer and corresponding input widget
     void registerLayerForSelection(const QString layerId, GISSelectable* widget);
+    int deregisterLayerForSelection(const QString layerId);
 
     // The layerPath is a path to a file if the vector layer is being loaded from a file
     // Otherwise, if the layer is being created programatically within R2D, the layerPath needs to define the type of geometry that will be present in the layer, e.g., "point", "linestring", "polygon","multipoint","multilinestring","multipolygon"
@@ -94,6 +95,8 @@ public:
 
     QgsGeometry getPolygonGeometryFromJson(const QString& geoJson);
     QgsGeometry getPolygonGeometryFromJson(const QJsonArray& geoJson);
+    QgsGeometry getMultilineStringGeometryFromJson(const QJsonArray& geoJson);
+    QgsGeometry getMultilineStringGeometryFromJson(const QString& geoJson);
 
     void removeLayer(QgsMapLayer* layer);
 
