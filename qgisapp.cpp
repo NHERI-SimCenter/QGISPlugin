@@ -4617,16 +4617,18 @@ void QgisApp::addUserInputWidget( QWidget *widget )
     mUserInputDockWidget->addUserInputWidget( widget );
 }
 
+
 void QgisApp::initLayerTreeView()
 {
-    mLayerTreeDock = new QgsDockWidget( tr( "Layers" ), this );
-    mLayerTreeDock->setObjectName( QStringLiteral( "Layers" ) );
-    mLayerTreeDock->setAllowedAreas( Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea );
+    // SG Change to not show the empty layer dock on start
+//    mLayerTreeDock = new QgsDockWidget( tr( "Layers" ), this );
+//    mLayerTreeDock->setObjectName( QStringLiteral( "Layers" ) );
+//    mLayerTreeDock->setAllowedAreas( Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea );
 
-    QShortcut *showLayersTreeDock = new QShortcut( QKeySequence( tr( "Ctrl+1" ) ), this );
-    connect( showLayersTreeDock, &QShortcut::activated, mLayerTreeDock, &QgsDockWidget::toggleUserVisible );
-    showLayersTreeDock->setObjectName( QStringLiteral( "ShowLayersPanel" ) );
-    showLayersTreeDock->setWhatsThis( tr( "Show Layers Panel" ) );
+//    QShortcut *showLayersTreeDock = new QShortcut( QKeySequence( tr( "Ctrl+1" ) ), this );
+//    connect( showLayersTreeDock, &QShortcut::activated, mLayerTreeDock, &QgsDockWidget::toggleUserVisible );
+//    showLayersTreeDock->setObjectName( QStringLiteral( "ShowLayersPanel" ) );
+//    showLayersTreeDock->setWhatsThis( tr( "Show Layers Panel" ) );
 
     QgsLayerTreeModel *model = new QgsLayerTreeModel( QgsProject::instance()->layerTreeRoot(), this );
 #ifdef ENABLE_MODELTEST
@@ -4736,8 +4738,8 @@ void QgisApp::initLayerTreeView()
 
     QWidget *w = new QWidget;
     w->setLayout( vboxLayout );
-    mLayerTreeDock->setWidget( w );
-    addDockWidget( Qt::LeftDockWidgetArea, mLayerTreeDock );
+//    mLayerTreeDock->setWidget( w );
+//    addDockWidget( Qt::LeftDockWidgetArea, mLayerTreeDock );
 
     mLayerTreeCanvasBridge = new QgsLayerTreeMapCanvasBridge( QgsProject::instance()->layerTreeRoot(), mMapCanvas, this );
 
