@@ -110,7 +110,7 @@ public:
 
     void createCategoryRenderer(const QString attrName, QgsVectorLayer * vlayer, QgsSymbol* symbol, QVector<QColor> colors = QVector<QColor>());
 
-    void createCustomClassBreakRenderer(const QString attrName, const QVector<QPair<double,double>>& classBreaks, const QVector<QColor>& colors, QgsVectorLayer * vlayer);
+    int createCustomClassBreakRenderer(const QString attrName, QgsVectorLayer * vlayer, Qgis::SymbolType symbolType, const QVector<QPair<double,double>>& classBreaks, const QVector<QColor>& colors, const QVector<QString> labels  = QVector<QString>(), double size = 2.0);
 
     // The same symbol will be used to render every feature
     void createSimpleRenderer(QgsSymbol* symbol, QgsVectorLayer * layer);
@@ -134,6 +134,12 @@ public:
     QgsMapCanvas* getMainCanvas(void);
 
     void showFeaturePopUp(QgsFeatureIterator& features);
+
+    QgsLayerTreeView *getLayerTreeView() const;
+
+    // Returns the value of the raster layer in the given band
+    // Note that band numbers start from 1 and not 0!
+    double sampleRaster(const double& x, const double& y, QgsRasterLayer* rasterlayer, const int& bandNumber);
 
 public slots:
 

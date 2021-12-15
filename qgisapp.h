@@ -876,6 +876,12 @@ class APP_EXPORT QgisApp : public QMainWindow
     //! deselect features from all layers
     void deselectAll();
 
+    //! refresh map canvas
+    void refreshMapCanvas( bool redrawAllLayers = false );
+
+    //! Activates or deactivates actions depending on the selected layers in the layer panel.
+    void activateDeactivateMultipleLayersRelatedActions();
+
 public slots:
 
     //! Identify feature(s) on the currently selected layer
@@ -1722,9 +1728,6 @@ public slots:
     //! select features by form
     void selectByForm();
 
-    //! refresh map canvas
-    void refreshMapCanvas( bool redrawAllLayers = false );
-
     //! start "busy" progress bar
     void canvasRefreshStarted();
     //! stop "busy" progress bar
@@ -1757,8 +1760,6 @@ public slots:
     //! Returns true if at least one selected layer in layer panel is spatial (returns false if none).
     bool selectedLayersHaveSpatial();
 
-    //! Activates or deactivates actions depending on the selected layers in the layer panel.
-    void activateDeactivateMultipleLayersRelatedActions();
 
     /**
      * Activates or deactivates actions depending on the current maplayer type.

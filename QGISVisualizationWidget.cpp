@@ -67,6 +67,7 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 #include <qgscategorizedsymbolrenderer.h>
 #include <qgsmarkersymbol.h>
 #include <qgsfillsymbol.h>
+#include <qgslinesymbol.h>
 #include <qgscolorramp.h>
 #include <qgsexpressioncontextutils.h>
 #include <qgsrulebasedrenderer.h>
@@ -80,6 +81,7 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 #include <qgslayertreenode.h>
 #include <qgssinglesymbolrenderer.h>
 #include <qgsrasterlayer.h>
+#include <qgsrasterdataprovider.h>
 
 #include <QStandardPaths>
 #include <QSplitter>
@@ -213,7 +215,7 @@ QGISVisualizationWidget::QGISVisualizationWidget(QMainWindow *parent) : Visualiz
     buttonHandle->setIconSize(buttonHandle->size());
     layout->addWidget(buttonHandle);
 
-    //        testVectorLayer();
+    //    testVectorLayer();
 
     //    testNewMapCanvas();
 
@@ -260,7 +262,7 @@ SimCenterMapcanvasWidget* QGISVisualizationWidget::getMapViewWidget(const QStrin
     //    }
 
     qgis->markDirty();
-//    connect( mapCanvasWidget, &QWidget::close, qgis, &QgisApp::markDirty );
+    //    connect( mapCanvasWidget, &QWidget::close, qgis, &QgisApp::markDirty );
 
     mapCanvas->setInteractive(true);
 
@@ -294,6 +296,7 @@ void QGISVisualizationWidget::testNewMapCanvas2()
 void QGISVisualizationWidget::markDirty()
 {
     qgis->markDirty();
+    qgis->refreshMapCanvas(true);
 }
 
 
@@ -576,9 +579,9 @@ void QGISVisualizationWidget::testVectorLayer()
     colors.push_back(Qt::green);
     colors.push_back(Qt::red);
 
-    createCustomClassBreakRenderer("repairRatio",classBreaks,colors,vl);
+    createCustomClassBreakRenderer("repairRatio",vl,Qgis::SymbolType::Marker,classBreaks,colors);
 
-    createCustomClassBreakRenderer("repairRatio",classBreaks,colors,vl2);
+    createCustomClassBreakRenderer("repairRatio",vl2,Qgis::SymbolType::Marker,classBreaks,colors);
 
     QVector<QgsMapLayer*> vecLayers= {vl,vl2};
 
@@ -735,16 +738,16 @@ QModelIndex QGISVisualizationWidget::getLayerIndex(QgsMapLayer* layer)
 }
 
 
-void QGISVisualizationWidget::createCustomClassBreakRenderer(const QString attrName, const QVector<QPair<double,double>>& classBreaks, const QVector<QColor>& colors, QgsVectorLayer * vlayer)
+int QGISVisualizationWidget::createCustomClassBreakRenderer(const QString attrName, QgsVectorLayer * vlayer, Qgis::SymbolType symbolType, const QVector<QPair<double,double>>& classBreaks, const QVector<QColor>& colors, const QVector<QString> labels, double size)
 {
 
     if(vlayer == nullptr)
-        return;
+        return -1;
 
     if(colors.size() != classBreaks.size())
     {
-        qDebug()<<"Mismatch between number of class breaks and colors, they have to be the same size";
-        return;
+        this->errorMessage("Mismatch between number of class breaks and colors, they have to be the same size");
+        return -1;
     }
 
     // qgsclassificationcustom
@@ -752,21 +755,49 @@ void QGISVisualizationWidget::createCustomClassBreakRenderer(const QString attrN
     QgsClassificationMethod *method = QgsApplication::classificationMethodRegistry()->method(methodId);
 
     QgsRangeList rngList;
+    rngList.reserve(classBreaks.size());
 
     for(int i = 0; i<classBreaks.size(); ++i)
     {
-        QgsMarkerSymbol* mMarkerSymbol = new QgsMarkerSymbol();
-        mMarkerSymbol->setColor(colors[i]);
+        QgsSymbol* symbol = nullptr;
+        if(symbolType == Qgis::SymbolType::Marker)
+        {
+            auto markerSymbol = new QgsMarkerSymbol();
+            markerSymbol->setSize(size);
+            symbol = markerSymbol;
+        }
+        else if(symbolType == Qgis::SymbolType::Line)
+        {
+            auto lineSymbol = new QgsLineSymbol();
+            lineSymbol->setWidth(size);
+            symbol = lineSymbol;
+        }
+        else if(symbolType == Qgis::SymbolType::Fill)
+        {
+            symbol = new QgsFillSymbol();
+        }
+        else
+        {
+            this->errorMessage("Could not recognize the symbol type");
+            return -1;
+        }
+
+        symbol->setColor(colors[i]);
         auto cBreak = classBreaks.at(i);
 
         auto lowEnd = cBreak.first;
         auto highEnd = cBreak.second;
 
-        QString label = QString::number(lowEnd) + " - " + QString::number(highEnd);
+        QString label;
 
-        QgsRendererRange newRange(lowEnd,highEnd, mMarkerSymbol,label);
+        if(!labels.empty())
+            label = labels[i];
+        else
+            label = QString::number(lowEnd) + " - " + QString::number(highEnd);
 
-        rngList.append(newRange);
+        QgsRendererRange newRange(lowEnd,highEnd, symbol,label);
+
+        rngList.push_back(newRange);
     }
 
     QgsGraduatedSymbolRenderer* renderer = new QgsGraduatedSymbolRenderer(attrName,rngList);
@@ -778,6 +809,8 @@ void QGISVisualizationWidget::createCustomClassBreakRenderer(const QString attrN
     renderer->setClassAttribute(attrName);
 
     vlayer->setRenderer(renderer);
+
+    return 0;
 }
 
 
@@ -1086,6 +1119,11 @@ void QGISVisualizationWidget::zoomToLayer(QgsMapLayer* layer)
     return;
 }
 
+QgsLayerTreeView *QGISVisualizationWidget::getLayerTreeView() const
+{
+    return layerTreeView;
+}
+
 
 QgisApp* QGISVisualizationWidget::getQgis(void)
 {
@@ -1280,6 +1318,37 @@ QgsPointXY QGISVisualizationWidget::getScreenCoordFromPoint(const QgsPointXY& po
     auto screenPointXY = canvas->mapSettings().mapToPixel().transform(transformedPoint);
 
     return screenPointXY;
+}
+
+
+double QGISVisualizationWidget::sampleRaster(const double& x, const double& y, QgsRasterLayer* rasterlayer, const int& bandNumber)
+{
+    if(rasterlayer == nullptr)
+    {
+        this->errorMessage("Error, attempting to sample a raster layer that is a nullptr");
+        return std::numeric_limits<double>::quiet_NaN();
+    }
+
+    auto numBands = rasterlayer->bandCount();
+
+    if(bandNumber>numBands)
+    {
+        this->errorMessage("Error, the band number given "+QString::number(bandNumber)+" is greater than the number of bands in the raster: "+QString::number(numBands));
+        return std::numeric_limits<double>::quiet_NaN();
+    }
+
+    QgsPointXY point(x,y);
+
+    // Use the sample method below as this is considerably more efficient than other methods
+    bool OK;
+    auto sampleVal = rasterlayer->dataProvider()->sample(point,bandNumber,&OK,QgsRectangle(),2,2);
+
+    if(!OK)
+        this->errorMessage("Error, sampling the raster " + rasterlayer->name());
+
+
+    // Test val will be NAN at failure
+    return sampleVal;
 }
 
 
