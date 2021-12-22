@@ -93,6 +93,10 @@ public:
 
     QgsRasterLayer* addRasterLayer(const QString &layerPath, const QString &name, const QString &providerKey);
 
+
+    // Adds a new map layer to the project, useful when cloning an exisiting layer
+    void addMapLayer(QgsMapLayer* layer);
+
     QgsGeometry getPolygonGeometryFromJson(const QString& geoJson);
     QgsGeometry getPolygonGeometryFromJson(const QJsonArray& geoJson);
     QgsGeometry getMultilineStringGeometryFromJson(const QJsonArray& geoJson);

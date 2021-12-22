@@ -486,6 +486,12 @@ QgsVectorLayer* QGISVisualizationWidget::addVectorLayer(const QString &layerPath
 }
 
 
+void QGISVisualizationWidget::addMapLayer(QgsMapLayer* layer)
+{
+    qgis->addMapLayer(layer);
+}
+
+
 void QGISVisualizationWidget::testVectorLayer()
 {
 
