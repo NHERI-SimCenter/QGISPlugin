@@ -62,6 +62,7 @@ class QgsVectorLayer;
 class QgsSymbol;
 class QgsMapLayer;
 class QgsMapCanvas;
+class QgsLayerTreeGroup;
 
 class QGISVisualizationWidget : public VisualizationWidget
 {
@@ -123,7 +124,9 @@ public:
 
     // Create a group of layers
     // Must pass at least one layer
-    void createLayerGroup(const QVector<QgsMapLayer*>& layers, const QString groupName);
+    QgsLayerTreeGroup* createLayerGroup(const QVector<QgsMapLayer*>& layers, const QString groupName);
+
+    QgsLayerTreeGroup* getLayerGroup(const QString groupName);
 
     void turnOnSelectionTool();
 

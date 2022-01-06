@@ -619,12 +619,12 @@ void QGISVisualizationWidget::selectLayersInTree(const QVector<QgsMapLayer*>& la
 }
 
 
-void QGISVisualizationWidget::createLayerGroup(const QVector<QgsMapLayer*>& layers, const QString groupName)
+QgsLayerTreeGroup* QGISVisualizationWidget::createLayerGroup(const QVector<QgsMapLayer*>& layers, const QString groupName)
 {
-    if(layers.empty())
+    if(layers.size() < 2)
     {
-        this->errorMessage("No layers given in create group");
-        return;
+        this->errorMessage("Two or more layers are required to create a group");
+        return nullptr;
     }
 
     // First select the layers
@@ -633,7 +633,7 @@ void QGISVisualizationWidget::createLayerGroup(const QVector<QgsMapLayer*>& laye
     if(layerTreeView->selectedLayers().empty())
     {
         this->errorMessage("Layer selection failed in create group");
-        return;
+        return nullptr;
     }
 
     // Add the group
@@ -641,10 +641,24 @@ void QGISVisualizationWidget::createLayerGroup(const QVector<QgsMapLayer*>& laye
 
     // Rename the group
     auto group = layerTreeView->currentGroupNode();
-    group->setName(groupName);
+
+    if(group != nullptr)
+        group->setName(groupName);
+    else
+        this->errorMessage("Failed to create a group layer");
 
     // Clear the selection otherwise future layers added to the map will automatically be part of the group
     this->deselectAllTreeItems();
+
+    return group;
+}
+
+
+QgsLayerTreeGroup* QGISVisualizationWidget::getLayerGroup(const QString groupName)
+{
+    auto grp = layerTreeView->currentGroupNode()->findGroup(groupName);
+
+    return grp;
 }
 
 
