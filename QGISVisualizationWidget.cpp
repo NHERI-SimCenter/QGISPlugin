@@ -486,6 +486,91 @@ QgsVectorLayer* QGISVisualizationWidget::addVectorLayer(const QString &layerPath
 }
 
 
+QgsVectorLayer* QGISVisualizationWidget::duplicateExistingLayer(QgsVectorLayer* layer)
+{
+    if(layer == nullptr)
+    {
+        this->errorMessage("nullptr came into function");
+        return nullptr;
+    }
+
+    // Get the layer type
+    QString layerType;
+    auto geomType = layer->geometryType();
+
+    if(geomType == QgsWkbTypes::PolygonGeometry)
+        layerType = "polygon";
+    else if (geomType == QgsWkbTypes::PointGeometry)
+        layerType = "point";
+    else if (geomType == QgsWkbTypes::LineGeometry)
+        layerType = "linestring";
+    else
+    {
+        this->errorMessage("Could not parse the layer type for layer "+layer->name());
+        return nullptr;
+    }
+
+   QgsVectorLayer* dupLayer = this->addVectorLayer(layerType,"All Pipelines");
+   if (dupLayer == nullptr)
+   {
+       this->errorMessage("Error copying the layer "+layer->name() + " could not create a layer in the memory");
+       return nullptr;
+   }
+
+   auto pr = dupLayer->dataProvider();
+   dupLayer->startEditing();
+
+   auto res = pr->addAttributes(layer->fields().toList());
+
+   if(!res)
+   {
+       this->errorMessage("Error adding attributes to the duplicate layer " + dupLayer->name() + ". Error copying the layer "+layer->name());
+       return nullptr;
+   }
+
+   dupLayer->updateFields(); // tell the vector layer to fetch changes from the provider
+
+   // Check if the layer is created, but perhaps not valid
+   if (!dupLayer->isValid())
+   {
+       this->errorMessage("Error copying the layer "+layer->name()+" duplicate layer is not valid");
+       return nullptr;
+   }
+
+   // Set the crs of the duplicated layer to the crs of the original layer
+   dupLayer->setCrs(layer->crs());
+
+   auto layerDupName = layer->name() + ' ' + "copy";
+   dupLayer->setName(layerDupName);
+
+   // There could be a better approach to do this... perform a deep copy of the features for now
+   QgsFeatureIterator featIt = layer->getFeatures();
+
+   QList<QgsFeature> featureList;
+   QgsFeature feat;
+   while (featIt.nextFeature(feat))
+   {
+       auto newFeat = QgsFeature(feat); // Use the feature copy constructor
+
+       // Do a deep clone of the geometry
+       newFeat.setGeometry(QgsGeometry(feat.geometry().get()->clone()));
+       featureList.append(newFeat);
+   }
+
+   // Start editing on the layer
+   dupLayer->startEditing();
+
+   dupLayer->dataProvider()->addFeatures(featureList);
+
+   dupLayer->commitChanges(true);
+   dupLayer->updateExtents();
+
+   this->addMapLayer(dupLayer);
+
+    return dupLayer;
+}
+
+
 void QGISVisualizationWidget::addMapLayer(QgsMapLayer* layer)
 {
     qgis->addMapLayer(layer);
@@ -1372,3 +1457,160 @@ double QGISVisualizationWidget::sampleRaster(const double& x, const double& y, Q
 }
 
 
+int QGISVisualizationWidget::addNewFeatureAttributesToLayer(QgsVectorLayer* layer, const QStringList& fieldNames, const QVector<QgsAttributes>& values, QString& error)
+{
+    if(layer == nullptr)
+    {
+        error = "Error, nullptr layer. Could not add new component attributes";
+        return -1;
+    }
+
+    auto numFeatLayer = layer->featureCount();
+
+    if(values.size() != numFeatLayer)
+    {
+        error = "Error, the number of fields and values ("+QString::number(values.size())+ ") should be equal to the number of features in the layer' (" + QString::number(numFeatLayer)+ "). /n Failed to batch add new attributes.";
+        return -1;
+    }
+
+
+    if(values.empty())
+    {
+        error = "Error, empty attribute values in input. Could not add new component attributes";
+        return false;
+    }
+
+
+    auto numNewFields = fieldNames.size();
+    auto firstRow = values.first();
+
+    if(firstRow.size() != numNewFields)
+    {
+        error = "Error, the number of values must match the number of fields";
+        return false;
+    }
+
+    QgsFields existingFields = layer->dataProvider()->fields();
+
+    auto fidIdx = existingFields.indexOf("fid");
+
+    // Remove the fid index if it exists
+    if(fidIdx != -1)
+        existingFields.remove(fidIdx);
+
+    for(int i = 0; i <numNewFields; ++i)
+    {
+        auto fieldName = fieldNames[i];
+
+        auto fieldType = firstRow.at(i).type();
+
+        existingFields.append(QgsField(fieldName, fieldType));
+    }
+
+
+    QgsFeatureRequest featRequest;
+
+    // Need to return the features with ascending ids so that when we set the updated features to the layer, things will be in order
+    QgsFeatureRequest::OrderByClause orderByClause(QString("id"),true);
+    QList<QgsFeatureRequest::OrderByClause> obcList = {orderByClause};
+    QgsFeatureRequest::OrderBy orderBy(obcList);
+    featRequest.setOrderBy(orderBy);
+
+    auto featIt = layer->getFeatures(featRequest);
+
+    QgsFeatureList featList;
+    featList.reserve(values.size());
+
+    int count = 0;
+    QgsFeature feat;
+    while (featIt.nextFeature(feat))
+    {
+        auto existingAtrb = feat.attributes();
+
+        // auto id = feat.id();
+        feat.setFields(existingFields, true);
+
+        auto newAtrb = values[count];
+
+        existingAtrb.append(newAtrb);
+
+        if(existingAtrb.size() != feat.fields().size())
+        {
+            error = "Error, the number of attributes is "+ QString::number(existingAtrb.size()) + " while the number of fields is "+QString::number(feat.fields().size());
+            return -1;
+        }
+
+        // The number of provided attributes need to exactly match the number of the feature's fields.
+        feat.setAttributes(existingAtrb);
+
+        featList.push_back(feat);
+        ++count;
+    }
+
+    if(values.size() != featList.size())
+    {
+        error = "Error, inconsistent sizes of values to update and number of updated features. Please contact developers. Could not add fields to "+layer->name();
+        return -1;
+    }
+
+    // Start editing on the layer
+    layer->startEditing();
+
+    auto res = layer->dataProvider()->truncate();
+
+    if(!res)
+    {
+        error = "Error, failed to remove existing features in the "+layer->name()+" layers data provider. Please contact developers";
+        return -1;
+    }
+
+//    qDebug()<<"Num attributes after truncate is "<<layer->dataProvider()->attributeIndexes().size();
+//    qDebug()<<"Num existing attributes is "<<existingFields.toList().size();
+
+//    for(auto&& it : existingFields.toList())
+//    {
+//       qDebug()<<it.displayName();
+//       qDebug()<<it.type();
+//    }
+
+    res = layer->dataProvider()->addAttributes(existingFields.toList());
+
+    if(!res)
+    {
+         error = "Error adding attributes to the layer " + layer->name();
+         return -1;
+    }
+
+//    qDebug()<<"Num provider fields before update is "<<layer->dataProvider()->attributeIndexes().size();
+
+
+
+    layer->updateFields(); // tell the vector layer to fetch changes from the provider
+
+//    auto numAtrb = featList.first().attributeCount();
+//    auto numField = featList.first().fields().count();
+
+//    qDebug()<<"Num feat. fields is "<<numField;
+//    qDebug()<<"Num feat. attributes is "<<numAtrb;
+
+//    qDebug()<<"Num layer fields is "<<layer->fields().count();
+//    qDebug()<<"Num layer attributes is "<<layer->attributeList().count();
+
+//    for(auto&& it : layer->fields().toList())
+//    {
+//       qDebug()<<it.name();
+//    }
+
+    res = layer->dataProvider()->addFeatures(featList);
+
+    if(!res)
+    {
+        error = "Error, failed to add features to the 'Selected Asset Layer' data provider. Please contact developers. Could not add fields to " + layer->name();
+        return -1;
+    }
+
+    layer->commitChanges(true);
+    layer->updateExtents();
+
+    return 0;
+}

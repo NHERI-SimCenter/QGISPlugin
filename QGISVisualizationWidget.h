@@ -94,8 +94,12 @@ public:
 
     QgsRasterLayer* addRasterLayer(const QString &layerPath, const QString &name, const QString &providerKey);
 
+    // Duplicates an exisiting layer and returns the layer. Returns a nullptr if resulting layer is invalid.
+    // Note: creates a deep copy, and therefore may take a while.
+    // If you want a superficial copy where two layers share the same data source use the layer->clone() functionality, e.g., just to render the layer differently
+    QgsVectorLayer* duplicateExistingLayer(QgsVectorLayer* layer);
 
-    // Adds a new map layer to the project, useful when cloning an exisiting layer
+    // Adds a new map layer to the project, useful when cloning or duplicating an exisiting layer
     void addMapLayer(QgsMapLayer* layer);
 
     QgsGeometry getPolygonGeometryFromJson(const QString& geoJson);
@@ -147,6 +151,11 @@ public:
     // Returns the value of the raster layer in the given band
     // Note that band numbers start from 1 and not 0!
     double sampleRaster(const double& x, const double& y, QgsRasterLayer* rasterlayer, const int& bandNumber);
+
+    // Adds new or additional feature attributes to exisiting features in a layer
+    // There has to be as many attribute values as there are features in the exisiting layer
+    // The attributes should be sorted according to feature id, ascending from lowest to highest
+    int addNewFeatureAttributesToLayer(QgsVectorLayer* layer, const QStringList& fieldNames, const QVector<QgsAttributes>& values, QString& error);
 
 public slots:
 
