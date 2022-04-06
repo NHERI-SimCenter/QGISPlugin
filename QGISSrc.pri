@@ -700,9 +700,9 @@ LIBS += -framework opencl
 } else {
 
 CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_DEPS/apps/Qt5/lib/ -lqca-qt5 -lqwt -lqt5keychain -lqscintilla2
-CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_DEPS/apps/Qt5/lib/ -lqca-qt5d -lqwtd -lqt5keychaind -lqscintilla2d
+CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_DEPS/apps/Qt5/lib/ -lqca-qt5 -lqwt -lqt5keychaind -lqscintilla2 
 
-LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lproj -lgdal_i -lsqlite3_i -lopencl
+LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lproj -lgdal_i -lsqlite3_i -lopencl -lzlib
 
 INCLUDEPATH +=  $$PATH_TO_QGIS_DEPS/include \
                 $$PATH_TO_QGIS_DEPS/apps/Qt5/include \
