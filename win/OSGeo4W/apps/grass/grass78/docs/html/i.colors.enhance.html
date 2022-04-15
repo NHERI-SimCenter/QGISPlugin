@@ -1,71 +1,71 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>i.colors.enhance.py - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>i.colors.enhance.py</b></em>  - Performs auto-balancing of colors for RGB images.
-<h2>KEYWORDS</h2>
-<a href="imagery.html">imagery</a>, <a href="topic_RGB.html">RGB</a>, <a href="keywords.html#satellite">satellite</a>, <a href="keywords.html#colors">colors</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>i.colors.enhance.py</b><br></div>
-<b>i.colors.enhance.py --help</b><br>
-<div id="synopsis"><b>i.colors.enhance.py</b> [-<b>fprs</b>] <b>red</b>=<em>name</em> <b>green</b>=<em>name</em> <b>blue</b>=<em>name</em>  [<b>strength</b>=<em>float</em>]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-f</b></dt>
-<dd>Extend colors to full range of data on each channel</dd>
-
-<dt><b>-p</b></dt>
-<dd>Preserve relative colors, adjust brightness only</dd>
-
-<dt><b>-r</b></dt>
-<dd>Reset to standard color range</dd>
-
-<dt><b>-s</b></dt>
-<dd>Process bands serially (default: run in parallel)</dd>
-
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>red</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of red channel</dd>
-
-<dt><b>green</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of green channel</dd>
-
-<dt><b>blue</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of blue channel</dd>
-
-<dt><b>strength</b>=<em>float</em></dt>
-<dd>Cropping intensity (upper brightness level)</dd>
-<dd>Options: <em>0-100</em></dd>
-<dd>Default: <em>98</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>i.colors.enhance.py - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>i.colors.enhance.py</b></em>  - Performs auto-balancing of colors for RGB images.
+<h2>KEYWORDS</h2>
+<a href="imagery.html">imagery</a>, <a href="topic_RGB.html">RGB</a>, <a href="keywords.html#satellite">satellite</a>, <a href="keywords.html#colors">colors</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>i.colors.enhance.py</b><br></div>
+<b>i.colors.enhance.py --help</b><br>
+<div id="synopsis"><b>i.colors.enhance.py</b> [-<b>fprs</b>] <b>red</b>=<em>name</em> <b>green</b>=<em>name</em> <b>blue</b>=<em>name</em>  [<b>strength</b>=<em>float</em>]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-f</b></dt>
+<dd>Extend colors to full range of data on each channel</dd>
+
+<dt><b>-p</b></dt>
+<dd>Preserve relative colors, adjust brightness only</dd>
+
+<dt><b>-r</b></dt>
+<dd>Reset to standard color range</dd>
+
+<dt><b>-s</b></dt>
+<dd>Process bands serially (default: run in parallel)</dd>
+
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>red</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of red channel</dd>
+
+<dt><b>green</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of green channel</dd>
+
+<dt><b>blue</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of blue channel</dd>
+
+<dt><b>strength</b>=<em>float</em></dt>
+<dd>Cropping intensity (upper brightness level)</dd>
+<dd>Options: <em>0-100</em></dd>
+<dd>Default: <em>98</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -155,7 +155,14 @@ M. Hamish Bowman, Dept. Marine Science, Otago University, New Zealand
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/scripts/i.colors.enhance">i.colors.enhance source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/scripts/i.colors.enhance">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/scripts/i.colors.enhance">i.colors.enhance source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/scripts/i.colors.enhance">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -166,9 +173,9 @@ M. Hamish Bowman, Dept. Marine Science, Otago University, New Zealand
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

@@ -1,94 +1,94 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.clean - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.clean</b></em>  - Toolset for cleaning topology of vector map.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_topology.html">topology</a>, <a href="keywords.html#geometry">geometry</a>, <a href="keywords.html#snapping">snapping</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.clean</b><br></div>
-<b>v.clean --help</b><br>
-<div id="synopsis"><b>v.clean</b> [-<b>bc</b>] <b>input</b>=<em>name</em>  [<b>layer</b>=<em>string</em>]   [<b>type</b>=<em>string</em>[,<i>string</i>,...]]  <b>output</b>=<em>name</em>  [<b>error</b>=<em>name</em>]  <b>tool</b>=<em>string</em>[,<i>string</i>,...]  [<b>threshold</b>=<em>float</em>[,<i>float</i>,...]]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-b</b></dt>
-<dd>Do not build topology for the output vector</dd>
-
-<dt><b>-c</b></dt>
-<dd>Combine tools with recommended follow-up tools</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input vector map</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>layer</b>=<em>string</em></dt>
-<dd>Layer number or name ('-1' for all layers)</dd>
-<dd>A single vector map can be connected to multiple database tables. This number determines which table to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>-1</em></dd>
-
-<dt><b>type</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>Input feature type</dd>
-<dd>Options: <em>point, line, boundary, centroid, area, face, kernel</em></dd>
-<dd>Default: <em>point,line,boundary,centroid,area,face,kernel</em></dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output vector map</dd>
-
-<dt><b>error</b>=<em>name</em></dt>
-<dd>Name of output map where errors are written</dd>
-
-<dt><b>tool</b>=<em>string[,<i>string</i>,...]</em>&nbsp;<b>[required]</b></dt>
-<dd>Cleaning tool</dd>
-<dd>Options: <em>break, snap, rmdangle, chdangle, rmbridge, chbridge, rmdupl, rmdac, bpol, prune, rmarea, rmline, rmsa</em></dd>
-<dd><b>break</b>: break lines at each intersection</dd>
-<dd><b>snap</b>: snap lines to vertex in threshold</dd>
-<dd><b>rmdangle</b>: remove dangles, threshold ignored if &lt; 0</dd>
-<dd><b>chdangle</b>: change the type of boundary dangle to line, threshold ignored if &lt; 0, input line type is ignored</dd>
-<dd><b>rmbridge</b>: remove bridges connecting area and island or 2 islands</dd>
-<dd><b>chbridge</b>: change the type of bridges connecting area and island or 2 islands from boundary to line</dd>
-<dd><b>rmdupl</b>: remove duplicate geometry features (pay attention to categories!)</dd>
-<dd><b>rmdac</b>: remove duplicate area centroids ('type' option ignored)</dd>
-<dd><b>bpol</b>: break (topologically clean) polygons (imported from non topological format, like ShapeFile). Boundaries are broken on each point shared between 2 and more polygons where angles of segments are different</dd>
-<dd><b>prune</b>: remove vertices in threshold from lines and boundaries, boundary is pruned only if topology is not damaged (new intersection, changed attachment of centroid), first and last segment of the boundary is never changed</dd>
-<dd><b>rmarea</b>: remove small areas, the longest boundary with adjacent area is removed</dd>
-<dd><b>rmline</b>: remove all lines or boundaries of zero length, threshold is ignored</dd>
-<dd><b>rmsa</b>: remove small angles between lines at nodes</dd>
-
-<dt><b>threshold</b>=<em>float[,<i>float</i>,...]</em></dt>
-<dd>Threshold in map units, one value for each tool</dd>
-<dd>Default: 0.0[,0.0,...])</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.clean - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.clean</b></em>  - Toolset for cleaning topology of vector map.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_topology.html">topology</a>, <a href="keywords.html#geometry">geometry</a>, <a href="keywords.html#snapping">snapping</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.clean</b><br></div>
+<b>v.clean --help</b><br>
+<div id="synopsis"><b>v.clean</b> [-<b>bc</b>] <b>input</b>=<em>name</em>  [<b>layer</b>=<em>string</em>]   [<b>type</b>=<em>string</em>[,<i>string</i>,...]]  <b>output</b>=<em>name</em>  [<b>error</b>=<em>name</em>]  <b>tool</b>=<em>string</em>[,<i>string</i>,...]  [<b>threshold</b>=<em>float</em>[,<i>float</i>,...]]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-b</b></dt>
+<dd>Do not build topology for the output vector</dd>
+
+<dt><b>-c</b></dt>
+<dd>Combine tools with recommended follow-up tools</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input vector map</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>layer</b>=<em>string</em></dt>
+<dd>Layer number or name ('-1' for all layers)</dd>
+<dd>A single vector map can be connected to multiple database tables. This number determines which table to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>-1</em></dd>
+
+<dt><b>type</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>Input feature type</dd>
+<dd>Options: <em>point, line, boundary, centroid, area, face, kernel</em></dd>
+<dd>Default: <em>point,line,boundary,centroid,area,face,kernel</em></dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output vector map</dd>
+
+<dt><b>error</b>=<em>name</em></dt>
+<dd>Name of output map where errors are written</dd>
+
+<dt><b>tool</b>=<em>string[,<i>string</i>,...]</em>&nbsp;<b>[required]</b></dt>
+<dd>Cleaning tool</dd>
+<dd>Options: <em>break, snap, rmdangle, chdangle, rmbridge, chbridge, rmdupl, rmdac, bpol, prune, rmarea, rmline, rmsa</em></dd>
+<dd><b>break</b>: break lines at each intersection</dd>
+<dd><b>snap</b>: snap lines to vertex in threshold</dd>
+<dd><b>rmdangle</b>: remove dangles, threshold ignored if &lt; 0</dd>
+<dd><b>chdangle</b>: change the type of boundary dangle to line, threshold ignored if &lt; 0, input line type is ignored</dd>
+<dd><b>rmbridge</b>: remove bridges connecting area and island or 2 islands</dd>
+<dd><b>chbridge</b>: change the type of bridges connecting area and island or 2 islands from boundary to line</dd>
+<dd><b>rmdupl</b>: remove duplicate geometry features (pay attention to categories!)</dd>
+<dd><b>rmdac</b>: remove duplicate area centroids ('type' option ignored)</dd>
+<dd><b>bpol</b>: break (topologically clean) polygons (imported from non topological format, like ShapeFile). Boundaries are broken on each point shared between 2 and more polygons where angles of segments are different</dd>
+<dd><b>prune</b>: remove vertices in threshold from lines and boundaries, boundary is pruned only if topology is not damaged (new intersection, changed attachment of centroid), first and last segment of the boundary is never changed</dd>
+<dd><b>rmarea</b>: remove small areas, the longest boundary with adjacent area is removed</dd>
+<dd><b>rmline</b>: remove all lines or boundaries of zero length, threshold is ignored</dd>
+<dd><b>rmsa</b>: remove small angles between lines at nodes</dd>
+
+<dt><b>threshold</b>=<em>float[,<i>float</i>,...]</em></dt>
+<dd>Threshold in map units, one value for each tool</dd>
+<dd>Default: 0.0[,0.0,...])</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -514,7 +514,14 @@ Martin Landa, FBK-irst (formerly ITC-irst), Trento, Italy
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.clean">v.clean source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.clean">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.clean">v.clean source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.clean">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -525,9 +532,9 @@ Martin Landa, FBK-irst (formerly ITC-irst), Trento, Italy
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

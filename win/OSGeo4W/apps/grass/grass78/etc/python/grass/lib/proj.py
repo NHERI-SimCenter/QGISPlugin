@@ -1,7 +1,7 @@
 '''Wrapper for gprojects.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_gproj.7.8 -ID:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gprojects.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h -o OBJ.x86_64-w64-mingw32/proj.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_gproj.7.8 -ID:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gprojects.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h -o OBJ.x86_64-w64-mingw32/proj.py
 
 Do not modify this file.
 '''
@@ -27,23 +27,23 @@ _libs["grass_gproj.7.8"] = load_library("grass_gproj.7.8")
 
 # No modules
 
-# D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 218
+# D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 220
 class struct_PJconsts(Structure):
     pass
 
-PJ = struct_PJconsts # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 219
+PJ = struct_PJconsts # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 221
 
-PJ_WKT2_2015 = 0 # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 828
+PJ_WKT2_2015 = 0 # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 847
 
-PJ_WKT2_2015_SIMPLIFIED = (PJ_WKT2_2015 + 1) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 828
+PJ_WKT2_2015_SIMPLIFIED = (PJ_WKT2_2015 + 1) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 847
 
-PJ_WKT2_2019 = (PJ_WKT2_2015_SIMPLIFIED + 1) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 828
+PJ_WKT2_2019 = (PJ_WKT2_2015_SIMPLIFIED + 1) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 847
 
-PJ_WKT2_2018 = PJ_WKT2_2019 # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 828
+PJ_WKT2_2018 = PJ_WKT2_2019 # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 847
 
 OGRSpatialReferenceH = POINTER(None) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/ogr_srs_api.h: 459
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 69
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 69
 class struct_pj_info(Structure):
     pass
 
@@ -66,7 +66,7 @@ struct_pj_info._fields_ = [
     ('wkt', String),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 84
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 84
 class struct_gpj_datum(Structure):
     pass
 
@@ -87,7 +87,7 @@ struct_gpj_datum._fields_ = [
     ('dz', c_double),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 91
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 91
 class struct_gpj_datum_transform_list(Structure):
     pass
 
@@ -106,7 +106,7 @@ struct_gpj_datum_transform_list._fields_ = [
     ('next', POINTER(struct_gpj_datum_transform_list)),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 107
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 107
 class struct_gpj_ellps(Structure):
     pass
 
@@ -125,7 +125,7 @@ struct_gpj_ellps._fields_ = [
     ('rf', c_double),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_init_transform'):
         continue
@@ -134,7 +134,7 @@ for _lib in six.itervalues(_libs):
     GPJ_init_transform.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 7
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 7
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_transform'):
         continue
@@ -143,7 +143,7 @@ for _lib in six.itervalues(_libs):
     GPJ_transform.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 9
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 9
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_transform_array'):
         continue
@@ -152,7 +152,7 @@ for _lib in six.itervalues(_libs):
     GPJ_transform_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 14
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 14
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'pj_do_proj'):
         continue
@@ -161,7 +161,7 @@ for _lib in six.itervalues(_libs):
     pj_do_proj.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 15
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 15
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'pj_do_transform'):
         continue
@@ -170,11 +170,11 @@ for _lib in six.itervalues(_libs):
     pj_do_transform.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 20
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 20
 class struct_Key_Value(Structure):
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 20
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 20
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'pj_get_kv'):
         continue
@@ -183,7 +183,7 @@ for _lib in six.itervalues(_libs):
     pj_get_kv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 21
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 21
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'pj_get_string'):
         continue
@@ -192,7 +192,7 @@ for _lib in six.itervalues(_libs):
     pj_get_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 25
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 25
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'set_proj_share'):
         continue
@@ -201,7 +201,7 @@ for _lib in six.itervalues(_libs):
     set_proj_share.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 26
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 26
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'pj_print_proj_params'):
         continue
@@ -210,7 +210,7 @@ for _lib in six.itervalues(_libs):
     pj_print_proj_params.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 29
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 29
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_grass_to_wkt'):
         continue
@@ -223,7 +223,7 @@ for _lib in six.itervalues(_libs):
         GPJ_grass_to_wkt.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 30
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 30
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_grass_to_wkt2'):
         continue
@@ -236,7 +236,7 @@ for _lib in six.itervalues(_libs):
         GPJ_grass_to_wkt2.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 32
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 32
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_grass_to_osr'):
         continue
@@ -245,7 +245,7 @@ for _lib in six.itervalues(_libs):
     GPJ_grass_to_osr.restype = OGRSpatialReferenceH
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 33
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 33
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_grass_to_osr2'):
         continue
@@ -254,7 +254,7 @@ for _lib in six.itervalues(_libs):
     GPJ_grass_to_osr2.restype = OGRSpatialReferenceH
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 34
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 34
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_set_csv_loc'):
         continue
@@ -263,11 +263,11 @@ for _lib in six.itervalues(_libs):
     GPJ_set_csv_loc.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 35
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 35
 class struct_Cell_head(Structure):
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 35
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 35
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_osr_to_grass'):
         continue
@@ -276,7 +276,7 @@ for _lib in six.itervalues(_libs):
     GPJ_osr_to_grass.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 38
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 38
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_wkt_to_grass'):
         continue
@@ -285,7 +285,7 @@ for _lib in six.itervalues(_libs):
     GPJ_wkt_to_grass.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 42
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 42
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_get_datum_by_name'):
         continue
@@ -294,7 +294,7 @@ for _lib in six.itervalues(_libs):
     GPJ_get_datum_by_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 43
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 43
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_get_default_datum_params_by_name'):
         continue
@@ -303,7 +303,7 @@ for _lib in six.itervalues(_libs):
     GPJ_get_default_datum_params_by_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 44
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 44
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_get_datum_params'):
         continue
@@ -312,7 +312,7 @@ for _lib in six.itervalues(_libs):
     GPJ_get_datum_params.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 45
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 45
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ__get_datum_params'):
         continue
@@ -321,7 +321,7 @@ for _lib in six.itervalues(_libs):
     GPJ__get_datum_params.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 46
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 46
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_free_datum'):
         continue
@@ -330,7 +330,7 @@ for _lib in six.itervalues(_libs):
     GPJ_free_datum.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 47
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 47
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_get_datum_transform_by_name'):
         continue
@@ -339,7 +339,7 @@ for _lib in six.itervalues(_libs):
     GPJ_get_datum_transform_by_name.restype = POINTER(struct_gpj_datum_transform_list)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 48
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 48
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_free_datum_transform'):
         continue
@@ -348,7 +348,7 @@ for _lib in six.itervalues(_libs):
     GPJ_free_datum_transform.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 51
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 51
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_get_ellipsoid_by_name'):
         continue
@@ -357,7 +357,7 @@ for _lib in six.itervalues(_libs):
     GPJ_get_ellipsoid_by_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 52
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 52
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_get_ellipsoid_params'):
         continue
@@ -366,7 +366,7 @@ for _lib in six.itervalues(_libs):
     GPJ_get_ellipsoid_params.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 53
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 53
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ__get_ellipsoid_params'):
         continue
@@ -375,7 +375,7 @@ for _lib in six.itervalues(_libs):
     GPJ__get_ellipsoid_params.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 55
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 55
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'GPJ_free_ellps'):
         continue
@@ -384,81 +384,81 @@ for _lib in six.itervalues(_libs):
     GPJ_free_ellps.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 173
+# D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 175
 try:
     PROJ_VERSION_MAJOR = 8
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 174
+# D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 176
 try:
-    PROJ_VERSION_MINOR = 1
+    PROJ_VERSION_MINOR = 2
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 175
+# D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 177
 try:
     PROJ_VERSION_PATCH = 1
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 179
+# D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/proj.h: 181
 def PROJ_COMPUTE_VERSION(maj, min, patch):
     return (((maj * 10000) + (min * 100)) + patch)
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 24
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 24
 try:
     RAD_TO_DEG = 57.29577951308232
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 36
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 36
 try:
     PROJ_VERSION_NUM = (PROJ_COMPUTE_VERSION (PROJ_VERSION_MAJOR, PROJ_VERSION_MINOR, PROJ_VERSION_PATCH))
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 41
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 41
 try:
     PJ_WKT2_LATEST = PJ_WKT2_2018
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 62
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 62
 try:
     ELLIPSOIDTABLE = '/etc/proj/ellipse.table'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 63
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 63
 try:
     DATUMTABLE = '/etc/proj/datum.table'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 64
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 64
 try:
     DATUMTRANSFORMTABLE = '/etc/proj/datumtransform.table'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 66
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 66
 try:
     GRIDDIR = '/etc/proj/nad'
 except:
     pass
 
-pj_info = struct_pj_info # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 69
+pj_info = struct_pj_info # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 69
 
-gpj_datum = struct_gpj_datum # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 84
+gpj_datum = struct_gpj_datum # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 84
 
-gpj_datum_transform_list = struct_gpj_datum_transform_list # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 91
+gpj_datum_transform_list = struct_gpj_datum_transform_list # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 91
 
-gpj_ellps = struct_gpj_ellps # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 107
+gpj_ellps = struct_gpj_ellps # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gprojects.h: 107
 
-Key_Value = struct_Key_Value # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 20
+Key_Value = struct_Key_Value # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 20
 
-Cell_head = struct_Cell_head # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 35
+Cell_head = struct_Cell_head # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gprojects.h: 35
 
 # No inserted files
 

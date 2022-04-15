@@ -1,7 +1,7 @@
 '''Wrapper for arraystats.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_arraystats.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/arraystats.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h -o OBJ.x86_64-w64-mingw32/arraystats.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_arraystats.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/arraystats.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h -o OBJ.x86_64-w64-mingw32/arraystats.py
 
 Do not modify this file.
 '''
@@ -27,7 +27,7 @@ _libs["grass_arraystats.7.8"] = load_library("grass_arraystats.7.8")
 
 # No modules
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 532
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 532
 class struct_Option(Structure):
     pass
 
@@ -76,7 +76,7 @@ struct_Option._fields_ = [
     ('count', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 11
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 11
 class struct_GASTATS(Structure):
     pass
 
@@ -105,7 +105,7 @@ struct_GASTATS._fields_ = [
     ('stdev', c_double),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'AS_eqdrt'):
         continue
@@ -114,7 +114,7 @@ for _lib in six.itervalues(_libs):
     AS_eqdrt.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 6
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 6
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'AS_basic_stats'):
         continue
@@ -123,7 +123,7 @@ for _lib in six.itervalues(_libs):
     AS_basic_stats.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 9
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 9
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'AS_option_to_algorithm'):
         continue
@@ -132,7 +132,7 @@ for _lib in six.itervalues(_libs):
     AS_option_to_algorithm.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 10
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 10
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'AS_class_apply_algorithm'):
         continue
@@ -141,7 +141,7 @@ for _lib in six.itervalues(_libs):
     AS_class_apply_algorithm.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 11
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 11
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'AS_class_interval'):
         continue
@@ -150,7 +150,7 @@ for _lib in six.itervalues(_libs):
     AS_class_interval.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 12
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 12
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'AS_class_quant'):
         continue
@@ -159,7 +159,7 @@ for _lib in six.itervalues(_libs):
     AS_class_quant.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 13
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 13
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'AS_class_discont'):
         continue
@@ -168,7 +168,7 @@ for _lib in six.itervalues(_libs):
     AS_class_discont.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 14
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 14
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'AS_class_stdev'):
         continue
@@ -177,7 +177,7 @@ for _lib in six.itervalues(_libs):
     AS_class_stdev.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 15
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 15
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'AS_class_equiprob'):
         continue
@@ -186,7 +186,7 @@ for _lib in six.itervalues(_libs):
     AS_class_equiprob.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 16
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/arraystats.h: 16
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'AS_class_frequencies'):
         continue
@@ -195,37 +195,37 @@ for _lib in six.itervalues(_libs):
     AS_class_frequencies.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 25
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 25
 try:
     CLASS_INTERVAL = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 26
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 26
 try:
     CLASS_STDEV = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 27
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 27
 try:
     CLASS_QUANT = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 28
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 28
 try:
     CLASS_EQUIPROB = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 29
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 29
 try:
     CLASS_DISCONT = 5
 except:
     pass
 
-GASTATS = struct_GASTATS # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 11
+GASTATS = struct_GASTATS # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\arraystats.h: 11
 
 # No inserted files
 

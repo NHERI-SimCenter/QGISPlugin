@@ -1,102 +1,102 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>g.extension.py - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>g.extension.py</b></em>  - Maintains GRASS Addons extensions in local GRASS installation.<BR>
-Downloads and installs extensions from GRASS Addons repository or other source into the local GRASS installation or removes installed extensions.
-<h2>KEYWORDS</h2>
-<a href="general.html">general</a>, <a href="topic_installation.html">installation</a>, <a href="keywords.html#extensions">extensions</a>, <a href="keywords.html#addons">addons</a>, <a href="keywords.html#download">download</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>g.extension.py</b><br></div>
-<b>g.extension.py --help</b><br>
-<div id="synopsis"><b>g.extension.py</b> [-<b>lcgasdiftoj</b>] <b>extension</b>=<em>name</em> <b>operation</b>=<em>string</em>  [<b>url</b>=<em>url</em>]   [<b>prefix</b>=<em>path</em>]   [<b>proxy</b>=<em>proxy</em>[,<i>proxy</i>,...]]   [<b>branch</b>=<em>branch</em>]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-l</b></dt>
-<dd>List available extensions in the official GRASS GIS Addons repository</dd>
-
-<dt><b>-c</b></dt>
-<dd>List available extensions in the official GRASS GIS Addons repository including module description</dd>
-
-<dt><b>-g</b></dt>
-<dd>List available extensions in the official GRASS GIS Addons repository (shell script style)</dd>
-
-<dt><b>-a</b></dt>
-<dd>List locally installed extensions</dd>
-
-<dt><b>-s</b></dt>
-<dd>Install system-wide (may need system administrator rights)</dd>
-
-<dt><b>-d</b></dt>
-<dd>Download source code and exit</dd>
-
-<dt><b>-i</b></dt>
-<dd>Do not install new extension, just compile it</dd>
-
-<dt><b>-f</b></dt>
-<dd>Force removal when uninstalling extension (operation=remove)</dd>
-
-<dt><b>-t</b></dt>
-<dd>Operate on toolboxes instead of single modules (experimental)</dd>
-
-<dt><b>-o</b></dt>
-<dd>url refers to a fork of the official extension repository</dd>
-
-<dt><b>-j</b></dt>
-<dd>Generates JSON file containing the download URLs of the official Addons</dd>
-
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>extension</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of extension to install or remove</dd>
-<dd>Name of toolbox (set of extensions) when -t flag is given</dd>
-
-<dt><b>operation</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Operation to be performed</dd>
-<dd>Options: <em>add, remove</em></dd>
-<dd>Default: <em>add</em></dd>
-
-<dt><b>url</b>=<em>url</em></dt>
-<dd>URL or directory to get the extension from (supported only on Linux and Mac)</dd>
-<dd>The official repository is used by default. User can specify a ZIP file, directory or a repository on common hosting services. If not identified, Subversion repository is assumed. See manual for all options.</dd>
-
-<dt><b>prefix</b>=<em>path</em></dt>
-<dd>Prefix where to install extension (ignored when flag -s is given)</dd>
-<dd>Default: <em>$GRASS_ADDON_BASE</em></dd>
-
-<dt><b>proxy</b>=<em>proxy[,<i>proxy</i>,...]</em></dt>
-<dd>Set the proxy with: "http=&lt;value&gt;,ftp=&lt;value&gt;"</dd>
-
-<dt><b>branch</b>=<em>branch</em></dt>
-<dd>Specific branch to fetch addon from (only used when fetching from git)</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>g.extension.py - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>g.extension.py</b></em>  - Maintains GRASS Addons extensions in local GRASS installation.<BR>
+Downloads and installs extensions from GRASS Addons repository or other source into the local GRASS installation or removes installed extensions.
+<h2>KEYWORDS</h2>
+<a href="general.html">general</a>, <a href="topic_installation.html">installation</a>, <a href="keywords.html#extensions">extensions</a>, <a href="keywords.html#addons">addons</a>, <a href="keywords.html#download">download</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>g.extension.py</b><br></div>
+<b>g.extension.py --help</b><br>
+<div id="synopsis"><b>g.extension.py</b> [-<b>lcgasdiftoj</b>] <b>extension</b>=<em>name</em> <b>operation</b>=<em>string</em>  [<b>url</b>=<em>url</em>]   [<b>prefix</b>=<em>path</em>]   [<b>proxy</b>=<em>proxy</em>[,<i>proxy</i>,...]]   [<b>branch</b>=<em>branch</em>]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-l</b></dt>
+<dd>List available extensions in the official GRASS GIS Addons repository</dd>
+
+<dt><b>-c</b></dt>
+<dd>List available extensions in the official GRASS GIS Addons repository including module description</dd>
+
+<dt><b>-g</b></dt>
+<dd>List available extensions in the official GRASS GIS Addons repository (shell script style)</dd>
+
+<dt><b>-a</b></dt>
+<dd>List locally installed extensions</dd>
+
+<dt><b>-s</b></dt>
+<dd>Install system-wide (may need system administrator rights)</dd>
+
+<dt><b>-d</b></dt>
+<dd>Download source code and exit</dd>
+
+<dt><b>-i</b></dt>
+<dd>Do not install new extension, just compile it</dd>
+
+<dt><b>-f</b></dt>
+<dd>Force removal when uninstalling extension (operation=remove)</dd>
+
+<dt><b>-t</b></dt>
+<dd>Operate on toolboxes instead of single modules (experimental)</dd>
+
+<dt><b>-o</b></dt>
+<dd>url refers to a fork of the official extension repository</dd>
+
+<dt><b>-j</b></dt>
+<dd>Generates JSON file containing the download URLs of the official Addons</dd>
+
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>extension</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of extension to install or remove</dd>
+<dd>Name of toolbox (set of extensions) when -t flag is given</dd>
+
+<dt><b>operation</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Operation to be performed</dd>
+<dd>Options: <em>add, remove</em></dd>
+<dd>Default: <em>add</em></dd>
+
+<dt><b>url</b>=<em>url</em></dt>
+<dd>URL or directory to get the extension from (supported only on Linux and Mac)</dd>
+<dd>The official repository is used by default. User can specify a ZIP file, directory or a repository on common hosting services. If not identified, Subversion repository is assumed. See manual for all options.</dd>
+
+<dt><b>prefix</b>=<em>path</em></dt>
+<dd>Prefix where to install extension (ignored when flag -s is given)</dd>
+<dd>Default: <em>$GRASS_ADDON_BASE</em></dd>
+
+<dt><b>proxy</b>=<em>proxy[,<i>proxy</i>,...]</em></dt>
+<dd>Set the proxy with: "http=&lt;value&gt;,ftp=&lt;value&gt;"</dd>
+
+<dt><b>branch</b>=<em>branch</em></dt>
+<dd>Specific branch to fetch addon from (only used when fetching from git)</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -400,7 +400,14 @@ Vaclav Petras, <a href="http://gis.ncsu.edu/osgeorel/">NCSU OSGeoREL</a> (suppor
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/scripts/g.extension">g.extension source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/scripts/g.extension">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/scripts/g.extension">g.extension source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/scripts/g.extension">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -411,9 +418,9 @@ Vaclav Petras, <a href="http://gis.ncsu.edu/osgeorel/">NCSU OSGeoREL</a> (suppor
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

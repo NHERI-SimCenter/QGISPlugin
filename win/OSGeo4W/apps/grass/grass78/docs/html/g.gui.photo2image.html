@@ -1,65 +1,65 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>g.gui.photo2image - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>g.gui.photo2image</b></em>  - Corrects scanning distortions of a paper photo.
-<h2>KEYWORDS</h2>
-<a href="imagery.html">imagery</a>, <a href="topic_GUI.html">GUI</a>, <a href="keywords.html#aerial">aerial</a>, <a href="keywords.html#photo">photo</a>, <a href="keywords.html#georectification">georectification</a>, <a href="keywords.html#geometry">geometry</a>, <a href="keywords.html#GCP">GCP</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>g.gui.photo2image</b><br></div>
-<b>g.gui.photo2image --help</b><br>
-<div id="synopsis"><b>g.gui.photo2image</b> <b>group</b>=<em>name</em> <b>raster</b>=<em>name</em> <b>camera</b>=<em>string</em> <b>order</b>=<em>string</em> <b>extension</b>=<em>string</em>  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>group</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input imagery group</dd>
-
-<dt><b>raster</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map</dd>
-
-<dt><b>camera</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>The name of the camera (generated in i.ortho.camera)</dd>
-<dd>The name of the camera (generated in i.ortho.camera)</dd>
-
-<dt><b>order</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>The rectification order (no of Fiducial=4 -&gt; order=1, no of Fiducial=8 -&gt; order=2)</dd>
-<dd>The rectification order (no of Fiducial=4 -&gt; order=1, no of Fiducial=8 -&gt; order=2)</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>extension</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>The name of the output files extension (used in i.rectify)</dd>
-<dd>The name of the output files extension (used in i.rectify)</dd>
-<dd>Default: <em>_ip2i_out</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>g.gui.photo2image - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>g.gui.photo2image</b></em>  - Corrects scanning distortions of a paper photo.
+<h2>KEYWORDS</h2>
+<a href="imagery.html">imagery</a>, <a href="topic_GUI.html">GUI</a>, <a href="keywords.html#aerial">aerial</a>, <a href="keywords.html#photo">photo</a>, <a href="keywords.html#georectification">georectification</a>, <a href="keywords.html#geometry">geometry</a>, <a href="keywords.html#GCP">GCP</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>g.gui.photo2image</b><br></div>
+<b>g.gui.photo2image --help</b><br>
+<div id="synopsis"><b>g.gui.photo2image</b> <b>group</b>=<em>name</em> <b>raster</b>=<em>name</em> <b>camera</b>=<em>string</em> <b>order</b>=<em>string</em> <b>extension</b>=<em>string</em>  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>group</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input imagery group</dd>
+
+<dt><b>raster</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map</dd>
+
+<dt><b>camera</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>The name of the camera (generated in i.ortho.camera)</dd>
+<dd>The name of the camera (generated in i.ortho.camera)</dd>
+
+<dt><b>order</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>The rectification order (no of Fiducial=4 -&gt; order=1, no of Fiducial=8 -&gt; order=2)</dd>
+<dd>The rectification order (no of Fiducial=4 -&gt; order=1, no of Fiducial=8 -&gt; order=2)</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>extension</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>The name of the output files extension (used in i.rectify)</dd>
+<dd>The name of the output files extension (used in i.rectify)</dd>
+<dd>Default: <em>_ip2i_out</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -143,7 +143,14 @@ Martin Landa, Czech Technical University in Prague, Czech Republic
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/gui/wxpython/photo2image">wxGUI GCP Manager for photo to image registration source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/gui/wxpython/photo2image">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/gui/wxpython/photo2image">wxGUI GCP Manager for photo to image registration source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/gui/wxpython/photo2image">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -154,9 +161,9 @@ Martin Landa, Czech Technical University in Prague, Czech Republic
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

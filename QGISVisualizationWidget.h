@@ -113,7 +113,7 @@ public:
 
     void markDirty();
 
-    void createSymbolRenderer(QgsSimpleMarkerSymbolLayerBase::Shape symbolShape, QColor color, double size, QgsVectorLayer * layer);
+    void createSymbolRenderer(Qgis::MarkerShape symbolShape, QColor color, double size, QgsVectorLayer * layer);
 
     void createPrettyGraduatedRenderer(const QString attrName, const QColor color1, const QColor color2, const int nclasses, QgsVectorLayer* vlayer);
 

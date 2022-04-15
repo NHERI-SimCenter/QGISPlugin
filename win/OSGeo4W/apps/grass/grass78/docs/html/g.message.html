@@ -1,75 +1,75 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>g.message - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>g.message</b></em>  - Prints a message, warning, progress info, or fatal error in the GRASS way.<BR>
-This module should be used in scripts for messages served to user.
-<h2>KEYWORDS</h2>
-<a href="general.html">general</a>, <a href="topic_support.html">support</a>, <a href="keywords.html#scripts">scripts</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>g.message</b><br></div>
-<b>g.message --help</b><br>
-<div id="synopsis"><b>g.message</b> [-<b>wedpiv</b>] <b>message</b>=<em>string</em>  [<b>debug</b>=<em>integer</em>]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-w</b></dt>
-<dd>Print message as warning</dd>
-
-<dt><b>-e</b></dt>
-<dd>Print message as fatal error</dd>
-
-<dt><b>-d</b></dt>
-<dd>Print message as debug message</dd>
-
-<dt><b>-p</b></dt>
-<dd>Print message as progress info</dd>
-
-<dt><b>-i</b></dt>
-<dd>Print message in all modes except of quiet mode</dd>
-<dd>Message is printed on GRASS_VERBOSE>=1</dd>
-
-<dt><b>-v</b></dt>
-<dd>Print message only in verbose mode</dd>
-<dd>Message is printed only on GRASS_VERBOSE>=3</dd>
-
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>message</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Text of the message to be printed</dd>
-<dd>Message is printed on GRASS_VERBOSE&gt;=2</dd>
-
-<dt><b>debug</b>=<em>integer</em></dt>
-<dd>Level to use for debug messages</dd>
-<dd>Options: <em>0-5</em></dd>
-<dd>Default: <em>1</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>g.message - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>g.message</b></em>  - Prints a message, warning, progress info, or fatal error in the GRASS way.<BR>
+This module should be used in scripts for messages served to user.
+<h2>KEYWORDS</h2>
+<a href="general.html">general</a>, <a href="topic_support.html">support</a>, <a href="keywords.html#scripts">scripts</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>g.message</b><br></div>
+<b>g.message --help</b><br>
+<div id="synopsis"><b>g.message</b> [-<b>wedpiv</b>] <b>message</b>=<em>string</em>  [<b>debug</b>=<em>integer</em>]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-w</b></dt>
+<dd>Print message as warning</dd>
+
+<dt><b>-e</b></dt>
+<dd>Print message as fatal error</dd>
+
+<dt><b>-d</b></dt>
+<dd>Print message as debug message</dd>
+
+<dt><b>-p</b></dt>
+<dd>Print message as progress info</dd>
+
+<dt><b>-i</b></dt>
+<dd>Print message in all modes except of quiet mode</dd>
+<dd>Message is printed on GRASS_VERBOSE>=1</dd>
+
+<dt><b>-v</b></dt>
+<dd>Print message only in verbose mode</dd>
+<dd>Message is printed only on GRASS_VERBOSE>=3</dd>
+
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>message</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Text of the message to be printed</dd>
+<dd>Message is printed on GRASS_VERBOSE&gt;=2</dd>
+
+<dt><b>debug</b>=<em>integer</em></dt>
+<dd>Level to use for debug messages</dd>
+<dd>Options: <em>0-5</em></dd>
+<dd>Default: <em>1</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -239,7 +239,14 @@ Jachym Cepicky
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/general/g.message">g.message source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/general/g.message">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/general/g.message">g.message source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/general/g.message">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -250,9 +257,9 @@ Jachym Cepicky
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

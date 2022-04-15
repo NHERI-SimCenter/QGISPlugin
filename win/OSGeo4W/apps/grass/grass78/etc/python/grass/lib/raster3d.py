@@ -1,7 +1,7 @@
 '''Wrapper for raster3d.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_g3d.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster3d.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h -o OBJ.x86_64-w64-mingw32/raster3d.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_g3d.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster3d.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h -o OBJ.x86_64-w64-mingw32/raster3d.py
 
 Do not modify this file.
 '''
@@ -29,7 +29,7 @@ _libs["grass_g3d.7.8"] = load_library("grass_g3d.7.8")
 
 NULL = None # <built-in>
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 413
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 413
 class struct_Cell_head(Structure):
     pass
 
@@ -78,7 +78,7 @@ struct_Cell_head._fields_ = [
     ('bottom', c_double),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 502
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 502
 class struct_Key_Value(Structure):
     pass
 
@@ -95,13 +95,13 @@ struct_Key_Value._fields_ = [
     ('value', POINTER(POINTER(c_char))),
 ]
 
-CELL = c_int # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 603
+CELL = c_int # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 603
 
-DCELL = c_double # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 604
+DCELL = c_double # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 604
 
-grass_int64 = c_int64 # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 612
+grass_int64 = c_int64 # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 612
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 624
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 624
 class struct__Color_Value_(Structure):
     pass
 
@@ -118,7 +118,7 @@ struct__Color_Value_._fields_ = [
     ('blu', c_ubyte),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 632
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 632
 class struct__Color_Rule_(Structure):
     pass
 
@@ -135,7 +135,7 @@ struct__Color_Rule_._fields_ = [
     ('prev', POINTER(struct__Color_Rule_)),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 644
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 644
 class struct_anon_5(Structure):
     pass
 
@@ -156,7 +156,7 @@ struct_anon_5._fields_ = [
     ('active', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 654
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 654
 class struct_anon_6(Structure):
     pass
 
@@ -173,7 +173,7 @@ struct_anon_6._fields_ = [
     ('active', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 639
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 639
 class struct__Color_Info_(Structure):
     pass
 
@@ -194,7 +194,7 @@ struct__Color_Info_._fields_ = [
     ('max', DCELL),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 666
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 666
 class struct_Colors(Structure):
     pass
 
@@ -237,7 +237,7 @@ struct_Colors._fields_ = [
     ('organizing', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 76
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 76
 class struct_Quant_table(Structure):
     pass
 
@@ -254,7 +254,7 @@ struct_Quant_table._fields_ = [
     ('cHigh', CELL),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 109
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 109
 class struct_anon_7(Structure):
     pass
 
@@ -279,7 +279,7 @@ struct_anon_7._fields_ = [
     ('inf_max', CELL),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 84
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 84
 class struct_Quant(Structure):
     pass
 
@@ -334,7 +334,7 @@ struct_Quant._fields_ = [
     ('fp_lookup', struct_anon_7),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 127
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 127
 class struct_Categories(Structure):
     pass
 
@@ -369,25 +369,25 @@ struct_Categories._fields_ = [
     ('last_marked_rule', c_int),
 ]
 
-HIST_MAPID = 0 # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
+HIST_MAPID = 0 # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
 
-HIST_TITLE = (HIST_MAPID + 1) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
+HIST_TITLE = (HIST_MAPID + 1) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
 
-HIST_MAPSET = (HIST_TITLE + 1) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
+HIST_MAPSET = (HIST_TITLE + 1) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
 
-HIST_CREATOR = (HIST_MAPSET + 1) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
+HIST_CREATOR = (HIST_MAPSET + 1) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
 
-HIST_MAPTYPE = (HIST_CREATOR + 1) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
+HIST_MAPTYPE = (HIST_CREATOR + 1) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
 
-HIST_DATSRC_1 = (HIST_MAPTYPE + 1) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
+HIST_DATSRC_1 = (HIST_MAPTYPE + 1) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
 
-HIST_DATSRC_2 = (HIST_DATSRC_1 + 1) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
+HIST_DATSRC_2 = (HIST_DATSRC_1 + 1) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
 
-HIST_KEYWRD = (HIST_DATSRC_2 + 1) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
+HIST_KEYWRD = (HIST_DATSRC_2 + 1) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
 
-HIST_NUM_FIELDS = (HIST_KEYWRD + 1) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
+HIST_NUM_FIELDS = (HIST_KEYWRD + 1) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 157
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 180
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 180
 class struct_History(Structure):
     pass
 
@@ -402,7 +402,7 @@ struct_History._fields_ = [
     ('lines', POINTER(POINTER(c_char))),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 218
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 218
 class struct_R_stats(Structure):
     pass
 
@@ -417,7 +417,7 @@ struct_R_stats._fields_ = [
     ('count', grass_int64),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/raster.h: 233
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/raster.h: 233
 class struct_FPRange(Structure):
     pass
 
@@ -434,7 +434,7 @@ struct_FPRange._fields_ = [
     ('rstats', struct_R_stats),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 62
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 62
 class struct_anon_8(Structure):
     pass
 
@@ -471,13 +471,13 @@ struct_anon_8._fields_ = [
     ('zone', c_int),
 ]
 
-RASTER3D_Region = struct_anon_8 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 62
+RASTER3D_Region = struct_anon_8 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 62
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 72
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 72
 class struct_RASTER3D_Map(Structure):
     pass
 
-resample_fn = CFUNCTYPE(UNCHECKED(None), POINTER(struct_RASTER3D_Map), c_int, c_int, c_int, POINTER(None), c_int) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 68
+resample_fn = CFUNCTYPE(UNCHECKED(None), POINTER(struct_RASTER3D_Map), c_int, c_int, c_int, POINTER(None), c_int) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 68
 
 struct_RASTER3D_Map.__slots__ = [
     'version',
@@ -584,9 +584,9 @@ struct_RASTER3D_Map._fields_ = [
     ('useMask', c_int),
 ]
 
-RASTER3D_Map = struct_RASTER3D_Map # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 186
+RASTER3D_Map = struct_RASTER3D_Map # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 186
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 221
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 221
 class struct_anon_9(Structure):
     pass
 
@@ -629,9 +629,9 @@ struct_anon_9._fields_ = [
     ('hash', POINTER(None)),
 ]
 
-RASTER3D_cache = struct_anon_9 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 221
+RASTER3D_cache = struct_anon_9 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 221
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 235
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 235
 class struct_anon_10(Structure):
     pass
 
@@ -652,9 +652,9 @@ struct_anon_10._fields_ = [
     ('lastIndexActive', c_int),
 ]
 
-Rast3d_cache_hash = struct_anon_10 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 235
+Rast3d_cache_hash = struct_anon_10 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 235
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 240
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 240
 class struct__d_interval(Structure):
     pass
 
@@ -671,9 +671,9 @@ struct__d_interval._fields_ = [
     ('next', POINTER(struct__d_interval)),
 ]
 
-d_Interval = struct__d_interval # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 245
+d_Interval = struct__d_interval # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 245
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 250
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 250
 class struct__d_mask(Structure):
     pass
 
@@ -684,13 +684,13 @@ struct__d_mask._fields_ = [
     ('list', POINTER(d_Interval)),
 ]
 
-d_Mask = struct__d_mask # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 250
+d_Mask = struct__d_mask # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 250
 
-write_fn = CFUNCTYPE(UNCHECKED(c_int), c_int, POINTER(None), POINTER(None)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 254
+write_fn = CFUNCTYPE(UNCHECKED(c_int), c_int, POINTER(None), POINTER(None)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 254
 
-read_fn = CFUNCTYPE(UNCHECKED(c_int), c_int, POINTER(None), POINTER(None)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 255
+read_fn = CFUNCTYPE(UNCHECKED(c_int), c_int, POINTER(None), POINTER(None)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 255
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 266
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 266
 class struct_anon_11(Structure):
     pass
 
@@ -707,9 +707,9 @@ struct_anon_11._fields_ = [
     ('sz', c_int),
 ]
 
-RASTER3D_Array_double = struct_anon_11 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 266
+RASTER3D_Array_double = struct_anon_11 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 266
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_reset'):
         continue
@@ -718,7 +718,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_reset.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 6
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 6
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_dispose'):
         continue
@@ -727,7 +727,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_dispose.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 7
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 7
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_new'):
         continue
@@ -737,7 +737,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_new.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 8
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 8
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_set_remove_fun'):
         continue
@@ -746,7 +746,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_set_remove_fun.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 9
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 9
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_set_load_fun'):
         continue
@@ -755,7 +755,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_set_load_fun.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 10
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 10
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_new_read'):
         continue
@@ -765,7 +765,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_new_read.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 11
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 11
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_lock'):
         continue
@@ -774,7 +774,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_lock.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 12
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 12
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_lock_intern'):
         continue
@@ -783,7 +783,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_lock_intern.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 13
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 13
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_unlock'):
         continue
@@ -792,7 +792,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_unlock.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 14
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 14
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_unlock_all'):
         continue
@@ -801,7 +801,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_unlock_all.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 15
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 15
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_lock_all'):
         continue
@@ -810,7 +810,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_lock_all.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 16
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 16
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_autolock_on'):
         continue
@@ -819,7 +819,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_autolock_on.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 17
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 17
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_autolock_off'):
         continue
@@ -828,7 +828,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_autolock_off.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 18
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 18
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_set_min_unlock'):
         continue
@@ -837,7 +837,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_set_min_unlock.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 19
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 19
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_remove_elt'):
         continue
@@ -846,7 +846,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_remove_elt.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 20
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 20
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_flush'):
         continue
@@ -855,7 +855,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_flush.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 21
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 21
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_remove_all'):
         continue
@@ -864,7 +864,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_remove_all.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 22
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 22
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_flush_all'):
         continue
@@ -873,7 +873,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_flush_all.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 23
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 23
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_elt_ptr'):
         continue
@@ -883,7 +883,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_elt_ptr.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 24
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 24
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_load'):
         continue
@@ -892,7 +892,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_load.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 25
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 25
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_get_elt'):
         continue
@@ -901,7 +901,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_get_elt.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 26
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 26
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_put_elt'):
         continue
@@ -910,7 +910,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_put_elt.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 29
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 29
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_hash_reset'):
         continue
@@ -919,7 +919,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_hash_reset.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 30
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 30
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_hash_dispose'):
         continue
@@ -928,7 +928,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_hash_dispose.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 31
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 31
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_hash_new'):
         continue
@@ -938,7 +938,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_hash_new.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 32
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 32
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_hash_remove_name'):
         continue
@@ -947,7 +947,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_hash_remove_name.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 33
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 33
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_hash_load_name'):
         continue
@@ -956,7 +956,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_hash_load_name.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 34
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 34
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_hash_name2index'):
         continue
@@ -965,7 +965,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_hash_name2index.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 37
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 37
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_change_precision'):
         continue
@@ -974,7 +974,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_change_precision.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 40
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 40
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_change_type'):
         continue
@@ -983,7 +983,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_change_type.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 43
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 43
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_compare_files'):
         continue
@@ -992,7 +992,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_compare_files.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 46
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 46
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_filename'):
         continue
@@ -1001,7 +1001,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_filename.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 49
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 49
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_fpcompress_print_binary'):
         continue
@@ -1010,7 +1010,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_fpcompress_print_binary.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 50
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 50
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_fpcompress_dissect_xdr_double'):
         continue
@@ -1019,7 +1019,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_fpcompress_dissect_xdr_double.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 51
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 51
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_fpcompress_write_xdr_nums'):
         continue
@@ -1028,7 +1028,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_fpcompress_write_xdr_nums.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 52
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 52
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_fpcompress_read_xdr_nums'):
         continue
@@ -1037,7 +1037,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_fpcompress_read_xdr_nums.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 55
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 55
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_malloc'):
         continue
@@ -1047,7 +1047,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_malloc.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 56
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 56
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_realloc'):
         continue
@@ -1057,7 +1057,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_realloc.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 57
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 57
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_free'):
         continue
@@ -1066,7 +1066,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_free.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 60
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 60
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_init_cache'):
         continue
@@ -1075,7 +1075,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_init_cache.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 61
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 61
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_dispose_cache'):
         continue
@@ -1084,7 +1084,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_dispose_cache.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 62
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 62
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_flush_all_tiles'):
         continue
@@ -1093,7 +1093,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_flush_all_tiles.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 65
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 65
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_write_cats'):
         continue
@@ -1102,7 +1102,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_write_cats.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 66
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 66
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_cats'):
         continue
@@ -1111,7 +1111,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_cats.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 69
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 69
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_close'):
         continue
@@ -1120,7 +1120,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_close.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 72
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 72
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_remove_color'):
         continue
@@ -1129,7 +1129,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_remove_color.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 73
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 73
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_colors'):
         continue
@@ -1138,7 +1138,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_colors.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 74
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 74
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_write_colors'):
         continue
@@ -1147,7 +1147,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_write_colors.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 77
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 77
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_compression_mode'):
         continue
@@ -1156,7 +1156,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_compression_mode.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 78
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 78
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_compression_mode'):
         continue
@@ -1165,7 +1165,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_compression_mode.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 79
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 79
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_cache_size'):
         continue
@@ -1174,7 +1174,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_cache_size.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 80
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 80
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_cache_size'):
         continue
@@ -1183,7 +1183,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_cache_size.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 81
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 81
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_cache_limit'):
         continue
@@ -1192,7 +1192,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_cache_limit.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 82
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 82
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_cache_limit'):
         continue
@@ -1201,7 +1201,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_cache_limit.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 83
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 83
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_file_type'):
         continue
@@ -1210,7 +1210,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_file_type.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 84
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 84
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_file_type'):
         continue
@@ -1219,7 +1219,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_file_type.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 85
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 85
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_tile_dimension'):
         continue
@@ -1228,7 +1228,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_tile_dimension.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 86
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 86
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_tile_dimension'):
         continue
@@ -1237,7 +1237,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_tile_dimension.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 87
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 87
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_error_fun'):
         continue
@@ -1246,7 +1246,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_error_fun.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 88
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 88
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_init_defaults'):
         continue
@@ -1255,7 +1255,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_init_defaults.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 91
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 91
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_write_doubles'):
         continue
@@ -1264,7 +1264,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_write_doubles.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 92
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 92
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_doubles'):
         continue
@@ -1273,7 +1273,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_doubles.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 95
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 95
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_skip_error'):
         continue
@@ -1282,7 +1282,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_skip_error.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 96
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 96
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_print_error'):
         continue
@@ -1291,7 +1291,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_print_error.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 97
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 97
 for _lib in _libs.values():
     if hasattr(_lib, 'Rast3d_fatal_error'):
         _func = _lib.Rast3d_fatal_error
@@ -1300,7 +1300,7 @@ for _lib in _libs.values():
         _argtypes = [String]
         Rast3d_fatal_error = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 99
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 99
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_fatal_error_noargs'):
         continue
@@ -1309,7 +1309,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_fatal_error_noargs.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 100
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 100
 for _lib in _libs.values():
     if hasattr(_lib, 'Rast3d_error'):
         _func = _lib.Rast3d_error
@@ -1318,7 +1318,7 @@ for _lib in _libs.values():
         _argtypes = [String]
         Rast3d_error = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 103
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 103
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_is_xdr_null_num'):
         continue
@@ -1327,7 +1327,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_is_xdr_null_num.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 104
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 104
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_is_xdr_null_float'):
         continue
@@ -1336,7 +1336,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_is_xdr_null_float.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 105
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 105
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_is_xdr_null_double'):
         continue
@@ -1345,7 +1345,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_is_xdr_null_double.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 106
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 106
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_xdr_null_num'):
         continue
@@ -1354,7 +1354,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_xdr_null_num.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 107
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 107
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_xdr_null_double'):
         continue
@@ -1363,7 +1363,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_xdr_null_double.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 108
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 108
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_xdr_null_float'):
         continue
@@ -1372,7 +1372,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_xdr_null_float.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 109
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 109
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_init_fp_xdr'):
         continue
@@ -1381,7 +1381,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_init_fp_xdr.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 110
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 110
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_init_copy_to_xdr'):
         continue
@@ -1390,7 +1390,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_init_copy_to_xdr.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 111
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 111
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_copy_to_xdr'):
         continue
@@ -1399,7 +1399,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_copy_to_xdr.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 112
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 112
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_init_copy_from_xdr'):
         continue
@@ -1408,7 +1408,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_init_copy_from_xdr.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 113
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 113
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_copy_from_xdr'):
         continue
@@ -1417,7 +1417,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_copy_from_xdr.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 116
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 116
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_gradient_double'):
         continue
@@ -1426,7 +1426,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_gradient_double.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 121
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 121
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_write_history'):
         continue
@@ -1435,7 +1435,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_write_history.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 122
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 122
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_history'):
         continue
@@ -1444,7 +1444,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_history.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 125
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 125
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_write_ints'):
         continue
@@ -1453,7 +1453,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_write_ints.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 126
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 126
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_ints'):
         continue
@@ -1462,7 +1462,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_ints.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 129
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 129
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_key_get_int'):
         continue
@@ -1471,7 +1471,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_key_get_int.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 130
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 130
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_key_get_double'):
         continue
@@ -1480,7 +1480,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_key_get_double.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 131
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 131
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_key_get_string'):
         continue
@@ -1489,7 +1489,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_key_get_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 132
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 132
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_key_get_value'):
         continue
@@ -1498,7 +1498,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_key_get_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 134
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 134
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_key_set_int'):
         continue
@@ -1507,7 +1507,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_key_set_int.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 135
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 135
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_key_set_double'):
         continue
@@ -1516,7 +1516,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_key_set_double.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 136
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 136
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_key_set_string'):
         continue
@@ -1525,7 +1525,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_key_set_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 137
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 137
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_key_set_value'):
         continue
@@ -1534,7 +1534,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_key_set_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 140
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 140
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_long_encode'):
         continue
@@ -1543,7 +1543,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_long_encode.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 141
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 141
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_long_decode'):
         continue
@@ -1552,7 +1552,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_long_decode.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 144
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 144
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_make_mapset_map_directory'):
         continue
@@ -1561,7 +1561,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_make_mapset_map_directory.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 147
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 147
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_close'):
         continue
@@ -1570,7 +1570,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_close.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 148
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 148
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_file_exists'):
         continue
@@ -1579,7 +1579,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_file_exists.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 149
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 149
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_open_old'):
         continue
@@ -1588,7 +1588,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_open_old.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 150
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 150
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_reopen'):
         continue
@@ -1597,7 +1597,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_reopen.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 151
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 151
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_is_masked'):
         continue
@@ -1606,7 +1606,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_is_masked.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 152
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 152
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_num'):
         continue
@@ -1615,7 +1615,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_num.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 153
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 153
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_float'):
         continue
@@ -1624,7 +1624,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_float.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 154
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 154
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_double'):
         continue
@@ -1633,7 +1633,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_double.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 155
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 155
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_tile'):
         continue
@@ -1642,7 +1642,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_tile.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 156
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 156
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_on'):
         continue
@@ -1651,7 +1651,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_on.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 157
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 157
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_off'):
         continue
@@ -1660,7 +1660,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_off.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 158
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 158
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_is_on'):
         continue
@@ -1669,7 +1669,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_is_on.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 159
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 159
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_is_off'):
         continue
@@ -1678,7 +1678,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_is_off.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 160
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 160
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_file'):
         continue
@@ -1687,7 +1687,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_file.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 161
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 161
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_map_exists'):
         continue
@@ -1696,7 +1696,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_map_exists.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 164
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 164
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_d_select'):
         continue
@@ -1705,7 +1705,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_d_select.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 165
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 165
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_mask_match_d_interval'):
         continue
@@ -1714,7 +1714,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_mask_match_d_interval.restype = DCELL
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 166
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 166
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_parse_vallist'):
         continue
@@ -1723,7 +1723,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_parse_vallist.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 169
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 169
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_g3d_type2cell_type'):
         continue
@@ -1732,7 +1732,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_g3d_type2cell_type.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 170
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 170
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_copy_float2Double'):
         continue
@@ -1741,7 +1741,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_copy_float2Double.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 171
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 171
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_copy_double2Float'):
         continue
@@ -1750,7 +1750,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_copy_double2Float.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 172
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 172
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_copy_values'):
         continue
@@ -1759,7 +1759,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_copy_values.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 173
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 173
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_length'):
         continue
@@ -1768,7 +1768,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_length.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 174
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 174
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_extern_length'):
         continue
@@ -1777,7 +1777,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_extern_length.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 177
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 177
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_is_null_value_num'):
         continue
@@ -1786,7 +1786,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_is_null_value_num.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 178
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 178
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_null_value'):
         continue
@@ -1795,7 +1795,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_null_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 181
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 181
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_open_new_param'):
         continue
@@ -1805,7 +1805,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_open_new_param.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 183
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 183
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_open_cell_old_no_header'):
         continue
@@ -1815,7 +1815,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_open_cell_old_no_header.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 184
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 184
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_open_cell_old'):
         continue
@@ -1825,7 +1825,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_open_cell_old.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 185
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 185
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_open_cell_new'):
         continue
@@ -1835,7 +1835,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_open_cell_new.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 186
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 186
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_open_new_opt_tile_size'):
         continue
@@ -1845,7 +1845,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_open_new_opt_tile_size.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 189
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 189
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_standard3d_input_params'):
         continue
@@ -1854,7 +1854,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_standard3d_input_params.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 190
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 190
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_standard3d_params'):
         continue
@@ -1863,7 +1863,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_standard3d_params.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 192
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 192
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_window_params'):
         continue
@@ -1872,7 +1872,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_window_params.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 193
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 193
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_window_params'):
         continue
@@ -1885,7 +1885,7 @@ for _lib in six.itervalues(_libs):
         Rast3d_get_window_params.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 196
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 196
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_range_update_from_tile'):
         continue
@@ -1894,7 +1894,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_range_update_from_tile.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 198
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 198
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_range'):
         continue
@@ -1903,7 +1903,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_range.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 199
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 199
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_range_load'):
         continue
@@ -1912,7 +1912,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_range_load.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 200
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 200
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_range_min_max'):
         continue
@@ -1921,7 +1921,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_range_min_max.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 201
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 201
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_range_write'):
         continue
@@ -1930,7 +1930,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_range_write.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 202
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 202
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_range_init'):
         continue
@@ -1939,7 +1939,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_range_init.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 205
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 205
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_region_value'):
         continue
@@ -1948,7 +1948,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_region_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 206
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 206
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_adjust_region'):
         continue
@@ -1957,7 +1957,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_adjust_region.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 207
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 207
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_region_copy'):
         continue
@@ -1966,7 +1966,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_region_copy.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 208
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 208
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_incorporate2d_region'):
         continue
@@ -1975,7 +1975,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_incorporate2d_region.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 209
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 209
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_region_from_to_cell_head'):
         continue
@@ -1984,7 +1984,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_region_from_to_cell_head.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 210
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 210
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_adjust_region_res'):
         continue
@@ -1993,7 +1993,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_adjust_region_res.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 211
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 211
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_extract2d_region'):
         continue
@@ -2002,7 +2002,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_extract2d_region.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 212
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 212
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_region_to_cell_head'):
         continue
@@ -2011,7 +2011,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_region_to_cell_head.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 213
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 213
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_region_map'):
         continue
@@ -2020,7 +2020,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_region_map.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 214
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 214
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_is_valid_location'):
         continue
@@ -2029,7 +2029,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_is_valid_location.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 215
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 215
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_location2coord'):
         continue
@@ -2038,7 +2038,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_location2coord.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 216
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 216
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_location2coord_double'):
         continue
@@ -2047,7 +2047,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_location2coord_double.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 217
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 217
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_location2coord2'):
         continue
@@ -2056,7 +2056,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_location2coord2.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 218
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 218
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_coord2location'):
         continue
@@ -2065,7 +2065,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_coord2location.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 220
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 220
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_nearest_neighbor'):
         continue
@@ -2074,7 +2074,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_nearest_neighbor.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 221
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 221
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_resampling_fun'):
         continue
@@ -2083,7 +2083,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_resampling_fun.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 222
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 222
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_resampling_fun'):
         continue
@@ -2092,7 +2092,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_resampling_fun.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 223
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 223
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_nearest_neighbor_fun_ptr'):
         continue
@@ -2101,7 +2101,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_nearest_neighbor_fun_ptr.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 226
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 226
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_volume_a'):
         continue
@@ -2110,7 +2110,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_volume_a.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 227
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 227
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_volume'):
         continue
@@ -2119,7 +2119,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_volume.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 230
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 230
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_aligned_volume'):
         continue
@@ -2128,7 +2128,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_aligned_volume.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 232
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 232
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_make_aligned_volume_file'):
         continue
@@ -2137,7 +2137,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_make_aligned_volume_file.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 235
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 235
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_value'):
         continue
@@ -2146,7 +2146,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 236
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 236
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_float'):
         continue
@@ -2155,7 +2155,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_float.restype = c_float
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 237
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 237
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_double'):
         continue
@@ -2164,7 +2164,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_double.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 238
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 238
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_window_value'):
         continue
@@ -2173,7 +2173,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_window_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 241
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 241
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_window_ptr'):
         continue
@@ -2182,7 +2182,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_window_ptr.restype = POINTER(RASTER3D_Region)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 242
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 242
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_window'):
         continue
@@ -2191,7 +2191,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 243
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 243
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_window_map'):
         continue
@@ -2200,7 +2200,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_window_map.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 244
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 244
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_window'):
         continue
@@ -2209,7 +2209,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 247
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 247
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_use_window_params'):
         continue
@@ -2218,7 +2218,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_use_window_params.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 248
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 248
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_window'):
         continue
@@ -2227,7 +2227,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_window.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 252
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 252
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_block_nocache'):
         continue
@@ -2236,7 +2236,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_block_nocache.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 254
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 254
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_block'):
         continue
@@ -2245,7 +2245,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_block.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 257
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 257
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_header'):
         continue
@@ -2254,7 +2254,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_header.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 261
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 261
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_write_header'):
         continue
@@ -2263,7 +2263,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_write_header.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 265
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 265
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_rewrite_header'):
         continue
@@ -2272,7 +2272,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_rewrite_header.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 266
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 266
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_cache_size_encode'):
         continue
@@ -2281,7 +2281,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_cache_size_encode.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 267
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 267
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d__compute_cache_size'):
         continue
@@ -2290,7 +2290,7 @@ for _lib in six.itervalues(_libs):
     Rast3d__compute_cache_size.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 268
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 268
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_fill_header'):
         continue
@@ -2299,7 +2299,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_fill_header.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 273
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 273
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_coords_map'):
         continue
@@ -2308,7 +2308,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_coords_map.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 274
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 274
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_coords_map_window'):
         continue
@@ -2317,7 +2317,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_coords_map_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 275
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 275
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_nof_tiles_map'):
         continue
@@ -2326,7 +2326,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_nof_tiles_map.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 276
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 276
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_region_map'):
         continue
@@ -2335,7 +2335,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_region_map.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 278
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 278
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_window_map'):
         continue
@@ -2344,7 +2344,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_window_map.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 280
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 280
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_tile_dimensions_map'):
         continue
@@ -2353,7 +2353,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_tile_dimensions_map.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 281
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 281
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_tile_type_map'):
         continue
@@ -2362,7 +2362,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_tile_type_map.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 282
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 282
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_file_type_map'):
         continue
@@ -2371,7 +2371,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_file_type_map.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 283
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 283
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_tile_precision_map'):
         continue
@@ -2380,7 +2380,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_tile_precision_map.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 284
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 284
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_tile_use_cache_map'):
         continue
@@ -2389,7 +2389,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_tile_use_cache_map.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 285
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 285
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_print_header'):
         continue
@@ -2398,7 +2398,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_print_header.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 286
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 286
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_region_struct_map'):
         continue
@@ -2407,7 +2407,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_region_struct_map.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 287
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 287
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_unit'):
         continue
@@ -2416,7 +2416,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_unit.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 288
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 288
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_vertical_unit2'):
         continue
@@ -2425,7 +2425,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_vertical_unit2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 289
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 289
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_vertical_unit'):
         continue
@@ -2434,7 +2434,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_vertical_unit.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 290
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 290
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_unit'):
         continue
@@ -2443,7 +2443,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_unit.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 291
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 291
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_vertical_unit'):
         continue
@@ -2452,7 +2452,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_vertical_unit.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 292
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 292
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_vertical_unit2'):
         continue
@@ -2461,7 +2461,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_vertical_unit2.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 295
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 295
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_flush_index'):
         continue
@@ -2470,7 +2470,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_flush_index.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 296
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 296
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_init_index'):
         continue
@@ -2479,7 +2479,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_init_index.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 299
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 299
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_retile'):
         continue
@@ -2488,7 +2488,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_retile.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 302
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 302
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_rle_count_only'):
         continue
@@ -2497,7 +2497,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_rle_count_only.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 303
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 303
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_rle_encode'):
         continue
@@ -2506,7 +2506,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_rle_encode.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 304
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 304
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_rle_decode'):
         continue
@@ -2515,7 +2515,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_rle_decode.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 307
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 307
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_alloc_tiles_type'):
         continue
@@ -2525,7 +2525,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_alloc_tiles_type.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 308
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 308
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_alloc_tiles'):
         continue
@@ -2535,7 +2535,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_alloc_tiles.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 309
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 309
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_free_tiles'):
         continue
@@ -2544,7 +2544,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_free_tiles.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 312
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 312
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_tile_ptr'):
         continue
@@ -2554,7 +2554,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_tile_ptr.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 313
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 313
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_tile_load'):
         continue
@@ -2563,7 +2563,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_tile_load.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 314
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 314
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d__remove_tile'):
         continue
@@ -2572,7 +2572,7 @@ for _lib in six.itervalues(_libs):
     Rast3d__remove_tile.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 315
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 315
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_float_region'):
         continue
@@ -2581,7 +2581,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_float_region.restype = c_float
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 316
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 316
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_double_region'):
         continue
@@ -2590,7 +2590,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_double_region.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 317
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 317
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_get_value_region'):
         continue
@@ -2599,7 +2599,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_get_value_region.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 320
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 320
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_compute_optimal_tile_dimension'):
         continue
@@ -2608,7 +2608,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_compute_optimal_tile_dimension.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 321
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 321
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_tile_index2tile'):
         continue
@@ -2617,7 +2617,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_tile_index2tile.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 322
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 322
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_tile2tile_index'):
         continue
@@ -2626,7 +2626,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_tile2tile_index.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 323
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 323
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_tile_coord_origin'):
         continue
@@ -2635,7 +2635,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_tile_coord_origin.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 324
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 324
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_tile_index_origin'):
         continue
@@ -2644,7 +2644,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_tile_index_origin.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 325
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 325
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_coord2tile_coord'):
         continue
@@ -2653,7 +2653,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_coord2tile_coord.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 327
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 327
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_coord2tile_index'):
         continue
@@ -2662,7 +2662,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_coord2tile_index.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 328
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 328
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_coord_in_range'):
         continue
@@ -2671,7 +2671,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_coord_in_range.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 329
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 329
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_tile_index_in_range'):
         continue
@@ -2680,7 +2680,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_tile_index_in_range.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 330
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 330
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_tile_in_range'):
         continue
@@ -2689,7 +2689,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_tile_in_range.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 331
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 331
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_compute_clipped_tile_dimensions'):
         continue
@@ -2698,7 +2698,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_compute_clipped_tile_dimensions.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 335
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 335
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_null_tile_type'):
         continue
@@ -2707,7 +2707,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_null_tile_type.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 336
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 336
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_set_null_tile'):
         continue
@@ -2716,7 +2716,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_set_null_tile.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 339
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 339
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_tile'):
         continue
@@ -2725,7 +2725,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_tile.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 340
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 340
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_tile_float'):
         continue
@@ -2734,7 +2734,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_tile_float.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 341
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 341
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_read_tile_double'):
         continue
@@ -2743,7 +2743,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_read_tile_double.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 342
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 342
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_lock_tile'):
         continue
@@ -2752,7 +2752,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_lock_tile.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 343
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 343
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_unlock_tile'):
         continue
@@ -2761,7 +2761,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_unlock_tile.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 344
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 344
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_unlock_all'):
         continue
@@ -2770,7 +2770,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_unlock_all.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 345
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 345
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_autolock_on'):
         continue
@@ -2779,7 +2779,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_autolock_on.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 346
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 346
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_autolock_off'):
         continue
@@ -2788,7 +2788,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_autolock_off.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 347
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 347
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_min_unlocked'):
         continue
@@ -2797,7 +2797,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_min_unlocked.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 348
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 348
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_begin_cycle'):
         continue
@@ -2806,7 +2806,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_begin_cycle.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 349
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 349
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_end_cycle'):
         continue
@@ -2815,7 +2815,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_end_cycle.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 352
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 352
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_write_tile'):
         continue
@@ -2824,7 +2824,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_write_tile.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 353
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 353
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_write_tile_float'):
         continue
@@ -2833,7 +2833,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_write_tile_float.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 354
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 354
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_write_tile_double'):
         continue
@@ -2842,7 +2842,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_write_tile_double.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 355
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 355
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_flush_tile'):
         continue
@@ -2851,7 +2851,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_flush_tile.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 356
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 356
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_flush_tile_cube'):
         continue
@@ -2860,7 +2860,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_flush_tile_cube.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 357
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 357
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_flush_tiles_in_cube'):
         continue
@@ -2869,7 +2869,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_flush_tiles_in_cube.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 358
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 358
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_put_float'):
         continue
@@ -2878,7 +2878,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_put_float.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 359
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 359
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_put_double'):
         continue
@@ -2887,7 +2887,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_put_double.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 360
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 360
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_put_value'):
         continue
@@ -2896,7 +2896,7 @@ for _lib in six.itervalues(_libs):
     Rast3d_put_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 363
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/raster3d.h: 363
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rast3d_write_ascii'):
         continue
@@ -2905,183 +2905,183 @@ for _lib in six.itervalues(_libs):
     Rast3d_write_ascii.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 7
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 7
 try:
     RASTER3D_MAP_VERSION = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 12
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 12
 try:
     RASTER3D_TILE_SAME_AS_FILE = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 14
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 14
 try:
     RASTER3D_NO_COMPRESSION = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 15
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 15
 try:
     RASTER3D_COMPRESSION = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 17
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 17
 try:
     RASTER3D_MAX_PRECISION = (-1)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 19
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 19
 try:
     RASTER3D_NO_CACHE = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 20
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 20
 try:
     RASTER3D_USE_CACHE_DEFAULT = (-1)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 21
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 21
 try:
     RASTER3D_USE_CACHE_X = (-2)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 22
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 22
 try:
     RASTER3D_USE_CACHE_Y = (-3)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 23
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 23
 try:
     RASTER3D_USE_CACHE_Z = (-4)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 24
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 24
 try:
     RASTER3D_USE_CACHE_XY = (-5)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 25
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 25
 try:
     RASTER3D_USE_CACHE_XZ = (-6)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 26
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 26
 try:
     RASTER3D_USE_CACHE_YZ = (-7)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 27
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 27
 try:
     RASTER3D_USE_CACHE_XYZ = (-8)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 29
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 29
 try:
     RASTER3D_DEFAULT_WINDOW = NULL
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 31
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 31
 try:
     RASTER3D_DIRECTORY = 'grid3'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 32
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 32
 try:
     RASTER3D_CELL_ELEMENT = 'cell'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 33
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 33
 try:
     RASTER3D_CATS_ELEMENT = 'cats'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 34
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 34
 try:
     RASTER3D_RANGE_ELEMENT = 'range'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 35
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 35
 try:
     RASTER3D_HEADER_ELEMENT = 'cellhd'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 36
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 36
 try:
     RASTER3D_HISTORY_ELEMENT = 'hist'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 37
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 37
 try:
     RASTER3D_COLOR_ELEMENT = 'color'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 38
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 38
 try:
     RASTER3D_COLOR2_DIRECTORY = 'colr2'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 39
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 39
 try:
     RASTER3D_MASK_MAP = 'RASTER3D_MASK'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 40
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 40
 try:
     RASTER3D_WINDOW_ELEMENT = 'WIND3'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 41
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 41
 try:
     RASTER3D_DEFAULT_WINDOW_ELEMENT = 'DEFAULT_WIND3'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 42
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 42
 try:
     RASTER3D_WINDOW_DATABASE = 'windows3d'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 43
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 43
 try:
     RASTER3D_PERMANENT_MAPSET = 'PERMANENT'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 268
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 268
 def RASTER3D_ARRAY_ACCESS(arr, x, y, z):
     return ((arr.contents.array) [((((((arr.contents.sx).value) * ((arr.contents.sy).value)) * z) + (((arr.contents.sx).value) * y)) + x)])
 
-RASTER3D_Map = struct_RASTER3D_Map # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 72
+RASTER3D_Map = struct_RASTER3D_Map # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 72
 
-_d_interval = struct__d_interval # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 240
+_d_interval = struct__d_interval # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 240
 
-_d_mask = struct__d_mask # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 250
+_d_mask = struct__d_mask # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\raster3d.h: 250
 
 # No inserted files
 

@@ -40,12 +40,12 @@ UNIX_BIN            = /D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/bin
 INST_DIR            = ${prefix}/grass78
 
 GRASS_HOME          = /D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/apps/grass/grass78
-RUN_GISBASE         = D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32
+RUN_GISBASE         = D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32
 
 GRASS_VERSION_MAJOR = 7
 GRASS_VERSION_MINOR = 8
-GRASS_VERSION_RELEASE = 6RC3
-GRASS_VERSION_DATE  = 2021
+GRASS_VERSION_RELEASE = 7
+GRASS_VERSION_DATE  = 2022
 GRASS_VERSION_GIT   = exported
 
 STRIPFLAG           = 
@@ -114,7 +114,7 @@ HISTORYLIB          =
 
 #PostgreSQL:
 PQINCPATH           =  -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include
-PQLIBPATH           =  -L/d/src/osgeo4w/src/grass/grass-7.8.6RC3/mswindows/osgeo4w/lib
+PQLIBPATH           =  -L/d/src/osgeo4w/src/grass/grass-7.8.7/mswindows/osgeo4w/lib
 PQLIB               =  -lpq 
 USE_POSTGRES        = 1
 
@@ -126,7 +126,7 @@ MYSQLDLIB           =
 
 #SQLite:
 SQLITEINCPATH       =  -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include
-SQLITELIBPATH       =  -L/d/src/osgeo4w/src/grass/grass-7.8.6RC3/mswindows/osgeo4w/lib
+SQLITELIBPATH       =  -L/d/src/osgeo4w/src/grass/grass-7.8.7/mswindows/osgeo4w/lib
 SQLITELIB           =  -lsqlite3 
 
 #ODBC:
@@ -206,7 +206,7 @@ USE_OPENDWG         =
 
 #cairo
 CAIROINC                  = -mms-bitfields -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/cairo -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/lzo -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/pixman-1 -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/freetype2 -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/libpng16 -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/harfbuzz -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/glib-2.0 -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/lib/glib-2.0/include -ID:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include
-CAIROLIB                  = -LD:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/lib -lcairo -lpng16 -lz -lfontconfig -lfreetype -L/d/src/osgeo4w/src/grass/grass-7.8.6RC3/mswindows/osgeo4w/lib -lcairo -lfontconfig 
+CAIROLIB                  = -LD:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/lib -lcairo -lpng16 -lz -lfontconfig -lfreetype -L/d/src/osgeo4w/src/grass/grass-7.8.7/mswindows/osgeo4w/lib -lcairo -lfontconfig 
 USE_CAIRO                 = 1
 CAIRO_HAS_XRENDER         = 
 CAIRO_HAS_XRENDER_SURFACE = 

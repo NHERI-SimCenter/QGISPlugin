@@ -1,87 +1,87 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>i.eb.hsebal01 - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>i.eb.hsebal01</b></em>  - Computes sensible heat flux iteration SEBAL 01.
-<h2>KEYWORDS</h2>
-<a href="imagery.html">imagery</a>, <a href="topic_energy_balance.html">energy balance</a>, <a href="keywords.html#soil moisture">soil moisture</a>, <a href="keywords.html#evaporative fraction">evaporative fraction</a>, <a href="keywords.html#SEBAL">SEBAL</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>i.eb.hsebal01</b><br></div>
-<b>i.eb.hsebal01 --help</b><br>
-<div id="synopsis"><b>i.eb.hsebal01</b> [-<b>ac</b>] <b>netradiation</b>=<em>name</em> <b>soilheatflux</b>=<em>name</em> <b>aerodynresistance</b>=<em>name</em> <b>temperaturemeansealevel</b>=<em>name</em> <b>vapourpressureactual</b>=<em>name</em> <b>frictionvelocitystar</b>=<em>float</em>  [<b>row_wet_pixel</b>=<em>float</em>]   [<b>column_wet_pixel</b>=<em>float</em>]   [<b>row_dry_pixel</b>=<em>float</em>]   [<b>column_dry_pixel</b>=<em>float</em>]  <b>output</b>=<em>name</em>  [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-a</b></dt>
-<dd>Automatic wet/dry pixel (careful!)</dd>
-
-<dt><b>-c</b></dt>
-<dd>Dry/Wet pixels coordinates are in image projection, not row/col</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>netradiation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of instantaneous net radiation raster map [W/m2]</dd>
-
-<dt><b>soilheatflux</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of instantaneous soil heat flux raster map [W/m2]</dd>
-
-<dt><b>aerodynresistance</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of aerodynamic resistance to heat momentum raster map [s/m]</dd>
-
-<dt><b>temperaturemeansealevel</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of altitude corrected surface temperature raster map [K]</dd>
-
-<dt><b>vapourpressureactual</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of the actual vapour pressure (e_act) map [KPa]</dd>
-
-<dt><b>frictionvelocitystar</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
-<dd>Value of the height independent friction velocity (u*) [m/s]</dd>
-<dd>Default: <em>0.32407</em></dd>
-
-<dt><b>row_wet_pixel</b>=<em>float</em></dt>
-<dd>Row value of the wet pixel</dd>
-
-<dt><b>column_wet_pixel</b>=<em>float</em></dt>
-<dd>Column value of the wet pixel</dd>
-
-<dt><b>row_dry_pixel</b>=<em>float</em></dt>
-<dd>Row value of the dry pixel</dd>
-
-<dt><b>column_dry_pixel</b>=<em>float</em></dt>
-<dd>Column value of the dry pixel</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output sensible heat flux raster map [W/m2]</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>i.eb.hsebal01 - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>i.eb.hsebal01</b></em>  - Computes sensible heat flux iteration SEBAL 01.
+<h2>KEYWORDS</h2>
+<a href="imagery.html">imagery</a>, <a href="topic_energy_balance.html">energy balance</a>, <a href="keywords.html#soil moisture">soil moisture</a>, <a href="keywords.html#evaporative fraction">evaporative fraction</a>, <a href="keywords.html#SEBAL">SEBAL</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>i.eb.hsebal01</b><br></div>
+<b>i.eb.hsebal01 --help</b><br>
+<div id="synopsis"><b>i.eb.hsebal01</b> [-<b>ac</b>] <b>netradiation</b>=<em>name</em> <b>soilheatflux</b>=<em>name</em> <b>aerodynresistance</b>=<em>name</em> <b>temperaturemeansealevel</b>=<em>name</em> <b>vapourpressureactual</b>=<em>name</em> <b>frictionvelocitystar</b>=<em>float</em>  [<b>row_wet_pixel</b>=<em>float</em>]   [<b>column_wet_pixel</b>=<em>float</em>]   [<b>row_dry_pixel</b>=<em>float</em>]   [<b>column_dry_pixel</b>=<em>float</em>]  <b>output</b>=<em>name</em>  [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-a</b></dt>
+<dd>Automatic wet/dry pixel (careful!)</dd>
+
+<dt><b>-c</b></dt>
+<dd>Dry/Wet pixels coordinates are in image projection, not row/col</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>netradiation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of instantaneous net radiation raster map [W/m2]</dd>
+
+<dt><b>soilheatflux</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of instantaneous soil heat flux raster map [W/m2]</dd>
+
+<dt><b>aerodynresistance</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of aerodynamic resistance to heat momentum raster map [s/m]</dd>
+
+<dt><b>temperaturemeansealevel</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of altitude corrected surface temperature raster map [K]</dd>
+
+<dt><b>vapourpressureactual</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of the actual vapour pressure (e_act) map [KPa]</dd>
+
+<dt><b>frictionvelocitystar</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
+<dd>Value of the height independent friction velocity (u*) [m/s]</dd>
+<dd>Default: <em>0.32407</em></dd>
+
+<dt><b>row_wet_pixel</b>=<em>float</em></dt>
+<dd>Row value of the wet pixel</dd>
+
+<dt><b>column_wet_pixel</b>=<em>float</em></dt>
+<dd>Column value of the wet pixel</dd>
+
+<dt><b>row_dry_pixel</b>=<em>float</em></dt>
+<dd>Row value of the dry pixel</dd>
+
+<dt><b>column_dry_pixel</b>=<em>float</em></dt>
+<dd>Column value of the dry pixel</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output sensible heat flux raster map [W/m2]</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -166,7 +166,14 @@ Philippines.
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/imagery/i.eb.hsebal01">i.eb.hsebal01 source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/imagery/i.eb.hsebal01">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/imagery/i.eb.hsebal01">i.eb.hsebal01 source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/imagery/i.eb.hsebal01">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -177,9 +184,9 @@ Philippines.
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

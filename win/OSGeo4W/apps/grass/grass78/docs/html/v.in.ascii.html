@@ -1,120 +1,120 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.in.ascii - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.in.ascii</b></em>  - Creates a vector map from an ASCII points file or ASCII vector file.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#ASCII">ASCII</a>, <a href="keywords.html#level1">level1</a>, <a href="keywords.html#area">area</a>, <a href="keywords.html#line">line</a>, <a href="keywords.html#point">point</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.in.ascii</b><br></div>
-<b>v.in.ascii --help</b><br>
-<div id="synopsis"><b>v.in.ascii</b> [-<b>zentbri</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>format</b>=<em>string</em>]   [<b>separator</b>=<em>character</em>]   [<b>text</b>=<em>character</em>]   [<b>skip</b>=<em>integer</em>]   [<b>columns</b>=<em>string</em>]   [<b>x</b>=<em>integer</em>]   [<b>y</b>=<em>integer</em>]   [<b>z</b>=<em>integer</em>]   [<b>cat</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-z</b></dt>
-<dd>Create 3D vector map</dd>
-
-<dt><b>-e</b></dt>
-<dd>Create a new empty vector map and exit. Nothing is read from input.</dd>
-
-<dt><b>-n</b></dt>
-<dd>Do not expect a header when reading in standard format</dd>
-
-<dt><b>-t</b></dt>
-<dd>Do not create table in points mode</dd>
-
-<dt><b>-b</b></dt>
-<dd>Do not build topology</dd>
-<dd>Do not build topology in points mode</dd>
-
-<dt><b>-r</b></dt>
-<dd>Only import points falling within current region (points mode)</dd>
-
-<dt><b>-i</b></dt>
-<dd>Ignore broken line(s) in points mode</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input file to be imported</dd>
-<dd>'-' for standard input</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output vector map</dd>
-
-<dt><b>format</b>=<em>string</em></dt>
-<dd>Input file format</dd>
-<dd>Options: <em>point, standard</em></dd>
-<dd>Default: <em>point</em></dd>
-<dd><b>point</b>: simple x,y[,z] list</dd>
-<dd><b>standard</b>: GRASS vector ASCII format</dd>
-
-<dt><b>separator</b>=<em>character</em></dt>
-<dd>Field separator</dd>
-<dd>Special characters: pipe, comma, space, tab, newline</dd>
-<dd>Default: <em>pipe</em></dd>
-
-<dt><b>text</b>=<em>character</em></dt>
-<dd>Text delimiter</dd>
-<dd>Special characters: doublequote, singlequote, none</dd>
-
-<dt><b>skip</b>=<em>integer</em></dt>
-<dd>Number of header lines to skip at top of input file (points mode)</dd>
-<dd>Default: <em>0</em></dd>
-
-<dt><b>columns</b>=<em>string</em></dt>
-<dd>Column definition in SQL style (points mode)</dd>
-<dd>For example: 'x double precision, y double precision, cat int, name varchar(10)'</dd>
-
-<dt><b>x</b>=<em>integer</em></dt>
-<dd>Number of column used as x coordinate (points mode)</dd>
-<dd>First column is 1</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>y</b>=<em>integer</em></dt>
-<dd>Number of column used as y coordinate (points mode)</dd>
-<dd>First column is 1</dd>
-<dd>Default: <em>2</em></dd>
-
-<dt><b>z</b>=<em>integer</em></dt>
-<dd>Number of column used as z coordinate (points mode)</dd>
-<dd>First column is 1. If 0, z coordinate is not used</dd>
-<dd>Default: <em>0</em></dd>
-
-<dt><b>cat</b>=<em>integer</em></dt>
-<dd>Number of column used as category (points mode)</dd>
-<dd>First column is 1. If 0, unique category is assigned to each row and written to new column 'cat'</dd>
-<dd>Default: <em>0</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.in.ascii - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.in.ascii</b></em>  - Creates a vector map from an ASCII points file or ASCII vector file.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#ASCII">ASCII</a>, <a href="keywords.html#level1">level1</a>, <a href="keywords.html#area">area</a>, <a href="keywords.html#line">line</a>, <a href="keywords.html#point">point</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.in.ascii</b><br></div>
+<b>v.in.ascii --help</b><br>
+<div id="synopsis"><b>v.in.ascii</b> [-<b>zentbri</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>format</b>=<em>string</em>]   [<b>separator</b>=<em>character</em>]   [<b>text</b>=<em>character</em>]   [<b>skip</b>=<em>integer</em>]   [<b>columns</b>=<em>string</em>]   [<b>x</b>=<em>integer</em>]   [<b>y</b>=<em>integer</em>]   [<b>z</b>=<em>integer</em>]   [<b>cat</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-z</b></dt>
+<dd>Create 3D vector map</dd>
+
+<dt><b>-e</b></dt>
+<dd>Create a new empty vector map and exit. Nothing is read from input.</dd>
+
+<dt><b>-n</b></dt>
+<dd>Do not expect a header when reading in standard format</dd>
+
+<dt><b>-t</b></dt>
+<dd>Do not create table in points mode</dd>
+
+<dt><b>-b</b></dt>
+<dd>Do not build topology</dd>
+<dd>Do not build topology in points mode</dd>
+
+<dt><b>-r</b></dt>
+<dd>Only import points falling within current region (points mode)</dd>
+
+<dt><b>-i</b></dt>
+<dd>Ignore broken line(s) in points mode</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input file to be imported</dd>
+<dd>'-' for standard input</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output vector map</dd>
+
+<dt><b>format</b>=<em>string</em></dt>
+<dd>Input file format</dd>
+<dd>Options: <em>point, standard</em></dd>
+<dd>Default: <em>point</em></dd>
+<dd><b>point</b>: simple x,y[,z] list</dd>
+<dd><b>standard</b>: GRASS vector ASCII format</dd>
+
+<dt><b>separator</b>=<em>character</em></dt>
+<dd>Field separator</dd>
+<dd>Special characters: pipe, comma, space, tab, newline</dd>
+<dd>Default: <em>pipe</em></dd>
+
+<dt><b>text</b>=<em>character</em></dt>
+<dd>Text delimiter</dd>
+<dd>Special characters: doublequote, singlequote, none</dd>
+
+<dt><b>skip</b>=<em>integer</em></dt>
+<dd>Number of header lines to skip at top of input file (points mode)</dd>
+<dd>Default: <em>0</em></dd>
+
+<dt><b>columns</b>=<em>string</em></dt>
+<dd>Column definition in SQL style (points mode)</dd>
+<dd>For example: 'x double precision, y double precision, cat int, name varchar(10)'</dd>
+
+<dt><b>x</b>=<em>integer</em></dt>
+<dd>Number of column used as x coordinate (points mode)</dd>
+<dd>First column is 1</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>y</b>=<em>integer</em></dt>
+<dd>Number of column used as y coordinate (points mode)</dd>
+<dd>First column is 1</dd>
+<dd>Default: <em>2</em></dd>
+
+<dt><b>z</b>=<em>integer</em></dt>
+<dd>Number of column used as z coordinate (points mode)</dd>
+<dd>First column is 1. If 0, z coordinate is not used</dd>
+<dd>Default: <em>0</em></dd>
+
+<dt><b>cat</b>=<em>integer</em></dt>
+<dd>Number of column used as category (points mode)</dd>
+<dd>First column is 1. If 0, unique category is assigned to each row and written to new column 'cat'</dd>
+<dd>Default: <em>0</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -460,7 +460,14 @@ Radim Blazek, ITC-Irst, Trento, Italy
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.in.ascii">v.in.ascii source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.in.ascii">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.in.ascii">v.in.ascii source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.in.ascii">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -471,9 +478,9 @@ Radim Blazek, ITC-Irst, Trento, Italy
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

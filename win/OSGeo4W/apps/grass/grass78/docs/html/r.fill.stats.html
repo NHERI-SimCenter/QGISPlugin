@@ -1,95 +1,95 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.fill.stats - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.fill.stats</b></em>  - Rapidly fills 'no data' cells (NULLs) of a raster map with interpolated values (IDW).
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_surface.html">surface</a>, <a href="keywords.html#interpolation">interpolation</a>, <a href="keywords.html#IDW">IDW</a>, <a href="keywords.html#no-data filling">no-data filling</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.fill.stats</b><br></div>
-<b>r.fill.stats --help</b><br>
-<div id="synopsis"><b>r.fill.stats</b> [-<b>mkwus</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>uncertainty</b>=<em>name</em>]  <b>distance</b>=<em>value</em> <b>mode</b>=<em>name</em>  [<b>minimum</b>=<em>value</em>]   [<b>maximum</b>=<em>value</em>]  <b>power</b>=<em>value</em> <b>cells</b>=<em>value</em>  [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-m</b></dt>
-<dd>Interpret distance as map units, not number of cells</dd>
-
-<dt><b>-k</b></dt>
-<dd>Keep (preserve) original cell values</dd>
-<dd>By default original values are smoothed</dd>
-
-<dt><b>-w</b></dt>
-<dd>Just print the spatial weights matrix</dd>
-
-<dt><b>-u</b></dt>
-<dd>Just print estimated memory usage</dd>
-
-<dt><b>-s</b></dt>
-<dd>Single precision floating point output</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Raster map with data gaps to fill</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of result output map</dd>
-
-<dt><b>uncertainty</b>=<em>name</em></dt>
-<dd>Name of uncertainty output map</dd>
-
-<dt><b>distance</b>=<em>value</em>&nbsp;<b>[required]</b></dt>
-<dd>Distance threshold (default: in cells) for interpolation</dd>
-<dd>Default: <em>3</em></dd>
-
-<dt><b>mode</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Statistic for interpolated cell values</dd>
-<dd>Options: <em>wmean, mean, median, mode</em></dd>
-<dd>Default: <em>wmean</em></dd>
-
-<dt><b>minimum</b>=<em>value</em></dt>
-<dd>Minimum input data value to include in interpolation</dd>
-
-<dt><b>maximum</b>=<em>value</em></dt>
-<dd>Maximum input data value to include in interpolation</dd>
-
-<dt><b>power</b>=<em>value</em>&nbsp;<b>[required]</b></dt>
-<dd>Power coefficient for IDW interpolation</dd>
-<dd>Default: <em>2.0</em></dd>
-
-<dt><b>cells</b>=<em>value</em>&nbsp;<b>[required]</b></dt>
-<dd>Minimum number of data cells within search radius</dd>
-<dd>Default: <em>8</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.fill.stats - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.fill.stats</b></em>  - Rapidly fills 'no data' cells (NULLs) of a raster map with interpolated values (IDW).
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_surface.html">surface</a>, <a href="keywords.html#interpolation">interpolation</a>, <a href="keywords.html#IDW">IDW</a>, <a href="keywords.html#no-data filling">no-data filling</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.fill.stats</b><br></div>
+<b>r.fill.stats --help</b><br>
+<div id="synopsis"><b>r.fill.stats</b> [-<b>mkwus</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>uncertainty</b>=<em>name</em>]  <b>distance</b>=<em>value</em> <b>mode</b>=<em>name</em>  [<b>minimum</b>=<em>value</em>]   [<b>maximum</b>=<em>value</em>]  <b>power</b>=<em>value</em> <b>cells</b>=<em>value</em>  [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-m</b></dt>
+<dd>Interpret distance as map units, not number of cells</dd>
+
+<dt><b>-k</b></dt>
+<dd>Keep (preserve) original cell values</dd>
+<dd>By default original values are smoothed</dd>
+
+<dt><b>-w</b></dt>
+<dd>Just print the spatial weights matrix</dd>
+
+<dt><b>-u</b></dt>
+<dd>Just print estimated memory usage</dd>
+
+<dt><b>-s</b></dt>
+<dd>Single precision floating point output</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Raster map with data gaps to fill</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of result output map</dd>
+
+<dt><b>uncertainty</b>=<em>name</em></dt>
+<dd>Name of uncertainty output map</dd>
+
+<dt><b>distance</b>=<em>value</em>&nbsp;<b>[required]</b></dt>
+<dd>Distance threshold (default: in cells) for interpolation</dd>
+<dd>Default: <em>3</em></dd>
+
+<dt><b>mode</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Statistic for interpolated cell values</dd>
+<dd>Options: <em>wmean, mean, median, mode</em></dd>
+<dd>Default: <em>wmean</em></dd>
+
+<dt><b>minimum</b>=<em>value</em></dt>
+<dd>Minimum input data value to include in interpolation</dd>
+
+<dt><b>maximum</b>=<em>value</em></dt>
+<dd>Maximum input data value to include in interpolation</dd>
+
+<dt><b>power</b>=<em>value</em>&nbsp;<b>[required]</b></dt>
+<dd>Power coefficient for IDW interpolation</dd>
+<dd>Default: <em>2.0</em></dd>
+
+<dt><b>cells</b>=<em>value</em>&nbsp;<b>[required]</b></dt>
+<dd>Minimum number of data cells within search radius</dd>
+<dd>Default: <em>8</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -632,7 +632,14 @@ Benjamin Ducke
 <i>Last changed: $Date$</i>
 -->
 <h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.fill.stats">r.fill.stats source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.fill.stats">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.fill.stats">r.fill.stats source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.fill.stats">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -643,9 +650,9 @@ Benjamin Ducke
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

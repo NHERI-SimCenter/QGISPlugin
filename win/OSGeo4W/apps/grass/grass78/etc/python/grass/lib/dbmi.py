@@ -1,7 +1,7 @@
 '''Wrapper for dbmi.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_dbmiclient.7.8 -lgrass_dbmibase.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dbmi.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h -o OBJ.x86_64-w64-mingw32/dbmi.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_dbmiclient.7.8 -lgrass_dbmibase.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dbmi.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h -o OBJ.x86_64-w64-mingw32/dbmi.py
 
 Do not modify this file.
 '''
@@ -28,7 +28,7 @@ _libs["grass_dbmibase.7.8"] = load_library("grass_dbmibase.7.8")
 
 # No modules
 
-# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h: 33
+# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/stdio.h: 33
 class struct__iobuf(Structure):
     pass
 
@@ -53,13 +53,13 @@ struct__iobuf._fields_ = [
     ('_tmpfname', String),
 ]
 
-FILE = struct__iobuf # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h: 47
+FILE = struct__iobuf # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/stdio.h: 47
 
-dbAddress = POINTER(None) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 144
+dbAddress = POINTER(None) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 144
 
-dbToken = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 145
+dbToken = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 145
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 151
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 151
 class struct__db_string(Structure):
     pass
 
@@ -72,9 +72,9 @@ struct__db_string._fields_ = [
     ('nalloc', c_int),
 ]
 
-dbString = struct__db_string # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 151
+dbString = struct__db_string # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 151
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 153
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 153
 class struct__dbmscap(Structure):
     pass
 
@@ -91,9 +91,9 @@ struct__dbmscap._fields_ = [
     ('next', POINTER(struct__dbmscap)),
 ]
 
-dbDbmscap = struct__dbmscap # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 159
+dbDbmscap = struct__dbmscap # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 159
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 166
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 166
 class struct__db_dirent(Structure):
     pass
 
@@ -108,9 +108,9 @@ struct__db_dirent._fields_ = [
     ('perm', c_int),
 ]
 
-dbDirent = struct__db_dirent # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 166
+dbDirent = struct__db_dirent # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 166
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 173
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 173
 class struct__db_driver(Structure):
     pass
 
@@ -127,9 +127,9 @@ struct__db_driver._fields_ = [
     ('pid', c_int),
 ]
 
-dbDriver = struct__db_driver # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 173
+dbDriver = struct__db_driver # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 173
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 180
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 180
 class struct__db_handle(Structure):
     pass
 
@@ -142,9 +142,9 @@ struct__db_handle._fields_ = [
     ('dbSchema', dbString),
 ]
 
-dbHandle = struct__db_handle # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 180
+dbHandle = struct__db_handle # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 180
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 191
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 191
 class struct__db_date_time(Structure):
     pass
 
@@ -167,9 +167,9 @@ struct__db_date_time._fields_ = [
     ('seconds', c_double),
 ]
 
-dbDateTime = struct__db_date_time # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 191
+dbDateTime = struct__db_date_time # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 191
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 200
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 200
 class struct__db_value(Structure):
     pass
 
@@ -188,9 +188,9 @@ struct__db_value._fields_ = [
     ('t', dbDateTime),
 ]
 
-dbValue = struct__db_value # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 200
+dbValue = struct__db_value # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 200
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 218
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 218
 class struct__db_column(Structure):
     pass
 
@@ -227,9 +227,9 @@ struct__db_column._fields_ = [
     ('update', c_int),
 ]
 
-dbColumn = struct__db_column # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 218
+dbColumn = struct__db_column # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 218
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 228
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 228
 class struct__db_table(Structure):
     pass
 
@@ -250,9 +250,9 @@ struct__db_table._fields_ = [
     ('priv_delete', c_int),
 ]
 
-dbTable = struct__db_table # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 228
+dbTable = struct__db_table # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 228
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 238
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 238
 class struct__db_cursor(Structure):
     pass
 
@@ -273,9 +273,9 @@ struct__db_cursor._fields_ = [
     ('mode', c_int),
 ]
 
-dbCursor = struct__db_cursor # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 238
+dbCursor = struct__db_cursor # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 238
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 247
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 247
 class struct__db_index(Structure):
     pass
 
@@ -294,9 +294,9 @@ struct__db_index._fields_ = [
     ('unique', c_char),
 ]
 
-dbIndex = struct__db_index # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 247
+dbIndex = struct__db_index # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 247
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 256
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 256
 class struct__db_driver_state(Structure):
     pass
 
@@ -315,9 +315,9 @@ struct__db_driver_state._fields_ = [
     ('cursor_list', POINTER(POINTER(dbCursor))),
 ]
 
-dbDriverState = struct__db_driver_state # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 256
+dbDriverState = struct__db_driver_state # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 256
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 263
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 263
 class struct_anon_7(Structure):
     pass
 
@@ -330,9 +330,9 @@ struct_anon_7._fields_ = [
     ('val', c_int),
 ]
 
-dbCatValI = struct_anon_7 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 263
+dbCatValI = struct_anon_7 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 263
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 270
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 270
 class union_anon_8(Union):
     pass
 
@@ -349,7 +349,7 @@ union_anon_8._fields_ = [
     ('t', POINTER(dbDateTime)),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 281
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 281
 class struct_anon_9(Structure):
     pass
 
@@ -364,9 +364,9 @@ struct_anon_9._fields_ = [
     ('val', union_anon_8),
 ]
 
-dbCatVal = struct_anon_9 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 281
+dbCatVal = struct_anon_9 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 281
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 290
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 290
 class struct_anon_10(Structure):
     pass
 
@@ -383,9 +383,9 @@ struct_anon_10._fields_ = [
     ('value', POINTER(dbCatVal)),
 ]
 
-dbCatValArray = struct_anon_10 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 290
+dbCatValArray = struct_anon_10 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 290
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 304
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 304
 class struct__db_connection(Structure):
     pass
 
@@ -412,9 +412,9 @@ struct__db_connection._fields_ = [
     ('group', String),
 ]
 
-dbConnection = struct__db_connection # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 304
+dbConnection = struct__db_connection # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 304
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 316
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 316
 class struct_anon_11(Structure):
     pass
 
@@ -437,9 +437,9 @@ struct_anon_11._fields_ = [
     ('label', POINTER(POINTER(c_char))),
 ]
 
-dbRclsRule = struct_anon_11 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 316
+dbRclsRule = struct_anon_11 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 316
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 4
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 4
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_Cstring_to_lowercase'):
         continue
@@ -448,7 +448,7 @@ for _lib in six.itervalues(_libs):
     db_Cstring_to_lowercase.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_Cstring_to_uppercase'):
         continue
@@ -457,7 +457,7 @@ for _lib in six.itervalues(_libs):
     db_Cstring_to_uppercase.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 6
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 6
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_add_column'):
         continue
@@ -466,7 +466,7 @@ for _lib in six.itervalues(_libs):
     db_add_column.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 7
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 7
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__add_cursor_to_driver_state'):
         continue
@@ -475,7 +475,7 @@ for _lib in six.itervalues(_libs):
     db__add_cursor_to_driver_state.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 8
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 8
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_alloc_cursor_column_flags'):
         continue
@@ -484,7 +484,7 @@ for _lib in six.itervalues(_libs):
     db_alloc_cursor_column_flags.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 9
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 9
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_alloc_cursor_table'):
         continue
@@ -493,7 +493,7 @@ for _lib in six.itervalues(_libs):
     db_alloc_cursor_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 10
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 10
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_append_table_column'):
         continue
@@ -502,7 +502,7 @@ for _lib in six.itervalues(_libs):
     db_append_table_column.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 11
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 11
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_alloc_dirent_array'):
         continue
@@ -511,7 +511,7 @@ for _lib in six.itervalues(_libs):
     db_alloc_dirent_array.restype = POINTER(dbDirent)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 12
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 12
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_alloc_handle_array'):
         continue
@@ -520,7 +520,7 @@ for _lib in six.itervalues(_libs):
     db_alloc_handle_array.restype = POINTER(dbHandle)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 13
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 13
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_alloc_index_array'):
         continue
@@ -529,7 +529,7 @@ for _lib in six.itervalues(_libs):
     db_alloc_index_array.restype = POINTER(dbIndex)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 14
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 14
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_alloc_index_columns'):
         continue
@@ -538,7 +538,7 @@ for _lib in six.itervalues(_libs):
     db_alloc_index_columns.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 15
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 15
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_alloc_string_array'):
         continue
@@ -547,7 +547,7 @@ for _lib in six.itervalues(_libs):
     db_alloc_string_array.restype = POINTER(dbString)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 16
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 16
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_alloc_table'):
         continue
@@ -556,7 +556,7 @@ for _lib in six.itervalues(_libs):
     db_alloc_table.restype = POINTER(dbTable)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 17
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 17
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_append_string'):
         continue
@@ -565,7 +565,7 @@ for _lib in six.itervalues(_libs):
     db_append_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 18
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 18
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_auto_print_errors'):
         continue
@@ -574,7 +574,7 @@ for _lib in six.itervalues(_libs):
     db_auto_print_errors.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 19
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 19
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_auto_print_protocol_errors'):
         continue
@@ -583,7 +583,7 @@ for _lib in six.itervalues(_libs):
     db_auto_print_protocol_errors.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 20
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 20
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_bind_update'):
         continue
@@ -592,7 +592,7 @@ for _lib in six.itervalues(_libs):
     db_bind_update.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 21
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 21
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_calloc'):
         continue
@@ -602,7 +602,7 @@ for _lib in six.itervalues(_libs):
     db_calloc.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 22
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 22
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_CatValArray_alloc'):
         continue
@@ -611,7 +611,7 @@ for _lib in six.itervalues(_libs):
     db_CatValArray_alloc.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 23
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 23
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_CatValArray_realloc'):
         continue
@@ -620,7 +620,7 @@ for _lib in six.itervalues(_libs):
     db_CatValArray_realloc.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 24
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 24
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_CatValArray_free'):
         continue
@@ -629,7 +629,7 @@ for _lib in six.itervalues(_libs):
     db_CatValArray_free.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 25
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 25
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_CatValArray_init'):
         continue
@@ -638,7 +638,7 @@ for _lib in six.itervalues(_libs):
     db_CatValArray_init.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 26
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 26
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_CatValArray_sort'):
         continue
@@ -647,7 +647,7 @@ for _lib in six.itervalues(_libs):
     db_CatValArray_sort.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 27
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 27
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_CatValArray_sort_by_value'):
         continue
@@ -656,7 +656,7 @@ for _lib in six.itervalues(_libs):
     db_CatValArray_sort_by_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 28
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 28
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_CatValArray_get_value'):
         continue
@@ -665,7 +665,7 @@ for _lib in six.itervalues(_libs):
     db_CatValArray_get_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 29
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 29
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_CatValArray_get_value_int'):
         continue
@@ -674,7 +674,7 @@ for _lib in six.itervalues(_libs):
     db_CatValArray_get_value_int.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 30
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 30
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_CatValArray_get_value_double'):
         continue
@@ -683,7 +683,7 @@ for _lib in six.itervalues(_libs):
     db_CatValArray_get_value_double.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 32
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 32
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_char_to_lowercase'):
         continue
@@ -692,7 +692,7 @@ for _lib in six.itervalues(_libs):
     db_char_to_lowercase.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 33
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 33
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_char_to_uppercase'):
         continue
@@ -701,7 +701,7 @@ for _lib in six.itervalues(_libs):
     db_char_to_uppercase.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 34
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 34
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_clear_error'):
         continue
@@ -710,7 +710,7 @@ for _lib in six.itervalues(_libs):
     db_clear_error.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 35
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 35
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_clone_table'):
         continue
@@ -719,7 +719,7 @@ for _lib in six.itervalues(_libs):
     db_clone_table.restype = POINTER(dbTable)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 36
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 36
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__close_all_cursors'):
         continue
@@ -728,7 +728,7 @@ for _lib in six.itervalues(_libs):
     db__close_all_cursors.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 37
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 37
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_close_cursor'):
         continue
@@ -737,7 +737,7 @@ for _lib in six.itervalues(_libs):
     db_close_cursor.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 38
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 38
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_close_database'):
         continue
@@ -746,7 +746,7 @@ for _lib in six.itervalues(_libs):
     db_close_database.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 39
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 39
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_close_database_shutdown_driver'):
         continue
@@ -755,7 +755,7 @@ for _lib in six.itervalues(_libs):
     db_close_database_shutdown_driver.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 40
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 40
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_column_sqltype'):
         continue
@@ -764,7 +764,7 @@ for _lib in six.itervalues(_libs):
     db_column_sqltype.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 41
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 41
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_column_Ctype'):
         continue
@@ -773,7 +773,7 @@ for _lib in six.itervalues(_libs):
     db_column_Ctype.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 42
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 42
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_convert_Cstring_to_column_default_value'):
         continue
@@ -782,7 +782,7 @@ for _lib in six.itervalues(_libs):
     db_convert_Cstring_to_column_default_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 44
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 44
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_convert_Cstring_to_column_value'):
         continue
@@ -791,7 +791,7 @@ for _lib in six.itervalues(_libs):
     db_convert_Cstring_to_column_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 46
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 46
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_convert_Cstring_to_value'):
         continue
@@ -800,7 +800,7 @@ for _lib in six.itervalues(_libs):
     db_convert_Cstring_to_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 48
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 48
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_convert_Cstring_to_value_datetime'):
         continue
@@ -809,7 +809,7 @@ for _lib in six.itervalues(_libs):
     db_convert_Cstring_to_value_datetime.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 50
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 50
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_convert_column_default_value_to_string'):
         continue
@@ -818,7 +818,7 @@ for _lib in six.itervalues(_libs):
     db_convert_column_default_value_to_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 52
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 52
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_convert_column_value_to_string'):
         continue
@@ -827,7 +827,7 @@ for _lib in six.itervalues(_libs):
     db_convert_column_value_to_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 53
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 53
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_convert_value_datetime_into_string'):
         continue
@@ -836,7 +836,7 @@ for _lib in six.itervalues(_libs):
     db_convert_value_datetime_into_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 55
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 55
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_convert_value_to_string'):
         continue
@@ -845,7 +845,7 @@ for _lib in six.itervalues(_libs):
     db_convert_value_to_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 57
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 57
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_copy_column'):
         continue
@@ -854,7 +854,7 @@ for _lib in six.itervalues(_libs):
     db_copy_column.restype = POINTER(dbColumn)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 58
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 58
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_copy_dbmscap_entry'):
         continue
@@ -863,7 +863,7 @@ for _lib in six.itervalues(_libs):
     db_copy_dbmscap_entry.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 59
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 59
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_copy_string'):
         continue
@@ -872,7 +872,7 @@ for _lib in six.itervalues(_libs):
     db_copy_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 60
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 60
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_table_to_sql'):
         continue
@@ -881,7 +881,7 @@ for _lib in six.itervalues(_libs):
     db_table_to_sql.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 61
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 61
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_copy_table'):
         continue
@@ -890,7 +890,7 @@ for _lib in six.itervalues(_libs):
     db_copy_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 63
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 63
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_copy_table_where'):
         continue
@@ -899,7 +899,7 @@ for _lib in six.itervalues(_libs):
     db_copy_table_where.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 66
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 66
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_copy_table_select'):
         continue
@@ -908,7 +908,7 @@ for _lib in six.itervalues(_libs):
     db_copy_table_select.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 69
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 69
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_copy_table_by_ints'):
         continue
@@ -917,7 +917,7 @@ for _lib in six.itervalues(_libs):
     db_copy_table_by_ints.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 72
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 72
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_copy_value'):
         continue
@@ -926,7 +926,7 @@ for _lib in six.itervalues(_libs):
     db_copy_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 73
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 73
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_create_database'):
         continue
@@ -935,7 +935,7 @@ for _lib in six.itervalues(_libs):
     db_create_database.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 74
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 74
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_create_index'):
         continue
@@ -944,7 +944,7 @@ for _lib in six.itervalues(_libs):
     db_create_index.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 75
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 75
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_create_index2'):
         continue
@@ -953,7 +953,7 @@ for _lib in six.itervalues(_libs):
     db_create_index2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 77
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 77
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_create_table'):
         continue
@@ -962,7 +962,7 @@ for _lib in six.itervalues(_libs):
     db_create_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 78
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 78
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_add_column'):
         continue
@@ -971,7 +971,7 @@ for _lib in six.itervalues(_libs):
     db_d_add_column.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 79
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 79
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_bind_update'):
         continue
@@ -980,7 +980,7 @@ for _lib in six.itervalues(_libs):
     db_d_bind_update.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 80
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 80
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_dbmscap_filename'):
         continue
@@ -989,7 +989,7 @@ for _lib in six.itervalues(_libs):
     db_dbmscap_filename.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 81
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 81
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_close_cursor'):
         continue
@@ -998,7 +998,7 @@ for _lib in six.itervalues(_libs):
     db_d_close_cursor.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 82
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 82
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_close_database'):
         continue
@@ -1007,7 +1007,7 @@ for _lib in six.itervalues(_libs):
     db_d_close_database.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 83
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 83
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_create_database'):
         continue
@@ -1016,7 +1016,7 @@ for _lib in six.itervalues(_libs):
     db_d_create_database.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 84
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 84
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_create_index'):
         continue
@@ -1025,7 +1025,7 @@ for _lib in six.itervalues(_libs):
     db_d_create_index.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 85
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 85
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_create_table'):
         continue
@@ -1034,7 +1034,7 @@ for _lib in six.itervalues(_libs):
     db_d_create_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 86
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 86
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_delete'):
         continue
@@ -1043,7 +1043,7 @@ for _lib in six.itervalues(_libs):
     db_d_delete.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 87
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 87
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_delete_database'):
         continue
@@ -1052,7 +1052,7 @@ for _lib in six.itervalues(_libs):
     db_d_delete_database.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 88
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 88
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_describe_table'):
         continue
@@ -1061,7 +1061,7 @@ for _lib in six.itervalues(_libs):
     db_d_describe_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 89
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 89
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_drop_column'):
         continue
@@ -1070,7 +1070,7 @@ for _lib in six.itervalues(_libs):
     db_d_drop_column.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 90
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 90
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_drop_index'):
         continue
@@ -1079,7 +1079,7 @@ for _lib in six.itervalues(_libs):
     db_d_drop_index.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 91
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 91
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_drop_table'):
         continue
@@ -1088,7 +1088,7 @@ for _lib in six.itervalues(_libs):
     db_d_drop_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 92
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 92
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_debug'):
         continue
@@ -1097,7 +1097,7 @@ for _lib in six.itervalues(_libs):
     db_debug.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 93
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 93
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_debug_off'):
         continue
@@ -1106,7 +1106,7 @@ for _lib in six.itervalues(_libs):
     db_debug_off.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 94
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 94
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_debug_on'):
         continue
@@ -1115,7 +1115,7 @@ for _lib in six.itervalues(_libs):
     db_debug_on.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 95
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 95
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_delete'):
         continue
@@ -1124,7 +1124,7 @@ for _lib in six.itervalues(_libs):
     db_delete.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 96
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 96
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_delete_database'):
         continue
@@ -1133,7 +1133,7 @@ for _lib in six.itervalues(_libs):
     db_delete_database.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 97
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 97
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_delete_table'):
         continue
@@ -1142,7 +1142,7 @@ for _lib in six.itervalues(_libs):
     db_delete_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 98
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 98
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_describe_table'):
         continue
@@ -1151,7 +1151,7 @@ for _lib in six.itervalues(_libs):
     db_describe_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 99
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 99
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_execute_immediate'):
         continue
@@ -1160,7 +1160,7 @@ for _lib in six.itervalues(_libs):
     db_d_execute_immediate.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 100
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 100
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_begin_transaction'):
         continue
@@ -1169,7 +1169,7 @@ for _lib in six.itervalues(_libs):
     db_d_begin_transaction.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 101
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 101
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_commit_transaction'):
         continue
@@ -1178,7 +1178,7 @@ for _lib in six.itervalues(_libs):
     db_d_commit_transaction.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 102
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 102
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_fetch'):
         continue
@@ -1187,7 +1187,7 @@ for _lib in six.itervalues(_libs):
     db_d_fetch.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 103
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 103
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_find_database'):
         continue
@@ -1196,7 +1196,7 @@ for _lib in six.itervalues(_libs):
     db_d_find_database.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 104
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 104
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_get_num_rows'):
         continue
@@ -1205,7 +1205,7 @@ for _lib in six.itervalues(_libs):
     db_d_get_num_rows.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 105
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 105
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_grant_on_table'):
         continue
@@ -1214,7 +1214,7 @@ for _lib in six.itervalues(_libs):
     db_d_grant_on_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 106
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 106
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_insert'):
         continue
@@ -1223,7 +1223,7 @@ for _lib in six.itervalues(_libs):
     db_d_insert.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 107
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 107
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_init_error'):
         continue
@@ -1232,7 +1232,7 @@ for _lib in six.itervalues(_libs):
     db_d_init_error.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 108
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 108
 for _lib in _libs.values():
     if hasattr(_lib, 'db_d_append_error'):
         _func = _lib.db_d_append_error
@@ -1241,7 +1241,7 @@ for _lib in _libs.values():
         _argtypes = [String]
         db_d_append_error = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 110
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 110
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_report_error'):
         continue
@@ -1250,7 +1250,7 @@ for _lib in six.itervalues(_libs):
     db_d_report_error.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 111
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 111
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_dirent'):
         continue
@@ -1259,7 +1259,7 @@ for _lib in six.itervalues(_libs):
     db_dirent.restype = POINTER(dbDirent)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 112
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 112
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_list_databases'):
         continue
@@ -1268,7 +1268,7 @@ for _lib in six.itervalues(_libs):
     db_d_list_databases.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 113
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 113
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_list_indexes'):
         continue
@@ -1277,7 +1277,7 @@ for _lib in six.itervalues(_libs):
     db_d_list_indexes.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 114
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 114
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_list_tables'):
         continue
@@ -1286,7 +1286,7 @@ for _lib in six.itervalues(_libs):
     db_d_list_tables.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 115
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 115
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_open_database'):
         continue
@@ -1295,7 +1295,7 @@ for _lib in six.itervalues(_libs):
     db_d_open_database.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 116
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 116
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_open_insert_cursor'):
         continue
@@ -1304,7 +1304,7 @@ for _lib in six.itervalues(_libs):
     db_d_open_insert_cursor.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 117
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 117
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_open_select_cursor'):
         continue
@@ -1313,7 +1313,7 @@ for _lib in six.itervalues(_libs):
     db_d_open_select_cursor.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 118
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 118
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_open_update_cursor'):
         continue
@@ -1322,7 +1322,7 @@ for _lib in six.itervalues(_libs):
     db_d_open_update_cursor.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 119
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 119
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_double_quote_string'):
         continue
@@ -1331,7 +1331,7 @@ for _lib in six.itervalues(_libs):
     db_double_quote_string.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 120
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 120
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_driver'):
         continue
@@ -1340,7 +1340,7 @@ for _lib in six.itervalues(_libs):
     db_driver.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 122
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 122
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_driver_mkdir'):
         continue
@@ -1349,7 +1349,7 @@ for _lib in six.itervalues(_libs):
     db_driver_mkdir.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 123
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 123
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_drop_column'):
         continue
@@ -1358,7 +1358,7 @@ for _lib in six.itervalues(_libs):
     db_drop_column.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 125
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 125
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__drop_cursor_from_driver_state'):
         continue
@@ -1367,7 +1367,7 @@ for _lib in six.itervalues(_libs):
     db__drop_cursor_from_driver_state.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 126
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 126
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_drop_index'):
         continue
@@ -1376,7 +1376,7 @@ for _lib in six.itervalues(_libs):
     db_drop_index.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 127
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 127
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_drop_table'):
         continue
@@ -1385,7 +1385,7 @@ for _lib in six.itervalues(_libs):
     db_drop_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 128
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 128
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_drop_token'):
         continue
@@ -1394,7 +1394,7 @@ for _lib in six.itervalues(_libs):
     db_drop_token.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 129
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 129
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_update'):
         continue
@@ -1403,7 +1403,7 @@ for _lib in six.itervalues(_libs):
     db_d_update.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 130
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 130
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_d_version'):
         continue
@@ -1412,7 +1412,7 @@ for _lib in six.itervalues(_libs):
     db_d_version.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 131
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 131
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_enlarge_string'):
         continue
@@ -1421,7 +1421,7 @@ for _lib in six.itervalues(_libs):
     db_enlarge_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 132
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 132
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_error'):
         continue
@@ -1430,7 +1430,7 @@ for _lib in six.itervalues(_libs):
     db_error.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 133
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 133
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_execute_immediate'):
         continue
@@ -1439,7 +1439,7 @@ for _lib in six.itervalues(_libs):
     db_execute_immediate.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 134
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 134
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_begin_transaction'):
         continue
@@ -1448,7 +1448,7 @@ for _lib in six.itervalues(_libs):
     db_begin_transaction.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 135
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 135
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_commit_transaction'):
         continue
@@ -1457,7 +1457,7 @@ for _lib in six.itervalues(_libs):
     db_commit_transaction.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 136
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 136
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_fetch'):
         continue
@@ -1466,7 +1466,7 @@ for _lib in six.itervalues(_libs):
     db_fetch.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 137
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 137
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_find_database'):
         continue
@@ -1475,7 +1475,7 @@ for _lib in six.itervalues(_libs):
     db_find_database.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 138
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 138
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_find_token'):
         continue
@@ -1484,7 +1484,7 @@ for _lib in six.itervalues(_libs):
     db_find_token.restype = dbAddress
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 139
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 139
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free'):
         continue
@@ -1493,7 +1493,7 @@ for _lib in six.itervalues(_libs):
     db_free.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 140
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 140
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_column'):
         continue
@@ -1502,7 +1502,7 @@ for _lib in six.itervalues(_libs):
     db_free_column.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 141
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 141
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_cursor'):
         continue
@@ -1511,7 +1511,7 @@ for _lib in six.itervalues(_libs):
     db_free_cursor.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 142
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 142
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_cursor_column_flags'):
         continue
@@ -1520,7 +1520,7 @@ for _lib in six.itervalues(_libs):
     db_free_cursor_column_flags.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 143
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 143
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_dbmscap'):
         continue
@@ -1529,7 +1529,7 @@ for _lib in six.itervalues(_libs):
     db_free_dbmscap.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 144
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 144
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_dirent_array'):
         continue
@@ -1538,7 +1538,7 @@ for _lib in six.itervalues(_libs):
     db_free_dirent_array.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 145
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 145
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_handle'):
         continue
@@ -1547,7 +1547,7 @@ for _lib in six.itervalues(_libs):
     db_free_handle.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 146
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 146
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_handle_array'):
         continue
@@ -1556,7 +1556,7 @@ for _lib in six.itervalues(_libs):
     db_free_handle_array.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 147
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 147
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_index'):
         continue
@@ -1565,7 +1565,7 @@ for _lib in six.itervalues(_libs):
     db_free_index.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 148
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 148
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_index_array'):
         continue
@@ -1574,7 +1574,7 @@ for _lib in six.itervalues(_libs):
     db_free_index_array.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 149
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 149
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_string'):
         continue
@@ -1583,7 +1583,7 @@ for _lib in six.itervalues(_libs):
     db_free_string.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 150
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 150
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_string_array'):
         continue
@@ -1592,7 +1592,7 @@ for _lib in six.itervalues(_libs):
     db_free_string_array.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 151
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 151
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_free_table'):
         continue
@@ -1601,7 +1601,7 @@ for _lib in six.itervalues(_libs):
     db_free_table.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 152
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 152
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column'):
         continue
@@ -1610,7 +1610,7 @@ for _lib in six.itervalues(_libs):
     db_get_column.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 154
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 154
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column_default_value'):
         continue
@@ -1619,7 +1619,7 @@ for _lib in six.itervalues(_libs):
     db_get_column_default_value.restype = POINTER(dbValue)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 155
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 155
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column_description'):
         continue
@@ -1628,7 +1628,7 @@ for _lib in six.itervalues(_libs):
     db_get_column_description.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 156
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 156
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column_host_type'):
         continue
@@ -1637,7 +1637,7 @@ for _lib in six.itervalues(_libs):
     db_get_column_host_type.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 157
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 157
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column_length'):
         continue
@@ -1646,7 +1646,7 @@ for _lib in six.itervalues(_libs):
     db_get_column_length.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 158
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 158
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column_name'):
         continue
@@ -1655,7 +1655,7 @@ for _lib in six.itervalues(_libs):
     db_get_column_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 159
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 159
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column_precision'):
         continue
@@ -1664,7 +1664,7 @@ for _lib in six.itervalues(_libs):
     db_get_column_precision.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 160
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 160
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column_scale'):
         continue
@@ -1673,7 +1673,7 @@ for _lib in six.itervalues(_libs):
     db_get_column_scale.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 161
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 161
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column_select_priv'):
         continue
@@ -1682,7 +1682,7 @@ for _lib in six.itervalues(_libs):
     db_get_column_select_priv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 162
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 162
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column_sqltype'):
         continue
@@ -1691,7 +1691,7 @@ for _lib in six.itervalues(_libs):
     db_get_column_sqltype.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 163
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 163
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column_update_priv'):
         continue
@@ -1700,7 +1700,7 @@ for _lib in six.itervalues(_libs):
     db_get_column_update_priv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 164
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 164
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_column_value'):
         continue
@@ -1709,7 +1709,7 @@ for _lib in six.itervalues(_libs):
     db_get_column_value.restype = POINTER(dbValue)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 165
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 165
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_connection'):
         continue
@@ -1718,7 +1718,7 @@ for _lib in six.itervalues(_libs):
     db_get_connection.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 166
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 166
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_cursor_number_of_columns'):
         continue
@@ -1727,7 +1727,7 @@ for _lib in six.itervalues(_libs):
     db_get_cursor_number_of_columns.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 167
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 167
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_cursor_table'):
         continue
@@ -1736,7 +1736,7 @@ for _lib in six.itervalues(_libs):
     db_get_cursor_table.restype = POINTER(dbTable)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 168
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 168
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_cursor_token'):
         continue
@@ -1745,7 +1745,7 @@ for _lib in six.itervalues(_libs):
     db_get_cursor_token.restype = dbToken
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 169
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 169
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_default_driver_name'):
         continue
@@ -1754,7 +1754,7 @@ for _lib in six.itervalues(_libs):
     db_get_default_driver_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 170
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 170
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_default_database_name'):
         continue
@@ -1763,7 +1763,7 @@ for _lib in six.itervalues(_libs):
     db_get_default_database_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 171
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 171
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_default_schema_name'):
         continue
@@ -1772,7 +1772,7 @@ for _lib in six.itervalues(_libs):
     db_get_default_schema_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 172
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 172
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_default_group_name'):
         continue
@@ -1781,7 +1781,7 @@ for _lib in six.itervalues(_libs):
     db_get_default_group_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 173
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 173
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__get_driver_state'):
         continue
@@ -1790,7 +1790,7 @@ for _lib in six.itervalues(_libs):
     db__get_driver_state.restype = POINTER(dbDriverState)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 174
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 174
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_error_code'):
         continue
@@ -1799,7 +1799,7 @@ for _lib in six.itervalues(_libs):
     db_get_error_code.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 175
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 175
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_error_msg'):
         continue
@@ -1808,7 +1808,7 @@ for _lib in six.itervalues(_libs):
     db_get_error_msg.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 176
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 176
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_error_who'):
         continue
@@ -1817,7 +1817,7 @@ for _lib in six.itervalues(_libs):
     db_get_error_who.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 177
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 177
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_handle_dbname'):
         continue
@@ -1826,7 +1826,7 @@ for _lib in six.itervalues(_libs):
     db_get_handle_dbname.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 178
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 178
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_handle_dbschema'):
         continue
@@ -1835,7 +1835,7 @@ for _lib in six.itervalues(_libs):
     db_get_handle_dbschema.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 179
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 179
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_index_column_name'):
         continue
@@ -1844,7 +1844,7 @@ for _lib in six.itervalues(_libs):
     db_get_index_column_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 180
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 180
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_index_name'):
         continue
@@ -1853,7 +1853,7 @@ for _lib in six.itervalues(_libs):
     db_get_index_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 181
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 181
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_index_number_of_columns'):
         continue
@@ -1862,7 +1862,7 @@ for _lib in six.itervalues(_libs):
     db_get_index_number_of_columns.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 182
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 182
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_index_table_name'):
         continue
@@ -1871,7 +1871,7 @@ for _lib in six.itervalues(_libs):
     db_get_index_table_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 183
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 183
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_num_rows'):
         continue
@@ -1880,7 +1880,7 @@ for _lib in six.itervalues(_libs):
     db_get_num_rows.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 184
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 184
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_string'):
         continue
@@ -1893,7 +1893,7 @@ for _lib in six.itervalues(_libs):
         db_get_string.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 185
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 185
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_table_column'):
         continue
@@ -1902,7 +1902,7 @@ for _lib in six.itervalues(_libs):
     db_get_table_column.restype = POINTER(dbColumn)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 186
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 186
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_table_column_by_name'):
         continue
@@ -1911,7 +1911,7 @@ for _lib in six.itervalues(_libs):
     db_get_table_column_by_name.restype = POINTER(dbColumn)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 187
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 187
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_table_delete_priv'):
         continue
@@ -1920,7 +1920,7 @@ for _lib in six.itervalues(_libs):
     db_get_table_delete_priv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 188
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 188
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_table_description'):
         continue
@@ -1929,7 +1929,7 @@ for _lib in six.itervalues(_libs):
     db_get_table_description.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 189
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 189
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_table_insert_priv'):
         continue
@@ -1938,7 +1938,7 @@ for _lib in six.itervalues(_libs):
     db_get_table_insert_priv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 190
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 190
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_table_name'):
         continue
@@ -1947,7 +1947,7 @@ for _lib in six.itervalues(_libs):
     db_get_table_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 191
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 191
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_table_number_of_columns'):
         continue
@@ -1956,7 +1956,7 @@ for _lib in six.itervalues(_libs):
     db_get_table_number_of_columns.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 192
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 192
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_table_number_of_rows'):
         continue
@@ -1965,7 +1965,7 @@ for _lib in six.itervalues(_libs):
     db_get_table_number_of_rows.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 193
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 193
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_table_select_priv'):
         continue
@@ -1974,7 +1974,7 @@ for _lib in six.itervalues(_libs):
     db_get_table_select_priv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 194
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 194
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_table_update_priv'):
         continue
@@ -1983,7 +1983,7 @@ for _lib in six.itervalues(_libs):
     db_get_table_update_priv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 195
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 195
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_value_as_double'):
         continue
@@ -1992,7 +1992,7 @@ for _lib in six.itervalues(_libs):
     db_get_value_as_double.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 196
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 196
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_value_day'):
         continue
@@ -2001,7 +2001,7 @@ for _lib in six.itervalues(_libs):
     db_get_value_day.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 197
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 197
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_value_double'):
         continue
@@ -2010,7 +2010,7 @@ for _lib in six.itervalues(_libs):
     db_get_value_double.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 198
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 198
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_value_hour'):
         continue
@@ -2019,7 +2019,7 @@ for _lib in six.itervalues(_libs):
     db_get_value_hour.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 199
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 199
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_value_int'):
         continue
@@ -2028,7 +2028,7 @@ for _lib in six.itervalues(_libs):
     db_get_value_int.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 200
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 200
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_value_minute'):
         continue
@@ -2037,7 +2037,7 @@ for _lib in six.itervalues(_libs):
     db_get_value_minute.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 201
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 201
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_value_month'):
         continue
@@ -2046,7 +2046,7 @@ for _lib in six.itervalues(_libs):
     db_get_value_month.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 202
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 202
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_value_seconds'):
         continue
@@ -2055,7 +2055,7 @@ for _lib in six.itervalues(_libs):
     db_get_value_seconds.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 203
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 203
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_value_string'):
         continue
@@ -2064,7 +2064,7 @@ for _lib in six.itervalues(_libs):
     db_get_value_string.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 204
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 204
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_value_year'):
         continue
@@ -2073,7 +2073,7 @@ for _lib in six.itervalues(_libs):
     db_get_value_year.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 205
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 205
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_grant_on_table'):
         continue
@@ -2082,7 +2082,7 @@ for _lib in six.itervalues(_libs):
     db_grant_on_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 207
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 207
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_has_dbms'):
         continue
@@ -2091,7 +2091,7 @@ for _lib in six.itervalues(_libs):
     db_has_dbms.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 208
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 208
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_init_column'):
         continue
@@ -2100,7 +2100,7 @@ for _lib in six.itervalues(_libs):
     db_init_column.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 209
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 209
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_init_cursor'):
         continue
@@ -2109,7 +2109,7 @@ for _lib in six.itervalues(_libs):
     db_init_cursor.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 210
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 210
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__init_driver_state'):
         continue
@@ -2118,7 +2118,7 @@ for _lib in six.itervalues(_libs):
     db__init_driver_state.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 211
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 211
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_init_handle'):
         continue
@@ -2127,7 +2127,7 @@ for _lib in six.itervalues(_libs):
     db_init_handle.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 212
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 212
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_init_index'):
         continue
@@ -2136,7 +2136,7 @@ for _lib in six.itervalues(_libs):
     db_init_index.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 213
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 213
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_init_string'):
         continue
@@ -2145,7 +2145,7 @@ for _lib in six.itervalues(_libs):
     db_init_string.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 214
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 214
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_init_table'):
         continue
@@ -2154,7 +2154,7 @@ for _lib in six.itervalues(_libs):
     db_init_table.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 215
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 215
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_insert'):
         continue
@@ -2163,7 +2163,7 @@ for _lib in six.itervalues(_libs):
     db_insert.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 216
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 216
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_interval_range'):
         continue
@@ -2172,7 +2172,7 @@ for _lib in six.itervalues(_libs):
     db_interval_range.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 217
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 217
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_isdir'):
         continue
@@ -2181,7 +2181,7 @@ for _lib in six.itervalues(_libs):
     db_isdir.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 218
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 218
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_legal_tablename'):
         continue
@@ -2190,7 +2190,7 @@ for _lib in six.itervalues(_libs):
     db_legal_tablename.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 219
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 219
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_list_databases'):
         continue
@@ -2199,7 +2199,7 @@ for _lib in six.itervalues(_libs):
     db_list_databases.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 221
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 221
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_list_drivers'):
         continue
@@ -2208,7 +2208,7 @@ for _lib in six.itervalues(_libs):
     db_list_drivers.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 222
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 222
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_list_indexes'):
         continue
@@ -2217,7 +2217,7 @@ for _lib in six.itervalues(_libs):
     db_list_indexes.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 224
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 224
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_list_tables'):
         continue
@@ -2226,7 +2226,7 @@ for _lib in six.itervalues(_libs):
     db_list_tables.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 226
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 226
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_malloc'):
         continue
@@ -2236,7 +2236,7 @@ for _lib in six.itervalues(_libs):
     db_malloc.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 227
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 227
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__mark_database_closed'):
         continue
@@ -2245,7 +2245,7 @@ for _lib in six.itervalues(_libs):
     db__mark_database_closed.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 228
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 228
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__mark_database_open'):
         continue
@@ -2254,7 +2254,7 @@ for _lib in six.itervalues(_libs):
     db__mark_database_open.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 229
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 229
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_memory_error'):
         continue
@@ -2263,7 +2263,7 @@ for _lib in six.itervalues(_libs):
     db_memory_error.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 230
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 230
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_new_token'):
         continue
@@ -2272,7 +2272,7 @@ for _lib in six.itervalues(_libs):
     db_new_token.restype = dbToken
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 231
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 231
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_nocase_compare'):
         continue
@@ -2281,7 +2281,7 @@ for _lib in six.itervalues(_libs):
     db_nocase_compare.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 232
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 232
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_noproc_error'):
         continue
@@ -2290,7 +2290,7 @@ for _lib in six.itervalues(_libs):
     db_noproc_error.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 233
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 233
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_open_database'):
         continue
@@ -2299,7 +2299,7 @@ for _lib in six.itervalues(_libs):
     db_open_database.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 234
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 234
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_open_insert_cursor'):
         continue
@@ -2308,7 +2308,7 @@ for _lib in six.itervalues(_libs):
     db_open_insert_cursor.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 235
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 235
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_open_select_cursor'):
         continue
@@ -2317,7 +2317,7 @@ for _lib in six.itervalues(_libs):
     db_open_select_cursor.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 237
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 237
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_open_update_cursor'):
         continue
@@ -2326,7 +2326,7 @@ for _lib in six.itervalues(_libs):
     db_open_update_cursor.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 239
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 239
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_print_column_definition'):
         continue
@@ -2335,7 +2335,7 @@ for _lib in six.itervalues(_libs):
     db_print_column_definition.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 240
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 240
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_print_error'):
         continue
@@ -2344,7 +2344,7 @@ for _lib in six.itervalues(_libs):
     db_print_error.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 241
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 241
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_print_index'):
         continue
@@ -2353,7 +2353,7 @@ for _lib in six.itervalues(_libs):
     db_print_index.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 242
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 242
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_print_table_definition'):
         continue
@@ -2362,7 +2362,7 @@ for _lib in six.itervalues(_libs):
     db_print_table_definition.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 243
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 243
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_procedure_not_implemented'):
         continue
@@ -2371,7 +2371,7 @@ for _lib in six.itervalues(_libs):
     db_procedure_not_implemented.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 244
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 244
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_protocol_error'):
         continue
@@ -2380,7 +2380,7 @@ for _lib in six.itervalues(_libs):
     db_protocol_error.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 245
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 245
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_read_dbmscap'):
         continue
@@ -2389,7 +2389,7 @@ for _lib in six.itervalues(_libs):
     db_read_dbmscap.restype = POINTER(dbDbmscap)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 246
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 246
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_realloc'):
         continue
@@ -2399,7 +2399,7 @@ for _lib in six.itervalues(_libs):
     db_realloc.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 247
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 247
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_char'):
         continue
@@ -2408,7 +2408,7 @@ for _lib in six.itervalues(_libs):
     db__recv_char.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 248
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 248
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_column_default_value'):
         continue
@@ -2417,7 +2417,7 @@ for _lib in six.itervalues(_libs):
     db__recv_column_default_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 249
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 249
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_column_definition'):
         continue
@@ -2426,7 +2426,7 @@ for _lib in six.itervalues(_libs):
     db__recv_column_definition.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 250
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 250
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_column_value'):
         continue
@@ -2435,7 +2435,7 @@ for _lib in six.itervalues(_libs):
     db__recv_column_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 251
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 251
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_datetime'):
         continue
@@ -2444,7 +2444,7 @@ for _lib in six.itervalues(_libs):
     db__recv_datetime.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 252
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 252
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_double'):
         continue
@@ -2453,7 +2453,7 @@ for _lib in six.itervalues(_libs):
     db__recv_double.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 253
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 253
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_double_array'):
         continue
@@ -2462,7 +2462,7 @@ for _lib in six.itervalues(_libs):
     db__recv_double_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 254
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 254
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_float'):
         continue
@@ -2471,7 +2471,7 @@ for _lib in six.itervalues(_libs):
     db__recv_float.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 255
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 255
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_float_array'):
         continue
@@ -2480,7 +2480,7 @@ for _lib in six.itervalues(_libs):
     db__recv_float_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 256
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 256
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_handle'):
         continue
@@ -2489,7 +2489,7 @@ for _lib in six.itervalues(_libs):
     db__recv_handle.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 257
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 257
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_index'):
         continue
@@ -2498,7 +2498,7 @@ for _lib in six.itervalues(_libs):
     db__recv_index.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 258
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 258
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_index_array'):
         continue
@@ -2507,7 +2507,7 @@ for _lib in six.itervalues(_libs):
     db__recv_index_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 259
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 259
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_int'):
         continue
@@ -2516,7 +2516,7 @@ for _lib in six.itervalues(_libs):
     db__recv_int.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 260
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 260
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_int_array'):
         continue
@@ -2525,7 +2525,7 @@ for _lib in six.itervalues(_libs):
     db__recv_int_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 261
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 261
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_procnum'):
         continue
@@ -2534,7 +2534,7 @@ for _lib in six.itervalues(_libs):
     db__recv_procnum.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 262
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 262
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_return_code'):
         continue
@@ -2543,7 +2543,7 @@ for _lib in six.itervalues(_libs):
     db__recv_return_code.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 263
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 263
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_short'):
         continue
@@ -2552,7 +2552,7 @@ for _lib in six.itervalues(_libs):
     db__recv_short.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 264
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 264
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_short_array'):
         continue
@@ -2561,7 +2561,7 @@ for _lib in six.itervalues(_libs):
     db__recv_short_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 265
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 265
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_string'):
         continue
@@ -2570,7 +2570,7 @@ for _lib in six.itervalues(_libs):
     db__recv_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 266
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 266
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_string_array'):
         continue
@@ -2579,7 +2579,7 @@ for _lib in six.itervalues(_libs):
     db__recv_string_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 267
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 267
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_table_data'):
         continue
@@ -2588,7 +2588,7 @@ for _lib in six.itervalues(_libs):
     db__recv_table_data.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 268
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 268
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_table_definition'):
         continue
@@ -2597,7 +2597,7 @@ for _lib in six.itervalues(_libs):
     db__recv_table_definition.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 269
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 269
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_token'):
         continue
@@ -2606,7 +2606,7 @@ for _lib in six.itervalues(_libs):
     db__recv_token.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 270
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 270
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__recv_value'):
         continue
@@ -2615,7 +2615,7 @@ for _lib in six.itervalues(_libs):
     db__recv_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 271
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 271
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_Cstring'):
         continue
@@ -2624,7 +2624,7 @@ for _lib in six.itervalues(_libs):
     db__send_Cstring.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 272
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 272
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_char'):
         continue
@@ -2633,7 +2633,7 @@ for _lib in six.itervalues(_libs):
     db__send_char.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 273
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 273
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_column_default_value'):
         continue
@@ -2642,7 +2642,7 @@ for _lib in six.itervalues(_libs):
     db__send_column_default_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 274
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 274
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_column_definition'):
         continue
@@ -2651,7 +2651,7 @@ for _lib in six.itervalues(_libs):
     db__send_column_definition.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 275
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 275
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_column_value'):
         continue
@@ -2660,7 +2660,7 @@ for _lib in six.itervalues(_libs):
     db__send_column_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 276
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 276
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_datetime'):
         continue
@@ -2669,7 +2669,7 @@ for _lib in six.itervalues(_libs):
     db__send_datetime.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 277
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 277
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_double'):
         continue
@@ -2678,7 +2678,7 @@ for _lib in six.itervalues(_libs):
     db__send_double.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 278
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 278
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_double_array'):
         continue
@@ -2687,7 +2687,7 @@ for _lib in six.itervalues(_libs):
     db__send_double_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 279
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 279
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_failure'):
         continue
@@ -2696,7 +2696,7 @@ for _lib in six.itervalues(_libs):
     db__send_failure.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 280
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 280
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_float'):
         continue
@@ -2705,7 +2705,7 @@ for _lib in six.itervalues(_libs):
     db__send_float.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 281
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 281
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_float_array'):
         continue
@@ -2714,7 +2714,7 @@ for _lib in six.itervalues(_libs):
     db__send_float_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 282
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 282
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_handle'):
         continue
@@ -2723,7 +2723,7 @@ for _lib in six.itervalues(_libs):
     db__send_handle.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 283
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 283
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_index'):
         continue
@@ -2732,7 +2732,7 @@ for _lib in six.itervalues(_libs):
     db__send_index.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 284
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 284
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_index_array'):
         continue
@@ -2741,7 +2741,7 @@ for _lib in six.itervalues(_libs):
     db__send_index_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 285
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 285
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_int'):
         continue
@@ -2750,7 +2750,7 @@ for _lib in six.itervalues(_libs):
     db__send_int.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 286
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 286
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_int_array'):
         continue
@@ -2759,7 +2759,7 @@ for _lib in six.itervalues(_libs):
     db__send_int_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 287
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 287
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_procedure_not_implemented'):
         continue
@@ -2768,7 +2768,7 @@ for _lib in six.itervalues(_libs):
     db__send_procedure_not_implemented.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 288
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 288
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_procedure_ok'):
         continue
@@ -2777,7 +2777,7 @@ for _lib in six.itervalues(_libs):
     db__send_procedure_ok.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 289
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 289
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_short'):
         continue
@@ -2786,7 +2786,7 @@ for _lib in six.itervalues(_libs):
     db__send_short.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 290
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 290
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_short_array'):
         continue
@@ -2795,7 +2795,7 @@ for _lib in six.itervalues(_libs):
     db__send_short_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 291
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 291
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_string'):
         continue
@@ -2804,7 +2804,7 @@ for _lib in six.itervalues(_libs):
     db__send_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 292
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 292
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_string_array'):
         continue
@@ -2813,7 +2813,7 @@ for _lib in six.itervalues(_libs):
     db__send_string_array.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 293
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 293
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_success'):
         continue
@@ -2822,7 +2822,7 @@ for _lib in six.itervalues(_libs):
     db__send_success.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 294
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 294
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_table_data'):
         continue
@@ -2831,7 +2831,7 @@ for _lib in six.itervalues(_libs):
     db__send_table_data.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 295
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 295
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_table_definition'):
         continue
@@ -2840,7 +2840,7 @@ for _lib in six.itervalues(_libs):
     db__send_table_definition.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 296
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 296
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_token'):
         continue
@@ -2849,7 +2849,7 @@ for _lib in six.itervalues(_libs):
     db__send_token.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 297
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 297
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__send_value'):
         continue
@@ -2858,7 +2858,7 @@ for _lib in six.itervalues(_libs):
     db__send_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 298
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 298
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_select_CatValArray'):
         continue
@@ -2867,7 +2867,7 @@ for _lib in six.itervalues(_libs):
     db_select_CatValArray.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 301
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 301
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_select_int'):
         continue
@@ -2876,7 +2876,7 @@ for _lib in six.itervalues(_libs):
     db_select_int.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 303
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 303
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_select_value'):
         continue
@@ -2885,7 +2885,7 @@ for _lib in six.itervalues(_libs):
     db_select_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 305
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 305
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_description'):
         continue
@@ -2894,7 +2894,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_description.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 306
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 306
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_has_defined_default_value'):
         continue
@@ -2903,7 +2903,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_has_defined_default_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 307
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 307
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_has_undefined_default_value'):
         continue
@@ -2912,7 +2912,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_has_undefined_default_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 308
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 308
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_host_type'):
         continue
@@ -2921,7 +2921,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_host_type.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 309
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 309
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_length'):
         continue
@@ -2930,7 +2930,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_length.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 310
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 310
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_name'):
         continue
@@ -2939,7 +2939,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 311
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 311
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_null_allowed'):
         continue
@@ -2948,7 +2948,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_null_allowed.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 312
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 312
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_precision'):
         continue
@@ -2957,7 +2957,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_precision.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 313
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 313
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_scale'):
         continue
@@ -2966,7 +2966,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_scale.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 314
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 314
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_select_priv_granted'):
         continue
@@ -2975,7 +2975,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_select_priv_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 315
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 315
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_select_priv_not_granted'):
         continue
@@ -2984,7 +2984,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_select_priv_not_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 316
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 316
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_sqltype'):
         continue
@@ -2993,7 +2993,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_sqltype.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 317
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 317
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_update_priv_granted'):
         continue
@@ -3002,7 +3002,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_update_priv_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 318
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 318
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_update_priv_not_granted'):
         continue
@@ -3011,7 +3011,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_update_priv_not_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 319
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 319
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_column_use_default_value'):
         continue
@@ -3020,7 +3020,7 @@ for _lib in six.itervalues(_libs):
     db_set_column_use_default_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 320
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 320
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_connection'):
         continue
@@ -3029,7 +3029,7 @@ for _lib in six.itervalues(_libs):
     db_set_connection.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 321
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 321
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_cursor_column_flag'):
         continue
@@ -3038,7 +3038,7 @@ for _lib in six.itervalues(_libs):
     db_set_cursor_column_flag.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 322
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 322
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_cursor_column_for_update'):
         continue
@@ -3047,7 +3047,7 @@ for _lib in six.itervalues(_libs):
     db_set_cursor_column_for_update.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 323
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 323
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_cursor_mode'):
         continue
@@ -3056,7 +3056,7 @@ for _lib in six.itervalues(_libs):
     db_set_cursor_mode.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 324
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 324
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_cursor_mode_insensitive'):
         continue
@@ -3065,7 +3065,7 @@ for _lib in six.itervalues(_libs):
     db_set_cursor_mode_insensitive.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 325
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 325
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_cursor_mode_scroll'):
         continue
@@ -3074,7 +3074,7 @@ for _lib in six.itervalues(_libs):
     db_set_cursor_mode_scroll.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 326
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 326
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_cursor_table'):
         continue
@@ -3083,7 +3083,7 @@ for _lib in six.itervalues(_libs):
     db_set_cursor_table.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 327
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 327
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_cursor_token'):
         continue
@@ -3092,7 +3092,7 @@ for _lib in six.itervalues(_libs):
     db_set_cursor_token.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 328
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 328
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_cursor_type_insert'):
         continue
@@ -3101,7 +3101,7 @@ for _lib in six.itervalues(_libs):
     db_set_cursor_type_insert.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 329
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 329
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_cursor_type_readonly'):
         continue
@@ -3110,7 +3110,7 @@ for _lib in six.itervalues(_libs):
     db_set_cursor_type_readonly.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 330
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 330
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_cursor_type_update'):
         continue
@@ -3119,7 +3119,7 @@ for _lib in six.itervalues(_libs):
     db_set_cursor_type_update.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 331
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 331
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_default_connection'):
         continue
@@ -3128,7 +3128,7 @@ for _lib in six.itervalues(_libs):
     db_set_default_connection.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 332
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 332
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_error_who'):
         continue
@@ -3137,7 +3137,7 @@ for _lib in six.itervalues(_libs):
     db_set_error_who.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 333
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 333
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_handle'):
         continue
@@ -3146,7 +3146,7 @@ for _lib in six.itervalues(_libs):
     db_set_handle.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 334
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 334
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_error_handler_driver'):
         continue
@@ -3155,7 +3155,7 @@ for _lib in six.itervalues(_libs):
     db_set_error_handler_driver.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 335
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 335
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_unset_error_handler_driver'):
         continue
@@ -3164,7 +3164,7 @@ for _lib in six.itervalues(_libs):
     db_unset_error_handler_driver.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 336
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 336
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_index_column_name'):
         continue
@@ -3173,7 +3173,7 @@ for _lib in six.itervalues(_libs):
     db_set_index_column_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 338
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 338
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_index_name'):
         continue
@@ -3182,7 +3182,7 @@ for _lib in six.itervalues(_libs):
     db_set_index_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 339
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 339
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_index_table_name'):
         continue
@@ -3191,7 +3191,7 @@ for _lib in six.itervalues(_libs):
     db_set_index_table_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 340
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 340
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_index_type_non_unique'):
         continue
@@ -3200,7 +3200,7 @@ for _lib in six.itervalues(_libs):
     db_set_index_type_non_unique.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 341
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 341
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_index_type_unique'):
         continue
@@ -3209,7 +3209,7 @@ for _lib in six.itervalues(_libs):
     db_set_index_type_unique.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 342
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 342
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__set_protocol_fds'):
         continue
@@ -3218,7 +3218,7 @@ for _lib in six.itervalues(_libs):
     db__set_protocol_fds.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 343
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 343
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_string'):
         continue
@@ -3227,7 +3227,7 @@ for _lib in six.itervalues(_libs):
     db_set_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 344
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 344
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_string_no_copy'):
         continue
@@ -3236,7 +3236,7 @@ for _lib in six.itervalues(_libs):
     db_set_string_no_copy.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 345
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 345
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_table_column'):
         continue
@@ -3245,7 +3245,7 @@ for _lib in six.itervalues(_libs):
     db_set_table_column.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 346
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 346
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_table_delete_priv_granted'):
         continue
@@ -3254,7 +3254,7 @@ for _lib in six.itervalues(_libs):
     db_set_table_delete_priv_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 347
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 347
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_table_delete_priv_not_granted'):
         continue
@@ -3263,7 +3263,7 @@ for _lib in six.itervalues(_libs):
     db_set_table_delete_priv_not_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 348
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 348
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_table_description'):
         continue
@@ -3272,7 +3272,7 @@ for _lib in six.itervalues(_libs):
     db_set_table_description.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 349
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 349
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_table_insert_priv_granted'):
         continue
@@ -3281,7 +3281,7 @@ for _lib in six.itervalues(_libs):
     db_set_table_insert_priv_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 350
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 350
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_table_insert_priv_not_granted'):
         continue
@@ -3290,7 +3290,7 @@ for _lib in six.itervalues(_libs):
     db_set_table_insert_priv_not_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 351
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 351
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_table_name'):
         continue
@@ -3299,7 +3299,7 @@ for _lib in six.itervalues(_libs):
     db_set_table_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 352
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 352
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_table_select_priv_granted'):
         continue
@@ -3308,7 +3308,7 @@ for _lib in six.itervalues(_libs):
     db_set_table_select_priv_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 353
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 353
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_table_select_priv_not_granted'):
         continue
@@ -3317,7 +3317,7 @@ for _lib in six.itervalues(_libs):
     db_set_table_select_priv_not_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 354
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 354
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_table_update_priv_granted'):
         continue
@@ -3326,7 +3326,7 @@ for _lib in six.itervalues(_libs):
     db_set_table_update_priv_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 355
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 355
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_table_update_priv_not_granted'):
         continue
@@ -3335,7 +3335,7 @@ for _lib in six.itervalues(_libs):
     db_set_table_update_priv_not_granted.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 356
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 356
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_datetime_current'):
         continue
@@ -3344,7 +3344,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_datetime_current.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 357
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 357
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_datetime_not_current'):
         continue
@@ -3353,7 +3353,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_datetime_not_current.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 358
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 358
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_day'):
         continue
@@ -3362,7 +3362,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_day.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 359
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 359
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_double'):
         continue
@@ -3371,7 +3371,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_double.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 360
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 360
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_hour'):
         continue
@@ -3380,7 +3380,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_hour.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 361
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 361
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_int'):
         continue
@@ -3389,7 +3389,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_int.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 362
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 362
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_minute'):
         continue
@@ -3398,7 +3398,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_minute.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 363
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 363
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_month'):
         continue
@@ -3407,7 +3407,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_month.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 364
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 364
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_not_null'):
         continue
@@ -3416,7 +3416,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_not_null.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 365
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 365
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_null'):
         continue
@@ -3425,7 +3425,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_null.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 366
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 366
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_seconds'):
         continue
@@ -3434,7 +3434,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_seconds.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 367
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 367
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_string'):
         continue
@@ -3443,7 +3443,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_string.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 368
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 368
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_value_year'):
         continue
@@ -3452,7 +3452,7 @@ for _lib in six.itervalues(_libs):
     db_set_value_year.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 369
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 369
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_shutdown_driver'):
         continue
@@ -3461,7 +3461,7 @@ for _lib in six.itervalues(_libs):
     db_shutdown_driver.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 370
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 370
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_sqltype_name'):
         continue
@@ -3470,7 +3470,7 @@ for _lib in six.itervalues(_libs):
     db_sqltype_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 371
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 371
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_sqltype_to_Ctype'):
         continue
@@ -3479,7 +3479,7 @@ for _lib in six.itervalues(_libs):
     db_sqltype_to_Ctype.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 372
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 372
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_start_driver'):
         continue
@@ -3488,7 +3488,7 @@ for _lib in six.itervalues(_libs):
     db_start_driver.restype = POINTER(dbDriver)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 373
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 373
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_start_driver_open_database'):
         continue
@@ -3497,7 +3497,7 @@ for _lib in six.itervalues(_libs):
     db_start_driver_open_database.restype = POINTER(dbDriver)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 374
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 374
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__start_procedure_call'):
         continue
@@ -3506,7 +3506,7 @@ for _lib in six.itervalues(_libs):
     db__start_procedure_call.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 375
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 375
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_store'):
         continue
@@ -3519,7 +3519,7 @@ for _lib in six.itervalues(_libs):
         db_store.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 376
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 376
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_strip'):
         continue
@@ -3528,7 +3528,7 @@ for _lib in six.itervalues(_libs):
     db_strip.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 377
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 377
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_syserror'):
         continue
@@ -3537,7 +3537,7 @@ for _lib in six.itervalues(_libs):
     db_syserror.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 378
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 378
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_table_exists'):
         continue
@@ -3546,7 +3546,7 @@ for _lib in six.itervalues(_libs):
     db_table_exists.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 380
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 380
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_column_has_default_value'):
         continue
@@ -3555,7 +3555,7 @@ for _lib in six.itervalues(_libs):
     db_test_column_has_default_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 381
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 381
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_column_has_defined_default_value'):
         continue
@@ -3564,7 +3564,7 @@ for _lib in six.itervalues(_libs):
     db_test_column_has_defined_default_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 382
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 382
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_column_has_undefined_default_value'):
         continue
@@ -3573,7 +3573,7 @@ for _lib in six.itervalues(_libs):
     db_test_column_has_undefined_default_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 383
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 383
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_column_null_allowed'):
         continue
@@ -3582,7 +3582,7 @@ for _lib in six.itervalues(_libs):
     db_test_column_null_allowed.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 384
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 384
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_column_use_default_value'):
         continue
@@ -3591,7 +3591,7 @@ for _lib in six.itervalues(_libs):
     db_test_column_use_default_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 385
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 385
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_cursor_any_column_flag'):
         continue
@@ -3600,7 +3600,7 @@ for _lib in six.itervalues(_libs):
     db_test_cursor_any_column_flag.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 386
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 386
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_cursor_any_column_for_update'):
         continue
@@ -3609,7 +3609,7 @@ for _lib in six.itervalues(_libs):
     db_test_cursor_any_column_for_update.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 387
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 387
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_cursor_column_flag'):
         continue
@@ -3618,7 +3618,7 @@ for _lib in six.itervalues(_libs):
     db_test_cursor_column_flag.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 388
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 388
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_cursor_column_for_update'):
         continue
@@ -3627,7 +3627,7 @@ for _lib in six.itervalues(_libs):
     db_test_cursor_column_for_update.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 389
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 389
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_cursor_mode_insensitive'):
         continue
@@ -3636,7 +3636,7 @@ for _lib in six.itervalues(_libs):
     db_test_cursor_mode_insensitive.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 390
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 390
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_cursor_mode_scroll'):
         continue
@@ -3645,7 +3645,7 @@ for _lib in six.itervalues(_libs):
     db_test_cursor_mode_scroll.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 391
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 391
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_cursor_type_fetch'):
         continue
@@ -3654,7 +3654,7 @@ for _lib in six.itervalues(_libs):
     db_test_cursor_type_fetch.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 392
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 392
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_cursor_type_insert'):
         continue
@@ -3663,7 +3663,7 @@ for _lib in six.itervalues(_libs):
     db_test_cursor_type_insert.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 393
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 393
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_cursor_type_update'):
         continue
@@ -3672,7 +3672,7 @@ for _lib in six.itervalues(_libs):
     db_test_cursor_type_update.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 394
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 394
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db__test_database_open'):
         continue
@@ -3681,7 +3681,7 @@ for _lib in six.itervalues(_libs):
     db__test_database_open.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 395
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 395
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_index_type_unique'):
         continue
@@ -3690,7 +3690,7 @@ for _lib in six.itervalues(_libs):
     db_test_index_type_unique.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 396
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 396
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_value_datetime_current'):
         continue
@@ -3699,7 +3699,7 @@ for _lib in six.itervalues(_libs):
     db_test_value_datetime_current.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 397
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 397
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_test_value_isnull'):
         continue
@@ -3708,7 +3708,7 @@ for _lib in six.itervalues(_libs):
     db_test_value_isnull.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 398
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 398
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_unset_column_has_default_value'):
         continue
@@ -3717,7 +3717,7 @@ for _lib in six.itervalues(_libs):
     db_unset_column_has_default_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 399
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 399
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_unset_column_null_allowed'):
         continue
@@ -3726,7 +3726,7 @@ for _lib in six.itervalues(_libs):
     db_unset_column_null_allowed.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 400
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 400
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_unset_column_use_default_value'):
         continue
@@ -3735,7 +3735,7 @@ for _lib in six.itervalues(_libs):
     db_unset_column_use_default_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 401
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 401
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_unset_cursor_column_flag'):
         continue
@@ -3744,7 +3744,7 @@ for _lib in six.itervalues(_libs):
     db_unset_cursor_column_flag.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 402
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 402
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_unset_cursor_column_for_update'):
         continue
@@ -3753,7 +3753,7 @@ for _lib in six.itervalues(_libs):
     db_unset_cursor_column_for_update.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 403
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 403
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_unset_cursor_mode'):
         continue
@@ -3762,7 +3762,7 @@ for _lib in six.itervalues(_libs):
     db_unset_cursor_mode.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 404
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 404
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_unset_cursor_mode_insensitive'):
         continue
@@ -3771,7 +3771,7 @@ for _lib in six.itervalues(_libs):
     db_unset_cursor_mode_insensitive.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 405
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 405
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_unset_cursor_mode_scroll'):
         continue
@@ -3780,7 +3780,7 @@ for _lib in six.itervalues(_libs):
     db_unset_cursor_mode_scroll.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 406
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 406
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_update'):
         continue
@@ -3789,7 +3789,7 @@ for _lib in six.itervalues(_libs):
     db_update.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 407
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 407
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_gversion'):
         continue
@@ -3798,7 +3798,7 @@ for _lib in six.itervalues(_libs):
     db_gversion.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 409
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 409
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_whoami'):
         continue
@@ -3807,7 +3807,7 @@ for _lib in six.itervalues(_libs):
     db_whoami.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 410
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 410
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_zero'):
         continue
@@ -3816,7 +3816,7 @@ for _lib in six.itervalues(_libs):
     db_zero.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 411
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 411
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_zero_string'):
         continue
@@ -3825,7 +3825,7 @@ for _lib in six.itervalues(_libs):
     db_zero_string.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 412
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 412
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_sizeof_string'):
         continue
@@ -3834,7 +3834,7 @@ for _lib in six.itervalues(_libs):
     db_sizeof_string.restype = c_uint
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 413
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 413
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_login'):
         continue
@@ -3843,7 +3843,7 @@ for _lib in six.itervalues(_libs):
     db_set_login.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 414
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 414
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_set_login2'):
         continue
@@ -3852,7 +3852,7 @@ for _lib in six.itervalues(_libs):
     db_set_login2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 416
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 416
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_login'):
         continue
@@ -3861,7 +3861,7 @@ for _lib in six.itervalues(_libs):
     db_get_login.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 417
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 417
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_login2'):
         continue
@@ -3870,7 +3870,7 @@ for _lib in six.itervalues(_libs):
     db_get_login2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 419
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/dbmi.h: 419
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'db_get_login_dump'):
         continue
@@ -3879,559 +3879,559 @@ for _lib in six.itervalues(_libs):
     db_get_login_dump.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 18
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 18
 try:
     DB_VERSION = '0'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 21
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 21
 try:
     DB_DEFAULT_DRIVER = 'sqlite'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 27
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 27
 try:
     DB_PROC_VERSION = 999
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 29
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 29
 try:
     DB_PROC_CLOSE_DATABASE = 101
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 30
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 30
 try:
     DB_PROC_CREATE_DATABASE = 102
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 31
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 31
 try:
     DB_PROC_DELETE_DATABASE = 103
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 32
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 32
 try:
     DB_PROC_FIND_DATABASE = 104
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 33
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 33
 try:
     DB_PROC_LIST_DATABASES = 105
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 34
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 34
 try:
     DB_PROC_OPEN_DATABASE = 106
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 35
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 35
 try:
     DB_PROC_SHUTDOWN_DRIVER = 107
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 37
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 37
 try:
     DB_PROC_CLOSE_CURSOR = 201
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 38
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 38
 try:
     DB_PROC_DELETE = 202
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 39
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 39
 try:
     DB_PROC_FETCH = 203
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 40
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 40
 try:
     DB_PROC_INSERT = 204
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 41
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 41
 try:
     DB_PROC_OPEN_INSERT_CURSOR = 205
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 42
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 42
 try:
     DB_PROC_OPEN_SELECT_CURSOR = 206
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 43
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 43
 try:
     DB_PROC_OPEN_UPDATE_CURSOR = 207
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 44
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 44
 try:
     DB_PROC_UPDATE = 208
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 45
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 45
 try:
     DB_PROC_ROWS = 209
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 46
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 46
 try:
     DB_PROC_BIND_UPDATE = 220
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 47
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 47
 try:
     DB_PROC_BIND_INSERT = 221
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 49
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 49
 try:
     DB_PROC_EXECUTE_IMMEDIATE = 301
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 50
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 50
 try:
     DB_PROC_BEGIN_TRANSACTION = 302
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 51
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 51
 try:
     DB_PROC_COMMIT_TRANSACTION = 303
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 53
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 53
 try:
     DB_PROC_CREATE_TABLE = 401
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 54
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 54
 try:
     DB_PROC_DESCRIBE_TABLE = 402
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 55
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 55
 try:
     DB_PROC_DROP_TABLE = 403
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 56
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 56
 try:
     DB_PROC_LIST_TABLES = 404
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 57
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 57
 try:
     DB_PROC_ADD_COLUMN = 405
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 58
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 58
 try:
     DB_PROC_DROP_COLUMN = 406
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 59
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 59
 try:
     DB_PROC_GRANT_ON_TABLE = 407
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 61
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 61
 try:
     DB_PROC_CREATE_INDEX = 701
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 62
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 62
 try:
     DB_PROC_LIST_INDEXES = 702
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 63
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 63
 try:
     DB_PROC_DROP_INDEX = 703
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 66
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 66
 try:
     DB_PERM_R = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 67
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 67
 try:
     DB_PERM_W = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 68
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 68
 try:
     DB_PERM_X = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 71
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 71
 try:
     DB_OK = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 72
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 72
 try:
     DB_FAILED = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 73
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 73
 try:
     DB_NOPROC = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 74
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 74
 try:
     DB_MEMORY_ERR = (-1)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 75
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 75
 try:
     DB_PROTOCOL_ERR = (-2)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 76
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 76
 try:
     DB_EOF = (-1)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 79
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 79
 try:
     DB_SQL_TYPE_UNKNOWN = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 81
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 81
 try:
     DB_SQL_TYPE_CHARACTER = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 82
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 82
 try:
     DB_SQL_TYPE_SMALLINT = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 83
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 83
 try:
     DB_SQL_TYPE_INTEGER = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 84
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 84
 try:
     DB_SQL_TYPE_REAL = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 85
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 85
 try:
     DB_SQL_TYPE_DOUBLE_PRECISION = 6
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 86
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 86
 try:
     DB_SQL_TYPE_DECIMAL = 7
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 87
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 87
 try:
     DB_SQL_TYPE_NUMERIC = 8
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 88
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 88
 try:
     DB_SQL_TYPE_DATE = 9
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 89
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 89
 try:
     DB_SQL_TYPE_TIME = 10
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 90
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 90
 try:
     DB_SQL_TYPE_TIMESTAMP = 11
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 91
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 91
 try:
     DB_SQL_TYPE_INTERVAL = 12
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 92
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 92
 try:
     DB_SQL_TYPE_TEXT = 13
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 94
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 94
 try:
     DB_SQL_TYPE_SERIAL = 21
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 97
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 97
 try:
     DB_YEAR = 16384
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 98
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 98
 try:
     DB_MONTH = 8192
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 99
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 99
 try:
     DB_DAY = 4096
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 100
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 100
 try:
     DB_HOUR = 2048
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 101
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 101
 try:
     DB_MINUTE = 1024
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 102
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 102
 try:
     DB_SECOND = 512
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 103
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 103
 try:
     DB_FRACTION = 256
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 104
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 104
 try:
     DB_DATETIME_MASK = 65280
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 107
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 107
 try:
     DB_C_TYPE_STRING = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 108
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 108
 try:
     DB_C_TYPE_INT = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 109
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 109
 try:
     DB_C_TYPE_DOUBLE = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 110
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 110
 try:
     DB_C_TYPE_DATETIME = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 113
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 113
 try:
     DB_CURRENT = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 114
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 114
 try:
     DB_NEXT = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 115
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 115
 try:
     DB_PREVIOUS = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 116
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 116
 try:
     DB_FIRST = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 117
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 117
 try:
     DB_LAST = 5
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 120
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 120
 try:
     DB_READONLY = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 121
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 121
 try:
     DB_INSERT = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 122
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 122
 try:
     DB_UPDATE = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 123
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 123
 try:
     DB_SEQUENTIAL = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 124
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 124
 try:
     DB_SCROLL = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 125
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 125
 try:
     DB_INSENSITIVE = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 128
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 128
 try:
     DB_GRANTED = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 129
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 129
 try:
     DB_NOT_GRANTED = (-1)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 132
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 132
 try:
     DB_PRIV_SELECT = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 134
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 134
 try:
     DB_GROUP = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 135
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 135
 try:
     DB_PUBLIC = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 138
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 138
 try:
     DB_DEFINED = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 139
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 139
 try:
     DB_UNDEFINED = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 142
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 142
 try:
     DB_SQL_MAX = 8192
 except:
     pass
 
-_db_string = struct__db_string # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 151
+_db_string = struct__db_string # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 151
 
-_dbmscap = struct__dbmscap # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 153
+_dbmscap = struct__dbmscap # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 153
 
-_db_dirent = struct__db_dirent # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 166
+_db_dirent = struct__db_dirent # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 166
 
-_db_driver = struct__db_driver # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 173
+_db_driver = struct__db_driver # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 173
 
-_db_handle = struct__db_handle # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 180
+_db_handle = struct__db_handle # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 180
 
-_db_date_time = struct__db_date_time # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 191
+_db_date_time = struct__db_date_time # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 191
 
-_db_value = struct__db_value # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 200
+_db_value = struct__db_value # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 200
 
-_db_column = struct__db_column # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 218
+_db_column = struct__db_column # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 218
 
-_db_table = struct__db_table # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 228
+_db_table = struct__db_table # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 228
 
-_db_cursor = struct__db_cursor # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 238
+_db_cursor = struct__db_cursor # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 238
 
-_db_index = struct__db_index # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 247
+_db_index = struct__db_index # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 247
 
-_db_driver_state = struct__db_driver_state # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 256
+_db_driver_state = struct__db_driver_state # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 256
 
-_db_connection = struct__db_connection # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 304
+_db_connection = struct__db_connection # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\dbmi.h: 304
 
 # No inserted files
 

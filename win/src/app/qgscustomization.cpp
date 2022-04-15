@@ -776,7 +776,7 @@ QgsCustomization::QgsCustomization()
   mEnabled = settings.value( QStringLiteral( "UI/Customization/enabled" ), "false" ).toString() == QLatin1String( "true" );
 }
 
-void QgsCustomization::updateMainWindow( QMenu *toolBarMenu )
+void QgsCustomization::updateMainWindow( QMenu *toolBarMenu, QMenu *panelMenu )
 {
   // collect tree items even if the customization is disabled
   createTreeItemMenus();
@@ -825,6 +825,7 @@ void QgsCustomization::updateMainWindow( QMenu *toolBarMenu )
       if ( !visible )
       {
         mw->removeToolBar( tb );
+        tb->setParent( nullptr );
         // remove also from menu, because toolbars removed here, switched on later from menu don't work correctly
         toolBarMenu->removeAction( tb->toggleViewAction() );
       }
@@ -882,6 +883,9 @@ void QgsCustomization::updateMainWindow( QMenu *toolBarMenu )
       if ( !visible )
       {
         mw->removeDockWidget( dw );
+        dw->setParent( nullptr );
+        // remove also from menu, because dock removed here, switched on later from menu don't work correctly
+        panelMenu->removeAction( dw->toggleViewAction() );
       }
     }
   }

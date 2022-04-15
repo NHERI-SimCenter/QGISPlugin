@@ -1,75 +1,75 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r3.mkdspf - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r3.mkdspf</b></em>  - Creates a display file from an existing 3D raster map according to specified threshold levels.
-<h2>KEYWORDS</h2>
-<a href="raster3d.html">raster3d</a>, <a href="topic_display.html">display</a>, <a href="keywords.html#voxel">voxel</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r3.mkdspf</b><br></div>
-<b>r3.mkdspf --help</b><br>
-<div id="synopsis"><b>r3.mkdspf</b> [-<b>qf</b>] <b>input</b>=<em>string</em> <b>dspf</b>=<em>name</em>  [<b>levels</b>=<em>float</em>[,<i>float</i>,...]]   [<b>min</b>=<em>float</em>]   [<b>max</b>=<em>float</em>]   [<b>step</b>=<em>float</em>]   [<b>tnum</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-q</b></dt>
-<dd>Suppress progress report & min/max information</dd>
-
-<dt><b>-f</b></dt>
-<dd>Use flat shading rather than gradient</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of an existing 3D raster map</dd>
-
-<dt><b>dspf</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output display file</dd>
-
-<dt><b>levels</b>=<em>float[,<i>float</i>,...]</em></dt>
-<dd>List of thresholds for isosurfaces</dd>
-
-<dt><b>min</b>=<em>float</em></dt>
-<dd>Minimum isosurface level</dd>
-
-<dt><b>max</b>=<em>float</em></dt>
-<dd>Maximum isosurface level</dd>
-
-<dt><b>step</b>=<em>float</em></dt>
-<dd>Positive increment between isosurface levels</dd>
-
-<dt><b>tnum</b>=<em>integer</em></dt>
-<dd>Number of isosurface threshold levels</dd>
-<dd>Default: <em>7</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r3.mkdspf - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r3.mkdspf</b></em>  - Creates a display file from an existing 3D raster map according to specified threshold levels.
+<h2>KEYWORDS</h2>
+<a href="raster3d.html">raster3d</a>, <a href="topic_display.html">display</a>, <a href="keywords.html#voxel">voxel</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r3.mkdspf</b><br></div>
+<b>r3.mkdspf --help</b><br>
+<div id="synopsis"><b>r3.mkdspf</b> [-<b>qf</b>] <b>input</b>=<em>string</em> <b>dspf</b>=<em>name</em>  [<b>levels</b>=<em>float</em>[,<i>float</i>,...]]   [<b>min</b>=<em>float</em>]   [<b>max</b>=<em>float</em>]   [<b>step</b>=<em>float</em>]   [<b>tnum</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-q</b></dt>
+<dd>Suppress progress report & min/max information</dd>
+
+<dt><b>-f</b></dt>
+<dd>Use flat shading rather than gradient</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of an existing 3D raster map</dd>
+
+<dt><b>dspf</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output display file</dd>
+
+<dt><b>levels</b>=<em>float[,<i>float</i>,...]</em></dt>
+<dd>List of thresholds for isosurfaces</dd>
+
+<dt><b>min</b>=<em>float</em></dt>
+<dd>Minimum isosurface level</dd>
+
+<dt><b>max</b>=<em>float</em></dt>
+<dd>Maximum isosurface level</dd>
+
+<dt><b>step</b>=<em>float</em></dt>
+<dd>Positive increment between isosurface levels</dd>
+
+<dt><b>tnum</b>=<em>integer</em></dt>
+<dd>Number of isosurface threshold levels</dd>
+<dd>Default: <em>7</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -154,7 +154,14 @@ copy them to their mapset.
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster3d/r3.mkdspf">r3.mkdspf source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster3d/r3.mkdspf">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster3d/r3.mkdspf">r3.mkdspf source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster3d/r3.mkdspf">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -165,9 +172,9 @@ copy them to their mapset.
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

@@ -140,15 +140,17 @@ extern "C" {
 /*! @cond Doxygen_Suppress */
 
 #ifndef PROJ_DLL
-#ifdef PROJ_MSVC_DLL_EXPORT
-#define PROJ_DLL __declspec(dllexport)
-#elif defined(PROJ_MSVC_DLL_IMPORT)
-#define PROJ_DLL __declspec(dllimport)
-#elif defined(__GNUC__)
-#define PROJ_DLL __attribute__ ((visibility("default")))
-#else
-#define PROJ_DLL
-#endif
+#  if defined(_MSC_VER)
+#    ifdef PROJ_MSVC_DLL_EXPORT
+#      define PROJ_DLL __declspec(dllexport)
+#    else
+#      define PROJ_DLL __declspec(dllimport)
+#    endif
+#  elif defined(__GNUC__)
+#    define PROJ_DLL __attribute__ ((visibility("default")))
+#  else
+#    define PROJ_DLL
+#  endif
 #endif
 
 #ifdef PROJ_SUPPRESS_DEPRECATION_MESSAGE
@@ -170,9 +172,9 @@ extern "C" {
 #endif
 
 /* The version numbers should be updated with every release! **/
-#define PROJ_VERSION_MAJOR 8
-#define PROJ_VERSION_MINOR 1
-#define PROJ_VERSION_PATCH 1
+#define PROJ_VERSION_MAJOR 9
+#define PROJ_VERSION_MINOR 0
+#define PROJ_VERSION_PATCH 0
 
 /* Note: the following 3 defines have been introduced in PROJ 8.0.1 */
 /* Macro to compute a PROJ version number from its components */
@@ -379,7 +381,9 @@ PJ_CONTEXT PROJ_DLL *proj_context_clone (PJ_CONTEXT *ctx);
 typedef const char* (*proj_file_finder) (PJ_CONTEXT *ctx, const char*, void* user_data);
 
 void PROJ_DLL proj_context_set_file_finder(PJ_CONTEXT *ctx, proj_file_finder finder, void* user_data);
+/*! @endcond */
 void PROJ_DLL proj_context_set_search_paths(PJ_CONTEXT *ctx, int count_paths, const char* const* paths);
+/*! @cond Doxygen_Suppress */
 void PROJ_DLL proj_context_set_ca_bundle_path(PJ_CONTEXT *ctx, const char *path);
 void PROJ_DLL proj_context_use_proj4_init_rules(PJ_CONTEXT *ctx, int enable);
 int PROJ_DLL proj_context_get_use_proj4_init_rules(PJ_CONTEXT *ctx, int from_legacy_code_path);
@@ -450,7 +454,7 @@ void PROJ_DLL proj_context_set_sqlite3_vfs_name(PJ_CONTEXT* ctx, const char* nam
 typedef struct PROJ_NETWORK_HANDLE PROJ_NETWORK_HANDLE;
 
 /** Network access: open callback
- * 
+ *
  * Should try to read the size_to_read first bytes at the specified offset of
  * the file given by URL url,
  * and write them to buffer. *out_size_read should be updated with the actual
@@ -599,7 +603,22 @@ size_t PROJ_DLL proj_trans_generic (
     double *z, size_t sz, size_t nz,
     double *t, size_t st, size_t nt
 );
-
+/*! @endcond */
+int PROJ_DLL proj_trans_bounds(
+    PJ_CONTEXT* context,
+    PJ *P,
+    PJ_DIRECTION direction,
+    double xmin,
+    double ymin,
+    double xmax,
+    double ymax,
+    double* out_xmin,
+    double* out_ymin,
+    double* out_xmax,
+    double* out_ymax,
+    int densify_pts
+);
+/*! @cond Doxygen_Suppress */
 
 /* Initializers */
 PJ_COORD PROJ_DLL proj_coord (double x, double y, double z, double t);

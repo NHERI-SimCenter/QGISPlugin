@@ -39,9 +39,20 @@ include(QGISSrc.pri)
 SOURCES += \
         $$PWD/QgisApp.cpp \
         $$PWD/QGISVisualizationWidget.cpp \
+        $$PWD/VisualizationWidget.cpp \
+        $$PWD/GISLegendView.cpp \
+        $$PWD/PopUpWidget.cpp \
+        $$PWD/SimCenterMapcanvasWidget.cpp \
+        $$PWD/GISSelectable.cpp \
+
 
 HEADERS += \
         $$PWD/QgisApp.h \
         $$PWD/QGISVisualizationWidget.h \
+        $$PWD/VisualizationWidget.h \
+        $$PWD/GISLegendView.h \
+        $$PWD/PopUpWidget.h \
+        $$PWD/SimCenterMapcanvasWidget.h \
+        $$PWD/GISSelectable.h \
 
 

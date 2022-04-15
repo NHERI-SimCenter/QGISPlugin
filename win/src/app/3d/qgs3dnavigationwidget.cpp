@@ -25,7 +25,6 @@ Q_NOWARN_DEPRECATED_PUSH
 #include "qwt_dial_needle.h"
 Q_NOWARN_DEPRECATED_POP
 
-#include <qwt_abstract_slider.h>
 #include "qgsapplication.h"
 
 #include "qgscameracontroller.h"
@@ -247,4 +246,24 @@ void Qgs3DNavigationWidget::updateFromCamera()
   mCameraInfoItemModel->setData( mCameraInfoItemModel->index( 5, 1 ), QStringLiteral( "%1" ).arg( mParent3DMapCanvas->cameraController()->lookingAtPoint().x() ) );
   mCameraInfoItemModel->setData( mCameraInfoItemModel->index( 6, 1 ), QStringLiteral( "%1" ).arg( mParent3DMapCanvas->cameraController()->lookingAtPoint().y() ) );
   mCameraInfoItemModel->setData( mCameraInfoItemModel->index( 7, 1 ), QStringLiteral( "%1" ).arg( mParent3DMapCanvas->cameraController()->lookingAtPoint().z() ) );
+}
+
+void Qgs3DNavigationWidget::resizeEvent( QResizeEvent *ev )
+{
+  QWidget::resizeEvent( ev );
+
+  QSize size = ev->size();
+  emit sizeChanged( size );
+}
+
+void Qgs3DNavigationWidget::hideEvent( QHideEvent *ev )
+{
+  QWidget::hideEvent( ev );
+  emit sizeChanged( QSize( 0, 0 ) );
+}
+
+void Qgs3DNavigationWidget::showEvent( QShowEvent *ev )
+{
+  QWidget::showEvent( ev );
+  emit sizeChanged( size() );
 }

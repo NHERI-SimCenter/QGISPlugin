@@ -1,7 +1,7 @@
 '''Wrapper for rtree.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_rtree.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h -o OBJ.x86_64-w64-mingw32/rtree.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_rtree.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h -o OBJ.x86_64-w64-mingw32/rtree.py
 
 Do not modify this file.
 '''
@@ -27,11 +27,11 @@ _libs["grass_rtree.7.8"] = load_library("grass_rtree.7.8")
 
 # No modules
 
-off_t = c_int64 # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h: 24
+off_t = c_int64 # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/_mingw_off_t.h: 24
 
-RectReal = c_double # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 28
+RectReal = c_double # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 28
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 57
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 57
 class struct_RTree_Rect(Structure):
     pass
 
@@ -42,11 +42,11 @@ struct_RTree_Rect._fields_ = [
     ('boundary', POINTER(RectReal)),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 77
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 77
 class struct_RTree_Node(Structure):
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 64
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 64
 class union_RTree_Child(Union):
     pass
 
@@ -61,7 +61,7 @@ union_RTree_Child._fields_ = [
     ('pos', off_t),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 71
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 71
 class struct_RTree_Branch(Structure):
     pass
 
@@ -85,21 +85,21 @@ struct_RTree_Node._fields_ = [
     ('branch', POINTER(struct_RTree_Branch)),
 ]
 
-SearchHitCallback = CFUNCTYPE(UNCHECKED(c_int), c_int, POINTER(struct_RTree_Rect), POINTER(None)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 91
+SearchHitCallback = CFUNCTYPE(UNCHECKED(c_int), c_int, POINTER(struct_RTree_Rect), POINTER(None)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 91
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 128
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 128
 class struct_RTree(Structure):
     pass
 
-rt_search_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree), POINTER(struct_RTree_Rect), POINTER(SearchHitCallback), POINTER(None)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 95
+rt_search_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree), POINTER(struct_RTree_Rect), POINTER(SearchHitCallback), POINTER(None)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 95
 
-rt_insert_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree_Rect), union_RTree_Child, c_int, POINTER(struct_RTree)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 97
+rt_insert_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree_Rect), union_RTree_Child, c_int, POINTER(struct_RTree)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 97
 
-rt_delete_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree_Rect), union_RTree_Child, POINTER(struct_RTree)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 98
+rt_delete_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree_Rect), union_RTree_Child, POINTER(struct_RTree)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 98
 
-rt_valid_child_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(union_RTree_Child)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 99
+rt_valid_child_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(union_RTree_Child)) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 99
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 103
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 103
 class struct_nstack(Structure):
     pass
 
@@ -114,7 +114,7 @@ struct_nstack._fields_ = [
     ('pos', off_t),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 111
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 111
 class struct_NodeBuffer(Structure):
     pass
 
@@ -129,7 +129,7 @@ struct_NodeBuffer._fields_ = [
     ('dirty', c_char),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 119
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 119
 class struct_RTree_PartitionVars(Structure):
     pass
 
@@ -152,7 +152,7 @@ struct_RTree_PartitionVars._fields_ = [
     ('area', RectReal * 2),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 155
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 155
 class struct__recycle(Structure):
     pass
 
@@ -250,7 +250,7 @@ struct_RTree._fields_ = [
     ('rootpos', off_t),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 196
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 196
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeSearch'):
         continue
@@ -259,7 +259,7 @@ for _lib in six.itervalues(_libs):
     RTreeSearch.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 198
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 198
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeInsertRect'):
         continue
@@ -268,7 +268,7 @@ for _lib in six.itervalues(_libs):
     RTreeInsertRect.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 199
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 199
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeSetRect1D'):
         continue
@@ -277,7 +277,7 @@ for _lib in six.itervalues(_libs):
     RTreeSetRect1D.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 201
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 201
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeSetRect2D'):
         continue
@@ -286,7 +286,7 @@ for _lib in six.itervalues(_libs):
     RTreeSetRect2D.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 203
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 203
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeSetRect3D'):
         continue
@@ -295,7 +295,7 @@ for _lib in six.itervalues(_libs):
     RTreeSetRect3D.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 206
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 206
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeSetRect4D'):
         continue
@@ -304,7 +304,7 @@ for _lib in six.itervalues(_libs):
     RTreeSetRect4D.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 209
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 209
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeDeleteRect'):
         continue
@@ -313,7 +313,7 @@ for _lib in six.itervalues(_libs):
     RTreeDeleteRect.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 210
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 210
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreePrintRect'):
         continue
@@ -322,7 +322,7 @@ for _lib in six.itervalues(_libs):
     RTreePrintRect.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 211
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 211
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeCreateTree'):
         continue
@@ -331,7 +331,7 @@ for _lib in six.itervalues(_libs):
     RTreeCreateTree.restype = POINTER(struct_RTree)
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 212
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 212
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeSetOverflow'):
         continue
@@ -340,7 +340,7 @@ for _lib in six.itervalues(_libs):
     RTreeSetOverflow.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 213
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 213
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeDestroyTree'):
         continue
@@ -349,7 +349,7 @@ for _lib in six.itervalues(_libs):
     RTreeDestroyTree.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 214
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 214
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeOverlap'):
         continue
@@ -358,7 +358,7 @@ for _lib in six.itervalues(_libs):
     RTreeOverlap.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 215
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 215
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeContained'):
         continue
@@ -367,7 +367,7 @@ for _lib in six.itervalues(_libs):
     RTreeContained.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 216
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 216
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeContains'):
         continue
@@ -376,7 +376,7 @@ for _lib in six.itervalues(_libs):
     RTreeContains.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 219
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 219
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeAllocNode'):
         continue
@@ -385,7 +385,7 @@ for _lib in six.itervalues(_libs):
     RTreeAllocNode.restype = POINTER(struct_RTree_Node)
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 220
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 220
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeInitNode'):
         continue
@@ -394,7 +394,7 @@ for _lib in six.itervalues(_libs):
     RTreeInitNode.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 221
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 221
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeCopyNode'):
         continue
@@ -403,7 +403,7 @@ for _lib in six.itervalues(_libs):
     RTreeCopyNode.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 222
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 222
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeFreeNode'):
         continue
@@ -412,7 +412,7 @@ for _lib in six.itervalues(_libs):
     RTreeFreeNode.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 223
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 223
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeDestroyNode'):
         continue
@@ -421,7 +421,7 @@ for _lib in six.itervalues(_libs):
     RTreeDestroyNode.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 226
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 226
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeAllocRect'):
         continue
@@ -430,7 +430,7 @@ for _lib in six.itervalues(_libs):
     RTreeAllocRect.restype = POINTER(struct_RTree_Rect)
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 227
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 227
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeFreeRect'):
         continue
@@ -439,7 +439,7 @@ for _lib in six.itervalues(_libs):
     RTreeFreeRect.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 228
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 228
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeAllocBoundary'):
         continue
@@ -448,7 +448,7 @@ for _lib in six.itervalues(_libs):
     RTreeAllocBoundary.restype = POINTER(RectReal)
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 229
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 229
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeFreeBoundary'):
         continue
@@ -457,7 +457,7 @@ for _lib in six.itervalues(_libs):
     RTreeFreeBoundary.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 232
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 232
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeReadNode'):
         continue
@@ -466,7 +466,7 @@ for _lib in six.itervalues(_libs):
     RTreeReadNode.restype = c_size_t
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 233
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 233
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeWriteNode'):
         continue
@@ -475,7 +475,7 @@ for _lib in six.itervalues(_libs):
     RTreeWriteNode.restype = c_size_t
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 234
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 234
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeGetNodePos'):
         continue
@@ -484,7 +484,7 @@ for _lib in six.itervalues(_libs):
     RTreeGetNodePos.restype = off_t
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 235
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 235
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'RTreeFlushBuffer'):
         continue
@@ -493,65 +493,65 @@ for _lib in six.itervalues(_libs):
     RTreeFlushBuffer.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 35
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 35
 try:
     TRUE = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 38
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 38
 try:
     FALSE = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 46
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 46
 try:
     MAXCARD = 9
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 47
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 47
 try:
     NODECARD = MAXCARD
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 48
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 48
 try:
     LEAFCARD = MAXCARD
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 52
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 52
 try:
     MAXLEVEL = 20
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 55
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 55
 try:
     NODE_BUFFER_SIZE = 32
 except:
     pass
 
-RTree_Rect = struct_RTree_Rect # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 57
+RTree_Rect = struct_RTree_Rect # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 57
 
-RTree_Node = struct_RTree_Node # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 77
+RTree_Node = struct_RTree_Node # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 77
 
-RTree_Child = union_RTree_Child # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 64
+RTree_Child = union_RTree_Child # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 64
 
-RTree_Branch = struct_RTree_Branch # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 71
+RTree_Branch = struct_RTree_Branch # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 71
 
-RTree = struct_RTree # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 128
+RTree = struct_RTree # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 128
 
-nstack = struct_nstack # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 103
+nstack = struct_nstack # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 103
 
-NodeBuffer = struct_NodeBuffer # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 111
+NodeBuffer = struct_NodeBuffer # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 111
 
-RTree_PartitionVars = struct_RTree_PartitionVars # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 119
+RTree_PartitionVars = struct_RTree_PartitionVars # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 119
 
-_recycle = struct__recycle # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 155
+_recycle = struct__recycle # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rtree.h: 155
 
 # No inserted files
 

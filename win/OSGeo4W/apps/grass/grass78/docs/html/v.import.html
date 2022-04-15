@@ -1,90 +1,90 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.import.py - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.import.py</b></em>  - Imports vector data into a GRASS vector map using OGR library and reprojects on the fly.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#projection">projection</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.import.py</b><br></div>
-<b>v.import.py --help</b><br>
-<div id="synopsis"><b>v.import.py</b> [-<b>flo</b>] <b>input</b>=<em>string</em>  [<b>layer</b>=<em>string</em>[,<i>string</i>,...]]   [<b>output</b>=<em>name</em>]   [<b>extent</b>=<em>string</em>]   [<b>encoding</b>=<em>string</em>]   [<b>snap</b>=<em>float</em>]   [<b>epsg</b>=<em>integer</em>]   [<b>datum_trans</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-f</b></dt>
-<dd>List supported OGR formats and exit</dd>
-
-<dt><b>-l</b></dt>
-<dd>List available OGR layers in data source and exit</dd>
-
-<dt><b>-o</b></dt>
-<dd>Override projection check (use current location's projection)</dd>
-<dd>Assume that the dataset has the same projection as the current location</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of OGR datasource to be imported</dd>
-
-<dt><b>layer</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>OGR layer name. If not given, all available layers are imported</dd>
-
-<dt><b>output</b>=<em>name</em></dt>
-<dd>Name for output vector map (default: input)</dd>
-
-<dt><b>extent</b>=<em>string</em></dt>
-<dd>Output vector map extent</dd>
-<dd>Options: <em>input, region</em></dd>
-<dd>Default: <em>input</em></dd>
-<dd><b>input</b>: extent of input map</dd>
-<dd><b>region</b>: extent of current region</dd>
-
-<dt><b>encoding</b>=<em>string</em></dt>
-<dd>Encoding value for attribute data</dd>
-
-<dt><b>snap</b>=<em>float</em></dt>
-<dd>Snapping threshold for boundaries (map units)</dd>
-<dd>A suitable threshold is estimated during import</dd>
-<dd>Default: <em>-1</em></dd>
-
-<dt><b>epsg</b>=<em>integer</em></dt>
-<dd>EPSG projection code</dd>
-<dd>Options: <em>1-1000000</em></dd>
-
-<dt><b>datum_trans</b>=<em>integer</em></dt>
-<dd>Index number of datum transform parameters</dd>
-<dd>-1 to list available datum transform parameters</dd>
-<dd>Options: <em>-1-100</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.import.py - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.import.py</b></em>  - Imports vector data into a GRASS vector map using OGR library and reprojects on the fly.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#projection">projection</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.import.py</b><br></div>
+<b>v.import.py --help</b><br>
+<div id="synopsis"><b>v.import.py</b> [-<b>flo</b>] <b>input</b>=<em>string</em>  [<b>layer</b>=<em>string</em>[,<i>string</i>,...]]   [<b>output</b>=<em>name</em>]   [<b>extent</b>=<em>string</em>]   [<b>encoding</b>=<em>string</em>]   [<b>snap</b>=<em>float</em>]   [<b>epsg</b>=<em>integer</em>]   [<b>datum_trans</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-f</b></dt>
+<dd>List supported OGR formats and exit</dd>
+
+<dt><b>-l</b></dt>
+<dd>List available OGR layers in data source and exit</dd>
+
+<dt><b>-o</b></dt>
+<dd>Override projection check (use current location's projection)</dd>
+<dd>Assume that the dataset has the same projection as the current location</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of OGR datasource to be imported</dd>
+
+<dt><b>layer</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>OGR layer name. If not given, all available layers are imported</dd>
+
+<dt><b>output</b>=<em>name</em></dt>
+<dd>Name for output vector map (default: input)</dd>
+
+<dt><b>extent</b>=<em>string</em></dt>
+<dd>Output vector map extent</dd>
+<dd>Options: <em>input, region</em></dd>
+<dd>Default: <em>input</em></dd>
+<dd><b>input</b>: extent of input map</dd>
+<dd><b>region</b>: extent of current region</dd>
+
+<dt><b>encoding</b>=<em>string</em></dt>
+<dd>Encoding value for attribute data</dd>
+
+<dt><b>snap</b>=<em>float</em></dt>
+<dd>Snapping threshold for boundaries (map units)</dd>
+<dd>A suitable threshold is estimated during import</dd>
+<dd>Default: <em>-1</em></dd>
+
+<dt><b>epsg</b>=<em>integer</em></dt>
+<dd>EPSG projection code</dd>
+<dd>Options: <em>1-1000000</em></dd>
+
+<dt><b>datum_trans</b>=<em>integer</em></dt>
+<dd>Index number of datum transform parameters</dd>
+<dd>-1 to list available datum transform parameters</dd>
+<dd>Options: <em>-1-100</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -229,7 +229,14 @@ Improvements: Martin Landa, Anna Petrasova
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/scripts/v.import">v.import source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/scripts/v.import">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/scripts/v.import">v.import source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/scripts/v.import">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -240,9 +247,9 @@ Improvements: Martin Landa, Anna Petrasova
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

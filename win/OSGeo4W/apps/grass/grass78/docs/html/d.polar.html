@@ -1,59 +1,59 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>d.polar.py - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>d.polar.py</b></em>  - Draws polar diagram of angle map such as aspect or flow directions
-<h2>KEYWORDS</h2>
-<a href="display.html">display</a>, <a href="topic_diagram.html">diagram</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>d.polar.py</b><br></div>
-<b>d.polar.py --help</b><br>
-<div id="synopsis"><b>d.polar.py</b> [-<b>x</b>] <b>map</b>=<em>name</em>  [<b>undef</b>=<em>float</em>]   [<b>output</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-x</b></dt>
-<dd>Plot using Xgraph</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>map</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of raster angle map</dd>
-
-<dt><b>undef</b>=<em>float</em></dt>
-<dd>Pixel value to be interpreted as undefined (different from NULL)</dd>
-
-<dt><b>output</b>=<em>name</em></dt>
-<dd>Name for optional EPS output file</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>d.polar.py - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>d.polar.py</b></em>  - Draws polar diagram of angle map such as aspect or flow directions
+<h2>KEYWORDS</h2>
+<a href="display.html">display</a>, <a href="topic_diagram.html">diagram</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>d.polar.py</b><br></div>
+<b>d.polar.py --help</b><br>
+<div id="synopsis"><b>d.polar.py</b> [-<b>x</b>] <b>map</b>=<em>name</em>  [<b>undef</b>=<em>float</em>]   [<b>output</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-x</b></dt>
+<dd>Plot using Xgraph</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>map</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of raster angle map</dd>
+
+<dt><b>undef</b>=<em>float</em></dt>
+<dd>Pixel value to be interpreted as undefined (different from NULL)</dd>
+
+<dt><b>output</b>=<em>name</em></dt>
+<dd>Name for optional EPS output file</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -144,7 +144,14 @@ Hamish Bowman, Otago University, New Zealand<br>
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/scripts/d.polar">d.polar source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/scripts/d.polar">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/scripts/d.polar">d.polar source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/scripts/d.polar">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -155,9 +162,9 @@ Hamish Bowman, Otago University, New Zealand<br>
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

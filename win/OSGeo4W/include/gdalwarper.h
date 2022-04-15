@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: gdalwarper.h 98488570e6fb1676653ada4ed498c46a6115eaf1 2020-12-28 23:45:10 +0100 Even Rouault $
+ * $Id: gdalwarper.h db9ea60631eda5ef881ae75dc3355f42734fb38c 2022-02-22 16:16:41 +0100 Even Rouault $
  *
  * Project:  GDAL High Performance Warper
  * Purpose:  Prototypes, and definitions for warping related work.
@@ -234,19 +234,19 @@ void CPL_DLL CPL_STDCALL GDALDestroyWarpOptions( GDALWarpOptions * );
 GDALWarpOptions CPL_DLL * CPL_STDCALL
 GDALCloneWarpOptions( const GDALWarpOptions * );
 
-void CPL_DLL CPL_STDCALL 
+void CPL_DLL CPL_STDCALL
 GDALWarpInitDstNoDataReal( GDALWarpOptions *, double dNoDataReal );
 
-void CPL_DLL CPL_STDCALL 
+void CPL_DLL CPL_STDCALL
 GDALWarpInitSrcNoDataReal( GDALWarpOptions *, double dNoDataReal );
 
-void CPL_DLL CPL_STDCALL 
+void CPL_DLL CPL_STDCALL
 GDALWarpInitNoDataReal( GDALWarpOptions *, double dNoDataReal );
 
-void CPL_DLL CPL_STDCALL 
+void CPL_DLL CPL_STDCALL
 GDALWarpInitDstNoDataImag( GDALWarpOptions *, double dNoDataImag );
 
-void CPL_DLL CPL_STDCALL 
+void CPL_DLL CPL_STDCALL
 GDALWarpInitSrcNoDataImag( GDALWarpOptions *, double dNoDataImag );
 
 void CPL_DLL CPL_STDCALL
@@ -312,6 +312,9 @@ GDALInitializeWarpedVRT( GDALDatasetH hDS,
 CPL_C_END
 
 #if defined(__cplusplus) && !defined(CPL_SUPRESS_CPLUSPLUS)
+
+#include <vector>
+#include <utility>
 
 /************************************************************************/
 /*                            GDALWarpKernel                            */
@@ -423,6 +426,10 @@ public:
 /*! @cond Doxygen_Suppress */
     /** Per-thread data. Internally set */
     void                *psThreadData;
+
+    bool                bApplyVerticalShift = false;
+
+    double              dfMultFactorVerticalShit = 1.0;
 /*! @endcond */
 
                        GDALWarpKernel();
@@ -491,6 +498,12 @@ private:
 
     void           *psThreadData;
 
+    // Coordinates a few special points in target image space, to determine
+    // if ComputeSourceWindow() must use a grid based sampling.
+    std::vector<std::pair<double, double>> aDstXYSpecialPoints{};
+
+    bool m_bIsTranslationOnPixelBoundaries = false;
+
     void            WipeChunkList();
     CPLErr          CollectChunkListInternal( int nDstXOff, int nDstYOff,
                                       int nDstXSize, int nDstYSize );
@@ -503,7 +516,7 @@ public:
     virtual        ~GDALWarpOperation();
 
     CPLErr          Initialize( const GDALWarpOptions *psNewOptions );
-    void*           CreateDestinationBuffer( int nDstXSize, int nDstYSize, 
+    void*           CreateDestinationBuffer( int nDstXSize, int nDstYSize,
                                              int *pbWasInitialized = nullptr );
     static void     DestroyDestinationBuffer(void* pDstBuffer);
 

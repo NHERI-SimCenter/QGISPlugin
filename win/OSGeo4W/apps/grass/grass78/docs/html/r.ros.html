@@ -1,104 +1,104 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.ros - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.ros</b></em>  - Generates rate of spread raster maps.<BR>
-Generates three, or four raster map layers showing the base (perpendicular) rate of spread (ROS), the maximum (forward) ROS, the direction of the maximum ROS, and optionally the maximum potential spotting distance for fire spread simulation.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_fire.html">fire</a>, <a href="keywords.html#spread">spread</a>, <a href="keywords.html#rate of spread">rate of spread</a>, <a href="keywords.html#hazard">hazard</a>, <a href="keywords.html#model">model</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.ros</b><br></div>
-<b>r.ros --help</b><br>
-<div id="synopsis"><b>r.ros</b> <b>model</b>=<em>name</em>  [<b>moisture_1h</b>=<em>name</em>]   [<b>moisture_10h</b>=<em>name</em>]   [<b>moisture_100h</b>=<em>name</em>]  <b>moisture_live</b>=<em>name</em>  [<b>velocity</b>=<em>name</em>]   [<b>direction</b>=<em>name</em>]   [<b>slope</b>=<em>name</em>]   [<b>aspect</b>=<em>name</em>]   [<b>elevation</b>=<em>name</em>]  <b>base_ros</b>=<em>name</em> <b>max_ros</b>=<em>name</em> <b>direction_ros</b>=<em>name</em>  [<b>spotting_distance</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>model</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Raster map containing fuel models</dd>
-<dd>Name of an existing raster map layer in the user's current mapset search path containing the standard fuel models defined by the USDA Forest Service. Valid values are 1-13; other numbers are recognized as barriers by r.ros.</dd>
-
-<dt><b>moisture_1h</b>=<em>name</em></dt>
-<dd>Raster map containing the 1-hour fuel moisture (%)</dd>
-<dd>Name of an existing raster map layer in the user's current mapset search path containing the 1-hour (&lt;.25") fuel moisture (percentage content multiplied by 100).</dd>
-
-<dt><b>moisture_10h</b>=<em>name</em></dt>
-<dd>Raster map containing the 10-hour fuel moisture (%)</dd>
-<dd>Name of an existing raster map layer in the user's current mapset search path containing the 10-hour (.25-1") fuel moisture (percentage content multiplied by 100).</dd>
-
-<dt><b>moisture_100h</b>=<em>name</em></dt>
-<dd>Raster map containing the 100-hour fuel moisture (%)</dd>
-<dd>Name of an existing raster map layer in the user's current mapset search path containing the 100-hour (1-3") fuel moisture (percentage content multiplied by 100).</dd>
-
-<dt><b>moisture_live</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Raster map containing live fuel moisture (%)</dd>
-<dd>Name of an existing raster map layer in the user's current mapset search path containing live (herbaceous) fuel moisture (percentage content multiplied by 100).</dd>
-
-<dt><b>velocity</b>=<em>name</em></dt>
-<dd>Raster map containing midflame wind velocities (ft/min)</dd>
-<dd>Name of an existing raster map layer in the user's current mapset search path containing wind velocities at half of the average flame height (feet/minute).</dd>
-
-<dt><b>direction</b>=<em>name</em></dt>
-<dd>Name of raster map containing wind directions (degree)</dd>
-<dd>Name of an existing raster map layer in the user's current mapset search path containing wind direction, clockwise from north (degree).</dd>
-
-<dt><b>slope</b>=<em>name</em></dt>
-<dd>Name of raster map containing slope (degree)</dd>
-<dd>Name of an existing raster map layer in the user's current mapset search path containing topographic slope (degree).</dd>
-
-<dt><b>aspect</b>=<em>name</em></dt>
-<dd>Raster map containing aspect (degree, CCW from E)</dd>
-<dd>Name of an existing raster map layer in the user's current mapset search path containing topographic aspect, counterclockwise from east (GRASS convention) in degrees.</dd>
-
-<dt><b>elevation</b>=<em>name</em></dt>
-<dd>Raster map containing elevation (m, required for spotting)</dd>
-<dd>Name of an existing raster map layer in the user's current mapset search path containing elevation (meters). Option is required from spotting distance computation (when spotting_distance option is provided)</dd>
-
-<dt><b>base_ros</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Output raster map containing base ROS (cm/min)</dd>
-<dd>Base (perpendicular) rate of spread (ROS)</dd>
-
-<dt><b>max_ros</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Output raster map containing maximal ROS (cm/min)</dd>
-<dd>The maximum (forward) rate of spread (ROS)</dd>
-
-<dt><b>direction_ros</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Output raster map containing directions of maximal ROS (degree)</dd>
-<dd>The direction of the maximal (forward) rate of spread (ROS)</dd>
-
-<dt><b>spotting_distance</b>=<em>name</em></dt>
-<dd>Output raster map containing maximal spotting distance (m)</dd>
-<dd>The maximal potential spotting distance (requires elevation raster map to be provided).</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.ros - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.ros</b></em>  - Generates rate of spread raster maps.<BR>
+Generates three, or four raster map layers showing the base (perpendicular) rate of spread (ROS), the maximum (forward) ROS, the direction of the maximum ROS, and optionally the maximum potential spotting distance for fire spread simulation.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_fire.html">fire</a>, <a href="keywords.html#spread">spread</a>, <a href="keywords.html#rate of spread">rate of spread</a>, <a href="keywords.html#hazard">hazard</a>, <a href="keywords.html#model">model</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.ros</b><br></div>
+<b>r.ros --help</b><br>
+<div id="synopsis"><b>r.ros</b> <b>model</b>=<em>name</em>  [<b>moisture_1h</b>=<em>name</em>]   [<b>moisture_10h</b>=<em>name</em>]   [<b>moisture_100h</b>=<em>name</em>]  <b>moisture_live</b>=<em>name</em>  [<b>velocity</b>=<em>name</em>]   [<b>direction</b>=<em>name</em>]   [<b>slope</b>=<em>name</em>]   [<b>aspect</b>=<em>name</em>]   [<b>elevation</b>=<em>name</em>]  <b>base_ros</b>=<em>name</em> <b>max_ros</b>=<em>name</em> <b>direction_ros</b>=<em>name</em>  [<b>spotting_distance</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>model</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Raster map containing fuel models</dd>
+<dd>Name of an existing raster map layer in the user's current mapset search path containing the standard fuel models defined by the USDA Forest Service. Valid values are 1-13; other numbers are recognized as barriers by r.ros.</dd>
+
+<dt><b>moisture_1h</b>=<em>name</em></dt>
+<dd>Raster map containing the 1-hour fuel moisture (%)</dd>
+<dd>Name of an existing raster map layer in the user's current mapset search path containing the 1-hour (&lt;.25") fuel moisture (percentage content multiplied by 100).</dd>
+
+<dt><b>moisture_10h</b>=<em>name</em></dt>
+<dd>Raster map containing the 10-hour fuel moisture (%)</dd>
+<dd>Name of an existing raster map layer in the user's current mapset search path containing the 10-hour (.25-1") fuel moisture (percentage content multiplied by 100).</dd>
+
+<dt><b>moisture_100h</b>=<em>name</em></dt>
+<dd>Raster map containing the 100-hour fuel moisture (%)</dd>
+<dd>Name of an existing raster map layer in the user's current mapset search path containing the 100-hour (1-3") fuel moisture (percentage content multiplied by 100).</dd>
+
+<dt><b>moisture_live</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Raster map containing live fuel moisture (%)</dd>
+<dd>Name of an existing raster map layer in the user's current mapset search path containing live (herbaceous) fuel moisture (percentage content multiplied by 100).</dd>
+
+<dt><b>velocity</b>=<em>name</em></dt>
+<dd>Raster map containing midflame wind velocities (ft/min)</dd>
+<dd>Name of an existing raster map layer in the user's current mapset search path containing wind velocities at half of the average flame height (feet/minute).</dd>
+
+<dt><b>direction</b>=<em>name</em></dt>
+<dd>Name of raster map containing wind directions (degree)</dd>
+<dd>Name of an existing raster map layer in the user's current mapset search path containing wind direction, clockwise from north (degree).</dd>
+
+<dt><b>slope</b>=<em>name</em></dt>
+<dd>Name of raster map containing slope (degree)</dd>
+<dd>Name of an existing raster map layer in the user's current mapset search path containing topographic slope (degree).</dd>
+
+<dt><b>aspect</b>=<em>name</em></dt>
+<dd>Raster map containing aspect (degree, CCW from E)</dd>
+<dd>Name of an existing raster map layer in the user's current mapset search path containing topographic aspect, counterclockwise from east (GRASS convention) in degrees.</dd>
+
+<dt><b>elevation</b>=<em>name</em></dt>
+<dd>Raster map containing elevation (m, required for spotting)</dd>
+<dd>Name of an existing raster map layer in the user's current mapset search path containing elevation (meters). Option is required from spotting distance computation (when spotting_distance option is provided)</dd>
+
+<dt><b>base_ros</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Output raster map containing base ROS (cm/min)</dd>
+<dd>Base (perpendicular) rate of spread (ROS)</dd>
+
+<dt><b>max_ros</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Output raster map containing maximal ROS (cm/min)</dd>
+<dd>The maximum (forward) rate of spread (ROS)</dd>
+
+<dt><b>direction_ros</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Output raster map containing directions of maximal ROS (degree)</dd>
+<dd>The direction of the maximal (forward) rate of spread (ROS)</dd>
+
+<dt><b>spotting_distance</b>=<em>name</em></dt>
+<dd>Output raster map containing maximal spotting distance (m)</dd>
+<dd>The maximal potential spotting distance (requires elevation raster map to be provided).</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -262,7 +262,14 @@ Jianping Xu, Center for Remote Sensing and Spatial Analysis, Rutgers University.
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.ros">r.ros source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.ros">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.ros">r.ros source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.ros">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -273,9 +280,9 @@ Jianping Xu, Center for Remote Sensing and Spatial Analysis, Rutgers University.
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

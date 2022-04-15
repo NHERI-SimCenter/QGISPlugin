@@ -1,105 +1,105 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.out.ascii - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.out.ascii</b></em>  - Exports a vector map to a GRASS ASCII vector representation.<BR>
-By default only features with category are exported. To export all features use 'layer=-1'.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_export.html">export</a>, <a href="keywords.html#output">output</a>, <a href="keywords.html#ASCII">ASCII</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.out.ascii</b><br></div>
-<b>v.out.ascii --help</b><br>
-<div id="synopsis"><b>v.out.ascii</b> [-<b>ocr</b>] <b>input</b>=<em>name</em>  [<b>layer</b>=<em>string</em>]   [<b>type</b>=<em>string</em>[,<i>string</i>,...]]   [<b>output</b>=<em>name</em>]   [<b>columns</b>=<em>name</em>[,<i>name</i>,...]]   [<b>cats</b>=<em>range</em>]   [<b>where</b>=<em>sql_query</em>]  <b>format</b>=<em>string</em>  [<b>separator</b>=<em>character</em>]   [<b>precision</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-o</b></dt>
-<dd>Create old (version 4) ASCII file</dd>
-
-<dt><b>-c</b></dt>
-<dd>Include column names in output (points mode)</dd>
-
-<dt><b>-r</b></dt>
-<dd>Only export points falling within current 3D region (points mode)</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input vector map</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>layer</b>=<em>string</em></dt>
-<dd>Layer number or name ('-1' for all layers)</dd>
-<dd>A single vector map can be connected to multiple database tables. This number determines which table to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>type</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>Input feature type</dd>
-<dd>Options: <em>point, line, boundary, centroid, area, face, kernel</em></dd>
-<dd>Default: <em>point,line,boundary,centroid,area,face,kernel</em></dd>
-
-<dt><b>output</b>=<em>name</em></dt>
-<dd>Name for output ASCII file or ASCII vector name if '-o' is defined</dd>
-<dd>If not given or '-' then standard output</dd>
-
-<dt><b>columns</b>=<em>name[,<i>name</i>,...]</em></dt>
-<dd>Name of attribute column(s) to be exported (point mode)</dd>
-<dd>"*" for all columns</dd>
-
-<dt><b>cats</b>=<em>range</em></dt>
-<dd>Category values</dd>
-<dd>Example: 1,3,7-9,13</dd>
-
-<dt><b>where</b>=<em>sql_query</em></dt>
-<dd>WHERE conditions of SQL statement without 'where' keyword</dd>
-<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
-
-<dt><b>format</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Output format</dd>
-<dd>Options: <em>point, standard, wkt</em></dd>
-<dd>Default: <em>point</em></dd>
-<dd><b>point</b>: Simple point format (point per row)</dd>
-<dd><b>standard</b>: GRASS ASCII vector format</dd>
-<dd><b>wkt</b>: OGC well-known text</dd>
-
-<dt><b>separator</b>=<em>character</em></dt>
-<dd>Field separator</dd>
-<dd>Field separator (points mode)</dd>
-<dd>Default: <em>pipe</em></dd>
-
-<dt><b>precision</b>=<em>integer</em></dt>
-<dd>Number of significant digits (floating point only)</dd>
-<dd>Options: <em>0-32</em></dd>
-<dd>Default: <em>8</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.out.ascii - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.out.ascii</b></em>  - Exports a vector map to a GRASS ASCII vector representation.<BR>
+By default only features with category are exported. To export all features use 'layer=-1'.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_export.html">export</a>, <a href="keywords.html#output">output</a>, <a href="keywords.html#ASCII">ASCII</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.out.ascii</b><br></div>
+<b>v.out.ascii --help</b><br>
+<div id="synopsis"><b>v.out.ascii</b> [-<b>ocr</b>] <b>input</b>=<em>name</em>  [<b>layer</b>=<em>string</em>]   [<b>type</b>=<em>string</em>[,<i>string</i>,...]]   [<b>output</b>=<em>name</em>]   [<b>columns</b>=<em>name</em>[,<i>name</i>,...]]   [<b>cats</b>=<em>range</em>]   [<b>where</b>=<em>sql_query</em>]  <b>format</b>=<em>string</em>  [<b>separator</b>=<em>character</em>]   [<b>precision</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-o</b></dt>
+<dd>Create old (version 4) ASCII file</dd>
+
+<dt><b>-c</b></dt>
+<dd>Include column names in output (points mode)</dd>
+
+<dt><b>-r</b></dt>
+<dd>Only export points falling within current 3D region (points mode)</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input vector map</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>layer</b>=<em>string</em></dt>
+<dd>Layer number or name ('-1' for all layers)</dd>
+<dd>A single vector map can be connected to multiple database tables. This number determines which table to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>type</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>Input feature type</dd>
+<dd>Options: <em>point, line, boundary, centroid, area, face, kernel</em></dd>
+<dd>Default: <em>point,line,boundary,centroid,area,face,kernel</em></dd>
+
+<dt><b>output</b>=<em>name</em></dt>
+<dd>Name for output ASCII file or ASCII vector name if '-o' is defined</dd>
+<dd>If not given or '-' then standard output</dd>
+
+<dt><b>columns</b>=<em>name[,<i>name</i>,...]</em></dt>
+<dd>Name of attribute column(s) to be exported (point mode)</dd>
+<dd>"*" for all columns</dd>
+
+<dt><b>cats</b>=<em>range</em></dt>
+<dd>Category values</dd>
+<dd>Example: 1,3,7-9,13</dd>
+
+<dt><b>where</b>=<em>sql_query</em></dt>
+<dd>WHERE conditions of SQL statement without 'where' keyword</dd>
+<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
+
+<dt><b>format</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Output format</dd>
+<dd>Options: <em>point, standard, wkt</em></dd>
+<dd>Default: <em>point</em></dd>
+<dd><b>point</b>: Simple point format (point per row)</dd>
+<dd><b>standard</b>: GRASS ASCII vector format</dd>
+<dd><b>wkt</b>: OGC well-known text</dd>
+
+<dt><b>separator</b>=<em>character</em></dt>
+<dd>Field separator</dd>
+<dd>Field separator (points mode)</dd>
+<dd>Default: <em>pipe</em></dd>
+
+<dt><b>precision</b>=<em>integer</em></dt>
+<dd>Number of significant digits (floating point only)</dd>
+<dd>Options: <em>0-32</em></dd>
+<dd>Default: <em>8</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -270,7 +270,14 @@ in Prague, Czech Republic (2008/12)
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.out.ascii">v.out.ascii source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.out.ascii">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.out.ascii">v.out.ascii source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.out.ascii">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -281,9 +288,9 @@ in Prague, Czech Republic (2008/12)
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

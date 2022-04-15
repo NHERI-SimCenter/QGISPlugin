@@ -1,71 +1,71 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>g.search.modules.py - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>g.search.modules.py</b></em>  - Search in GRASS modules using keywords
-<h2>KEYWORDS</h2>
-<a href="general.html">general</a>, <a href="topic_modules.html">modules</a>, <a href="keywords.html#search">search</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>g.search.modules.py</b><br></div>
-<b>g.search.modules.py --help</b><br>
-<div id="synopsis"><b>g.search.modules.py</b> [-<b>anmkcgj</b>]  [<b>keyword</b>=<em>string</em>[,<i>string</i>,...]]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-a</b></dt>
-<dd>Display only modules where all keywords are available (AND), default: OR</dd>
-
-<dt><b>-n</b></dt>
-<dd>Invert selection (logical NOT)</dd>
-
-<dt><b>-m</b></dt>
-<dd>Search in manual pages too (can be slow)</dd>
-
-<dt><b>-k</b></dt>
-<dd>Search only for the exact keyword in module keyword list</dd>
-<dd>Instead of full text search, search only in actual keywords</dd>
-
-<dt><b>-c</b></dt>
-<dd>Use colorized (more readable) output to terminal</dd>
-
-<dt><b>-g</b></dt>
-<dd>Shell script format</dd>
-
-<dt><b>-j</b></dt>
-<dd>JSON format</dd>
-
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>keyword</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>Keyword to be searched</dd>
-<dd>List all modules if not given</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>g.search.modules.py - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>g.search.modules.py</b></em>  - Search in GRASS modules using keywords
+<h2>KEYWORDS</h2>
+<a href="general.html">general</a>, <a href="topic_modules.html">modules</a>, <a href="keywords.html#search">search</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>g.search.modules.py</b><br></div>
+<b>g.search.modules.py --help</b><br>
+<div id="synopsis"><b>g.search.modules.py</b> [-<b>anmkcgj</b>]  [<b>keyword</b>=<em>string</em>[,<i>string</i>,...]]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-a</b></dt>
+<dd>Display only modules where all keywords are available (AND), default: OR</dd>
+
+<dt><b>-n</b></dt>
+<dd>Invert selection (logical NOT)</dd>
+
+<dt><b>-m</b></dt>
+<dd>Search in manual pages too (can be slow)</dd>
+
+<dt><b>-k</b></dt>
+<dd>Search only for the exact keyword in module keyword list</dd>
+<dd>Instead of full text search, search only in actual keywords</dd>
+
+<dt><b>-c</b></dt>
+<dd>Use colorized (more readable) output to terminal</dd>
+
+<dt><b>-g</b></dt>
+<dd>Shell script format</dd>
+
+<dt><b>-j</b></dt>
+<dd>JSON format</dd>
+
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>keyword</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>Keyword to be searched</dd>
+<dd>List all modules if not given</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -164,7 +164,14 @@ Anika Bettge, mundialis, Germany: addon search added
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/scripts/g.search.modules">g.search.modules source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/scripts/g.search.modules">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/scripts/g.search.modules">g.search.modules source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/scripts/g.search.modules">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -175,9 +182,9 @@ Anika Bettge, mundialis, Germany: addon search added
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

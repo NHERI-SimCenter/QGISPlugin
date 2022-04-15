@@ -159,12 +159,11 @@ public:
     static CoordinateSequence* atLeastNCoordinatesOrNothing(std::size_t n,
             CoordinateSequence* c);
 
-    /// Return position of a Coordinate, or -1 if not found
+    /// Return position of a Coordinate
+    //
+    /// or numeric_limits<std::size_t>::max() if not found
     ///
-    /// FIXME: return std::size_t, using numeric_limits<std::size_t>::max
-    /// as 'not found' value.
-    ///
-    static size_t indexOf(const Coordinate* coordinate,
+    static std::size_t indexOf(const Coordinate* coordinate,
                           const CoordinateSequence* cl);
 
     /**

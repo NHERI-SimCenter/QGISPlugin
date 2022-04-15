@@ -1,130 +1,130 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.vol.rst - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.vol.rst</b></em>  - Interpolates point data to a 3D raster map using regularized spline with tension (RST) algorithm.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_voxel.html">voxel</a>, <a href="keywords.html#surface">surface</a>, <a href="keywords.html#interpolation">interpolation</a>, <a href="keywords.html#RST">RST</a>, <a href="keywords.html#3D">3D</a>, <a href="keywords.html#no-data filling">no-data filling</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.vol.rst</b><br></div>
-<b>v.vol.rst --help</b><br>
-<div id="synopsis"><b>v.vol.rst</b> [-<b>c</b>] <b>input</b>=<em>name</em>  [<b>cross_input</b>=<em>name</em>]   [<b>wcolumn</b>=<em>name</em>]   [<b>tension</b>=<em>float</em>]   [<b>smooth</b>=<em>float</em>]   [<b>smooth_column</b>=<em>name</em>]   [<b>where</b>=<em>sql_query</em>]   [<b>deviations</b>=<em>name</em>]   [<b>cvdev</b>=<em>name</em>]   [<b>maskmap</b>=<em>name</em>]   [<b>segmax</b>=<em>integer</em>]   [<b>npmin</b>=<em>integer</em>]   [<b>npmax</b>=<em>integer</em>]   [<b>dmin</b>=<em>float</em>]   [<b>wscale</b>=<em>float</em>]   [<b>zscale</b>=<em>float</em>]   [<b>cross_output</b>=<em>name</em>]   [<b>elevation</b>=<em>name</em>]   [<b>gradient</b>=<em>name</em>]   [<b>aspect_horizontal</b>=<em>name</em>]   [<b>aspect_vertical</b>=<em>name</em>]   [<b>ncurvature</b>=<em>name</em>]   [<b>gcurvature</b>=<em>name</em>]   [<b>mcurvature</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-c</b></dt>
-<dd>Perform a cross-validation procedure without volume interpolation</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input 3D vector points map</dd>
-
-<dt><b>cross_input</b>=<em>name</em></dt>
-<dd>Name of input surface raster map for cross-section</dd>
-
-<dt><b>wcolumn</b>=<em>name</em></dt>
-<dd>Name of column containing w-values attribute to interpolate</dd>
-
-<dt><b>tension</b>=<em>float</em></dt>
-<dd>Tension parameter</dd>
-<dd>Default: <em>40.</em></dd>
-
-<dt><b>smooth</b>=<em>float</em></dt>
-<dd>Smoothing parameter</dd>
-<dd>Default: <em>0.1</em></dd>
-
-<dt><b>smooth_column</b>=<em>name</em></dt>
-<dd>Name of column with smoothing parameters</dd>
-
-<dt><b>where</b>=<em>sql_query</em></dt>
-<dd>WHERE conditions of SQL statement without 'where' keyword</dd>
-<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
-
-<dt><b>deviations</b>=<em>name</em></dt>
-<dd>Name for output deviations vector point map</dd>
-
-<dt><b>cvdev</b>=<em>name</em></dt>
-<dd>Name for output cross-validation errors vector point map</dd>
-
-<dt><b>maskmap</b>=<em>name</em></dt>
-<dd>Name of input raster map used as mask</dd>
-
-<dt><b>segmax</b>=<em>integer</em></dt>
-<dd>Maximum number of points in a segment</dd>
-<dd>Default: <em>50</em></dd>
-
-<dt><b>npmin</b>=<em>integer</em></dt>
-<dd>Minimum number of points for approximation in a segment (&gt;segmax)</dd>
-<dd>Default: <em>200</em></dd>
-
-<dt><b>npmax</b>=<em>integer</em></dt>
-<dd>Maximum number of points for approximation in a segment (&gt;npmin)</dd>
-<dd>Default: <em>700</em></dd>
-
-<dt><b>dmin</b>=<em>float</em></dt>
-<dd>Minimum distance between points (to remove almost identical points)</dd>
-
-<dt><b>wscale</b>=<em>float</em></dt>
-<dd>Conversion factor for w-values used for interpolation</dd>
-<dd>Default: <em>1.0</em></dd>
-
-<dt><b>zscale</b>=<em>float</em></dt>
-<dd>Conversion factor for z-values</dd>
-<dd>Default: <em>1.0</em></dd>
-
-<dt><b>cross_output</b>=<em>name</em></dt>
-<dd>Name for output cross-section raster map</dd>
-
-<dt><b>elevation</b>=<em>name</em></dt>
-<dd>Name for output elevation 3D raster map</dd>
-
-<dt><b>gradient</b>=<em>name</em></dt>
-<dd>Name for output gradient magnitude 3D raster map</dd>
-
-<dt><b>aspect_horizontal</b>=<em>name</em></dt>
-<dd>Name for output gradient horizontal angle 3D raster map</dd>
-
-<dt><b>aspect_vertical</b>=<em>name</em></dt>
-<dd>Name for output gradient vertical angle 3D raster map</dd>
-
-<dt><b>ncurvature</b>=<em>name</em></dt>
-<dd>Name for output change of gradient 3D raster map</dd>
-
-<dt><b>gcurvature</b>=<em>name</em></dt>
-<dd>Name for output Gaussian curvature 3D raster map</dd>
-
-<dt><b>mcurvature</b>=<em>name</em></dt>
-<dd>Name for output mean curvature 3D raster map</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.vol.rst - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.vol.rst</b></em>  - Interpolates point data to a 3D raster map using regularized spline with tension (RST) algorithm.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_voxel.html">voxel</a>, <a href="keywords.html#surface">surface</a>, <a href="keywords.html#interpolation">interpolation</a>, <a href="keywords.html#RST">RST</a>, <a href="keywords.html#3D">3D</a>, <a href="keywords.html#no-data filling">no-data filling</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.vol.rst</b><br></div>
+<b>v.vol.rst --help</b><br>
+<div id="synopsis"><b>v.vol.rst</b> [-<b>c</b>] <b>input</b>=<em>name</em>  [<b>cross_input</b>=<em>name</em>]   [<b>wcolumn</b>=<em>name</em>]   [<b>tension</b>=<em>float</em>]   [<b>smooth</b>=<em>float</em>]   [<b>smooth_column</b>=<em>name</em>]   [<b>where</b>=<em>sql_query</em>]   [<b>deviations</b>=<em>name</em>]   [<b>cvdev</b>=<em>name</em>]   [<b>maskmap</b>=<em>name</em>]   [<b>segmax</b>=<em>integer</em>]   [<b>npmin</b>=<em>integer</em>]   [<b>npmax</b>=<em>integer</em>]   [<b>dmin</b>=<em>float</em>]   [<b>wscale</b>=<em>float</em>]   [<b>zscale</b>=<em>float</em>]   [<b>cross_output</b>=<em>name</em>]   [<b>elevation</b>=<em>name</em>]   [<b>gradient</b>=<em>name</em>]   [<b>aspect_horizontal</b>=<em>name</em>]   [<b>aspect_vertical</b>=<em>name</em>]   [<b>ncurvature</b>=<em>name</em>]   [<b>gcurvature</b>=<em>name</em>]   [<b>mcurvature</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-c</b></dt>
+<dd>Perform a cross-validation procedure without volume interpolation</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input 3D vector points map</dd>
+
+<dt><b>cross_input</b>=<em>name</em></dt>
+<dd>Name of input surface raster map for cross-section</dd>
+
+<dt><b>wcolumn</b>=<em>name</em></dt>
+<dd>Name of column containing w-values attribute to interpolate</dd>
+
+<dt><b>tension</b>=<em>float</em></dt>
+<dd>Tension parameter</dd>
+<dd>Default: <em>40.</em></dd>
+
+<dt><b>smooth</b>=<em>float</em></dt>
+<dd>Smoothing parameter</dd>
+<dd>Default: <em>0.1</em></dd>
+
+<dt><b>smooth_column</b>=<em>name</em></dt>
+<dd>Name of column with smoothing parameters</dd>
+
+<dt><b>where</b>=<em>sql_query</em></dt>
+<dd>WHERE conditions of SQL statement without 'where' keyword</dd>
+<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
+
+<dt><b>deviations</b>=<em>name</em></dt>
+<dd>Name for output deviations vector point map</dd>
+
+<dt><b>cvdev</b>=<em>name</em></dt>
+<dd>Name for output cross-validation errors vector point map</dd>
+
+<dt><b>maskmap</b>=<em>name</em></dt>
+<dd>Name of input raster map used as mask</dd>
+
+<dt><b>segmax</b>=<em>integer</em></dt>
+<dd>Maximum number of points in a segment</dd>
+<dd>Default: <em>50</em></dd>
+
+<dt><b>npmin</b>=<em>integer</em></dt>
+<dd>Minimum number of points for approximation in a segment (&gt;segmax)</dd>
+<dd>Default: <em>200</em></dd>
+
+<dt><b>npmax</b>=<em>integer</em></dt>
+<dd>Maximum number of points for approximation in a segment (&gt;npmin)</dd>
+<dd>Default: <em>700</em></dd>
+
+<dt><b>dmin</b>=<em>float</em></dt>
+<dd>Minimum distance between points (to remove almost identical points)</dd>
+
+<dt><b>wscale</b>=<em>float</em></dt>
+<dd>Conversion factor for w-values used for interpolation</dd>
+<dd>Default: <em>1.0</em></dd>
+
+<dt><b>zscale</b>=<em>float</em></dt>
+<dd>Conversion factor for z-values</dd>
+<dd>Default: <em>1.0</em></dd>
+
+<dt><b>cross_output</b>=<em>name</em></dt>
+<dd>Name for output cross-section raster map</dd>
+
+<dt><b>elevation</b>=<em>name</em></dt>
+<dd>Name for output elevation 3D raster map</dd>
+
+<dt><b>gradient</b>=<em>name</em></dt>
+<dd>Name for output gradient magnitude 3D raster map</dd>
+
+<dt><b>aspect_horizontal</b>=<em>name</em></dt>
+<dd>Name for output gradient horizontal angle 3D raster map</dd>
+
+<dt><b>aspect_vertical</b>=<em>name</em></dt>
+<dd>Name for output gradient vertical angle 3D raster map</dd>
+
+<dt><b>ncurvature</b>=<em>name</em></dt>
+<dd>Name for output change of gradient 3D raster map</dd>
+
+<dt><b>gcurvature</b>=<em>name</em></dt>
+<dd>Name for output Gaussian curvature 3D raster map</dd>
+
+<dt><b>mcurvature</b>=<em>name</em></dt>
+<dd>Name for output mean curvature 3D raster map</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -453,7 +453,14 @@ University of Presov, Presov, Slovakia,
 <p>
 <i>Last changed: $Date$</i>
 --> <h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.vol.rst">v.vol.rst source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.vol.rst">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.vol.rst">v.vol.rst source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.vol.rst">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -464,9 +471,9 @@ University of Presov, Presov, Slovakia,
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

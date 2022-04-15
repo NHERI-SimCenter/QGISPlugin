@@ -1,118 +1,118 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.surf.bspline - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.surf.bspline</b></em>  - Performs bicubic or bilinear spline interpolation with Tykhonov regularization.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_surface.html">surface</a>, <a href="keywords.html#interpolation">interpolation</a>, <a href="keywords.html#LIDAR">LIDAR</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.surf.bspline</b><br></div>
-<b>v.surf.bspline --help</b><br>
-<div id="synopsis"><b>v.surf.bspline</b> [-<b>ce</b>] <b>input</b>=<em>name</em>  [<b>layer</b>=<em>string</em>]   [<b>column</b>=<em>name</em>]   [<b>sparse_input</b>=<em>name</em>]   [<b>output</b>=<em>name</em>]   [<b>raster_output</b>=<em>name</em>]   [<b>mask</b>=<em>name</em>]   [<b>ew_step</b>=<em>float</em>]   [<b>ns_step</b>=<em>float</em>]   [<b>method</b>=<em>string</em>]   [<b>lambda_i</b>=<em>float</em>]   [<b>solver</b>=<em>name</em>]   [<b>maxit</b>=<em>integer</em>]   [<b>error</b>=<em>float</em>]   [<b>memory</b>=<em>memory in MB</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-c</b></dt>
-<dd>Find the best Tykhonov regularizing parameter using a "leave-one-out" cross validation method</dd>
-
-<dt><b>-e</b></dt>
-<dd>Estimate point density and distance</dd>
-<dd>Estimate point density and distance in map units for the input vector points within the current region extents and quit</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input vector point map</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>layer</b>=<em>string</em></dt>
-<dd>Layer number or name</dd>
-<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>column</b>=<em>name</em></dt>
-<dd>Name of the attribute column with values to be used for approximation</dd>
-<dd>If not given and input is 3D vector map then z-coordinates are used.</dd>
-
-<dt><b>sparse_input</b>=<em>name</em></dt>
-<dd>Name of input vector map with sparse points</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>output</b>=<em>name</em></dt>
-<dd>Name for output vector map</dd>
-
-<dt><b>raster_output</b>=<em>name</em></dt>
-<dd>Name for output raster map</dd>
-
-<dt><b>mask</b>=<em>name</em></dt>
-<dd>Raster map to use for masking (applies to raster output only)</dd>
-<dd>Only cells that are not NULL and not zero are interpolated</dd>
-
-<dt><b>ew_step</b>=<em>float</em></dt>
-<dd>Length of each spline step in the east-west direction</dd>
-<dd>Default: 4 * east-west resolution</dd>
-
-<dt><b>ns_step</b>=<em>float</em></dt>
-<dd>Length of each spline step in the north-south direction</dd>
-<dd>Default: 4 * north-south resolution</dd>
-
-<dt><b>method</b>=<em>string</em></dt>
-<dd>Spline interpolation algorithm</dd>
-<dd>Options: <em>bilinear, bicubic</em></dd>
-<dd>Default: <em>bilinear</em></dd>
-<dd><b>bilinear</b>: Bilinear interpolation</dd>
-<dd><b>bicubic</b>: Bicubic interpolation</dd>
-
-<dt><b>lambda_i</b>=<em>float</em></dt>
-<dd>Tykhonov regularization parameter (affects smoothing)</dd>
-<dd>Default: <em>0.01</em></dd>
-
-<dt><b>solver</b>=<em>name</em></dt>
-<dd>The type of solver which should solve the symmetric linear equation system</dd>
-<dd>Options: <em>cholesky, cg</em></dd>
-<dd>Default: <em>cholesky</em></dd>
-
-<dt><b>maxit</b>=<em>integer</em></dt>
-<dd>Maximum number of iteration used to solve the linear equation system</dd>
-<dd>Default: <em>10000</em></dd>
-
-<dt><b>error</b>=<em>float</em></dt>
-<dd>Error break criteria for iterative solver</dd>
-<dd>Default: <em>0.000001</em></dd>
-
-<dt><b>memory</b>=<em>memory in MB</em></dt>
-<dd>Maximum memory to be used (in MB)</dd>
-<dd>Cache size for raster rows</dd>
-<dd>Default: <em>300</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.surf.bspline - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.surf.bspline</b></em>  - Performs bicubic or bilinear spline interpolation with Tykhonov regularization.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_surface.html">surface</a>, <a href="keywords.html#interpolation">interpolation</a>, <a href="keywords.html#LIDAR">LIDAR</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.surf.bspline</b><br></div>
+<b>v.surf.bspline --help</b><br>
+<div id="synopsis"><b>v.surf.bspline</b> [-<b>ce</b>] <b>input</b>=<em>name</em>  [<b>layer</b>=<em>string</em>]   [<b>column</b>=<em>name</em>]   [<b>sparse_input</b>=<em>name</em>]   [<b>output</b>=<em>name</em>]   [<b>raster_output</b>=<em>name</em>]   [<b>mask</b>=<em>name</em>]   [<b>ew_step</b>=<em>float</em>]   [<b>ns_step</b>=<em>float</em>]   [<b>method</b>=<em>string</em>]   [<b>lambda_i</b>=<em>float</em>]   [<b>solver</b>=<em>name</em>]   [<b>maxit</b>=<em>integer</em>]   [<b>error</b>=<em>float</em>]   [<b>memory</b>=<em>memory in MB</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-c</b></dt>
+<dd>Find the best Tykhonov regularizing parameter using a "leave-one-out" cross validation method</dd>
+
+<dt><b>-e</b></dt>
+<dd>Estimate point density and distance</dd>
+<dd>Estimate point density and distance in map units for the input vector points within the current region extents and quit</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input vector point map</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>layer</b>=<em>string</em></dt>
+<dd>Layer number or name</dd>
+<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>column</b>=<em>name</em></dt>
+<dd>Name of the attribute column with values to be used for approximation</dd>
+<dd>If not given and input is 3D vector map then z-coordinates are used.</dd>
+
+<dt><b>sparse_input</b>=<em>name</em></dt>
+<dd>Name of input vector map with sparse points</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>output</b>=<em>name</em></dt>
+<dd>Name for output vector map</dd>
+
+<dt><b>raster_output</b>=<em>name</em></dt>
+<dd>Name for output raster map</dd>
+
+<dt><b>mask</b>=<em>name</em></dt>
+<dd>Raster map to use for masking (applies to raster output only)</dd>
+<dd>Only cells that are not NULL and not zero are interpolated</dd>
+
+<dt><b>ew_step</b>=<em>float</em></dt>
+<dd>Length of each spline step in the east-west direction</dd>
+<dd>Default: 4 * east-west resolution</dd>
+
+<dt><b>ns_step</b>=<em>float</em></dt>
+<dd>Length of each spline step in the north-south direction</dd>
+<dd>Default: 4 * north-south resolution</dd>
+
+<dt><b>method</b>=<em>string</em></dt>
+<dd>Spline interpolation algorithm</dd>
+<dd>Options: <em>bilinear, bicubic</em></dd>
+<dd>Default: <em>bilinear</em></dd>
+<dd><b>bilinear</b>: Bilinear interpolation</dd>
+<dd><b>bicubic</b>: Bicubic interpolation</dd>
+
+<dt><b>lambda_i</b>=<em>float</em></dt>
+<dd>Tykhonov regularization parameter (affects smoothing)</dd>
+<dd>Default: <em>0.01</em></dd>
+
+<dt><b>solver</b>=<em>name</em></dt>
+<dd>The type of solver which should solve the symmetric linear equation system</dd>
+<dd>Options: <em>cholesky, cg</em></dd>
+<dd>Default: <em>cholesky</em></dd>
+
+<dt><b>maxit</b>=<em>integer</em></dt>
+<dd>Maximum number of iteration used to solve the linear equation system</dd>
+<dd>Default: <em>10000</em></dd>
+
+<dt><b>error</b>=<em>float</em></dt>
+<dd>Error break criteria for iterative solver</dd>
+<dd>Default: <em>0.000001</em></dd>
+
+<dt><b>memory</b>=<em>memory in MB</em></dt>
+<dd>Maximum memory to be used (in MB)</dd>
+<dd>Cache size for raster rows</dd>
+<dd>Default: <em>300</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -329,7 +329,14 @@ Update for GRASS 6 and improvements: Roberto Antolin
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.surf.bspline">v.surf.bspline source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.surf.bspline">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.surf.bspline">v.surf.bspline source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.surf.bspline">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -340,9 +347,9 @@ Update for GRASS 6 and improvements: Roberto Antolin
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

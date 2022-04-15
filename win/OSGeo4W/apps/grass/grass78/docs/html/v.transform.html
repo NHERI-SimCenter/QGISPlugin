@@ -1,109 +1,109 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.transform - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.transform</b></em>  - Performs an affine transformation (shift, scale and rotate) on vector map.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_transformation.html">transformation</a>, <a href="keywords.html#geometry">geometry</a>, <a href="keywords.html#GCP">GCP</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.transform</b><br></div>
-<b>v.transform --help</b><br>
-<div id="synopsis"><b>v.transform</b> [-<b>twxyab</b>] <b>input</b>=<em>name</em>  [<b>layer</b>=<em>string</em>]  <b>output</b>=<em>name</em>  [<b>xshift</b>=<em>float</em>]   [<b>yshift</b>=<em>float</em>]   [<b>zshift</b>=<em>float</em>]   [<b>xscale</b>=<em>float</em>]   [<b>yscale</b>=<em>float</em>]   [<b>zscale</b>=<em>float</em>]   [<b>zrotation</b>=<em>float</em>]   [<b>columns</b>=<em>name</em>[,<i>name</i>,...]]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-t</b></dt>
-<dd>Shift all z values to bottom=0</dd>
-
-<dt><b>-w</b></dt>
-<dd>Swap coordinates x, y and then apply other parameters</dd>
-
-<dt><b>-x</b></dt>
-<dd>Swap coordinates x, z and then apply other parameters</dd>
-
-<dt><b>-y</b></dt>
-<dd>Swap coordinates y, z and then apply other parameters</dd>
-
-<dt><b>-a</b></dt>
-<dd>Swap coordinates after the other transformations</dd>
-
-<dt><b>-b</b></dt>
-<dd>Do not build topology</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input vector map</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>layer</b>=<em>string</em></dt>
-<dd>Layer number or name ('-1' for all layers)</dd>
-<dd>A single vector map can be connected to multiple database tables. This number determines which table to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>-1</em></dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output vector map</dd>
-
-<dt><b>xshift</b>=<em>float</em></dt>
-<dd>Shifting value for x coordinates</dd>
-<dd>Default: <em>0.0</em></dd>
-
-<dt><b>yshift</b>=<em>float</em></dt>
-<dd>Shifting value for y coordinates</dd>
-<dd>Default: <em>0.0</em></dd>
-
-<dt><b>zshift</b>=<em>float</em></dt>
-<dd>Shifting value for z coordinates</dd>
-<dd>Default: <em>0.0</em></dd>
-
-<dt><b>xscale</b>=<em>float</em></dt>
-<dd>Scaling factor for x coordinates</dd>
-<dd>Default: <em>1.0</em></dd>
-
-<dt><b>yscale</b>=<em>float</em></dt>
-<dd>Scaling factor for y coordinates</dd>
-<dd>Default: <em>1.0</em></dd>
-
-<dt><b>zscale</b>=<em>float</em></dt>
-<dd>Scaling factor for z coordinates</dd>
-<dd>Default: <em>1.0</em></dd>
-
-<dt><b>zrotation</b>=<em>float</em></dt>
-<dd>Rotation around z axis in degrees (counter-clockwise)</dd>
-<dd>Default: <em>0.0</em></dd>
-
-<dt><b>columns</b>=<em>name[,<i>name</i>,...]</em></dt>
-<dd>Name of attribute column(s) used as transformation parameters</dd>
-<dd>Format: parameter:column, e.g. xshift:xs,yshift:ys,zrot:zr</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.transform - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.transform</b></em>  - Performs an affine transformation (shift, scale and rotate) on vector map.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_transformation.html">transformation</a>, <a href="keywords.html#geometry">geometry</a>, <a href="keywords.html#GCP">GCP</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.transform</b><br></div>
+<b>v.transform --help</b><br>
+<div id="synopsis"><b>v.transform</b> [-<b>twxyab</b>] <b>input</b>=<em>name</em>  [<b>layer</b>=<em>string</em>]  <b>output</b>=<em>name</em>  [<b>xshift</b>=<em>float</em>]   [<b>yshift</b>=<em>float</em>]   [<b>zshift</b>=<em>float</em>]   [<b>xscale</b>=<em>float</em>]   [<b>yscale</b>=<em>float</em>]   [<b>zscale</b>=<em>float</em>]   [<b>zrotation</b>=<em>float</em>]   [<b>columns</b>=<em>name</em>[,<i>name</i>,...]]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-t</b></dt>
+<dd>Shift all z values to bottom=0</dd>
+
+<dt><b>-w</b></dt>
+<dd>Swap coordinates x, y and then apply other parameters</dd>
+
+<dt><b>-x</b></dt>
+<dd>Swap coordinates x, z and then apply other parameters</dd>
+
+<dt><b>-y</b></dt>
+<dd>Swap coordinates y, z and then apply other parameters</dd>
+
+<dt><b>-a</b></dt>
+<dd>Swap coordinates after the other transformations</dd>
+
+<dt><b>-b</b></dt>
+<dd>Do not build topology</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input vector map</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>layer</b>=<em>string</em></dt>
+<dd>Layer number or name ('-1' for all layers)</dd>
+<dd>A single vector map can be connected to multiple database tables. This number determines which table to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>-1</em></dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output vector map</dd>
+
+<dt><b>xshift</b>=<em>float</em></dt>
+<dd>Shifting value for x coordinates</dd>
+<dd>Default: <em>0.0</em></dd>
+
+<dt><b>yshift</b>=<em>float</em></dt>
+<dd>Shifting value for y coordinates</dd>
+<dd>Default: <em>0.0</em></dd>
+
+<dt><b>zshift</b>=<em>float</em></dt>
+<dd>Shifting value for z coordinates</dd>
+<dd>Default: <em>0.0</em></dd>
+
+<dt><b>xscale</b>=<em>float</em></dt>
+<dd>Scaling factor for x coordinates</dd>
+<dd>Default: <em>1.0</em></dd>
+
+<dt><b>yscale</b>=<em>float</em></dt>
+<dd>Scaling factor for y coordinates</dd>
+<dd>Default: <em>1.0</em></dd>
+
+<dt><b>zscale</b>=<em>float</em></dt>
+<dd>Scaling factor for z coordinates</dd>
+<dd>Default: <em>1.0</em></dd>
+
+<dt><b>zrotation</b>=<em>float</em></dt>
+<dd>Rotation around z axis in degrees (counter-clockwise)</dd>
+<dd>Default: <em>0.0</em></dd>
+
+<dt><b>columns</b>=<em>name[,<i>name</i>,...]</em></dt>
+<dd>Name of attribute column(s) used as transformation parameters</dd>
+<dd>Format: parameter:column, e.g. xshift:xs,yshift:ys,zrot:zr</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -214,7 +214,14 @@ Column support added by Martin Landa, FBK-irst (formerly ITC-irst), Trento, Ital
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.transform">v.transform source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.transform">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.transform">v.transform source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.transform">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -225,9 +232,9 @@ Column support added by Martin Landa, FBK-irst (formerly ITC-irst), Trento, Ital
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

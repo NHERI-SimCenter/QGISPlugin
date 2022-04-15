@@ -1,59 +1,59 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.li.renyi - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.li.renyi</b></em>  - Calculates Renyi's diversity index on a raster map
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_landscape_structure_analysis.html">landscape structure analysis</a>, <a href="keywords.html#diversity index">diversity index</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.li.renyi</b><br></div>
-<b>r.li.renyi --help</b><br>
-<div id="synopsis"><b>r.li.renyi</b> <b>input</b>=<em>name</em> <b>config</b>=<em>name</em> <b>alpha</b>=<em>string</em> <b>output</b>=<em>name</em>  [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map</dd>
-
-<dt><b>config</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Configuration file</dd>
-
-<dt><b>alpha</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Alpha value is the order of the generalized entropy</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output raster map</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.li.renyi - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.li.renyi</b></em>  - Calculates Renyi's diversity index on a raster map
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_landscape_structure_analysis.html">landscape structure analysis</a>, <a href="keywords.html#diversity index">diversity index</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.li.renyi</b><br></div>
+<b>r.li.renyi --help</b><br>
+<div id="synopsis"><b>r.li.renyi</b> <b>input</b>=<em>name</em> <b>config</b>=<em>name</em> <b>alpha</b>=<em>string</em> <b>output</b>=<em>name</em>  [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map</dd>
+
+<dt><b>config</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Configuration file</dd>
+
+<dt><b>alpha</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Alpha value is the order of the generalized entropy</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output raster map</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -145,7 +145,14 @@ Computer Science University of Pisa (Italy).<br>
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.li/r.li.renyi">r.li.renyi source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.li/r.li.renyi">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.li/r.li.renyi">r.li.renyi source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.li/r.li.renyi">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -156,9 +163,9 @@ Computer Science University of Pisa (Italy).<br>
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

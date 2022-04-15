@@ -18,7 +18,7 @@
 #               command line options for setting the GISDBASE, LOCATION,
 #               and/or MAPSET. Finally it starts GRASS with the appropriate
 #               user interface and cleans up after it is finished.
-# COPYRIGHT:    (C) 2000-2021 by the GRASS Development Team
+# COPYRIGHT:    (C) 2000-2022 by the GRASS Development Team
 #
 #               This program is free software under the GNU General
 #               Public License (>=v2). Read the file COPYING that
@@ -87,7 +87,7 @@ else:
     GISBASE = os.path.normpath("/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/apps/grass/grass78")
     os.environ['GISBASE'] = GISBASE
 CMD_NAME = "grass78"
-GRASS_VERSION = "7.8.6RC3"
+GRASS_VERSION = "7.8.7"
 LD_LIBRARY_PATH_VAR = 'PATH'
 CONFIG_PROJSHARE = os.environ.get('GRASS_PROJSHARE', "/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/share/proj")
 

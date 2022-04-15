@@ -48,13 +48,13 @@
    The patch part of current %QCA version.
 */
 
-#define QCA_PATCH_VERSION 1
+#define QCA_PATCH_VERSION 4
 
 /**
    The current version of %QCA as string.
  */
 
-#define QCA_VERSION_STR "2.3.1"
+#define QCA_VERSION_STR "2.3.4"
 
 /**
    Can be used like #if (QCA_VERSION >= %QCA_VERSION_CHECK(2, 0, 3))
@@ -76,6 +76,6 @@
 */
 
 #define QCA_VERSION \
-    QCA_VERSION_CHECK(2, 3, 1)
+    QCA_VERSION_CHECK(2, 3, 4)
 
 #endif // QCA_VERSION_H

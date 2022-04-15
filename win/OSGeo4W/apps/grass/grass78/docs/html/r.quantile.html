@@ -1,67 +1,67 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.quantile - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.quantile</b></em>  - Compute quantiles using two passes.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_algebra.html">algebra</a>, <a href="keywords.html#statistics">statistics</a>, <a href="keywords.html#percentile">percentile</a>, <a href="keywords.html#quantile">quantile</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.quantile</b><br></div>
-<b>r.quantile --help</b><br>
-<div id="synopsis"><b>r.quantile</b> [-<b>r</b>] <b>input</b>=<em>name</em>  [<b>quantiles</b>=<em>integer</em>]   [<b>percentiles</b>=<em>float</em>[,<i>float</i>,...]]   [<b>bins</b>=<em>integer</em>]   [<b>file</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-r</b></dt>
-<dd>Generate recode rules based on quantile-defined intervals</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map</dd>
-
-<dt><b>quantiles</b>=<em>integer</em></dt>
-<dd>Number of quantiles</dd>
-<dd>Default: <em>4</em></dd>
-
-<dt><b>percentiles</b>=<em>float[,<i>float</i>,...]</em></dt>
-<dd>List of percentiles</dd>
-
-<dt><b>bins</b>=<em>integer</em></dt>
-<dd>Number of bins to use</dd>
-<dd>Default: <em>1000000</em></dd>
-
-<dt><b>file</b>=<em>name</em></dt>
-<dd>Name for output file (if omitted or "-" output to stdout)</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.quantile - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.quantile</b></em>  - Compute quantiles using two passes.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_algebra.html">algebra</a>, <a href="keywords.html#statistics">statistics</a>, <a href="keywords.html#percentile">percentile</a>, <a href="keywords.html#quantile">quantile</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.quantile</b><br></div>
+<b>r.quantile --help</b><br>
+<div id="synopsis"><b>r.quantile</b> [-<b>r</b>] <b>input</b>=<em>name</em>  [<b>quantiles</b>=<em>integer</em>]   [<b>percentiles</b>=<em>float</em>[,<i>float</i>,...]]   [<b>bins</b>=<em>integer</em>]   [<b>file</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-r</b></dt>
+<dd>Generate recode rules based on quantile-defined intervals</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map</dd>
+
+<dt><b>quantiles</b>=<em>integer</em></dt>
+<dd>Number of quantiles</dd>
+<dd>Default: <em>4</em></dd>
+
+<dt><b>percentiles</b>=<em>float[,<i>float</i>,...]</em></dt>
+<dd>List of percentiles</dd>
+
+<dt><b>bins</b>=<em>integer</em></dt>
+<dd>Number of bins to use</dd>
+<dd>Default: <em>1000000</em></dd>
+
+<dt><b>file</b>=<em>name</em></dt>
+<dd>Name for output file (if omitted or "-" output to stdout)</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -116,7 +116,14 @@ Glynn Clements
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.quantile">r.quantile source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.quantile">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.quantile">r.quantile source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.quantile">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -127,9 +134,9 @@ Glynn Clements
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

@@ -1,7 +1,7 @@
 '''Wrapper for gis.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_gis.7.8 -lintl-8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/colors.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/colors.h -o OBJ.x86_64-w64-mingw32/gis.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_gis.7.8 -lintl-8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/colors.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/colors.h -o OBJ.x86_64-w64-mingw32/gis.py
 
 Do not modify this file.
 '''
@@ -28,9 +28,9 @@ _libs["intl-8"] = load_library("intl-8")
 
 # No modules
 
-__time64_t = c_int64 # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/corecrt.h: 123
+__time64_t = c_int64 # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/corecrt.h: 123
 
-# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h: 33
+# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/stdio.h: 33
 class struct__iobuf(Structure):
     pass
 
@@ -55,11 +55,11 @@ struct__iobuf._fields_ = [
     ('_tmpfname', String),
 ]
 
-FILE = struct__iobuf # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h: 47
+FILE = struct__iobuf # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/stdio.h: 47
 
-off_t = c_int64 # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h: 24
+off_t = c_int64 # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/_mingw_off_t.h: 24
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/datetime.h: 27
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/datetime.h: 27
 class struct_DateTime(Structure):
     pass
 
@@ -92,225 +92,225 @@ struct_DateTime._fields_ = [
     ('tz', c_int),
 ]
 
-DateTime = struct_DateTime # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/datetime.h: 27
+DateTime = struct_DateTime # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/datetime.h: 27
 
-enum_anon_2 = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+enum_anon_2 = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_UNDEFINED = 0 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_UNDEFINED = 0 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_DB_SQL = (G_OPT_UNDEFINED + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_DB_SQL = (G_OPT_UNDEFINED + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_DB_WHERE = (G_OPT_DB_SQL + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_DB_WHERE = (G_OPT_DB_SQL + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_DB_TABLE = (G_OPT_DB_WHERE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_DB_TABLE = (G_OPT_DB_WHERE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_DB_DRIVER = (G_OPT_DB_TABLE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_DB_DRIVER = (G_OPT_DB_TABLE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_DB_DATABASE = (G_OPT_DB_DRIVER + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_DB_DATABASE = (G_OPT_DB_DRIVER + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_DB_SCHEMA = (G_OPT_DB_DATABASE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_DB_SCHEMA = (G_OPT_DB_DATABASE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_DB_COLUMN = (G_OPT_DB_SCHEMA + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_DB_COLUMN = (G_OPT_DB_SCHEMA + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_DB_COLUMNS = (G_OPT_DB_COLUMN + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_DB_COLUMNS = (G_OPT_DB_COLUMN + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_DB_KEYCOLUMN = (G_OPT_DB_COLUMNS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_DB_KEYCOLUMN = (G_OPT_DB_COLUMNS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_I_GROUP = (G_OPT_DB_KEYCOLUMN + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_I_GROUP = (G_OPT_DB_KEYCOLUMN + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_I_SUBGROUP = (G_OPT_I_GROUP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_I_SUBGROUP = (G_OPT_I_GROUP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_MEMORYMB = (G_OPT_I_SUBGROUP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_MEMORYMB = (G_OPT_I_SUBGROUP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_INPUT = (G_OPT_MEMORYMB + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_INPUT = (G_OPT_MEMORYMB + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_INPUTS = (G_OPT_R_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_INPUTS = (G_OPT_R_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_OUTPUT = (G_OPT_R_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_OUTPUT = (G_OPT_R_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_OUTPUTS = (G_OPT_R_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_OUTPUTS = (G_OPT_R_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_MAP = (G_OPT_R_OUTPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_MAP = (G_OPT_R_OUTPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_MAPS = (G_OPT_R_MAP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_MAPS = (G_OPT_R_MAP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_BASE = (G_OPT_R_MAPS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_BASE = (G_OPT_R_MAPS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_COVER = (G_OPT_R_BASE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_COVER = (G_OPT_R_BASE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_ELEV = (G_OPT_R_COVER + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_ELEV = (G_OPT_R_COVER + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_ELEVS = (G_OPT_R_ELEV + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_ELEVS = (G_OPT_R_ELEV + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_TYPE = (G_OPT_R_ELEVS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_TYPE = (G_OPT_R_ELEVS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_INTERP_TYPE = (G_OPT_R_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_INTERP_TYPE = (G_OPT_R_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_BASENAME_INPUT = (G_OPT_R_INTERP_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_BASENAME_INPUT = (G_OPT_R_INTERP_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R_BASENAME_OUTPUT = (G_OPT_R_BASENAME_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R_BASENAME_OUTPUT = (G_OPT_R_BASENAME_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R3_INPUT = (G_OPT_R_BASENAME_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R3_INPUT = (G_OPT_R_BASENAME_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R3_INPUTS = (G_OPT_R3_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R3_INPUTS = (G_OPT_R3_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R3_OUTPUT = (G_OPT_R3_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R3_OUTPUT = (G_OPT_R3_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R3_MAP = (G_OPT_R3_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R3_MAP = (G_OPT_R3_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R3_MAPS = (G_OPT_R3_MAP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R3_MAPS = (G_OPT_R3_MAP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R3_TYPE = (G_OPT_R3_MAPS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R3_TYPE = (G_OPT_R3_MAPS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R3_PRECISION = (G_OPT_R3_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R3_PRECISION = (G_OPT_R3_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R3_TILE_DIMENSION = (G_OPT_R3_PRECISION + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R3_TILE_DIMENSION = (G_OPT_R3_PRECISION + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_R3_COMPRESSION = (G_OPT_R3_TILE_DIMENSION + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_R3_COMPRESSION = (G_OPT_R3_TILE_DIMENSION + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_INPUT = (G_OPT_R3_COMPRESSION + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_INPUT = (G_OPT_R3_COMPRESSION + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_INPUTS = (G_OPT_V_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_INPUTS = (G_OPT_V_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_OUTPUT = (G_OPT_V_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_OUTPUT = (G_OPT_V_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_MAP = (G_OPT_V_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_MAP = (G_OPT_V_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_MAPS = (G_OPT_V_MAP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_MAPS = (G_OPT_V_MAP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_TYPE = (G_OPT_V_MAPS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_TYPE = (G_OPT_V_MAPS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V3_TYPE = (G_OPT_V_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V3_TYPE = (G_OPT_V_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_FIELD = (G_OPT_V3_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_FIELD = (G_OPT_V3_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_FIELD_ALL = (G_OPT_V_FIELD + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_FIELD_ALL = (G_OPT_V_FIELD + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_CAT = (G_OPT_V_FIELD_ALL + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_CAT = (G_OPT_V_FIELD_ALL + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_CATS = (G_OPT_V_CAT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_CATS = (G_OPT_V_CAT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_ID = (G_OPT_V_CATS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_ID = (G_OPT_V_CATS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_V_IDS = (G_OPT_V_ID + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_V_IDS = (G_OPT_V_ID + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_F_INPUT = (G_OPT_V_IDS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_F_INPUT = (G_OPT_V_IDS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_F_BIN_INPUT = (G_OPT_F_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_F_BIN_INPUT = (G_OPT_F_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_F_OUTPUT = (G_OPT_F_BIN_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_F_OUTPUT = (G_OPT_F_BIN_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_F_SEP = (G_OPT_F_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_F_SEP = (G_OPT_F_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_C = (G_OPT_F_SEP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_C = (G_OPT_F_SEP + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_CN = (G_OPT_C + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_CN = (G_OPT_C + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_M_UNITS = (G_OPT_CN + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_M_UNITS = (G_OPT_CN + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_M_DATATYPE = (G_OPT_M_UNITS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_M_DATATYPE = (G_OPT_M_UNITS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_M_MAPSET = (G_OPT_M_DATATYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_M_MAPSET = (G_OPT_M_DATATYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_M_LOCATION = (G_OPT_M_MAPSET + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_M_LOCATION = (G_OPT_M_MAPSET + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_M_DBASE = (G_OPT_M_LOCATION + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_M_DBASE = (G_OPT_M_LOCATION + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_M_COORDS = (G_OPT_M_DBASE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_M_COORDS = (G_OPT_M_DBASE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_M_COLR = (G_OPT_M_COORDS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_M_COLR = (G_OPT_M_COORDS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_M_DIR = (G_OPT_M_COLR + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_M_DIR = (G_OPT_M_COLR + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_M_REGION = (G_OPT_M_DIR + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_M_REGION = (G_OPT_M_DIR + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_M_NULL_VALUE = (G_OPT_M_REGION + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_M_NULL_VALUE = (G_OPT_M_REGION + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_M_NPROCS = (G_OPT_M_NULL_VALUE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_M_NPROCS = (G_OPT_M_NULL_VALUE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STDS_INPUT = (G_OPT_M_NPROCS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STDS_INPUT = (G_OPT_M_NPROCS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STDS_INPUTS = (G_OPT_STDS_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STDS_INPUTS = (G_OPT_STDS_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STDS_OUTPUT = (G_OPT_STDS_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STDS_OUTPUT = (G_OPT_STDS_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STRDS_INPUT = (G_OPT_STDS_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STRDS_INPUT = (G_OPT_STDS_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STRDS_INPUTS = (G_OPT_STRDS_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STRDS_INPUTS = (G_OPT_STRDS_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STRDS_OUTPUT = (G_OPT_STRDS_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STRDS_OUTPUT = (G_OPT_STRDS_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STRDS_OUTPUTS = (G_OPT_STRDS_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STRDS_OUTPUTS = (G_OPT_STRDS_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STR3DS_INPUT = (G_OPT_STRDS_OUTPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STR3DS_INPUT = (G_OPT_STRDS_OUTPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STR3DS_INPUTS = (G_OPT_STR3DS_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STR3DS_INPUTS = (G_OPT_STR3DS_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STR3DS_OUTPUT = (G_OPT_STR3DS_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STR3DS_OUTPUT = (G_OPT_STR3DS_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STVDS_INPUT = (G_OPT_STR3DS_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STVDS_INPUT = (G_OPT_STR3DS_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STVDS_INPUTS = (G_OPT_STVDS_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STVDS_INPUTS = (G_OPT_STVDS_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STVDS_OUTPUT = (G_OPT_STVDS_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STVDS_OUTPUT = (G_OPT_STVDS_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_MAP_INPUT = (G_OPT_STVDS_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_MAP_INPUT = (G_OPT_STVDS_OUTPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_MAP_INPUTS = (G_OPT_MAP_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_MAP_INPUTS = (G_OPT_MAP_INPUT + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_STDS_TYPE = (G_OPT_MAP_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_STDS_TYPE = (G_OPT_MAP_INPUTS + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_MAP_TYPE = (G_OPT_STDS_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_MAP_TYPE = (G_OPT_STDS_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_T_TYPE = (G_OPT_MAP_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_T_TYPE = (G_OPT_MAP_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_T_WHERE = (G_OPT_T_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_T_WHERE = (G_OPT_T_TYPE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-G_OPT_T_SAMPLE = (G_OPT_T_WHERE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+G_OPT_T_SAMPLE = (G_OPT_T_WHERE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-STD_OPT = enum_anon_2 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
+STD_OPT = enum_anon_2 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 331
 
-enum_anon_3 = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 347
+enum_anon_3 = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 347
 
-G_FLG_UNDEFINED = 0 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 347
+G_FLG_UNDEFINED = 0 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 347
 
-G_FLG_V_TABLE = (G_FLG_UNDEFINED + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 347
+G_FLG_V_TABLE = (G_FLG_UNDEFINED + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 347
 
-G_FLG_V_TOPO = (G_FLG_V_TABLE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 347
+G_FLG_V_TOPO = (G_FLG_V_TABLE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 347
 
-STD_FLG = enum_anon_3 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 347
+STD_FLG = enum_anon_3 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 347
 
-enum_rule_type = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
+enum_rule_type = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
 
-RULE_EXCLUSIVE = 0 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
+RULE_EXCLUSIVE = 0 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
 
-RULE_REQUIRED = (RULE_EXCLUSIVE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
+RULE_REQUIRED = (RULE_EXCLUSIVE + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
 
-RULE_REQUIRES = (RULE_REQUIRED + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
+RULE_REQUIRES = (RULE_REQUIRED + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
 
-RULE_REQUIRES_ALL = (RULE_REQUIRES + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
+RULE_REQUIRES_ALL = (RULE_REQUIRES + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
 
-RULE_EXCLUDES = (RULE_REQUIRES_ALL + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
+RULE_EXCLUDES = (RULE_REQUIRES_ALL + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
 
-RULE_COLLECTIVE = (RULE_EXCLUDES + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
+RULE_COLLECTIVE = (RULE_EXCLUDES + 1) # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 350
 
-enum_anon_4 = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
+enum_anon_4 = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
 
-G_ELEMENT_RASTER = 1 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
+G_ELEMENT_RASTER = 1 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
 
-G_ELEMENT_RASTER3D = 2 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
+G_ELEMENT_RASTER3D = 2 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
 
-G_ELEMENT_VECTOR = 3 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
+G_ELEMENT_VECTOR = 3 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
 
-G_ELEMENT_ASCIIVECTOR = 4 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
+G_ELEMENT_ASCIIVECTOR = 4 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
 
-G_ELEMENT_LABEL = 5 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
+G_ELEMENT_LABEL = 5 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
 
-G_ELEMENT_REGION = 6 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
+G_ELEMENT_REGION = 6 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
 
-G_ELEMENT_GROUP = 7 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
+G_ELEMENT_GROUP = 7 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 397
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 413
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 413
 class struct_Cell_head(Structure):
     pass
 
@@ -359,7 +359,7 @@ struct_Cell_head._fields_ = [
     ('bottom', c_double),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 475
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 475
 class struct_G_3dview(Structure):
     pass
 
@@ -414,7 +414,7 @@ struct_G_3dview._fields_ = [
     ('vwin', struct_Cell_head),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 502
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 502
 class struct_Key_Value(Structure):
     pass
 
@@ -431,7 +431,7 @@ struct_Key_Value._fields_ = [
     ('value', POINTER(POINTER(c_char))),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 532
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 532
 class struct_Option(Structure):
     pass
 
@@ -480,7 +480,7 @@ struct_Option._fields_ = [
     ('count', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 561
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 561
 class struct_Flag(Structure):
     pass
 
@@ -505,7 +505,7 @@ struct_Flag._fields_ = [
     ('next_flag', POINTER(struct_Flag)),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 578
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 578
 class struct_GModule(Structure):
     pass
 
@@ -524,7 +524,7 @@ struct_GModule._fields_ = [
     ('verbose', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 588
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 588
 class struct_TimeStamp(Structure):
     pass
 
@@ -537,7 +537,7 @@ struct_TimeStamp._fields_ = [
     ('count', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 594
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 594
 class struct_Counter(Structure):
     pass
 
@@ -548,7 +548,7 @@ struct_Counter._fields_ = [
     ('value', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 598
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 598
 class struct_Popen(Structure):
     pass
 
@@ -561,17 +561,17 @@ struct_Popen._fields_ = [
     ('pid', c_int),
 ]
 
-CELL = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 603
+CELL = c_int # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 603
 
-DCELL = c_double # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 604
+DCELL = c_double # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 604
 
-FCELL = c_float # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 605
+FCELL = c_float # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 605
 
-grass_int64 = c_int64 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 612
+grass_int64 = c_int64 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 612
 
-LCELL = grass_int64 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 622
+LCELL = grass_int64 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 622
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 624
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 624
 class struct__Color_Value_(Structure):
     pass
 
@@ -588,7 +588,7 @@ struct__Color_Value_._fields_ = [
     ('blu', c_ubyte),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 632
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 632
 class struct__Color_Rule_(Structure):
     pass
 
@@ -605,7 +605,7 @@ struct__Color_Rule_._fields_ = [
     ('prev', POINTER(struct__Color_Rule_)),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 644
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 644
 class struct_anon_5(Structure):
     pass
 
@@ -626,7 +626,7 @@ struct_anon_5._fields_ = [
     ('active', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 654
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 654
 class struct_anon_6(Structure):
     pass
 
@@ -643,7 +643,7 @@ struct_anon_6._fields_ = [
     ('active', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 639
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 639
 class struct__Color_Info_(Structure):
     pass
 
@@ -664,7 +664,7 @@ struct__Color_Info_._fields_ = [
     ('max', DCELL),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 666
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 666
 class struct_Colors(Structure):
     pass
 
@@ -707,7 +707,7 @@ struct_Colors._fields_ = [
     ('organizing', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 690
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 690
 class struct_ilist(Structure):
     pass
 
@@ -722,11 +722,11 @@ struct_ilist._fields_ = [
     ('alloc_values', c_int),
 ]
 
-_ino_t = c_ushort # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/sys/types.h: 43
+_ino_t = c_ushort # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/sys/types.h: 43
 
-_dev_t = c_uint # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/sys/types.h: 51
+_dev_t = c_uint # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/sys/types.h: 51
 
-# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h: 83
+# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/_mingw_stat64.h: 83
 class struct__stat64(Structure):
     pass
 
@@ -757,7 +757,7 @@ struct__stat64._fields_ = [
     ('st_ctime', __time64_t),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 95
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 95
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_adjust_Cell_head'):
         continue
@@ -766,7 +766,7 @@ for _lib in six.itervalues(_libs):
     G_adjust_Cell_head.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 96
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 96
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_adjust_Cell_head3'):
         continue
@@ -775,7 +775,7 @@ for _lib in six.itervalues(_libs):
     G_adjust_Cell_head3.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 97
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 97
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_adjust_window_ll'):
         continue
@@ -784,7 +784,7 @@ for _lib in six.itervalues(_libs):
     G_adjust_window_ll.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 103
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 103
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__malloc'):
         continue
@@ -794,7 +794,7 @@ for _lib in six.itervalues(_libs):
     G__malloc.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 104
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 104
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__calloc'):
         continue
@@ -804,7 +804,7 @@ for _lib in six.itervalues(_libs):
     G__calloc.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 105
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 105
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__realloc'):
         continue
@@ -814,7 +814,7 @@ for _lib in six.itervalues(_libs):
     G__realloc.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 106
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 106
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free'):
         continue
@@ -823,7 +823,7 @@ for _lib in six.itervalues(_libs):
     G_free.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 122
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 122
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_begin_cell_area_calculations'):
         continue
@@ -832,7 +832,7 @@ for _lib in six.itervalues(_libs):
     G_begin_cell_area_calculations.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 123
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 123
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_area_of_cell_at_row'):
         continue
@@ -841,7 +841,7 @@ for _lib in six.itervalues(_libs):
     G_area_of_cell_at_row.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 124
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 124
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_begin_polygon_area_calculations'):
         continue
@@ -850,7 +850,7 @@ for _lib in six.itervalues(_libs):
     G_begin_polygon_area_calculations.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 125
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 125
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_area_of_polygon'):
         continue
@@ -859,7 +859,7 @@ for _lib in six.itervalues(_libs):
     G_area_of_polygon.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 128
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 128
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_begin_zone_area_on_ellipsoid'):
         continue
@@ -868,7 +868,7 @@ for _lib in six.itervalues(_libs):
     G_begin_zone_area_on_ellipsoid.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 129
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 129
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_darea0_on_ellipsoid'):
         continue
@@ -877,7 +877,7 @@ for _lib in six.itervalues(_libs):
     G_darea0_on_ellipsoid.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 130
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 130
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_area_for_zone_on_ellipsoid'):
         continue
@@ -886,7 +886,7 @@ for _lib in six.itervalues(_libs):
     G_area_for_zone_on_ellipsoid.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 133
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 133
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_begin_ellipsoid_polygon_area'):
         continue
@@ -895,7 +895,7 @@ for _lib in six.itervalues(_libs):
     G_begin_ellipsoid_polygon_area.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 134
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 134
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ellipsoid_polygon_area'):
         continue
@@ -904,7 +904,7 @@ for _lib in six.itervalues(_libs):
     G_ellipsoid_polygon_area.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 137
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 137
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_planimetric_polygon_area'):
         continue
@@ -913,7 +913,7 @@ for _lib in six.itervalues(_libs):
     G_planimetric_polygon_area.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 140
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 140
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_begin_zone_area_on_sphere'):
         continue
@@ -922,7 +922,7 @@ for _lib in six.itervalues(_libs):
     G_begin_zone_area_on_sphere.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 141
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 141
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_darea0_on_sphere'):
         continue
@@ -931,7 +931,7 @@ for _lib in six.itervalues(_libs):
     G_darea0_on_sphere.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 142
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 142
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_area_for_zone_on_sphere'):
         continue
@@ -940,7 +940,7 @@ for _lib in six.itervalues(_libs):
     G_area_for_zone_on_sphere.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 145
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 145
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ascii_check'):
         continue
@@ -949,7 +949,7 @@ for _lib in six.itervalues(_libs):
     G_ascii_check.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 158
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 158
 for _lib in _libs.values():
     if hasattr(_lib, 'G_asprintf'):
         _func = _lib.G_asprintf
@@ -958,7 +958,7 @@ for _lib in _libs.values():
         _argtypes = [POINTER(POINTER(c_char)), String]
         G_asprintf = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 161
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 161
 for _lib in _libs.values():
     if hasattr(_lib, 'G_rasprintf'):
         _func = _lib.G_rasprintf
@@ -967,7 +967,7 @@ for _lib in _libs.values():
         _argtypes = [POINTER(POINTER(c_char)), POINTER(c_size_t), String]
         G_rasprintf = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 165
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 165
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_basename'):
         continue
@@ -980,7 +980,7 @@ for _lib in six.itervalues(_libs):
         G_basename.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 166
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 166
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_num_decimals'):
         continue
@@ -989,7 +989,7 @@ for _lib in six.itervalues(_libs):
     G_get_num_decimals.restype = c_size_t
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 167
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 167
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_double_to_basename_format'):
         continue
@@ -1002,7 +1002,7 @@ for _lib in six.itervalues(_libs):
         G_double_to_basename_format.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 168
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 168
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_basename_separator'):
         continue
@@ -1015,7 +1015,7 @@ for _lib in six.itervalues(_libs):
         G_get_basename_separator.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 169
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 169
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_join_basename_strings'):
         continue
@@ -1028,7 +1028,7 @@ for _lib in six.itervalues(_libs):
         G_join_basename_strings.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 170
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 170
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_generate_basename'):
         continue
@@ -1041,7 +1041,7 @@ for _lib in six.itervalues(_libs):
         G_generate_basename.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 173
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 173
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_bresenham_line'):
         continue
@@ -1050,7 +1050,7 @@ for _lib in six.itervalues(_libs):
     G_bresenham_line.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 176
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 176
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_clicker'):
         continue
@@ -1059,7 +1059,7 @@ for _lib in six.itervalues(_libs):
     G_clicker.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 179
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 179
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_color_rules_options'):
         continue
@@ -1072,7 +1072,7 @@ for _lib in six.itervalues(_libs):
         G_color_rules_options.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 180
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 180
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_color_rules_descriptions'):
         continue
@@ -1085,7 +1085,7 @@ for _lib in six.itervalues(_libs):
         G_color_rules_descriptions.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 181
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 181
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_color_rules_description_type'):
         continue
@@ -1098,7 +1098,7 @@ for _lib in six.itervalues(_libs):
         G_color_rules_description_type.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 182
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 182
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_list_color_rules'):
         continue
@@ -1107,7 +1107,7 @@ for _lib in six.itervalues(_libs):
     G_list_color_rules.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 183
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 183
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_list_color_rules_description_type'):
         continue
@@ -1116,7 +1116,7 @@ for _lib in six.itervalues(_libs):
     G_list_color_rules_description_type.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 184
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 184
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_color_rule'):
         continue
@@ -1125,7 +1125,7 @@ for _lib in six.itervalues(_libs):
     G_find_color_rule.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 187
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 187
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_num_standard_colors'):
         continue
@@ -1134,7 +1134,7 @@ for _lib in six.itervalues(_libs):
     G_num_standard_colors.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 190
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 190
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_insert_commas'):
         continue
@@ -1143,7 +1143,7 @@ for _lib in six.itervalues(_libs):
     G_insert_commas.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 191
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 191
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_remove_commas'):
         continue
@@ -1152,7 +1152,7 @@ for _lib in six.itervalues(_libs):
     G_remove_commas.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 194
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 194
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_compressor_number'):
         continue
@@ -1161,7 +1161,7 @@ for _lib in six.itervalues(_libs):
     G_compressor_number.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 195
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 195
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_compressor_name'):
         continue
@@ -1174,7 +1174,7 @@ for _lib in six.itervalues(_libs):
         G_compressor_name.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 196
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 196
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_default_compressor'):
         continue
@@ -1183,7 +1183,7 @@ for _lib in six.itervalues(_libs):
     G_default_compressor.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 197
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 197
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_check_compressor'):
         continue
@@ -1192,7 +1192,7 @@ for _lib in six.itervalues(_libs):
     G_check_compressor.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 198
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 198
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_write_compressed'):
         continue
@@ -1201,7 +1201,7 @@ for _lib in six.itervalues(_libs):
     G_write_compressed.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 199
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 199
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_write_unompressed'):
         continue
@@ -1210,7 +1210,7 @@ for _lib in six.itervalues(_libs):
     G_write_unompressed.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 200
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 200
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_read_compressed'):
         continue
@@ -1219,7 +1219,7 @@ for _lib in six.itervalues(_libs):
     G_read_compressed.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 201
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 201
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_compress_bound'):
         continue
@@ -1228,7 +1228,7 @@ for _lib in six.itervalues(_libs):
     G_compress_bound.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 202
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 202
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_compress'):
         continue
@@ -1237,7 +1237,7 @@ for _lib in six.itervalues(_libs):
     G_compress.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 203
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 203
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_expand'):
         continue
@@ -1246,7 +1246,7 @@ for _lib in six.itervalues(_libs):
     G_expand.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 207
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 207
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_no_compress'):
         continue
@@ -1255,7 +1255,7 @@ for _lib in six.itervalues(_libs):
     G_no_compress.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 210
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 210
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_no_expand'):
         continue
@@ -1264,7 +1264,7 @@ for _lib in six.itervalues(_libs):
     G_no_expand.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 215
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 215
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_rle_compress'):
         continue
@@ -1273,7 +1273,7 @@ for _lib in six.itervalues(_libs):
     G_rle_compress.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 218
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 218
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_rle_expand'):
         continue
@@ -1282,7 +1282,7 @@ for _lib in six.itervalues(_libs):
     G_rle_expand.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 223
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 223
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_zlib_compress'):
         continue
@@ -1291,7 +1291,7 @@ for _lib in six.itervalues(_libs):
     G_zlib_compress.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 226
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 226
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_zlib_expand'):
         continue
@@ -1300,7 +1300,7 @@ for _lib in six.itervalues(_libs):
     G_zlib_expand.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 231
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 231
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lz4_compress'):
         continue
@@ -1309,7 +1309,7 @@ for _lib in six.itervalues(_libs):
     G_lz4_compress.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 234
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 234
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lz4_expand'):
         continue
@@ -1318,7 +1318,7 @@ for _lib in six.itervalues(_libs):
     G_lz4_expand.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 239
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 239
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_bz2_compress'):
         continue
@@ -1327,7 +1327,7 @@ for _lib in six.itervalues(_libs):
     G_bz2_compress.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 242
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 242
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_bz2_expand'):
         continue
@@ -1336,7 +1336,7 @@ for _lib in six.itervalues(_libs):
     G_bz2_expand.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 247
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 247
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_zstd_compress'):
         continue
@@ -1345,7 +1345,7 @@ for _lib in six.itervalues(_libs):
     G_zstd_compress.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 250
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 250
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_zstd_expand'):
         continue
@@ -1354,7 +1354,7 @@ for _lib in six.itervalues(_libs):
     G_zstd_expand.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 256
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 256
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_recursive_copy'):
         continue
@@ -1363,7 +1363,7 @@ for _lib in six.itervalues(_libs):
     G_recursive_copy.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 259
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 259
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_copy_file'):
         continue
@@ -1372,7 +1372,7 @@ for _lib in six.itervalues(_libs):
     G_copy_file.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 262
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 262
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_is_initialized'):
         continue
@@ -1381,7 +1381,7 @@ for _lib in six.itervalues(_libs):
     G_is_initialized.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 263
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 263
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_initialize_done'):
         continue
@@ -1390,7 +1390,7 @@ for _lib in six.itervalues(_libs):
     G_initialize_done.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 264
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 264
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_init_counter'):
         continue
@@ -1399,7 +1399,7 @@ for _lib in six.itervalues(_libs):
     G_init_counter.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 265
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 265
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_counter_next'):
         continue
@@ -1408,7 +1408,7 @@ for _lib in six.itervalues(_libs):
     G_counter_next.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 268
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 268
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_date'):
         continue
@@ -1417,7 +1417,7 @@ for _lib in six.itervalues(_libs):
     G_date.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 271
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 271
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_datum_by_name'):
         continue
@@ -1426,7 +1426,7 @@ for _lib in six.itervalues(_libs):
     G_get_datum_by_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 272
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 272
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_datum_name'):
         continue
@@ -1435,7 +1435,7 @@ for _lib in six.itervalues(_libs):
     G_datum_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 273
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 273
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_datum_description'):
         continue
@@ -1444,7 +1444,7 @@ for _lib in six.itervalues(_libs):
     G_datum_description.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 274
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 274
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_datum_ellipsoid'):
         continue
@@ -1453,7 +1453,7 @@ for _lib in six.itervalues(_libs):
     G_datum_ellipsoid.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 275
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 275
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_datumparams_from_projinfo'):
         continue
@@ -1462,7 +1462,7 @@ for _lib in six.itervalues(_libs):
     G_get_datumparams_from_projinfo.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 276
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 276
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_read_datum_table'):
         continue
@@ -1471,7 +1471,7 @@ for _lib in six.itervalues(_libs):
     G_read_datum_table.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 280
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 280
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_init_debug'):
         continue
@@ -1480,7 +1480,7 @@ for _lib in six.itervalues(_libs):
     G_init_debug.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 281
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 281
 for _lib in _libs.values():
     if hasattr(_lib, 'G_debug'):
         _func = _lib.G_debug
@@ -1489,7 +1489,7 @@ for _lib in _libs.values():
         _argtypes = [c_int, String]
         G_debug = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 284
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 284
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_begin_distance_calculations'):
         continue
@@ -1498,7 +1498,7 @@ for _lib in six.itervalues(_libs):
     G_begin_distance_calculations.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 285
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 285
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_distance'):
         continue
@@ -1507,7 +1507,7 @@ for _lib in six.itervalues(_libs):
     G_distance.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 286
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 286
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_distance_between_line_segments'):
         continue
@@ -1516,7 +1516,7 @@ for _lib in six.itervalues(_libs):
     G_distance_between_line_segments.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 288
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 288
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_distance_point_to_line_segment'):
         continue
@@ -1525,7 +1525,7 @@ for _lib in six.itervalues(_libs):
     G_distance_point_to_line_segment.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 292
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 292
 for _lib in _libs.values():
     if hasattr(_lib, 'G_done_msg'):
         _func = _lib.G_done_msg
@@ -1534,7 +1534,7 @@ for _lib in _libs.values():
         _argtypes = [String]
         G_done_msg = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 295
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 295
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_is_little_endian'):
         continue
@@ -1543,7 +1543,7 @@ for _lib in six.itervalues(_libs):
     G_is_little_endian.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 298
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 298
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_init_env'):
         continue
@@ -1552,7 +1552,7 @@ for _lib in six.itervalues(_libs):
     G_init_env.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 299
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 299
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_getenv'):
         continue
@@ -1561,7 +1561,7 @@ for _lib in six.itervalues(_libs):
     G_getenv.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 300
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 300
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_getenv2'):
         continue
@@ -1570,7 +1570,7 @@ for _lib in six.itervalues(_libs):
     G_getenv2.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 301
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 301
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_getenv_nofatal'):
         continue
@@ -1579,7 +1579,7 @@ for _lib in six.itervalues(_libs):
     G_getenv_nofatal.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 302
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 302
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_getenv_nofatal2'):
         continue
@@ -1588,7 +1588,7 @@ for _lib in six.itervalues(_libs):
     G_getenv_nofatal2.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 303
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 303
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_setenv'):
         continue
@@ -1597,7 +1597,7 @@ for _lib in six.itervalues(_libs):
     G_setenv.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 304
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 304
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_setenv2'):
         continue
@@ -1606,7 +1606,7 @@ for _lib in six.itervalues(_libs):
     G_setenv2.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 305
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 305
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_setenv_nogisrc'):
         continue
@@ -1615,7 +1615,7 @@ for _lib in six.itervalues(_libs):
     G_setenv_nogisrc.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 306
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 306
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_setenv_nogisrc2'):
         continue
@@ -1624,7 +1624,7 @@ for _lib in six.itervalues(_libs):
     G_setenv_nogisrc2.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 307
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 307
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_unsetenv'):
         continue
@@ -1633,7 +1633,7 @@ for _lib in six.itervalues(_libs):
     G_unsetenv.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 308
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 308
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_unsetenv2'):
         continue
@@ -1642,7 +1642,7 @@ for _lib in six.itervalues(_libs):
     G_unsetenv2.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 309
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 309
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_env_name'):
         continue
@@ -1651,7 +1651,7 @@ for _lib in six.itervalues(_libs):
     G_get_env_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 310
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 310
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_gisrc_mode'):
         continue
@@ -1660,7 +1660,7 @@ for _lib in six.itervalues(_libs):
     G_set_gisrc_mode.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 311
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 311
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_gisrc_mode'):
         continue
@@ -1669,7 +1669,7 @@ for _lib in six.itervalues(_libs):
     G_get_gisrc_mode.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 312
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 312
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_create_alt_env'):
         continue
@@ -1678,7 +1678,7 @@ for _lib in six.itervalues(_libs):
     G_create_alt_env.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 313
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 313
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_switch_env'):
         continue
@@ -1687,7 +1687,7 @@ for _lib in six.itervalues(_libs):
     G_switch_env.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 314
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 314
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__read_mapset_env'):
         continue
@@ -1696,7 +1696,7 @@ for _lib in six.itervalues(_libs):
     G__read_mapset_env.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 315
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 315
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__read_gisrc_env'):
         continue
@@ -1705,7 +1705,7 @@ for _lib in six.itervalues(_libs):
     G__read_gisrc_env.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 322
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 322
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_info_format'):
         continue
@@ -1714,7 +1714,7 @@ for _lib in six.itervalues(_libs):
     G_info_format.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 323
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 323
 for _lib in _libs.values():
     if hasattr(_lib, 'G_message'):
         _func = _lib.G_message
@@ -1723,7 +1723,7 @@ for _lib in _libs.values():
         _argtypes = [String]
         G_message = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 324
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 324
 for _lib in _libs.values():
     if hasattr(_lib, 'G_verbose_message'):
         _func = _lib.G_verbose_message
@@ -1732,7 +1732,7 @@ for _lib in _libs.values():
         _argtypes = [String]
         G_verbose_message = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 326
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 326
 for _lib in _libs.values():
     if hasattr(_lib, 'G_important_message'):
         _func = _lib.G_important_message
@@ -1741,7 +1741,7 @@ for _lib in _libs.values():
         _argtypes = [String]
         G_important_message = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 328
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 328
 for _lib in _libs.values():
     if hasattr(_lib, 'G_fatal_error'):
         _func = _lib.G_fatal_error
@@ -1750,7 +1750,7 @@ for _lib in _libs.values():
         _argtypes = [String]
         G_fatal_error = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 330
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 330
 for _lib in _libs.values():
     if hasattr(_lib, 'G_warning'):
         _func = _lib.G_warning
@@ -1759,7 +1759,7 @@ for _lib in _libs.values():
         _argtypes = [String]
         G_warning = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 331
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 331
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_suppress_warnings'):
         continue
@@ -1768,7 +1768,7 @@ for _lib in six.itervalues(_libs):
     G_suppress_warnings.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 332
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 332
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_sleep_on_error'):
         continue
@@ -1777,7 +1777,7 @@ for _lib in six.itervalues(_libs):
     G_sleep_on_error.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 333
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 333
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_error_routine'):
         continue
@@ -1786,7 +1786,7 @@ for _lib in six.itervalues(_libs):
     G_set_error_routine.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 334
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 334
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_unset_error_routine'):
         continue
@@ -1795,7 +1795,7 @@ for _lib in six.itervalues(_libs):
     G_unset_error_routine.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 335
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 335
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_init_logging'):
         continue
@@ -1804,7 +1804,7 @@ for _lib in six.itervalues(_libs):
     G_init_logging.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 338
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 338
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_file_name'):
         continue
@@ -1817,7 +1817,7 @@ for _lib in six.itervalues(_libs):
         G_file_name.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 339
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 339
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_file_name_misc'):
         continue
@@ -1830,7 +1830,7 @@ for _lib in six.itervalues(_libs):
         G_file_name_misc.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 341
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 341
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_file_name_tmp'):
         continue
@@ -1843,7 +1843,7 @@ for _lib in six.itervalues(_libs):
         G_file_name_tmp.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 344
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 344
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_file'):
         continue
@@ -1852,7 +1852,7 @@ for _lib in six.itervalues(_libs):
     G_find_file.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 345
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 345
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_file2'):
         continue
@@ -1861,7 +1861,7 @@ for _lib in six.itervalues(_libs):
     G_find_file2.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 346
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 346
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_file_misc'):
         continue
@@ -1870,7 +1870,7 @@ for _lib in six.itervalues(_libs):
     G_find_file_misc.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 347
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 347
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_file2_misc'):
         continue
@@ -1879,7 +1879,7 @@ for _lib in six.itervalues(_libs):
     G_find_file2_misc.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 351
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 351
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_etc'):
         continue
@@ -1892,7 +1892,7 @@ for _lib in six.itervalues(_libs):
         G_find_etc.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 354
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 354
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_raster'):
         continue
@@ -1901,7 +1901,7 @@ for _lib in six.itervalues(_libs):
     G_find_raster.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 355
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 355
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_raster2'):
         continue
@@ -1910,7 +1910,7 @@ for _lib in six.itervalues(_libs):
     G_find_raster2.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 358
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 358
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_raster3d'):
         continue
@@ -1919,7 +1919,7 @@ for _lib in six.itervalues(_libs):
     G_find_raster3d.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 361
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 361
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_vector'):
         continue
@@ -1928,7 +1928,7 @@ for _lib in six.itervalues(_libs):
     G_find_vector.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 362
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 362
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_vector2'):
         continue
@@ -1937,7 +1937,7 @@ for _lib in six.itervalues(_libs):
     G_find_vector2.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 365
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 365
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_begin_geodesic_equation'):
         continue
@@ -1946,7 +1946,7 @@ for _lib in six.itervalues(_libs):
     G_begin_geodesic_equation.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 366
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 366
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_geodesic_lat_from_lon'):
         continue
@@ -1955,7 +1955,7 @@ for _lib in six.itervalues(_libs):
     G_geodesic_lat_from_lon.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 369
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 369
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_begin_geodesic_distance'):
         continue
@@ -1964,7 +1964,7 @@ for _lib in six.itervalues(_libs):
     G_begin_geodesic_distance.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 370
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 370
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_geodesic_distance_lat1'):
         continue
@@ -1973,7 +1973,7 @@ for _lib in six.itervalues(_libs):
     G_set_geodesic_distance_lat1.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 371
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 371
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_geodesic_distance_lat2'):
         continue
@@ -1982,7 +1982,7 @@ for _lib in six.itervalues(_libs):
     G_set_geodesic_distance_lat2.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 372
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 372
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_geodesic_distance_lon_to_lon'):
         continue
@@ -1991,7 +1991,7 @@ for _lib in six.itervalues(_libs):
     G_geodesic_distance_lon_to_lon.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 373
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 373
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_geodesic_distance'):
         continue
@@ -2000,7 +2000,7 @@ for _lib in six.itervalues(_libs):
     G_geodesic_distance.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 376
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 376
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_ellipsoid_parameters'):
         continue
@@ -2009,7 +2009,7 @@ for _lib in six.itervalues(_libs):
     G_get_ellipsoid_parameters.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 377
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 377
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_spheroid_by_name'):
         continue
@@ -2018,7 +2018,7 @@ for _lib in six.itervalues(_libs):
     G_get_spheroid_by_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 378
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 378
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_ellipsoid_by_name'):
         continue
@@ -2027,7 +2027,7 @@ for _lib in six.itervalues(_libs):
     G_get_ellipsoid_by_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 379
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 379
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ellipsoid_name'):
         continue
@@ -2036,7 +2036,7 @@ for _lib in six.itervalues(_libs):
     G_ellipsoid_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 380
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 380
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ellipsoid_description'):
         continue
@@ -2045,7 +2045,7 @@ for _lib in six.itervalues(_libs):
     G_ellipsoid_description.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 381
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 381
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_read_ellipsoid_table'):
         continue
@@ -2054,7 +2054,7 @@ for _lib in six.itervalues(_libs):
     G_read_ellipsoid_table.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 384
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 384
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_projunits'):
         continue
@@ -2063,7 +2063,7 @@ for _lib in six.itervalues(_libs):
     G_get_projunits.restype = POINTER(struct_Key_Value)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 385
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 385
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_projinfo'):
         continue
@@ -2072,7 +2072,7 @@ for _lib in six.itervalues(_libs):
     G_get_projinfo.restype = POINTER(struct_Key_Value)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 386
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 386
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_projepsg'):
         continue
@@ -2081,7 +2081,7 @@ for _lib in six.itervalues(_libs):
     G_get_projepsg.restype = POINTER(struct_Key_Value)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 387
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 387
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_projwkt'):
         continue
@@ -2094,7 +2094,7 @@ for _lib in six.itervalues(_libs):
         G_get_projwkt.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 388
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 388
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_projsrid'):
         continue
@@ -2107,7 +2107,7 @@ for _lib in six.itervalues(_libs):
         G_get_projsrid.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 391
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 391
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_window'):
         continue
@@ -2116,7 +2116,7 @@ for _lib in six.itervalues(_libs):
     G_get_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 392
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 392
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_default_window'):
         continue
@@ -2125,7 +2125,7 @@ for _lib in six.itervalues(_libs):
     G_get_default_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 393
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 393
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_element_window'):
         continue
@@ -2134,7 +2134,7 @@ for _lib in six.itervalues(_libs):
     G_get_element_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 397
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 397
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_getl'):
         continue
@@ -2143,7 +2143,7 @@ for _lib in six.itervalues(_libs):
     G_getl.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 398
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 398
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_getl2'):
         continue
@@ -2152,7 +2152,7 @@ for _lib in six.itervalues(_libs):
     G_getl2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 401
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 401
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_gisbase'):
         continue
@@ -2161,7 +2161,7 @@ for _lib in six.itervalues(_libs):
     G_gisbase.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 404
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 404
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_gisdbase'):
         continue
@@ -2170,7 +2170,7 @@ for _lib in six.itervalues(_libs):
     G_gisdbase.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 407
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 407
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__gisinit'):
         continue
@@ -2179,7 +2179,7 @@ for _lib in six.itervalues(_libs):
     G__gisinit.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 408
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 408
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__no_gisinit'):
         continue
@@ -2188,7 +2188,7 @@ for _lib in six.itervalues(_libs):
     G__no_gisinit.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 409
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 409
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_init_all'):
         continue
@@ -2197,7 +2197,7 @@ for _lib in six.itervalues(_libs):
     G_init_all.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 412
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 412
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_add_error_handler'):
         continue
@@ -2206,7 +2206,7 @@ for _lib in six.itervalues(_libs):
     G_add_error_handler.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 413
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 413
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_remove_error_handler'):
         continue
@@ -2215,7 +2215,7 @@ for _lib in six.itervalues(_libs):
     G_remove_error_handler.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 416
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 416
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_home'):
         continue
@@ -2224,7 +2224,7 @@ for _lib in six.itervalues(_libs):
     G_home.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 417
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 417
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_config_path'):
         continue
@@ -2233,7 +2233,7 @@ for _lib in six.itervalues(_libs):
     G_config_path.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 420
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 420
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_init_ilist'):
         continue
@@ -2242,7 +2242,7 @@ for _lib in six.itervalues(_libs):
     G_init_ilist.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 421
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 421
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free_ilist'):
         continue
@@ -2251,7 +2251,7 @@ for _lib in six.itervalues(_libs):
     G_free_ilist.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 422
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 422
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_new_ilist'):
         continue
@@ -2260,7 +2260,7 @@ for _lib in six.itervalues(_libs):
     G_new_ilist.restype = POINTER(struct_ilist)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 423
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 423
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ilist_add'):
         continue
@@ -2269,7 +2269,7 @@ for _lib in six.itervalues(_libs):
     G_ilist_add.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 426
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 426
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_intersect_line_segments'):
         continue
@@ -2278,7 +2278,7 @@ for _lib in six.itervalues(_libs):
     G_intersect_line_segments.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 431
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 431
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_is_gisbase'):
         continue
@@ -2287,7 +2287,7 @@ for _lib in six.itervalues(_libs):
     G_is_gisbase.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 432
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 432
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_is_location'):
         continue
@@ -2296,7 +2296,7 @@ for _lib in six.itervalues(_libs):
     G_is_location.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 433
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 433
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_is_mapset'):
         continue
@@ -2305,7 +2305,7 @@ for _lib in six.itervalues(_libs):
     G_is_mapset.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 436
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 436
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_create_key_value'):
         continue
@@ -2314,7 +2314,7 @@ for _lib in six.itervalues(_libs):
     G_create_key_value.restype = POINTER(struct_Key_Value)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 437
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 437
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_key_value'):
         continue
@@ -2323,7 +2323,7 @@ for _lib in six.itervalues(_libs):
     G_set_key_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 438
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 438
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_find_key_value'):
         continue
@@ -2332,7 +2332,7 @@ for _lib in six.itervalues(_libs):
     G_find_key_value.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 439
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 439
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free_key_value'):
         continue
@@ -2341,7 +2341,7 @@ for _lib in six.itervalues(_libs):
     G_free_key_value.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 442
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 442
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fwrite_key_value'):
         continue
@@ -2350,7 +2350,7 @@ for _lib in six.itervalues(_libs):
     G_fwrite_key_value.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 443
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 443
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fread_key_value'):
         continue
@@ -2359,7 +2359,7 @@ for _lib in six.itervalues(_libs):
     G_fread_key_value.restype = POINTER(struct_Key_Value)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 446
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 446
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_write_key_value_file'):
         continue
@@ -2368,7 +2368,7 @@ for _lib in six.itervalues(_libs):
     G_write_key_value_file.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 447
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 447
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_read_key_value_file'):
         continue
@@ -2377,7 +2377,7 @@ for _lib in six.itervalues(_libs):
     G_read_key_value_file.restype = POINTER(struct_Key_Value)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 450
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 450
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_update_key_value_file'):
         continue
@@ -2386,7 +2386,7 @@ for _lib in six.itervalues(_libs):
     G_update_key_value_file.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 451
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 451
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lookup_key_value_from_file'):
         continue
@@ -2395,7 +2395,7 @@ for _lib in six.itervalues(_libs):
     G_lookup_key_value_from_file.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 454
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 454
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_legal_filename'):
         continue
@@ -2404,7 +2404,7 @@ for _lib in six.itervalues(_libs):
     G_legal_filename.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 455
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 455
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_check_input_output_name'):
         continue
@@ -2413,7 +2413,7 @@ for _lib in six.itervalues(_libs):
     G_check_input_output_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 458
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 458
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_distance_to_line_tolerance'):
         continue
@@ -2422,7 +2422,7 @@ for _lib in six.itervalues(_libs):
     G_set_distance_to_line_tolerance.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 459
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 459
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_distance2_point_to_line'):
         continue
@@ -2431,7 +2431,7 @@ for _lib in six.itervalues(_libs):
     G_distance2_point_to_line.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 463
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 463
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_list_element'):
         continue
@@ -2440,7 +2440,7 @@ for _lib in six.itervalues(_libs):
     G_list_element.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 465
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 465
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_list'):
         continue
@@ -2449,7 +2449,7 @@ for _lib in six.itervalues(_libs):
     G_list.restype = POINTER(POINTER(c_char))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 466
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 466
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free_list'):
         continue
@@ -2458,7 +2458,7 @@ for _lib in six.itervalues(_libs):
     G_free_list.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 469
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 469
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lat_format'):
         continue
@@ -2467,7 +2467,7 @@ for _lib in six.itervalues(_libs):
     G_lat_format.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 470
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 470
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lat_format_string'):
         continue
@@ -2476,7 +2476,7 @@ for _lib in six.itervalues(_libs):
     G_lat_format_string.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 471
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 471
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lon_format'):
         continue
@@ -2485,7 +2485,7 @@ for _lib in six.itervalues(_libs):
     G_lon_format.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 472
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 472
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lon_format_string'):
         continue
@@ -2494,7 +2494,7 @@ for _lib in six.itervalues(_libs):
     G_lon_format_string.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 473
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 473
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_llres_format'):
         continue
@@ -2503,7 +2503,7 @@ for _lib in six.itervalues(_libs):
     G_llres_format.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 474
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 474
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_llres_format_string'):
         continue
@@ -2512,7 +2512,7 @@ for _lib in six.itervalues(_libs):
     G_llres_format_string.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 475
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 475
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lat_parts'):
         continue
@@ -2521,7 +2521,7 @@ for _lib in six.itervalues(_libs):
     G_lat_parts.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 476
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 476
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lon_parts'):
         continue
@@ -2530,7 +2530,7 @@ for _lib in six.itervalues(_libs):
     G_lon_parts.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 479
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 479
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lat_scan'):
         continue
@@ -2539,7 +2539,7 @@ for _lib in six.itervalues(_libs):
     G_lat_scan.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 480
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 480
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lon_scan'):
         continue
@@ -2548,7 +2548,7 @@ for _lib in six.itervalues(_libs):
     G_lon_scan.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 481
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 481
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_llres_scan'):
         continue
@@ -2557,7 +2557,7 @@ for _lib in six.itervalues(_libs):
     G_llres_scan.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 484
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 484
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_location'):
         continue
@@ -2566,7 +2566,7 @@ for _lib in six.itervalues(_libs):
     G_location.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 485
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 485
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_location_path'):
         continue
@@ -2579,7 +2579,7 @@ for _lib in six.itervalues(_libs):
         G_location_path.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 488
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 488
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_srand48'):
         continue
@@ -2588,7 +2588,7 @@ for _lib in six.itervalues(_libs):
     G_srand48.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 489
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 489
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_srand48_auto'):
         continue
@@ -2597,7 +2597,7 @@ for _lib in six.itervalues(_libs):
     G_srand48_auto.restype = c_long
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 490
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 490
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lrand48'):
         continue
@@ -2606,7 +2606,7 @@ for _lib in six.itervalues(_libs):
     G_lrand48.restype = c_long
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 491
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 491
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_mrand48'):
         continue
@@ -2615,7 +2615,7 @@ for _lib in six.itervalues(_libs):
     G_mrand48.restype = c_long
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 492
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 492
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_drand48'):
         continue
@@ -2624,7 +2624,7 @@ for _lib in six.itervalues(_libs):
     G_drand48.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 495
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 495
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_ls_filter'):
         continue
@@ -2633,7 +2633,7 @@ for _lib in six.itervalues(_libs):
     G_set_ls_filter.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 496
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 496
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_ls_exclude_filter'):
         continue
@@ -2642,7 +2642,7 @@ for _lib in six.itervalues(_libs):
     G_set_ls_exclude_filter.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 497
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 497
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ls2'):
         continue
@@ -2651,7 +2651,7 @@ for _lib in six.itervalues(_libs):
     G_ls2.restype = POINTER(POINTER(c_char))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 498
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 498
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ls'):
         continue
@@ -2660,7 +2660,7 @@ for _lib in six.itervalues(_libs):
     G_ls.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 499
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 499
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ls_format'):
         continue
@@ -2669,7 +2669,7 @@ for _lib in six.itervalues(_libs):
     G_ls_format.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 503
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 503
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ls_regex_filter'):
         continue
@@ -2679,7 +2679,7 @@ for _lib in six.itervalues(_libs):
     G_ls_regex_filter.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 504
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 504
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ls_glob_filter'):
         continue
@@ -2689,7 +2689,7 @@ for _lib in six.itervalues(_libs):
     G_ls_glob_filter.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 505
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 505
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free_ls_filter'):
         continue
@@ -2698,7 +2698,7 @@ for _lib in six.itervalues(_libs):
     G_free_ls_filter.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 509
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 509
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_make_location'):
         continue
@@ -2707,7 +2707,7 @@ for _lib in six.itervalues(_libs):
     G_make_location.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 511
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 511
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_make_location_epsg'):
         continue
@@ -2716,7 +2716,7 @@ for _lib in six.itervalues(_libs):
     G_make_location_epsg.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 513
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 513
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_make_location_crs'):
         continue
@@ -2725,7 +2725,7 @@ for _lib in six.itervalues(_libs):
     G_make_location_crs.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 516
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 516
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_write_projsrid'):
         continue
@@ -2734,7 +2734,7 @@ for _lib in six.itervalues(_libs):
     G_write_projsrid.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 517
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 517
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_write_projwkt'):
         continue
@@ -2743,7 +2743,7 @@ for _lib in six.itervalues(_libs):
     G_write_projwkt.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 518
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 518
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_compare_projections'):
         continue
@@ -2752,7 +2752,7 @@ for _lib in six.itervalues(_libs):
     G_compare_projections.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 522
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 522
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_make_mapset'):
         continue
@@ -2761,7 +2761,7 @@ for _lib in six.itervalues(_libs):
     G_make_mapset.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 525
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 525
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_tolcase'):
         continue
@@ -2774,7 +2774,7 @@ for _lib in six.itervalues(_libs):
         G_tolcase.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 526
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 526
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_toucase'):
         continue
@@ -2787,7 +2787,7 @@ for _lib in six.itervalues(_libs):
         G_toucase.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 529
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 529
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_mapset'):
         continue
@@ -2796,7 +2796,7 @@ for _lib in six.itervalues(_libs):
     G_mapset.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 530
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 530
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_mapset_path'):
         continue
@@ -2809,7 +2809,7 @@ for _lib in six.itervalues(_libs):
         G_mapset_path.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 533
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 533
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_make_mapset_element'):
         continue
@@ -2818,7 +2818,7 @@ for _lib in six.itervalues(_libs):
     G_make_mapset_element.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 534
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 534
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_make_mapset_element_tmp'):
         continue
@@ -2827,7 +2827,7 @@ for _lib in six.itervalues(_libs):
     G_make_mapset_element_tmp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 535
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 535
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__make_mapset_element_misc'):
         continue
@@ -2836,7 +2836,7 @@ for _lib in six.itervalues(_libs):
     G__make_mapset_element_misc.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 536
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 536
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_mapset_permissions'):
         continue
@@ -2845,7 +2845,7 @@ for _lib in six.itervalues(_libs):
     G_mapset_permissions.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 537
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 537
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_mapset_permissions2'):
         continue
@@ -2854,7 +2854,7 @@ for _lib in six.itervalues(_libs):
     G_mapset_permissions2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 540
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 540
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_mapset_name'):
         continue
@@ -2863,7 +2863,7 @@ for _lib in six.itervalues(_libs):
     G_get_mapset_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 541
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 541
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_create_alt_search_path'):
         continue
@@ -2872,7 +2872,7 @@ for _lib in six.itervalues(_libs):
     G_create_alt_search_path.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 542
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 542
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_switch_search_path'):
         continue
@@ -2881,7 +2881,7 @@ for _lib in six.itervalues(_libs):
     G_switch_search_path.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 543
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 543
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_reset_mapsets'):
         continue
@@ -2890,7 +2890,7 @@ for _lib in six.itervalues(_libs):
     G_reset_mapsets.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 544
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 544
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_available_mapsets'):
         continue
@@ -2899,7 +2899,7 @@ for _lib in six.itervalues(_libs):
     G_get_available_mapsets.restype = POINTER(POINTER(c_char))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 545
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 545
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_add_mapset_to_search_path'):
         continue
@@ -2908,7 +2908,7 @@ for _lib in six.itervalues(_libs):
     G_add_mapset_to_search_path.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 546
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 546
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_is_mapset_in_search_path'):
         continue
@@ -2917,7 +2917,7 @@ for _lib in six.itervalues(_libs):
     G_is_mapset_in_search_path.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 549
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 549
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_myname'):
         continue
@@ -2930,7 +2930,7 @@ for _lib in six.itervalues(_libs):
         G_myname.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 552
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 552
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_color_values'):
         continue
@@ -2939,7 +2939,7 @@ for _lib in six.itervalues(_libs):
     G_color_values.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 553
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 553
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_color_name'):
         continue
@@ -2948,7 +2948,7 @@ for _lib in six.itervalues(_libs):
     G_color_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 556
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 556
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_newlines_to_spaces'):
         continue
@@ -2957,7 +2957,7 @@ for _lib in six.itervalues(_libs):
     G_newlines_to_spaces.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 559
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 559
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_name_is_fully_qualified'):
         continue
@@ -2966,7 +2966,7 @@ for _lib in six.itervalues(_libs):
     G_name_is_fully_qualified.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 560
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 560
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fully_qualified_name'):
         continue
@@ -2979,7 +2979,7 @@ for _lib in six.itervalues(_libs):
         G_fully_qualified_name.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 561
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 561
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_unqualified_name'):
         continue
@@ -2988,7 +2988,7 @@ for _lib in six.itervalues(_libs):
     G_unqualified_name.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 564
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 564
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_open_new'):
         continue
@@ -2997,7 +2997,7 @@ for _lib in six.itervalues(_libs):
     G_open_new.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 565
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 565
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_open_old'):
         continue
@@ -3006,7 +3006,7 @@ for _lib in six.itervalues(_libs):
     G_open_old.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 566
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 566
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_open_update'):
         continue
@@ -3015,7 +3015,7 @@ for _lib in six.itervalues(_libs):
     G_open_update.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 567
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 567
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fopen_new'):
         continue
@@ -3024,7 +3024,7 @@ for _lib in six.itervalues(_libs):
     G_fopen_new.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 568
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 568
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fopen_old'):
         continue
@@ -3033,7 +3033,7 @@ for _lib in six.itervalues(_libs):
     G_fopen_old.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 569
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 569
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fopen_append'):
         continue
@@ -3042,7 +3042,7 @@ for _lib in six.itervalues(_libs):
     G_fopen_append.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 570
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 570
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fopen_modify'):
         continue
@@ -3051,7 +3051,7 @@ for _lib in six.itervalues(_libs):
     G_fopen_modify.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 573
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 573
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_open_new_misc'):
         continue
@@ -3060,7 +3060,7 @@ for _lib in six.itervalues(_libs):
     G_open_new_misc.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 574
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 574
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_open_old_misc'):
         continue
@@ -3069,7 +3069,7 @@ for _lib in six.itervalues(_libs):
     G_open_old_misc.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 575
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 575
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_open_update_misc'):
         continue
@@ -3078,7 +3078,7 @@ for _lib in six.itervalues(_libs):
     G_open_update_misc.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 576
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 576
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fopen_new_misc'):
         continue
@@ -3087,7 +3087,7 @@ for _lib in six.itervalues(_libs):
     G_fopen_new_misc.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 577
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 577
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fopen_old_misc'):
         continue
@@ -3096,7 +3096,7 @@ for _lib in six.itervalues(_libs):
     G_fopen_old_misc.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 579
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 579
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fopen_append_misc'):
         continue
@@ -3105,7 +3105,7 @@ for _lib in six.itervalues(_libs):
     G_fopen_append_misc.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 580
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 580
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fopen_modify_misc'):
         continue
@@ -3114,7 +3114,7 @@ for _lib in six.itervalues(_libs):
     G_fopen_modify_misc.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 583
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 583
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_check_overwrite'):
         continue
@@ -3123,7 +3123,7 @@ for _lib in six.itervalues(_libs):
     G_check_overwrite.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 586
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 586
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_open_pager'):
         continue
@@ -3132,7 +3132,7 @@ for _lib in six.itervalues(_libs):
     G_open_pager.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 587
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 587
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_close_pager'):
         continue
@@ -3141,7 +3141,7 @@ for _lib in six.itervalues(_libs):
     G_close_pager.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 588
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 588
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_open_mail'):
         continue
@@ -3150,7 +3150,7 @@ for _lib in six.itervalues(_libs):
     G_open_mail.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 589
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 589
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_close_mail'):
         continue
@@ -3159,7 +3159,7 @@ for _lib in six.itervalues(_libs):
     G_close_mail.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 592
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 592
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_disable_interactive'):
         continue
@@ -3168,7 +3168,7 @@ for _lib in six.itervalues(_libs):
     G_disable_interactive.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 593
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 593
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_define_module'):
         continue
@@ -3177,7 +3177,7 @@ for _lib in six.itervalues(_libs):
     G_define_module.restype = POINTER(struct_GModule)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 594
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 594
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_define_flag'):
         continue
@@ -3186,7 +3186,7 @@ for _lib in six.itervalues(_libs):
     G_define_flag.restype = POINTER(struct_Flag)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 595
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 595
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_define_option'):
         continue
@@ -3195,7 +3195,7 @@ for _lib in six.itervalues(_libs):
     G_define_option.restype = POINTER(struct_Option)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 596
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 596
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_define_standard_option'):
         continue
@@ -3204,7 +3204,7 @@ for _lib in six.itervalues(_libs):
     G_define_standard_option.restype = POINTER(struct_Option)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 597
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 597
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_define_standard_flag'):
         continue
@@ -3213,7 +3213,7 @@ for _lib in six.itervalues(_libs):
     G_define_standard_flag.restype = POINTER(struct_Flag)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 598
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 598
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_parser'):
         continue
@@ -3222,7 +3222,7 @@ for _lib in six.itervalues(_libs):
     G_parser.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 599
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 599
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_usage'):
         continue
@@ -3231,7 +3231,7 @@ for _lib in six.itervalues(_libs):
     G_usage.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 600
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 600
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_recreate_command'):
         continue
@@ -3244,7 +3244,7 @@ for _lib in six.itervalues(_libs):
         G_recreate_command.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 601
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 601
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_add_keyword'):
         continue
@@ -3253,7 +3253,7 @@ for _lib in six.itervalues(_libs):
     G_add_keyword.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 602
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 602
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_keywords'):
         continue
@@ -3262,7 +3262,7 @@ for _lib in six.itervalues(_libs):
     G_set_keywords.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 603
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 603
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_overwrite'):
         continue
@@ -3271,7 +3271,7 @@ for _lib in six.itervalues(_libs):
     G_get_overwrite.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 604
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 604
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_option_to_separator'):
         continue
@@ -3284,7 +3284,7 @@ for _lib in six.itervalues(_libs):
         G_option_to_separator.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 605
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 605
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_open_option_file'):
         continue
@@ -3293,7 +3293,7 @@ for _lib in six.itervalues(_libs):
     G_open_option_file.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 606
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 606
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_close_option_file'):
         continue
@@ -3302,7 +3302,7 @@ for _lib in six.itervalues(_libs):
     G_close_option_file.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 609
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 609
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_option_rule'):
         continue
@@ -3311,7 +3311,7 @@ for _lib in six.itervalues(_libs):
     G_option_rule.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 610
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 610
 for _lib in _libs.values():
     if hasattr(_lib, 'G_option_exclusive'):
         _func = _lib.G_option_exclusive
@@ -3320,7 +3320,7 @@ for _lib in _libs.values():
         _argtypes = [POINTER(None)]
         G_option_exclusive = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 611
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 611
 for _lib in _libs.values():
     if hasattr(_lib, 'G_option_required'):
         _func = _lib.G_option_required
@@ -3329,7 +3329,7 @@ for _lib in _libs.values():
         _argtypes = [POINTER(None)]
         G_option_required = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 612
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 612
 for _lib in _libs.values():
     if hasattr(_lib, 'G_option_requires'):
         _func = _lib.G_option_requires
@@ -3338,7 +3338,7 @@ for _lib in _libs.values():
         _argtypes = [POINTER(None)]
         G_option_requires = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 613
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 613
 for _lib in _libs.values():
     if hasattr(_lib, 'G_option_requires_all'):
         _func = _lib.G_option_requires_all
@@ -3347,7 +3347,7 @@ for _lib in _libs.values():
         _argtypes = [POINTER(None)]
         G_option_requires_all = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 614
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 614
 for _lib in _libs.values():
     if hasattr(_lib, 'G_option_excludes'):
         _func = _lib.G_option_excludes
@@ -3356,7 +3356,7 @@ for _lib in _libs.values():
         _argtypes = [POINTER(None)]
         G_option_excludes = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 615
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 615
 for _lib in _libs.values():
     if hasattr(_lib, 'G_option_collective'):
         _func = _lib.G_option_collective
@@ -3365,7 +3365,7 @@ for _lib in _libs.values():
         _argtypes = [POINTER(None)]
         G_option_collective = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 618
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 618
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_mkdir'):
         continue
@@ -3374,7 +3374,7 @@ for _lib in six.itervalues(_libs):
     G_mkdir.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 619
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 619
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_is_dirsep'):
         continue
@@ -3383,7 +3383,7 @@ for _lib in six.itervalues(_libs):
     G_is_dirsep.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 620
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 620
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_is_absolute_path'):
         continue
@@ -3392,7 +3392,7 @@ for _lib in six.itervalues(_libs):
     G_is_absolute_path.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 621
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 621
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_convert_dirseps_to_host'):
         continue
@@ -3405,7 +3405,7 @@ for _lib in six.itervalues(_libs):
         G_convert_dirseps_to_host.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 622
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 622
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_convert_dirseps_from_host'):
         continue
@@ -3418,7 +3418,7 @@ for _lib in six.itervalues(_libs):
         G_convert_dirseps_from_host.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 623
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 623
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lstat'):
         continue
@@ -3427,7 +3427,7 @@ for _lib in six.itervalues(_libs):
     G_lstat.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 624
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 624
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_stat'):
         continue
@@ -3436,7 +3436,7 @@ for _lib in six.itervalues(_libs):
     G_stat.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 625
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 625
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_owner'):
         continue
@@ -3445,7 +3445,7 @@ for _lib in six.itervalues(_libs):
     G_owner.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 628
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 628
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_percent'):
         continue
@@ -3454,7 +3454,7 @@ for _lib in six.itervalues(_libs):
     G_percent.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 629
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 629
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_percent_reset'):
         continue
@@ -3463,7 +3463,7 @@ for _lib in six.itervalues(_libs):
     G_percent_reset.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 630
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 630
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_progress'):
         continue
@@ -3472,7 +3472,7 @@ for _lib in six.itervalues(_libs):
     G_progress.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 631
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 631
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_percent_routine'):
         continue
@@ -3481,7 +3481,7 @@ for _lib in six.itervalues(_libs):
     G_set_percent_routine.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 632
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 632
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_unset_percent_routine'):
         continue
@@ -3490,7 +3490,7 @@ for _lib in six.itervalues(_libs):
     G_unset_percent_routine.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 635
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 635
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_popen_clear'):
         continue
@@ -3499,7 +3499,7 @@ for _lib in six.itervalues(_libs):
     G_popen_clear.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 636
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 636
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_popen_write'):
         continue
@@ -3508,7 +3508,7 @@ for _lib in six.itervalues(_libs):
     G_popen_write.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 637
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 637
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_popen_read'):
         continue
@@ -3517,7 +3517,7 @@ for _lib in six.itervalues(_libs):
     G_popen_read.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 638
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 638
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_popen_close'):
         continue
@@ -3526,7 +3526,7 @@ for _lib in six.itervalues(_libs):
     G_popen_close.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 641
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 641
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_setup_plot'):
         continue
@@ -3535,7 +3535,7 @@ for _lib in six.itervalues(_libs):
     G_setup_plot.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 643
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 643
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_setup_fill'):
         continue
@@ -3544,7 +3544,7 @@ for _lib in six.itervalues(_libs):
     G_setup_fill.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 644
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 644
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_plot_where_xy'):
         continue
@@ -3553,7 +3553,7 @@ for _lib in six.itervalues(_libs):
     G_plot_where_xy.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 645
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 645
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_plot_where_en'):
         continue
@@ -3562,7 +3562,7 @@ for _lib in six.itervalues(_libs):
     G_plot_where_en.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 646
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 646
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_plot_point'):
         continue
@@ -3571,7 +3571,7 @@ for _lib in six.itervalues(_libs):
     G_plot_point.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 647
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 647
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_plot_line'):
         continue
@@ -3580,7 +3580,7 @@ for _lib in six.itervalues(_libs):
     G_plot_line.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 648
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 648
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_plot_line2'):
         continue
@@ -3589,7 +3589,7 @@ for _lib in six.itervalues(_libs):
     G_plot_line2.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 649
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 649
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_plot_polygon'):
         continue
@@ -3598,7 +3598,7 @@ for _lib in six.itervalues(_libs):
     G_plot_polygon.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 650
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 650
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_plot_area'):
         continue
@@ -3607,7 +3607,7 @@ for _lib in six.itervalues(_libs):
     G_plot_area.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 651
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 651
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_plot_fx'):
         continue
@@ -3616,7 +3616,7 @@ for _lib in six.itervalues(_libs):
     G_plot_fx.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 654
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 654
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_pole_in_polygon'):
         continue
@@ -3625,7 +3625,7 @@ for _lib in six.itervalues(_libs):
     G_pole_in_polygon.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 657
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 657
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_program_name'):
         continue
@@ -3634,7 +3634,7 @@ for _lib in six.itervalues(_libs):
     G_program_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 658
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 658
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_original_program_name'):
         continue
@@ -3643,7 +3643,7 @@ for _lib in six.itervalues(_libs):
     G_original_program_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 659
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 659
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_program_name'):
         continue
@@ -3652,7 +3652,7 @@ for _lib in six.itervalues(_libs):
     G_set_program_name.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 662
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 662
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_projection'):
         continue
@@ -3661,7 +3661,7 @@ for _lib in six.itervalues(_libs):
     G_projection.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 665
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 665
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_projection_units'):
         continue
@@ -3670,7 +3670,7 @@ for _lib in six.itervalues(_libs):
     G_projection_units.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 666
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 666
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_projection_name'):
         continue
@@ -3679,7 +3679,7 @@ for _lib in six.itervalues(_libs):
     G_projection_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 669
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 669
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_database_unit_name'):
         continue
@@ -3688,7 +3688,7 @@ for _lib in six.itervalues(_libs):
     G_database_unit_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 670
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 670
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_database_unit'):
         continue
@@ -3697,7 +3697,7 @@ for _lib in six.itervalues(_libs):
     G_database_unit.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 671
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 671
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_database_projection_name'):
         continue
@@ -3706,7 +3706,7 @@ for _lib in six.itervalues(_libs):
     G_database_projection_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 672
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 672
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_database_datum_name'):
         continue
@@ -3715,7 +3715,7 @@ for _lib in six.itervalues(_libs):
     G_database_datum_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 673
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 673
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_database_ellipse_name'):
         continue
@@ -3724,7 +3724,7 @@ for _lib in six.itervalues(_libs):
     G_database_ellipse_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 674
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 674
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_database_units_to_meters_factor'):
         continue
@@ -3733,7 +3733,7 @@ for _lib in six.itervalues(_libs):
     G_database_units_to_meters_factor.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 675
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 675
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_database_epsg_code'):
         continue
@@ -3742,7 +3742,7 @@ for _lib in six.itervalues(_libs):
     G_database_epsg_code.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 678
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 678
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_put_window'):
         continue
@@ -3751,7 +3751,7 @@ for _lib in six.itervalues(_libs):
     G_put_window.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 679
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 679
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_put_element_window'):
         continue
@@ -3760,7 +3760,7 @@ for _lib in six.itervalues(_libs):
     G_put_element_window.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 682
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 682
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_putenv'):
         continue
@@ -3769,7 +3769,7 @@ for _lib in six.itervalues(_libs):
     G_putenv.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 685
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 685
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_meridional_radius_of_curvature'):
         continue
@@ -3778,7 +3778,7 @@ for _lib in six.itervalues(_libs):
     G_meridional_radius_of_curvature.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 686
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 686
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_transverse_radius_of_curvature'):
         continue
@@ -3787,7 +3787,7 @@ for _lib in six.itervalues(_libs):
     G_transverse_radius_of_curvature.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 687
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 687
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_radius_of_conformal_tangent_sphere'):
         continue
@@ -3796,7 +3796,7 @@ for _lib in six.itervalues(_libs):
     G_radius_of_conformal_tangent_sphere.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 690
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 690
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__read_Cell_head'):
         continue
@@ -3805,7 +3805,7 @@ for _lib in six.itervalues(_libs):
     G__read_Cell_head.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 691
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 691
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__read_Cell_head_array'):
         continue
@@ -3814,7 +3814,7 @@ for _lib in six.itervalues(_libs):
     G__read_Cell_head_array.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 694
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 694
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_remove'):
         continue
@@ -3823,7 +3823,7 @@ for _lib in six.itervalues(_libs):
     G_remove.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 695
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 695
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_remove_misc'):
         continue
@@ -3832,7 +3832,7 @@ for _lib in six.itervalues(_libs):
     G_remove_misc.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 696
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 696
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_recursive_remove'):
         continue
@@ -3841,7 +3841,7 @@ for _lib in six.itervalues(_libs):
     G_recursive_remove.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 699
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 699
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_rename_file'):
         continue
@@ -3850,7 +3850,7 @@ for _lib in six.itervalues(_libs):
     G_rename_file.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 700
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 700
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_rename'):
         continue
@@ -3859,7 +3859,7 @@ for _lib in six.itervalues(_libs):
     G_rename.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 703
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 703
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_begin_rhumbline_equation'):
         continue
@@ -3868,7 +3868,7 @@ for _lib in six.itervalues(_libs):
     G_begin_rhumbline_equation.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 704
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 704
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_rhumbline_lat_from_lon'):
         continue
@@ -3877,7 +3877,7 @@ for _lib in six.itervalues(_libs):
     G_rhumbline_lat_from_lon.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 707
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 707
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_rotate_around_point'):
         continue
@@ -3886,7 +3886,7 @@ for _lib in six.itervalues(_libs):
     G_rotate_around_point.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 708
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 708
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_rotate_around_point_int'):
         continue
@@ -3895,7 +3895,7 @@ for _lib in six.itervalues(_libs):
     G_rotate_around_point_int.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 711
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 711
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ftell'):
         continue
@@ -3904,7 +3904,7 @@ for _lib in six.itervalues(_libs):
     G_ftell.restype = off_t
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 712
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 712
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_fseek'):
         continue
@@ -3913,7 +3913,7 @@ for _lib in six.itervalues(_libs):
     G_fseek.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 715
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 715
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_set_window'):
         continue
@@ -3922,7 +3922,7 @@ for _lib in six.itervalues(_libs):
     G_get_set_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 716
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 716
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_window'):
         continue
@@ -3931,7 +3931,7 @@ for _lib in six.itervalues(_libs):
     G_set_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 717
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 717
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_unset_window'):
         continue
@@ -3940,7 +3940,7 @@ for _lib in six.itervalues(_libs):
     G_unset_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 720
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 720
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_shortest_way'):
         continue
@@ -3949,7 +3949,7 @@ for _lib in six.itervalues(_libs):
     G_shortest_way.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 723
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 723
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_sleep'):
         continue
@@ -3958,7 +3958,7 @@ for _lib in six.itervalues(_libs):
     G_sleep.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 726
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 726
 for _lib in _libs.values():
     if hasattr(_lib, 'G_snprintf'):
         _func = _lib.G_snprintf
@@ -3967,7 +3967,7 @@ for _lib in _libs.values():
         _argtypes = [String, c_size_t, String]
         G_snprintf = _variadic_function(_func,_restype,_argtypes,_errcheck)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 730
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 730
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_strcasecmp'):
         continue
@@ -3976,7 +3976,7 @@ for _lib in six.itervalues(_libs):
     G_strcasecmp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 731
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 731
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_strncasecmp'):
         continue
@@ -3985,7 +3985,7 @@ for _lib in six.itervalues(_libs):
     G_strncasecmp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 732
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 732
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_store'):
         continue
@@ -3998,7 +3998,7 @@ for _lib in six.itervalues(_libs):
         G_store.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 733
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 733
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_store_upper'):
         continue
@@ -4011,7 +4011,7 @@ for _lib in six.itervalues(_libs):
         G_store_upper.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 734
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 734
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_store_lower'):
         continue
@@ -4024,7 +4024,7 @@ for _lib in six.itervalues(_libs):
         G_store_lower.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 735
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 735
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_strchg'):
         continue
@@ -4037,7 +4037,7 @@ for _lib in six.itervalues(_libs):
         G_strchg.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 736
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 736
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_str_replace'):
         continue
@@ -4050,7 +4050,7 @@ for _lib in six.itervalues(_libs):
         G_str_replace.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 737
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 737
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_strip'):
         continue
@@ -4059,7 +4059,7 @@ for _lib in six.itervalues(_libs):
     G_strip.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 738
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 738
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_chop'):
         continue
@@ -4072,7 +4072,7 @@ for _lib in six.itervalues(_libs):
         G_chop.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 739
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 739
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_str_to_upper'):
         continue
@@ -4081,7 +4081,7 @@ for _lib in six.itervalues(_libs):
     G_str_to_upper.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 740
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 740
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_str_to_lower'):
         continue
@@ -4090,7 +4090,7 @@ for _lib in six.itervalues(_libs):
     G_str_to_lower.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 741
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 741
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_str_to_sql'):
         continue
@@ -4099,7 +4099,7 @@ for _lib in six.itervalues(_libs):
     G_str_to_sql.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 742
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 742
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_squeeze'):
         continue
@@ -4108,7 +4108,7 @@ for _lib in six.itervalues(_libs):
     G_squeeze.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 743
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 743
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_strcasestr'):
         continue
@@ -4121,7 +4121,7 @@ for _lib in six.itervalues(_libs):
         G_strcasestr.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 746
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 746
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_init_tempfile'):
         continue
@@ -4130,7 +4130,7 @@ for _lib in six.itervalues(_libs):
     G_init_tempfile.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 747
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 747
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_tempfile'):
         continue
@@ -4143,7 +4143,7 @@ for _lib in six.itervalues(_libs):
         G_tempfile.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 748
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 748
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_tempfile_pid'):
         continue
@@ -4156,7 +4156,7 @@ for _lib in six.itervalues(_libs):
         G_tempfile_pid.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 749
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 749
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_temp_element'):
         continue
@@ -4165,7 +4165,7 @@ for _lib in six.itervalues(_libs):
     G_temp_element.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 750
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 750
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__temp_element'):
         continue
@@ -4174,7 +4174,7 @@ for _lib in six.itervalues(_libs):
     G__temp_element.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 753
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 753
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_mktemp'):
         continue
@@ -4187,7 +4187,7 @@ for _lib in six.itervalues(_libs):
         G_mktemp.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 754
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 754
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_mkstemp'):
         continue
@@ -4196,7 +4196,7 @@ for _lib in six.itervalues(_libs):
     G_mkstemp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 755
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 755
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_mkstemp_fp'):
         continue
@@ -4205,7 +4205,7 @@ for _lib in six.itervalues(_libs):
     G_mkstemp_fp.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 758
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 758
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_init_timestamp'):
         continue
@@ -4214,7 +4214,7 @@ for _lib in six.itervalues(_libs):
     G_init_timestamp.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 759
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 759
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_timestamp'):
         continue
@@ -4223,7 +4223,7 @@ for _lib in six.itervalues(_libs):
     G_set_timestamp.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 760
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 760
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_timestamp_range'):
         continue
@@ -4232,7 +4232,7 @@ for _lib in six.itervalues(_libs):
     G_set_timestamp_range.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 762
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 762
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_write_timestamp'):
         continue
@@ -4241,7 +4241,7 @@ for _lib in six.itervalues(_libs):
     G_write_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 763
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 763
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_timestamps'):
         continue
@@ -4250,7 +4250,7 @@ for _lib in six.itervalues(_libs):
     G_get_timestamps.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 764
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 764
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_format_timestamp'):
         continue
@@ -4259,7 +4259,7 @@ for _lib in six.itervalues(_libs):
     G_format_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 765
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 765
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_scan_timestamp'):
         continue
@@ -4268,7 +4268,7 @@ for _lib in six.itervalues(_libs):
     G_scan_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 766
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 766
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_has_raster_timestamp'):
         continue
@@ -4277,7 +4277,7 @@ for _lib in six.itervalues(_libs):
     G_has_raster_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 767
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 767
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_read_raster_timestamp'):
         continue
@@ -4286,7 +4286,7 @@ for _lib in six.itervalues(_libs):
     G_read_raster_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 768
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 768
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_write_raster_timestamp'):
         continue
@@ -4295,7 +4295,7 @@ for _lib in six.itervalues(_libs):
     G_write_raster_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 769
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 769
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_remove_raster_timestamp'):
         continue
@@ -4304,7 +4304,7 @@ for _lib in six.itervalues(_libs):
     G_remove_raster_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 770
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 770
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_has_vector_timestamp'):
         continue
@@ -4313,7 +4313,7 @@ for _lib in six.itervalues(_libs):
     G_has_vector_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 771
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 771
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_read_vector_timestamp'):
         continue
@@ -4322,7 +4322,7 @@ for _lib in six.itervalues(_libs):
     G_read_vector_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 772
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 772
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_write_vector_timestamp'):
         continue
@@ -4331,7 +4331,7 @@ for _lib in six.itervalues(_libs):
     G_write_vector_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 773
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 773
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_remove_vector_timestamp'):
         continue
@@ -4340,7 +4340,7 @@ for _lib in six.itervalues(_libs):
     G_remove_vector_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 774
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 774
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_has_raster3d_timestamp'):
         continue
@@ -4349,7 +4349,7 @@ for _lib in six.itervalues(_libs):
     G_has_raster3d_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 775
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 775
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_read_raster3d_timestamp'):
         continue
@@ -4358,7 +4358,7 @@ for _lib in six.itervalues(_libs):
     G_read_raster3d_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 776
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 776
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_remove_raster3d_timestamp'):
         continue
@@ -4367,7 +4367,7 @@ for _lib in six.itervalues(_libs):
     G_remove_raster3d_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 777
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 777
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_write_raster3d_timestamp'):
         continue
@@ -4376,7 +4376,7 @@ for _lib in six.itervalues(_libs):
     G_write_raster3d_timestamp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 780
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 780
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_tokenize'):
         continue
@@ -4385,7 +4385,7 @@ for _lib in six.itervalues(_libs):
     G_tokenize.restype = POINTER(POINTER(c_char))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 781
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 781
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_tokenize2'):
         continue
@@ -4394,7 +4394,7 @@ for _lib in six.itervalues(_libs):
     G_tokenize2.restype = POINTER(POINTER(c_char))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 782
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 782
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_number_of_tokens'):
         continue
@@ -4403,7 +4403,7 @@ for _lib in six.itervalues(_libs):
     G_number_of_tokens.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 783
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 783
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free_tokens'):
         continue
@@ -4412,7 +4412,7 @@ for _lib in six.itervalues(_libs):
     G_free_tokens.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 786
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 786
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_trim_decimal'):
         continue
@@ -4421,7 +4421,7 @@ for _lib in six.itervalues(_libs):
     G_trim_decimal.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 789
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 789
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_meters_to_units_factor'):
         continue
@@ -4430,7 +4430,7 @@ for _lib in six.itervalues(_libs):
     G_meters_to_units_factor.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 790
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 790
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_meters_to_units_factor_sq'):
         continue
@@ -4439,7 +4439,7 @@ for _lib in six.itervalues(_libs):
     G_meters_to_units_factor_sq.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 791
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 791
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_units_name'):
         continue
@@ -4448,7 +4448,7 @@ for _lib in six.itervalues(_libs):
     G_get_units_name.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 792
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 792
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_units'):
         continue
@@ -4457,7 +4457,7 @@ for _lib in six.itervalues(_libs):
     G_units.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 793
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 793
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_is_units_type_spatial'):
         continue
@@ -4466,7 +4466,7 @@ for _lib in six.itervalues(_libs):
     G_is_units_type_spatial.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 794
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 794
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_is_units_type_temporal'):
         continue
@@ -4475,7 +4475,7 @@ for _lib in six.itervalues(_libs):
     G_is_units_type_temporal.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 802
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 802
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_verbose'):
         continue
@@ -4484,7 +4484,7 @@ for _lib in six.itervalues(_libs):
     G_verbose.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 803
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 803
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_verbose_min'):
         continue
@@ -4493,7 +4493,7 @@ for _lib in six.itervalues(_libs):
     G_verbose_min.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 804
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 804
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_verbose_std'):
         continue
@@ -4502,7 +4502,7 @@ for _lib in six.itervalues(_libs):
     G_verbose_std.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 805
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 805
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_verbose_max'):
         continue
@@ -4511,7 +4511,7 @@ for _lib in six.itervalues(_libs):
     G_verbose_max.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 806
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 806
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_set_verbose'):
         continue
@@ -4520,7 +4520,7 @@ for _lib in six.itervalues(_libs):
     G_set_verbose.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 809
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 809
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_3dview_warning'):
         continue
@@ -4529,7 +4529,7 @@ for _lib in six.itervalues(_libs):
     G_3dview_warning.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 810
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 810
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_3dview_defaults'):
         continue
@@ -4538,7 +4538,7 @@ for _lib in six.itervalues(_libs):
     G_get_3dview_defaults.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 811
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 811
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_put_3dview'):
         continue
@@ -4547,7 +4547,7 @@ for _lib in six.itervalues(_libs):
     G_put_3dview.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 813
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 813
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_get_3dview'):
         continue
@@ -4556,7 +4556,7 @@ for _lib in six.itervalues(_libs):
     G_get_3dview.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 816
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 816
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_whoami'):
         continue
@@ -4565,7 +4565,7 @@ for _lib in six.itervalues(_libs):
     G_whoami.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 819
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 819
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_adjust_window_to_box'):
         continue
@@ -4574,7 +4574,7 @@ for _lib in six.itervalues(_libs):
     G_adjust_window_to_box.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 823
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 823
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_format_northing'):
         continue
@@ -4583,7 +4583,7 @@ for _lib in six.itervalues(_libs):
     G_format_northing.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 824
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 824
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_format_easting'):
         continue
@@ -4592,7 +4592,7 @@ for _lib in six.itervalues(_libs):
     G_format_easting.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 825
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 825
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_format_resolution'):
         continue
@@ -4601,7 +4601,7 @@ for _lib in six.itervalues(_libs):
     G_format_resolution.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 828
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 828
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_point_in_region'):
         continue
@@ -4610,7 +4610,7 @@ for _lib in six.itervalues(_libs):
     G_point_in_region.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 829
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 829
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_point_in_window'):
         continue
@@ -4619,7 +4619,7 @@ for _lib in six.itervalues(_libs):
     G_point_in_window.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 832
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 832
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_limit_east'):
         continue
@@ -4628,7 +4628,7 @@ for _lib in six.itervalues(_libs):
     G_limit_east.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 833
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 833
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_limit_west'):
         continue
@@ -4637,7 +4637,7 @@ for _lib in six.itervalues(_libs):
     G_limit_west.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 834
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 834
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_limit_north'):
         continue
@@ -4646,7 +4646,7 @@ for _lib in six.itervalues(_libs):
     G_limit_north.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 835
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 835
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_limit_south'):
         continue
@@ -4655,7 +4655,7 @@ for _lib in six.itervalues(_libs):
     G_limit_south.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 838
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 838
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_window_overlap'):
         continue
@@ -4664,7 +4664,7 @@ for _lib in six.itervalues(_libs):
     G_window_overlap.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 840
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 840
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_window_percentage_overlap'):
         continue
@@ -4673,7 +4673,7 @@ for _lib in six.itervalues(_libs):
     G_window_percentage_overlap.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 844
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 844
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_scan_northing'):
         continue
@@ -4682,7 +4682,7 @@ for _lib in six.itervalues(_libs):
     G_scan_northing.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 845
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 845
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_scan_easting'):
         continue
@@ -4691,7 +4691,7 @@ for _lib in six.itervalues(_libs):
     G_scan_easting.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 846
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 846
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_scan_resolution'):
         continue
@@ -4700,7 +4700,7 @@ for _lib in six.itervalues(_libs):
     G_scan_resolution.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 849
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 849
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_adjust_east_longitude'):
         continue
@@ -4709,7 +4709,7 @@ for _lib in six.itervalues(_libs):
     G_adjust_east_longitude.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 850
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 850
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_adjust_easting'):
         continue
@@ -4718,7 +4718,7 @@ for _lib in six.itervalues(_libs):
     G_adjust_easting.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 851
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 851
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__init_window'):
         continue
@@ -4727,7 +4727,7 @@ for _lib in six.itervalues(_libs):
     G__init_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 854
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 854
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_begin_execute'):
         continue
@@ -4736,7 +4736,7 @@ for _lib in six.itervalues(_libs):
     G_begin_execute.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 855
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 855
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_end_execute'):
         continue
@@ -4745,7 +4745,7 @@ for _lib in six.itervalues(_libs):
     G_end_execute.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 856
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 856
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_init_workers'):
         continue
@@ -4754,7 +4754,7 @@ for _lib in six.itervalues(_libs):
     G_init_workers.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 857
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 857
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_finish_workers'):
         continue
@@ -4763,7 +4763,7 @@ for _lib in six.itervalues(_libs):
     G_finish_workers.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 860
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 860
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__write_Cell_head'):
         continue
@@ -4772,7 +4772,7 @@ for _lib in six.itervalues(_libs):
     G__write_Cell_head.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 861
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 861
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G__write_Cell_head3'):
         continue
@@ -4781,7 +4781,7 @@ for _lib in six.itervalues(_libs):
     G__write_Cell_head3.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 864
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 864
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_write_zeros'):
         continue
@@ -4790,7 +4790,7 @@ for _lib in six.itervalues(_libs):
     G_write_zeros.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 867
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 867
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_xdr_get_int'):
         continue
@@ -4799,7 +4799,7 @@ for _lib in six.itervalues(_libs):
     G_xdr_get_int.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 868
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 868
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_xdr_put_int'):
         continue
@@ -4808,7 +4808,7 @@ for _lib in six.itervalues(_libs):
     G_xdr_put_int.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 869
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 869
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_xdr_get_float'):
         continue
@@ -4817,7 +4817,7 @@ for _lib in six.itervalues(_libs):
     G_xdr_get_float.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 870
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 870
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_xdr_put_float'):
         continue
@@ -4826,7 +4826,7 @@ for _lib in six.itervalues(_libs):
     G_xdr_put_float.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 871
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 871
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_xdr_get_double'):
         continue
@@ -4835,7 +4835,7 @@ for _lib in six.itervalues(_libs):
     G_xdr_get_double.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 872
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 872
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_xdr_put_double'):
         continue
@@ -4844,7 +4844,7 @@ for _lib in six.itervalues(_libs):
     G_xdr_put_double.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 875
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 875
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_zero'):
         continue
@@ -4853,7 +4853,7 @@ for _lib in six.itervalues(_libs):
     G_zero.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 878
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 878
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_zone'):
         continue
@@ -4862,7 +4862,7 @@ for _lib in six.itervalues(_libs):
     G_zone.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 33
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 33
 class struct_color_rgb(Structure):
     pass
 
@@ -4877,7 +4877,7 @@ struct_color_rgb._fields_ = [
     ('b', c_ubyte),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 38
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 38
 class struct_color_name(Structure):
     pass
 
@@ -4890,7 +4890,7 @@ struct_color_name._fields_ = [
     ('number', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/colors.h: 4
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/colors.h: 4
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_num_standard_colors'):
         continue
@@ -4899,7 +4899,7 @@ for _lib in six.itervalues(_libs):
     G_num_standard_colors.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/colors.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/colors.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_standard_color_rgb'):
         continue
@@ -4908,7 +4908,7 @@ for _lib in six.itervalues(_libs):
     G_standard_color_rgb.restype = struct_color_rgb
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/colors.h: 6
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/colors.h: 6
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_num_standard_color_names'):
         continue
@@ -4917,7 +4917,7 @@ for _lib in six.itervalues(_libs):
     G_num_standard_color_names.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/colors.h: 7
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/colors.h: 7
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_standard_color_name'):
         continue
@@ -4926,7 +4926,7 @@ for _lib in six.itervalues(_libs):
     G_standard_color_name.restype = POINTER(struct_color_name)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/colors.h: 8
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/colors.h: 8
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_str_to_color'):
         continue
@@ -4935,697 +4935,697 @@ for _lib in six.itervalues(_libs):
     G_str_to_color.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/stdbool.h: 34
+# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h: 38
 try:
     true = 1
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/10.3.0/include/stdbool.h: 35
+# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/stdbool.h: 39
 try:
     false = 0
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/datetime.h: 10
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/datetime.h: 10
 try:
     DATETIME_YEAR = 101
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/datetime.h: 11
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/datetime.h: 11
 try:
     DATETIME_MONTH = 102
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/datetime.h: 12
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/datetime.h: 12
 try:
     DATETIME_DAY = 103
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/datetime.h: 13
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/datetime.h: 13
 try:
     DATETIME_HOUR = 104
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/datetime.h: 14
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/datetime.h: 14
 try:
     DATETIME_MINUTE = 105
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/datetime.h: 15
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/datetime.h: 15
 try:
     DATETIME_SECOND = 106
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/version.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/version.h: 5
 try:
-    GRASS_HEADERS_VERSION = '2021-10-04T19:41:40+00:00'
+    GRASS_HEADERS_VERSION = '2022-02-23T19:53:48+00:00'
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/version.h: 6
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/version.h: 6
 try:
-    GRASS_HEADERS_DATE = '2021-10-04T19:41:40+00:00'
+    GRASS_HEADERS_DATE = '2022-02-23T19:53:48+00:00'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 47
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 47
 try:
     GIS_H_VERSION = GRASS_HEADERS_VERSION
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 51
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 51
 try:
     GIS_H_DATE = GRASS_HEADERS_DATE
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 53
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 53
 def G_gisinit(pgm):
     return (G__gisinit (GIS_H_VERSION, pgm))
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 54
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 54
 try:
     G_no_gisinit = (G__no_gisinit (GIS_H_VERSION))
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 59
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 59
 try:
     TRUE = true
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 63
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 63
 try:
     FALSE = false
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 67
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 67
 try:
     PRI_OFF_T = 'lld'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 73
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 73
 try:
     NEWLINE = '\\n'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 75
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 75
 try:
     HOST_NEWLINE = '\\r\\n'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 90
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 90
 try:
     U_UNDEFINED = (-1)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 91
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 91
 try:
     U_UNKNOWN = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 92
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 92
 try:
     U_ACRES = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 93
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 93
 try:
     U_HECTARES = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 94
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 94
 try:
     U_KILOMETERS = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 95
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 95
 try:
     U_METERS = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 96
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 96
 try:
     U_MILES = 5
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 97
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 97
 try:
     U_FEET = 6
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 98
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 98
 try:
     U_RADIANS = 7
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 99
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 99
 try:
     U_DEGREES = 8
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 100
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 100
 try:
     U_USFEET = 9
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 102
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 102
 try:
     U_YEARS = DATETIME_YEAR
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 103
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 103
 try:
     U_MONTHS = DATETIME_MONTH
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 104
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 104
 try:
     U_DAYS = DATETIME_DAY
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 105
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 105
 try:
     U_HOURS = DATETIME_HOUR
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 106
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 106
 try:
     U_MINUTES = DATETIME_MINUTE
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 107
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 107
 try:
     U_SECONDS = DATETIME_SECOND
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 110
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 110
 try:
     PROJECTION_XY = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 112
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 112
 try:
     PROJECTION_UTM = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 114
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 114
 try:
     PROJECTION_SP = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 116
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 116
 try:
     PROJECTION_LL = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 118
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 118
 try:
     PROJECTION_OTHER = 99
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 120
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 120
 try:
     PROJECTION_FILE = 'PROJ_INFO'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 121
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 121
 try:
     UNIT_FILE = 'PROJ_UNITS'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 122
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 122
 try:
     EPSG_FILE = 'PROJ_EPSG'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 123
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 123
 try:
     WKT_FILE = 'PROJ_WKT'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 124
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 124
 try:
     SRID_FILE = 'PROJ_SRID'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 127
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 127
 try:
     CONFIG_DIR = 'GRASS7'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 134
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 134
 try:
     M_PI = 3.141592653589793
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 137
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 137
 try:
     M_PI_2 = 1.5707963267948966
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 140
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 140
 try:
     M_PI_4 = 0.7853981633974483
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 143
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 143
 try:
     M_R2D = 57.29577951308232
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 146
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 146
 try:
     M_D2R = 0.017453292519943295
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 149
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 149
 try:
     GRASS_EPSILON = 1e-15
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 152
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 152
 try:
     G_VAR_GISRC = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 153
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 153
 try:
     G_VAR_MAPSET = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 156
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 156
 try:
     G_GISRC_MODE_FILE = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 157
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 157
 try:
     G_GISRC_MODE_MEMORY = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 160
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 160
 try:
     TYPE_INTEGER = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 161
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 161
 try:
     TYPE_DOUBLE = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 162
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 162
 try:
     TYPE_STRING = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 163
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 163
 try:
     YES = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 164
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 164
 try:
     NO = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 167
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 167
 try:
     GNAME_MAX = 256
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 168
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 168
 try:
     GMAPSET_MAX = 256
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 170
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 170
 try:
     GPATH_MAX = 4096
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 173
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 173
 try:
     GBASENAME_SEP = '_'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 188
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 188
 def deserialize_int32_le(buf):
     return (((((buf [0]) << 0) | ((buf [1]) << 8)) | ((buf [2]) << 16)) | ((buf [3]) << 24))
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 202
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 202
 def deserialize_int32_be(buf):
     return (((((buf [0]) << 24) | ((buf [1]) << 16)) | ((buf [2]) << 8)) | ((buf [3]) << 0))
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 208
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 208
 try:
     GRASS_DIRSEP = '/'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 210
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 210
 try:
     HOST_DIRSEP = '\\\\'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 211
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 211
 try:
     G_DEV_NULL = 'NUL:'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 360
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 360
 try:
     G_INFO_FORMAT_STANDARD = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 361
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 361
 try:
     G_INFO_FORMAT_GUI = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 362
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 362
 try:
     G_INFO_FORMAT_SILENT = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 363
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 363
 try:
     G_INFO_FORMAT_PLAIN = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 366
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 366
 try:
     G_ICON_CROSS = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 367
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 367
 try:
     G_ICON_BOX = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 368
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 368
 try:
     G_ICON_ARROW = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 371
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 371
 try:
     DEFAULT_FG_COLOR = 'black'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 372
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 372
 try:
     DEFAULT_BG_COLOR = 'white'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 373
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 373
 try:
     DEFAULT_COLOR_TABLE = 'viridis'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 376
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 376
 try:
     G_FATAL_EXIT = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 377
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 377
 try:
     G_FATAL_PRINT = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 378
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 378
 try:
     G_FATAL_RETURN = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 381
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 381
 try:
     ENDIAN_LITTLE = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 382
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 382
 try:
     ENDIAN_BIG = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 383
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 383
 try:
     ENDIAN_OTHER = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 389
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 389
 try:
     GV_KEY_COLUMN = 'cat'
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 57
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 57
 def G_alloca(n):
     return (G_malloc (n))
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 58
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 58
 def G_freea(p):
     return (G_free (p))
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 72
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 72
 try:
     RELDIR = '?'
 except:
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 100
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 100
 def G_incr_void_ptr(ptr, size):
     return (ptr + size)
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 116
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 116
 def G_malloc(n):
     return (G__malloc ('<ctypesgen>', 0, n))
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 117
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 117
 def G_calloc(m, n):
     return (G__calloc ('<ctypesgen>', 0, m, n))
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 118
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gis.h: 118
 def G_realloc(p, n):
     return (G__realloc ('<ctypesgen>', 0, p, n))
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 9
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 9
 try:
     BLACK = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 10
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 10
 try:
     RED = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 11
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 11
 try:
     GREEN = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 12
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 12
 try:
     BLUE = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 13
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 13
 try:
     YELLOW = 5
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 14
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 14
 try:
     CYAN = 6
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 15
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 15
 try:
     MAGENTA = 7
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 16
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 16
 try:
     WHITE = 8
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 17
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 17
 try:
     GRAY = 9
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 18
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 18
 try:
     ORANGE = 10
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 19
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 19
 try:
     AQUA = 11
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 20
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 20
 try:
     INDIGO = 12
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 21
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 21
 try:
     VIOLET = 13
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 22
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 22
 try:
     BROWN = 14
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 24
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 24
 try:
     GREY = GRAY
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 25
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 25
 try:
     PURPLE = VIOLET
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 28
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 28
 try:
     D_COLOR_LIST = 'red,orange,yellow,green,blue,indigo,violet,white,black,gray,brown,magenta,aqua,grey,cyan,purple'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 31
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 31
 try:
     MAX_COLOR_LEN = 32
 except:
     pass
 
-Cell_head = struct_Cell_head # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 413
+Cell_head = struct_Cell_head # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 413
 
-G_3dview = struct_G_3dview # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 475
+G_3dview = struct_G_3dview # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 475
 
-Key_Value = struct_Key_Value # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 502
+Key_Value = struct_Key_Value # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 502
 
-Option = struct_Option # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 532
+Option = struct_Option # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 532
 
-Flag = struct_Flag # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 561
+Flag = struct_Flag # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 561
 
-GModule = struct_GModule # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 578
+GModule = struct_GModule # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 578
 
-TimeStamp = struct_TimeStamp # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 588
+TimeStamp = struct_TimeStamp # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 588
 
-Counter = struct_Counter # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 594
+Counter = struct_Counter # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 594
 
-Popen = struct_Popen # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 598
+Popen = struct_Popen # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 598
 
-_Color_Value_ = struct__Color_Value_ # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 624
+_Color_Value_ = struct__Color_Value_ # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 624
 
-_Color_Rule_ = struct__Color_Rule_ # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 632
+_Color_Rule_ = struct__Color_Rule_ # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 632
 
-_Color_Info_ = struct__Color_Info_ # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 639
+_Color_Info_ = struct__Color_Info_ # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 639
 
-Colors = struct_Colors # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 666
+Colors = struct_Colors # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 666
 
-ilist = struct_ilist # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 690
+ilist = struct_ilist # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gis.h: 690
 
-color_rgb = struct_color_rgb # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 33
+color_rgb = struct_color_rgb # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 33
 
-color_name = struct_color_name # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 38
+color_name = struct_color_name # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\colors.h: 38
 
 # No inserted files
 

@@ -1,6 +1,6 @@
 // This class defines the "official" low-level API.
 //
-// Copyright (c) 2020 Riverbank Computing Limited <info@riverbankcomputing.com>
+// Copyright (c) 2022 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 
 // This file is part of QScintilla.
 // 
@@ -3873,9 +3873,7 @@ private:
     int preeditPos;
     int preeditNrBytes;
     QString preeditString;
-#if QT_VERSION >= 0x050000
     bool clickCausedFocus;
-#endif
 
     void connectHorizontalScrollBar();
     void connectVerticalScrollBar();

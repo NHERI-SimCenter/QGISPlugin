@@ -1,64 +1,64 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>d.colortable - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>d.colortable</b></em>  - Displays the color table associated with a raster map layer.
-<h2>KEYWORDS</h2>
-<a href="display.html">display</a>, <a href="topic_raster.html">raster</a>, <a href="keywords.html#color table">color table</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>d.colortable</b><br></div>
-<b>d.colortable --help</b><br>
-<div id="synopsis"><b>d.colortable</b> [-<b>n</b>] <b>map</b>=<em>name</em>  [<b>color</b>=<em>name</em>]   [<b>lines</b>=<em>integer</em>]   [<b>columns</b>=<em>integer</em>]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-n</b></dt>
-<dd>Do not draw a collar showing the NULL color in FP maps</dd>
-
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>map</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of raster map whose color table is to be displayed</dd>
-
-<dt><b>color</b>=<em>name</em></dt>
-<dd>Color of lines separating the colors of the color table</dd>
-<dd>Either a standard color name or R:G:B triplet</dd>
-<dd>Default: <em>white</em></dd>
-
-<dt><b>lines</b>=<em>integer</em></dt>
-<dd>Number of lines to appear in the color table</dd>
-<dd>Options: <em>1-1000</em></dd>
-
-<dt><b>columns</b>=<em>integer</em></dt>
-<dd>Number of columns to appear in the color table</dd>
-<dd>Options: <em>1-1000</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>d.colortable - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>d.colortable</b></em>  - Displays the color table associated with a raster map layer.
+<h2>KEYWORDS</h2>
+<a href="display.html">display</a>, <a href="topic_raster.html">raster</a>, <a href="keywords.html#color table">color table</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>d.colortable</b><br></div>
+<b>d.colortable --help</b><br>
+<div id="synopsis"><b>d.colortable</b> [-<b>n</b>] <b>map</b>=<em>name</em>  [<b>color</b>=<em>name</em>]   [<b>lines</b>=<em>integer</em>]   [<b>columns</b>=<em>integer</em>]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-n</b></dt>
+<dd>Do not draw a collar showing the NULL color in FP maps</dd>
+
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>map</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of raster map whose color table is to be displayed</dd>
+
+<dt><b>color</b>=<em>name</em></dt>
+<dd>Color of lines separating the colors of the color table</dd>
+<dd>Either a standard color name or R:G:B triplet</dd>
+<dd>Default: <em>white</em></dd>
+
+<dt><b>lines</b>=<em>integer</em></dt>
+<dd>Number of lines to appear in the color table</dd>
+<dd>Options: <em>1-1000</em></dd>
+
+<dt><b>columns</b>=<em>integer</em></dt>
+<dd>Number of columns to appear in the color table</dd>
+<dd>Options: <em>1-1000</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -138,7 +138,14 @@ James Westervelt, U.S. Army Construction Engineering Research Laboratory
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/display/d.colortable">d.colortable source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/display/d.colortable">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/display/d.colortable">d.colortable source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/display/d.colortable">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -149,9 +156,9 @@ James Westervelt, U.S. Army Construction Engineering Research Laboratory
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

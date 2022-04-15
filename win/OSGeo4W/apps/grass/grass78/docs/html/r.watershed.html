@@ -1,137 +1,137 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.watershed - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.watershed</b></em>  - Calculates hydrological parameters and RUSLE factors.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_hydrology.html">hydrology</a>, <a href="keywords.html#watershed">watershed</a>, <a href="keywords.html#accumulation">accumulation</a>, <a href="keywords.html#drainage">drainage</a>, <a href="keywords.html#stream network">stream network</a>, <a href="keywords.html#stream power index">stream power index</a>, <a href="keywords.html#topographic index">topographic index</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.watershed</b><br></div>
-<b>r.watershed --help</b><br>
-<div id="synopsis"><b>r.watershed</b> [-<b>s4mab</b>] <b>elevation</b>=<em>name</em>  [<b>depression</b>=<em>name</em>]   [<b>flow</b>=<em>name</em>]   [<b>disturbed_land</b>=<em>name</em>]   [<b>blocking</b>=<em>name</em>]   [<b>retention</b>=<em>name</em>]   [<b>threshold</b>=<em>integer</em>]   [<b>max_slope_length</b>=<em>float</em>]   [<b>accumulation</b>=<em>name</em>]   [<b>tci</b>=<em>name</em>]   [<b>spi</b>=<em>name</em>]   [<b>drainage</b>=<em>name</em>]   [<b>basin</b>=<em>name</em>]   [<b>stream</b>=<em>name</em>]   [<b>half_basin</b>=<em>name</em>]   [<b>length_slope</b>=<em>name</em>]   [<b>slope_steepness</b>=<em>name</em>]   [<b>convergence</b>=<em>integer</em>]   [<b>memory</b>=<em>memory in MB</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-s</b></dt>
-<dd>SFD (D8) flow (default is MFD)</dd>
-<dd>SFD: single flow direction, MFD: multiple flow direction</dd>
-
-<dt><b>-4</b></dt>
-<dd>Allow only horizontal and vertical flow of water</dd>
-
-<dt><b>-m</b></dt>
-<dd>Enable disk swap memory option: Operation is slow</dd>
-<dd>Only needed if memory requirements exceed available RAM; see manual on how to calculate memory requirements</dd>
-
-<dt><b>-a</b></dt>
-<dd>Use positive flow accumulation even for likely underestimates</dd>
-<dd>See manual for a detailed description of flow accumulation output</dd>
-
-<dt><b>-b</b></dt>
-<dd>Beautify flat areas</dd>
-<dd>Flow direction in flat areas is modified to look prettier</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>elevation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input elevation raster map</dd>
-
-<dt><b>depression</b>=<em>name</em></dt>
-<dd>Name of input depressions raster map</dd>
-<dd>All non-NULL and non-zero cells are considered as real depressions</dd>
-
-<dt><b>flow</b>=<em>name</em></dt>
-<dd>Name of input raster representing amount of overland flow per cell</dd>
-
-<dt><b>disturbed_land</b>=<em>name</em></dt>
-<dd>Name of input raster map percent of disturbed land</dd>
-<dd>For USLE</dd>
-
-<dt><b>blocking</b>=<em>name</em></dt>
-<dd>Name of input raster map blocking overland surface flow</dd>
-<dd>For USLE. All non-NULL and non-zero cells are considered as blocking terrain.</dd>
-
-<dt><b>retention</b>=<em>name</em></dt>
-<dd>Name of input raster map with percentages for flow accumulation.</dd>
-
-<dt><b>threshold</b>=<em>integer</em></dt>
-<dd>Minimum size of exterior watershed basin</dd>
-
-<dt><b>max_slope_length</b>=<em>float</em></dt>
-<dd>Maximum length of surface flow in map units</dd>
-<dd>For USLE</dd>
-
-<dt><b>accumulation</b>=<em>name</em></dt>
-<dd>Name for output accumulation raster map</dd>
-<dd>Number of cells that drain through each cell</dd>
-
-<dt><b>tci</b>=<em>name</em></dt>
-<dd>Name for output topographic index ln(a / tan(b)) map</dd>
-
-<dt><b>spi</b>=<em>name</em></dt>
-<dd>Name for output stream power index a * tan(b)</dd>
-<dd>Name for output raster map</dd>
-
-<dt><b>drainage</b>=<em>name</em></dt>
-<dd>Name for output drainage direction raster map</dd>
-<dd>Directions numbered from 1 to 8</dd>
-
-<dt><b>basin</b>=<em>name</em></dt>
-<dd>Name for output basins raster map</dd>
-
-<dt><b>stream</b>=<em>name</em></dt>
-<dd>Name for output stream segments raster map</dd>
-
-<dt><b>half_basin</b>=<em>name</em></dt>
-<dd>Name for output half basins raster map</dd>
-<dd>Each half-basin is given a unique value</dd>
-
-<dt><b>length_slope</b>=<em>name</em></dt>
-<dd>Name for output slope length raster map</dd>
-<dd>Slope length and steepness (LS) factor for USLE</dd>
-
-<dt><b>slope_steepness</b>=<em>name</em></dt>
-<dd>Name for output slope steepness raster map</dd>
-<dd>Slope steepness (S) factor for USLE</dd>
-
-<dt><b>convergence</b>=<em>integer</em></dt>
-<dd>Convergence factor for MFD (1-10)</dd>
-<dd>1 = most diverging flow, 10 = most converging flow. Recommended: 5</dd>
-<dd>Default: <em>5</em></dd>
-
-<dt><b>memory</b>=<em>memory in MB</em></dt>
-<dd>Maximum memory to be used (in MB)</dd>
-<dd>Cache size for raster rows</dd>
-<dd>Default: <em>300</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.watershed - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.watershed</b></em>  - Calculates hydrological parameters and RUSLE factors.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_hydrology.html">hydrology</a>, <a href="keywords.html#watershed">watershed</a>, <a href="keywords.html#accumulation">accumulation</a>, <a href="keywords.html#drainage">drainage</a>, <a href="keywords.html#stream network">stream network</a>, <a href="keywords.html#stream power index">stream power index</a>, <a href="keywords.html#topographic index">topographic index</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.watershed</b><br></div>
+<b>r.watershed --help</b><br>
+<div id="synopsis"><b>r.watershed</b> [-<b>s4mab</b>] <b>elevation</b>=<em>name</em>  [<b>depression</b>=<em>name</em>]   [<b>flow</b>=<em>name</em>]   [<b>disturbed_land</b>=<em>name</em>]   [<b>blocking</b>=<em>name</em>]   [<b>retention</b>=<em>name</em>]   [<b>threshold</b>=<em>integer</em>]   [<b>max_slope_length</b>=<em>float</em>]   [<b>accumulation</b>=<em>name</em>]   [<b>tci</b>=<em>name</em>]   [<b>spi</b>=<em>name</em>]   [<b>drainage</b>=<em>name</em>]   [<b>basin</b>=<em>name</em>]   [<b>stream</b>=<em>name</em>]   [<b>half_basin</b>=<em>name</em>]   [<b>length_slope</b>=<em>name</em>]   [<b>slope_steepness</b>=<em>name</em>]   [<b>convergence</b>=<em>integer</em>]   [<b>memory</b>=<em>memory in MB</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-s</b></dt>
+<dd>SFD (D8) flow (default is MFD)</dd>
+<dd>SFD: single flow direction, MFD: multiple flow direction</dd>
+
+<dt><b>-4</b></dt>
+<dd>Allow only horizontal and vertical flow of water</dd>
+
+<dt><b>-m</b></dt>
+<dd>Enable disk swap memory option: Operation is slow</dd>
+<dd>Only needed if memory requirements exceed available RAM; see manual on how to calculate memory requirements</dd>
+
+<dt><b>-a</b></dt>
+<dd>Use positive flow accumulation even for likely underestimates</dd>
+<dd>See manual for a detailed description of flow accumulation output</dd>
+
+<dt><b>-b</b></dt>
+<dd>Beautify flat areas</dd>
+<dd>Flow direction in flat areas is modified to look prettier</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>elevation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input elevation raster map</dd>
+
+<dt><b>depression</b>=<em>name</em></dt>
+<dd>Name of input depressions raster map</dd>
+<dd>All non-NULL and non-zero cells are considered as real depressions</dd>
+
+<dt><b>flow</b>=<em>name</em></dt>
+<dd>Name of input raster representing amount of overland flow per cell</dd>
+
+<dt><b>disturbed_land</b>=<em>name</em></dt>
+<dd>Name of input raster map percent of disturbed land</dd>
+<dd>For USLE</dd>
+
+<dt><b>blocking</b>=<em>name</em></dt>
+<dd>Name of input raster map blocking overland surface flow</dd>
+<dd>For USLE. All non-NULL and non-zero cells are considered as blocking terrain.</dd>
+
+<dt><b>retention</b>=<em>name</em></dt>
+<dd>Name of input raster map with percentages for flow accumulation.</dd>
+
+<dt><b>threshold</b>=<em>integer</em></dt>
+<dd>Minimum size of exterior watershed basin</dd>
+
+<dt><b>max_slope_length</b>=<em>float</em></dt>
+<dd>Maximum length of surface flow in map units</dd>
+<dd>For USLE</dd>
+
+<dt><b>accumulation</b>=<em>name</em></dt>
+<dd>Name for output accumulation raster map</dd>
+<dd>Number of cells that drain through each cell</dd>
+
+<dt><b>tci</b>=<em>name</em></dt>
+<dd>Name for output topographic index ln(a / tan(b)) map</dd>
+
+<dt><b>spi</b>=<em>name</em></dt>
+<dd>Name for output stream power index a * tan(b)</dd>
+<dd>Name for output raster map</dd>
+
+<dt><b>drainage</b>=<em>name</em></dt>
+<dd>Name for output drainage direction raster map</dd>
+<dd>Directions numbered from 1 to 8</dd>
+
+<dt><b>basin</b>=<em>name</em></dt>
+<dd>Name for output basins raster map</dd>
+
+<dt><b>stream</b>=<em>name</em></dt>
+<dd>Name for output stream segments raster map</dd>
+
+<dt><b>half_basin</b>=<em>name</em></dt>
+<dd>Name for output half basins raster map</dd>
+<dd>Each half-basin is given a unique value</dd>
+
+<dt><b>length_slope</b>=<em>name</em></dt>
+<dd>Name for output slope length raster map</dd>
+<dd>Slope length and steepness (LS) factor for USLE</dd>
+
+<dt><b>slope_steepness</b>=<em>name</em></dt>
+<dd>Name for output slope steepness raster map</dd>
+<dd>Slope steepness (S) factor for USLE</dd>
+
+<dt><b>convergence</b>=<em>integer</em></dt>
+<dd>Convergence factor for MFD (1-10)</dd>
+<dd>1 = most diverging flow, 10 = most converging flow. Recommended: 5</dd>
+<dd>Default: <em>5</em></dd>
+
+<dt><b>memory</b>=<em>memory in MB</em></dt>
+<dd>Maximum memory to be used (in MB)</dd>
+<dd>Cache size for raster rows</dd>
+<dd>Default: <em>300</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -748,7 +748,14 @@ Retention for flow distribution by Andreas Gericke (IGB Berlin)
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.watershed/front">r.watershed source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.watershed/front">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.watershed/front">r.watershed source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.watershed/front">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -759,9 +766,9 @@ Retention for flow distribution by Andreas Gericke (IGB Berlin)
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

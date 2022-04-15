@@ -1,7 +1,7 @@
 '''Wrapper for gmath.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_gmath.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gmath.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h -o OBJ.x86_64-w64-mingw32/gmath.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_gmath.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gmath.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h -o OBJ.x86_64-w64-mingw32/gmath.py
 
 Do not modify this file.
 '''
@@ -27,7 +27,7 @@ _libs["grass_gmath.7.8"] = load_library("grass_gmath.7.8")
 
 # No modules
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 59
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 59
 class struct_anon_3(Structure):
     pass
 
@@ -42,9 +42,9 @@ struct_anon_3._fields_ = [
     ('index', POINTER(c_uint)),
 ]
 
-G_math_spvector = struct_anon_3 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 59
+G_math_spvector = struct_anon_3 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 59
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_alloc_vector'):
         continue
@@ -53,7 +53,7 @@ for _lib in six.itervalues(_libs):
     G_alloc_vector.restype = POINTER(c_double)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 6
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 6
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_alloc_matrix'):
         continue
@@ -62,7 +62,7 @@ for _lib in six.itervalues(_libs):
     G_alloc_matrix.restype = POINTER(POINTER(c_double))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 7
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 7
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_alloc_fvector'):
         continue
@@ -71,7 +71,7 @@ for _lib in six.itervalues(_libs):
     G_alloc_fvector.restype = POINTER(c_float)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 8
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 8
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_alloc_fmatrix'):
         continue
@@ -80,7 +80,7 @@ for _lib in six.itervalues(_libs):
     G_alloc_fmatrix.restype = POINTER(POINTER(c_float))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 9
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 9
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free_vector'):
         continue
@@ -89,7 +89,7 @@ for _lib in six.itervalues(_libs):
     G_free_vector.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 10
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 10
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free_matrix'):
         continue
@@ -98,7 +98,7 @@ for _lib in six.itervalues(_libs):
     G_free_matrix.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 11
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 11
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free_fvector'):
         continue
@@ -107,7 +107,7 @@ for _lib in six.itervalues(_libs):
     G_free_fvector.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 12
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 12
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free_fmatrix'):
         continue
@@ -116,7 +116,7 @@ for _lib in six.itervalues(_libs):
     G_free_fmatrix.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 15
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 15
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_alloc_ivector'):
         continue
@@ -125,7 +125,7 @@ for _lib in six.itervalues(_libs):
     G_alloc_ivector.restype = POINTER(c_int)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 16
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 16
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_alloc_imatrix'):
         continue
@@ -134,7 +134,7 @@ for _lib in six.itervalues(_libs):
     G_alloc_imatrix.restype = POINTER(POINTER(c_int))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 17
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 17
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free_ivector'):
         continue
@@ -143,7 +143,7 @@ for _lib in six.itervalues(_libs):
     G_free_ivector.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 18
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 18
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_free_imatrix'):
         continue
@@ -152,7 +152,7 @@ for _lib in six.itervalues(_libs):
     G_free_imatrix.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 21
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 21
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'fft'):
         continue
@@ -161,7 +161,7 @@ for _lib in six.itervalues(_libs):
     fft.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 22
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 22
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'fft2'):
         continue
@@ -170,7 +170,7 @@ for _lib in six.itervalues(_libs):
     fft2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 25
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 25
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_rand_gauss'):
         continue
@@ -179,7 +179,7 @@ for _lib in six.itervalues(_libs):
     G_math_rand_gauss.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 28
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 28
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_max_pow2'):
         continue
@@ -188,7 +188,7 @@ for _lib in six.itervalues(_libs):
     G_math_max_pow2.restype = c_long
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 29
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 29
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_min_pow2'):
         continue
@@ -197,7 +197,7 @@ for _lib in six.itervalues(_libs):
     G_math_min_pow2.restype = c_long
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 32
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 32
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_srand'):
         continue
@@ -206,7 +206,7 @@ for _lib in six.itervalues(_libs):
     G_math_srand.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 33
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 33
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_srand_auto'):
         continue
@@ -215,7 +215,7 @@ for _lib in six.itervalues(_libs):
     G_math_srand_auto.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 34
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 34
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_rand'):
         continue
@@ -224,7 +224,7 @@ for _lib in six.itervalues(_libs):
     G_math_rand.restype = c_float
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 37
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 37
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'del2g'):
         continue
@@ -233,7 +233,7 @@ for _lib in six.itervalues(_libs):
     del2g.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 40
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 40
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'getg'):
         continue
@@ -242,7 +242,7 @@ for _lib in six.itervalues(_libs):
     getg.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 43
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 43
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_egvorder'):
         continue
@@ -251,7 +251,7 @@ for _lib in six.itervalues(_libs):
     G_math_egvorder.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 46
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 46
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_complex_mult'):
         continue
@@ -260,7 +260,7 @@ for _lib in six.itervalues(_libs):
     G_math_complex_mult.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 49
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 49
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_ludcmp'):
         continue
@@ -269,7 +269,7 @@ for _lib in six.itervalues(_libs):
     G_ludcmp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 50
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 50
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_lubksb'):
         continue
@@ -278,7 +278,7 @@ for _lib in six.itervalues(_libs):
     G_lubksb.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 53
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 53
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_findzc'):
         continue
@@ -287,7 +287,7 @@ for _lib in six.itervalues(_libs):
     G_math_findzc.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 59
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 59
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solv'):
         continue
@@ -296,7 +296,7 @@ for _lib in six.itervalues(_libs):
     G_math_solv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 60
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 60
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solvps'):
         continue
@@ -305,7 +305,7 @@ for _lib in six.itervalues(_libs):
     G_math_solvps.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 61
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 61
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solvtd'):
         continue
@@ -314,7 +314,7 @@ for _lib in six.itervalues(_libs):
     G_math_solvtd.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 62
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 62
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solvru'):
         continue
@@ -323,7 +323,7 @@ for _lib in six.itervalues(_libs):
     G_math_solvru.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 63
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 63
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_minv'):
         continue
@@ -332,7 +332,7 @@ for _lib in six.itervalues(_libs):
     G_math_minv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 64
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 64
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_psinv'):
         continue
@@ -341,7 +341,7 @@ for _lib in six.itervalues(_libs):
     G_math_psinv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 65
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 65
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_ruinv'):
         continue
@@ -350,7 +350,7 @@ for _lib in six.itervalues(_libs):
     G_math_ruinv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 66
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 66
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_eigval'):
         continue
@@ -359,7 +359,7 @@ for _lib in six.itervalues(_libs):
     G_math_eigval.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 67
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 67
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_eigen'):
         continue
@@ -368,7 +368,7 @@ for _lib in six.itervalues(_libs):
     G_math_eigen.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 68
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 68
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_evmax'):
         continue
@@ -377,7 +377,7 @@ for _lib in six.itervalues(_libs):
     G_math_evmax.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 69
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 69
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_svdval'):
         continue
@@ -386,7 +386,7 @@ for _lib in six.itervalues(_libs):
     G_math_svdval.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 70
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 70
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_sv2val'):
         continue
@@ -395,7 +395,7 @@ for _lib in six.itervalues(_libs):
     G_math_sv2val.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 71
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 71
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_svduv'):
         continue
@@ -404,7 +404,7 @@ for _lib in six.itervalues(_libs):
     G_math_svduv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 72
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 72
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_sv2uv'):
         continue
@@ -413,7 +413,7 @@ for _lib in six.itervalues(_libs):
     G_math_sv2uv.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 73
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 73
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_svdu1v'):
         continue
@@ -422,7 +422,7 @@ for _lib in six.itervalues(_libs):
     G_math_svdu1v.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 81
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 81
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_alloc_spvector'):
         continue
@@ -431,7 +431,7 @@ for _lib in six.itervalues(_libs):
     G_math_alloc_spvector.restype = POINTER(G_math_spvector)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 82
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 82
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_alloc_spmatrix'):
         continue
@@ -440,7 +440,7 @@ for _lib in six.itervalues(_libs):
     G_math_alloc_spmatrix.restype = POINTER(POINTER(G_math_spvector))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 83
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 83
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_free_spmatrix'):
         continue
@@ -449,7 +449,7 @@ for _lib in six.itervalues(_libs):
     G_math_free_spmatrix.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 84
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 84
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_free_spvector'):
         continue
@@ -458,7 +458,7 @@ for _lib in six.itervalues(_libs):
     G_math_free_spvector.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 85
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 85
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_add_spvector'):
         continue
@@ -467,7 +467,7 @@ for _lib in six.itervalues(_libs):
     G_math_add_spvector.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 86
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 86
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_A_to_Asp'):
         continue
@@ -476,7 +476,7 @@ for _lib in six.itervalues(_libs):
     G_math_A_to_Asp.restype = POINTER(POINTER(G_math_spvector))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 87
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 87
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_Asp_to_A'):
         continue
@@ -485,7 +485,7 @@ for _lib in six.itervalues(_libs):
     G_math_Asp_to_A.restype = POINTER(POINTER(c_double))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 88
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 88
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_Asp_to_sband_matrix'):
         continue
@@ -494,7 +494,7 @@ for _lib in six.itervalues(_libs):
     G_math_Asp_to_sband_matrix.restype = POINTER(POINTER(c_double))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 89
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 89
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_sband_matrix_to_Asp'):
         continue
@@ -503,7 +503,7 @@ for _lib in six.itervalues(_libs):
     G_math_sband_matrix_to_Asp.restype = POINTER(POINTER(G_math_spvector))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 90
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 90
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_print_spmatrix'):
         continue
@@ -512,7 +512,7 @@ for _lib in six.itervalues(_libs):
     G_math_print_spmatrix.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 91
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 91
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_Ax_sparse'):
         continue
@@ -521,7 +521,7 @@ for _lib in six.itervalues(_libs):
     G_math_Ax_sparse.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 94
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 94
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_matrix_to_sband_matrix'):
         continue
@@ -530,7 +530,7 @@ for _lib in six.itervalues(_libs):
     G_math_matrix_to_sband_matrix.restype = POINTER(POINTER(c_double))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 95
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 95
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_sband_matrix_to_matrix'):
         continue
@@ -539,7 +539,7 @@ for _lib in six.itervalues(_libs):
     G_math_sband_matrix_to_matrix.restype = POINTER(POINTER(c_double))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 96
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 96
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_Ax_sband'):
         continue
@@ -548,7 +548,7 @@ for _lib in six.itervalues(_libs):
     G_math_Ax_sband.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 99
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 99
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_gauss'):
         continue
@@ -557,7 +557,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_gauss.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 100
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 100
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_lu'):
         continue
@@ -566,7 +566,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_lu.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 101
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 101
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_cholesky'):
         continue
@@ -575,7 +575,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_cholesky.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 102
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 102
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_cholesky_sband'):
         continue
@@ -584,7 +584,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_cholesky_sband.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 103
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 103
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_jacobi'):
         continue
@@ -593,7 +593,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_jacobi.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 104
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 104
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_gs'):
         continue
@@ -602,7 +602,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_gs.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 106
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 106
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_pcg'):
         continue
@@ -611,7 +611,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_pcg.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 107
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 107
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_cg'):
         continue
@@ -620,7 +620,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_cg.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 108
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 108
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_cg_sband'):
         continue
@@ -629,7 +629,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_cg_sband.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 109
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 109
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_bicgstab'):
         continue
@@ -638,7 +638,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_bicgstab.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 110
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 110
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_sparse_jacobi'):
         continue
@@ -647,7 +647,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_sparse_jacobi.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 111
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 111
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_sparse_gs'):
         continue
@@ -656,7 +656,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_sparse_gs.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 112
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 112
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_sparse_pcg'):
         continue
@@ -665,7 +665,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_sparse_pcg.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 113
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 113
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_sparse_cg'):
         continue
@@ -674,7 +674,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_sparse_cg.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 114
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 114
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_solver_sparse_bicgstab'):
         continue
@@ -683,7 +683,7 @@ for _lib in six.itervalues(_libs):
     G_math_solver_sparse_bicgstab.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 117
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 117
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_gauss_elimination'):
         continue
@@ -692,7 +692,7 @@ for _lib in six.itervalues(_libs):
     G_math_gauss_elimination.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 118
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 118
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_lu_decomposition'):
         continue
@@ -701,7 +701,7 @@ for _lib in six.itervalues(_libs):
     G_math_lu_decomposition.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 119
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 119
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_cholesky_decomposition'):
         continue
@@ -710,7 +710,7 @@ for _lib in six.itervalues(_libs):
     G_math_cholesky_decomposition.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 120
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 120
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_cholesky_sband_decomposition'):
         continue
@@ -719,7 +719,7 @@ for _lib in six.itervalues(_libs):
     G_math_cholesky_sband_decomposition.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 121
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 121
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_backward_substitution'):
         continue
@@ -728,7 +728,7 @@ for _lib in six.itervalues(_libs):
     G_math_backward_substitution.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 122
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 122
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_forward_substitution'):
         continue
@@ -737,7 +737,7 @@ for _lib in six.itervalues(_libs):
     G_math_forward_substitution.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 123
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 123
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_cholesky_sband_substitution'):
         continue
@@ -746,7 +746,7 @@ for _lib in six.itervalues(_libs):
     G_math_cholesky_sband_substitution.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 128
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 128
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_x_dot_y'):
         continue
@@ -755,7 +755,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_x_dot_y.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 129
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 129
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_asum_norm'):
         continue
@@ -764,7 +764,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_asum_norm.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 130
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 130
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_euclid_norm'):
         continue
@@ -773,7 +773,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_euclid_norm.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 131
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 131
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_max_norm'):
         continue
@@ -782,7 +782,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_max_norm.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 132
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 132
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_ax_by'):
         continue
@@ -791,7 +791,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_ax_by.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 133
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 133
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_copy'):
         continue
@@ -800,7 +800,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_copy.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 135
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 135
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_x_dot_y'):
         continue
@@ -809,7 +809,7 @@ for _lib in six.itervalues(_libs):
     G_math_f_x_dot_y.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 136
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 136
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_asum_norm'):
         continue
@@ -818,7 +818,7 @@ for _lib in six.itervalues(_libs):
     G_math_f_asum_norm.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 137
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 137
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_euclid_norm'):
         continue
@@ -827,7 +827,7 @@ for _lib in six.itervalues(_libs):
     G_math_f_euclid_norm.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 138
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 138
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_max_norm'):
         continue
@@ -836,7 +836,7 @@ for _lib in six.itervalues(_libs):
     G_math_f_max_norm.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 139
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 139
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_ax_by'):
         continue
@@ -845,7 +845,7 @@ for _lib in six.itervalues(_libs):
     G_math_f_ax_by.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 140
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 140
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_copy'):
         continue
@@ -854,7 +854,7 @@ for _lib in six.itervalues(_libs):
     G_math_f_copy.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 142
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 142
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_i_x_dot_y'):
         continue
@@ -863,7 +863,7 @@ for _lib in six.itervalues(_libs):
     G_math_i_x_dot_y.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 143
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 143
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_i_asum_norm'):
         continue
@@ -872,7 +872,7 @@ for _lib in six.itervalues(_libs):
     G_math_i_asum_norm.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 144
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 144
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_i_euclid_norm'):
         continue
@@ -881,7 +881,7 @@ for _lib in six.itervalues(_libs):
     G_math_i_euclid_norm.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 145
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 145
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_i_max_norm'):
         continue
@@ -890,7 +890,7 @@ for _lib in six.itervalues(_libs):
     G_math_i_max_norm.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 146
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 146
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_i_ax_by'):
         continue
@@ -899,7 +899,7 @@ for _lib in six.itervalues(_libs):
     G_math_i_ax_by.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 147
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 147
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_i_copy'):
         continue
@@ -908,7 +908,7 @@ for _lib in six.itervalues(_libs):
     G_math_i_copy.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 150
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 150
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_ddot'):
         continue
@@ -917,7 +917,7 @@ for _lib in six.itervalues(_libs):
     G_math_ddot.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 151
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 151
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_sdot'):
         continue
@@ -926,7 +926,7 @@ for _lib in six.itervalues(_libs):
     G_math_sdot.restype = c_float
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 152
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 152
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_sdsdot'):
         continue
@@ -935,7 +935,7 @@ for _lib in six.itervalues(_libs):
     G_math_sdsdot.restype = c_float
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 153
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 153
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_dnrm2'):
         continue
@@ -944,7 +944,7 @@ for _lib in six.itervalues(_libs):
     G_math_dnrm2.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 154
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 154
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_dasum'):
         continue
@@ -953,7 +953,7 @@ for _lib in six.itervalues(_libs):
     G_math_dasum.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 155
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 155
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_idamax'):
         continue
@@ -962,7 +962,7 @@ for _lib in six.itervalues(_libs):
     G_math_idamax.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 156
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 156
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_snrm2'):
         continue
@@ -971,7 +971,7 @@ for _lib in six.itervalues(_libs):
     G_math_snrm2.restype = c_float
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 157
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 157
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_sasum'):
         continue
@@ -980,7 +980,7 @@ for _lib in six.itervalues(_libs):
     G_math_sasum.restype = c_float
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 158
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 158
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_isamax'):
         continue
@@ -989,7 +989,7 @@ for _lib in six.itervalues(_libs):
     G_math_isamax.restype = c_float
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 159
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 159
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_dscal'):
         continue
@@ -998,7 +998,7 @@ for _lib in six.itervalues(_libs):
     G_math_dscal.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 160
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 160
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_sscal'):
         continue
@@ -1007,7 +1007,7 @@ for _lib in six.itervalues(_libs):
     G_math_sscal.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 161
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 161
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_dcopy'):
         continue
@@ -1016,7 +1016,7 @@ for _lib in six.itervalues(_libs):
     G_math_dcopy.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 162
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 162
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_scopy'):
         continue
@@ -1025,7 +1025,7 @@ for _lib in six.itervalues(_libs):
     G_math_scopy.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 163
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 163
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_daxpy'):
         continue
@@ -1034,7 +1034,7 @@ for _lib in six.itervalues(_libs):
     G_math_daxpy.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 164
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 164
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_saxpy'):
         continue
@@ -1043,7 +1043,7 @@ for _lib in six.itervalues(_libs):
     G_math_saxpy.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 167
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 167
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_Ax'):
         continue
@@ -1052,7 +1052,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_Ax.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 168
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 168
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_Ax'):
         continue
@@ -1061,7 +1061,7 @@ for _lib in six.itervalues(_libs):
     G_math_f_Ax.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 169
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 169
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_x_dyad_y'):
         continue
@@ -1070,7 +1070,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_x_dyad_y.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 170
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 170
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_x_dyad_y'):
         continue
@@ -1079,7 +1079,7 @@ for _lib in six.itervalues(_libs):
     G_math_f_x_dyad_y.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 171
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 171
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_aAx_by'):
         continue
@@ -1088,7 +1088,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_aAx_by.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 172
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 172
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_aAx_by'):
         continue
@@ -1097,7 +1097,7 @@ for _lib in six.itervalues(_libs):
     G_math_f_aAx_by.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 173
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 173
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_A_T'):
         continue
@@ -1106,7 +1106,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_A_T.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 174
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 174
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_A_T'):
         continue
@@ -1115,7 +1115,7 @@ for _lib in six.itervalues(_libs):
     G_math_f_A_T.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 177
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 177
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_aA_B'):
         continue
@@ -1124,7 +1124,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_aA_B.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 178
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 178
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_aA_B'):
         continue
@@ -1133,7 +1133,7 @@ for _lib in six.itervalues(_libs):
     G_math_f_aA_B.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 179
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 179
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_d_AB'):
         continue
@@ -1142,7 +1142,7 @@ for _lib in six.itervalues(_libs):
     G_math_d_AB.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 180
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/gmath.h: 180
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'G_math_f_AB'):
         continue
@@ -1151,73 +1151,73 @@ for _lib in six.itervalues(_libs):
     G_math_f_AB.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 36
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 36
 try:
     G_MATH_SOLVER_DIRECT_GAUSS = 'gauss'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 37
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 37
 try:
     G_MATH_SOLVER_DIRECT_LU = 'lu'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 38
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 38
 try:
     G_MATH_SOLVER_DIRECT_CHOLESKY = 'cholesky'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 39
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 39
 try:
     G_MATH_SOLVER_ITERATIVE_JACOBI = 'jacobi'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 40
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 40
 try:
     G_MATH_SOLVER_ITERATIVE_SOR = 'sor'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 41
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 41
 try:
     G_MATH_SOLVER_ITERATIVE_CG = 'cg'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 42
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 42
 try:
     G_MATH_SOLVER_ITERATIVE_PCG = 'pcg'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 43
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 43
 try:
     G_MATH_SOLVER_ITERATIVE_BICGSTAB = 'bicgstab'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 46
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 46
 try:
     G_MATH_DIAGONAL_PRECONDITION = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 47
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 47
 try:
     G_MATH_ROWSCALE_ABSSUMNORM_PRECONDITION = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 48
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 48
 try:
     G_MATH_ROWSCALE_EUKLIDNORM_PRECONDITION = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 49
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\gmath.h: 49
 try:
     G_MATH_ROWSCALE_MAXNORM_PRECONDITION = 4
 except:

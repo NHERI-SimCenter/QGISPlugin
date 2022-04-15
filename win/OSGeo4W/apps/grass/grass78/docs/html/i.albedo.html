@@ -1,76 +1,76 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>i.albedo - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>i.albedo</b></em>  - Computes broad band albedo from surface reflectance.
-<h2>KEYWORDS</h2>
-<a href="imagery.html">imagery</a>, <a href="topic_albedo.html">albedo</a>, <a href="keywords.html#reflectance">reflectance</a>, <a href="keywords.html#satellite">satellite</a>, <a href="keywords.html#Landsat">Landsat</a>, <a href="keywords.html#ASTER">ASTER</a>, <a href="keywords.html#AVHRR">AVHRR</a>, <a href="keywords.html#MODIS">MODIS</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>i.albedo</b><br></div>
-<b>i.albedo --help</b><br>
-<div id="synopsis"><b>i.albedo</b> [-<b>mnl8acd</b>] <b>input</b>=<em>name</em>[,<i>name</i>,...] <b>output</b>=<em>name</em>  [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-m</b></dt>
-<dd>MODIS (7 input bands:1,2,3,4,5,6,7)</dd>
-
-<dt><b>-n</b></dt>
-<dd>NOAA AVHRR (2 input bands:1,2)</dd>
-
-<dt><b>-l</b></dt>
-<dd>Landsat 5+7 (6 input bands:1,2,3,4,5,7)</dd>
-
-<dt><b>-8</b></dt>
-<dd>Landsat 8 (7 input bands:1,2,3,4,5,6,7)</dd>
-
-<dt><b>-a</b></dt>
-<dd>ASTER (6 input bands:1,3,5,6,8,9)</dd>
-
-<dt><b>-c</b></dt>
-<dd>Aggressive mode (Landsat)</dd>
-<dd>Albedo dry run to calculate some water to beach/sand/desert stretching, a kind of simple atmospheric correction</dd>
-
-<dt><b>-d</b></dt>
-<dd>Soft mode (MODIS)</dd>
-<dd>Albedo dry run to calculate some water to beach/sand/desert stretching, a kind of simple atmospheric correction</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name[,<i>name</i>,...]</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output raster map</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>i.albedo - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>i.albedo</b></em>  - Computes broad band albedo from surface reflectance.
+<h2>KEYWORDS</h2>
+<a href="imagery.html">imagery</a>, <a href="topic_albedo.html">albedo</a>, <a href="keywords.html#reflectance">reflectance</a>, <a href="keywords.html#satellite">satellite</a>, <a href="keywords.html#Landsat">Landsat</a>, <a href="keywords.html#ASTER">ASTER</a>, <a href="keywords.html#AVHRR">AVHRR</a>, <a href="keywords.html#MODIS">MODIS</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>i.albedo</b><br></div>
+<b>i.albedo --help</b><br>
+<div id="synopsis"><b>i.albedo</b> [-<b>mnl8acd</b>] <b>input</b>=<em>name</em>[,<i>name</i>,...] <b>output</b>=<em>name</em>  [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-m</b></dt>
+<dd>MODIS (7 input bands:1,2,3,4,5,6,7)</dd>
+
+<dt><b>-n</b></dt>
+<dd>NOAA AVHRR (2 input bands:1,2)</dd>
+
+<dt><b>-l</b></dt>
+<dd>Landsat 5+7 (6 input bands:1,2,3,4,5,7)</dd>
+
+<dt><b>-8</b></dt>
+<dd>Landsat 8 (7 input bands:1,2,3,4,5,6,7)</dd>
+
+<dt><b>-a</b></dt>
+<dd>ASTER (6 input bands:1,3,5,6,8,9)</dd>
+
+<dt><b>-c</b></dt>
+<dd>Aggressive mode (Landsat)</dd>
+<dd>Albedo dry run to calculate some water to beach/sand/desert stretching, a kind of simple atmospheric correction</dd>
+
+<dt><b>-d</b></dt>
+<dd>Soft mode (MODIS)</dd>
+<dd>Albedo dry run to calculate some water to beach/sand/desert stretching, a kind of simple atmospheric correction</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name[,<i>name</i>,...]</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output raster map</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -149,7 +149,14 @@ Yann Chemin
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/imagery/i.albedo">i.albedo source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/imagery/i.albedo">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/imagery/i.albedo">i.albedo source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/imagery/i.albedo">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -160,9 +167,9 @@ Yann Chemin
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

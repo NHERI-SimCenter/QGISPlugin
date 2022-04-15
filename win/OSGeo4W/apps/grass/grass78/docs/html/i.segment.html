@@ -1,118 +1,118 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>i.segment - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>i.segment</b></em>  - Identifies segments (objects) from imagery data.
-<h2>KEYWORDS</h2>
-<a href="imagery.html">imagery</a>, <a href="topic_segmentation.html">segmentation</a>, <a href="keywords.html#classification">classification</a>, <a href="keywords.html#object recognition">object recognition</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>i.segment</b><br></div>
-<b>i.segment --help</b><br>
-<div id="synopsis"><b>i.segment</b> [-<b>dwap</b>] <b>group</b>=<em>name</em>[,<i>name</i>,...] <b>output</b>=<em>name</em>  [<b>band_suffix</b>=<em>name</em>]  <b>threshold</b>=<em>float</em>  [<b>radius</b>=<em>float</em>]   [<b>hr</b>=<em>float</em>]   [<b>method</b>=<em>string</em>]   [<b>similarity</b>=<em>string</em>]   [<b>minsize</b>=<em>integer</em>]   [<b>memory</b>=<em>memory in MB</em>]   [<b>iterations</b>=<em>integer</em>]   [<b>seeds</b>=<em>name</em>]   [<b>bounds</b>=<em>name</em>]   [<b>goodness</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-d</b></dt>
-<dd>Use 8 neighbors (3x3 neighborhood) instead of the default 4 neighbors for each pixel</dd>
-
-<dt><b>-w</b></dt>
-<dd>Weighted input, do not perform the default scaling of input raster maps</dd>
-
-<dt><b>-a</b></dt>
-<dd>Use adaptive bandwidth for mean shift</dd>
-<dd>Range (spectral) bandwidth is adapted for each moving window</dd>
-
-<dt><b>-p</b></dt>
-<dd>Use progressive bandwidth for mean shift</dd>
-<dd>Spatial bandwidth is increased, range (spectral) bandwidth is decreased in each iteration</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>group</b>=<em>name[,<i>name</i>,...]</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input imagery group or raster maps</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output raster map</dd>
-
-<dt><b>band_suffix</b>=<em>name</em></dt>
-<dd>Suffix for output bands with modified band values</dd>
-<dd>Name for output raster map</dd>
-
-<dt><b>threshold</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
-<dd>Difference threshold between 0 and 1</dd>
-<dd>Threshold = 0 merges only identical segments; threshold = 1 merges all</dd>
-
-<dt><b>radius</b>=<em>float</em></dt>
-<dd>Spatial radius in number of cells</dd>
-<dd>Must be &gt;= 1, only cells within spatial bandwidth are considered for mean shift</dd>
-<dd>Default: <em>1.5</em></dd>
-
-<dt><b>hr</b>=<em>float</em></dt>
-<dd>Range (spectral) bandwidth [0, 1]</dd>
-<dd>Only cells within range (spectral) bandwidth are considered for mean shift. Range bandwidth is used as conductance parameter for adaptive bandwidth</dd>
-
-<dt><b>method</b>=<em>string</em></dt>
-<dd>Segmentation method</dd>
-<dd>Options: <em>region_growing, mean_shift</em></dd>
-<dd>Default: <em>region_growing</em></dd>
-
-<dt><b>similarity</b>=<em>string</em></dt>
-<dd>Similarity calculation method</dd>
-<dd>Options: <em>euclidean, manhattan</em></dd>
-<dd>Default: <em>euclidean</em></dd>
-
-<dt><b>minsize</b>=<em>integer</em></dt>
-<dd>Minimum number of cells in a segment</dd>
-<dd>The final step will merge small segments with their best neighbor</dd>
-<dd>Options: <em>1-100000</em></dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>memory</b>=<em>memory in MB</em></dt>
-<dd>Maximum memory to be used (in MB)</dd>
-<dd>Cache size for raster rows</dd>
-<dd>Default: <em>300</em></dd>
-
-<dt><b>iterations</b>=<em>integer</em></dt>
-<dd>Maximum number of iterations</dd>
-
-<dt><b>seeds</b>=<em>name</em></dt>
-<dd>Name for input raster map with starting seeds</dd>
-
-<dt><b>bounds</b>=<em>name</em></dt>
-<dd>Name of input bounding/constraining raster map</dd>
-<dd>Must be integer values, each area will be segmented independent of the others</dd>
-
-<dt><b>goodness</b>=<em>name</em></dt>
-<dd>Name for output goodness of fit estimate map</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>i.segment - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>i.segment</b></em>  - Identifies segments (objects) from imagery data.
+<h2>KEYWORDS</h2>
+<a href="imagery.html">imagery</a>, <a href="topic_segmentation.html">segmentation</a>, <a href="keywords.html#classification">classification</a>, <a href="keywords.html#object recognition">object recognition</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>i.segment</b><br></div>
+<b>i.segment --help</b><br>
+<div id="synopsis"><b>i.segment</b> [-<b>dwap</b>] <b>group</b>=<em>name</em>[,<i>name</i>,...] <b>output</b>=<em>name</em>  [<b>band_suffix</b>=<em>name</em>]  <b>threshold</b>=<em>float</em>  [<b>radius</b>=<em>float</em>]   [<b>hr</b>=<em>float</em>]   [<b>method</b>=<em>string</em>]   [<b>similarity</b>=<em>string</em>]   [<b>minsize</b>=<em>integer</em>]   [<b>memory</b>=<em>memory in MB</em>]   [<b>iterations</b>=<em>integer</em>]   [<b>seeds</b>=<em>name</em>]   [<b>bounds</b>=<em>name</em>]   [<b>goodness</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-d</b></dt>
+<dd>Use 8 neighbors (3x3 neighborhood) instead of the default 4 neighbors for each pixel</dd>
+
+<dt><b>-w</b></dt>
+<dd>Weighted input, do not perform the default scaling of input raster maps</dd>
+
+<dt><b>-a</b></dt>
+<dd>Use adaptive bandwidth for mean shift</dd>
+<dd>Range (spectral) bandwidth is adapted for each moving window</dd>
+
+<dt><b>-p</b></dt>
+<dd>Use progressive bandwidth for mean shift</dd>
+<dd>Spatial bandwidth is increased, range (spectral) bandwidth is decreased in each iteration</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>group</b>=<em>name[,<i>name</i>,...]</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input imagery group or raster maps</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output raster map</dd>
+
+<dt><b>band_suffix</b>=<em>name</em></dt>
+<dd>Suffix for output bands with modified band values</dd>
+<dd>Name for output raster map</dd>
+
+<dt><b>threshold</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
+<dd>Difference threshold between 0 and 1</dd>
+<dd>Threshold = 0 merges only identical segments; threshold = 1 merges all</dd>
+
+<dt><b>radius</b>=<em>float</em></dt>
+<dd>Spatial radius in number of cells</dd>
+<dd>Must be &gt;= 1, only cells within spatial bandwidth are considered for mean shift</dd>
+<dd>Default: <em>1.5</em></dd>
+
+<dt><b>hr</b>=<em>float</em></dt>
+<dd>Range (spectral) bandwidth [0, 1]</dd>
+<dd>Only cells within range (spectral) bandwidth are considered for mean shift. Range bandwidth is used as conductance parameter for adaptive bandwidth</dd>
+
+<dt><b>method</b>=<em>string</em></dt>
+<dd>Segmentation method</dd>
+<dd>Options: <em>region_growing, mean_shift</em></dd>
+<dd>Default: <em>region_growing</em></dd>
+
+<dt><b>similarity</b>=<em>string</em></dt>
+<dd>Similarity calculation method</dd>
+<dd>Options: <em>euclidean, manhattan</em></dd>
+<dd>Default: <em>euclidean</em></dd>
+
+<dt><b>minsize</b>=<em>integer</em></dt>
+<dd>Minimum number of cells in a segment</dd>
+<dd>The final step will merge small segments with their best neighbor</dd>
+<dd>Options: <em>1-100000</em></dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>memory</b>=<em>memory in MB</em></dt>
+<dd>Maximum memory to be used (in MB)</dd>
+<dd>Cache size for raster rows</dd>
+<dd>Default: <em>300</em></dd>
+
+<dt><b>iterations</b>=<em>integer</em></dt>
+<dd>Maximum number of iterations</dd>
+
+<dt><b>seeds</b>=<em>name</em></dt>
+<dd>Name for input raster map with starting seeds</dd>
+
+<dt><b>bounds</b>=<em>name</em></dt>
+<dd>Name of input bounding/constraining raster map</dd>
+<dd>Must be integer values, each area will be segmented independent of the others</dd>
+
+<dt><b>goodness</b>=<em>name</em></dt>
+<dd>Name for output goodness of fit estimate map</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -431,7 +431,14 @@ Markus Metz (GSoC Mentor)
 <i>Last changed: $Date$</i>
 -->
 <h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/imagery/i.segment">i.segment source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/imagery/i.segment">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/imagery/i.segment">i.segment source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/imagery/i.segment">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -442,9 +449,9 @@ Markus Metz (GSoC Mentor)
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

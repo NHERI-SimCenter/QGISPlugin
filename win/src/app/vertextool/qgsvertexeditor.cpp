@@ -16,6 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "qgsapplication.h"
 #include "qgsvertexeditor.h"
 #include "qgscoordinateutils.h"
 #include "qgsmapcanvas.h"
@@ -27,6 +28,7 @@
 #include "qgscoordinatetransform.h"
 #include "qgsdoublevalidator.h"
 
+#include <QClipboard>
 #include <QLabel>
 #include <QTableWidget>
 #include <QHeaderView>
@@ -295,7 +297,7 @@ bool QgsVertexEditorModel::calcR( int row, double &r, double &minRadius ) const
 
   const QgsVertexEntry *entry = mLockedFeature->vertexMap().at( row );
 
-  const bool curvePoint = ( entry->vertexId().type == QgsVertexId::CurveVertex );
+  const bool curvePoint = ( entry->vertexId().type == Qgis::VertexType::Curve );
   if ( !curvePoint )
     return false;
 
@@ -457,6 +459,22 @@ void QgsVertexEditor::keyPressEvent( QKeyEvent *e )
     // Override default shortcut management in MapCanvas
     e->ignore();
   }
+  else if ( e->matches( QKeySequence::Copy ) )
+  {
+    if ( !mTableView->selectionModel()->hasSelection() )
+      return;
+    QString text;
+    QItemSelectionRange range = mTableView->selectionModel()->selection().first();
+    for ( int i = range.top(); i <= range.bottom(); ++i )
+    {
+      QStringList rowContents;
+      for ( int j = range.left(); j <= range.right(); ++j )
+        rowContents << mVertexModel->index( i, j ).data().toString();
+      text += rowContents.join( '\t' );
+      text += '\n';
+    }
+    QApplication::clipboard()->setText( text );
+  }
 }
 
 void QgsVertexEditor::closeEvent( QCloseEvent *event )
@@ -476,9 +494,9 @@ CoordinateItemDelegate::CoordinateItemDelegate( const QgsCoordinateReferenceSyst
 
 }
 
-QString CoordinateItemDelegate::displayText( const QVariant &value, const QLocale &locale ) const
+QString CoordinateItemDelegate::displayText( const QVariant &value, const QLocale & ) const
 {
-  return locale.toString( value.toDouble(), 'f', displayDecimalPlaces() );
+  return QLocale().toString( value.toDouble(), 'f', displayDecimalPlaces() );
 }
 
 QWidget *CoordinateItemDelegate::createEditor( QWidget *parent, const QStyleOptionViewItem &, const QModelIndex &index ) const
@@ -505,7 +523,7 @@ void CoordinateItemDelegate::setEditorData( QWidget *editor, const QModelIndex &
   QLineEdit *lineEdit = qobject_cast<QLineEdit *>( editor );
   if ( lineEdit && index.isValid() )
   {
-    lineEdit->setText( displayText( index.data( ).toDouble( ), QLocale() ) );
+    lineEdit->setText( displayText( index.data( ).toDouble( ), QLocale() ).replace( QLocale().groupSeparator(), QString( ) ) );
   }
 }
 

@@ -4,6 +4,9 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/browser/qgsinbuiltdataitemproviders.cpp  \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolreverseline.cpp  \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolselectionhandler.cpp \
+        $$PATH_TO_QGIS_SRC/app/qgsdockablewidgethelper.cpp \
+        $$PATH_TO_QGIS_SRC/app/annotations/qgsannotationitempropertieswidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/annotations/qgsannotationlayerproperties.cpp \
         $$PATH_TO_QGIS_SRC/app/decorations/qgsdecorationcopyright.cpp \
         $$PATH_TO_QGIS_SRC/app/decorations/qgsdecorationcopyrightdialog.cpp \
         $$PATH_TO_QGIS_SRC/app/decorations/qgsdecorationgrid.cpp \
@@ -28,6 +31,12 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/devtools/qgsappdevtoolutils.cpp \
         $$PATH_TO_QGIS_SRC/app/dwg/qgsdwgimportdialog.cpp \
         $$PATH_TO_QGIS_SRC/app/dwg/qgsdwgimporter.cpp \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgselevationprofilewidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgselevationprofileexportsettingswidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgselevationprofileimageexportdialog.cpp \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgselevationprofilepdfexportdialog.cpp \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgsmaptoolprofilecurve.cpp \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgsmaptoolprofilecurvefromfeature.cpp \
         $$PATH_TO_QGIS_SRC/app/georeferencer/qgsgcpcanvasitem.cpp \
         $$PATH_TO_QGIS_SRC/app/georeferencer/qgsgcplist.cpp \
         $$PATH_TO_QGIS_SRC/app/georeferencer/qgsgcplistmodel.cpp \
@@ -55,9 +64,34 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/labeling/qgsmaptoolrotatelabel.cpp \
         $$PATH_TO_QGIS_SRC/app/labeling/qgsmaptoolshowhidelabels.cpp \
         $$PATH_TO_QGIS_SRC/app/maptools/qgsappmaptools.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolsdigitizingtechniquemanager.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircle2points.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircle2tangentspoint.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircle3points.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircle3tangents.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircleabstract.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecirclecenterpoint.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircularstringabstract.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircularstringradius.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapeellipseabstract.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapeellipsecenter2points.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapeellipsecenterpoint.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapeellipseextent.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapeellipsefoci.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperectangle3points.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperectangleabstract.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperectanglecenter.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperectangleextent.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperegularpolygon2points.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperegularpolygonabstract.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperegularpolygoncentercorner.cpp \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperegularpolygoncenterpoint.cpp \
         $$PATH_TO_QGIS_SRC/app/mesh/qgsmaptooleditmeshframe.cpp \
         $$PATH_TO_QGIS_SRC/app/mesh/qgsnewmeshlayerdialog.cpp \
         $$PATH_TO_QGIS_SRC/app/mesh/qgsmeshcalculatordialog.cpp \
+        $$PATH_TO_QGIS_SRC/app/mesh/qgsmeshelevationpropertieswidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/mesh/qgsmeshselectbyexpressiondialog.cpp \
+        $$PATH_TO_QGIS_SRC/app/mesh/qgsmeshtransformcoordinatesdockwidget.cpp \
         $$PATH_TO_QGIS_SRC/app/options/qgsoptions.cpp \
         $$PATH_TO_QGIS_SRC/app/options/qgsadvancedoptions.cpp \
         $$PATH_TO_QGIS_SRC/app/options/qgsoptionsutils.cpp \
@@ -88,7 +122,6 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/qgsclipboard.cpp \
         $$PATH_TO_QGIS_SRC/app/qgscrashhandler.cpp \
         $$PATH_TO_QGIS_SRC/app/qgscustomization.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgscustomprojectiondialog.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsdatumtransformtablewidget.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsdelattrdialog.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsdevtoolspanelwidget.cpp \
@@ -98,6 +131,7 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/qgsfeatureaction.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsfirstrundialog.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsfixattributedialog.cpp \
+        $$PATH_TO_QGIS_SRC/app/qgslayertreegrouppropertieswidget.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsformannotationdialog.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsgeometryvalidationdock.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsgeometryvalidationmodel.cpp \
@@ -123,29 +157,12 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/qgsmapcanvasdockwidget.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmapsavedialog.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmapthemes.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdabstract.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdcircle.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdcircularstring.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdellipse.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooladdfeature.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooladdpart.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdrectangle.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdregularpolygon.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooladdring.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolannotation.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircle2points.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircle2tangentspoint.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircle3points.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircle3tangents.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcirclecenterpoint.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircularstringcurvepoint.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircularstringradius.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooldeletepart.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooldeletering.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolellipsecenter2points.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolellipsecenterpoint.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolellipseextent.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolellipsefoci.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolfeatureaction.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolfillring.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolformannotation.cpp \
@@ -157,12 +174,6 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooloffsetcurve.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooloffsetpointsymbol.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolpointsymbol.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolrectangle3points.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolrectanglecenter.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolrectangleextent.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolregularpolygon2points.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolregularpolygoncentercorner.cpp \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolregularpolygoncenterpoint.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolreshape.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolrotatefeature.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolrotatepointsymbols.cpp \
@@ -211,12 +222,13 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/qgsversioninfo.cpp \
         $$PATH_TO_QGIS_SRC/app/qgsversionmigration.cpp \
         $$PATH_TO_QGIS_SRC/app/qgswelcomepage.cpp \
+        $$PATH_TO_QGIS_SRC/app/project/qgsprojectelevationsettingswidget.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3danimationexportdialog.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3danimationwidget.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dapputils.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dicongenerator.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapcanvas.cpp \
-        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapcanvasdockwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapcanvaswidget.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapconfigwidget.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dmaptool.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dmaptoolidentify.cpp \
@@ -225,6 +237,7 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dmodelsourcelineedit.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dnavigationwidget.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3doptions.cpp \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dviewsmanagerdialog.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgsgoochmaterialwidget.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgslightswidget.cpp \
         $$PATH_TO_QGIS_SRC/app/3d/qgsline3dsymbolwidget.cpp \
@@ -273,9 +286,12 @@ SOURCES += \
         $$PATH_TO_QGIS_SRC/app/layout/qgsreportsectionwidget.cpp \
         $$PATH_TO_QGIS_SRC/app/layout/qgsreportlayoutsectionwidget.cpp \
         $$PATH_TO_QGIS_SRC/app/layout/qgsreportorganizerwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/options/qgscustomprojectionoptions.cpp \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsbearingitem.cpp \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsmarker.cpp \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsinformationwidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/raster/qgsrasterelevationpropertieswidget.cpp \
+        $$PATH_TO_QGIS_SRC/app/vector/qgsvectorelevationpropertieswidget.cpp \
         $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader21.cpp \
         $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader24.cpp \
         $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader15.cpp \
@@ -309,6 +325,9 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/browser/qgsinbuiltdataitemproviders.h  \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolreverseline.h  \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolselectionhandler.h \
+        $$PATH_TO_QGIS_SRC/app/qgsdockablewidgethelper.h \
+        $$PATH_TO_QGIS_SRC/app/annotations/qgsannotationitempropertieswidget.h \
+        $$PATH_TO_QGIS_SRC/app/annotations/qgsannotationlayerproperties.h \
         $$PATH_TO_QGIS_SRC/app/decorations/qgsdecorationcopyright.h \
         $$PATH_TO_QGIS_SRC/app/decorations/qgsdecorationcopyrightdialog.h \
         $$PATH_TO_QGIS_SRC/app/decorations/qgsdecorationgrid.h \
@@ -333,6 +352,12 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/devtools/qgsappdevtoolutils.h \
         $$PATH_TO_QGIS_SRC/app/dwg/qgsdwgimportdialog.h \
         $$PATH_TO_QGIS_SRC/app/dwg/qgsdwgimporter.h \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgselevationprofilewidget.h \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgselevationprofileexportsettingswidget.h \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgselevationprofileimageexportdialog.h \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgselevationprofilepdfexportdialog.h \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgsmaptoolprofilecurve.h \
+        $$PATH_TO_QGIS_SRC/app/elevation/qgsmaptoolprofilecurvefromfeature.h \
         $$PATH_TO_QGIS_SRC/app/georeferencer/qgsgcpcanvasitem.h \
         $$PATH_TO_QGIS_SRC/app/georeferencer/qgsgcplist.h \
         $$PATH_TO_QGIS_SRC/app/georeferencer/qgsgcplistmodel.h \
@@ -360,9 +385,34 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/labeling/qgsmaptoolrotatelabel.h \
         $$PATH_TO_QGIS_SRC/app/labeling/qgsmaptoolshowhidelabels.h \
         $$PATH_TO_QGIS_SRC/app/maptools/qgsappmaptools.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolsdigitizingtechniquemanager.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircle2points.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircle2tangentspoint.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircle3points.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircle3tangents.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircleabstract.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecirclecenterpoint.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircularstringabstract.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapecircularstringradius.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapeellipseabstract.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapeellipsecenter2points.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapeellipsecenterpoint.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapeellipseextent.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshapeellipsefoci.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperectangle3points.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperectangleabstract.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperectanglecenter.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperectangleextent.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperegularpolygon2points.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperegularpolygonabstract.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperegularpolygoncentercorner.h \
+        $$PATH_TO_QGIS_SRC/app/maptools/qgsmaptoolshaperegularpolygoncenterpoint.h \
         $$PATH_TO_QGIS_SRC/app/mesh/qgsmaptooleditmeshframe.h \
         $$PATH_TO_QGIS_SRC/app/mesh/qgsnewmeshlayerdialog.h \
         $$PATH_TO_QGIS_SRC/app/mesh/qgsmeshcalculatordialog.h \
+        $$PATH_TO_QGIS_SRC/app/mesh/qgsmeshelevationpropertieswidget.h \
+        $$PATH_TO_QGIS_SRC/app/mesh/qgsmeshselectbyexpressiondialog.h \
+        $$PATH_TO_QGIS_SRC/app/mesh/qgsmeshtransformcoordinatesdockwidget.h \
         $$PATH_TO_QGIS_SRC/app/options/qgsoptions.h \
         $$PATH_TO_QGIS_SRC/app/options/qgsadvancedoptions.h \
         $$PATH_TO_QGIS_SRC/app/options/qgsoptionsutils.h \
@@ -392,7 +442,6 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/qgsclipboard.h \
         $$PATH_TO_QGIS_SRC/app/qgscrashhandler.h \
         $$PATH_TO_QGIS_SRC/app/qgscustomization.h \
-        $$PATH_TO_QGIS_SRC/app/qgscustomprojectiondialog.h \
         $$PATH_TO_QGIS_SRC/app/qgsdatumtransformtablewidget.h \
         $$PATH_TO_QGIS_SRC/app/qgsdelattrdialog.h \
         $$PATH_TO_QGIS_SRC/app/qgsdevtoolspanelwidget.h \
@@ -402,6 +451,7 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/qgsfeatureaction.h \
         $$PATH_TO_QGIS_SRC/app/qgsfirstrundialog.h \
         $$PATH_TO_QGIS_SRC/app/qgsfixattributedialog.h \
+        $$PATH_TO_QGIS_SRC/app/qgslayertreegrouppropertieswidget.h \
         $$PATH_TO_QGIS_SRC/app/qgsformannotationdialog.h \
         $$PATH_TO_QGIS_SRC/app/qgsgeometryvalidationdock.h \
         $$PATH_TO_QGIS_SRC/app/qgsgeometryvalidationmodel.h \
@@ -427,29 +477,12 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/qgsmapcanvasdockwidget.h \
         $$PATH_TO_QGIS_SRC/app/qgsmapsavedialog.h \
         $$PATH_TO_QGIS_SRC/app/qgsmapthemes.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdabstract.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdcircle.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdcircularstring.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdellipse.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooladdfeature.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooladdpart.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdrectangle.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptooladdregularpolygon.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooladdring.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolannotation.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircle2points.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircle2tangentspoint.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircle3points.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircle3tangents.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcirclecenterpoint.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircularstringcurvepoint.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolcircularstringradius.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooldeletepart.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooldeletering.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolellipsecenter2points.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolellipsecenterpoint.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolellipseextent.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolellipsefoci.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolfeatureaction.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolfillring.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolformannotation.h \
@@ -461,12 +494,6 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooloffsetcurve.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptooloffsetpointsymbol.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolpointsymbol.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolrectangle3points.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolrectanglecenter.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolrectangleextent.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolregularpolygon2points.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolregularpolygoncentercorner.h \
-        $$PATH_TO_QGIS_SRC/app/qgsmaptoolregularpolygoncenterpoint.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolreshape.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolrotatefeature.h \
         $$PATH_TO_QGIS_SRC/app/qgsmaptoolrotatepointsymbols.h \
@@ -517,11 +544,12 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/qgsversionmigration.h \
         $$PATH_TO_QGIS_SRC/app/qgswelcomepage.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3danimationexportdialog.h \
+        $$PATH_TO_QGIS_SRC/app/project/qgsprojectelevationsettingswidget.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3danimationwidget.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dapputils.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dicongenerator.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapcanvas.h \
-        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapcanvasdockwidget.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapcanvaswidget.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dmapconfigwidget.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dmaptool.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dmaptoolidentify.h \
@@ -530,6 +558,7 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dmodelsourcelineedit.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3dnavigationwidget.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgs3doptions.h \
+        $$PATH_TO_QGIS_SRC/app/3d/qgs3dviewsmanagerdialog.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgsgoochmaterialwidget.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgslightswidget.h \
         $$PATH_TO_QGIS_SRC/app/3d/qgsline3dsymbolwidget.h \
@@ -578,9 +607,12 @@ HEADERS += \
         $$PATH_TO_QGIS_SRC/app/layout/qgsreportsectionwidget.h \
         $$PATH_TO_QGIS_SRC/app/layout/qgsreportlayoutsectionwidget.h \
         $$PATH_TO_QGIS_SRC/app/layout/qgsreportorganizerwidget.h \
+        $$PATH_TO_QGIS_SRC/app/options/qgscustomprojectionoptions.h \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsbearingitem.h \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsmarker.h \
         $$PATH_TO_QGIS_SRC/app/gps/qgsgpsinformationwidget.h \
+        $$PATH_TO_QGIS_SRC/app/raster/qgsrasterelevationpropertieswidget.h \
+        $$PATH_TO_QGIS_SRC/app/vector/qgsvectorelevationpropertieswidget.h \
         $$PATH_TO_QGIS_EXT/libdxfrw/intern/drw_cptable950.h \
         $$PATH_TO_QGIS_EXT/libdxfrw/intern/dwgreader21.h \
         $$PATH_TO_QGIS_EXT/libdxfrw/intern/drw_cptable932.h \
@@ -640,7 +672,11 @@ INCLUDEPATH +=  $$PATH_TO_QGIS_EXT \
                 $$PATH_TO_QGIS_EXT/opencl-clhpp/include \
                 $$PATH_TO_QGIS_SRC/app \
                 $$PATH_TO_QGIS_SRC/ui \
+                $$PATH_TO_QGIS_SRC/app/auth \
                 $$PATH_TO_QGIS_SRC/app/3d \
+                $$PATH_TO_QGIS_SRC/app/3d/terrain \
+                $$PATH_TO_QGIS_SRC/app/3d/chunks \
+                $$PATH_TO_QGIS_SRC/app/attributetable \
                 $$PATH_TO_QGIS_SRC/app/browser \
                 $$PATH_TO_QGIS_SRC/app/decorations \
                 $$PATH_TO_QGIS_SRC/app/devtools \
@@ -649,6 +685,7 @@ INCLUDEPATH +=  $$PATH_TO_QGIS_EXT \
                 $$PATH_TO_QGIS_SRC/app/dwg \
                 $$PATH_TO_QGIS_SRC/app/georeferencer \
                 $$PATH_TO_QGIS_SRC/app/gps \
+                $$PATH_TO_QGIS_SRC/app/raster \
                 $$PATH_TO_QGIS_SRC/app/labeling \
                 $$PATH_TO_QGIS_SRC/app/layout \
                 $$PATH_TO_QGIS_SRC/app/locator \
@@ -666,13 +703,37 @@ INCLUDEPATH +=  $$PATH_TO_QGIS_EXT \
 #!isEmpty(target.path): INSTALLS += target
 
 # Install include dirs for mac and windows
+
+
+#### QGIS libs ####
+
+unix {
+
 INCLUDEPATH +=  $$PATH_TO_INSTALL/include \
                 $$PATH_TO_INSTALL/include/qgis \
 
-#### QGIS libs ####
-win32: LIBS += -L$$PATH_TO_INSTALL\lib\ -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgis_core
-else:unix: LIBS += -L$$PATH_TO_INSTALL/lib/ -lqgis_core -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgisgrass7
+LIBS += -L$$PATH_TO_INSTALL/lib/ -lqgis_core -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgisgrass7
 
+} else {
+
+
+CONFIG(debug, debug|release) {
+INCLUDEPATH +=  $$PATH_TO_INSTALL/Install_Debug/include \
+                $$PATH_TO_INSTALL/Install_Debug/include/qgis \
+}
+
+CONFIG(release, debug|release) {
+INCLUDEPATH +=  $$PATH_TO_INSTALL/Install_Release/include \
+                $$PATH_TO_INSTALL/Install_Release/include/qgis \
+}
+
+CONFIG(release, debug|release): LIBS += -L$$PATH_TO_INSTALL\Install_Release\lib\ -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgis_core
+CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_INSTALL\Install_Debug\lib\ -lqgis_guid -lqgis_analysisd -lqgis_natived -lqgis_3dd -lqgis_cored
+
+}
+
+
+#### QGIS Deps ####
 mac {
 
 # Mac frameworks
@@ -700,16 +761,15 @@ LIBS += -framework opencl
 } else {
 
 CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_DEPS/apps/Qt5/lib/ -lqca-qt5 -lqwt -lqt5keychain -lqscintilla2
-CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_DEPS/apps/Qt5/lib/ -lqca-qt5 -lqwt -lqt5keychaind -lqscintilla2 
+CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_DEPS/apps/Qt5/lib/  -lqt5keychaind -lqscintilla2_qt5d -lqwtd
 
-LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lproj -lgdal_i -lsqlite3_i -lopencl -lzlib
+LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lproj -lgdal_i -lsqlite3_i -lopencl
 
-INCLUDEPATH +=  $$PATH_TO_QGIS_DEPS/include \
-                $$PATH_TO_QGIS_DEPS/apps/Qt5/include \
-                $$PATH_TO_QGIS_DEPS/apps/Qt5/include/QtCrypto \
+INCLUDEPATH +=  $$PATH_TO_QGIS_DEPS/apps/Qt5/include \
+                $$PATH_TO_QGIS_DEPS/include \
                 $$PATH_TO_QGIS_DEPS/apps/Qt5/include/qt5keychain \
                 $$PATH_TO_QGIS_DEPS/apps/Qt5/include/qwt6 \
-
+                $$PATH_TO_QGIS_DEPS/apps/Qt5/include/QtCrypto \
 }
 
 

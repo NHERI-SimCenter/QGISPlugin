@@ -1,108 +1,108 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.sunmask - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.sunmask</b></em>  - Calculates cast shadow areas from sun position and elevation raster map.<BR>
-Either exact sun position (A) is specified, or date/time to calculate the sun position (B) by r.sunmask itself.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_solar.html">solar</a>, <a href="keywords.html#sun position">sun position</a>, <a href="keywords.html#shadow">shadow</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.sunmask</b><br></div>
-<b>r.sunmask --help</b><br>
-<div id="synopsis"><b>r.sunmask</b> [-<b>zsg</b>] <b>elevation</b>=<em>name</em>  [<b>output</b>=<em>name</em>]   [<b>altitude</b>=<em>float</em>]   [<b>azimuth</b>=<em>float</em>]   [<b>year</b>=<em>integer</em>]   [<b>month</b>=<em>integer</em>]   [<b>day</b>=<em>integer</em>]   [<b>hour</b>=<em>integer</em>]   [<b>minute</b>=<em>integer</em>]   [<b>second</b>=<em>integer</em>]   [<b>timezone</b>=<em>integer</em>]   [<b>east</b>=<em>value</em>]   [<b>north</b>=<em>value</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-z</b></dt>
-<dd>Do not ignore zero elevation</dd>
-
-<dt><b>-s</b></dt>
-<dd>Calculate sun position only and exit</dd>
-
-<dt><b>-g</b></dt>
-<dd>Print the sun position output in shell script style</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>elevation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input elevation raster map</dd>
-
-<dt><b>output</b>=<em>name</em></dt>
-<dd>Name for output raster map</dd>
-
-<dt><b>altitude</b>=<em>float</em></dt>
-<dd>Altitude of the sun in degrees above the horizon (A)</dd>
-<dd>Options: <em>0-89.999</em></dd>
-
-<dt><b>azimuth</b>=<em>float</em></dt>
-<dd>Azimuth of the sun in degrees from north (A)</dd>
-<dd>Options: <em>0-360</em></dd>
-
-<dt><b>year</b>=<em>integer</em></dt>
-<dd>Year (B)</dd>
-<dd>Options: <em>1950-2050</em></dd>
-
-<dt><b>month</b>=<em>integer</em></dt>
-<dd>Month (B)</dd>
-<dd>Options: <em>0-12</em></dd>
-
-<dt><b>day</b>=<em>integer</em></dt>
-<dd>Day (B)</dd>
-<dd>Options: <em>0-31</em></dd>
-
-<dt><b>hour</b>=<em>integer</em></dt>
-<dd>Hour (B)</dd>
-<dd>Options: <em>0-24</em></dd>
-
-<dt><b>minute</b>=<em>integer</em></dt>
-<dd>Minutes (B)</dd>
-<dd>Options: <em>0-60</em></dd>
-
-<dt><b>second</b>=<em>integer</em></dt>
-<dd>Seconds (B)</dd>
-<dd>Options: <em>0-60</em></dd>
-<dd>Default: <em>0</em></dd>
-
-<dt><b>timezone</b>=<em>integer</em></dt>
-<dd>Timezone</dd>
-<dd>East positive, offset from GMT, also use to adjust daylight savings</dd>
-
-<dt><b>east</b>=<em>value</em></dt>
-<dd>Easting coordinate (point of interest)</dd>
-<dd>Default: map center</dd>
-
-<dt><b>north</b>=<em>value</em></dt>
-<dd>Northing coordinate (point of interest)</dd>
-<dd>Default: map center</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.sunmask - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.sunmask</b></em>  - Calculates cast shadow areas from sun position and elevation raster map.<BR>
+Either exact sun position (A) is specified, or date/time to calculate the sun position (B) by r.sunmask itself.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_solar.html">solar</a>, <a href="keywords.html#sun position">sun position</a>, <a href="keywords.html#shadow">shadow</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.sunmask</b><br></div>
+<b>r.sunmask --help</b><br>
+<div id="synopsis"><b>r.sunmask</b> [-<b>zsg</b>] <b>elevation</b>=<em>name</em>  [<b>output</b>=<em>name</em>]   [<b>altitude</b>=<em>float</em>]   [<b>azimuth</b>=<em>float</em>]   [<b>year</b>=<em>integer</em>]   [<b>month</b>=<em>integer</em>]   [<b>day</b>=<em>integer</em>]   [<b>hour</b>=<em>integer</em>]   [<b>minute</b>=<em>integer</em>]   [<b>second</b>=<em>integer</em>]   [<b>timezone</b>=<em>integer</em>]   [<b>east</b>=<em>value</em>]   [<b>north</b>=<em>value</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-z</b></dt>
+<dd>Do not ignore zero elevation</dd>
+
+<dt><b>-s</b></dt>
+<dd>Calculate sun position only and exit</dd>
+
+<dt><b>-g</b></dt>
+<dd>Print the sun position output in shell script style</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>elevation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input elevation raster map</dd>
+
+<dt><b>output</b>=<em>name</em></dt>
+<dd>Name for output raster map</dd>
+
+<dt><b>altitude</b>=<em>float</em></dt>
+<dd>Altitude of the sun in degrees above the horizon (A)</dd>
+<dd>Options: <em>0-89.999</em></dd>
+
+<dt><b>azimuth</b>=<em>float</em></dt>
+<dd>Azimuth of the sun in degrees from north (A)</dd>
+<dd>Options: <em>0-360</em></dd>
+
+<dt><b>year</b>=<em>integer</em></dt>
+<dd>Year (B)</dd>
+<dd>Options: <em>1950-2050</em></dd>
+
+<dt><b>month</b>=<em>integer</em></dt>
+<dd>Month (B)</dd>
+<dd>Options: <em>0-12</em></dd>
+
+<dt><b>day</b>=<em>integer</em></dt>
+<dd>Day (B)</dd>
+<dd>Options: <em>0-31</em></dd>
+
+<dt><b>hour</b>=<em>integer</em></dt>
+<dd>Hour (B)</dd>
+<dd>Options: <em>0-24</em></dd>
+
+<dt><b>minute</b>=<em>integer</em></dt>
+<dd>Minutes (B)</dd>
+<dd>Options: <em>0-60</em></dd>
+
+<dt><b>second</b>=<em>integer</em></dt>
+<dd>Seconds (B)</dd>
+<dd>Options: <em>0-60</em></dd>
+<dd>Default: <em>0</em></dd>
+
+<dt><b>timezone</b>=<em>integer</em></dt>
+<dd>Timezone</dd>
+<dd>East positive, offset from GMT, also use to adjust daylight savings</dd>
+
+<dt><b>east</b>=<em>value</em></dt>
+<dd>Easting coordinate (point of interest)</dd>
+<dd>Default: map center</dd>
+
+<dt><b>north</b>=<em>value</em></dt>
+<dd>Northing coordinate (point of interest)</dd>
+<dd>Default: map center</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -234,7 +234,14 @@ added solpos algorithm feature by Markus Neteler 2001
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.sunmask">r.sunmask source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.sunmask">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.sunmask">r.sunmask source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.sunmask">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -245,9 +252,9 @@ added solpos algorithm feature by Markus Neteler 2001
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

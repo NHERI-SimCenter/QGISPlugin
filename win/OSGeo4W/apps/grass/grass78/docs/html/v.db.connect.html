@@ -1,94 +1,94 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.db.connect - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.db.connect</b></em>  - Prints/sets DB connection for a vector map to attribute table.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_attribute_table.html">attribute table</a>, <a href="keywords.html#database">database</a>, <a href="keywords.html#layer">layer</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.db.connect</b><br></div>
-<b>v.db.connect --help</b><br>
-<div id="synopsis"><b>v.db.connect</b> [-<b>pgcod</b>] <b>map</b>=<em>name</em>  [<b>driver</b>=<em>name</em>]   [<b>database</b>=<em>name</em>]   [<b>table</b>=<em>name</em>]   [<b>key</b>=<em>name</em>]   [<b>layer</b>=<em>string</em>]   [<b>separator</b>=<em>character</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-p</b></dt>
-<dd>Print all map connection parameters and exit</dd>
-
-<dt><b>-g</b></dt>
-<dd>Print all map connection parameters in shell script style and exit</dd>
-<dd>Format: layer[/layer name] table key database driver</dd>
-
-<dt><b>-c</b></dt>
-<dd>Print types/names of table columns for specified layer and exit</dd>
-
-<dt><b>-o</b></dt>
-<dd>Overwrite connection parameter for certain layer</dd>
-
-<dt><b>-d</b></dt>
-<dd>Delete connection for certain layer (not the table)</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>map</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of vector map</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>driver</b>=<em>name</em></dt>
-<dd>Name of database driver</dd>
-<dd>Options: <em>dbf, odbc, ogr, pg, sqlite</em></dd>
-<dd>Default: <em>sqlite</em></dd>
-
-<dt><b>database</b>=<em>name</em></dt>
-<dd>Name of database</dd>
-<dd>Default: <em>$GISDBASE/$LOCATION_NAME/$MAPSET/sqlite/sqlite.db</em></dd>
-
-<dt><b>table</b>=<em>name</em></dt>
-<dd>Name of attribute table</dd>
-
-<dt><b>key</b>=<em>name</em></dt>
-<dd>Name of key column</dd>
-<dd>Must refer to an integer column</dd>
-<dd>Default: <em>cat</em></dd>
-
-<dt><b>layer</b>=<em>string</em></dt>
-<dd>Layer number or name</dd>
-<dd>Format: layer number[/layer name]</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>separator</b>=<em>character</em></dt>
-<dd>Field separator for shell script style output</dd>
-<dd>Special characters: pipe, comma, space, tab, newline</dd>
-<dd>Default: <em>pipe</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.db.connect - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.db.connect</b></em>  - Prints/sets DB connection for a vector map to attribute table.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_attribute_table.html">attribute table</a>, <a href="keywords.html#database">database</a>, <a href="keywords.html#layer">layer</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.db.connect</b><br></div>
+<b>v.db.connect --help</b><br>
+<div id="synopsis"><b>v.db.connect</b> [-<b>pgcod</b>] <b>map</b>=<em>name</em>  [<b>driver</b>=<em>name</em>]   [<b>database</b>=<em>name</em>]   [<b>table</b>=<em>name</em>]   [<b>key</b>=<em>name</em>]   [<b>layer</b>=<em>string</em>]   [<b>separator</b>=<em>character</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-p</b></dt>
+<dd>Print all map connection parameters and exit</dd>
+
+<dt><b>-g</b></dt>
+<dd>Print all map connection parameters in shell script style and exit</dd>
+<dd>Format: layer[/layer name] table key database driver</dd>
+
+<dt><b>-c</b></dt>
+<dd>Print types/names of table columns for specified layer and exit</dd>
+
+<dt><b>-o</b></dt>
+<dd>Overwrite connection parameter for certain layer</dd>
+
+<dt><b>-d</b></dt>
+<dd>Delete connection for certain layer (not the table)</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>map</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of vector map</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>driver</b>=<em>name</em></dt>
+<dd>Name of database driver</dd>
+<dd>Options: <em>dbf, odbc, ogr, pg, sqlite</em></dd>
+<dd>Default: <em>sqlite</em></dd>
+
+<dt><b>database</b>=<em>name</em></dt>
+<dd>Name of database</dd>
+<dd>Default: <em>$GISDBASE/$LOCATION_NAME/$MAPSET/sqlite/sqlite.db</em></dd>
+
+<dt><b>table</b>=<em>name</em></dt>
+<dd>Name of attribute table</dd>
+
+<dt><b>key</b>=<em>name</em></dt>
+<dd>Name of key column</dd>
+<dd>Must refer to an integer column</dd>
+<dd>Default: <em>cat</em></dd>
+
+<dt><b>layer</b>=<em>string</em></dt>
+<dd>Layer number or name</dd>
+<dd>Format: layer number[/layer name]</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>separator</b>=<em>character</em></dt>
+<dd>Field separator for shell script style output</dd>
+<dd>Special characters: pipe, comma, space, tab, newline</dd>
+<dd>Default: <em>pipe</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -322,7 +322,14 @@ Radim Blazek, ITC-Irst, Trento, Italy
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.db.connect">v.db.connect source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.db.connect">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.db.connect">v.db.connect source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.db.connect">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -333,9 +340,9 @@ Radim Blazek, ITC-Irst, Trento, Italy
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

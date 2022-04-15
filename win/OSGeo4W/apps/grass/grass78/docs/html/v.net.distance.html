@@ -1,117 +1,117 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.net.distance - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.net.distance</b></em>  - Computes shortest distance via the network between the given sets of features.<BR>
-Finds the shortest paths from each 'from' point to the nearest 'to' feature and various information about this relation are uploaded to the attribute table.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_network.html">network</a>, <a href="keywords.html#shortest path">shortest path</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.net.distance</b><br></div>
-<b>v.net.distance --help</b><br>
-<div id="synopsis"><b>v.net.distance</b> [-<b>gl</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>arc_layer</b>=<em>string</em>]   [<b>arc_type</b>=<em>string</em>[,<i>string</i>,...]]   [<b>node_layer</b>=<em>string</em>]   [<b>from_layer</b>=<em>string</em>]   [<b>from_cats</b>=<em>range</em>]   [<b>from_where</b>=<em>sql_query</em>]   [<b>to_layer</b>=<em>string</em>]   [<b>to_type</b>=<em>string</em>[,<i>string</i>,...]]   [<b>to_cats</b>=<em>range</em>]   [<b>to_where</b>=<em>sql_query</em>]   [<b>arc_column</b>=<em>name</em>]   [<b>arc_backward_column</b>=<em>name</em>]   [<b>node_column</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-g</b></dt>
-<dd>Use geodesic calculation for longitude-latitude locations</dd>
-
-<dt><b>-l</b></dt>
-<dd>Write each output path as one line, not as original input segments.</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input vector map</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output vector map</dd>
-
-<dt><b>arc_layer</b>=<em>string</em></dt>
-<dd>Arc layer</dd>
-<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>arc_type</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>Arc type</dd>
-<dd>Input feature type</dd>
-<dd>Options: <em>line, boundary</em></dd>
-<dd>Default: <em>line,boundary</em></dd>
-
-<dt><b>node_layer</b>=<em>string</em></dt>
-<dd>Node layer</dd>
-<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>2</em></dd>
-
-<dt><b>from_layer</b>=<em>string</em></dt>
-<dd>From layer number or name</dd>
-<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>from_cats</b>=<em>range</em></dt>
-<dd>From category values</dd>
-<dd>Example: 1,3,7-9,13</dd>
-
-<dt><b>from_where</b>=<em>sql_query</em></dt>
-<dd>From WHERE conditions of SQL statement without 'where' keyword</dd>
-<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
-
-<dt><b>to_layer</b>=<em>string</em></dt>
-<dd>Layer number or name</dd>
-<dd>To layer number or name</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>to_type</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>To feature type</dd>
-<dd>Options: <em>point, line, boundary</em></dd>
-<dd>Default: <em>point</em></dd>
-
-<dt><b>to_cats</b>=<em>range</em></dt>
-<dd>To category values</dd>
-<dd>Example: 1,3,7-9,13</dd>
-
-<dt><b>to_where</b>=<em>sql_query</em></dt>
-<dd>To WHERE conditions of SQL statement without 'where' keyword</dd>
-<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
-
-<dt><b>arc_column</b>=<em>name</em></dt>
-<dd>Arc forward/both direction(s) cost column (number)</dd>
-
-<dt><b>arc_backward_column</b>=<em>name</em></dt>
-<dd>Arc backward direction cost column (number)</dd>
-
-<dt><b>node_column</b>=<em>name</em></dt>
-<dd>Node cost column (number)</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.net.distance - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.net.distance</b></em>  - Computes shortest distance via the network between the given sets of features.<BR>
+Finds the shortest paths from each 'from' point to the nearest 'to' feature and various information about this relation are uploaded to the attribute table.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_network.html">network</a>, <a href="keywords.html#shortest path">shortest path</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.net.distance</b><br></div>
+<b>v.net.distance --help</b><br>
+<div id="synopsis"><b>v.net.distance</b> [-<b>gl</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>arc_layer</b>=<em>string</em>]   [<b>arc_type</b>=<em>string</em>[,<i>string</i>,...]]   [<b>node_layer</b>=<em>string</em>]   [<b>from_layer</b>=<em>string</em>]   [<b>from_cats</b>=<em>range</em>]   [<b>from_where</b>=<em>sql_query</em>]   [<b>to_layer</b>=<em>string</em>]   [<b>to_type</b>=<em>string</em>[,<i>string</i>,...]]   [<b>to_cats</b>=<em>range</em>]   [<b>to_where</b>=<em>sql_query</em>]   [<b>arc_column</b>=<em>name</em>]   [<b>arc_backward_column</b>=<em>name</em>]   [<b>node_column</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-g</b></dt>
+<dd>Use geodesic calculation for longitude-latitude locations</dd>
+
+<dt><b>-l</b></dt>
+<dd>Write each output path as one line, not as original input segments.</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input vector map</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output vector map</dd>
+
+<dt><b>arc_layer</b>=<em>string</em></dt>
+<dd>Arc layer</dd>
+<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>arc_type</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>Arc type</dd>
+<dd>Input feature type</dd>
+<dd>Options: <em>line, boundary</em></dd>
+<dd>Default: <em>line,boundary</em></dd>
+
+<dt><b>node_layer</b>=<em>string</em></dt>
+<dd>Node layer</dd>
+<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>2</em></dd>
+
+<dt><b>from_layer</b>=<em>string</em></dt>
+<dd>From layer number or name</dd>
+<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>from_cats</b>=<em>range</em></dt>
+<dd>From category values</dd>
+<dd>Example: 1,3,7-9,13</dd>
+
+<dt><b>from_where</b>=<em>sql_query</em></dt>
+<dd>From WHERE conditions of SQL statement without 'where' keyword</dd>
+<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
+
+<dt><b>to_layer</b>=<em>string</em></dt>
+<dd>Layer number or name</dd>
+<dd>To layer number or name</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>to_type</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>To feature type</dd>
+<dd>Options: <em>point, line, boundary</em></dd>
+<dd>Default: <em>point</em></dd>
+
+<dt><b>to_cats</b>=<em>range</em></dt>
+<dd>To category values</dd>
+<dd>Example: 1,3,7-9,13</dd>
+
+<dt><b>to_where</b>=<em>sql_query</em></dt>
+<dd>To WHERE conditions of SQL statement without 'where' keyword</dd>
+<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
+
+<dt><b>arc_column</b>=<em>name</em></dt>
+<dd>Arc forward/both direction(s) cost column (number)</dd>
+
+<dt><b>arc_backward_column</b>=<em>name</em></dt>
+<dd>Arc backward direction cost column (number)</dd>
+
+<dt><b>node_column</b>=<em>name</em></dt>
+<dd>Node cost column (number)</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -301,7 +301,14 @@ Markus Metz
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.net.distance">v.net.distance source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.net.distance">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.net.distance">v.net.distance source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.net.distance">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -312,9 +319,9 @@ Markus Metz
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

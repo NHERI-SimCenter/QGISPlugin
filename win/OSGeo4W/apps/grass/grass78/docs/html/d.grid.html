@@ -1,113 +1,113 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>d.grid - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>d.grid</b></em>  - Overlays a user-specified grid in the active display frame on the graphics monitor.
-<h2>KEYWORDS</h2>
-<a href="display.html">display</a>, <a href="topic_cartography.html">cartography</a>, <a href="keywords.html#graticule">graticule</a>, <a href="keywords.html#grid">grid</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>d.grid</b><br></div>
-<b>d.grid --help</b><br>
-<div id="synopsis"><b>d.grid</b> [-<b>agwcdfnbt</b>] <b>size</b>=<em>value</em>  [<b>origin</b>=<em>east,north</em>]   [<b>direction</b>=<em>string</em>]   [<b>width</b>=<em>float</em>]   [<b>color</b>=<em>name</em>]   [<b>border_color</b>=<em>name</em>]   [<b>text_color</b>=<em>name</em>]   [<b>bgcolor</b>=<em>name</em>]   [<b>fontsize</b>=<em>integer</em>]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-a</b></dt>
-<dd>Align the origin to the east-north corner of the current region</dd>
-
-<dt><b>-g</b></dt>
-<dd>Draw geographic grid (referenced to current ellipsoid)</dd>
-
-<dt><b>-w</b></dt>
-<dd>Draw geographic grid (referenced to WGS84 ellipsoid)</dd>
-
-<dt><b>-c</b></dt>
-<dd>Draw '+' marks instead of grid lines</dd>
-
-<dt><b>-d</b></dt>
-<dd>Draw '.' marks instead of grid lines</dd>
-
-<dt><b>-f</b></dt>
-<dd>Draw fiducial marks instead of grid lines</dd>
-
-<dt><b>-n</b></dt>
-<dd>Disable grid drawing</dd>
-
-<dt><b>-b</b></dt>
-<dd>Disable border drawing</dd>
-
-<dt><b>-t</b></dt>
-<dd>Disable text drawing</dd>
-
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>size</b>=<em>value</em>&nbsp;<b>[required]</b></dt>
-<dd>Size of grid to be drawn (in map units)</dd>
-<dd>0 for north-south resolution of the current region. In map units or DDD:MM:SS format. Example: "1000" or "0:10"</dd>
-
-<dt><b>origin</b>=<em>east,north</em></dt>
-<dd>Lines of the grid pass through this coordinate</dd>
-<dd>Default: <em>0,0</em></dd>
-
-<dt><b>direction</b>=<em>string</em></dt>
-<dd>Draw only east-west lines, north-south lines, or both </dd>
-<dd>Options: <em>both, east-west, north-south</em></dd>
-<dd>Default: <em>both</em></dd>
-
-<dt><b>width</b>=<em>float</em></dt>
-<dd>Grid line width</dd>
-
-<dt><b>color</b>=<em>name</em></dt>
-<dd>Grid color</dd>
-<dd>Either a standard color name or R:G:B triplet</dd>
-<dd>Default: <em>gray</em></dd>
-
-<dt><b>border_color</b>=<em>name</em></dt>
-<dd>Border color</dd>
-<dd>Either a standard color name or R:G:B triplet</dd>
-<dd>Default: <em>black</em></dd>
-
-<dt><b>text_color</b>=<em>name</em></dt>
-<dd>Text color</dd>
-<dd>Either a standard color name or R:G:B triplet</dd>
-<dd>Default: <em>gray</em></dd>
-
-<dt><b>bgcolor</b>=<em>name</em></dt>
-<dd>Background color</dd>
-<dd>Either a standard color name, R:G:B triplet, or "none"</dd>
-<dd>Default: <em>none</em></dd>
-
-<dt><b>fontsize</b>=<em>integer</em></dt>
-<dd>Font size for gridline coordinate labels</dd>
-<dd>Options: <em>1-72</em></dd>
-<dd>Default: <em>9</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>d.grid - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>d.grid</b></em>  - Overlays a user-specified grid in the active display frame on the graphics monitor.
+<h2>KEYWORDS</h2>
+<a href="display.html">display</a>, <a href="topic_cartography.html">cartography</a>, <a href="keywords.html#graticule">graticule</a>, <a href="keywords.html#grid">grid</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>d.grid</b><br></div>
+<b>d.grid --help</b><br>
+<div id="synopsis"><b>d.grid</b> [-<b>agwcdfnbt</b>] <b>size</b>=<em>value</em>  [<b>origin</b>=<em>east,north</em>]   [<b>direction</b>=<em>string</em>]   [<b>width</b>=<em>float</em>]   [<b>color</b>=<em>name</em>]   [<b>border_color</b>=<em>name</em>]   [<b>text_color</b>=<em>name</em>]   [<b>bgcolor</b>=<em>name</em>]   [<b>fontsize</b>=<em>integer</em>]   [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-a</b></dt>
+<dd>Align the origin to the east-north corner of the current region</dd>
+
+<dt><b>-g</b></dt>
+<dd>Draw geographic grid (referenced to current ellipsoid)</dd>
+
+<dt><b>-w</b></dt>
+<dd>Draw geographic grid (referenced to WGS84 ellipsoid)</dd>
+
+<dt><b>-c</b></dt>
+<dd>Draw '+' marks instead of grid lines</dd>
+
+<dt><b>-d</b></dt>
+<dd>Draw '.' marks instead of grid lines</dd>
+
+<dt><b>-f</b></dt>
+<dd>Draw fiducial marks instead of grid lines</dd>
+
+<dt><b>-n</b></dt>
+<dd>Disable grid drawing</dd>
+
+<dt><b>-b</b></dt>
+<dd>Disable border drawing</dd>
+
+<dt><b>-t</b></dt>
+<dd>Disable text drawing</dd>
+
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>size</b>=<em>value</em>&nbsp;<b>[required]</b></dt>
+<dd>Size of grid to be drawn (in map units)</dd>
+<dd>0 for north-south resolution of the current region. In map units or DDD:MM:SS format. Example: "1000" or "0:10"</dd>
+
+<dt><b>origin</b>=<em>east,north</em></dt>
+<dd>Lines of the grid pass through this coordinate</dd>
+<dd>Default: <em>0,0</em></dd>
+
+<dt><b>direction</b>=<em>string</em></dt>
+<dd>Draw only east-west lines, north-south lines, or both </dd>
+<dd>Options: <em>both, east-west, north-south</em></dd>
+<dd>Default: <em>both</em></dd>
+
+<dt><b>width</b>=<em>float</em></dt>
+<dd>Grid line width</dd>
+
+<dt><b>color</b>=<em>name</em></dt>
+<dd>Grid color</dd>
+<dd>Either a standard color name or R:G:B triplet</dd>
+<dd>Default: <em>gray</em></dd>
+
+<dt><b>border_color</b>=<em>name</em></dt>
+<dd>Border color</dd>
+<dd>Either a standard color name or R:G:B triplet</dd>
+<dd>Default: <em>black</em></dd>
+
+<dt><b>text_color</b>=<em>name</em></dt>
+<dd>Text color</dd>
+<dd>Either a standard color name or R:G:B triplet</dd>
+<dd>Default: <em>gray</em></dd>
+
+<dt><b>bgcolor</b>=<em>name</em></dt>
+<dd>Background color</dd>
+<dd>Either a standard color name, R:G:B triplet, or "none"</dd>
+<dd>Default: <em>none</em></dd>
+
+<dt><b>fontsize</b>=<em>integer</em></dt>
+<dd>Font size for gridline coordinate labels</dd>
+<dd>Options: <em>1-72</em></dd>
+<dd>Default: <em>9</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -208,7 +208,14 @@ Background color implemented as part of GSoC 2016 by Adam Laza, CTU in Prague
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/display/d.grid">d.grid source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/display/d.grid">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/display/d.grid">d.grid source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/display/d.grid">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -219,9 +226,9 @@ Background color implemented as part of GSoC 2016 by Adam Laza, CTU in Prague
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

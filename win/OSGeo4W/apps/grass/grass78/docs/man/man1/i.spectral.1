@@ -1,4 +1,4 @@
-.TH i.spectral 1 "" "GRASS 7.8.6RC3" "GRASS GIS User's Manual"
+.TH i.spectral 1 "" "GRASS 7.8.7" "GRASS GIS User's Manual"
 .SH NAME
 \fI\fBi.spectral.py\fR\fR  \- Displays spectral response at user specified locations in group or images.
 .SH KEYWORDS
@@ -12,7 +12,7 @@ imagery, querying, raster, multispectral
 .SS Flags:
 .IP "\fB\-c\fR" 4m
 .br
-Show sampling coordinates instead of numbering in the legend
+Show sampling coordinates instead of numbering in the legend (valid for \-g flag)
 .IP "\fB\-g\fR" 4m
 .br
 Use gnuplot for display
@@ -49,10 +49,10 @@ Name of input raster map(s)
 Coordinates
 .IP "\fBoutput\fR=\fIname\fR" 4m
 .br
-Name for output image (or text file for \-t)
+Name for output image is valid for \-g (or text file for \-t flag)
 .IP "\fBformat\fR=\fIstring\fR" 4m
 .br
-Graphics format for output file
+Graphics format for output file (valid for \-g flag)
 .br
 Options: \fIpng, eps, svg\fR
 .br
@@ -61,14 +61,14 @@ Default: \fIpng\fR
 \fIi.spectral\fR displays spectral response at user specified
 locations in images.
 .SH NOTES
-This script needs gnuplot to be installed.
+This script requires the launch of one of the supported monitors (cairo, png, ps) or gnuplot to be installed.
 .SH EXAMPLE
 Analysis of LANDSAT TM7 channels (North Carolina dataset):
 .br
 .nf
 \fC
 g.region raster=lsat7_2002_10 \-p
-i.spectral \-g input=lsat7_2002_10,lsat7_2002_20,lsat7_2002_30,lsat7_2002_40,lsat7_2002_50,lsat7_2002_70 \(rs
+i.spectral \-g raster=lsat7_2002_10,lsat7_2002_20,lsat7_2002_30,lsat7_2002_40,lsat7_2002_50,lsat7_2002_70 \(rs
            coordinates=636069,215440,637958,223393,633277,223605
 \fR
 .fi
@@ -81,7 +81,9 @@ North Carolina sample dataset:
 \fC
 g.region raster=lsat7_2002_10 \-p
 LIST=\(gag.list type=raster pattern=\(dqlsat7_2002_[1\-5,7]0\(dq separator=\(dq,\(dq\(ga
-i.spectral input=$LIST coordinates=637502.25,221744.25
+d.mon start=cairo output=plot.png
+i.spectral raster=$LIST coordinates=637502.25,221744.25
+d.mon stop=cairo
 \fR
 .fi
 This will search all LANDSAT map for 2002 but select only the B, G, R,
@@ -89,15 +91,22 @@ NIR, and MIR channels.
 .SH SEE ALSO
 \fI
 d.where,
-r.what
+r.what,
+Cairo driver,
+PNG driver,
+PS driver (Postscript)
 \fR
-.SH AUTHOR
+.SH AUTHORS
 Markus Neteler
 .br
 Francesco Pirotti
 .SH SOURCE CODE
 .PP
-Available at: i.spectral source code (history)
+Available at:
+i.spectral source code
+(history)
+.PP
+Accessed: unknown
 .PP
 Main index |
 Imagery index |
@@ -106,6 +115,6 @@ Keywords index |
 Graphical index |
 Full index
 .PP
-© 2003\-2021
+© 2003\-2022
 GRASS Development Team,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual

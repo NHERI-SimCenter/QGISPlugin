@@ -1,7 +1,7 @@
 '''Wrapper for stats.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_stats.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/stats.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h -o OBJ.x86_64-w64-mingw32/stats.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_stats.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/stats.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h -o OBJ.x86_64-w64-mingw32/stats.py
 
 Do not modify this file.
 '''
@@ -27,13 +27,13 @@ _libs["grass_stats.7.8"] = load_library("grass_stats.7.8")
 
 # No modules
 
-DCELL = c_double # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 604
+DCELL = c_double # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 604
 
-stat_func = CFUNCTYPE(UNCHECKED(None), POINTER(DCELL), POINTER(DCELL), c_int, POINTER(None)) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 4
+stat_func = CFUNCTYPE(UNCHECKED(None), POINTER(DCELL), POINTER(DCELL), c_int, POINTER(None)) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 4
 
-stat_func_w = CFUNCTYPE(UNCHECKED(None), POINTER(DCELL), POINTER(DCELL * 2), c_int, POINTER(None)) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 5
+stat_func_w = CFUNCTYPE(UNCHECKED(None), POINTER(DCELL), POINTER(DCELL * 2), c_int, POINTER(None)) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 5
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 7
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 7
 for _lib in _libs.values():
     try:
         c_ave = (stat_func).in_dll(_lib, 'c_ave')
@@ -41,7 +41,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 8
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 8
 for _lib in _libs.values():
     try:
         c_count = (stat_func).in_dll(_lib, 'c_count')
@@ -49,7 +49,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 9
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 9
 for _lib in _libs.values():
     try:
         c_divr = (stat_func).in_dll(_lib, 'c_divr')
@@ -57,7 +57,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 10
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 10
 for _lib in _libs.values():
     try:
         c_intr = (stat_func).in_dll(_lib, 'c_intr')
@@ -65,7 +65,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 11
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 11
 for _lib in _libs.values():
     try:
         c_max = (stat_func).in_dll(_lib, 'c_max')
@@ -73,7 +73,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 12
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 12
 for _lib in _libs.values():
     try:
         c_maxx = (stat_func).in_dll(_lib, 'c_maxx')
@@ -81,7 +81,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 13
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 13
 for _lib in _libs.values():
     try:
         c_median = (stat_func).in_dll(_lib, 'c_median')
@@ -89,7 +89,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 14
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 14
 for _lib in _libs.values():
     try:
         c_min = (stat_func).in_dll(_lib, 'c_min')
@@ -97,7 +97,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 15
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 15
 for _lib in _libs.values():
     try:
         c_minx = (stat_func).in_dll(_lib, 'c_minx')
@@ -105,7 +105,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 16
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 16
 for _lib in _libs.values():
     try:
         c_mode = (stat_func).in_dll(_lib, 'c_mode')
@@ -113,7 +113,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 17
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 17
 for _lib in _libs.values():
     try:
         c_stddev = (stat_func).in_dll(_lib, 'c_stddev')
@@ -121,7 +121,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 18
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 18
 for _lib in _libs.values():
     try:
         c_sum = (stat_func).in_dll(_lib, 'c_sum')
@@ -129,7 +129,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 19
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 19
 for _lib in _libs.values():
     try:
         c_thresh = (stat_func).in_dll(_lib, 'c_thresh')
@@ -137,7 +137,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 20
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 20
 for _lib in _libs.values():
     try:
         c_var = (stat_func).in_dll(_lib, 'c_var')
@@ -145,7 +145,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 21
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 21
 for _lib in _libs.values():
     try:
         c_range = (stat_func).in_dll(_lib, 'c_range')
@@ -153,7 +153,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 22
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 22
 for _lib in _libs.values():
     try:
         c_reg_m = (stat_func).in_dll(_lib, 'c_reg_m')
@@ -161,7 +161,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 23
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 23
 for _lib in _libs.values():
     try:
         c_reg_c = (stat_func).in_dll(_lib, 'c_reg_c')
@@ -169,7 +169,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 24
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 24
 for _lib in _libs.values():
     try:
         c_reg_r2 = (stat_func).in_dll(_lib, 'c_reg_r2')
@@ -177,7 +177,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 25
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 25
 for _lib in _libs.values():
     try:
         c_reg_t = (stat_func).in_dll(_lib, 'c_reg_t')
@@ -185,7 +185,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 26
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 26
 for _lib in _libs.values():
     try:
         c_quart1 = (stat_func).in_dll(_lib, 'c_quart1')
@@ -193,7 +193,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 27
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 27
 for _lib in _libs.values():
     try:
         c_quart3 = (stat_func).in_dll(_lib, 'c_quart3')
@@ -201,7 +201,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 28
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 28
 for _lib in _libs.values():
     try:
         c_perc90 = (stat_func).in_dll(_lib, 'c_perc90')
@@ -209,7 +209,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 29
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 29
 for _lib in _libs.values():
     try:
         c_quant = (stat_func).in_dll(_lib, 'c_quant')
@@ -217,7 +217,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 30
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 30
 for _lib in _libs.values():
     try:
         c_skew = (stat_func).in_dll(_lib, 'c_skew')
@@ -225,7 +225,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 31
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 31
 for _lib in _libs.values():
     try:
         c_kurt = (stat_func).in_dll(_lib, 'c_kurt')
@@ -233,7 +233,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 33
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 33
 for _lib in _libs.values():
     try:
         w_ave = (stat_func_w).in_dll(_lib, 'w_ave')
@@ -241,7 +241,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 34
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 34
 for _lib in _libs.values():
     try:
         w_count = (stat_func_w).in_dll(_lib, 'w_count')
@@ -249,7 +249,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 35
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 35
 for _lib in _libs.values():
     try:
         w_median = (stat_func_w).in_dll(_lib, 'w_median')
@@ -257,7 +257,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 36
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 36
 for _lib in _libs.values():
     try:
         w_min = (stat_func_w).in_dll(_lib, 'w_min')
@@ -265,7 +265,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 37
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 37
 for _lib in _libs.values():
     try:
         w_max = (stat_func_w).in_dll(_lib, 'w_max')
@@ -273,7 +273,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 38
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 38
 for _lib in _libs.values():
     try:
         w_mode = (stat_func_w).in_dll(_lib, 'w_mode')
@@ -281,7 +281,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 39
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 39
 for _lib in _libs.values():
     try:
         w_quart1 = (stat_func_w).in_dll(_lib, 'w_quart1')
@@ -289,7 +289,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 40
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 40
 for _lib in _libs.values():
     try:
         w_quart3 = (stat_func_w).in_dll(_lib, 'w_quart3')
@@ -297,7 +297,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 41
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 41
 for _lib in _libs.values():
     try:
         w_perc90 = (stat_func_w).in_dll(_lib, 'w_perc90')
@@ -305,7 +305,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 42
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 42
 for _lib in _libs.values():
     try:
         w_quant = (stat_func_w).in_dll(_lib, 'w_quant')
@@ -313,7 +313,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 43
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 43
 for _lib in _libs.values():
     try:
         w_reg_m = (stat_func_w).in_dll(_lib, 'w_reg_m')
@@ -321,7 +321,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 44
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 44
 for _lib in _libs.values():
     try:
         w_reg_c = (stat_func_w).in_dll(_lib, 'w_reg_c')
@@ -329,7 +329,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 45
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 45
 for _lib in _libs.values():
     try:
         w_reg_r2 = (stat_func_w).in_dll(_lib, 'w_reg_r2')
@@ -337,7 +337,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 46
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 46
 for _lib in _libs.values():
     try:
         w_reg_t = (stat_func_w).in_dll(_lib, 'w_reg_t')
@@ -345,7 +345,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 47
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 47
 for _lib in _libs.values():
     try:
         w_stddev = (stat_func_w).in_dll(_lib, 'w_stddev')
@@ -353,7 +353,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 48
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 48
 for _lib in _libs.values():
     try:
         w_sum = (stat_func_w).in_dll(_lib, 'w_sum')
@@ -361,7 +361,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 49
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 49
 for _lib in _libs.values():
     try:
         w_var = (stat_func_w).in_dll(_lib, 'w_var')
@@ -369,7 +369,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 50
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 50
 for _lib in _libs.values():
     try:
         w_skew = (stat_func_w).in_dll(_lib, 'w_skew')
@@ -377,7 +377,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 51
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 51
 for _lib in _libs.values():
     try:
         w_kurt = (stat_func_w).in_dll(_lib, 'w_kurt')
@@ -385,7 +385,7 @@ for _lib in _libs.values():
     except:
         pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 53
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 53
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'sort_cell'):
         continue
@@ -394,7 +394,7 @@ for _lib in six.itervalues(_libs):
     sort_cell.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 54
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/stats.h: 54
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'sort_cell_w'):
         continue

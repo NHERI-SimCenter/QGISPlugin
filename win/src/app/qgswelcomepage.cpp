@@ -35,7 +35,6 @@
 #include "qgsprojectstorageregistry.h"
 
 #include <QHBoxLayout>
-#include <QLabel>
 #include <QVBoxLayout>
 #include <QListView>
 #include <QDesktopServices>
@@ -288,7 +287,7 @@ void QgsWelcomePage::showContextMenuForProjects( QPoint point )
       connect( openFolderAction, &QAction::triggered, this, [path]
       {
         const QgsFocusKeeper focusKeeper;
-        QgsGui::instance()->nativePlatformInterface()->openFileExplorerAndSelectFile( path );
+        QgsGui::nativePlatformInterface()->openFileExplorerAndSelectFile( path );
       } );
       menu->addAction( openFolderAction );
     }

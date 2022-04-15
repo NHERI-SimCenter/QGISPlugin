@@ -1,130 +1,130 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.gwflow - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.gwflow</b></em>  - Numerical calculation program for transient, confined and unconfined groundwater flow in two dimensions.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_groundwater_flow.html">groundwater flow</a>, <a href="keywords.html#hydrology">hydrology</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.gwflow</b><br></div>
-<b>r.gwflow --help</b><br>
-<div id="synopsis"><b>r.gwflow</b> [-<b>f</b>] <b>phead</b>=<em>name</em> <b>status</b>=<em>name</em> <b>hc_x</b>=<em>name</em> <b>hc_y</b>=<em>name</em>  [<b>q</b>=<em>name</em>]  <b>s</b>=<em>name</em>  [<b>recharge</b>=<em>name</em>]  <b>top</b>=<em>name</em> <b>bottom</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>vx</b>=<em>name</em>]   [<b>vy</b>=<em>name</em>]   [<b>budget</b>=<em>name</em>]  <b>type</b>=<em>string</em>  [<b>river_bed</b>=<em>name</em>]   [<b>river_head</b>=<em>name</em>]   [<b>river_leak</b>=<em>name</em>]   [<b>drain_bed</b>=<em>name</em>]   [<b>drain_leak</b>=<em>name</em>]  <b>dtime</b>=<em>float</em>  [<b>maxit</b>=<em>integer</em>]   [<b>maxit</b>=<em>integer</em>]   [<b>error</b>=<em>float</em>]   [<b>solver</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-f</b></dt>
-<dd>Allocate a full quadratic linear equation system, default is a sparse linear equation system.</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>phead</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map with initial piezometric head in [m]</dd>
-
-<dt><b>status</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map providing boundary condition status: 0-inactive, 1-active, 2-dirichlet</dd>
-
-<dt><b>hc_x</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map with x-part of the hydraulic conductivity tensor in [m/s]</dd>
-
-<dt><b>hc_y</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map with y-part of the hydraulic conductivity tensor in [m/s]</dd>
-
-<dt><b>q</b>=<em>name</em></dt>
-<dd>Name of input raster map with water sources and sinks in [m^3/s]</dd>
-
-<dt><b>s</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map with storativity for confined or effective porosity for unconfined groundwater flow booth in [-] </dd>
-
-<dt><b>recharge</b>=<em>name</em></dt>
-<dd>Recharge input raster map e.g: 6*10^-9 per cell in [m^3/s*m^2]</dd>
-
-<dt><b>top</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map describing the top surface of the aquifer in [m]</dd>
-
-<dt><b>bottom</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map describing the bottom surface of the aquifer in [m]</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Output raster map storing the numerical result [m]</dd>
-
-<dt><b>vx</b>=<em>name</em></dt>
-<dd>Output raster map to store the groundwater filter velocity vector part in x direction [m/s]</dd>
-
-<dt><b>vy</b>=<em>name</em></dt>
-<dd>Output raster map to store the groundwater filter velocity vector part in y direction [m/s]</dd>
-
-<dt><b>budget</b>=<em>name</em></dt>
-<dd>Output raster map to store the groundwater budget for each cell [m^3/s]</dd>
-
-<dt><b>type</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>The type of groundwater flow</dd>
-<dd>Options: <em>confined, unconfined</em></dd>
-<dd>Default: <em>confined</em></dd>
-
-<dt><b>river_bed</b>=<em>name</em></dt>
-<dd>Name of input raster map providing the height of the river bed in [m]</dd>
-
-<dt><b>river_head</b>=<em>name</em></dt>
-<dd>Name of input raster map providing the water level (head) of the river with leakage connection in [m]</dd>
-
-<dt><b>river_leak</b>=<em>name</em></dt>
-<dd>Name of input raster map providing the leakage coefficient of the river bed in [1/s].</dd>
-
-<dt><b>drain_bed</b>=<em>name</em></dt>
-<dd>Name of input raster map providing the height of the drainage bed in [m]</dd>
-
-<dt><b>drain_leak</b>=<em>name</em></dt>
-<dd>Name of input raster map providing the leakage coefficient of the drainage bed in [1/s]</dd>
-
-<dt><b>dtime</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
-<dd>The calculation time in seconds</dd>
-<dd>Default: <em>86400</em></dd>
-
-<dt><b>maxit</b>=<em>integer</em></dt>
-<dd>Maximum number of iteration used to solve the linear equation system</dd>
-<dd>Default: <em>10000</em></dd>
-
-<dt><b>maxit</b>=<em>integer</em></dt>
-<dd>The maximum number of iterations in the linearization approach</dd>
-<dd>Default: <em>25</em></dd>
-
-<dt><b>error</b>=<em>float</em></dt>
-<dd>Error break criteria for iterative solver</dd>
-<dd>Default: <em>0.000001</em></dd>
-
-<dt><b>solver</b>=<em>name</em></dt>
-<dd>The type of solver which should solve the symmetric linear equation system</dd>
-<dd>Options: <em>cg, pcg, cholesky</em></dd>
-<dd>Default: <em>cg</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.gwflow - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.gwflow</b></em>  - Numerical calculation program for transient, confined and unconfined groundwater flow in two dimensions.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_groundwater_flow.html">groundwater flow</a>, <a href="keywords.html#hydrology">hydrology</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.gwflow</b><br></div>
+<b>r.gwflow --help</b><br>
+<div id="synopsis"><b>r.gwflow</b> [-<b>f</b>] <b>phead</b>=<em>name</em> <b>status</b>=<em>name</em> <b>hc_x</b>=<em>name</em> <b>hc_y</b>=<em>name</em>  [<b>q</b>=<em>name</em>]  <b>s</b>=<em>name</em>  [<b>recharge</b>=<em>name</em>]  <b>top</b>=<em>name</em> <b>bottom</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>vx</b>=<em>name</em>]   [<b>vy</b>=<em>name</em>]   [<b>budget</b>=<em>name</em>]  <b>type</b>=<em>string</em>  [<b>river_bed</b>=<em>name</em>]   [<b>river_head</b>=<em>name</em>]   [<b>river_leak</b>=<em>name</em>]   [<b>drain_bed</b>=<em>name</em>]   [<b>drain_leak</b>=<em>name</em>]  <b>dtime</b>=<em>float</em>  [<b>maxit</b>=<em>integer</em>]   [<b>maxit</b>=<em>integer</em>]   [<b>error</b>=<em>float</em>]   [<b>solver</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-f</b></dt>
+<dd>Allocate a full quadratic linear equation system, default is a sparse linear equation system.</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>phead</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map with initial piezometric head in [m]</dd>
+
+<dt><b>status</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map providing boundary condition status: 0-inactive, 1-active, 2-dirichlet</dd>
+
+<dt><b>hc_x</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map with x-part of the hydraulic conductivity tensor in [m/s]</dd>
+
+<dt><b>hc_y</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map with y-part of the hydraulic conductivity tensor in [m/s]</dd>
+
+<dt><b>q</b>=<em>name</em></dt>
+<dd>Name of input raster map with water sources and sinks in [m^3/s]</dd>
+
+<dt><b>s</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map with storativity for confined or effective porosity for unconfined groundwater flow booth in [-] </dd>
+
+<dt><b>recharge</b>=<em>name</em></dt>
+<dd>Recharge input raster map e.g: 6*10^-9 per cell in [m^3/s*m^2]</dd>
+
+<dt><b>top</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map describing the top surface of the aquifer in [m]</dd>
+
+<dt><b>bottom</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map describing the bottom surface of the aquifer in [m]</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Output raster map storing the numerical result [m]</dd>
+
+<dt><b>vx</b>=<em>name</em></dt>
+<dd>Output raster map to store the groundwater filter velocity vector part in x direction [m/s]</dd>
+
+<dt><b>vy</b>=<em>name</em></dt>
+<dd>Output raster map to store the groundwater filter velocity vector part in y direction [m/s]</dd>
+
+<dt><b>budget</b>=<em>name</em></dt>
+<dd>Output raster map to store the groundwater budget for each cell [m^3/s]</dd>
+
+<dt><b>type</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>The type of groundwater flow</dd>
+<dd>Options: <em>confined, unconfined</em></dd>
+<dd>Default: <em>confined</em></dd>
+
+<dt><b>river_bed</b>=<em>name</em></dt>
+<dd>Name of input raster map providing the height of the river bed in [m]</dd>
+
+<dt><b>river_head</b>=<em>name</em></dt>
+<dd>Name of input raster map providing the water level (head) of the river with leakage connection in [m]</dd>
+
+<dt><b>river_leak</b>=<em>name</em></dt>
+<dd>Name of input raster map providing the leakage coefficient of the river bed in [1/s].</dd>
+
+<dt><b>drain_bed</b>=<em>name</em></dt>
+<dd>Name of input raster map providing the height of the drainage bed in [m]</dd>
+
+<dt><b>drain_leak</b>=<em>name</em></dt>
+<dd>Name of input raster map providing the leakage coefficient of the drainage bed in [1/s]</dd>
+
+<dt><b>dtime</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
+<dd>The calculation time in seconds</dd>
+<dd>Default: <em>86400</em></dd>
+
+<dt><b>maxit</b>=<em>integer</em></dt>
+<dd>Maximum number of iteration used to solve the linear equation system</dd>
+<dd>Default: <em>10000</em></dd>
+
+<dt><b>maxit</b>=<em>integer</em></dt>
+<dd>The maximum number of iterations in the linearization approach</dd>
+<dd>Default: <em>25</em></dd>
+
+<dt><b>error</b>=<em>float</em></dt>
+<dd>Error break criteria for iterative solver</dd>
+<dd>Default: <em>0.000001</em></dd>
+
+<dt><b>solver</b>=<em>name</em></dt>
+<dd>The type of solver which should solve the symmetric linear equation system</dd>
+<dd>Options: <em>cg, pcg, cholesky</em></dd>
+<dd>Default: <em>cg</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -293,7 +293,14 @@ at Technical University Berlin in Germany.
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.gwflow">r.gwflow source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.gwflow">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.gwflow">r.gwflow source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.gwflow">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -304,9 +311,9 @@ at Technical University Berlin in Germany.
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

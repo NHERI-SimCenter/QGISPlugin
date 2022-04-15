@@ -1,156 +1,156 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.sun - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.sun</b></em>  - Solar irradiance and irradiation model.<BR>
-Computes direct (beam), diffuse and reflected solar irradiation raster maps for given day, latitude, surface and atmospheric conditions. Solar parameters (e.g. sunrise, sunset times, declination, extraterrestrial irradiance, daylight length) are saved in the map history file. Alternatively, a local time can be specified to compute solar incidence angle and/or irradiance raster maps. The shadowing effect of the topography is optionally incorporated.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_solar.html">solar</a>, <a href="keywords.html#sun energy">sun energy</a>, <a href="keywords.html#shadow">shadow</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.sun</b><br></div>
-<b>r.sun --help</b><br>
-<div id="synopsis"><b>r.sun</b> [-<b>pm</b>] <b>elevation</b>=<em>string</em>  [<b>aspect</b>=<em>string</em>]   [<b>aspect_value</b>=<em>float</em>]   [<b>slope</b>=<em>string</em>]   [<b>slope_value</b>=<em>float</em>]   [<b>linke</b>=<em>string</em>]   [<b>linke_value</b>=<em>float</em>]   [<b>albedo</b>=<em>string</em>]   [<b>albedo_value</b>=<em>float</em>]   [<b>lat</b>=<em>string</em>]   [<b>long</b>=<em>string</em>]   [<b>coeff_bh</b>=<em>string</em>]   [<b>coeff_dh</b>=<em>string</em>]   [<b>horizon_basename</b>=<em>basename</em>]   [<b>horizon_step</b>=<em>float</em>]   [<b>incidout</b>=<em>string</em>]   [<b>beam_rad</b>=<em>string</em>]   [<b>diff_rad</b>=<em>string</em>]   [<b>refl_rad</b>=<em>string</em>]   [<b>glob_rad</b>=<em>string</em>]   [<b>insol_time</b>=<em>string</em>]  <b>day</b>=<em>integer</em>  [<b>step</b>=<em>float</em>]   [<b>declination</b>=<em>float</em>]   [<b>solar_constant</b>=<em>float</em>]   [<b>time</b>=<em>float</em>]   [<b>nprocs</b>=<em>integer</em>]   [<b>distance_step</b>=<em>float</em>]   [<b>npartitions</b>=<em>integer</em>]   [<b>civil_time</b>=<em>float</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-p</b></dt>
-<dd>Do not incorporate the shadowing effect of terrain</dd>
-
-<dt><b>-m</b></dt>
-<dd>Use the low-memory version of the program</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>elevation</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of the input elevation raster map [meters]</dd>
-
-<dt><b>aspect</b>=<em>string</em></dt>
-<dd>Name of the input aspect map (terrain aspect or azimuth of the solar panel) [decimal degrees]</dd>
-
-<dt><b>aspect_value</b>=<em>float</em></dt>
-<dd>A single value of the orientation (aspect), 270 is south</dd>
-<dd>Default: <em>270</em></dd>
-
-<dt><b>slope</b>=<em>string</em></dt>
-<dd>Name of the input slope raster map (terrain slope or solar panel inclination) [decimal degrees]</dd>
-
-<dt><b>slope_value</b>=<em>float</em></dt>
-<dd>A single value of inclination (slope)</dd>
-<dd>Default: <em>0.0</em></dd>
-
-<dt><b>linke</b>=<em>string</em></dt>
-<dd>Name of the Linke atmospheric turbidity coefficient input raster map [-]</dd>
-
-<dt><b>linke_value</b>=<em>float</em></dt>
-<dd>A single value of the Linke atmospheric turbidity coefficient [-]</dd>
-<dd>Default: <em>3.0</em></dd>
-
-<dt><b>albedo</b>=<em>string</em></dt>
-<dd>Name of the ground albedo coefficient input raster map [-]</dd>
-
-<dt><b>albedo_value</b>=<em>float</em></dt>
-<dd>A single value of the ground albedo coefficient [-]</dd>
-<dd>Default: <em>0.2</em></dd>
-
-<dt><b>lat</b>=<em>string</em></dt>
-<dd>Name of input raster map containing latitudes [decimal degrees]</dd>
-
-<dt><b>long</b>=<em>string</em></dt>
-<dd>Name of input raster map containing longitudes [decimal degrees]</dd>
-
-<dt><b>coeff_bh</b>=<em>string</em></dt>
-<dd>Name of real-sky beam radiation coefficient (thick cloud) input raster map [0-1]</dd>
-
-<dt><b>coeff_dh</b>=<em>string</em></dt>
-<dd>Name of real-sky diffuse radiation coefficient (haze) input raster map [0-1]</dd>
-
-<dt><b>horizon_basename</b>=<em>basename</em></dt>
-<dd>The horizon information input map basename</dd>
-
-<dt><b>horizon_step</b>=<em>float</em></dt>
-<dd>Angle step size for multidirectional horizon [degrees]</dd>
-
-<dt><b>incidout</b>=<em>string</em></dt>
-<dd>Output incidence angle raster map (mode 1 only)</dd>
-
-<dt><b>beam_rad</b>=<em>string</em></dt>
-<dd>Output beam irradiance [W.m-2] (mode 1) or irradiation raster map [Wh.m-2.day-1] (mode 2)</dd>
-
-<dt><b>diff_rad</b>=<em>string</em></dt>
-<dd>Output diffuse irradiance [W.m-2] (mode 1) or irradiation raster map [Wh.m-2.day-1] (mode 2)</dd>
-
-<dt><b>refl_rad</b>=<em>string</em></dt>
-<dd>Output ground reflected irradiance [W.m-2] (mode 1) or irradiation raster map [Wh.m-2.day-1] (mode 2)</dd>
-
-<dt><b>glob_rad</b>=<em>string</em></dt>
-<dd>Output global (total) irradiance/irradiation [W.m-2] (mode 1) or irradiance/irradiation raster map [Wh.m-2.day-1] (mode 2)</dd>
-
-<dt><b>insol_time</b>=<em>string</em></dt>
-<dd>Output insolation time raster map [h] (mode 2 only)</dd>
-
-<dt><b>day</b>=<em>integer</em>&nbsp;<b>[required]</b></dt>
-<dd>No. of day of the year (1-365)</dd>
-<dd>Options: <em>1-365</em></dd>
-
-<dt><b>step</b>=<em>float</em></dt>
-<dd>Time step when computing all-day radiation sums [decimal hours]</dd>
-<dd>Default: <em>0.5</em></dd>
-
-<dt><b>declination</b>=<em>float</em></dt>
-<dd>Declination value (overriding the internally computed value) [radians]</dd>
-
-<dt><b>solar_constant</b>=<em>float</em></dt>
-<dd>Solar constant [W/m^2]</dd>
-<dd>Default: <em>1367</em></dd>
-
-<dt><b>time</b>=<em>float</em></dt>
-<dd>Local (solar) time (to be set for mode 1 only) [decimal hours]</dd>
-<dd>Options: <em>0-24</em></dd>
-
-<dt><b>nprocs</b>=<em>integer</em></dt>
-<dd>Number of threads which will be used for parallel computing</dd>
-<dd>Options: <em>1-1000</em></dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>distance_step</b>=<em>float</em></dt>
-<dd>Sampling distance step coefficient (0.5-1.5)</dd>
-<dd>Default: <em>1.0</em></dd>
-
-<dt><b>npartitions</b>=<em>integer</em></dt>
-<dd>Read the input files in this number of chunks</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>civil_time</b>=<em>float</em></dt>
-<dd>Civil time zone value, if none, the time will be local solar time</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.sun - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.sun</b></em>  - Solar irradiance and irradiation model.<BR>
+Computes direct (beam), diffuse and reflected solar irradiation raster maps for given day, latitude, surface and atmospheric conditions. Solar parameters (e.g. sunrise, sunset times, declination, extraterrestrial irradiance, daylight length) are saved in the map history file. Alternatively, a local time can be specified to compute solar incidence angle and/or irradiance raster maps. The shadowing effect of the topography is optionally incorporated.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_solar.html">solar</a>, <a href="keywords.html#sun energy">sun energy</a>, <a href="keywords.html#shadow">shadow</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.sun</b><br></div>
+<b>r.sun --help</b><br>
+<div id="synopsis"><b>r.sun</b> [-<b>pm</b>] <b>elevation</b>=<em>string</em>  [<b>aspect</b>=<em>string</em>]   [<b>aspect_value</b>=<em>float</em>]   [<b>slope</b>=<em>string</em>]   [<b>slope_value</b>=<em>float</em>]   [<b>linke</b>=<em>string</em>]   [<b>linke_value</b>=<em>float</em>]   [<b>albedo</b>=<em>string</em>]   [<b>albedo_value</b>=<em>float</em>]   [<b>lat</b>=<em>string</em>]   [<b>long</b>=<em>string</em>]   [<b>coeff_bh</b>=<em>string</em>]   [<b>coeff_dh</b>=<em>string</em>]   [<b>horizon_basename</b>=<em>basename</em>]   [<b>horizon_step</b>=<em>float</em>]   [<b>incidout</b>=<em>string</em>]   [<b>beam_rad</b>=<em>string</em>]   [<b>diff_rad</b>=<em>string</em>]   [<b>refl_rad</b>=<em>string</em>]   [<b>glob_rad</b>=<em>string</em>]   [<b>insol_time</b>=<em>string</em>]  <b>day</b>=<em>integer</em>  [<b>step</b>=<em>float</em>]   [<b>declination</b>=<em>float</em>]   [<b>solar_constant</b>=<em>float</em>]   [<b>time</b>=<em>float</em>]   [<b>nprocs</b>=<em>integer</em>]   [<b>distance_step</b>=<em>float</em>]   [<b>npartitions</b>=<em>integer</em>]   [<b>civil_time</b>=<em>float</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-p</b></dt>
+<dd>Do not incorporate the shadowing effect of terrain</dd>
+
+<dt><b>-m</b></dt>
+<dd>Use the low-memory version of the program</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>elevation</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of the input elevation raster map [meters]</dd>
+
+<dt><b>aspect</b>=<em>string</em></dt>
+<dd>Name of the input aspect map (terrain aspect or azimuth of the solar panel) [decimal degrees]</dd>
+
+<dt><b>aspect_value</b>=<em>float</em></dt>
+<dd>A single value of the orientation (aspect), 270 is south</dd>
+<dd>Default: <em>270</em></dd>
+
+<dt><b>slope</b>=<em>string</em></dt>
+<dd>Name of the input slope raster map (terrain slope or solar panel inclination) [decimal degrees]</dd>
+
+<dt><b>slope_value</b>=<em>float</em></dt>
+<dd>A single value of inclination (slope)</dd>
+<dd>Default: <em>0.0</em></dd>
+
+<dt><b>linke</b>=<em>string</em></dt>
+<dd>Name of the Linke atmospheric turbidity coefficient input raster map [-]</dd>
+
+<dt><b>linke_value</b>=<em>float</em></dt>
+<dd>A single value of the Linke atmospheric turbidity coefficient [-]</dd>
+<dd>Default: <em>3.0</em></dd>
+
+<dt><b>albedo</b>=<em>string</em></dt>
+<dd>Name of the ground albedo coefficient input raster map [-]</dd>
+
+<dt><b>albedo_value</b>=<em>float</em></dt>
+<dd>A single value of the ground albedo coefficient [-]</dd>
+<dd>Default: <em>0.2</em></dd>
+
+<dt><b>lat</b>=<em>string</em></dt>
+<dd>Name of input raster map containing latitudes [decimal degrees]</dd>
+
+<dt><b>long</b>=<em>string</em></dt>
+<dd>Name of input raster map containing longitudes [decimal degrees]</dd>
+
+<dt><b>coeff_bh</b>=<em>string</em></dt>
+<dd>Name of real-sky beam radiation coefficient (thick cloud) input raster map [0-1]</dd>
+
+<dt><b>coeff_dh</b>=<em>string</em></dt>
+<dd>Name of real-sky diffuse radiation coefficient (haze) input raster map [0-1]</dd>
+
+<dt><b>horizon_basename</b>=<em>basename</em></dt>
+<dd>The horizon information input map basename</dd>
+
+<dt><b>horizon_step</b>=<em>float</em></dt>
+<dd>Angle step size for multidirectional horizon [degrees]</dd>
+
+<dt><b>incidout</b>=<em>string</em></dt>
+<dd>Output incidence angle raster map (mode 1 only)</dd>
+
+<dt><b>beam_rad</b>=<em>string</em></dt>
+<dd>Output beam irradiance [W.m-2] (mode 1) or irradiation raster map [Wh.m-2.day-1] (mode 2)</dd>
+
+<dt><b>diff_rad</b>=<em>string</em></dt>
+<dd>Output diffuse irradiance [W.m-2] (mode 1) or irradiation raster map [Wh.m-2.day-1] (mode 2)</dd>
+
+<dt><b>refl_rad</b>=<em>string</em></dt>
+<dd>Output ground reflected irradiance [W.m-2] (mode 1) or irradiation raster map [Wh.m-2.day-1] (mode 2)</dd>
+
+<dt><b>glob_rad</b>=<em>string</em></dt>
+<dd>Output global (total) irradiance/irradiation [W.m-2] (mode 1) or irradiance/irradiation raster map [Wh.m-2.day-1] (mode 2)</dd>
+
+<dt><b>insol_time</b>=<em>string</em></dt>
+<dd>Output insolation time raster map [h] (mode 2 only)</dd>
+
+<dt><b>day</b>=<em>integer</em>&nbsp;<b>[required]</b></dt>
+<dd>No. of day of the year (1-365)</dd>
+<dd>Options: <em>1-365</em></dd>
+
+<dt><b>step</b>=<em>float</em></dt>
+<dd>Time step when computing all-day radiation sums [decimal hours]</dd>
+<dd>Default: <em>0.5</em></dd>
+
+<dt><b>declination</b>=<em>float</em></dt>
+<dd>Declination value (overriding the internally computed value) [radians]</dd>
+
+<dt><b>solar_constant</b>=<em>float</em></dt>
+<dd>Solar constant [W/m^2]</dd>
+<dd>Default: <em>1367</em></dd>
+
+<dt><b>time</b>=<em>float</em></dt>
+<dd>Local (solar) time (to be set for mode 1 only) [decimal hours]</dd>
+<dd>Options: <em>0-24</em></dd>
+
+<dt><b>nprocs</b>=<em>integer</em></dt>
+<dd>Number of threads which will be used for parallel computing</dd>
+<dd>Options: <em>1-1000</em></dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>distance_step</b>=<em>float</em></dt>
+<dd>Sampling distance step coefficient (0.5-1.5)</dd>
+<dd>Default: <em>1.0</em></dd>
+
+<dt><b>npartitions</b>=<em>integer</em></dt>
+<dd>Read the input files in this number of chunks</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>civil_time</b>=<em>float</em></dt>
+<dd>Civil time zone value, if none, the time will be local solar time</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -554,7 +554,14 @@ Thomas Huld, JRC, Italy <br>
 <p>
 <i>Last changed: $Date$</i>
 --> <h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.sun">r.sun source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.sun">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.sun">r.sun source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.sun">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -565,9 +572,9 @@ Thomas Huld, JRC, Italy <br>
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

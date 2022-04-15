@@ -1,79 +1,79 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>t.vect.import.py - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>t.vect.import.py</b></em>  - Imports a space time vector dataset from a GRASS GIS specific archive file.
-<h2>KEYWORDS</h2>
-<a href="temporal.html">temporal</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#vector">vector</a>, <a href="keywords.html#time">time</a>, <a href="keywords.html#create location">create location</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>t.vect.import.py</b><br></div>
-<b>t.vect.import.py --help</b><br>
-<div id="synopsis"><b>t.vect.import.py</b> [-<b>eoc</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>basename</b>=<em>string</em>]  <b>directory</b>=<em>name</em>  [<b>title</b>=<em>string</em>]   [<b>description</b>=<em>string</em>]   [<b>location</b>=<em>string</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-e</b></dt>
-<dd>Extend location extents based on new dataset</dd>
-
-<dt><b>-o</b></dt>
-<dd>Override projection check (use current location's projection)</dd>
-<dd>Assume that the dataset has same projection as the current location</dd>
-
-<dt><b>-c</b></dt>
-<dd>Create the location specified by the "location" parameter and exit. Do not import the space time vector datasets.</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input file</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of the output space time vector dataset</dd>
-
-<dt><b>basename</b>=<em>string</em></dt>
-<dd>Basename of the new generated output maps</dd>
-<dd>A numerical suffix separated by an underscore will be attached to create a unique identifier</dd>
-
-<dt><b>directory</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Path to the extraction directory</dd>
-
-<dt><b>title</b>=<em>string</em></dt>
-<dd>Title of the new space time dataset</dd>
-
-<dt><b>description</b>=<em>string</em></dt>
-<dd>Description of the new space time dataset</dd>
-
-<dt><b>location</b>=<em>string</em></dt>
-<dd>Create a new location and import the data into it. Do not run this module in parallel or interrupt it when a new location should be created</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>t.vect.import.py - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>t.vect.import.py</b></em>  - Imports a space time vector dataset from a GRASS GIS specific archive file.
+<h2>KEYWORDS</h2>
+<a href="temporal.html">temporal</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#vector">vector</a>, <a href="keywords.html#time">time</a>, <a href="keywords.html#create location">create location</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>t.vect.import.py</b><br></div>
+<b>t.vect.import.py --help</b><br>
+<div id="synopsis"><b>t.vect.import.py</b> [-<b>eoc</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>basename</b>=<em>string</em>]  <b>directory</b>=<em>name</em>  [<b>title</b>=<em>string</em>]   [<b>description</b>=<em>string</em>]   [<b>location</b>=<em>string</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-e</b></dt>
+<dd>Extend location extents based on new dataset</dd>
+
+<dt><b>-o</b></dt>
+<dd>Override projection check (use current location's projection)</dd>
+<dd>Assume that the dataset has same projection as the current location</dd>
+
+<dt><b>-c</b></dt>
+<dd>Create the location specified by the "location" parameter and exit. Do not import the space time vector datasets.</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input file</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of the output space time vector dataset</dd>
+
+<dt><b>basename</b>=<em>string</em></dt>
+<dd>Basename of the new generated output maps</dd>
+<dd>A numerical suffix separated by an underscore will be attached to create a unique identifier</dd>
+
+<dt><b>directory</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Path to the extraction directory</dd>
+
+<dt><b>title</b>=<em>string</em></dt>
+<dd>Title of the new space time dataset</dd>
+
+<dt><b>description</b>=<em>string</em></dt>
+<dd>Description of the new space time dataset</dd>
+
+<dt><b>location</b>=<em>string</em></dt>
+<dd>Create a new location and import the data into it. Do not run this module in parallel or interrupt it when a new location should be created</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -158,7 +158,14 @@ S&ouml;ren Gebbert, Th&uuml;nen Institute of Climate-Smart Agriculture
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/temporal/t.vect.import">t.vect.import source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/temporal/t.vect.import">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/temporal/t.vect.import">t.vect.import source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/temporal/t.vect.import">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -169,9 +176,9 @@ S&ouml;ren Gebbert, Th&uuml;nen Institute of Climate-Smart Agriculture
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

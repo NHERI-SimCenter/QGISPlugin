@@ -1,77 +1,77 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.texture - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.texture</b></em>  - Generate images with textural features from a raster map.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_algebra.html">algebra</a>, <a href="keywords.html#statistics">statistics</a>, <a href="keywords.html#texture">texture</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.texture</b><br></div>
-<b>r.texture --help</b><br>
-<div id="synopsis"><b>r.texture</b> [-<b>san</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>basename</em>  [<b>size</b>=<em>value</em>]   [<b>distance</b>=<em>value</em>]   [<b>method</b>=<em>string</em>[,<i>string</i>,...]]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-s</b></dt>
-<dd>Separate output for each angle (0, 45, 90, 135)</dd>
-<dd>Angles are counterclockwise from east: 0 is East to West, 45 is North-East to South-West</dd>
-
-<dt><b>-a</b></dt>
-<dd>Calculate all textural measurements</dd>
-
-<dt><b>-n</b></dt>
-<dd>Allow NULL cells in a moving window</dd>
-<dd>This will also avoid cropping along edges of the current region</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map</dd>
-
-<dt><b>output</b>=<em>basename</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output basename raster map(s)</dd>
-
-<dt><b>size</b>=<em>value</em></dt>
-<dd>The size of moving window (odd and &gt;= 3)</dd>
-<dd>Default: <em>3</em></dd>
-
-<dt><b>distance</b>=<em>value</em></dt>
-<dd>The distance between two samples (&gt;= 1)</dd>
-<dd>The distance must be smaller than the size of the moving window</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>method</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>Textural measurement method</dd>
-<dd>Options: <em>asm, contrast, corr, var, idm, sa, sv, se, entr, dv, de, moc1, moc2</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.texture - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.texture</b></em>  - Generate images with textural features from a raster map.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_algebra.html">algebra</a>, <a href="keywords.html#statistics">statistics</a>, <a href="keywords.html#texture">texture</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.texture</b><br></div>
+<b>r.texture --help</b><br>
+<div id="synopsis"><b>r.texture</b> [-<b>san</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>basename</em>  [<b>size</b>=<em>value</em>]   [<b>distance</b>=<em>value</em>]   [<b>method</b>=<em>string</em>[,<i>string</i>,...]]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-s</b></dt>
+<dd>Separate output for each angle (0, 45, 90, 135)</dd>
+<dd>Angles are counterclockwise from east: 0 is East to West, 45 is North-East to South-West</dd>
+
+<dt><b>-a</b></dt>
+<dd>Calculate all textural measurements</dd>
+
+<dt><b>-n</b></dt>
+<dd>Allow NULL cells in a moving window</dd>
+<dd>This will also avoid cropping along edges of the current region</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map</dd>
+
+<dt><b>output</b>=<em>basename</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output basename raster map(s)</dd>
+
+<dt><b>size</b>=<em>value</em></dt>
+<dd>The size of moving window (odd and &gt;= 3)</dd>
+<dd>Default: <em>3</em></dd>
+
+<dt><b>distance</b>=<em>value</em></dt>
+<dd>The distance between two samples (&gt;= 1)</dd>
+<dd>The distance must be smaller than the size of the moving window</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>method</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>Textural measurement method</dd>
+<dd>Options: <em>asm, contrast, corr, var, idm, sa, sv, se, entr, dv, de, moc1, moc2</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -371,7 +371,14 @@ Moritz Lennert (documentation)
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.texture">r.texture source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.texture">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.texture">r.texture source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.texture">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -382,9 +389,9 @@ Moritz Lennert (documentation)
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

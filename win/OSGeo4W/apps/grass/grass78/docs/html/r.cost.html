@@ -1,107 +1,107 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.cost - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.cost</b></em>  - Creates a raster map showing the cumulative cost of moving between different geographic locations on an input raster map whose cell category values represent cost.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_cost_surface.html">cost surface</a>, <a href="keywords.html#cumulative costs">cumulative costs</a>, <a href="keywords.html#cost allocation">cost allocation</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.cost</b><br></div>
-<b>r.cost --help</b><br>
-<div id="synopsis"><b>r.cost</b> [-<b>knrib</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>solver</b>=<em>name</em>]   [<b>nearest</b>=<em>name</em>]   [<b>outdir</b>=<em>name</em>]   [<b>start_points</b>=<em>name</em>]   [<b>stop_points</b>=<em>name</em>]   [<b>start_raster</b>=<em>name</em>]   [<b>start_coordinates</b>=<em>east,north</em>[,<i>east,north</i>,...]]   [<b>stop_coordinates</b>=<em>east,north</em>[,<i>east,north</i>,...]]   [<b>max_cost</b>=<em>value</em>]   [<b>null_cost</b>=<em>value</em>]   [<b>memory</b>=<em>memory in MB</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-k</b></dt>
-<dd>Use the 'Knight's move'; slower, but more accurate</dd>
-
-<dt><b>-n</b></dt>
-<dd>Keep null values in output raster map</dd>
-
-<dt><b>-r</b></dt>
-<dd>Start with values in raster map</dd>
-
-<dt><b>-i</b></dt>
-<dd>Print info about disk space and memory requirements and exit</dd>
-
-<dt><b>-b</b></dt>
-<dd>Create bitmask encoded directions</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map containing grid cell cost information</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output raster map</dd>
-
-<dt><b>solver</b>=<em>name</em></dt>
-<dd>Name of input raster map solving equal costs</dd>
-<dd>Helper variable to pick a direction if two directions have equal cumulative costs (smaller is better)</dd>
-
-<dt><b>nearest</b>=<em>name</em></dt>
-<dd>Name for output raster map with nearest start point</dd>
-
-<dt><b>outdir</b>=<em>name</em></dt>
-<dd>Name for output raster map to contain movement directions</dd>
-
-<dt><b>start_points</b>=<em>name</em></dt>
-<dd>Name of starting vector points map</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>stop_points</b>=<em>name</em></dt>
-<dd>Name of stopping vector points map</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>start_raster</b>=<em>name</em></dt>
-<dd>Name of starting raster points map</dd>
-
-<dt><b>start_coordinates</b>=<em>east,north[,<i>east,north</i>,...]</em></dt>
-<dd>Coordinates of starting point(s) (E,N)</dd>
-
-<dt><b>stop_coordinates</b>=<em>east,north[,<i>east,north</i>,...]</em></dt>
-<dd>Coordinates of stopping point(s) (E,N)</dd>
-
-<dt><b>max_cost</b>=<em>value</em></dt>
-<dd>Maximum cumulative cost</dd>
-<dd>Default: <em>0</em></dd>
-
-<dt><b>null_cost</b>=<em>value</em></dt>
-<dd>Cost assigned to null cells. By default, null cells are excluded</dd>
-
-<dt><b>memory</b>=<em>memory in MB</em></dt>
-<dd>Maximum memory to be used (in MB)</dd>
-<dd>Cache size for raster rows</dd>
-<dd>Default: <em>300</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.cost - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.cost</b></em>  - Creates a raster map showing the cumulative cost of moving between different geographic locations on an input raster map whose cell category values represent cost.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_cost_surface.html">cost surface</a>, <a href="keywords.html#cumulative costs">cumulative costs</a>, <a href="keywords.html#cost allocation">cost allocation</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.cost</b><br></div>
+<b>r.cost --help</b><br>
+<div id="synopsis"><b>r.cost</b> [-<b>knrib</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>solver</b>=<em>name</em>]   [<b>nearest</b>=<em>name</em>]   [<b>outdir</b>=<em>name</em>]   [<b>start_points</b>=<em>name</em>]   [<b>stop_points</b>=<em>name</em>]   [<b>start_raster</b>=<em>name</em>]   [<b>start_coordinates</b>=<em>east,north</em>[,<i>east,north</i>,...]]   [<b>stop_coordinates</b>=<em>east,north</em>[,<i>east,north</i>,...]]   [<b>max_cost</b>=<em>value</em>]   [<b>null_cost</b>=<em>value</em>]   [<b>memory</b>=<em>memory in MB</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-k</b></dt>
+<dd>Use the 'Knight's move'; slower, but more accurate</dd>
+
+<dt><b>-n</b></dt>
+<dd>Keep null values in output raster map</dd>
+
+<dt><b>-r</b></dt>
+<dd>Start with values in raster map</dd>
+
+<dt><b>-i</b></dt>
+<dd>Print info about disk space and memory requirements and exit</dd>
+
+<dt><b>-b</b></dt>
+<dd>Create bitmask encoded directions</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map containing grid cell cost information</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output raster map</dd>
+
+<dt><b>solver</b>=<em>name</em></dt>
+<dd>Name of input raster map solving equal costs</dd>
+<dd>Helper variable to pick a direction if two directions have equal cumulative costs (smaller is better)</dd>
+
+<dt><b>nearest</b>=<em>name</em></dt>
+<dd>Name for output raster map with nearest start point</dd>
+
+<dt><b>outdir</b>=<em>name</em></dt>
+<dd>Name for output raster map to contain movement directions</dd>
+
+<dt><b>start_points</b>=<em>name</em></dt>
+<dd>Name of starting vector points map</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>stop_points</b>=<em>name</em></dt>
+<dd>Name of stopping vector points map</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>start_raster</b>=<em>name</em></dt>
+<dd>Name of starting raster points map</dd>
+
+<dt><b>start_coordinates</b>=<em>east,north[,<i>east,north</i>,...]</em></dt>
+<dd>Coordinates of starting point(s) (E,N)</dd>
+
+<dt><b>stop_coordinates</b>=<em>east,north[,<i>east,north</i>,...]</em></dt>
+<dd>Coordinates of stopping point(s) (E,N)</dd>
+
+<dt><b>max_cost</b>=<em>value</em></dt>
+<dd>Maximum cumulative cost</dd>
+<dd>Default: <em>0</em></dd>
+
+<dt><b>null_cost</b>=<em>value</em></dt>
+<dd>Cost assigned to null cells. By default, null cells are excluded</dd>
+
+<dt><b>memory</b>=<em>memory in MB</em></dt>
+<dd>Maximum memory to be used (in MB)</dd>
+<dd>Cache size for raster rows</dd>
+<dd>Default: <em>300</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -438,7 +438,14 @@ Multiple path directions sponsored by <a href="https://www.mundialis.de">mundial
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.cost">r.cost source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.cost">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.cost">r.cost source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.cost">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -449,9 +456,9 @@ Multiple path directions sponsored by <a href="https://www.mundialis.de">mundial
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

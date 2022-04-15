@@ -11,9 +11,12 @@
 #include "frmts/mdal_binary_dat.hpp"
 #include "frmts/mdal_selafin.hpp"
 #include "frmts/mdal_esri_tin.hpp"
-#include "frmts/mdal_ply.hpp"
 #include "frmts/mdal_dynamic_driver.hpp"
 #include "mdal_utils.hpp"
+
+#ifdef BUILD_PLY
+#include "frmts/mdal_ply.hpp"
+#endif
 
 #ifdef HAVE_HDF5
 #include "frmts/mdal_xmdf.hpp"
@@ -23,6 +26,7 @@
 
 #ifdef HAVE_GDAL
 #include "frmts/mdal_gdal_grib.hpp"
+#include "frmts/mdal_h2i.hpp"
 #endif
 
 #ifdef HAVE_NETCDF
@@ -163,13 +167,25 @@ void MDAL::DriverManager::loadDatasets( Mesh *mesh, const std::string &datasetFi
   MDAL::Log::error( MDAL_Status::Err_UnknownFormat, "No driver was able to load requested file: " + datasetFile );
 }
 
-void MDAL::DriverManager::save( MDAL::Mesh *mesh, const std::string &uri, const std::string &driverName ) const
+void  MDAL::DriverManager::save( Mesh *mesh, const std::string &uri ) const
 {
-  auto selectedDriver = driver( driverName );
+  std::string driverName;
+  std::string meshName;
+  std::string fileName;
+
+  MDAL::parseDriverAndMeshFromUri( uri, driverName, fileName, meshName );
+
+  std::shared_ptr<MDAL::Driver> selectedDriver = driver( driverName );
+
+  if ( !selectedDriver )
+  {
+    MDAL::Log::error( MDAL_Status::Err_MissingDriver, "Could not find driver with name: " + driverName );
+    return;
+  }
 
   std::unique_ptr<Driver> drv( selectedDriver->create() );
 
-  drv->save( uri, mesh );
+  drv->save( fileName, meshName, mesh );
 }
 
 size_t MDAL::DriverManager::driversCount() const
@@ -206,7 +222,10 @@ MDAL::DriverManager::DriverManager()
   mDrivers.push_back( std::make_shared<MDAL::DriverXmsTin>() );
   mDrivers.push_back( std::make_shared<MDAL::DriverSelafin>() );
   mDrivers.push_back( std::make_shared<MDAL::DriverEsriTin>() );
+
+#ifdef BUILD_PLY
   mDrivers.push_back( std::make_shared<MDAL::DriverPly>() );
+#endif
 
 #ifdef HAVE_HDF5
   mDrivers.push_back( std::make_shared<MDAL::DriverFlo2D>() );
@@ -229,6 +248,7 @@ MDAL::DriverManager::DriverManager()
 
 #ifdef HAVE_GDAL
   mDrivers.push_back( std::make_shared<MDAL::DriverGdalGrib>() );
+  mDrivers.push_back( std::make_shared<MDAL::DriverH2i>() );
 #endif
 
   // DATASET DRIVERS
@@ -258,7 +278,6 @@ void MDAL::DriverManager::loadDynamicDrivers()
 
     if ( driver )
       mDrivers.push_back( driver );
-
   }
 
 }

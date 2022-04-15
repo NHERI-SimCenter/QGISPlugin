@@ -1,110 +1,110 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.lrs.create - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.lrs.create</b></em>  - Creates a linear reference system.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_linear_reference_system.html">linear reference system</a>, <a href="keywords.html#network">network</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.lrs.create</b><br></div>
-<b>v.lrs.create --help</b><br>
-<div id="synopsis"><b>v.lrs.create</b> <b>in_lines</b>=<em>name</em> <b>out_lines</b>=<em>name</em>  [<b>err</b>=<em>name</em>]  <b>points</b>=<em>name</em>  [<b>llayer</b>=<em>string</em>]   [<b>player</b>=<em>string</em>]  <b>lidcol</b>=<em>string</em> <b>pidcol</b>=<em>string</em>  [<b>start_mp</b>=<em>string</em>]   [<b>start_off</b>=<em>string</em>]   [<b>end_mp</b>=<em>string</em>]   [<b>end_off</b>=<em>string</em>]   [<b>rsdriver</b>=<em>string</em>]   [<b>rsdatabase</b>=<em>string</em>]  <b>rstable</b>=<em>string</em>  [<b>threshold</b>=<em>float</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>in_lines</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input vector map</dd>
-<dd>Input vector map containing lines</dd>
-
-<dt><b>out_lines</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Output vector map where oriented lines are written</dd>
-
-<dt><b>err</b>=<em>name</em></dt>
-<dd>Output vector map of errors</dd>
-
-<dt><b>points</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input vector map</dd>
-<dd>Input vector map containing reference points</dd>
-
-<dt><b>llayer</b>=<em>string</em></dt>
-<dd>Layer number or name</dd>
-<dd>Line layer</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>player</b>=<em>string</em></dt>
-<dd>Layer number or name</dd>
-<dd>Point layer</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>lidcol</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Column containing line identifiers for lines</dd>
-
-<dt><b>pidcol</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Column containing line identifiers for points</dd>
-
-<dt><b>start_mp</b>=<em>string</em></dt>
-<dd>Column containing milepost position for the beginning of next segment</dd>
-<dd>Default: <em>start_mp</em></dd>
-
-<dt><b>start_off</b>=<em>string</em></dt>
-<dd>Column containing offset from milepost for the beginning of next segment</dd>
-<dd>Default: <em>start_off</em></dd>
-
-<dt><b>end_mp</b>=<em>string</em></dt>
-<dd>Column containing milepost position for the end of previous segment</dd>
-<dd>Default: <em>end_mp</em></dd>
-
-<dt><b>end_off</b>=<em>string</em></dt>
-<dd>Column containing offset from milepost for the end of previous segment</dd>
-<dd>Default: <em>end_off</em></dd>
-
-<dt><b>rsdriver</b>=<em>string</em></dt>
-<dd>Driver name for reference system table</dd>
-<dd>Options: <em>dbf, odbc, ogr, pg, sqlite</em></dd>
-<dd>Default: <em>sqlite</em></dd>
-
-<dt><b>rsdatabase</b>=<em>string</em></dt>
-<dd>Database name for reference system table</dd>
-<dd>Default: <em>$GISDBASE/$LOCATION_NAME/$MAPSET/sqlite/sqlite.db</em></dd>
-
-<dt><b>rstable</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of table where the reference system will be written</dd>
-<dd>New table is created by this module</dd>
-
-<dt><b>threshold</b>=<em>float</em></dt>
-<dd>Maximum distance of point to line allowed</dd>
-<dd>Default: <em>1</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.lrs.create - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.lrs.create</b></em>  - Creates a linear reference system.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_linear_reference_system.html">linear reference system</a>, <a href="keywords.html#network">network</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.lrs.create</b><br></div>
+<b>v.lrs.create --help</b><br>
+<div id="synopsis"><b>v.lrs.create</b> <b>in_lines</b>=<em>name</em> <b>out_lines</b>=<em>name</em>  [<b>err</b>=<em>name</em>]  <b>points</b>=<em>name</em>  [<b>llayer</b>=<em>string</em>]   [<b>player</b>=<em>string</em>]  <b>lidcol</b>=<em>string</em> <b>pidcol</b>=<em>string</em>  [<b>start_mp</b>=<em>string</em>]   [<b>start_off</b>=<em>string</em>]   [<b>end_mp</b>=<em>string</em>]   [<b>end_off</b>=<em>string</em>]   [<b>rsdriver</b>=<em>string</em>]   [<b>rsdatabase</b>=<em>string</em>]  <b>rstable</b>=<em>string</em>  [<b>threshold</b>=<em>float</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>in_lines</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input vector map</dd>
+<dd>Input vector map containing lines</dd>
+
+<dt><b>out_lines</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Output vector map where oriented lines are written</dd>
+
+<dt><b>err</b>=<em>name</em></dt>
+<dd>Output vector map of errors</dd>
+
+<dt><b>points</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input vector map</dd>
+<dd>Input vector map containing reference points</dd>
+
+<dt><b>llayer</b>=<em>string</em></dt>
+<dd>Layer number or name</dd>
+<dd>Line layer</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>player</b>=<em>string</em></dt>
+<dd>Layer number or name</dd>
+<dd>Point layer</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>lidcol</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Column containing line identifiers for lines</dd>
+
+<dt><b>pidcol</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Column containing line identifiers for points</dd>
+
+<dt><b>start_mp</b>=<em>string</em></dt>
+<dd>Column containing milepost position for the beginning of next segment</dd>
+<dd>Default: <em>start_mp</em></dd>
+
+<dt><b>start_off</b>=<em>string</em></dt>
+<dd>Column containing offset from milepost for the beginning of next segment</dd>
+<dd>Default: <em>start_off</em></dd>
+
+<dt><b>end_mp</b>=<em>string</em></dt>
+<dd>Column containing milepost position for the end of previous segment</dd>
+<dd>Default: <em>end_mp</em></dd>
+
+<dt><b>end_off</b>=<em>string</em></dt>
+<dd>Column containing offset from milepost for the end of previous segment</dd>
+<dd>Default: <em>end_off</em></dd>
+
+<dt><b>rsdriver</b>=<em>string</em></dt>
+<dd>Driver name for reference system table</dd>
+<dd>Options: <em>dbf, odbc, ogr, pg, sqlite</em></dd>
+<dd>Default: <em>sqlite</em></dd>
+
+<dt><b>rsdatabase</b>=<em>string</em></dt>
+<dd>Database name for reference system table</dd>
+<dd>Default: <em>$GISDBASE/$LOCATION_NAME/$MAPSET/sqlite/sqlite.db</em></dd>
+
+<dt><b>rstable</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of table where the reference system will be written</dd>
+<dd>New table is created by this module</dd>
+
+<dt><b>threshold</b>=<em>float</em></dt>
+<dd>Maximum distance of point to line allowed</dd>
+<dd>Default: <em>1</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -275,7 +275,14 @@ Documentation update (based on above journal article and available fragments): M
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.lrs/v.lrs.create">v.lrs.create source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.lrs/v.lrs.create">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.lrs/v.lrs.create">v.lrs.create source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.lrs/v.lrs.create">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -286,9 +293,9 @@ Documentation update (based on above journal article and available fragments): M
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

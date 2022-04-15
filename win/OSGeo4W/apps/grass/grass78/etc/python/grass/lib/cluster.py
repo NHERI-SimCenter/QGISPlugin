@@ -1,7 +1,7 @@
 '''Wrapper for cluster.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_cluster.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/cluster.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h -o OBJ.x86_64-w64-mingw32/cluster.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_cluster.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/cluster.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h -o OBJ.x86_64-w64-mingw32/cluster.py
 
 Do not modify this file.
 '''
@@ -27,9 +27,9 @@ _libs["grass_cluster.7.8"] = load_library("grass_cluster.7.8")
 
 # No modules
 
-DCELL = c_double # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 604
+DCELL = c_double # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 604
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/imagery.h: 52
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/imagery.h: 52
 class struct_One_Sig(Structure):
     pass
 
@@ -56,7 +56,7 @@ struct_One_Sig._fields_ = [
     ('have_color', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/imagery.h: 63
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/imagery.h: 63
 class struct_Signature(Structure):
     pass
 
@@ -73,7 +73,7 @@ struct_Signature._fields_ = [
     ('sig', POINTER(struct_One_Sig)),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\cluster.h: 7
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\cluster.h: 7
 class struct_Cluster(Structure):
     pass
 
@@ -122,7 +122,7 @@ struct_Cluster._fields_ = [
     ('percent_stable', c_double),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_assign'):
         continue
@@ -131,7 +131,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_assign.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 8
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 8
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_begin'):
         continue
@@ -140,7 +140,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_begin.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 11
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 11
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_clear'):
         continue
@@ -149,7 +149,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_clear.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 14
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 14
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_distinct'):
         continue
@@ -158,7 +158,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_distinct.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 17
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 17
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_exec'):
         continue
@@ -167,7 +167,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_exec.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 20
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 20
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_exec_allocate'):
         continue
@@ -176,7 +176,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_exec_allocate.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 21
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 21
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_exec_free'):
         continue
@@ -185,7 +185,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_exec_free.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 24
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 24
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_means'):
         continue
@@ -194,7 +194,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_means.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 27
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 27
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_merge'):
         continue
@@ -203,7 +203,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_merge.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 30
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 30
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_nclasses'):
         continue
@@ -212,7 +212,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_nclasses.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 33
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 33
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_point'):
         continue
@@ -221,7 +221,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_point.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 34
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 34
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_begin_point_set'):
         continue
@@ -230,7 +230,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_begin_point_set.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 35
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 35
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_point_part'):
         continue
@@ -239,7 +239,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_point_part.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 36
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 36
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_end_point_set'):
         continue
@@ -248,7 +248,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_end_point_set.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 39
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 39
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_reassign'):
         continue
@@ -257,7 +257,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_reassign.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 42
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 42
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_reclass'):
         continue
@@ -266,7 +266,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_reclass.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 45
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 45
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_separation'):
         continue
@@ -275,7 +275,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_separation.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 48
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 48
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_signatures'):
         continue
@@ -284,7 +284,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_signatures.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 51
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/cluster.h: 51
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_cluster_sum2'):
         continue
@@ -293,7 +293,7 @@ for _lib in six.itervalues(_libs):
     I_cluster_sum2.restype = c_int
     break
 
-Cluster = struct_Cluster # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\cluster.h: 7
+Cluster = struct_Cluster # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\cluster.h: 7
 
 # No inserted files
 

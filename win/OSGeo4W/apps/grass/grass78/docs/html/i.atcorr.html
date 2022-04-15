@@ -1,83 +1,83 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>i.atcorr - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>i.atcorr</b></em>  - Performs atmospheric correction using the 6S algorithm.<BR>
-6S - Second Simulation of Satellite Signal in the Solar Spectrum.
-<h2>KEYWORDS</h2>
-<a href="imagery.html">imagery</a>, <a href="topic_atmospheric_correction.html">atmospheric correction</a>, <a href="keywords.html#radiometric conversion">radiometric conversion</a>, <a href="keywords.html#radiance">radiance</a>, <a href="keywords.html#reflectance">reflectance</a>, <a href="keywords.html#satellite">satellite</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>i.atcorr</b><br></div>
-<b>i.atcorr --help</b><br>
-<div id="synopsis"><b>i.atcorr</b> [-<b>irab</b>] <b>input</b>=<em>name</em>  [<b>range</b>=<em>min,max</em>]   [<b>elevation</b>=<em>name</em>]   [<b>visibility</b>=<em>name</em>]  <b>parameters</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>rescale</b>=<em>min,max</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-i</b></dt>
-<dd>Output raster map as integer</dd>
-
-<dt><b>-r</b></dt>
-<dd>Input raster map converted to reflectance (default is radiance)</dd>
-
-<dt><b>-a</b></dt>
-<dd>Input from ETM+ image taken after July 1, 2000</dd>
-
-<dt><b>-b</b></dt>
-<dd>Input from ETM+ image taken before July 1, 2000</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map</dd>
-
-<dt><b>range</b>=<em>min,max</em></dt>
-<dd>Input range</dd>
-<dd>Default: <em>0,255</em></dd>
-
-<dt><b>elevation</b>=<em>name</em></dt>
-<dd>Name of input elevation raster map (in m)</dd>
-
-<dt><b>visibility</b>=<em>name</em></dt>
-<dd>Name of input visibility raster map (in km)</dd>
-
-<dt><b>parameters</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input text file with 6S parameters</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output raster map</dd>
-
-<dt><b>rescale</b>=<em>min,max</em></dt>
-<dd>Rescale output raster map</dd>
-<dd>Default: <em>0,255</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>i.atcorr - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>i.atcorr</b></em>  - Performs atmospheric correction using the 6S algorithm.<BR>
+6S - Second Simulation of Satellite Signal in the Solar Spectrum.
+<h2>KEYWORDS</h2>
+<a href="imagery.html">imagery</a>, <a href="topic_atmospheric_correction.html">atmospheric correction</a>, <a href="keywords.html#radiometric conversion">radiometric conversion</a>, <a href="keywords.html#radiance">radiance</a>, <a href="keywords.html#reflectance">reflectance</a>, <a href="keywords.html#satellite">satellite</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>i.atcorr</b><br></div>
+<b>i.atcorr --help</b><br>
+<div id="synopsis"><b>i.atcorr</b> [-<b>irab</b>] <b>input</b>=<em>name</em>  [<b>range</b>=<em>min,max</em>]   [<b>elevation</b>=<em>name</em>]   [<b>visibility</b>=<em>name</em>]  <b>parameters</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>rescale</b>=<em>min,max</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-i</b></dt>
+<dd>Output raster map as integer</dd>
+
+<dt><b>-r</b></dt>
+<dd>Input raster map converted to reflectance (default is radiance)</dd>
+
+<dt><b>-a</b></dt>
+<dd>Input from ETM+ image taken after July 1, 2000</dd>
+
+<dt><b>-b</b></dt>
+<dd>Input from ETM+ image taken before July 1, 2000</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map</dd>
+
+<dt><b>range</b>=<em>min,max</em></dt>
+<dd>Input range</dd>
+<dd>Default: <em>0,255</em></dd>
+
+<dt><b>elevation</b>=<em>name</em></dt>
+<dd>Name of input elevation raster map (in m)</dd>
+
+<dt><b>visibility</b>=<em>name</em></dt>
+<dd>Name of input visibility raster map (in km)</dd>
+
+<dt><b>parameters</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input text file with 6S parameters</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output raster map</dd>
+
+<dt><b>rescale</b>=<em>min,max</em></dt>
+<dd>Rescale output raster map</dd>
+<dd>Default: <em>0,255</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -1246,7 +1246,14 @@ land imager: spectral response and spectral uniformity., Proc. SPIE 8153,
 <i>Last changed: $Date$</i>
 -->
 <h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/imagery/i.atcorr">i.atcorr source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/imagery/i.atcorr">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/imagery/i.atcorr">i.atcorr source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/imagery/i.atcorr">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -1257,9 +1264,9 @@ land imager: spectral response and spectral uniformity., Proc. SPIE 8153,
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

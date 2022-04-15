@@ -152,7 +152,7 @@ namespace MDAL
 
       std::string getMetadata( const std::string &key );
       void setMetadata( const std::string &key, const std::string &val );
-      void setMetadata( const Metadata &metadata );
+      void setMetadata( const Metadata &new_metadata );
 
       std::string name();
       void setName( const std::string &name );
@@ -267,12 +267,20 @@ namespace MDAL
       std::string crs() const;
       size_t faceVerticesMaximumCount() const;
 
+      std::string getMetadata( const std::string &key );
+      void setMetadata( const std::string &key, const std::string &val );
+      void setMetadata( const Metadata &new_metadata );
+
+      Metadata metadata;
+
       virtual void closeSource() {};
 
       virtual bool isEditable() const {return false;}
 
       virtual void addVertices( size_t vertexCount, double *coordinates );
       virtual void addFaces( size_t faceCount, size_t driverMaxVerticesPerFace, int *faceSizes, int *vertexIndices );
+      virtual void addEdges( size_t edgeCount, int *startVertexIndices, int *endVertexIndices );
+
 
     protected:
       void setFaceVerticesMaximumCount( const size_t &faceVerticesMaximumCount );

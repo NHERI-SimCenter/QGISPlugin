@@ -15,7 +15,6 @@
 #include "intern/dxfreader.h"
 #include "intern/dwgbuffer.h"
 #include "intern/drw_dbg.h"
-#include <cmath>
 
 #define RESERVE( vector, size ) try { \
     vector.reserve(size); \

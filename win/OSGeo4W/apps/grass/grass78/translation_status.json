@@ -47,19 +47,19 @@
                 "good": 579
             },
             "grassmods": {
-                "bad": 8278,
-                "fuzzy": 1088,
+                "bad": 8282,
+                "fuzzy": 1084,
                 "good": 3197
             },
             "grasswxpy": {
-                "bad": 1888,
-                "fuzzy": 38,
+                "bad": 1892,
+                "fuzzy": 34,
                 "good": 2329
             },
             "name": "",
             "total": {
-                "bad": 11677,
-                "fuzzy": 1141,
+                "bad": 11685,
+                "fuzzy": 1133,
                 "good": 6105,
                 "total": 18923
             }
@@ -71,19 +71,19 @@
                 "good": 715
             },
             "grassmods": {
-                "bad": 7089,
-                "fuzzy": 1171,
+                "bad": 7094,
+                "fuzzy": 1166,
                 "good": 4354
             },
             "grasswxpy": {
-                "bad": 1572,
-                "fuzzy": 29,
+                "bad": 1576,
+                "fuzzy": 25,
                 "good": 2617
             },
             "name": "German",
             "total": {
-                "bad": 10040,
-                "fuzzy": 1213,
+                "bad": 10049,
+                "fuzzy": 1204,
                 "good": 7686,
                 "total": 18939
             }
@@ -100,14 +100,14 @@
                 "good": 133
             },
             "grasswxpy": {
-                "bad": 3452,
-                "fuzzy": 24,
+                "bad": 3453,
+                "fuzzy": 23,
                 "good": 698
             },
             "name": "Greek",
             "total": {
-                "bad": 17030,
-                "fuzzy": 409,
+                "bad": 17031,
+                "fuzzy": 408,
                 "good": 1215,
                 "total": 18654
             }
@@ -119,19 +119,19 @@
                 "good": 1884
             },
             "grassmods": {
-                "bad": 3433,
-                "fuzzy": 1439,
+                "bad": 3439,
+                "fuzzy": 1433,
                 "good": 7876
             },
             "grasswxpy": {
-                "bad": 30,
-                "fuzzy": 7,
+                "bad": 36,
+                "fuzzy": 1,
                 "good": 4202
             },
             "name": "Spanish",
             "total": {
-                "bad": 3728,
-                "fuzzy": 1462,
+                "bad": 3740,
+                "fuzzy": 1450,
                 "good": 13962,
                 "total": 19152
             }
@@ -142,8 +142,8 @@
                 "good": 0
             },
             "grassmods": {
-                "bad": 12283,
-                "fuzzy": 19,
+                "bad": 12284,
+                "fuzzy": 18,
                 "good": 42
             },
             "grasswxpy": {
@@ -152,33 +152,33 @@
             },
             "name": "Finnish",
             "total": {
-                "bad": 18360,
-                "fuzzy": 19,
+                "bad": 18361,
+                "fuzzy": 18,
                 "good": 179,
                 "total": 18558
             }
         },
         "fr": {
             "grasslibs": {
-                "bad": 20,
+                "bad": 21,
                 "fuzzy": 25,
-                "good": 2132
+                "good": 2131
             },
             "grassmods": {
-                "bad": 8395,
-                "fuzzy": 1222,
+                "bad": 8401,
+                "fuzzy": 1216,
                 "good": 2922
             },
             "grasswxpy": {
-                "bad": 41,
-                "fuzzy": 34,
+                "bad": 47,
+                "fuzzy": 28,
                 "good": 4221
             },
             "name": "French",
             "total": {
-                "bad": 8456,
-                "fuzzy": 1281,
-                "good": 9275,
+                "bad": 8469,
+                "fuzzy": 1269,
+                "good": 9274,
                 "total": 19012
             }
         },
@@ -188,19 +188,18 @@
                 "good": 35
             },
             "grassmods": {
-                "bad": 12179,
-                "fuzzy": 127,
+                "bad": 12181,
+                "fuzzy": 125,
                 "good": 38
             },
             "grasswxpy": {
-                "bad": 1872,
-                "fuzzy": 2,
+                "bad": 1874,
                 "good": 2267
             },
             "name": "Hungarian",
             "total": {
-                "bad": 16089,
-                "fuzzy": 129,
+                "bad": 16093,
+                "fuzzy": 125,
                 "good": 2340,
                 "total": 18558
             }
@@ -234,19 +233,19 @@
                 "good": 1064
             },
             "grassmods": {
-                "bad": 8354,
-                "fuzzy": 1052,
+                "bad": 8358,
+                "fuzzy": 1048,
                 "good": 3092
             },
             "grasswxpy": {
-                "bad": 282,
-                "fuzzy": 11,
+                "bad": 286,
+                "fuzzy": 7,
                 "good": 3949
             },
             "name": "Italian",
             "total": {
-                "bad": 9687,
-                "fuzzy": 1076,
+                "bad": 9695,
+                "fuzzy": 1068,
                 "good": 8105,
                 "total": 18868
             }
@@ -258,19 +257,19 @@
                 "good": 711
             },
             "grassmods": {
-                "bad": 8779,
-                "fuzzy": 1014,
+                "bad": 8785,
+                "fuzzy": 1008,
                 "good": 2787
             },
             "grasswxpy": {
-                "bad": 1938,
-                "fuzzy": 37,
+                "bad": 1942,
+                "fuzzy": 33,
                 "good": 2286
             },
             "name": "Japanese",
             "total": {
-                "bad": 12101,
-                "fuzzy": 1066,
+                "bad": 12111,
+                "fuzzy": 1056,
                 "good": 5784,
                 "total": 18951
             }
@@ -282,19 +281,18 @@
                 "good": 471
             },
             "grassmods": {
-                "bad": 10078,
-                "fuzzy": 766,
+                "bad": 10084,
+                "fuzzy": 760,
                 "good": 1588
             },
             "grasswxpy": {
-                "bad": 3620,
-                "fuzzy": 4,
+                "bad": 3624,
                 "good": 517
             },
             "name": "Korean",
             "total": {
-                "bad": 15311,
-                "fuzzy": 780,
+                "bad": 15321,
+                "fuzzy": 770,
                 "good": 2576,
                 "total": 18667
             }
@@ -353,19 +351,19 @@
                 "good": 693
             },
             "grassmods": {
-                "bad": 9488,
-                "fuzzy": 978,
+                "bad": 9492,
+                "fuzzy": 974,
                 "good": 2042
             },
             "grasswxpy": {
-                "bad": 1389,
-                "fuzzy": 8,
+                "bad": 1392,
+                "fuzzy": 5,
                 "good": 2783
             },
             "name": "GRASS Translation",
             "total": {
-                "bad": 12275,
-                "fuzzy": 999,
+                "bad": 12282,
+                "fuzzy": 992,
                 "good": 5518,
                 "total": 18792
             }
@@ -377,45 +375,45 @@
                 "good": 538
             },
             "grassmods": {
-                "bad": 11030,
-                "fuzzy": 777,
+                "bad": 11031,
+                "fuzzy": 776,
                 "good": 695
             },
             "grasswxpy": {
-                "bad": 3461,
-                "fuzzy": 64,
+                "bad": 3462,
+                "fuzzy": 63,
                 "good": 696
             },
             "name": "",
             "total": {
-                "bad": 16040,
-                "fuzzy": 858,
+                "bad": 16042,
+                "fuzzy": 856,
                 "good": 1929,
                 "total": 18827
             }
         },
         "pt_BR": {
             "grasslibs": {
-                "bad": 142,
+                "bad": 143,
                 "fuzzy": 13,
-                "good": 1935
+                "good": 1937
             },
             "grassmods": {
-                "bad": 7464,
-                "fuzzy": 861,
+                "bad": 7467,
+                "fuzzy": 858,
                 "good": 4186
             },
             "grasswxpy": {
-                "bad": 518,
-                "fuzzy": 64,
+                "bad": 521,
+                "fuzzy": 61,
                 "good": 3661
             },
             "name": "Portuguese (Brazil)",
             "total": {
-                "bad": 8124,
-                "fuzzy": 938,
-                "good": 9782,
-                "total": 18844
+                "bad": 8131,
+                "fuzzy": 932,
+                "good": 9784,
+                "total": 18847
             }
         },
         "ro": {
@@ -425,19 +423,19 @@
                 "good": 121
             },
             "grassmods": {
-                "bad": 10643,
-                "fuzzy": 633,
+                "bad": 10647,
+                "fuzzy": 629,
                 "good": 1110
             },
             "grasswxpy": {
-                "bad": 1794,
-                "fuzzy": 37,
+                "bad": 1797,
+                "fuzzy": 34,
                 "good": 2421
             },
             "name": "",
             "total": {
-                "bad": 14389,
-                "fuzzy": 678,
+                "bad": 14396,
+                "fuzzy": 671,
                 "good": 3652,
                 "total": 18719
             }
@@ -449,19 +447,19 @@
                 "good": 505
             },
             "grassmods": {
-                "bad": 11993,
-                "fuzzy": 390,
+                "bad": 11994,
+                "fuzzy": 389,
                 "good": 122
             },
             "grasswxpy": {
-                "bad": 3208,
-                "fuzzy": 55,
+                "bad": 3210,
+                "fuzzy": 53,
                 "good": 958
             },
             "name": "Russian",
             "total": {
-                "bad": 16786,
-                "fuzzy": 460,
+                "bad": 16789,
+                "fuzzy": 457,
                 "good": 1585,
                 "total": 18831
             }
@@ -512,19 +510,18 @@
                 "good": 48
             },
             "grassmods": {
-                "bad": 12296,
-                "fuzzy": 24,
+                "bad": 12297,
+                "fuzzy": 23,
                 "good": 24
             },
             "grasswxpy": {
-                "bad": 4057,
-                "fuzzy": 2,
+                "bad": 4059,
                 "good": 79
             },
             "name": "Tamil",
             "total": {
-                "bad": 18377,
-                "fuzzy": 26,
+                "bad": 18380,
+                "fuzzy": 23,
                 "good": 151,
                 "total": 18554
             }
@@ -541,14 +538,14 @@
                 "good": 99
             },
             "grasswxpy": {
-                "bad": 3751,
-                "fuzzy": 31,
+                "bad": 3752,
+                "fuzzy": 30,
                 "good": 396
             },
             "name": "Thai",
             "total": {
-                "bad": 17576,
-                "fuzzy": 435,
+                "bad": 17577,
+                "fuzzy": 434,
                 "good": 761,
                 "total": 18772
             }
@@ -560,19 +557,19 @@
                 "good": 252
             },
             "grassmods": {
-                "bad": 10056,
-                "fuzzy": 872,
+                "bad": 10057,
+                "fuzzy": 871,
                 "good": 1554
             },
             "grasswxpy": {
-                "bad": 3186,
-                "fuzzy": 55,
+                "bad": 3187,
+                "fuzzy": 54,
                 "good": 991
             },
             "name": "T\u00fcrk\u00e7e",
             "total": {
-                "bad": 15069,
-                "fuzzy": 942,
+                "bad": 15071,
+                "fuzzy": 940,
                 "good": 2797,
                 "total": 18808
             }
@@ -634,15 +631,15 @@
                 "good": 518
             },
             "grasswxpy": {
-                "bad": 2496,
-                "fuzzy": 59,
-                "good": 1752
+                "bad": 2500,
+                "fuzzy": 56,
+                "good": 1751
             },
             "name": "Simplified Chinese",
             "total": {
-                "bad": 15613,
-                "fuzzy": 742,
-                "good": 2506,
+                "bad": 15617,
+                "fuzzy": 739,
+                "good": 2505,
                 "total": 18861
             }
         },

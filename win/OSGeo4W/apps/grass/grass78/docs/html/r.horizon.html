@@ -1,103 +1,103 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.horizon - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.horizon</b></em>  - Computes horizon angle height from a digital elevation model.<BR>
-The module has two different modes of operation: 1. Computes the entire horizon around a single point whose coordinates are given with the 'coord' option. The horizon height (in radians). 2. Computes one or more raster maps of the horizon height in a single direction. The input for this is the angle (in degrees), which is measured counterclockwise with east=0, north=90 etc. The output is the horizon height in radians.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_solar.html">solar</a>, <a href="keywords.html#sun position">sun position</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.horizon</b><br></div>
-<b>r.horizon --help</b><br>
-<div id="synopsis"><b>r.horizon</b> [-<b>dc</b>] <b>elevation</b>=<em>name</em>  [<b>direction</b>=<em>float</em>]   [<b>step</b>=<em>float</em>]   [<b>start</b>=<em>float</em>]   [<b>end</b>=<em>float</em>]   [<b>bufferzone</b>=<em>float</em>]   [<b>e_buff</b>=<em>float</em>]   [<b>w_buff</b>=<em>float</em>]   [<b>n_buff</b>=<em>float</em>]   [<b>s_buff</b>=<em>float</em>]   [<b>maxdistance</b>=<em>float</em>]   [<b>output</b>=<em>basename</em>]   [<b>coordinates</b>=<em>east,north</em>]   [<b>distance</b>=<em>float</em>]   [<b>file</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-d</b></dt>
-<dd>Write output in degrees (default is radians)</dd>
-
-<dt><b>-c</b></dt>
-<dd>Write output in compass orientation (default is CCW, East=0)</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>elevation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input elevation raster map</dd>
-
-<dt><b>direction</b>=<em>float</em></dt>
-<dd>Direction in which you want to know the horizon height</dd>
-
-<dt><b>step</b>=<em>float</em></dt>
-<dd>Angle step size for multidirectional horizon [degrees]</dd>
-
-<dt><b>start</b>=<em>float</em></dt>
-<dd>Start angle for multidirectional horizon [degrees]</dd>
-<dd>Default: <em>0.0</em></dd>
-
-<dt><b>end</b>=<em>float</em></dt>
-<dd>End angle for multidirectional horizon [degrees]</dd>
-<dd>Default: <em>360.0</em></dd>
-
-<dt><b>bufferzone</b>=<em>float</em></dt>
-<dd>For horizon rasters, read from the DEM an extra buffer around the present region</dd>
-
-<dt><b>e_buff</b>=<em>float</em></dt>
-<dd>For horizon rasters, read from the DEM an extra buffer eastward the present region</dd>
-
-<dt><b>w_buff</b>=<em>float</em></dt>
-<dd>For horizon rasters, read from the DEM an extra buffer westward the present region</dd>
-
-<dt><b>n_buff</b>=<em>float</em></dt>
-<dd>For horizon rasters, read from the DEM an extra buffer northward the present region</dd>
-
-<dt><b>s_buff</b>=<em>float</em></dt>
-<dd>For horizon rasters, read from the DEM an extra buffer southward the present region</dd>
-
-<dt><b>maxdistance</b>=<em>float</em></dt>
-<dd>The maximum distance to consider when finding the horizon height</dd>
-
-<dt><b>output</b>=<em>basename</em></dt>
-<dd>Name for output basename raster map(s)</dd>
-
-<dt><b>coordinates</b>=<em>east,north</em></dt>
-<dd>Coordinate for which you want to calculate the horizon</dd>
-
-<dt><b>distance</b>=<em>float</em></dt>
-<dd>Sampling distance step coefficient (0.5-1.5)</dd>
-<dd>Default: <em>1.0</em></dd>
-
-<dt><b>file</b>=<em>name</em></dt>
-<dd>Name of file for output (use output=- for stdout)</dd>
-<dd>Default: <em>-</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.horizon - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.horizon</b></em>  - Computes horizon angle height from a digital elevation model.<BR>
+The module has two different modes of operation: 1. Computes the entire horizon around a single point whose coordinates are given with the 'coord' option. The horizon height (in radians). 2. Computes one or more raster maps of the horizon height in a single direction. The input for this is the angle (in degrees), which is measured counterclockwise with east=0, north=90 etc. The output is the horizon height in radians.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_solar.html">solar</a>, <a href="keywords.html#sun position">sun position</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.horizon</b><br></div>
+<b>r.horizon --help</b><br>
+<div id="synopsis"><b>r.horizon</b> [-<b>dc</b>] <b>elevation</b>=<em>name</em>  [<b>direction</b>=<em>float</em>]   [<b>step</b>=<em>float</em>]   [<b>start</b>=<em>float</em>]   [<b>end</b>=<em>float</em>]   [<b>bufferzone</b>=<em>float</em>]   [<b>e_buff</b>=<em>float</em>]   [<b>w_buff</b>=<em>float</em>]   [<b>n_buff</b>=<em>float</em>]   [<b>s_buff</b>=<em>float</em>]   [<b>maxdistance</b>=<em>float</em>]   [<b>output</b>=<em>basename</em>]   [<b>coordinates</b>=<em>east,north</em>]   [<b>distance</b>=<em>float</em>]   [<b>file</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-d</b></dt>
+<dd>Write output in degrees (default is radians)</dd>
+
+<dt><b>-c</b></dt>
+<dd>Write output in compass orientation (default is CCW, East=0)</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>elevation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input elevation raster map</dd>
+
+<dt><b>direction</b>=<em>float</em></dt>
+<dd>Direction in which you want to know the horizon height</dd>
+
+<dt><b>step</b>=<em>float</em></dt>
+<dd>Angle step size for multidirectional horizon [degrees]</dd>
+
+<dt><b>start</b>=<em>float</em></dt>
+<dd>Start angle for multidirectional horizon [degrees]</dd>
+<dd>Default: <em>0.0</em></dd>
+
+<dt><b>end</b>=<em>float</em></dt>
+<dd>End angle for multidirectional horizon [degrees]</dd>
+<dd>Default: <em>360.0</em></dd>
+
+<dt><b>bufferzone</b>=<em>float</em></dt>
+<dd>For horizon rasters, read from the DEM an extra buffer around the present region</dd>
+
+<dt><b>e_buff</b>=<em>float</em></dt>
+<dd>For horizon rasters, read from the DEM an extra buffer eastward the present region</dd>
+
+<dt><b>w_buff</b>=<em>float</em></dt>
+<dd>For horizon rasters, read from the DEM an extra buffer westward the present region</dd>
+
+<dt><b>n_buff</b>=<em>float</em></dt>
+<dd>For horizon rasters, read from the DEM an extra buffer northward the present region</dd>
+
+<dt><b>s_buff</b>=<em>float</em></dt>
+<dd>For horizon rasters, read from the DEM an extra buffer southward the present region</dd>
+
+<dt><b>maxdistance</b>=<em>float</em></dt>
+<dd>The maximum distance to consider when finding the horizon height</dd>
+
+<dt><b>output</b>=<em>basename</em></dt>
+<dd>Name for output basename raster map(s)</dd>
+
+<dt><b>coordinates</b>=<em>east,north</em></dt>
+<dd>Coordinate for which you want to calculate the horizon</dd>
+
+<dt><b>distance</b>=<em>float</em></dt>
+<dd>Sampling distance step coefficient (0.5-1.5)</dd>
+<dd>Default: <em>1.0</em></dd>
+
+<dt><b>file</b>=<em>name</em></dt>
+<dd>Name of file for output (use output=- for stdout)</dd>
+<dd>Default: <em>-</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -384,7 +384,14 @@ European Commission, Ispra, Italy
 <p>
 <i>Last changed: $Date$</i>
 --> <h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.horizon">r.horizon source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.horizon">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.horizon">r.horizon source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.horizon">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -395,9 +402,9 @@ European Commission, Ispra, Italy
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

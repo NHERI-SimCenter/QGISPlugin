@@ -1,93 +1,93 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>t.rast.aggregate.py - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>t.rast.aggregate.py</b></em>  - Aggregates temporally the maps of a space time raster dataset by a user defined granularity.
-<h2>KEYWORDS</h2>
-<a href="temporal.html">temporal</a>, <a href="topic_aggregation.html">aggregation</a>, <a href="keywords.html#raster">raster</a>, <a href="keywords.html#time">time</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>t.rast.aggregate.py</b><br></div>
-<b>t.rast.aggregate.py --help</b><br>
-<div id="synopsis"><b>t.rast.aggregate.py</b> [-<b>n</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em> <b>basename</b>=<em>string</em>  [<b>suffix</b>=<em>string</em>]  <b>granularity</b>=<em>string</em> <b>method</b>=<em>string</em>  [<b>offset</b>=<em>integer</em>]   [<b>nprocs</b>=<em>integer</em>]   [<b>file_limit</b>=<em>integer</em>]   [<b>sampling</b>=<em>name</em>[,<i>name</i>,...]]   [<b>where</b>=<em>sql_query</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-n</b></dt>
-<dd>Register Null maps</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of the input space time raster dataset</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of the output space time raster dataset</dd>
-
-<dt><b>basename</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Basename of the new generated output maps</dd>
-<dd>Either a numerical suffix or the start time (s-flag) separated by an underscore will be attached to create a unique identifier</dd>
-
-<dt><b>suffix</b>=<em>string</em></dt>
-<dd>Suffix to add at basename: set 'gran' for granularity, 'time' for the full time format, 'num' for numerical suffix with a specific number of digits (default %05)</dd>
-<dd>Default: <em>gran</em></dd>
-
-<dt><b>granularity</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Aggregation granularity, format absolute time "x years, x months, x weeks, x days, x hours, x minutes, x seconds" or an integer value for relative time</dd>
-
-<dt><b>method</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Aggregate operation to be performed on the raster maps</dd>
-<dd>Options: <em>average, count, median, mode, minimum, min_raster, maximum, max_raster, stddev, range, sum, variance, diversity, slope, offset, detcoeff, quart1, quart3, perc90, quantile, skewness, kurtosis</em></dd>
-<dd>Default: <em>average</em></dd>
-
-<dt><b>offset</b>=<em>integer</em></dt>
-<dd>Offset that is used to create the output map ids, output map id is generated as: basename_ (count + offset)</dd>
-<dd>Default: <em>0</em></dd>
-
-<dt><b>nprocs</b>=<em>integer</em></dt>
-<dd>Number of r.series processes to run in parallel</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>file_limit</b>=<em>integer</em></dt>
-<dd>The maximum number of open files allowed for each r.series process</dd>
-<dd>Default: <em>1000</em></dd>
-
-<dt><b>sampling</b>=<em>name[,<i>name</i>,...]</em></dt>
-<dd>The method to be used for sampling the input dataset</dd>
-<dd>Options: <em>equal, overlaps, overlapped, starts, started, finishes, finished, during, contains</em></dd>
-<dd>Default: <em>contains</em></dd>
-
-<dt><b>where</b>=<em>sql_query</em></dt>
-<dd>WHERE conditions of SQL statement without 'where' keyword used in the temporal GIS framework</dd>
-<dd>Example: start_time &gt; '2001-01-01 12:30:00'</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>t.rast.aggregate.py - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>t.rast.aggregate.py</b></em>  - Aggregates temporally the maps of a space time raster dataset by a user defined granularity.
+<h2>KEYWORDS</h2>
+<a href="temporal.html">temporal</a>, <a href="topic_aggregation.html">aggregation</a>, <a href="keywords.html#raster">raster</a>, <a href="keywords.html#time">time</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>t.rast.aggregate.py</b><br></div>
+<b>t.rast.aggregate.py --help</b><br>
+<div id="synopsis"><b>t.rast.aggregate.py</b> [-<b>n</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em> <b>basename</b>=<em>string</em>  [<b>suffix</b>=<em>string</em>]  <b>granularity</b>=<em>string</em> <b>method</b>=<em>string</em>  [<b>offset</b>=<em>integer</em>]   [<b>nprocs</b>=<em>integer</em>]   [<b>file_limit</b>=<em>integer</em>]   [<b>sampling</b>=<em>name</em>[,<i>name</i>,...]]   [<b>where</b>=<em>sql_query</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-n</b></dt>
+<dd>Register Null maps</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of the input space time raster dataset</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of the output space time raster dataset</dd>
+
+<dt><b>basename</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Basename of the new generated output maps</dd>
+<dd>Either a numerical suffix or the start time (s-flag) separated by an underscore will be attached to create a unique identifier</dd>
+
+<dt><b>suffix</b>=<em>string</em></dt>
+<dd>Suffix to add at basename: set 'gran' for granularity, 'time' for the full time format, 'num' for numerical suffix with a specific number of digits (default %05)</dd>
+<dd>Default: <em>gran</em></dd>
+
+<dt><b>granularity</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Aggregation granularity, format absolute time "x years, x months, x weeks, x days, x hours, x minutes, x seconds" or an integer value for relative time</dd>
+
+<dt><b>method</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Aggregate operation to be performed on the raster maps</dd>
+<dd>Options: <em>average, count, median, mode, minimum, min_raster, maximum, max_raster, stddev, range, sum, variance, diversity, slope, offset, detcoeff, quart1, quart3, perc90, quantile, skewness, kurtosis</em></dd>
+<dd>Default: <em>average</em></dd>
+
+<dt><b>offset</b>=<em>integer</em></dt>
+<dd>Offset that is used to create the output map ids, output map id is generated as: basename_ (count + offset)</dd>
+<dd>Default: <em>0</em></dd>
+
+<dt><b>nprocs</b>=<em>integer</em></dt>
+<dd>Number of r.series processes to run in parallel</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>file_limit</b>=<em>integer</em></dt>
+<dd>The maximum number of open files allowed for each r.series process</dd>
+<dd>Default: <em>1000</em></dd>
+
+<dt><b>sampling</b>=<em>name[,<i>name</i>,...]</em></dt>
+<dd>The method to be used for sampling the input dataset</dd>
+<dd>Options: <em>equal, overlaps, overlapped, starts, started, finishes, finished, during, contains</em></dd>
+<dd>Default: <em>contains</em></dd>
+
+<dt><b>where</b>=<em>sql_query</em></dt>
+<dd>WHERE conditions of SQL statement without 'where' keyword used in the temporal GIS framework</dd>
+<dd>Example: start_time &gt; '2001-01-01 12:30:00'</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -321,7 +321,14 @@ S&ouml;ren Gebbert, Th&uuml;nen Institute of Climate-Smart Agriculture
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/temporal/t.rast.aggregate">t.rast.aggregate source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/temporal/t.rast.aggregate">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/temporal/t.rast.aggregate">t.rast.aggregate source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/temporal/t.rast.aggregate">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -332,9 +339,9 @@ S&ouml;ren Gebbert, Th&uuml;nen Institute of Climate-Smart Agriculture
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

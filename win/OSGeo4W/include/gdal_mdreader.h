@@ -1,5 +1,5 @@
 /******************************************************************************
- * $Id: gdal_mdreader.h d8114610ec3abbffbfce3dfbd353ea53ac81c013 2021-03-04 05:38:17 -0500 John Papadakis $
+ * $Id: gdal_mdreader.h 5826aa92872e593c21b23965f998fbab1232be52 2022-01-14 17:23:09 +0100 Lunyxis $
  *
  * Project:  GDAL Core
  * Purpose:  Read metadata (mainly the remote sensing imagery) from files of
@@ -74,6 +74,12 @@
 #define RPC_MAX_LONG        "MAX_LONG"
 #define RPC_MAX_LAT         "MAX_LAT"
 
+/* Pleiades Neo nomenclature */
+#define RPC_LAT_NUM_COEFF  "LAT_NUM_COEFF"
+#define RPC_LAT_DEN_COEFF  "LAT_DEN_COEFF"
+#define RPC_LON_NUM_COEFF  "LON_NUM_COEFF"
+#define RPC_LON_DEN_COEFF  "LON_DEN_COEFF"
+
 /**
  * Enumerator of metadata readers
  */
@@ -98,7 +104,7 @@ typedef enum {
 /**
  * The base class for all metadata readers
  */
-class GDALMDReaderBase{
+class CPL_DLL GDALMDReaderBase{
 
     CPL_DISALLOW_COPY_ASSIGN(GDALMDReaderBase)
 

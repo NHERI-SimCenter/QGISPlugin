@@ -1,56 +1,56 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>i.in.spotvgt.py - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>i.in.spotvgt.py</b></em>  - Imports SPOT VGT NDVI data into a raster map.
-<h2>KEYWORDS</h2>
-<a href="imagery.html">imagery</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#NDVI">NDVI</a>, <a href="keywords.html#SPOT">SPOT</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>i.in.spotvgt.py</b><br></div>
-<b>i.in.spotvgt.py --help</b><br>
-<div id="synopsis"><b>i.in.spotvgt.py</b> [-<b>a</b>] <b>input</b>=<em>name</em>  [<b>output</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-a</b></dt>
-<dd>Also import quality map (SM status map layer) and filter NDVI map</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input SPOT VGT NDVI HDF file</dd>
-
-<dt><b>output</b>=<em>name</em></dt>
-<dd>Name for output raster map</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>i.in.spotvgt.py - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>i.in.spotvgt.py</b></em>  - Imports SPOT VGT NDVI data into a raster map.
+<h2>KEYWORDS</h2>
+<a href="imagery.html">imagery</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#NDVI">NDVI</a>, <a href="keywords.html#SPOT">SPOT</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>i.in.spotvgt.py</b><br></div>
+<b>i.in.spotvgt.py --help</b><br>
+<div id="synopsis"><b>i.in.spotvgt.py</b> [-<b>a</b>] <b>input</b>=<em>name</em>  [<b>output</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-a</b></dt>
+<dd>Also import quality map (SM status map layer) and filter NDVI map</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input SPOT VGT NDVI HDF file</dd>
+
+<dt><b>output</b>=<em>name</em></dt>
+<dd>Name for output raster map</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -118,7 +118,14 @@ Markus Neteler
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/scripts/i.in.spotvgt">i.in.spotvgt source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/scripts/i.in.spotvgt">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/scripts/i.in.spotvgt">i.in.spotvgt source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/scripts/i.in.spotvgt">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -129,9 +136,9 @@ Markus Neteler
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

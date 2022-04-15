@@ -1,78 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.mask.py - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.mask.py</b></em>  - Creates a MASK for limiting raster operation.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_mask.html">mask</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.mask.py</b><br></div>
-<b>r.mask.py --help</b><br>
-<div id="synopsis"><b>r.mask.py</b> [-<b>ir</b>]  [<b>raster</b>=<em>name</em>]   [<b>maskcats</b>=<em>string</em>]   [<b>vector</b>=<em>name</em>]   [<b>layer</b>=<em>string</em>]   [<b>cats</b>=<em>range</em>]   [<b>where</b>=<em>sql_query</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-i</b></dt>
-<dd>Create inverse mask</dd>
-
-<dt><b>-r</b></dt>
-<dd>Remove existing mask (overrides other options)</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>raster</b>=<em>name</em></dt>
-<dd>Name of raster map to use as mask</dd>
-
-<dt><b>maskcats</b>=<em>string</em></dt>
-<dd>Raster values to use for mask</dd>
-<dd>Format: 1 2 3 thru 7 *</dd>
-<dd>Default: <em>*</em></dd>
-
-<dt><b>vector</b>=<em>name</em></dt>
-<dd>Name of vector map to use as mask</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>layer</b>=<em>string</em></dt>
-<dd>Layer number or name (vector)</dd>
-<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>cats</b>=<em>range</em></dt>
-<dd>Category values (vector)</dd>
-<dd>Example: 1,3,7-9,13</dd>
-
-<dt><b>where</b>=<em>sql_query</em></dt>
-<dd>WHERE conditions of SQL statement without 'where' keyword (vector)</dd>
-<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.mask.py - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.mask.py</b></em>  - Creates a MASK for limiting raster operation.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_mask.html">mask</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.mask.py</b><br></div>
+<b>r.mask.py --help</b><br>
+<div id="synopsis"><b>r.mask.py</b> [-<b>ir</b>]  [<b>raster</b>=<em>name</em>]   [<b>maskcats</b>=<em>string</em>]   [<b>vector</b>=<em>name</em>]   [<b>layer</b>=<em>string</em>]   [<b>cats</b>=<em>range</em>]   [<b>where</b>=<em>sql_query</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-i</b></dt>
+<dd>Create inverse mask</dd>
+
+<dt><b>-r</b></dt>
+<dd>Remove existing mask (overrides other options)</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>raster</b>=<em>name</em></dt>
+<dd>Name of raster map to use as mask</dd>
+
+<dt><b>maskcats</b>=<em>string</em></dt>
+<dd>Raster values to use for mask</dd>
+<dd>Format: 1 2 3 thru 7 *</dd>
+<dd>Default: <em>*</em></dd>
+
+<dt><b>vector</b>=<em>name</em></dt>
+<dd>Name of vector map to use as mask</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>layer</b>=<em>string</em></dt>
+<dd>Layer number or name (vector)</dd>
+<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>cats</b>=<em>range</em></dt>
+<dd>Category values (vector)</dd>
+<dd>Example: 1,3,7-9,13</dd>
+
+<dt><b>where</b>=<em>sql_query</em></dt>
+<dd>WHERE conditions of SQL statement without 'where' keyword (vector)</dd>
+<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -238,7 +238,14 @@ Michael Barton, Arizona State University
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/scripts/r.mask">r.mask source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/scripts/r.mask">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/scripts/r.mask">r.mask source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/scripts/r.mask">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -249,9 +256,9 @@ Michael Barton, Arizona State University
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

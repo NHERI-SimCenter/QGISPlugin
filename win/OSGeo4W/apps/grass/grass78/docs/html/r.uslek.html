@@ -1,62 +1,62 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.uslek - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.uslek</b></em>  - Computes USLE Soil Erodibility Factor (K).
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_hydrology.html">hydrology</a>, <a href="keywords.html#soil">soil</a>, <a href="keywords.html#erosion">erosion</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.uslek</b><br></div>
-<b>r.uslek --help</b><br>
-<div id="synopsis"><b>r.uslek</b> <b>psand</b>=<em>name</em> <b>pclay</b>=<em>name</em> <b>psilt</b>=<em>name</em> <b>pomat</b>=<em>name</em> <b>output</b>=<em>name</em>  [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>psand</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of soil sand fraction raster map [0.0-1.0]</dd>
-
-<dt><b>pclay</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of soil clay fraction raster map [0.0-1.0]</dd>
-
-<dt><b>psilt</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of soil silt fraction raster map [0.0-1.0]</dd>
-
-<dt><b>pomat</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of soil organic matter raster map [0.0-1.0]</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output USLE K factor raster map [t.ha.hr/ha.MJ.mm]</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.uslek - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.uslek</b></em>  - Computes USLE Soil Erodibility Factor (K).
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_hydrology.html">hydrology</a>, <a href="keywords.html#soil">soil</a>, <a href="keywords.html#erosion">erosion</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.uslek</b><br></div>
+<b>r.uslek --help</b><br>
+<div id="synopsis"><b>r.uslek</b> <b>psand</b>=<em>name</em> <b>pclay</b>=<em>name</em> <b>psilt</b>=<em>name</em> <b>pomat</b>=<em>name</em> <b>output</b>=<em>name</em>  [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>psand</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of soil sand fraction raster map [0.0-1.0]</dd>
+
+<dt><b>pclay</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of soil clay fraction raster map [0.0-1.0]</dd>
+
+<dt><b>psilt</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of soil silt fraction raster map [0.0-1.0]</dd>
+
+<dt><b>pomat</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of soil organic matter raster map [0.0-1.0]</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output USLE K factor raster map [t.ha.hr/ha.MJ.mm]</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -138,7 +138,14 @@ Yann Chemin, SIC-ISDC, Turkmenistan<br>
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.uslek">r.uslek source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.uslek">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.uslek">r.uslek source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.uslek">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -149,9 +156,9 @@ Yann Chemin, SIC-ISDC, Turkmenistan<br>
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

@@ -1,147 +1,147 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.in.ogr - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.in.ogr</b></em>  - Imports vector data into a GRASS vector map using OGR library.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#OGR">OGR</a>, <a href="keywords.html#topology">topology</a>, <a href="keywords.html#geometry">geometry</a>, <a href="keywords.html#snapping">snapping</a>, <a href="keywords.html#create location">create location</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.in.ogr</b><br></div>
-<b>v.in.ogr --help</b><br>
-<div id="synopsis"><b>v.in.ogr</b> [-<b>flc2tojrewi</b>] <b>input</b>=<em>string</em>  [<b>gdal_config</b>=<em>string</em>]   [<b>gdal_doo</b>=<em>string</em>]   [<b>layer</b>=<em>string</em>[,<i>string</i>,...]]   [<b>output</b>=<em>name</em>]   [<b>spatial</b>=<em>xmin,ymin,xmax,ymax</em>[,<i>xmin,ymin,xmax,ymax</i>,...]]   [<b>where</b>=<em>sql_query</em>]   [<b>min_area</b>=<em>float</em>]   [<b>type</b>=<em>string</em>[,<i>string</i>,...]]   [<b>snap</b>=<em>float</em>]   [<b>location</b>=<em>name</em>]   [<b>columns</b>=<em>name</em>[,<i>name</i>,...]]   [<b>encoding</b>=<em>string</em>]   [<b>key</b>=<em>string</em>]   [<b>geometry</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-f</b></dt>
-<dd>List supported OGR formats and exit</dd>
-
-<dt><b>-l</b></dt>
-<dd>List available OGR layers in data source and exit</dd>
-
-<dt><b>-c</b></dt>
-<dd>Do not clean polygons (not recommended)</dd>
-
-<dt><b>-2</b></dt>
-<dd>Force 2D output even if input is 3D</dd>
-<dd>Useful if input is 3D but all z coordinates are identical</dd>
-
-<dt><b>-t</b></dt>
-<dd>Do not create attribute table</dd>
-
-<dt><b>-o</b></dt>
-<dd>Override projection check (use current location's projection)</dd>
-<dd>Assume that the dataset has the same projection as the current location</dd>
-
-<dt><b>-j</b></dt>
-<dd>Perform projection check only and exit</dd>
-
-<dt><b>-r</b></dt>
-<dd>Limit import to the current region</dd>
-
-<dt><b>-e</b></dt>
-<dd>Extend region extents based on new dataset</dd>
-<dd>Also updates the default region if in the PERMANENT mapset</dd>
-
-<dt><b>-w</b></dt>
-<dd>Change column names to lowercase characters</dd>
-
-<dt><b>-i</b></dt>
-<dd>Create the location specified by the "location" parameter and exit. Do not import the vector data.</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of OGR datasource to be imported</dd>
-<dd>Examples:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ESRI Shapefile: directory containing shapefiles<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MapInfo File: directory containing mapinfo files</dd>
-
-<dt><b>gdal_config</b>=<em>string</em></dt>
-<dd>GDAL configuration options</dd>
-<dd>Comma-separated list of key=value pairs</dd>
-
-<dt><b>gdal_doo</b>=<em>string</em></dt>
-<dd>GDAL dataset open options</dd>
-<dd>Comma-separated list of key=value pairs</dd>
-
-<dt><b>layer</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>OGR layer name. If not given, all available layers are imported</dd>
-<dd>Examples:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ESRI Shapefile: shapefile name<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MapInfo File: mapinfo file name</dd>
-
-<dt><b>output</b>=<em>name</em></dt>
-<dd>Name for output vector map</dd>
-
-<dt><b>spatial</b>=<em>xmin,ymin,xmax,ymax[,<i>xmin,ymin,xmax,ymax</i>,...]</em></dt>
-<dd>Import subregion only</dd>
-<dd>Format: xmin,ymin,xmax,ymax - usually W,S,E,N</dd>
-
-<dt><b>where</b>=<em>sql_query</em></dt>
-<dd>WHERE conditions of SQL statement without 'where' keyword</dd>
-<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
-
-<dt><b>min_area</b>=<em>float</em></dt>
-<dd>Minimum size of area to be imported (square meters)</dd>
-<dd>Smaller areas and islands are ignored. Should be greater than snap^2</dd>
-<dd>Default: <em>0.0001</em></dd>
-
-<dt><b>type</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>Optionally change default input type</dd>
-<dd>Options: <em>point, line, boundary, centroid</em></dd>
-<dd>Default: <em></em></dd>
-<dd><b>point</b>: import area centroids as points</dd>
-<dd><b>line</b>: import area boundaries as lines</dd>
-<dd><b>boundary</b>: import lines as area boundaries</dd>
-<dd><b>centroid</b>: import points as centroids</dd>
-
-<dt><b>snap</b>=<em>float</em></dt>
-<dd>Snapping threshold for boundaries (map units)</dd>
-<dd>'-1' for no snap</dd>
-<dd>Default: <em>-1</em></dd>
-
-<dt><b>location</b>=<em>name</em></dt>
-<dd>Name for new location to create</dd>
-
-<dt><b>columns</b>=<em>name[,<i>name</i>,...]</em></dt>
-<dd>List of column names to be used instead of original names, first is used for category column</dd>
-
-<dt><b>encoding</b>=<em>string</em></dt>
-<dd>Encoding value for attribute data</dd>
-<dd>Overrides encoding interpretation, useful when importing ESRI Shapefile</dd>
-
-<dt><b>key</b>=<em>string</em></dt>
-<dd>Name of column used for categories</dd>
-<dd>If not given, categories are generated as unique values and stored in 'cat' column</dd>
-
-<dt><b>geometry</b>=<em>name</em></dt>
-<dd>Name of geometry column</dd>
-<dd>If not given, all geometry columns from the input are used</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.in.ogr - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.in.ogr</b></em>  - Imports vector data into a GRASS vector map using OGR library.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#OGR">OGR</a>, <a href="keywords.html#topology">topology</a>, <a href="keywords.html#geometry">geometry</a>, <a href="keywords.html#snapping">snapping</a>, <a href="keywords.html#create location">create location</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.in.ogr</b><br></div>
+<b>v.in.ogr --help</b><br>
+<div id="synopsis"><b>v.in.ogr</b> [-<b>flc2tojrewi</b>] <b>input</b>=<em>string</em>  [<b>gdal_config</b>=<em>string</em>]   [<b>gdal_doo</b>=<em>string</em>]   [<b>layer</b>=<em>string</em>[,<i>string</i>,...]]   [<b>output</b>=<em>name</em>]   [<b>spatial</b>=<em>xmin,ymin,xmax,ymax</em>[,<i>xmin,ymin,xmax,ymax</i>,...]]   [<b>where</b>=<em>sql_query</em>]   [<b>min_area</b>=<em>float</em>]   [<b>type</b>=<em>string</em>[,<i>string</i>,...]]   [<b>snap</b>=<em>float</em>]   [<b>location</b>=<em>name</em>]   [<b>columns</b>=<em>name</em>[,<i>name</i>,...]]   [<b>encoding</b>=<em>string</em>]   [<b>key</b>=<em>string</em>]   [<b>geometry</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-f</b></dt>
+<dd>List supported OGR formats and exit</dd>
+
+<dt><b>-l</b></dt>
+<dd>List available OGR layers in data source and exit</dd>
+
+<dt><b>-c</b></dt>
+<dd>Do not clean polygons (not recommended)</dd>
+
+<dt><b>-2</b></dt>
+<dd>Force 2D output even if input is 3D</dd>
+<dd>Useful if input is 3D but all z coordinates are identical</dd>
+
+<dt><b>-t</b></dt>
+<dd>Do not create attribute table</dd>
+
+<dt><b>-o</b></dt>
+<dd>Override projection check (use current location's projection)</dd>
+<dd>Assume that the dataset has the same projection as the current location</dd>
+
+<dt><b>-j</b></dt>
+<dd>Perform projection check only and exit</dd>
+
+<dt><b>-r</b></dt>
+<dd>Limit import to the current region</dd>
+
+<dt><b>-e</b></dt>
+<dd>Extend region extents based on new dataset</dd>
+<dd>Also updates the default region if in the PERMANENT mapset</dd>
+
+<dt><b>-w</b></dt>
+<dd>Change column names to lowercase characters</dd>
+
+<dt><b>-i</b></dt>
+<dd>Create the location specified by the "location" parameter and exit. Do not import the vector data.</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of OGR datasource to be imported</dd>
+<dd>Examples:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ESRI Shapefile: directory containing shapefiles<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MapInfo File: directory containing mapinfo files</dd>
+
+<dt><b>gdal_config</b>=<em>string</em></dt>
+<dd>GDAL configuration options</dd>
+<dd>Comma-separated list of key=value pairs</dd>
+
+<dt><b>gdal_doo</b>=<em>string</em></dt>
+<dd>GDAL dataset open options</dd>
+<dd>Comma-separated list of key=value pairs</dd>
+
+<dt><b>layer</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>OGR layer name. If not given, all available layers are imported</dd>
+<dd>Examples:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ESRI Shapefile: shapefile name<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;MapInfo File: mapinfo file name</dd>
+
+<dt><b>output</b>=<em>name</em></dt>
+<dd>Name for output vector map</dd>
+
+<dt><b>spatial</b>=<em>xmin,ymin,xmax,ymax[,<i>xmin,ymin,xmax,ymax</i>,...]</em></dt>
+<dd>Import subregion only</dd>
+<dd>Format: xmin,ymin,xmax,ymax - usually W,S,E,N</dd>
+
+<dt><b>where</b>=<em>sql_query</em></dt>
+<dd>WHERE conditions of SQL statement without 'where' keyword</dd>
+<dd>Example: income &lt; 1000 and population &gt;= 10000</dd>
+
+<dt><b>min_area</b>=<em>float</em></dt>
+<dd>Minimum size of area to be imported (square meters)</dd>
+<dd>Smaller areas and islands are ignored. Should be greater than snap^2</dd>
+<dd>Default: <em>0.0001</em></dd>
+
+<dt><b>type</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>Optionally change default input type</dd>
+<dd>Options: <em>point, line, boundary, centroid</em></dd>
+<dd>Default: <em></em></dd>
+<dd><b>point</b>: import area centroids as points</dd>
+<dd><b>line</b>: import area boundaries as lines</dd>
+<dd><b>boundary</b>: import lines as area boundaries</dd>
+<dd><b>centroid</b>: import points as centroids</dd>
+
+<dt><b>snap</b>=<em>float</em></dt>
+<dd>Snapping threshold for boundaries (map units)</dd>
+<dd>'-1' for no snap</dd>
+<dd>Default: <em>-1</em></dd>
+
+<dt><b>location</b>=<em>name</em></dt>
+<dd>Name for new location to create</dd>
+
+<dt><b>columns</b>=<em>name[,<i>name</i>,...]</em></dt>
+<dd>List of column names to be used instead of original names, first is used for category column</dd>
+
+<dt><b>encoding</b>=<em>string</em></dt>
+<dd>Encoding value for attribute data</dd>
+<dd>Overrides encoding interpretation, useful when importing ESRI Shapefile</dd>
+
+<dt><b>key</b>=<em>string</em></dt>
+<dd>Name of column used for categories</dd>
+<dd>If not given, categories are generated as unique values and stored in 'cat' column</dd>
+
+<dt><b>geometry</b>=<em>name</em></dt>
+<dd>Name of geometry column</dd>
+<dd>If not given, all geometry columns from the input are used</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -682,7 +682,14 @@ Multiple geometry columns support by Martin Landa, OSGeoREL, Czech Technical Uni
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.in.ogr">v.in.ogr source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.in.ogr">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.in.ogr">v.in.ogr source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.in.ogr">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -693,9 +700,9 @@ Multiple geometry columns support by Martin Landa, OSGeoREL, Czech Technical Uni
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

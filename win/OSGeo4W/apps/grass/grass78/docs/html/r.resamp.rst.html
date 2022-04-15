@@ -1,104 +1,104 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.resamp.rst - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.resamp.rst</b></em>  - Reinterpolates and optionally computes topographic analysis from input raster map to a new raster map (possibly with different resolution) using regularized spline with tension and smoothing.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_resample.html">resample</a>, <a href="keywords.html#splines">splines</a>, <a href="keywords.html#RST">RST</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.resamp.rst</b><br></div>
-<b>r.resamp.rst --help</b><br>
-<div id="synopsis"><b>r.resamp.rst</b> [-<b>td</b>] <b>input</b>=<em>name</em> <b>ew_res</b>=<em>float</em> <b>ns_res</b>=<em>float</em>  [<b>elevation</b>=<em>name</em>]   [<b>slope</b>=<em>name</em>]   [<b>aspect</b>=<em>name</em>]   [<b>pcurvature</b>=<em>name</em>]   [<b>tcurvature</b>=<em>name</em>]   [<b>mcurvature</b>=<em>name</em>]   [<b>smooth</b>=<em>name</em>]   [<b>maskmap</b>=<em>name</em>]   [<b>overlap</b>=<em>integer</em>]   [<b>zscale</b>=<em>float</em>]   [<b>tension</b>=<em>float</em>]   [<b>theta</b>=<em>float</em>]   [<b>scalex</b>=<em>float</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-t</b></dt>
-<dd>Use dnorm independent tension</dd>
-
-<dt><b>-d</b></dt>
-<dd>Output partial derivatives instead of topographic parameters</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input raster map</dd>
-
-<dt><b>ew_res</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
-<dd>Desired east-west resolution</dd>
-
-<dt><b>ns_res</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
-<dd>Desired north-south resolution</dd>
-
-<dt><b>elevation</b>=<em>name</em></dt>
-<dd>Name for output elevation raster map</dd>
-
-<dt><b>slope</b>=<em>name</em></dt>
-<dd>Name for output slope map (or fx)</dd>
-
-<dt><b>aspect</b>=<em>name</em></dt>
-<dd>Name for output aspect map (or fy)</dd>
-
-<dt><b>pcurvature</b>=<em>name</em></dt>
-<dd>Name for output profile curvature map (or fxx)</dd>
-
-<dt><b>tcurvature</b>=<em>name</em></dt>
-<dd>Name for output tangential curvature map (or fyy)</dd>
-
-<dt><b>mcurvature</b>=<em>name</em></dt>
-<dd>Name for output mean curvature map (or fxy)</dd>
-
-<dt><b>smooth</b>=<em>name</em></dt>
-<dd>Name of input raster map containing smoothing</dd>
-
-<dt><b>maskmap</b>=<em>name</em></dt>
-<dd>Name of input raster map to be used as mask</dd>
-
-<dt><b>overlap</b>=<em>integer</em></dt>
-<dd>Rows/columns overlap for segmentation</dd>
-<dd>Default: <em>3</em></dd>
-
-<dt><b>zscale</b>=<em>float</em></dt>
-<dd>Multiplier for z-values</dd>
-<dd>Default: <em>1.0</em></dd>
-
-<dt><b>tension</b>=<em>float</em></dt>
-<dd>Spline tension value</dd>
-<dd>Default: <em>40.</em></dd>
-
-<dt><b>theta</b>=<em>float</em></dt>
-<dd>Anisotropy angle (in degrees counterclockwise from East)</dd>
-
-<dt><b>scalex</b>=<em>float</em></dt>
-<dd>Anisotropy scaling factor</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.resamp.rst - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.resamp.rst</b></em>  - Reinterpolates and optionally computes topographic analysis from input raster map to a new raster map (possibly with different resolution) using regularized spline with tension and smoothing.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_resample.html">resample</a>, <a href="keywords.html#splines">splines</a>, <a href="keywords.html#RST">RST</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.resamp.rst</b><br></div>
+<b>r.resamp.rst --help</b><br>
+<div id="synopsis"><b>r.resamp.rst</b> [-<b>td</b>] <b>input</b>=<em>name</em> <b>ew_res</b>=<em>float</em> <b>ns_res</b>=<em>float</em>  [<b>elevation</b>=<em>name</em>]   [<b>slope</b>=<em>name</em>]   [<b>aspect</b>=<em>name</em>]   [<b>pcurvature</b>=<em>name</em>]   [<b>tcurvature</b>=<em>name</em>]   [<b>mcurvature</b>=<em>name</em>]   [<b>smooth</b>=<em>name</em>]   [<b>maskmap</b>=<em>name</em>]   [<b>overlap</b>=<em>integer</em>]   [<b>zscale</b>=<em>float</em>]   [<b>tension</b>=<em>float</em>]   [<b>theta</b>=<em>float</em>]   [<b>scalex</b>=<em>float</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-t</b></dt>
+<dd>Use dnorm independent tension</dd>
+
+<dt><b>-d</b></dt>
+<dd>Output partial derivatives instead of topographic parameters</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input raster map</dd>
+
+<dt><b>ew_res</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
+<dd>Desired east-west resolution</dd>
+
+<dt><b>ns_res</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
+<dd>Desired north-south resolution</dd>
+
+<dt><b>elevation</b>=<em>name</em></dt>
+<dd>Name for output elevation raster map</dd>
+
+<dt><b>slope</b>=<em>name</em></dt>
+<dd>Name for output slope map (or fx)</dd>
+
+<dt><b>aspect</b>=<em>name</em></dt>
+<dd>Name for output aspect map (or fy)</dd>
+
+<dt><b>pcurvature</b>=<em>name</em></dt>
+<dd>Name for output profile curvature map (or fxx)</dd>
+
+<dt><b>tcurvature</b>=<em>name</em></dt>
+<dd>Name for output tangential curvature map (or fyy)</dd>
+
+<dt><b>mcurvature</b>=<em>name</em></dt>
+<dd>Name for output mean curvature map (or fxy)</dd>
+
+<dt><b>smooth</b>=<em>name</em></dt>
+<dd>Name of input raster map containing smoothing</dd>
+
+<dt><b>maskmap</b>=<em>name</em></dt>
+<dd>Name of input raster map to be used as mask</dd>
+
+<dt><b>overlap</b>=<em>integer</em></dt>
+<dd>Rows/columns overlap for segmentation</dd>
+<dd>Default: <em>3</em></dd>
+
+<dt><b>zscale</b>=<em>float</em></dt>
+<dd>Multiplier for z-values</dd>
+<dd>Default: <em>1.0</em></dd>
+
+<dt><b>tension</b>=<em>float</em></dt>
+<dd>Spline tension value</dd>
+<dd>Default: <em>40.</em></dd>
+
+<dt><b>theta</b>=<em>float</em></dt>
+<dd>Anisotropy angle (in degrees counterclockwise from East)</dd>
+
+<dt><b>scalex</b>=<em>float</em></dt>
+<dd>Anisotropy scaling factor</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -272,7 +272,14 @@ Conference series in applied mathematics, 59, SIAM, Philadelphia, Pennsylvania.
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.resamp.rst">r.resamp.rst source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.resamp.rst">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.resamp.rst">r.resamp.rst source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.resamp.rst">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -283,9 +290,9 @@ Conference series in applied mathematics, 59, SIAM, Philadelphia, Pennsylvania.
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

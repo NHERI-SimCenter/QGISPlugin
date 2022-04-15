@@ -1,143 +1,143 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.sim.water - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.sim.water</b></em>  - Overland flow hydrologic simulation using path sampling method (SIMWE).
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_hydrology.html">hydrology</a>, <a href="keywords.html#soil">soil</a>, <a href="keywords.html#flow">flow</a>, <a href="keywords.html#overland flow">overland flow</a>, <a href="keywords.html#model">model</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.sim.water</b><br></div>
-<b>r.sim.water --help</b><br>
-<div id="synopsis"><b>r.sim.water</b> [-<b>ts</b>] <b>elevation</b>=<em>name</em> <b>dx</b>=<em>name</em> <b>dy</b>=<em>name</em>  [<b>rain</b>=<em>name</em>]   [<b>rain_value</b>=<em>float</em>]   [<b>infil</b>=<em>name</em>]   [<b>infil_value</b>=<em>float</em>]   [<b>man</b>=<em>name</em>]   [<b>man_value</b>=<em>float</em>]   [<b>flow_control</b>=<em>name</em>]   [<b>observation</b>=<em>name</em>]   [<b>depth</b>=<em>name</em>]   [<b>discharge</b>=<em>name</em>]   [<b>error</b>=<em>name</em>]   [<b>walkers_output</b>=<em>name</em>]   [<b>logfile</b>=<em>name</em>]   [<b>nwalkers</b>=<em>integer</em>]   [<b>niterations</b>=<em>integer</em>]   [<b>output_step</b>=<em>integer</em>]   [<b>diffusion_coeff</b>=<em>float</em>]   [<b>hmax</b>=<em>float</em>]   [<b>halpha</b>=<em>float</em>]   [<b>hbeta</b>=<em>float</em>]   [<b>random_seed</b>=<em>integer</em>]   [<b>nprocs</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-t</b></dt>
-<dd>Time-series output</dd>
-
-<dt><b>-s</b></dt>
-<dd>Generate random seed</dd>
-<dd>Automatically generates random seed for random number generator (use when you don't want to provide the seed option)</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>elevation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input elevation raster map</dd>
-
-<dt><b>dx</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of x-derivatives raster map [m/m]</dd>
-
-<dt><b>dy</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of y-derivatives raster map [m/m]</dd>
-
-<dt><b>rain</b>=<em>name</em></dt>
-<dd>Name of rainfall excess rate (rain-infilt) raster map [mm/hr]</dd>
-
-<dt><b>rain_value</b>=<em>float</em></dt>
-<dd>Rainfall excess rate unique value [mm/hr]</dd>
-<dd>Default: <em>50</em></dd>
-
-<dt><b>infil</b>=<em>name</em></dt>
-<dd>Name of runoff infiltration rate raster map [mm/hr]</dd>
-
-<dt><b>infil_value</b>=<em>float</em></dt>
-<dd>Runoff infiltration rate unique value [mm/hr]</dd>
-<dd>Default: <em>0.0</em></dd>
-
-<dt><b>man</b>=<em>name</em></dt>
-<dd>Name of Manning's n raster map</dd>
-
-<dt><b>man_value</b>=<em>float</em></dt>
-<dd>Manning's n unique value</dd>
-<dd>Default: <em>0.1</em></dd>
-
-<dt><b>flow_control</b>=<em>name</em></dt>
-<dd>Name of flow controls raster map (permeability ratio 0-1)</dd>
-
-<dt><b>observation</b>=<em>name</em></dt>
-<dd>Name of sampling locations vector points map</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>depth</b>=<em>name</em></dt>
-<dd>Name for output water depth raster map [m]</dd>
-
-<dt><b>discharge</b>=<em>name</em></dt>
-<dd>Name for output water discharge raster map [m3/s]</dd>
-
-<dt><b>error</b>=<em>name</em></dt>
-<dd>Name for output simulation error raster map [m]</dd>
-
-<dt><b>walkers_output</b>=<em>name</em></dt>
-<dd>Base name of the output walkers vector points map</dd>
-<dd>Name for output vector map</dd>
-
-<dt><b>logfile</b>=<em>name</em></dt>
-<dd>Name for sampling points output text file. For each observation vector point the time series of sediment transport is stored.</dd>
-
-<dt><b>nwalkers</b>=<em>integer</em></dt>
-<dd>Number of walkers, default is twice the number of cells</dd>
-
-<dt><b>niterations</b>=<em>integer</em></dt>
-<dd>Time used for iterations [minutes]</dd>
-<dd>Default: <em>10</em></dd>
-
-<dt><b>output_step</b>=<em>integer</em></dt>
-<dd>Time interval for creating output maps [minutes]</dd>
-<dd>Default: <em>2</em></dd>
-
-<dt><b>diffusion_coeff</b>=<em>float</em></dt>
-<dd>Water diffusion constant</dd>
-<dd>Default: <em>0.8</em></dd>
-
-<dt><b>hmax</b>=<em>float</em></dt>
-<dd>Threshold water depth [m]</dd>
-<dd>Diffusion increases after this water depth is reached</dd>
-<dd>Default: <em>0.3</em></dd>
-
-<dt><b>halpha</b>=<em>float</em></dt>
-<dd>Diffusion increase constant</dd>
-<dd>Default: <em>4.0</em></dd>
-
-<dt><b>hbeta</b>=<em>float</em></dt>
-<dd>Weighting factor for water flow velocity vector</dd>
-<dd>Default: <em>0.5</em></dd>
-
-<dt><b>random_seed</b>=<em>integer</em></dt>
-<dd>Seed for random number generator</dd>
-<dd>The same seed can be used to obtain same results or random seed can be generated by other means.</dd>
-
-<dt><b>nprocs</b>=<em>integer</em></dt>
-<dd>Number of threads which will be used for parallel compute</dd>
-<dd>Default: <em>1</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.sim.water - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.sim.water</b></em>  - Overland flow hydrologic simulation using path sampling method (SIMWE).
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_hydrology.html">hydrology</a>, <a href="keywords.html#soil">soil</a>, <a href="keywords.html#flow">flow</a>, <a href="keywords.html#overland flow">overland flow</a>, <a href="keywords.html#model">model</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.sim.water</b><br></div>
+<b>r.sim.water --help</b><br>
+<div id="synopsis"><b>r.sim.water</b> [-<b>ts</b>] <b>elevation</b>=<em>name</em> <b>dx</b>=<em>name</em> <b>dy</b>=<em>name</em>  [<b>rain</b>=<em>name</em>]   [<b>rain_value</b>=<em>float</em>]   [<b>infil</b>=<em>name</em>]   [<b>infil_value</b>=<em>float</em>]   [<b>man</b>=<em>name</em>]   [<b>man_value</b>=<em>float</em>]   [<b>flow_control</b>=<em>name</em>]   [<b>observation</b>=<em>name</em>]   [<b>depth</b>=<em>name</em>]   [<b>discharge</b>=<em>name</em>]   [<b>error</b>=<em>name</em>]   [<b>walkers_output</b>=<em>name</em>]   [<b>logfile</b>=<em>name</em>]   [<b>nwalkers</b>=<em>integer</em>]   [<b>niterations</b>=<em>integer</em>]   [<b>output_step</b>=<em>integer</em>]   [<b>diffusion_coeff</b>=<em>float</em>]   [<b>hmax</b>=<em>float</em>]   [<b>halpha</b>=<em>float</em>]   [<b>hbeta</b>=<em>float</em>]   [<b>random_seed</b>=<em>integer</em>]   [<b>nprocs</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-t</b></dt>
+<dd>Time-series output</dd>
+
+<dt><b>-s</b></dt>
+<dd>Generate random seed</dd>
+<dd>Automatically generates random seed for random number generator (use when you don't want to provide the seed option)</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>elevation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input elevation raster map</dd>
+
+<dt><b>dx</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of x-derivatives raster map [m/m]</dd>
+
+<dt><b>dy</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of y-derivatives raster map [m/m]</dd>
+
+<dt><b>rain</b>=<em>name</em></dt>
+<dd>Name of rainfall excess rate (rain-infilt) raster map [mm/hr]</dd>
+
+<dt><b>rain_value</b>=<em>float</em></dt>
+<dd>Rainfall excess rate unique value [mm/hr]</dd>
+<dd>Default: <em>50</em></dd>
+
+<dt><b>infil</b>=<em>name</em></dt>
+<dd>Name of runoff infiltration rate raster map [mm/hr]</dd>
+
+<dt><b>infil_value</b>=<em>float</em></dt>
+<dd>Runoff infiltration rate unique value [mm/hr]</dd>
+<dd>Default: <em>0.0</em></dd>
+
+<dt><b>man</b>=<em>name</em></dt>
+<dd>Name of Manning's n raster map</dd>
+
+<dt><b>man_value</b>=<em>float</em></dt>
+<dd>Manning's n unique value</dd>
+<dd>Default: <em>0.1</em></dd>
+
+<dt><b>flow_control</b>=<em>name</em></dt>
+<dd>Name of flow controls raster map (permeability ratio 0-1)</dd>
+
+<dt><b>observation</b>=<em>name</em></dt>
+<dd>Name of sampling locations vector points map</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>depth</b>=<em>name</em></dt>
+<dd>Name for output water depth raster map [m]</dd>
+
+<dt><b>discharge</b>=<em>name</em></dt>
+<dd>Name for output water discharge raster map [m3/s]</dd>
+
+<dt><b>error</b>=<em>name</em></dt>
+<dd>Name for output simulation error raster map [m]</dd>
+
+<dt><b>walkers_output</b>=<em>name</em></dt>
+<dd>Base name of the output walkers vector points map</dd>
+<dd>Name for output vector map</dd>
+
+<dt><b>logfile</b>=<em>name</em></dt>
+<dd>Name for sampling points output text file. For each observation vector point the time series of sediment transport is stored.</dd>
+
+<dt><b>nwalkers</b>=<em>integer</em></dt>
+<dd>Number of walkers, default is twice the number of cells</dd>
+
+<dt><b>niterations</b>=<em>integer</em></dt>
+<dd>Time used for iterations [minutes]</dd>
+<dd>Default: <em>10</em></dd>
+
+<dt><b>output_step</b>=<em>integer</em></dt>
+<dd>Time interval for creating output maps [minutes]</dd>
+<dd>Default: <em>2</em></dd>
+
+<dt><b>diffusion_coeff</b>=<em>float</em></dt>
+<dd>Water diffusion constant</dd>
+<dd>Default: <em>0.8</em></dd>
+
+<dt><b>hmax</b>=<em>float</em></dt>
+<dd>Threshold water depth [m]</dd>
+<dd>Diffusion increases after this water depth is reached</dd>
+<dd>Default: <em>0.3</em></dd>
+
+<dt><b>halpha</b>=<em>float</em></dt>
+<dd>Diffusion increase constant</dd>
+<dd>Default: <em>4.0</em></dd>
+
+<dt><b>hbeta</b>=<em>float</em></dt>
+<dd>Weighting factor for water flow velocity vector</dd>
+<dd>Default: <em>0.5</em></dd>
+
+<dt><b>random_seed</b>=<em>integer</em></dt>
+<dd>Seed for random number generator</dd>
+<dd>The same seed can be used to obtain same results or random seed can be generated by other means.</dd>
+
+<dt><b>nprocs</b>=<em>integer</em></dt>
+<dd>Number of threads which will be used for parallel compute</dd>
+<dd>Default: <em>1</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -422,7 +422,14 @@ North Carolina State University<br>
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.sim/r.sim.water">r.sim.water source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.sim/r.sim.water">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.sim/r.sim.water">r.sim.water source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.sim/r.sim.water">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -433,9 +440,9 @@ North Carolina State University<br>
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

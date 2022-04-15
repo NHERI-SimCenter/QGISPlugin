@@ -1,7 +1,7 @@
 '''Wrapper for vedit.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_vedit.7.8 -ID:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -ID:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -ID:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vedit.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h -o OBJ.x86_64-w64-mingw32/vedit.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_vedit.7.8 -ID:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -ID:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -ID:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vedit.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h -o OBJ.x86_64-w64-mingw32/vedit.py
 
 Do not modify this file.
 '''
@@ -27,7 +27,7 @@ _libs["grass_vedit.7.8"] = load_library("grass_vedit.7.8")
 
 # No modules
 
-# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h: 33
+# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/stdio.h: 33
 class struct__iobuf(Structure):
     pass
 
@@ -52,11 +52,11 @@ struct__iobuf._fields_ = [
     ('_tmpfname', String),
 ]
 
-FILE = struct__iobuf # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h: 47
+FILE = struct__iobuf # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/stdio.h: 47
 
-off_t = c_int64 # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h: 24
+off_t = c_int64 # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/_mingw_off_t.h: 24
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 690
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 690
 class struct_ilist(Structure):
     pass
 
@@ -71,17 +71,17 @@ struct_ilist._fields_ = [
     ('alloc_values', c_int),
 ]
 
-enum_anon_7 = c_int # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_defines.h: 257
+enum_anon_7 = c_int # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_defines.h: 257
 
-SF_FeatureType = enum_anon_7 # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_defines.h: 257
+SF_FeatureType = enum_anon_7 # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_defines.h: 257
 
-dglByte_t = c_ubyte # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/type.h: 36
+dglByte_t = c_ubyte # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/type.h: 36
 
-dglInt32_t = c_long # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/type.h: 37
+dglInt32_t = c_long # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/type.h: 37
 
-dglInt64_t = c_longlong # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/type.h: 38
+dglInt64_t = c_longlong # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/type.h: 38
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 33
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 33
 class union__dglHeapData(Union):
     pass
 
@@ -100,9 +100,9 @@ union__dglHeapData._fields_ = [
     ('ul', c_ulong),
 ]
 
-dglHeapData_u = union__dglHeapData # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 33
+dglHeapData_u = union__dglHeapData # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 33
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 42
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 42
 class struct__dglHeapNode(Structure):
     pass
 
@@ -117,9 +117,9 @@ struct__dglHeapNode._fields_ = [
     ('flags', c_ubyte),
 ]
 
-dglHeapNode_s = struct__dglHeapNode # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 42
+dglHeapNode_s = struct__dglHeapNode # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 42
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 52
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 52
 class struct__dglHeap(Structure):
     pass
 
@@ -136,9 +136,9 @@ struct__dglHeap._fields_ = [
     ('pnode', POINTER(dglHeapNode_s)),
 ]
 
-dglHeap_s = struct__dglHeap # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 52
+dglHeap_s = struct__dglHeap # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/heap.h: 52
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/tree.h: 164
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/tree.h: 164
 class struct__dglTreeEdgePri32(Structure):
     pass
 
@@ -153,9 +153,9 @@ struct__dglTreeEdgePri32._fields_ = [
     ('pnData', POINTER(dglInt32_t)),
 ]
 
-dglTreeEdgePri32_s = struct__dglTreeEdgePri32 # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/tree.h: 164
+dglTreeEdgePri32_s = struct__dglTreeEdgePri32 # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/tree.h: 164
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 135
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 135
 class struct_anon_9(Structure):
     pass
 
@@ -166,9 +166,9 @@ struct_anon_9._fields_ = [
     ('pvAVL', POINTER(None)),
 ]
 
-dglNodePrioritizer_s = struct_anon_9 # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 135
+dglNodePrioritizer_s = struct_anon_9 # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 135
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 146
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 146
 class struct_anon_10(Structure):
     pass
 
@@ -185,9 +185,9 @@ struct_anon_10._fields_ = [
     ('pvAVL', POINTER(None)),
 ]
 
-dglEdgePrioritizer_s = struct_anon_10 # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 146
+dglEdgePrioritizer_s = struct_anon_10 # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 146
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 193
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 193
 class struct__dglGraph(Structure):
     pass
 
@@ -242,9 +242,9 @@ struct__dglGraph._fields_ = [
     ('nodePrioritizer', dglNodePrioritizer_s),
 ]
 
-dglGraph_s = struct__dglGraph # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 193
+dglGraph_s = struct__dglGraph # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 193
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 243
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 243
 class struct_anon_11(Structure):
     pass
 
@@ -261,11 +261,11 @@ struct_anon_11._fields_ = [
     ('pvPredist', POINTER(None)),
 ]
 
-dglSPCache_s = struct_anon_11 # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 243
+dglSPCache_s = struct_anon_11 # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dgl/graph.h: 243
 
-RectReal = c_double # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 28
+RectReal = c_double # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 28
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 57
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 57
 class struct_RTree_Rect(Structure):
     pass
 
@@ -276,11 +276,11 @@ struct_RTree_Rect._fields_ = [
     ('boundary', POINTER(RectReal)),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 77
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 77
 class struct_RTree_Node(Structure):
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 64
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 64
 class union_RTree_Child(Union):
     pass
 
@@ -295,7 +295,7 @@ union_RTree_Child._fields_ = [
     ('pos', off_t),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 71
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 71
 class struct_RTree_Branch(Structure):
     pass
 
@@ -319,21 +319,21 @@ struct_RTree_Node._fields_ = [
     ('branch', POINTER(struct_RTree_Branch)),
 ]
 
-SearchHitCallback = CFUNCTYPE(UNCHECKED(c_int), c_int, POINTER(struct_RTree_Rect), POINTER(None)) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 91
+SearchHitCallback = CFUNCTYPE(UNCHECKED(c_int), c_int, POINTER(struct_RTree_Rect), POINTER(None)) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 91
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 128
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 128
 class struct_RTree(Structure):
     pass
 
-rt_search_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree), POINTER(struct_RTree_Rect), POINTER(SearchHitCallback), POINTER(None)) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 95
+rt_search_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree), POINTER(struct_RTree_Rect), POINTER(SearchHitCallback), POINTER(None)) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 95
 
-rt_insert_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree_Rect), union_RTree_Child, c_int, POINTER(struct_RTree)) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 97
+rt_insert_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree_Rect), union_RTree_Child, c_int, POINTER(struct_RTree)) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 97
 
-rt_delete_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree_Rect), union_RTree_Child, POINTER(struct_RTree)) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 98
+rt_delete_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(struct_RTree_Rect), union_RTree_Child, POINTER(struct_RTree)) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 98
 
-rt_valid_child_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(union_RTree_Child)) # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 99
+rt_valid_child_fn = CFUNCTYPE(UNCHECKED(c_int), POINTER(union_RTree_Child)) # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 99
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 103
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 103
 class struct_nstack(Structure):
     pass
 
@@ -348,7 +348,7 @@ struct_nstack._fields_ = [
     ('pos', off_t),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 111
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 111
 class struct_NodeBuffer(Structure):
     pass
 
@@ -363,7 +363,7 @@ struct_NodeBuffer._fields_ = [
     ('dirty', c_char),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 119
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 119
 class struct_RTree_PartitionVars(Structure):
     pass
 
@@ -386,7 +386,7 @@ struct_RTree_PartitionVars._fields_ = [
     ('area', RectReal * 2),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rtree.h: 155
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rtree.h: 155
 class struct__recycle(Structure):
     pass
 
@@ -484,7 +484,7 @@ struct_RTree._fields_ = [
     ('rootpos', off_t),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 153
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 153
 class struct__dbmscap(Structure):
     pass
 
@@ -501,9 +501,9 @@ struct__dbmscap._fields_ = [
     ('next', POINTER(struct__dbmscap)),
 ]
 
-dbDbmscap = struct__dbmscap # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 159
+dbDbmscap = struct__dbmscap # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 159
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 173
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 173
 class struct__db_driver(Structure):
     pass
 
@@ -520,15 +520,15 @@ struct__db_driver._fields_ = [
     ('pid', c_int),
 ]
 
-dbDriver = struct__db_driver # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 173
+dbDriver = struct__db_driver # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 173
 
-OGRFeatureH = POINTER(None) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/ogr_api.h: 332
+OGRFeatureH = POINTER(None) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/ogr_api.h: 335
 
-OGRLayerH = POINTER(None) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/ogr_api.h: 586
+OGRLayerH = POINTER(None) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/ogr_api.h: 589
 
-OGRDataSourceH = POINTER(None) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/ogr_api.h: 588
+OGRDataSourceH = POINTER(None) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/ogr_api.h: 591
 
-OGRSFDriverH = POINTER(None) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/ogr_api.h: 590
+OGRSFDriverH = POINTER(None) # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/ogr_api.h: 593
 
 # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/libpq-fe.h: 143
 class struct_pg_conn(Structure):
@@ -542,9 +542,9 @@ class struct_pg_result(Structure):
 
 PGresult = struct_pg_result # D:/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include/libpq-fe.h: 150
 
-plus_t = c_int # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 41
+plus_t = c_int # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 41
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 46
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 46
 class struct_site_att(Structure):
     pass
 
@@ -559,7 +559,7 @@ struct_site_att._fields_ = [
     ('str', POINTER(POINTER(c_char))),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 65
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 65
 class struct_bound_box(Structure):
     pass
 
@@ -580,7 +580,7 @@ struct_bound_box._fields_ = [
     ('B', c_double),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 96
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 96
 class struct_gvfile(Structure):
     pass
 
@@ -603,7 +603,7 @@ struct_gvfile._fields_ = [
     ('loaded', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 134
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 134
 class struct_field_info(Structure):
     pass
 
@@ -624,7 +624,7 @@ struct_field_info._fields_ = [
     ('key', String),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 165
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 165
 class struct_dblinks(Structure):
     pass
 
@@ -639,7 +639,7 @@ struct_dblinks._fields_ = [
     ('n_fields', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 186
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 186
 class struct_Port_info(Structure):
     pass
 
@@ -676,7 +676,7 @@ struct_Port_info._fields_ = [
     ('off_t_quick', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 272
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 272
 class struct_recycle(Structure):
     pass
 
@@ -687,7 +687,7 @@ struct_recycle._fields_ = [
     ('dummy', c_char),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 278
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 278
 class struct_Version_info(Structure):
     pass
 
@@ -704,7 +704,7 @@ struct_Version_info._fields_ = [
     ('back_minor', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 294
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 294
 class struct_dig_head(Structure):
     pass
 
@@ -747,7 +747,7 @@ struct_dig_head._fields_ = [
     ('recycle', POINTER(struct_recycle)),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 397
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 397
 class struct_Format_info_offset(Structure):
     pass
 
@@ -762,11 +762,11 @@ struct_Format_info_offset._fields_ = [
     ('array_alloc', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1675
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1675
 class struct_line_pnts(Structure):
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 461
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 461
 class struct_Format_info_cache(Structure):
     pass
 
@@ -793,7 +793,7 @@ struct_Format_info_cache._fields_ = [
     ('ctype', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 516
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 516
 class struct_Format_info_ogr(Structure):
     pass
 
@@ -830,7 +830,7 @@ struct_Format_info_ogr._fields_ = [
     ('next_line', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 602
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 602
 class struct_Format_info_pg(Structure):
     pass
 
@@ -887,7 +887,7 @@ struct_Format_info_pg._fields_ = [
     ('topo_geo_only', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 713
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 713
 class struct_Format_info(Structure):
     pass
 
@@ -902,7 +902,7 @@ struct_Format_info._fields_ = [
     ('pg', struct_Format_info_pg),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 732
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 732
 class struct_Cat_index(Structure):
     pass
 
@@ -927,7 +927,7 @@ struct_Cat_index._fields_ = [
     ('offset', off_t),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 787
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 787
 class struct_anon_65(Structure):
     pass
 
@@ -942,23 +942,23 @@ struct_anon_65._fields_ = [
     ('cidx', struct_Version_info),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1448
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1448
 class struct_P_node(Structure):
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1574
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1574
 class struct_P_line(Structure):
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1605
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1605
 class struct_P_area(Structure):
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1646
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1646
 class struct_P_isle(Structure):
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1173
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1173
 class struct_anon_66(Structure):
     pass
 
@@ -983,7 +983,7 @@ struct_anon_66._fields_ = [
     ('n_upnodes', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 784
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 784
 class struct_Plus_head(Structure):
     pass
 
@@ -1142,7 +1142,7 @@ struct_Plus_head._fields_ = [
     ('uplist', struct_anon_66),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1220
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1220
 class struct_Graph_info(Structure):
     pass
 
@@ -1165,7 +1165,7 @@ struct_Graph_info._fields_ = [
     ('cost_multip', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1358
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1358
 class struct_anon_67(Structure):
     pass
 
@@ -1186,7 +1186,7 @@ struct_anon_67._fields_ = [
     ('field', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1259
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1259
 class struct_Map_info(Structure):
     pass
 
@@ -1322,7 +1322,7 @@ struct_line_pnts._fields_ = [
     ('alloc_points', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1723
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/vect/dig_structs.h: 1723
 class struct_cat_list(Structure):
     pass
 
@@ -1341,7 +1341,7 @@ struct_cat_list._fields_ = [
     ('alloc_ranges', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 45
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 45
 class struct_rpoint(Structure):
     pass
 
@@ -1354,7 +1354,7 @@ struct_rpoint._fields_ = [
     ('y', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 50
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 50
 class struct_robject(Structure):
     pass
 
@@ -1371,7 +1371,7 @@ struct_robject._fields_ = [
     ('point', POINTER(struct_rpoint)),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 58
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 58
 class struct_robject_list(Structure):
     pass
 
@@ -1384,7 +1384,7 @@ struct_robject_list._fields_ = [
     ('item', POINTER(POINTER(struct_robject))),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_split_lines'):
         continue
@@ -1393,7 +1393,7 @@ for _lib in six.itervalues(_libs):
     Vedit_split_lines.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 7
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 7
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_connect_lines'):
         continue
@@ -1402,7 +1402,7 @@ for _lib in six.itervalues(_libs):
     Vedit_connect_lines.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 10
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 10
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_extend_lines'):
         continue
@@ -1411,7 +1411,7 @@ for _lib in six.itervalues(_libs):
     Vedit_extend_lines.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 13
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 13
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_modify_cats'):
         continue
@@ -1420,7 +1420,7 @@ for _lib in six.itervalues(_libs):
     Vedit_modify_cats.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 17
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 17
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_copy_lines'):
         continue
@@ -1429,7 +1429,7 @@ for _lib in six.itervalues(_libs):
     Vedit_copy_lines.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 20
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 20
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_chtype_lines'):
         continue
@@ -1438,7 +1438,7 @@ for _lib in six.itervalues(_libs):
     Vedit_chtype_lines.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 23
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 23
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_delete_lines'):
         continue
@@ -1447,7 +1447,7 @@ for _lib in six.itervalues(_libs):
     Vedit_delete_lines.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 24
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 24
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_delete_area_centroid'):
         continue
@@ -1456,7 +1456,7 @@ for _lib in six.itervalues(_libs):
     Vedit_delete_area_centroid.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 25
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 25
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_delete_area'):
         continue
@@ -1465,7 +1465,7 @@ for _lib in six.itervalues(_libs):
     Vedit_delete_area.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 26
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 26
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_delete_areas_cat'):
         continue
@@ -1474,7 +1474,7 @@ for _lib in six.itervalues(_libs):
     Vedit_delete_areas_cat.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 29
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 29
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_get_min_distance'):
         continue
@@ -1483,7 +1483,7 @@ for _lib in six.itervalues(_libs):
     Vedit_get_min_distance.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 33
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 33
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_flip_lines'):
         continue
@@ -1492,7 +1492,7 @@ for _lib in six.itervalues(_libs):
     Vedit_flip_lines.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 36
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 36
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_merge_lines'):
         continue
@@ -1501,7 +1501,7 @@ for _lib in six.itervalues(_libs):
     Vedit_merge_lines.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 39
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 39
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_move_lines'):
         continue
@@ -1510,7 +1510,7 @@ for _lib in six.itervalues(_libs):
     Vedit_move_lines.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 43
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 43
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_render_map'):
         continue
@@ -1519,7 +1519,7 @@ for _lib in six.itervalues(_libs):
     Vedit_render_map.restype = POINTER(struct_robject_list)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 47
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 47
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_select_by_query'):
         continue
@@ -1528,7 +1528,7 @@ for _lib in six.itervalues(_libs):
     Vedit_select_by_query.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 51
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 51
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_snap_point'):
         continue
@@ -1537,7 +1537,7 @@ for _lib in six.itervalues(_libs):
     Vedit_snap_point.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 53
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 53
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_snap_line'):
         continue
@@ -1546,7 +1546,7 @@ for _lib in six.itervalues(_libs):
     Vedit_snap_line.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 55
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 55
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_snap_lines'):
         continue
@@ -1555,7 +1555,7 @@ for _lib in six.itervalues(_libs):
     Vedit_snap_lines.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 59
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 59
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_move_vertex'):
         continue
@@ -1564,7 +1564,7 @@ for _lib in six.itervalues(_libs):
     Vedit_move_vertex.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 63
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 63
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_add_vertex'):
         continue
@@ -1573,7 +1573,7 @@ for _lib in six.itervalues(_libs):
     Vedit_add_vertex.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 65
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 65
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_remove_vertex'):
         continue
@@ -1582,7 +1582,7 @@ for _lib in six.itervalues(_libs):
     Vedit_remove_vertex.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 69
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/vedit.h: 69
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Vedit_bulk_labeling'):
         continue
@@ -1591,209 +1591,209 @@ for _lib in six.itervalues(_libs):
     Vedit_bulk_labeling.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 7
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 7
 try:
     NO_SNAP = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 8
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 8
 try:
     SNAP = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 9
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 9
 try:
     SNAPVERTEX = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 11
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 11
 try:
     QUERY_UNKNOWN = (-1)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 12
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 12
 try:
     QUERY_LENGTH = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 13
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 13
 try:
     QUERY_DANGLE = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 16
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 16
 try:
     TYPE_POINT = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 17
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 17
 try:
     TYPE_LINE = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 18
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 18
 try:
     TYPE_BOUNDARYNO = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 19
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 19
 try:
     TYPE_BOUNDARYTWO = 8
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 20
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 20
 try:
     TYPE_BOUNDARYONE = 16
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 21
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 21
 try:
     TYPE_CENTROIDIN = 32
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 22
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 22
 try:
     TYPE_CENTROIDOUT = 64
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 23
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 23
 try:
     TYPE_CENTROIDDUP = 128
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 24
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 24
 try:
     TYPE_NODEONE = 256
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 25
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 25
 try:
     TYPE_NODETWO = 512
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 26
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 26
 try:
     TYPE_VERTEX = 1024
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 27
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 27
 try:
     TYPE_AREA = 2048
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 28
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 28
 try:
     TYPE_ISLE = 4096
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 29
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 29
 try:
     TYPE_DIRECTION = 8192
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 31
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 31
 try:
     DRAW_POINT = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 32
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 32
 try:
     DRAW_LINE = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 33
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 33
 try:
     DRAW_BOUNDARYNO = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 34
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 34
 try:
     DRAW_BOUNDARYTWO = 8
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 35
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 35
 try:
     DRAW_BOUNDARYONE = 16
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 36
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 36
 try:
     DRAW_CENTROIDIN = 32
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 37
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 37
 try:
     DRAW_CENTROIDOUT = 64
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 38
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 38
 try:
     DRAW_CENTROIDDUP = 128
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 39
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 39
 try:
     DRAW_NODEONE = 256
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 40
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 40
 try:
     DRAW_NODETWO = 512
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 41
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 41
 try:
     DRAW_VERTEX = 1024
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 42
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 42
 try:
     DRAW_AREA = 2048
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 43
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 43
 try:
     DRAW_DIRECTION = 4096
 except:
     pass
 
-rpoint = struct_rpoint # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 45
+rpoint = struct_rpoint # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 45
 
-robject = struct_robject # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 50
+robject = struct_robject # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 50
 
-robject_list = struct_robject_list # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 58
+robject_list = struct_robject_list # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\vedit.h: 58
 
 # No inserted files
 

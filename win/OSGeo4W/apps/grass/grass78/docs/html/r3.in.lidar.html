@@ -1,119 +1,119 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r3.in.lidar - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r3.in.lidar</b></em>  - Creates a 3D raster map from LAS LiDAR points using univariate statistics.
-<h2>KEYWORDS</h2>
-<a href="raster3d.html">raster3d</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#LIDAR">LIDAR</a>, <a href="keywords.html#statistics">statistics</a>, <a href="keywords.html#conversion">conversion</a>, <a href="keywords.html#aggregation">aggregation</a>, <a href="keywords.html#binning">binning</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r3.in.lidar</b><br></div>
-<b>r3.in.lidar --help</b><br>
-<div id="synopsis"><b>r3.in.lidar</b> [-<b>dvopsg</b>]  [<b>input</b>=<em>name</em>]   [<b>file</b>=<em>name</em>]   [<b>n</b>=<em>name</em>]   [<b>sum</b>=<em>name</em>]   [<b>mean</b>=<em>name</em>]   [<b>proportional_n</b>=<em>name</em>]   [<b>proportional_sum</b>=<em>name</em>]   [<b>return_filter</b>=<em>string</em>]   [<b>class_filter</b>=<em>integer</em>[,<i>integer</i>,...]]   [<b>base_raster</b>=<em>name</em>]   [<b>zscale</b>=<em>float</em>]   [<b>intensity_range</b>=<em>min,max</em>]   [<b>intensity_scale</b>=<em>float</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-d</b></dt>
-<dd>Use base raster actual resolution instead of computational region</dd>
-
-<dt><b>-v</b></dt>
-<dd>Use only valid points</dd>
-<dd>Points invalid according to APSRS LAS specification will be filtered out</dd>
-
-<dt><b>-o</b></dt>
-<dd>Override projection check (use current location's projection)</dd>
-<dd>Assume that the dataset has same projection as the current location</dd>
-
-<dt><b>-p</b></dt>
-<dd>Print LAS file info and exit</dd>
-
-<dt><b>-s</b></dt>
-<dd>Scan data file for extent then exit</dd>
-
-<dt><b>-g</b></dt>
-<dd>In scan mode, print using shell script style</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em></dt>
-<dd>LAS input file</dd>
-<dd>LiDAR input file in LAS format (*.las or *.laz)</dd>
-
-<dt><b>file</b>=<em>name</em></dt>
-<dd>File containing names of LAS input files</dd>
-<dd>LiDAR input files in LAS format (*.las or *.laz)</dd>
-
-<dt><b>n</b>=<em>name</em></dt>
-<dd>Count of points per cell</dd>
-<dd>Name for output 3D raster map</dd>
-
-<dt><b>sum</b>=<em>name</em></dt>
-<dd>Sum of values of point intensities per cell</dd>
-<dd>Name for output 3D raster map</dd>
-
-<dt><b>mean</b>=<em>name</em></dt>
-<dd>Mean of point intensities per cell</dd>
-<dd>Name for output 3D raster map</dd>
-
-<dt><b>proportional_n</b>=<em>name</em></dt>
-<dd>3D raster map of proportional point count</dd>
-<dd>Point count per 3D cell divided by point count per vertical column</dd>
-
-<dt><b>proportional_sum</b>=<em>name</em></dt>
-<dd>3D raster map of proportional sum of values</dd>
-<dd>Sum of values per 3D cell divided by sum of values per vertical column</dd>
-
-<dt><b>return_filter</b>=<em>string</em></dt>
-<dd>Only import points of selected return type</dd>
-<dd>If not specified, all points are imported</dd>
-<dd>Options: <em>first, last, mid</em></dd>
-
-<dt><b>class_filter</b>=<em>integer[,<i>integer</i>,...]</em></dt>
-<dd>Only import points of selected class(es)</dd>
-<dd>Input is comma separated integers. If not specified, all points are imported.</dd>
-
-<dt><b>base_raster</b>=<em>name</em></dt>
-<dd>Subtract raster values from the z coordinates</dd>
-<dd>The scale for z is applied beforehand, the filter afterwards</dd>
-
-<dt><b>zscale</b>=<em>float</em></dt>
-<dd>Scale to apply to Z data</dd>
-<dd>Default: <em>1.0</em></dd>
-
-<dt><b>intensity_range</b>=<em>min,max</em></dt>
-<dd>Filter range for intensity values (min,max)</dd>
-
-<dt><b>intensity_scale</b>=<em>float</em></dt>
-<dd>Scale to apply to intensity values</dd>
-<dd>Default: <em>1.0</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r3.in.lidar - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r3.in.lidar</b></em>  - Creates a 3D raster map from LAS LiDAR points using univariate statistics.
+<h2>KEYWORDS</h2>
+<a href="raster3d.html">raster3d</a>, <a href="topic_import.html">import</a>, <a href="keywords.html#LIDAR">LIDAR</a>, <a href="keywords.html#statistics">statistics</a>, <a href="keywords.html#conversion">conversion</a>, <a href="keywords.html#aggregation">aggregation</a>, <a href="keywords.html#binning">binning</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r3.in.lidar</b><br></div>
+<b>r3.in.lidar --help</b><br>
+<div id="synopsis"><b>r3.in.lidar</b> [-<b>dvopsg</b>]  [<b>input</b>=<em>name</em>]   [<b>file</b>=<em>name</em>]   [<b>n</b>=<em>name</em>]   [<b>sum</b>=<em>name</em>]   [<b>mean</b>=<em>name</em>]   [<b>proportional_n</b>=<em>name</em>]   [<b>proportional_sum</b>=<em>name</em>]   [<b>return_filter</b>=<em>string</em>]   [<b>class_filter</b>=<em>integer</em>[,<i>integer</i>,...]]   [<b>base_raster</b>=<em>name</em>]   [<b>zscale</b>=<em>float</em>]   [<b>intensity_range</b>=<em>min,max</em>]   [<b>intensity_scale</b>=<em>float</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-d</b></dt>
+<dd>Use base raster actual resolution instead of computational region</dd>
+
+<dt><b>-v</b></dt>
+<dd>Use only valid points</dd>
+<dd>Points invalid according to APSRS LAS specification will be filtered out</dd>
+
+<dt><b>-o</b></dt>
+<dd>Override projection check (use current location's projection)</dd>
+<dd>Assume that the dataset has same projection as the current location</dd>
+
+<dt><b>-p</b></dt>
+<dd>Print LAS file info and exit</dd>
+
+<dt><b>-s</b></dt>
+<dd>Scan data file for extent then exit</dd>
+
+<dt><b>-g</b></dt>
+<dd>In scan mode, print using shell script style</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em></dt>
+<dd>LAS input file</dd>
+<dd>LiDAR input file in LAS format (*.las or *.laz)</dd>
+
+<dt><b>file</b>=<em>name</em></dt>
+<dd>File containing names of LAS input files</dd>
+<dd>LiDAR input files in LAS format (*.las or *.laz)</dd>
+
+<dt><b>n</b>=<em>name</em></dt>
+<dd>Count of points per cell</dd>
+<dd>Name for output 3D raster map</dd>
+
+<dt><b>sum</b>=<em>name</em></dt>
+<dd>Sum of values of point intensities per cell</dd>
+<dd>Name for output 3D raster map</dd>
+
+<dt><b>mean</b>=<em>name</em></dt>
+<dd>Mean of point intensities per cell</dd>
+<dd>Name for output 3D raster map</dd>
+
+<dt><b>proportional_n</b>=<em>name</em></dt>
+<dd>3D raster map of proportional point count</dd>
+<dd>Point count per 3D cell divided by point count per vertical column</dd>
+
+<dt><b>proportional_sum</b>=<em>name</em></dt>
+<dd>3D raster map of proportional sum of values</dd>
+<dd>Sum of values per 3D cell divided by sum of values per vertical column</dd>
+
+<dt><b>return_filter</b>=<em>string</em></dt>
+<dd>Only import points of selected return type</dd>
+<dd>If not specified, all points are imported</dd>
+<dd>Options: <em>first, last, mid</em></dd>
+
+<dt><b>class_filter</b>=<em>integer[,<i>integer</i>,...]</em></dt>
+<dd>Only import points of selected class(es)</dd>
+<dd>Input is comma separated integers. If not specified, all points are imported.</dd>
+
+<dt><b>base_raster</b>=<em>name</em></dt>
+<dd>Subtract raster values from the z coordinates</dd>
+<dd>The scale for z is applied beforehand, the filter afterwards</dd>
+
+<dt><b>zscale</b>=<em>float</em></dt>
+<dd>Scale to apply to Z data</dd>
+<dd>Default: <em>1.0</em></dd>
+
+<dt><b>intensity_range</b>=<em>min,max</em></dt>
+<dd>Filter range for intensity values (min,max)</dd>
+
+<dt><b>intensity_scale</b>=<em>float</em></dt>
+<dd>Scale to apply to intensity values</dd>
+<dd>Default: <em>1.0</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -344,7 +344,14 @@ Vaclav Petras, <a href="https://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll L
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster3d/r3.in.lidar">r3.in.lidar source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster3d/r3.in.lidar">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster3d/r3.in.lidar">r3.in.lidar source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster3d/r3.in.lidar">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -355,9 +362,9 @@ Vaclav Petras, <a href="https://geospatial.ncsu.edu/geoforall/">NCSU GeoForAll L
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

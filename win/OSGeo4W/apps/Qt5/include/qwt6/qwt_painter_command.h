@@ -15,7 +15,8 @@
 #include <qpixmap.h>
 #include <qimage.h>
 #include <qpolygon.h>
-#include <qpainterpath.h>
+
+class QPainterPath;
 
 /*!
   QwtPainterCommand represents the attributes of a paint operation
@@ -25,7 +26,7 @@
 
   \sa QwtGraphic::commands()
  */
-  
+
 class QWT_EXPORT QwtPainterCommand
 {
 public:
@@ -48,7 +49,7 @@ public:
         State
     };
 
-    //! Attributes how to paint a QPixmap 
+    //! Attributes how to paint a QPixmap
     struct PixmapData
     {
         QRectF rect;
@@ -56,7 +57,7 @@ public:
         QRectF subRect;
     };
 
-    //! Attributes how to paint a QImage 
+    //! Attributes how to paint a QImage
     struct ImageData
     {
         QRectF rect;
@@ -149,21 +150,21 @@ inline const QPainterPath *QwtPainterCommand::path() const
 }
 
 //! \return Attributes how to paint a QPixmap
-inline const QwtPainterCommand::PixmapData* 
+inline const QwtPainterCommand::PixmapData *
 QwtPainterCommand::pixmapData() const
 {
     return d_pixmapData;
 }
 
 //! \return Attributes how to paint a QImage
-inline const QwtPainterCommand::ImageData * 
+inline const QwtPainterCommand::ImageData *
 QwtPainterCommand::imageData() const
 {
     return d_imageData;
 }
 
 //! \return Attributes of a state change
-inline const QwtPainterCommand::StateData * 
+inline const QwtPainterCommand::StateData *
 QwtPainterCommand::stateData() const
 {
     return d_stateData;

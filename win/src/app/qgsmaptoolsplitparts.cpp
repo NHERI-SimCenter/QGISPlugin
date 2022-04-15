@@ -30,15 +30,18 @@ QgsMapToolSplitParts::QgsMapToolSplitParts( QgsMapCanvas *canvas )
   setSnapToLayerGridEnabled( false );
 }
 
-bool QgsMapToolSplitParts::supportsTechnique( QgsMapToolCapture::CaptureTechnique technique ) const
+bool QgsMapToolSplitParts::supportsTechnique( Qgis::CaptureTechnique technique ) const
 {
   switch ( technique )
   {
-    case QgsMapToolCapture::StraightSegments:
-    case QgsMapToolCapture::Streaming:
+    case Qgis::CaptureTechnique::StraightSegments:
+    case Qgis::CaptureTechnique::Streaming:
       return true;
 
-    case QgsMapToolCapture::CircularString:
+    case Qgis::CaptureTechnique::CircularString:
+      return false;
+
+    case Qgis::CaptureTechnique::Shape:
       return false;
   }
   return false;
@@ -77,12 +80,7 @@ void QgsMapToolSplitParts::cadCanvasReleaseEvent( QgsMapMouseEvent *e )
     }
 
     const int error = addVertex( e->mapPoint() );
-    if ( error == 1 )
-    {
-      //current layer is not a vector layer
-      return;
-    }
-    else if ( error == 2 )
+    if ( error == 2 )
     {
       //problem with coordinate transformation
       QgisApp::instance()->messageBar()->pushMessage(

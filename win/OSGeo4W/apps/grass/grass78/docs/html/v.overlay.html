@@ -1,102 +1,102 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.overlay - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.overlay</b></em>  - Overlays two vector maps offering clip, intersection, difference, symmetrical difference, union operators.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_geometry.html">geometry</a>, <a href="keywords.html#spatial query">spatial query</a>, <a href="keywords.html#clip">clip</a>, <a href="keywords.html#difference">difference</a>, <a href="keywords.html#intersection">intersection</a>, <a href="keywords.html#union">union</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.overlay</b><br></div>
-<b>v.overlay --help</b><br>
-<div id="synopsis"><b>v.overlay</b> [-<b>t</b>] <b>ainput</b>=<em>name</em>  [<b>alayer</b>=<em>string</em>]   [<b>atype</b>=<em>string</em>[,<i>string</i>,...]]  <b>binput</b>=<em>name</em>  [<b>blayer</b>=<em>string</em>]   [<b>btype</b>=<em>string</em>[,<i>string</i>,...]]  <b>operator</b>=<em>string</em> <b>output</b>=<em>name</em>  [<b>olayer</b>=<em>string</em>[,<i>string</i>,...]]   [<b>snap</b>=<em>float</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-t</b></dt>
-<dd>Do not create attribute table</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>ainput</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input vector map (A)</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>alayer</b>=<em>string</em></dt>
-<dd>Layer number or name (vector map A)</dd>
-<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>atype</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>Feature type (vector map A)</dd>
-<dd>Input feature type</dd>
-<dd>Options: <em>line, area, auto</em></dd>
-<dd>Default: <em>auto</em></dd>
-
-<dt><b>binput</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input vector map (B)</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>blayer</b>=<em>string</em></dt>
-<dd>Layer number or name (vector map B)</dd>
-<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>btype</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>Feature type (vector map B)</dd>
-<dd>Input feature type</dd>
-<dd>Options: <em>area</em></dd>
-<dd>Default: <em>area</em></dd>
-
-<dt><b>operator</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
-<dd>Operator defines features written to output vector map</dd>
-<dd>Feature is written to output if the result of operation 'ainput operator binput' is true. Input feature is considered to be true, if category of given layer is defined.</dd>
-<dd>Options: <em>and, or, not, xor</em></dd>
-<dd><b>and</b>: also known as 'intersection' in GIS</dd>
-<dd><b>or</b>: also known as 'union' in GIS (only for atype=area)</dd>
-<dd><b>not</b>: also known as 'difference' (features from ainput not overlaid by features from binput)</dd>
-<dd><b>xor</b>: also known as 'symmetrical difference' (features from either ainput or binput but not those from ainput overlaid by binput (only for atype=area)</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output vector map</dd>
-
-<dt><b>olayer</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>Output layer for new category, ainput and binput</dd>
-<dd>If 0 or not given, the category is not written</dd>
-<dd>Default: <em>1,0,0</em></dd>
-
-<dt><b>snap</b>=<em>float</em></dt>
-<dd>Snapping threshold for boundaries</dd>
-<dd>Disable snapping with snap &lt;= 0</dd>
-<dd>Default: <em>1e-8</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.overlay - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.overlay</b></em>  - Overlays two vector maps offering clip, intersection, difference, symmetrical difference, union operators.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_geometry.html">geometry</a>, <a href="keywords.html#spatial query">spatial query</a>, <a href="keywords.html#clip">clip</a>, <a href="keywords.html#difference">difference</a>, <a href="keywords.html#intersection">intersection</a>, <a href="keywords.html#union">union</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.overlay</b><br></div>
+<b>v.overlay --help</b><br>
+<div id="synopsis"><b>v.overlay</b> [-<b>t</b>] <b>ainput</b>=<em>name</em>  [<b>alayer</b>=<em>string</em>]   [<b>atype</b>=<em>string</em>[,<i>string</i>,...]]  <b>binput</b>=<em>name</em>  [<b>blayer</b>=<em>string</em>]   [<b>btype</b>=<em>string</em>[,<i>string</i>,...]]  <b>operator</b>=<em>string</em> <b>output</b>=<em>name</em>  [<b>olayer</b>=<em>string</em>[,<i>string</i>,...]]   [<b>snap</b>=<em>float</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-t</b></dt>
+<dd>Do not create attribute table</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>ainput</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input vector map (A)</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>alayer</b>=<em>string</em></dt>
+<dd>Layer number or name (vector map A)</dd>
+<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>atype</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>Feature type (vector map A)</dd>
+<dd>Input feature type</dd>
+<dd>Options: <em>line, area, auto</em></dd>
+<dd>Default: <em>auto</em></dd>
+
+<dt><b>binput</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input vector map (B)</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>blayer</b>=<em>string</em></dt>
+<dd>Layer number or name (vector map B)</dd>
+<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>btype</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>Feature type (vector map B)</dd>
+<dd>Input feature type</dd>
+<dd>Options: <em>area</em></dd>
+<dd>Default: <em>area</em></dd>
+
+<dt><b>operator</b>=<em>string</em>&nbsp;<b>[required]</b></dt>
+<dd>Operator defines features written to output vector map</dd>
+<dd>Feature is written to output if the result of operation 'ainput operator binput' is true. Input feature is considered to be true, if category of given layer is defined.</dd>
+<dd>Options: <em>and, or, not, xor</em></dd>
+<dd><b>and</b>: also known as 'intersection' in GIS</dd>
+<dd><b>or</b>: also known as 'union' in GIS (only for atype=area)</dd>
+<dd><b>not</b>: also known as 'difference' (features from ainput not overlaid by features from binput)</dd>
+<dd><b>xor</b>: also known as 'symmetrical difference' (features from either ainput or binput but not those from ainput overlaid by binput (only for atype=area)</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output vector map</dd>
+
+<dt><b>olayer</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>Output layer for new category, ainput and binput</dd>
+<dd>If 0 or not given, the category is not written</dd>
+<dd>Default: <em>1,0,0</em></dd>
+
+<dt><b>snap</b>=<em>float</em></dt>
+<dd>Snapping threshold for boundaries</dd>
+<dd>Disable snapping with snap &lt;= 0</dd>
+<dd>Default: <em>1e-8</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -398,7 +398,14 @@ Speedup for large, complex input areas sponsored by <a href="https://www.mundial
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.overlay">v.overlay source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.overlay">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.overlay">v.overlay source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.overlay">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -409,9 +416,9 @@ Speedup for large, complex input areas sponsored by <a href="https://www.mundial
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

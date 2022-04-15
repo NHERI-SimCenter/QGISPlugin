@@ -40,11 +40,10 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 #include "PopUpWidget.h"
 #include "SimCenterMapcanvasWidget.h"
 #include "GISSelectable.h"
-#include "CSVReaderWriter.h"
 
 // Test to delete
-#include "RectangleGrid.h"
-#include "NodeHandle.h"
+//#include "RectangleGrid.h"
+//#include "NodeHandle.h"
 // Test to delete end
 
 #include <qgsuserprofilemanager.h>
@@ -58,7 +57,6 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 #include <qgsmapcanvas.h>
 #include <qgsrubberband.h>
 #include <qgsvertexmarker.h>
-#include <qgsmaptoolregularpolygoncenterpoint.h>
 #include <qgslayertreemapcanvasbridge.h>
 #include <qgsmaptooladdfeature.h>
 #include <qgsmapcanvas.h>
@@ -69,6 +67,7 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 #include <qgsfillsymbol.h>
 #include <qgslinesymbol.h>
 #include <qgscolorramp.h>
+#include <qgscolorrampimpl.h>
 #include <qgsexpressioncontextutils.h>
 #include <qgsrulebasedrenderer.h>
 #include <qgsclassificationmethod.h>
@@ -312,7 +311,7 @@ SimCenterMapcanvasWidget* QGISVisualizationWidget::testNewMapCanvas()
 
     mapCanvasWidget->setWindowFlag(Qt::Window);
 
-    auto mapCanvas = mapCanvasWidget->mapCanvas();
+//    auto mapCanvas = mapCanvasWidget->mapCanvas();
 
     mapCanvasWidget->show();
 
@@ -1041,7 +1040,7 @@ void QGISVisualizationWidget::createSimpleRenderer(QgsSymbol* symbol, QgsVectorL
 }
 
 
-void QGISVisualizationWidget::createSymbolRenderer(QgsSimpleMarkerSymbolLayerBase::Shape symbolShape, QColor color, double size, QgsVectorLayer * layer)
+void QGISVisualizationWidget::createSymbolRenderer(Qgis::MarkerShape symbolShape, QColor color, double size, QgsVectorLayer * layer)
 {
     QgsSimpleMarkerSymbolLayer *mSimpleMarkerLayer = new QgsSimpleMarkerSymbolLayer();
     mSimpleMarkerLayer->setColor(color);

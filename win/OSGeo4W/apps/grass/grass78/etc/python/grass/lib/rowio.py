@@ -1,7 +1,7 @@
 '''Wrapper for rowio.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_rowio.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/rowio.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h -o OBJ.x86_64-w64-mingw32/rowio.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_rowio.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/rowio.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h -o OBJ.x86_64-w64-mingw32/rowio.py
 
 Do not modify this file.
 '''
@@ -27,7 +27,7 @@ _libs["grass_rowio.7.8"] = load_library("grass_rowio.7.8")
 
 # No modules
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rowio.h: 14
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rowio.h: 14
 class struct_ROWIO_RCB(Structure):
     pass
 
@@ -44,7 +44,7 @@ struct_ROWIO_RCB._fields_ = [
     ('dirty', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rowio.h: 21
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rowio.h: 21
 class struct_anon_1(Structure):
     pass
 
@@ -69,9 +69,9 @@ struct_anon_1._fields_ = [
     ('rcb', POINTER(struct_ROWIO_RCB)),
 ]
 
-ROWIO = struct_anon_1 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rowio.h: 21
+ROWIO = struct_anon_1 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rowio.h: 21
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 4
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 4
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rowio_fileno'):
         continue
@@ -80,7 +80,7 @@ for _lib in six.itervalues(_libs):
     Rowio_fileno.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rowio_forget'):
         continue
@@ -89,7 +89,7 @@ for _lib in six.itervalues(_libs):
     Rowio_forget.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 6
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 6
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rowio_get'):
         continue
@@ -99,7 +99,7 @@ for _lib in six.itervalues(_libs):
     Rowio_get.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 7
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 7
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rowio_flush'):
         continue
@@ -108,7 +108,7 @@ for _lib in six.itervalues(_libs):
     Rowio_flush.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 8
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 8
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rowio_put'):
         continue
@@ -117,7 +117,7 @@ for _lib in six.itervalues(_libs):
     Rowio_put.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 9
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 9
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rowio_release'):
         continue
@@ -126,7 +126,7 @@ for _lib in six.itervalues(_libs):
     Rowio_release.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 10
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/rowio.h: 10
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Rowio_setup'):
         continue
@@ -135,7 +135,7 @@ for _lib in six.itervalues(_libs):
     Rowio_setup.restype = c_int
     break
 
-ROWIO_RCB = struct_ROWIO_RCB # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\rowio.h: 14
+ROWIO_RCB = struct_ROWIO_RCB # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\rowio.h: 14
 
 # No inserted files
 

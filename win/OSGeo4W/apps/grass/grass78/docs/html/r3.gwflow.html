@@ -1,109 +1,109 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r3.gwflow - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r3.gwflow</b></em>  - Numerical calculation program for transient, confined groundwater flow in three dimensions.
-<h2>KEYWORDS</h2>
-<a href="raster3d.html">raster3d</a>, <a href="topic_groundwater_flow.html">groundwater flow</a>, <a href="keywords.html#voxel">voxel</a>, <a href="keywords.html#hydrology">hydrology</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r3.gwflow</b><br></div>
-<b>r3.gwflow --help</b><br>
-<div id="synopsis"><b>r3.gwflow</b> [-<b>mf</b>] <b>phead</b>=<em>name</em> <b>status</b>=<em>name</em> <b>hc_x</b>=<em>name</em> <b>hc_y</b>=<em>name</em> <b>hc_z</b>=<em>name</em>  [<b>sink</b>=<em>name</em>]  <b>yield</b>=<em>name</em>  [<b>recharge</b>=<em>name</em>]  <b>output</b>=<em>name</em>  [<b>velocity_x</b>=<em>name</em>]   [<b>velocity_y</b>=<em>name</em>]   [<b>velocity_z</b>=<em>name</em>]   [<b>budget</b>=<em>name</em>]  <b>dtime</b>=<em>float</em>  [<b>maxit</b>=<em>integer</em>]   [<b>error</b>=<em>float</em>]   [<b>solver</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-m</b></dt>
-<dd>Use 3D raster mask (if exists)</dd>
-
-<dt><b>-f</b></dt>
-<dd>Use a full filled quadratic linear equation system, default is a sparse linear equation system.</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>phead</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Input 3D raster map with initial piezometric heads in [m]</dd>
-
-<dt><b>status</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Input 3D raster map providing the status for each cell, = 0 - inactive, 1 - active, 2 - dirichlet</dd>
-
-<dt><b>hc_x</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Input 3D raster map with the x-part of the hydraulic conductivity tensor in [m/s]</dd>
-
-<dt><b>hc_y</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Input 3D raster map with the y-part of the hydraulic conductivity tensor in [m/s]</dd>
-
-<dt><b>hc_z</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Input 3D raster map with the z-part of the hydraulic conductivity tensor in [m/s]</dd>
-
-<dt><b>sink</b>=<em>name</em></dt>
-<dd>Input 3D raster map with sources and sinks in [m^3/s]</dd>
-
-<dt><b>yield</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Specific yield [1/m] input 3D raster map</dd>
-
-<dt><b>recharge</b>=<em>name</em></dt>
-<dd>Recharge input 3D raster map in m^3/s</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Output 3D raster map storing the piezometric head result of the numerical calculation</dd>
-
-<dt><b>velocity_x</b>=<em>name</em></dt>
-<dd>Output 3D raster map storing the groundwater filter velocity vector part in x direction [m/s]</dd>
-
-<dt><b>velocity_y</b>=<em>name</em></dt>
-<dd>Output 3D raster map storing the groundwater filter velocity vector part in y direction [m/s]</dd>
-
-<dt><b>velocity_z</b>=<em>name</em></dt>
-<dd>Output 3D raster map storing the groundwater filter velocity vector part in z direction [m/s]</dd>
-
-<dt><b>budget</b>=<em>name</em></dt>
-<dd>Output 3D raster map storing the groundwater budget for each cell [m^3/s]</dd>
-
-<dt><b>dtime</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
-<dd>The calculation time in seconds</dd>
-<dd>Default: <em>86400</em></dd>
-
-<dt><b>maxit</b>=<em>integer</em></dt>
-<dd>Maximum number of iteration used to solve the linear equation system</dd>
-<dd>Default: <em>10000</em></dd>
-
-<dt><b>error</b>=<em>float</em></dt>
-<dd>Error break criteria for iterative solver</dd>
-<dd>Default: <em>0.000001</em></dd>
-
-<dt><b>solver</b>=<em>name</em></dt>
-<dd>The type of solver which should solve the symmetric linear equation system</dd>
-<dd>Options: <em>cg, pcg, cholesky</em></dd>
-<dd>Default: <em>cg</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r3.gwflow - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r3.gwflow</b></em>  - Numerical calculation program for transient, confined groundwater flow in three dimensions.
+<h2>KEYWORDS</h2>
+<a href="raster3d.html">raster3d</a>, <a href="topic_groundwater_flow.html">groundwater flow</a>, <a href="keywords.html#voxel">voxel</a>, <a href="keywords.html#hydrology">hydrology</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r3.gwflow</b><br></div>
+<b>r3.gwflow --help</b><br>
+<div id="synopsis"><b>r3.gwflow</b> [-<b>mf</b>] <b>phead</b>=<em>name</em> <b>status</b>=<em>name</em> <b>hc_x</b>=<em>name</em> <b>hc_y</b>=<em>name</em> <b>hc_z</b>=<em>name</em>  [<b>sink</b>=<em>name</em>]  <b>yield</b>=<em>name</em>  [<b>recharge</b>=<em>name</em>]  <b>output</b>=<em>name</em>  [<b>velocity_x</b>=<em>name</em>]   [<b>velocity_y</b>=<em>name</em>]   [<b>velocity_z</b>=<em>name</em>]   [<b>budget</b>=<em>name</em>]  <b>dtime</b>=<em>float</em>  [<b>maxit</b>=<em>integer</em>]   [<b>error</b>=<em>float</em>]   [<b>solver</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-m</b></dt>
+<dd>Use 3D raster mask (if exists)</dd>
+
+<dt><b>-f</b></dt>
+<dd>Use a full filled quadratic linear equation system, default is a sparse linear equation system.</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>phead</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Input 3D raster map with initial piezometric heads in [m]</dd>
+
+<dt><b>status</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Input 3D raster map providing the status for each cell, = 0 - inactive, 1 - active, 2 - dirichlet</dd>
+
+<dt><b>hc_x</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Input 3D raster map with the x-part of the hydraulic conductivity tensor in [m/s]</dd>
+
+<dt><b>hc_y</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Input 3D raster map with the y-part of the hydraulic conductivity tensor in [m/s]</dd>
+
+<dt><b>hc_z</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Input 3D raster map with the z-part of the hydraulic conductivity tensor in [m/s]</dd>
+
+<dt><b>sink</b>=<em>name</em></dt>
+<dd>Input 3D raster map with sources and sinks in [m^3/s]</dd>
+
+<dt><b>yield</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Specific yield [1/m] input 3D raster map</dd>
+
+<dt><b>recharge</b>=<em>name</em></dt>
+<dd>Recharge input 3D raster map in m^3/s</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Output 3D raster map storing the piezometric head result of the numerical calculation</dd>
+
+<dt><b>velocity_x</b>=<em>name</em></dt>
+<dd>Output 3D raster map storing the groundwater filter velocity vector part in x direction [m/s]</dd>
+
+<dt><b>velocity_y</b>=<em>name</em></dt>
+<dd>Output 3D raster map storing the groundwater filter velocity vector part in y direction [m/s]</dd>
+
+<dt><b>velocity_z</b>=<em>name</em></dt>
+<dd>Output 3D raster map storing the groundwater filter velocity vector part in z direction [m/s]</dd>
+
+<dt><b>budget</b>=<em>name</em></dt>
+<dd>Output 3D raster map storing the groundwater budget for each cell [m^3/s]</dd>
+
+<dt><b>dtime</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
+<dd>The calculation time in seconds</dd>
+<dd>Default: <em>86400</em></dd>
+
+<dt><b>maxit</b>=<em>integer</em></dt>
+<dd>Maximum number of iteration used to solve the linear equation system</dd>
+<dd>Default: <em>10000</em></dd>
+
+<dt><b>error</b>=<em>float</em></dt>
+<dd>Error break criteria for iterative solver</dd>
+<dd>Default: <em>0.000001</em></dd>
+
+<dt><b>solver</b>=<em>name</em></dt>
+<dd>The type of solver which should solve the symmetric linear equation system</dd>
+<dd>Options: <em>cg, pcg, cholesky</em></dd>
+<dd>Default: <em>cg</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -258,7 +258,14 @@ at Technical University Berlin, Germany.
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster3d/r3.gwflow">r3.gwflow source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster3d/r3.gwflow">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster3d/r3.gwflow">r3.gwflow source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster3d/r3.gwflow">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -269,9 +276,9 @@ at Technical University Berlin, Germany.
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

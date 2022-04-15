@@ -248,38 +248,25 @@ void QgsMapToolSelectionHandler::selectPolygonPressEvent( QgsMapMouseEvent *e )
   // Handle immediate right-click on feature to show context menu
   if ( !mSelectionRubberBand && ( e->button() == Qt::RightButton ) )
   {
-    QList<QgsMapToolIdentify::IdentifyResult> results;
-    const QMap< QString, QString > derivedAttributes;
-
-    const QgsPointXY mapPoint = toMapCoordinates( e->pos() );
-    double x = mapPoint.x(), y = mapPoint.y();
-    const double sr = QgsMapTool::searchRadiusMU( mCanvas );
-
-    const QList<QgsMapLayer *> layers = mCanvas->layers();
-    for ( auto layer : layers )
-    {
-      if ( layer->type() == QgsMapLayerType::VectorLayer )
-      {
-        auto vectorLayer = static_cast<QgsVectorLayer *>( layer );
-        if ( vectorLayer->geometryType() == QgsWkbTypes::PolygonGeometry )
-        {
-          QgsFeatureIterator fit = vectorLayer->getFeatures( QgsFeatureRequest()
-                                   .setDestinationCrs( mCanvas->mapSettings().destinationCrs(), mCanvas->mapSettings().transformContext() )
-                                   .setFilterRect( QgsRectangle( x - sr, y - sr, x + sr, y + sr ) )
-                                   .setFlags( QgsFeatureRequest::ExactIntersect ) );
-          QgsFeature f;
-          while ( fit.nextFeature( f ) )
-          {
-            results << QgsMapToolIdentify::IdentifyResult( vectorLayer, f, derivedAttributes );
-          }
-        }
-      }
-    }
+    const QList<QgsMapToolIdentify::IdentifyResult> results = QgsIdentifyMenu::findFeaturesOnCanvas( e, mCanvas, { QgsWkbTypes::PolygonGeometry } );
 
     const QPoint globalPos = mCanvas->mapToGlobal( QPoint( e->pos().x() + 5, e->pos().y() + 5 ) );
     const QList<QgsMapToolIdentify::IdentifyResult> selectedFeatures = mIdentifyMenu->exec( results, globalPos );
     if ( !selectedFeatures.empty() && selectedFeatures[0].mFeature.hasGeometry() )
-      setSelectedGeometry( selectedFeatures[0].mFeature.geometry(), e->modifiers() );
+    {
+      QgsCoordinateTransform transform = mCanvas->mapSettings().layerTransform( selectedFeatures.at( 0 ).mLayer );
+      QgsGeometry geom = selectedFeatures[0].mFeature.geometry();
+      try
+      {
+        geom.transform( transform );
+      }
+      catch ( QgsCsException & )
+      {
+        QgsDebugMsg( QStringLiteral( "Could not transform geometry to map CRS" ) );
+      }
+
+      setSelectedGeometry( geom, e->modifiers() );
+    }
 
     return;
   }

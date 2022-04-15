@@ -1,104 +1,104 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.kernel - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.kernel</b></em>  - Generates a raster density map from vector points map.<BR>
-Density is computed using a moving kernel. Optionally generates a vector density map on a vector network.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_kernel_density.html">kernel density</a>, <a href="keywords.html#point density">point density</a>, <a href="keywords.html#heatmap">heatmap</a>, <a href="keywords.html#hotspot">hotspot</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.kernel</b><br></div>
-<b>v.kernel --help</b><br>
-<div id="synopsis"><b>v.kernel</b> [-<b>oqnm</b>] <b>input</b>=<em>name</em>  [<b>net</b>=<em>name</em>]   [<b>output</b>=<em>name</em>]   [<b>net_output</b>=<em>name</em>]  <b>radius</b>=<em>float</em>  [<b>dsize</b>=<em>float</em>]   [<b>segmax</b>=<em>float</em>]   [<b>distmax</b>=<em>float</em>]   [<b>multiplier</b>=<em>float</em>]   [<b>node</b>=<em>string</em>]   [<b>kernel</b>=<em>string</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-o</b></dt>
-<dd>Try to calculate an optimal radius with given 'radius' taken as maximum (experimental)</dd>
-
-<dt><b>-q</b></dt>
-<dd>Only calculate optimal radius and exit (no map is written)</dd>
-
-<dt><b>-n</b></dt>
-<dd>In network mode, normalize values by sum of density multiplied by length of each segment. Integral over the output map then gives 1.0 * multiplier</dd>
-
-<dt><b>-m</b></dt>
-<dd>In network mode, multiply the result by number of input points</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input vector map with training points</dd>
-
-<dt><b>net</b>=<em>name</em></dt>
-<dd>Name of input network vector map</dd>
-
-<dt><b>output</b>=<em>name</em></dt>
-<dd>Name for output raster map</dd>
-
-<dt><b>net_output</b>=<em>name</em></dt>
-<dd>Name for output vector density map</dd>
-<dd>Outputs vector map if network map is given</dd>
-
-<dt><b>radius</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
-<dd>Kernel radius in map units</dd>
-
-<dt><b>dsize</b>=<em>float</em></dt>
-<dd>Discretization error in map units</dd>
-<dd>Default: <em>0.</em></dd>
-
-<dt><b>segmax</b>=<em>float</em></dt>
-<dd>Maximum length of segment on network</dd>
-<dd>Default: <em>100.</em></dd>
-
-<dt><b>distmax</b>=<em>float</em></dt>
-<dd>Maximum distance from point to network</dd>
-<dd>Default: <em>100.</em></dd>
-
-<dt><b>multiplier</b>=<em>float</em></dt>
-<dd>Multiply the density result by this number</dd>
-<dd>Default: <em>1.</em></dd>
-
-<dt><b>node</b>=<em>string</em></dt>
-<dd>Node method</dd>
-<dd>Options: <em>none, split</em></dd>
-<dd>Default: <em>none</em></dd>
-<dd><b>none</b>: No method applied at nodes with more than 2 arcs</dd>
-<dd><b>split</b>: Equal split (Okabe 2009) applied at nodes</dd>
-
-<dt><b>kernel</b>=<em>string</em></dt>
-<dd>Kernel function</dd>
-<dd>Options: <em>uniform, triangular, epanechnikov, quartic, triweight, gaussian, cosine</em></dd>
-<dd>Default: <em>gaussian</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.kernel - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.kernel</b></em>  - Generates a raster density map from vector points map.<BR>
+Density is computed using a moving kernel. Optionally generates a vector density map on a vector network.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_kernel_density.html">kernel density</a>, <a href="keywords.html#point density">point density</a>, <a href="keywords.html#heatmap">heatmap</a>, <a href="keywords.html#hotspot">hotspot</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.kernel</b><br></div>
+<b>v.kernel --help</b><br>
+<div id="synopsis"><b>v.kernel</b> [-<b>oqnm</b>] <b>input</b>=<em>name</em>  [<b>net</b>=<em>name</em>]   [<b>output</b>=<em>name</em>]   [<b>net_output</b>=<em>name</em>]  <b>radius</b>=<em>float</em>  [<b>dsize</b>=<em>float</em>]   [<b>segmax</b>=<em>float</em>]   [<b>distmax</b>=<em>float</em>]   [<b>multiplier</b>=<em>float</em>]   [<b>node</b>=<em>string</em>]   [<b>kernel</b>=<em>string</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-o</b></dt>
+<dd>Try to calculate an optimal radius with given 'radius' taken as maximum (experimental)</dd>
+
+<dt><b>-q</b></dt>
+<dd>Only calculate optimal radius and exit (no map is written)</dd>
+
+<dt><b>-n</b></dt>
+<dd>In network mode, normalize values by sum of density multiplied by length of each segment. Integral over the output map then gives 1.0 * multiplier</dd>
+
+<dt><b>-m</b></dt>
+<dd>In network mode, multiply the result by number of input points</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input vector map with training points</dd>
+
+<dt><b>net</b>=<em>name</em></dt>
+<dd>Name of input network vector map</dd>
+
+<dt><b>output</b>=<em>name</em></dt>
+<dd>Name for output raster map</dd>
+
+<dt><b>net_output</b>=<em>name</em></dt>
+<dd>Name for output vector density map</dd>
+<dd>Outputs vector map if network map is given</dd>
+
+<dt><b>radius</b>=<em>float</em>&nbsp;<b>[required]</b></dt>
+<dd>Kernel radius in map units</dd>
+
+<dt><b>dsize</b>=<em>float</em></dt>
+<dd>Discretization error in map units</dd>
+<dd>Default: <em>0.</em></dd>
+
+<dt><b>segmax</b>=<em>float</em></dt>
+<dd>Maximum length of segment on network</dd>
+<dd>Default: <em>100.</em></dd>
+
+<dt><b>distmax</b>=<em>float</em></dt>
+<dd>Maximum distance from point to network</dd>
+<dd>Default: <em>100.</em></dd>
+
+<dt><b>multiplier</b>=<em>float</em></dt>
+<dd>Multiply the density result by this number</dd>
+<dd>Default: <em>1.</em></dd>
+
+<dt><b>node</b>=<em>string</em></dt>
+<dd>Node method</dd>
+<dd>Options: <em>none, split</em></dd>
+<dd>Default: <em>none</em></dd>
+<dd><b>none</b>: No method applied at nodes with more than 2 arcs</dd>
+<dd><b>split</b>: Equal split (Okabe 2009) applied at nodes</dd>
+
+<dt><b>kernel</b>=<em>string</em></dt>
+<dd>Kernel function</dd>
+<dd>Options: <em>uniform, triangular, epanechnikov, quartic, triweight, gaussian, cosine</em></dd>
+<dd>Default: <em>gaussian</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -185,7 +185,14 @@ Radim Blazek (additional kernel density functions and network part)
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.kernel">v.kernel source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.kernel">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.kernel">v.kernel source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.kernel">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -196,9 +203,9 @@ Radim Blazek (additional kernel density functions and network part)
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

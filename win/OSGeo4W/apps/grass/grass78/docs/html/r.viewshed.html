@@ -1,93 +1,93 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.viewshed - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.viewshed</b></em>  - Computes the viewshed of a point on an elevation raster map.<BR>
-Default format: NULL (invisible), vertical angle wrt viewpoint (visible).
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_viewshed.html">viewshed</a>, <a href="keywords.html#line of sight">line of sight</a>, <a href="keywords.html#LOS">LOS</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.viewshed</b><br></div>
-<b>r.viewshed --help</b><br>
-<div id="synopsis"><b>r.viewshed</b> [-<b>crbe</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em> <b>coordinates</b>=<em>east,north</em>  [<b>observer_elevation</b>=<em>value</em>]   [<b>target_elevation</b>=<em>value</em>]   [<b>max_distance</b>=<em>value</em>]   [<b>refraction_coeff</b>=<em>float</em>]   [<b>memory</b>=<em>value</em>]   [<b>directory</b>=<em>string</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-c</b></dt>
-<dd>Consider the curvature of the earth (current ellipsoid)</dd>
-
-<dt><b>-r</b></dt>
-<dd>Consider the effect of atmospheric refraction</dd>
-
-<dt><b>-b</b></dt>
-<dd>Output format is invisible = 0, visible = 1</dd>
-
-<dt><b>-e</b></dt>
-<dd>Output format is invisible = NULL, else current elev - viewpoint_elev</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input elevation raster map</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output raster map</dd>
-
-<dt><b>coordinates</b>=<em>east,north</em>&nbsp;<b>[required]</b></dt>
-<dd>Coordinates of viewing position</dd>
-
-<dt><b>observer_elevation</b>=<em>value</em></dt>
-<dd>Viewing elevation above the ground</dd>
-<dd>Default: <em>1.75</em></dd>
-
-<dt><b>target_elevation</b>=<em>value</em></dt>
-<dd>Offset for target elevation above the ground</dd>
-<dd>Default: <em>0.0</em></dd>
-
-<dt><b>max_distance</b>=<em>value</em></dt>
-<dd>Maximum visibility radius. By default infinity (-1)</dd>
-<dd>Default: <em>-1</em></dd>
-
-<dt><b>refraction_coeff</b>=<em>float</em></dt>
-<dd>Refraction coefficient</dd>
-<dd>Options: <em>0.0-1.0</em></dd>
-<dd>Default: <em>0.14286</em></dd>
-
-<dt><b>memory</b>=<em>value</em></dt>
-<dd>Amount of memory to use in MB</dd>
-<dd>Default: <em>500</em></dd>
-
-<dt><b>directory</b>=<em>string</em></dt>
-<dd>Directory to hold temporary files (they can be large)</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.viewshed - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.viewshed</b></em>  - Computes the viewshed of a point on an elevation raster map.<BR>
+Default format: NULL (invisible), vertical angle wrt viewpoint (visible).
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_viewshed.html">viewshed</a>, <a href="keywords.html#line of sight">line of sight</a>, <a href="keywords.html#LOS">LOS</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.viewshed</b><br></div>
+<b>r.viewshed --help</b><br>
+<div id="synopsis"><b>r.viewshed</b> [-<b>crbe</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em> <b>coordinates</b>=<em>east,north</em>  [<b>observer_elevation</b>=<em>value</em>]   [<b>target_elevation</b>=<em>value</em>]   [<b>max_distance</b>=<em>value</em>]   [<b>refraction_coeff</b>=<em>float</em>]   [<b>memory</b>=<em>value</em>]   [<b>directory</b>=<em>string</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-c</b></dt>
+<dd>Consider the curvature of the earth (current ellipsoid)</dd>
+
+<dt><b>-r</b></dt>
+<dd>Consider the effect of atmospheric refraction</dd>
+
+<dt><b>-b</b></dt>
+<dd>Output format is invisible = 0, visible = 1</dd>
+
+<dt><b>-e</b></dt>
+<dd>Output format is invisible = NULL, else current elev - viewpoint_elev</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input elevation raster map</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output raster map</dd>
+
+<dt><b>coordinates</b>=<em>east,north</em>&nbsp;<b>[required]</b></dt>
+<dd>Coordinates of viewing position</dd>
+
+<dt><b>observer_elevation</b>=<em>value</em></dt>
+<dd>Viewing elevation above the ground</dd>
+<dd>Default: <em>1.75</em></dd>
+
+<dt><b>target_elevation</b>=<em>value</em></dt>
+<dd>Offset for target elevation above the ground</dd>
+<dd>Default: <em>0.0</em></dd>
+
+<dt><b>max_distance</b>=<em>value</em></dt>
+<dd>Maximum visibility radius. By default infinity (-1)</dd>
+<dd>Default: <em>-1</em></dd>
+
+<dt><b>refraction_coeff</b>=<em>float</em></dt>
+<dd>Refraction coefficient</dd>
+<dd>Options: <em>0.0-1.0</em></dd>
+<dd>Default: <em>0.14286</em></dd>
+
+<dt><b>memory</b>=<em>value</em></dt>
+<dd>Amount of memory to use in MB</dd>
+<dd>Default: <em>500</em></dd>
+
+<dt><b>directory</b>=<em>string</em></dt>
+<dd>Directory to hold temporary files (they can be large)</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -348,7 +348,14 @@ and Combinatorics (ALENEX/ANALCO 2007)</em>.</li>
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.viewshed">r.viewshed source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.viewshed">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.viewshed">r.viewshed source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.viewshed">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -359,9 +366,9 @@ and Combinatorics (ALENEX/ANALCO 2007)</em>.</li>
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

@@ -1,127 +1,127 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.sim.sediment - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.sim.sediment</b></em>  - Sediment transport and erosion/deposition simulation using path sampling method (SIMWE).
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_hydrology.html">hydrology</a>, <a href="keywords.html#soil">soil</a>, <a href="keywords.html#sediment flow">sediment flow</a>, <a href="keywords.html#erosion">erosion</a>, <a href="keywords.html#deposition">deposition</a>, <a href="keywords.html#model">model</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.sim.sediment</b><br></div>
-<b>r.sim.sediment --help</b><br>
-<div id="synopsis"><b>r.sim.sediment</b> [-<b>s</b>] <b>elevation</b>=<em>name</em> <b>water_depth</b>=<em>name</em> <b>dx</b>=<em>name</em> <b>dy</b>=<em>name</em> <b>detachment_coeff</b>=<em>name</em> <b>transport_coeff</b>=<em>name</em> <b>shear_stress</b>=<em>name</em>  [<b>man</b>=<em>name</em>]   [<b>man_value</b>=<em>float</em>]   [<b>observation</b>=<em>name</em>]   [<b>transport_capacity</b>=<em>name</em>]   [<b>tlimit_erosion_deposition</b>=<em>name</em>]   [<b>sediment_concentration</b>=<em>name</em>]   [<b>sediment_flux</b>=<em>name</em>]   [<b>erosion_deposition</b>=<em>name</em>]   [<b>logfile</b>=<em>name</em>]   [<b>walkers_output</b>=<em>name</em>]   [<b>nwalkers</b>=<em>integer</em>]   [<b>niterations</b>=<em>integer</em>]   [<b>output_step</b>=<em>integer</em>]   [<b>diffusion_coeff</b>=<em>float</em>]   [<b>random_seed</b>=<em>integer</em>]   [<b>nprocs</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-s</b></dt>
-<dd>Generate random seed</dd>
-<dd>Automatically generates random seed for random number generator (use when you don't want to provide the seed option)</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>elevation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input elevation raster map</dd>
-
-<dt><b>water_depth</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of water depth raster map [m]</dd>
-
-<dt><b>dx</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of x-derivatives raster map [m/m]</dd>
-
-<dt><b>dy</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of y-derivatives raster map [m/m]</dd>
-
-<dt><b>detachment_coeff</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of detachment capacity coefficient raster map [s/m]</dd>
-
-<dt><b>transport_coeff</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of transport capacity coefficient raster map [s]</dd>
-
-<dt><b>shear_stress</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of critical shear stress raster map [Pa]</dd>
-
-<dt><b>man</b>=<em>name</em></dt>
-<dd>Name of Manning's n raster map</dd>
-
-<dt><b>man_value</b>=<em>float</em></dt>
-<dd>Manning's n unique value</dd>
-<dd>Default: <em>0.1</em></dd>
-
-<dt><b>observation</b>=<em>name</em></dt>
-<dd>Name of sampling locations vector points map</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>transport_capacity</b>=<em>name</em></dt>
-<dd>Name for output transport capacity raster map [kg/ms]</dd>
-
-<dt><b>tlimit_erosion_deposition</b>=<em>name</em></dt>
-<dd>Name for output transport limited erosion-deposition raster map [kg/m2s]</dd>
-
-<dt><b>sediment_concentration</b>=<em>name</em></dt>
-<dd>Name for output sediment concentration raster map [particle/m3]</dd>
-
-<dt><b>sediment_flux</b>=<em>name</em></dt>
-<dd>Name for output sediment flux raster map [kg/ms]</dd>
-
-<dt><b>erosion_deposition</b>=<em>name</em></dt>
-<dd>Name for output erosion-deposition raster map [kg/m2s]</dd>
-
-<dt><b>logfile</b>=<em>name</em></dt>
-<dd>Name for sampling points output text file. For each observation vector point the time series of sediment transport is stored.</dd>
-
-<dt><b>walkers_output</b>=<em>name</em></dt>
-<dd>Base name of the output walkers vector points map</dd>
-
-<dt><b>nwalkers</b>=<em>integer</em></dt>
-<dd>Number of walkers</dd>
-
-<dt><b>niterations</b>=<em>integer</em></dt>
-<dd>Time used for iterations [minutes]</dd>
-<dd>Default: <em>10</em></dd>
-
-<dt><b>output_step</b>=<em>integer</em></dt>
-<dd>Time interval for creating output maps [minutes]</dd>
-<dd>Default: <em>2</em></dd>
-
-<dt><b>diffusion_coeff</b>=<em>float</em></dt>
-<dd>Water diffusion constant</dd>
-<dd>Default: <em>0.8</em></dd>
-
-<dt><b>random_seed</b>=<em>integer</em></dt>
-<dd>Seed for random number generator</dd>
-<dd>The same seed can be used to obtain same results or random seed can be generated by other means.</dd>
-
-<dt><b>nprocs</b>=<em>integer</em></dt>
-<dd>Number of threads which will be used for parallel compute</dd>
-<dd>Default: <em>1</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.sim.sediment - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.sim.sediment</b></em>  - Sediment transport and erosion/deposition simulation using path sampling method (SIMWE).
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_hydrology.html">hydrology</a>, <a href="keywords.html#soil">soil</a>, <a href="keywords.html#sediment flow">sediment flow</a>, <a href="keywords.html#erosion">erosion</a>, <a href="keywords.html#deposition">deposition</a>, <a href="keywords.html#model">model</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.sim.sediment</b><br></div>
+<b>r.sim.sediment --help</b><br>
+<div id="synopsis"><b>r.sim.sediment</b> [-<b>s</b>] <b>elevation</b>=<em>name</em> <b>water_depth</b>=<em>name</em> <b>dx</b>=<em>name</em> <b>dy</b>=<em>name</em> <b>detachment_coeff</b>=<em>name</em> <b>transport_coeff</b>=<em>name</em> <b>shear_stress</b>=<em>name</em>  [<b>man</b>=<em>name</em>]   [<b>man_value</b>=<em>float</em>]   [<b>observation</b>=<em>name</em>]   [<b>transport_capacity</b>=<em>name</em>]   [<b>tlimit_erosion_deposition</b>=<em>name</em>]   [<b>sediment_concentration</b>=<em>name</em>]   [<b>sediment_flux</b>=<em>name</em>]   [<b>erosion_deposition</b>=<em>name</em>]   [<b>logfile</b>=<em>name</em>]   [<b>walkers_output</b>=<em>name</em>]   [<b>nwalkers</b>=<em>integer</em>]   [<b>niterations</b>=<em>integer</em>]   [<b>output_step</b>=<em>integer</em>]   [<b>diffusion_coeff</b>=<em>float</em>]   [<b>random_seed</b>=<em>integer</em>]   [<b>nprocs</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-s</b></dt>
+<dd>Generate random seed</dd>
+<dd>Automatically generates random seed for random number generator (use when you don't want to provide the seed option)</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>elevation</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input elevation raster map</dd>
+
+<dt><b>water_depth</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of water depth raster map [m]</dd>
+
+<dt><b>dx</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of x-derivatives raster map [m/m]</dd>
+
+<dt><b>dy</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of y-derivatives raster map [m/m]</dd>
+
+<dt><b>detachment_coeff</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of detachment capacity coefficient raster map [s/m]</dd>
+
+<dt><b>transport_coeff</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of transport capacity coefficient raster map [s]</dd>
+
+<dt><b>shear_stress</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of critical shear stress raster map [Pa]</dd>
+
+<dt><b>man</b>=<em>name</em></dt>
+<dd>Name of Manning's n raster map</dd>
+
+<dt><b>man_value</b>=<em>float</em></dt>
+<dd>Manning's n unique value</dd>
+<dd>Default: <em>0.1</em></dd>
+
+<dt><b>observation</b>=<em>name</em></dt>
+<dd>Name of sampling locations vector points map</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>transport_capacity</b>=<em>name</em></dt>
+<dd>Name for output transport capacity raster map [kg/ms]</dd>
+
+<dt><b>tlimit_erosion_deposition</b>=<em>name</em></dt>
+<dd>Name for output transport limited erosion-deposition raster map [kg/m2s]</dd>
+
+<dt><b>sediment_concentration</b>=<em>name</em></dt>
+<dd>Name for output sediment concentration raster map [particle/m3]</dd>
+
+<dt><b>sediment_flux</b>=<em>name</em></dt>
+<dd>Name for output sediment flux raster map [kg/ms]</dd>
+
+<dt><b>erosion_deposition</b>=<em>name</em></dt>
+<dd>Name for output erosion-deposition raster map [kg/m2s]</dd>
+
+<dt><b>logfile</b>=<em>name</em></dt>
+<dd>Name for sampling points output text file. For each observation vector point the time series of sediment transport is stored.</dd>
+
+<dt><b>walkers_output</b>=<em>name</em></dt>
+<dd>Base name of the output walkers vector points map</dd>
+
+<dt><b>nwalkers</b>=<em>integer</em></dt>
+<dd>Number of walkers</dd>
+
+<dt><b>niterations</b>=<em>integer</em></dt>
+<dd>Time used for iterations [minutes]</dd>
+<dd>Default: <em>10</em></dd>
+
+<dt><b>output_step</b>=<em>integer</em></dt>
+<dd>Time interval for creating output maps [minutes]</dd>
+<dd>Default: <em>2</em></dd>
+
+<dt><b>diffusion_coeff</b>=<em>float</em></dt>
+<dd>Water diffusion constant</dd>
+<dd>Default: <em>0.8</em></dd>
+
+<dt><b>random_seed</b>=<em>integer</em></dt>
+<dd>Seed for random number generator</dd>
+<dd>The same seed can be used to obtain same results or random seed can be generated by other means.</dd>
+
+<dt><b>nprocs</b>=<em>integer</em></dt>
+<dd>Number of threads which will be used for parallel compute</dd>
+<dd>Default: <em>1</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -236,7 +236,14 @@ The International Series in Engineering and Computer Science: Volume 773. Spring
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/raster/r.sim/r.sim.sediment">r.sim.sediment source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/raster/r.sim/r.sim.sediment">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/raster/r.sim/r.sim.sediment">r.sim.sediment source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/raster/r.sim/r.sim.sediment">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -247,9 +254,9 @@ The International Series in Engineering and Computer Science: Volume 773. Spring
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

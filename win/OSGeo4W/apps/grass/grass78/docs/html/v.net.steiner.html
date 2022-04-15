@@ -1,85 +1,85 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>v.net.steiner - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>v.net.steiner</b></em>  - Creates Steiner tree for the network and given terminals.<BR>
-Note that 'Minimum Steiner Tree' problem is NP-hard and heuristic algorithm is used in this module so the result may be sub optimal.
-<h2>KEYWORDS</h2>
-<a href="vector.html">vector</a>, <a href="topic_network.html">network</a>, <a href="keywords.html#steiner tree">steiner tree</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>v.net.steiner</b><br></div>
-<b>v.net.steiner --help</b><br>
-<div id="synopsis"><b>v.net.steiner</b> [-<b>g</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>arc_type</b>=<em>string</em>[,<i>string</i>,...]]   [<b>arc_layer</b>=<em>string</em>]   [<b>node_layer</b>=<em>string</em>]   [<b>acolumn</b>=<em>string</em>]  <b>terminal_cats</b>=<em>range</em>  [<b>npoints</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-g</b></dt>
-<dd>Use geodesic calculation for longitude-latitude locations</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input vector map</dd>
-<dd>Or data source for direct OGR access</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output vector map</dd>
-
-<dt><b>arc_type</b>=<em>string[,<i>string</i>,...]</em></dt>
-<dd>Arc type</dd>
-<dd>Input feature type</dd>
-<dd>Options: <em>line, boundary</em></dd>
-<dd>Default: <em>line,boundary</em></dd>
-
-<dt><b>arc_layer</b>=<em>string</em></dt>
-<dd>Arc layer</dd>
-<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>1</em></dd>
-
-<dt><b>node_layer</b>=<em>string</em></dt>
-<dd>Node layer (used for terminals)</dd>
-<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
-<dd>Default: <em>2</em></dd>
-
-<dt><b>acolumn</b>=<em>string</em></dt>
-<dd>Arcs' cost column (for both directions)</dd>
-
-<dt><b>terminal_cats</b>=<em>range</em>&nbsp;<b>[required]</b></dt>
-<dd>Category values</dd>
-<dd>Categories of points on terminals (layer is specified by nlayer)</dd>
-
-<dt><b>npoints</b>=<em>integer</em></dt>
-<dd>Number of Steiner points (-1 for all possible)</dd>
-<dd>Default: <em>-1</em></dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>v.net.steiner - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>v.net.steiner</b></em>  - Creates Steiner tree for the network and given terminals.<BR>
+Note that 'Minimum Steiner Tree' problem is NP-hard and heuristic algorithm is used in this module so the result may be sub optimal.
+<h2>KEYWORDS</h2>
+<a href="vector.html">vector</a>, <a href="topic_network.html">network</a>, <a href="keywords.html#steiner tree">steiner tree</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>v.net.steiner</b><br></div>
+<b>v.net.steiner --help</b><br>
+<div id="synopsis"><b>v.net.steiner</b> [-<b>g</b>] <b>input</b>=<em>name</em> <b>output</b>=<em>name</em>  [<b>arc_type</b>=<em>string</em>[,<i>string</i>,...]]   [<b>arc_layer</b>=<em>string</em>]   [<b>node_layer</b>=<em>string</em>]   [<b>acolumn</b>=<em>string</em>]  <b>terminal_cats</b>=<em>range</em>  [<b>npoints</b>=<em>integer</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-g</b></dt>
+<dd>Use geodesic calculation for longitude-latitude locations</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input vector map</dd>
+<dd>Or data source for direct OGR access</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output vector map</dd>
+
+<dt><b>arc_type</b>=<em>string[,<i>string</i>,...]</em></dt>
+<dd>Arc type</dd>
+<dd>Input feature type</dd>
+<dd>Options: <em>line, boundary</em></dd>
+<dd>Default: <em>line,boundary</em></dd>
+
+<dt><b>arc_layer</b>=<em>string</em></dt>
+<dd>Arc layer</dd>
+<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>1</em></dd>
+
+<dt><b>node_layer</b>=<em>string</em></dt>
+<dd>Node layer (used for terminals)</dd>
+<dd>Vector features can have category values in different layers. This number determines which layer to use. When used with direct OGR access this is the layer name.</dd>
+<dd>Default: <em>2</em></dd>
+
+<dt><b>acolumn</b>=<em>string</em></dt>
+<dd>Arcs' cost column (for both directions)</dd>
+
+<dt><b>terminal_cats</b>=<em>range</em>&nbsp;<b>[required]</b></dt>
+<dd>Category values</dd>
+<dd>Categories of points on terminals (layer is specified by nlayer)</dd>
+
+<dt><b>npoints</b>=<em>integer</em></dt>
+<dd>Number of Steiner points (-1 for all possible)</dd>
+<dd>Default: <em>-1</em></dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -226,7 +226,14 @@ Documentation: Markus Neteler, Markus Metz
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/vector/v.net.steiner">v.net.steiner source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/vector/v.net.steiner">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/vector/v.net.steiner">v.net.steiner source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/vector/v.net.steiner">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -237,9 +244,9 @@ Documentation: Markus Neteler, Markus Metz
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

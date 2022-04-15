@@ -1,6 +1,6 @@
 // This module defines various things common to all of the Scintilla Qt port.
 //
-// Copyright (c) 2020 Riverbank Computing Limited <info@riverbankcomputing.com>
+// Copyright (c) 2022 Riverbank Computing Limited <info@riverbankcomputing.com>
 // 
 // This file is part of QScintilla.
 // 
@@ -24,8 +24,14 @@
 #include <qglobal.h>
 
 
-#define QSCINTILLA_VERSION      0x020b05
-#define QSCINTILLA_VERSION_STR  "2.11.5"
+#define QSCINTILLA_VERSION      0x020d02
+#define QSCINTILLA_VERSION_STR  "2.13.2"
+
+
+// We only support Qt v5.11 and later.
+#if QT_VERSION < 0x050b00
+#error "Qt v5.11.0 or later is required"
+#endif
 
 
 // Define QSCINTILLA_MAKE_DLL to create a QScintilla shared library, or

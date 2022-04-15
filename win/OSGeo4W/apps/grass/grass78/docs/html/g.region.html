@@ -1,161 +1,161 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>g.region - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>g.region</b></em>  - Manages the boundary definitions for the geographic region.
-<h2>KEYWORDS</h2>
-<a href="general.html">general</a>, <a href="topic_settings.html">settings</a>, <a href="keywords.html#computational region">computational region</a>, <a href="keywords.html#extent">extent</a>, <a href="keywords.html#resolution">resolution</a>, <a href="keywords.html#level1">level1</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>g.region</b><br></div>
-<b>g.region --help</b><br>
-<div id="synopsis"><b>g.region</b> [-<b>dsplectwmn3bgfau</b>]  [<b>region</b>=<em>name</em>]   [<b>raster</b>=<em>name</em>[,<i>name</i>,...]]   [<b>raster_3d</b>=<em>name</em>]   [<b>vector</b>=<em>name</em>[,<i>name</i>,...]]   [<b>n</b>=<em>value</em>]   [<b>s</b>=<em>value</em>]   [<b>e</b>=<em>value</em>]   [<b>w</b>=<em>value</em>]   [<b>t</b>=<em>value</em>]   [<b>b</b>=<em>value</em>]   [<b>rows</b>=<em>value</em>]   [<b>cols</b>=<em>value</em>]   [<b>res</b>=<em>value</em>]   [<b>res3</b>=<em>value</em>]   [<b>nsres</b>=<em>value</em>]   [<b>ewres</b>=<em>value</em>]   [<b>tbres</b>=<em>value</em>]   [<b>zoom</b>=<em>name</em>]   [<b>align</b>=<em>name</em>]   [<b>grow</b>=<em>value</em>]   [<b>save</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-d</b></dt>
-<dd>Set from default region</dd>
-
-<dt><b>-s</b></dt>
-<dd>Save as default region</dd>
-<dd>Only possible from the PERMANENT mapset</dd>
-
-<dt><b>-p</b></dt>
-<dd>Print the current region</dd>
-
-<dt><b>-l</b></dt>
-<dd>Print the current region in lat/long using the current ellipsoid/datum</dd>
-
-<dt><b>-e</b></dt>
-<dd>Print the current region extent</dd>
-
-<dt><b>-c</b></dt>
-<dd>Print the current region map center coordinates</dd>
-
-<dt><b>-t</b></dt>
-<dd>Print the current region in GMT style</dd>
-
-<dt><b>-w</b></dt>
-<dd>Print the current region in WMS style</dd>
-
-<dt><b>-m</b></dt>
-<dd>Print region resolution in meters (geodesic)</dd>
-
-<dt><b>-n</b></dt>
-<dd>Print the convergence angle (degrees CCW)</dd>
-<dd>The difference between the projection's grid north and true north, measured at the center coordinates of the current region.</dd>
-
-<dt><b>-3</b></dt>
-<dd>Print also 3D settings</dd>
-
-<dt><b>-b</b></dt>
-<dd>Print the maximum bounding box in lat/long on WGS84</dd>
-
-<dt><b>-g</b></dt>
-<dd>Print in shell script style</dd>
-
-<dt><b>-f</b></dt>
-<dd>Print in shell script style, but in one line (flat)</dd>
-
-<dt><b>-a</b></dt>
-<dd>Align region to resolution (default = align to bounds, works only for 2D resolution)</dd>
-
-<dt><b>-u</b></dt>
-<dd>Do not update the current region</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>region</b>=<em>name</em></dt>
-<dd>Set current region from named region</dd>
-
-<dt><b>raster</b>=<em>name[,<i>name</i>,...]</em></dt>
-<dd>Set region to match raster map(s)</dd>
-
-<dt><b>raster_3d</b>=<em>name</em></dt>
-<dd>Set region to match 3D raster map(s) (both 2D and 3D values)</dd>
-
-<dt><b>vector</b>=<em>name[,<i>name</i>,...]</em></dt>
-<dd>Set region to match vector map(s)</dd>
-
-<dt><b>n</b>=<em>value</em></dt>
-<dd>Value for the northern edge</dd>
-
-<dt><b>s</b>=<em>value</em></dt>
-<dd>Value for the southern edge</dd>
-
-<dt><b>e</b>=<em>value</em></dt>
-<dd>Value for the eastern edge</dd>
-
-<dt><b>w</b>=<em>value</em></dt>
-<dd>Value for the western edge</dd>
-
-<dt><b>t</b>=<em>value</em></dt>
-<dd>Value for the top edge</dd>
-
-<dt><b>b</b>=<em>value</em></dt>
-<dd>Value for the bottom edge</dd>
-
-<dt><b>rows</b>=<em>value</em></dt>
-<dd>Number of rows in the new region</dd>
-
-<dt><b>cols</b>=<em>value</em></dt>
-<dd>Number of columns in the new region</dd>
-
-<dt><b>res</b>=<em>value</em></dt>
-<dd>2D grid resolution (north-south and east-west)</dd>
-
-<dt><b>res3</b>=<em>value</em></dt>
-<dd>3D grid resolution (north-south, east-west and top-bottom)</dd>
-
-<dt><b>nsres</b>=<em>value</em></dt>
-<dd>North-south 2D grid resolution</dd>
-
-<dt><b>ewres</b>=<em>value</em></dt>
-<dd>East-west 2D grid resolution</dd>
-
-<dt><b>tbres</b>=<em>value</em></dt>
-<dd>Top-bottom 3D grid resolution</dd>
-
-<dt><b>zoom</b>=<em>name</em></dt>
-<dd>Shrink region until it meets non-NULL data from this raster map</dd>
-
-<dt><b>align</b>=<em>name</em></dt>
-<dd>Adjust region cells to cleanly align with this raster map</dd>
-
-<dt><b>grow</b>=<em>value</em></dt>
-<dd>Number of cells to add to each side of the current region extent</dd>
-<dd>A negative number shrinks the current region extent</dd>
-
-<dt><b>save</b>=<em>name</em></dt>
-<dd>Save current region settings in named region file</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>g.region - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>g.region</b></em>  - Manages the boundary definitions for the geographic region.
+<h2>KEYWORDS</h2>
+<a href="general.html">general</a>, <a href="topic_settings.html">settings</a>, <a href="keywords.html#computational region">computational region</a>, <a href="keywords.html#extent">extent</a>, <a href="keywords.html#resolution">resolution</a>, <a href="keywords.html#level1">level1</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>g.region</b><br></div>
+<b>g.region --help</b><br>
+<div id="synopsis"><b>g.region</b> [-<b>dsplectwmn3bgfau</b>]  [<b>region</b>=<em>name</em>]   [<b>raster</b>=<em>name</em>[,<i>name</i>,...]]   [<b>raster_3d</b>=<em>name</em>]   [<b>vector</b>=<em>name</em>[,<i>name</i>,...]]   [<b>n</b>=<em>value</em>]   [<b>s</b>=<em>value</em>]   [<b>e</b>=<em>value</em>]   [<b>w</b>=<em>value</em>]   [<b>t</b>=<em>value</em>]   [<b>b</b>=<em>value</em>]   [<b>rows</b>=<em>value</em>]   [<b>cols</b>=<em>value</em>]   [<b>res</b>=<em>value</em>]   [<b>res3</b>=<em>value</em>]   [<b>nsres</b>=<em>value</em>]   [<b>ewres</b>=<em>value</em>]   [<b>tbres</b>=<em>value</em>]   [<b>zoom</b>=<em>name</em>]   [<b>align</b>=<em>name</em>]   [<b>grow</b>=<em>value</em>]   [<b>save</b>=<em>name</em>]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-d</b></dt>
+<dd>Set from default region</dd>
+
+<dt><b>-s</b></dt>
+<dd>Save as default region</dd>
+<dd>Only possible from the PERMANENT mapset</dd>
+
+<dt><b>-p</b></dt>
+<dd>Print the current region</dd>
+
+<dt><b>-l</b></dt>
+<dd>Print the current region in lat/long using the current ellipsoid/datum</dd>
+
+<dt><b>-e</b></dt>
+<dd>Print the current region extent</dd>
+
+<dt><b>-c</b></dt>
+<dd>Print the current region map center coordinates</dd>
+
+<dt><b>-t</b></dt>
+<dd>Print the current region in GMT style</dd>
+
+<dt><b>-w</b></dt>
+<dd>Print the current region in WMS style</dd>
+
+<dt><b>-m</b></dt>
+<dd>Print region resolution in meters (geodesic)</dd>
+
+<dt><b>-n</b></dt>
+<dd>Print the convergence angle (degrees CCW)</dd>
+<dd>The difference between the projection's grid north and true north, measured at the center coordinates of the current region.</dd>
+
+<dt><b>-3</b></dt>
+<dd>Print also 3D settings</dd>
+
+<dt><b>-b</b></dt>
+<dd>Print the maximum bounding box in lat/long on WGS84</dd>
+
+<dt><b>-g</b></dt>
+<dd>Print in shell script style</dd>
+
+<dt><b>-f</b></dt>
+<dd>Print in shell script style, but in one line (flat)</dd>
+
+<dt><b>-a</b></dt>
+<dd>Align region to resolution (default = align to bounds, works only for 2D resolution)</dd>
+
+<dt><b>-u</b></dt>
+<dd>Do not update the current region</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>region</b>=<em>name</em></dt>
+<dd>Set current region from named region</dd>
+
+<dt><b>raster</b>=<em>name[,<i>name</i>,...]</em></dt>
+<dd>Set region to match raster map(s)</dd>
+
+<dt><b>raster_3d</b>=<em>name</em></dt>
+<dd>Set region to match 3D raster map(s) (both 2D and 3D values)</dd>
+
+<dt><b>vector</b>=<em>name[,<i>name</i>,...]</em></dt>
+<dd>Set region to match vector map(s)</dd>
+
+<dt><b>n</b>=<em>value</em></dt>
+<dd>Value for the northern edge</dd>
+
+<dt><b>s</b>=<em>value</em></dt>
+<dd>Value for the southern edge</dd>
+
+<dt><b>e</b>=<em>value</em></dt>
+<dd>Value for the eastern edge</dd>
+
+<dt><b>w</b>=<em>value</em></dt>
+<dd>Value for the western edge</dd>
+
+<dt><b>t</b>=<em>value</em></dt>
+<dd>Value for the top edge</dd>
+
+<dt><b>b</b>=<em>value</em></dt>
+<dd>Value for the bottom edge</dd>
+
+<dt><b>rows</b>=<em>value</em></dt>
+<dd>Number of rows in the new region</dd>
+
+<dt><b>cols</b>=<em>value</em></dt>
+<dd>Number of columns in the new region</dd>
+
+<dt><b>res</b>=<em>value</em></dt>
+<dd>2D grid resolution (north-south and east-west)</dd>
+
+<dt><b>res3</b>=<em>value</em></dt>
+<dd>3D grid resolution (north-south, east-west and top-bottom)</dd>
+
+<dt><b>nsres</b>=<em>value</em></dt>
+<dd>North-south 2D grid resolution</dd>
+
+<dt><b>ewres</b>=<em>value</em></dt>
+<dd>East-west 2D grid resolution</dd>
+
+<dt><b>tbres</b>=<em>value</em></dt>
+<dd>Top-bottom 3D grid resolution</dd>
+
+<dt><b>zoom</b>=<em>name</em></dt>
+<dd>Shrink region until it meets non-NULL data from this raster map</dd>
+
+<dt><b>align</b>=<em>name</em></dt>
+<dd>Adjust region cells to cleanly align with this raster map</dd>
+
+<dt><b>grow</b>=<em>value</em></dt>
+<dd>Number of cells to add to each side of the current region extent</dd>
+<dd>A negative number shrinks the current region extent</dd>
+
+<dt><b>save</b>=<em>name</em></dt>
+<dd>Save current region settings in named region file</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -655,7 +655,14 @@ Research Laboratory
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/general/g.region">g.region source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/general/g.region">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/general/g.region">g.region source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/general/g.region">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -666,9 +673,9 @@ Research Laboratory
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

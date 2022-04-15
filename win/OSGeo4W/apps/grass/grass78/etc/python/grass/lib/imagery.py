@@ -1,7 +1,7 @@
 '''Wrapper for imagery.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_imagery.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/imagery.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h -o OBJ.x86_64-w64-mingw32/imagery.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_imagery.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/imagery.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h -o OBJ.x86_64-w64-mingw32/imagery.py
 
 Do not modify this file.
 '''
@@ -27,7 +27,7 @@ _libs["grass_imagery.7.8"] = load_library("grass_imagery.7.8")
 
 # No modules
 
-# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h: 33
+# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/stdio.h: 33
 class struct__iobuf(Structure):
     pass
 
@@ -52,9 +52,9 @@ struct__iobuf._fields_ = [
     ('_tmpfname', String),
 ]
 
-FILE = struct__iobuf # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/stdio.h: 47
+FILE = struct__iobuf # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/stdio.h: 47
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 413
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 413
 class struct_Cell_head(Structure):
     pass
 
@@ -103,9 +103,9 @@ struct_Cell_head._fields_ = [
     ('bottom', c_double),
 ]
 
-CELL = c_int # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 603
+CELL = c_int # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 603
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 10
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 10
 class struct_Ref_Color(Structure):
     pass
 
@@ -128,7 +128,7 @@ struct_Ref_Color._fields_ = [
     ('n', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 20
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 20
 class struct_Ref_Files(Structure):
     pass
 
@@ -141,7 +141,7 @@ struct_Ref_Files._fields_ = [
     ('mapset', c_char * 256),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 26
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 26
 class struct_Ref(Structure):
     pass
 
@@ -160,7 +160,7 @@ struct_Ref._fields_ = [
     ('blu', struct_Ref_Color),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 33
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 33
 class struct_Tape_Info(Structure):
     pass
 
@@ -175,7 +175,7 @@ struct_Tape_Info._fields_ = [
     ('desc', (c_char * 75) * 5),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 40
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 40
 class struct_Control_Points(Structure):
     pass
 
@@ -200,7 +200,7 @@ struct_Control_Points._fields_ = [
     ('status', POINTER(c_int)),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 52
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 52
 class struct_One_Sig(Structure):
     pass
 
@@ -227,7 +227,7 @@ struct_One_Sig._fields_ = [
     ('have_color', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 63
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 63
 class struct_Signature(Structure):
     pass
 
@@ -244,7 +244,7 @@ struct_Signature._fields_ = [
     ('sig', POINTER(struct_One_Sig)),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 71
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 71
 class struct_SubSig(Structure):
     pass
 
@@ -267,7 +267,7 @@ struct_SubSig._fields_ = [
     ('used', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 82
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 82
 class struct_ClassData(Structure):
     pass
 
@@ -284,7 +284,7 @@ struct_ClassData._fields_ = [
     ('p', POINTER(POINTER(c_double))),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 90
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 90
 class struct_ClassSig(Structure):
     pass
 
@@ -307,7 +307,7 @@ struct_ClassSig._fields_ = [
     ('ClassData', struct_ClassData),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 101
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 101
 class struct_SigSet(Structure):
     pass
 
@@ -324,7 +324,7 @@ struct_SigSet._fields_ = [
     ('ClassSig', POINTER(struct_ClassSig)),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 138
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 138
 class struct_anon_8(Structure):
     pass
 
@@ -363,13 +363,13 @@ struct_anon_8._fields_ = [
     ('nstd', c_float),
 ]
 
-IClass_statistics = struct_anon_8 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 138
+IClass_statistics = struct_anon_8 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 138
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 171
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 171
 class struct_scScatts(Structure):
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 149
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 149
 class struct_scCats(Structure):
     pass
 
@@ -394,7 +394,7 @@ struct_scCats._fields_ = [
     ('cats_arr', POINTER(POINTER(struct_scScatts))),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 186
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 186
 class struct_scdScattData(Structure):
     pass
 
@@ -422,7 +422,7 @@ struct_scdScattData._fields_ = [
     ('scatt_vals_arr', POINTER(c_uint)),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_malloc'):
         continue
@@ -432,7 +432,7 @@ for _lib in six.itervalues(_libs):
     I_malloc.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 6
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 6
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_realloc'):
         continue
@@ -442,7 +442,7 @@ for _lib in six.itervalues(_libs):
     I_realloc.errcheck = lambda v,*a : cast(v, c_void_p)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 7
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 7
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_free'):
         continue
@@ -451,7 +451,7 @@ for _lib in six.itervalues(_libs):
     I_free.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 8
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 8
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_alloc_double2'):
         continue
@@ -460,7 +460,7 @@ for _lib in six.itervalues(_libs):
     I_alloc_double2.restype = POINTER(POINTER(c_double))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 9
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 9
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_alloc_int'):
         continue
@@ -469,7 +469,7 @@ for _lib in six.itervalues(_libs):
     I_alloc_int.restype = POINTER(c_int)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 10
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 10
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_alloc_int2'):
         continue
@@ -478,7 +478,7 @@ for _lib in six.itervalues(_libs):
     I_alloc_int2.restype = POINTER(POINTER(c_int))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 11
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 11
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_free_int2'):
         continue
@@ -487,7 +487,7 @@ for _lib in six.itervalues(_libs):
     I_free_int2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 12
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 12
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_free_double2'):
         continue
@@ -496,7 +496,7 @@ for _lib in six.itervalues(_libs):
     I_free_double2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 13
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 13
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_alloc_double3'):
         continue
@@ -505,7 +505,7 @@ for _lib in six.itervalues(_libs):
     I_alloc_double3.restype = POINTER(POINTER(POINTER(c_double)))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 14
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 14
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_free_double3'):
         continue
@@ -514,7 +514,7 @@ for _lib in six.itervalues(_libs):
     I_free_double3.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 17
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 17
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_get_to_eol'):
         continue
@@ -523,7 +523,7 @@ for _lib in six.itervalues(_libs):
     I_get_to_eol.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 20
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 20
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_find_group'):
         continue
@@ -532,7 +532,7 @@ for _lib in six.itervalues(_libs):
     I_find_group.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 21
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 21
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_find_group2'):
         continue
@@ -541,7 +541,7 @@ for _lib in six.itervalues(_libs):
     I_find_group2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 22
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 22
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_find_group_file'):
         continue
@@ -550,7 +550,7 @@ for _lib in six.itervalues(_libs):
     I_find_group_file.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 23
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 23
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_find_group_file2'):
         continue
@@ -559,7 +559,7 @@ for _lib in six.itervalues(_libs):
     I_find_group_file2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 24
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 24
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_find_subgroup'):
         continue
@@ -568,7 +568,7 @@ for _lib in six.itervalues(_libs):
     I_find_subgroup.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 25
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 25
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_find_subgroup2'):
         continue
@@ -577,7 +577,7 @@ for _lib in six.itervalues(_libs):
     I_find_subgroup2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 26
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 26
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_find_subgroup_file'):
         continue
@@ -586,7 +586,7 @@ for _lib in six.itervalues(_libs):
     I_find_subgroup_file.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 27
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 27
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_find_subgroup_file2'):
         continue
@@ -595,7 +595,7 @@ for _lib in six.itervalues(_libs):
     I_find_subgroup_file2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 28
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 28
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_find_signature_file'):
         continue
@@ -604,7 +604,7 @@ for _lib in six.itervalues(_libs):
     I_find_signature_file.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 31
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 31
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_group_file_new'):
         continue
@@ -613,7 +613,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_group_file_new.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 32
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 32
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_group_file_append'):
         continue
@@ -622,7 +622,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_group_file_append.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 33
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 33
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_group_file_old'):
         continue
@@ -631,7 +631,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_group_file_old.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 34
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 34
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_group_file_old2'):
         continue
@@ -640,7 +640,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_group_file_old2.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 35
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 35
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_subgroup_file_new'):
         continue
@@ -649,7 +649,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_subgroup_file_new.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 36
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 36
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_subgroup_file_append'):
         continue
@@ -658,7 +658,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_subgroup_file_append.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 37
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 37
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_subgroup_file_old'):
         continue
@@ -667,7 +667,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_subgroup_file_old.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 38
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 38
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_subgroup_file_old2'):
         continue
@@ -676,7 +676,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_subgroup_file_old2.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 41
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 41
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_compute_georef_equations'):
         continue
@@ -685,7 +685,7 @@ for _lib in six.itervalues(_libs):
     I_compute_georef_equations.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 43
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 43
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_georef'):
         continue
@@ -694,7 +694,7 @@ for _lib in six.itervalues(_libs):
     I_georef.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 46
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 46
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_compute_georef_equations_tps'):
         continue
@@ -703,7 +703,7 @@ for _lib in six.itervalues(_libs):
     I_compute_georef_equations_tps.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 48
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 48
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_georef_tps'):
         continue
@@ -712,7 +712,7 @@ for _lib in six.itervalues(_libs):
     I_georef_tps.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 52
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 52
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_get_group'):
         continue
@@ -721,7 +721,7 @@ for _lib in six.itervalues(_libs):
     I_get_group.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 53
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 53
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_put_group'):
         continue
@@ -730,7 +730,7 @@ for _lib in six.itervalues(_libs):
     I_put_group.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 54
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 54
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_get_subgroup'):
         continue
@@ -739,7 +739,7 @@ for _lib in six.itervalues(_libs):
     I_get_subgroup.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 55
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 55
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_put_subgroup'):
         continue
@@ -748,7 +748,7 @@ for _lib in six.itervalues(_libs):
     I_put_subgroup.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 56
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 56
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_get_group_ref'):
         continue
@@ -757,7 +757,7 @@ for _lib in six.itervalues(_libs):
     I_get_group_ref.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 57
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 57
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_get_group_ref2'):
         continue
@@ -766,7 +766,7 @@ for _lib in six.itervalues(_libs):
     I_get_group_ref2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 58
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 58
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_get_subgroup_ref'):
         continue
@@ -775,7 +775,7 @@ for _lib in six.itervalues(_libs):
     I_get_subgroup_ref.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 59
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 59
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_get_subgroup_ref2'):
         continue
@@ -784,7 +784,7 @@ for _lib in six.itervalues(_libs):
     I_get_subgroup_ref2.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 60
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 60
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_init_ref_color_nums'):
         continue
@@ -793,7 +793,7 @@ for _lib in six.itervalues(_libs):
     I_init_ref_color_nums.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 61
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 61
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_put_group_ref'):
         continue
@@ -802,7 +802,7 @@ for _lib in six.itervalues(_libs):
     I_put_group_ref.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 62
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 62
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_put_subgroup_ref'):
         continue
@@ -811,7 +811,7 @@ for _lib in six.itervalues(_libs):
     I_put_subgroup_ref.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 63
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 63
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_add_file_to_group_ref'):
         continue
@@ -820,7 +820,7 @@ for _lib in six.itervalues(_libs):
     I_add_file_to_group_ref.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 64
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 64
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_transfer_group_ref_file'):
         continue
@@ -829,7 +829,7 @@ for _lib in six.itervalues(_libs):
     I_transfer_group_ref_file.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 65
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 65
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_init_group_ref'):
         continue
@@ -838,7 +838,7 @@ for _lib in six.itervalues(_libs):
     I_init_group_ref.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 66
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 66
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_free_group_ref'):
         continue
@@ -847,11 +847,11 @@ for _lib in six.itervalues(_libs):
     I_free_group_ref.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 69
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 69
 class struct_Map_info(Structure):
     pass
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 70
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 70
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_analysis'):
         continue
@@ -860,7 +860,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_analysis.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 71
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 71
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_init_group'):
         continue
@@ -869,7 +869,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_init_group.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 72
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 72
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_create_raster'):
         continue
@@ -878,7 +878,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_create_raster.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 75
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 75
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_nbands'):
         continue
@@ -887,7 +887,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_nbands.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 76
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 76
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_cat'):
         continue
@@ -896,7 +896,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_cat.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 77
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 77
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_name'):
         continue
@@ -905,7 +905,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_name.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 78
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 78
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_color'):
         continue
@@ -914,7 +914,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_color.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 79
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 79
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_ncells'):
         continue
@@ -923,7 +923,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_ncells.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 80
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 80
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_max'):
         continue
@@ -932,7 +932,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_max.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 81
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 81
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_range_max'):
         continue
@@ -941,7 +941,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_range_max.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 82
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 82
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_min'):
         continue
@@ -950,7 +950,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_min.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 83
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 83
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_range_min'):
         continue
@@ -959,7 +959,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_range_min.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 84
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 84
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_sum'):
         continue
@@ -968,7 +968,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_sum.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 85
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 85
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_mean'):
         continue
@@ -977,7 +977,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_mean.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 86
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 86
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_stddev'):
         continue
@@ -986,7 +986,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_stddev.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 87
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 87
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_nstd'):
         continue
@@ -995,7 +995,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_nstd.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 88
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 88
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_set_nstd'):
         continue
@@ -1004,7 +1004,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_set_nstd.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 89
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 89
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_histo'):
         continue
@@ -1013,7 +1013,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_histo.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 90
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 90
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_statistics_get_product'):
         continue
@@ -1022,7 +1022,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_statistics_get_product.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 91
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 91
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_init_statistics'):
         continue
@@ -1031,7 +1031,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_init_statistics.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 92
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 92
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_free_statistics'):
         continue
@@ -1040,7 +1040,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_free_statistics.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 95
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 95
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_init_signatures'):
         continue
@@ -1049,7 +1049,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_init_signatures.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 96
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 96
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_add_signature'):
         continue
@@ -1058,7 +1058,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_add_signature.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 97
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 97
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_iclass_write_signatures'):
         continue
@@ -1067,7 +1067,7 @@ for _lib in six.itervalues(_libs):
     I_iclass_write_signatures.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 100
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 100
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_list_group'):
         continue
@@ -1076,7 +1076,7 @@ for _lib in six.itervalues(_libs):
     I_list_group.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 101
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 101
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_list_group_simple'):
         continue
@@ -1085,7 +1085,7 @@ for _lib in six.itervalues(_libs):
     I_list_group_simple.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 104
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 104
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_list_subgroups'):
         continue
@@ -1094,7 +1094,7 @@ for _lib in six.itervalues(_libs):
     I_list_subgroups.restype = POINTER(POINTER(c_char))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 105
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 105
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_list_subgroups2'):
         continue
@@ -1103,7 +1103,7 @@ for _lib in six.itervalues(_libs):
     I_list_subgroups2.restype = POINTER(POINTER(c_char))
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 106
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 106
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_list_subgroup'):
         continue
@@ -1112,7 +1112,7 @@ for _lib in six.itervalues(_libs):
     I_list_subgroup.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 107
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 107
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_list_subgroup_simple'):
         continue
@@ -1121,7 +1121,7 @@ for _lib in six.itervalues(_libs):
     I_list_subgroup_simple.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 110
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 110
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_location_info'):
         continue
@@ -1134,7 +1134,7 @@ for _lib in six.itervalues(_libs):
         I_location_info.errcheck = ReturnString
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 113
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 113
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_new_control_point'):
         continue
@@ -1143,7 +1143,7 @@ for _lib in six.itervalues(_libs):
     I_new_control_point.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 115
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 115
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_get_control_points'):
         continue
@@ -1152,7 +1152,7 @@ for _lib in six.itervalues(_libs):
     I_get_control_points.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 116
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 116
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_put_control_points'):
         continue
@@ -1161,7 +1161,7 @@ for _lib in six.itervalues(_libs):
     I_put_control_points.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 119
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 119
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_group_ref_new'):
         continue
@@ -1170,7 +1170,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_group_ref_new.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 120
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 120
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_group_ref_old'):
         continue
@@ -1179,7 +1179,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_group_ref_old.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 121
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 121
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_group_ref_old2'):
         continue
@@ -1188,7 +1188,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_group_ref_old2.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 122
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 122
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_subgroup_ref_new'):
         continue
@@ -1197,7 +1197,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_subgroup_ref_new.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 123
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 123
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_subgroup_ref_old'):
         continue
@@ -1206,7 +1206,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_subgroup_ref_old.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 124
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 124
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_subgroup_ref_old2'):
         continue
@@ -1215,7 +1215,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_subgroup_ref_old2.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 127
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 127
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_sc_init_cats'):
         continue
@@ -1224,7 +1224,7 @@ for _lib in six.itervalues(_libs):
     I_sc_init_cats.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 128
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 128
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_sc_free_cats'):
         continue
@@ -1233,7 +1233,7 @@ for _lib in six.itervalues(_libs):
     I_sc_free_cats.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 129
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 129
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_sc_add_cat'):
         continue
@@ -1242,7 +1242,7 @@ for _lib in six.itervalues(_libs):
     I_sc_add_cat.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 130
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 130
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_sc_insert_scatt_data'):
         continue
@@ -1251,7 +1251,7 @@ for _lib in six.itervalues(_libs):
     I_sc_insert_scatt_data.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 132
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 132
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_scd_init_scatt_data'):
         continue
@@ -1260,7 +1260,7 @@ for _lib in six.itervalues(_libs):
     I_scd_init_scatt_data.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 135
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 135
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_compute_scatts'):
         continue
@@ -1269,7 +1269,7 @@ for _lib in six.itervalues(_libs):
     I_compute_scatts.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 138
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 138
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_create_cat_rast'):
         continue
@@ -1278,7 +1278,7 @@ for _lib in six.itervalues(_libs):
     I_create_cat_rast.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 139
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 139
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_insert_patch_to_cat_rast'):
         continue
@@ -1287,7 +1287,7 @@ for _lib in six.itervalues(_libs):
     I_insert_patch_to_cat_rast.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 141
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 141
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_id_scatt_to_bands'):
         continue
@@ -1296,7 +1296,7 @@ for _lib in six.itervalues(_libs):
     I_id_scatt_to_bands.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 142
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 142
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_bands_to_id_scatt'):
         continue
@@ -1305,7 +1305,7 @@ for _lib in six.itervalues(_libs):
     I_bands_to_id_scatt.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 144
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 144
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_merge_arrays'):
         continue
@@ -1314,7 +1314,7 @@ for _lib in six.itervalues(_libs):
     I_merge_arrays.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 145
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 145
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_apply_colormap'):
         continue
@@ -1323,7 +1323,7 @@ for _lib in six.itervalues(_libs):
     I_apply_colormap.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 146
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 146
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_rasterize'):
         continue
@@ -1332,7 +1332,7 @@ for _lib in six.itervalues(_libs):
     I_rasterize.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 149
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 149
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_init_signatures'):
         continue
@@ -1341,7 +1341,7 @@ for _lib in six.itervalues(_libs):
     I_init_signatures.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 150
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 150
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_new_signature'):
         continue
@@ -1350,7 +1350,7 @@ for _lib in six.itervalues(_libs):
     I_new_signature.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 151
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 151
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_free_signatures'):
         continue
@@ -1359,7 +1359,7 @@ for _lib in six.itervalues(_libs):
     I_free_signatures.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 152
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 152
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_read_one_signature'):
         continue
@@ -1368,7 +1368,7 @@ for _lib in six.itervalues(_libs):
     I_read_one_signature.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 153
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 153
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_read_signatures'):
         continue
@@ -1377,7 +1377,7 @@ for _lib in six.itervalues(_libs):
     I_read_signatures.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 154
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 154
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_write_signatures'):
         continue
@@ -1386,7 +1386,7 @@ for _lib in six.itervalues(_libs):
     I_write_signatures.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 157
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 157
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_signature_file_new'):
         continue
@@ -1395,7 +1395,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_signature_file_new.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 158
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 158
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_signature_file_old'):
         continue
@@ -1404,7 +1404,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_signature_file_old.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 161
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 161
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_SigSetNClasses'):
         continue
@@ -1413,7 +1413,7 @@ for _lib in six.itervalues(_libs):
     I_SigSetNClasses.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 162
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 162
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_AllocClassData'):
         continue
@@ -1422,7 +1422,7 @@ for _lib in six.itervalues(_libs):
     I_AllocClassData.restype = POINTER(struct_ClassData)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 163
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 163
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_InitSigSet'):
         continue
@@ -1431,7 +1431,7 @@ for _lib in six.itervalues(_libs):
     I_InitSigSet.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 164
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 164
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_SigSetNBands'):
         continue
@@ -1440,7 +1440,7 @@ for _lib in six.itervalues(_libs):
     I_SigSetNBands.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 165
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 165
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_NewClassSig'):
         continue
@@ -1449,7 +1449,7 @@ for _lib in six.itervalues(_libs):
     I_NewClassSig.restype = POINTER(struct_ClassSig)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 166
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 166
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_NewSubSig'):
         continue
@@ -1458,7 +1458,7 @@ for _lib in six.itervalues(_libs):
     I_NewSubSig.restype = POINTER(struct_SubSig)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 167
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 167
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_ReadSigSet'):
         continue
@@ -1467,7 +1467,7 @@ for _lib in six.itervalues(_libs):
     I_ReadSigSet.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 168
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 168
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_SetSigTitle'):
         continue
@@ -1476,7 +1476,7 @@ for _lib in six.itervalues(_libs):
     I_SetSigTitle.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 169
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 169
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_GetSigTitle'):
         continue
@@ -1485,7 +1485,7 @@ for _lib in six.itervalues(_libs):
     I_GetSigTitle.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 170
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 170
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_SetClassTitle'):
         continue
@@ -1494,7 +1494,7 @@ for _lib in six.itervalues(_libs):
     I_SetClassTitle.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 171
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 171
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_GetClassTitle'):
         continue
@@ -1503,7 +1503,7 @@ for _lib in six.itervalues(_libs):
     I_GetClassTitle.restype = c_char_p
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 172
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 172
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_WriteSigSet'):
         continue
@@ -1512,7 +1512,7 @@ for _lib in six.itervalues(_libs):
     I_WriteSigSet.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 175
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 175
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_sigset_file_new'):
         continue
@@ -1521,7 +1521,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_sigset_file_new.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 176
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 176
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_fopen_sigset_file_old'):
         continue
@@ -1530,7 +1530,7 @@ for _lib in six.itervalues(_libs):
     I_fopen_sigset_file_old.restype = POINTER(FILE)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 179
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 179
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_get_target'):
         continue
@@ -1539,7 +1539,7 @@ for _lib in six.itervalues(_libs):
     I_get_target.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 180
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 180
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_put_target'):
         continue
@@ -1548,7 +1548,7 @@ for _lib in six.itervalues(_libs):
     I_put_target.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 183
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 183
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_get_group_title'):
         continue
@@ -1557,7 +1557,7 @@ for _lib in six.itervalues(_libs):
     I_get_group_title.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 184
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 184
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_put_group_title'):
         continue
@@ -1566,7 +1566,7 @@ for _lib in six.itervalues(_libs):
     I_put_group_title.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 187
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 187
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_variance'):
         continue
@@ -1575,7 +1575,7 @@ for _lib in six.itervalues(_libs):
     I_variance.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 188
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 188
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'I_stddev'):
         continue
@@ -1584,77 +1584,77 @@ for _lib in six.itervalues(_libs):
     I_stddev.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 167
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 167
 try:
     GNAME_MAX = 256
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 8
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 8
 try:
     INAME_LEN = GNAME_MAX
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 142
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 142
 try:
     SC_SCATT_DATA = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 143
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 143
 try:
     SC_SCATT_CONDITIONS = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 197
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 197
 try:
     SIGNATURE_TYPE_MIXED = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 199
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 199
 try:
     GROUPFILE = 'CURGROUP'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 200
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 200
 try:
     SUBGROUPFILE = 'CURSUBGROUP'
 except:
     pass
 
-Ref_Color = struct_Ref_Color # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 10
+Ref_Color = struct_Ref_Color # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 10
 
-Ref_Files = struct_Ref_Files # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 20
+Ref_Files = struct_Ref_Files # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 20
 
-Ref = struct_Ref # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 26
+Ref = struct_Ref # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 26
 
-Tape_Info = struct_Tape_Info # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 33
+Tape_Info = struct_Tape_Info # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 33
 
-Control_Points = struct_Control_Points # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 40
+Control_Points = struct_Control_Points # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 40
 
-One_Sig = struct_One_Sig # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 52
+One_Sig = struct_One_Sig # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 52
 
-Signature = struct_Signature # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 63
+Signature = struct_Signature # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 63
 
-SubSig = struct_SubSig # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 71
+SubSig = struct_SubSig # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 71
 
-ClassData = struct_ClassData # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 82
+ClassData = struct_ClassData # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 82
 
-ClassSig = struct_ClassSig # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 90
+ClassSig = struct_ClassSig # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 90
 
-SigSet = struct_SigSet # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 101
+SigSet = struct_SigSet # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 101
 
-scScatts = struct_scScatts # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 171
+scScatts = struct_scScatts # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 171
 
-scCats = struct_scCats # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 149
+scCats = struct_scCats # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 149
 
-scdScattData = struct_scdScattData # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 186
+scdScattData = struct_scdScattData # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\imagery.h: 186
 
-Map_info = struct_Map_info # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 69
+Map_info = struct_Map_info # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/imagery.h: 69
 
 # No inserted files
 

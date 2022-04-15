@@ -1,7 +1,7 @@
 '''Wrapper for segment.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_segment.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/segment.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h -o OBJ.x86_64-w64-mingw32/segment.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_segment.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/segment.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h -o OBJ.x86_64-w64-mingw32/segment.py
 
 Do not modify this file.
 '''
@@ -27,9 +27,9 @@ _libs["grass_segment.7.8"] = load_library("grass_segment.7.8")
 
 # No modules
 
-off_t = c_int64 # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h: 24
+off_t = c_int64 # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/_mingw_off_t.h: 24
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 14
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 14
 class struct_aq(Structure):
     pass
 
@@ -44,7 +44,7 @@ struct_aq._fields_ = [
     ('older', POINTER(struct_aq)),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 45
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 45
 class struct_scb(Structure):
     pass
 
@@ -61,7 +61,7 @@ struct_scb._fields_ = [
     ('n', c_int),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 63
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 63
 class struct_anon_7(Structure):
     pass
 
@@ -134,9 +134,9 @@ struct_anon_7._fields_ = [
     ('cache', String),
 ]
 
-SEGMENT = struct_anon_7 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 63
+SEGMENT = struct_anon_7 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 63
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 4
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 4
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Segment_open'):
         continue
@@ -145,7 +145,7 @@ for _lib in six.itervalues(_libs):
     Segment_open.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Segment_close'):
         continue
@@ -154,7 +154,7 @@ for _lib in six.itervalues(_libs):
     Segment_close.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 6
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 6
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Segment_flush'):
         continue
@@ -163,7 +163,7 @@ for _lib in six.itervalues(_libs):
     Segment_flush.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 7
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 7
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Segment_format'):
         continue
@@ -172,7 +172,7 @@ for _lib in six.itervalues(_libs):
     Segment_format.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 8
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 8
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Segment_format_nofill'):
         continue
@@ -181,7 +181,7 @@ for _lib in six.itervalues(_libs):
     Segment_format_nofill.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 9
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 9
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Segment_get'):
         continue
@@ -190,7 +190,7 @@ for _lib in six.itervalues(_libs):
     Segment_get.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 10
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 10
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Segment_get_row'):
         continue
@@ -199,7 +199,7 @@ for _lib in six.itervalues(_libs):
     Segment_get_row.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 11
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 11
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Segment_init'):
         continue
@@ -208,7 +208,7 @@ for _lib in six.itervalues(_libs):
     Segment_init.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 12
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 12
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Segment_put'):
         continue
@@ -217,7 +217,7 @@ for _lib in six.itervalues(_libs):
     Segment_put.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 13
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 13
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Segment_put_row'):
         continue
@@ -226,7 +226,7 @@ for _lib in six.itervalues(_libs):
     Segment_put_row.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 14
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/segment.h: 14
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Segment_release'):
         continue
@@ -235,9 +235,9 @@ for _lib in six.itervalues(_libs):
     Segment_release.restype = c_int
     break
 
-aq = struct_aq # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 14
+aq = struct_aq # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 14
 
-scb = struct_scb # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 45
+scb = struct_scb # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\segment.h: 45
 
 # No inserted files
 

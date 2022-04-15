@@ -142,6 +142,8 @@ class PROJ_GCC_DLL CRS : public common::ObjectUsage,
 
     PROJ_INTERNAL bool mustAxisOrderBeSwitchedForVisualization() const;
 
+    PROJ_INTERNAL CRSNNPtr applyAxisOrderReversal(const char *nameSuffix) const;
+
     PROJ_FOR_TEST CRSNNPtr normalizeForVisualization() const;
 
     PROJ_INTERNAL CRSNNPtr allowNonConformantWKT1Export() const;
@@ -155,6 +157,8 @@ class PROJ_GCC_DLL CRS : public common::ObjectUsage,
         const;
 
     PROJ_INTERNAL bool hasImplicitCS() const;
+
+    PROJ_INTERNAL bool hasOver() const;
 
     PROJ_INTERNAL static CRSNNPtr
     getResolvedCRS(const CRSNNPtr &crs,
@@ -270,6 +274,8 @@ class PROJ_GCC_DLL GeodeticCRS : virtual public SingleCRS,
 
     PROJ_DLL bool isGeocentric() PROJ_PURE_DECL;
 
+    PROJ_DLL bool isSphericalPlanetocentric() PROJ_PURE_DECL;
+
     PROJ_DLL static GeodeticCRSNNPtr
     create(const util::PropertyMap &properties,
            const datum::GeodeticReferenceFrameNNPtr &datum,
@@ -307,6 +313,9 @@ class PROJ_GCC_DLL GeodeticCRS : virtual public SingleCRS,
 
     PROJ_INTERNAL void addGeocentricUnitConversionIntoPROJString(
         io::PROJStringFormatter *formatter) const;
+
+    PROJ_INTERNAL void
+    addAngularUnitConvertAndAxisSwap(io::PROJStringFormatter *formatter) const;
 
     PROJ_INTERNAL void _exportToWKT(io::WKTFormatter *formatter)
         const override; // throw(io::FormattingException)
@@ -400,12 +409,10 @@ class PROJ_GCC_DLL GeographicCRS : public GeodeticCRS {
 
     PROJ_PRIVATE :
         //! @cond Doxygen_Suppress
-        PROJ_INTERNAL void
-        addAngularUnitConvertAndAxisSwap(
-            io::PROJStringFormatter *formatter) const;
 
-    PROJ_INTERNAL void _exportToPROJString(io::PROJStringFormatter *formatter)
-        const override; // throw(FormattingException)
+        PROJ_INTERNAL void
+        _exportToPROJString(io::PROJStringFormatter *formatter)
+            const override; // throw(FormattingException)
 
     PROJ_INTERNAL void _exportToJSON(io::JSONFormatter *formatter)
         const override; // throw(FormattingException)

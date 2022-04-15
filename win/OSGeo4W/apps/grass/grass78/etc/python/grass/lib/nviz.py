@@ -1,7 +1,7 @@
 '''Wrapper for nviz.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_nviz.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/nviz.h D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h -o OBJ.x86_64-w64-mingw32/nviz.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_nviz.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/nviz.h D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h -o OBJ.x86_64-w64-mingw32/nviz.py
 
 Do not modify this file.
 '''
@@ -27,7 +27,7 @@ _libs["grass_nviz.7.8"] = load_library("grass_nviz.7.8")
 
 # No modules
 
-# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/windef.h: 47
+# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/windef.h: 47
 class struct_HDC__(Structure):
     pass
 
@@ -38,9 +38,9 @@ struct_HDC__._fields_ = [
     ('unused', c_int),
 ]
 
-HDC = POINTER(struct_HDC__) # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/windef.h: 47
+HDC = POINTER(struct_HDC__) # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/windef.h: 47
 
-# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/windef.h: 48
+# D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/windef.h: 48
 class struct_HGLRC__(Structure):
     pass
 
@@ -51,11 +51,11 @@ struct_HGLRC__._fields_ = [
     ('unused', c_int),
 ]
 
-HGLRC = POINTER(struct_HGLRC__) # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/windef.h: 48
+HGLRC = POINTER(struct_HGLRC__) # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/windef.h: 48
 
-GLubyte = c_ubyte # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/x86_64-w64-mingw32/include/GL/gl.h: 29
+GLubyte = c_ubyte # D:/src/osgeo4w/src/grass/osgeo4w/msys64/mingw64/include/GL/gl.h: 29
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 76
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 76
 class struct_anon_354(Structure):
     pass
 
@@ -88,9 +88,9 @@ struct_anon_354._fields_ = [
     ('w', c_float),
 ]
 
-light_data = struct_anon_354 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 76
+light_data = struct_anon_354 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 76
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 78
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 78
 class struct_fringe_data(Structure):
     pass
 
@@ -107,7 +107,7 @@ struct_fringe_data._fields_ = [
     ('where', c_int * 4),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 86
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 86
 class struct_arrow_data(Structure):
     pass
 
@@ -122,7 +122,7 @@ struct_arrow_data._fields_ = [
     ('where', c_float * 3),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 93
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 93
 class struct_scalebar_data(Structure):
     pass
 
@@ -139,7 +139,7 @@ struct_scalebar_data._fields_ = [
     ('where', c_float * 3),
 ]
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 130
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 130
 class struct_anon_355(Structure):
     pass
 
@@ -178,9 +178,9 @@ struct_anon_355._fields_ = [
     ('bgcolor', c_int),
 ]
 
-nv_data = struct_anon_355 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 130
+nv_data = struct_anon_355 # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 130
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 132
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 132
 class struct_render_window(Structure):
     pass
 
@@ -197,7 +197,7 @@ struct_render_window._fields_ = [
     ('height', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 5
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 5
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_resize_window'):
         continue
@@ -206,7 +206,7 @@ for _lib in six.itervalues(_libs):
     Nviz_resize_window.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 6
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 6
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_update_ranges'):
         continue
@@ -215,7 +215,7 @@ for _lib in six.itervalues(_libs):
     Nviz_update_ranges.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 7
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 7
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_viewpoint_position'):
         continue
@@ -224,7 +224,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_viewpoint_position.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 8
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 8
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_viewpoint_position'):
         continue
@@ -233,7 +233,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_viewpoint_position.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 9
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 9
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_viewpoint_height'):
         continue
@@ -242,7 +242,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_viewpoint_height.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 10
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 10
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_viewpoint_height'):
         continue
@@ -251,7 +251,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_viewpoint_height.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 11
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 11
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_viewpoint_persp'):
         continue
@@ -260,7 +260,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_viewpoint_persp.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 12
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 12
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_viewpoint_twist'):
         continue
@@ -269,7 +269,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_viewpoint_twist.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 13
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 13
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_change_exag'):
         continue
@@ -278,7 +278,7 @@ for _lib in six.itervalues(_libs):
     Nviz_change_exag.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 14
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 14
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_look_here'):
         continue
@@ -287,7 +287,7 @@ for _lib in six.itervalues(_libs):
     Nviz_look_here.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 15
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 15
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_modelview'):
         continue
@@ -296,7 +296,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_modelview.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 16
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 16
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_rotation'):
         continue
@@ -305,7 +305,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_rotation.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 17
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 17
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_unset_rotation'):
         continue
@@ -314,7 +314,7 @@ for _lib in six.itervalues(_libs):
     Nviz_unset_rotation.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 18
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 18
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_init_rotation'):
         continue
@@ -323,7 +323,7 @@ for _lib in six.itervalues(_libs):
     Nviz_init_rotation.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 19
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 19
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_flythrough'):
         continue
@@ -332,7 +332,7 @@ for _lib in six.itervalues(_libs):
     Nviz_flythrough.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 22
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 22
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_new_cplane'):
         continue
@@ -341,7 +341,7 @@ for _lib in six.itervalues(_libs):
     Nviz_new_cplane.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 23
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 23
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_on_cplane'):
         continue
@@ -350,7 +350,7 @@ for _lib in six.itervalues(_libs):
     Nviz_on_cplane.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 24
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 24
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_off_cplane'):
         continue
@@ -359,7 +359,7 @@ for _lib in six.itervalues(_libs):
     Nviz_off_cplane.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 25
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 25
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_cplane'):
         continue
@@ -368,7 +368,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_cplane.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 26
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 26
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_num_cplanes'):
         continue
@@ -377,7 +377,7 @@ for _lib in six.itervalues(_libs):
     Nviz_num_cplanes.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 27
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 27
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_current_cplane'):
         continue
@@ -386,7 +386,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_current_cplane.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 28
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 28
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_cplane_rotation'):
         continue
@@ -395,7 +395,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_cplane_rotation.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 29
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 29
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_cplane_rotation'):
         continue
@@ -404,7 +404,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_cplane_rotation.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 30
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 30
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_cplane_translation'):
         continue
@@ -413,7 +413,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_cplane_translation.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 31
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 31
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_cplane_translation'):
         continue
@@ -422,7 +422,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_cplane_translation.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 32
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 32
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_fence_color'):
         continue
@@ -431,7 +431,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_fence_color.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 33
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 33
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_cplane_here'):
         continue
@@ -440,7 +440,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_cplane_here.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 37
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 37
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_all_surf'):
         continue
@@ -449,7 +449,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_all_surf.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 38
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 38
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_all_vect'):
         continue
@@ -458,7 +458,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_all_vect.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 39
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 39
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_all_site'):
         continue
@@ -467,7 +467,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_all_site.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 40
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 40
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_all_vol'):
         continue
@@ -476,7 +476,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_all_vol.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 41
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 41
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_all'):
         continue
@@ -485,7 +485,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_all.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 42
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 42
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_quick'):
         continue
@@ -494,7 +494,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_quick.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 43
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 43
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_load_image'):
         continue
@@ -503,7 +503,7 @@ for _lib in six.itervalues(_libs):
     Nviz_load_image.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 44
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 44
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_image'):
         continue
@@ -512,7 +512,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_image.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 45
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 45
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_2D'):
         continue
@@ -521,7 +521,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_2D.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 46
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 46
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_del_texture'):
         continue
@@ -530,7 +530,7 @@ for _lib in six.itervalues(_libs):
     Nviz_del_texture.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 47
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 47
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_max_texture'):
         continue
@@ -539,7 +539,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_max_texture.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 50
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 50
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_exag_height'):
         continue
@@ -548,7 +548,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_exag_height.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 51
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 51
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_exag'):
         continue
@@ -557,7 +557,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_exag.restype = c_double
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 54
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 54
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_light_position'):
         continue
@@ -566,7 +566,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_light_position.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 55
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 55
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_light_bright'):
         continue
@@ -575,7 +575,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_light_bright.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 56
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 56
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_light_color'):
         continue
@@ -584,7 +584,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_light_color.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 57
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 57
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_light_ambient'):
         continue
@@ -593,7 +593,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_light_ambient.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 58
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 58
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_init_light'):
         continue
@@ -602,7 +602,7 @@ for _lib in six.itervalues(_libs):
     Nviz_init_light.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 59
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 59
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_new_light'):
         continue
@@ -611,7 +611,7 @@ for _lib in six.itervalues(_libs):
     Nviz_new_light.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 60
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 60
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_model'):
         continue
@@ -620,7 +620,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_model.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 63
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 63
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_new_map_obj'):
         continue
@@ -629,7 +629,7 @@ for _lib in six.itervalues(_libs):
     Nviz_new_map_obj.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 64
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 64
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_attr'):
         continue
@@ -638,7 +638,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_attr.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 65
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 65
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_surface_attr_default'):
         continue
@@ -647,7 +647,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_surface_attr_default.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 66
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 66
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_vpoint_attr_default'):
         continue
@@ -656,7 +656,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_vpoint_attr_default.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 67
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 67
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_volume_attr_default'):
         continue
@@ -665,7 +665,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_volume_attr_default.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 68
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 68
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_unset_attr'):
         continue
@@ -674,7 +674,7 @@ for _lib in six.itervalues(_libs):
     Nviz_unset_attr.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 71
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 71
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_init_data'):
         continue
@@ -683,7 +683,7 @@ for _lib in six.itervalues(_libs):
     Nviz_init_data.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 72
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 72
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_destroy_data'):
         continue
@@ -692,7 +692,7 @@ for _lib in six.itervalues(_libs):
     Nviz_destroy_data.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 73
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 73
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_bgcolor'):
         continue
@@ -701,7 +701,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_bgcolor.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 74
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 74
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_bgcolor'):
         continue
@@ -710,7 +710,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_bgcolor.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 75
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 75
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_color_from_str'):
         continue
@@ -719,7 +719,7 @@ for _lib in six.itervalues(_libs):
     Nviz_color_from_str.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 76
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 76
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_new_fringe'):
         continue
@@ -728,7 +728,7 @@ for _lib in six.itervalues(_libs):
     Nviz_new_fringe.restype = POINTER(struct_fringe_data)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 78
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 78
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_fringe'):
         continue
@@ -737,7 +737,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_fringe.restype = POINTER(struct_fringe_data)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 80
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 80
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_fringe'):
         continue
@@ -746,7 +746,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_fringe.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 81
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 81
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_arrow'):
         continue
@@ -755,7 +755,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_arrow.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 82
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 82
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_arrow'):
         continue
@@ -764,7 +764,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_arrow.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 83
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 83
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_delete_arrow'):
         continue
@@ -773,7 +773,7 @@ for _lib in six.itervalues(_libs):
     Nviz_delete_arrow.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 84
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 84
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_new_scalebar'):
         continue
@@ -782,7 +782,7 @@ for _lib in six.itervalues(_libs):
     Nviz_new_scalebar.restype = POINTER(struct_scalebar_data)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 85
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 85
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_scalebar'):
         continue
@@ -791,7 +791,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_scalebar.restype = POINTER(struct_scalebar_data)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 86
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 86
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_draw_scalebar'):
         continue
@@ -800,7 +800,7 @@ for _lib in six.itervalues(_libs):
     Nviz_draw_scalebar.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 87
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 87
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_delete_scalebar'):
         continue
@@ -809,7 +809,7 @@ for _lib in six.itervalues(_libs):
     Nviz_delete_scalebar.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 90
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 90
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_init_view'):
         continue
@@ -818,7 +818,7 @@ for _lib in six.itervalues(_libs):
     Nviz_init_view.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 91
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 91
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_focus_state'):
         continue
@@ -827,7 +827,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_focus_state.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 92
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 92
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_focus_map'):
         continue
@@ -836,7 +836,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_focus_map.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 93
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 93
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_has_focus'):
         continue
@@ -845,7 +845,7 @@ for _lib in six.itervalues(_libs):
     Nviz_has_focus.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 94
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 94
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_set_focus'):
         continue
@@ -854,7 +854,7 @@ for _lib in six.itervalues(_libs):
     Nviz_set_focus.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 95
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 95
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_focus'):
         continue
@@ -863,7 +863,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_focus.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 96
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 96
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_xyrange'):
         continue
@@ -872,7 +872,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_xyrange.restype = c_float
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 97
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 97
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_zrange'):
         continue
@@ -881,7 +881,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_zrange.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 98
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 98
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_get_longdim'):
         continue
@@ -890,7 +890,7 @@ for _lib in six.itervalues(_libs):
     Nviz_get_longdim.restype = c_float
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 101
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 101
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_new_render_window'):
         continue
@@ -899,7 +899,7 @@ for _lib in six.itervalues(_libs):
     Nviz_new_render_window.restype = POINTER(struct_render_window)
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 102
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 102
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_init_render_window'):
         continue
@@ -908,7 +908,7 @@ for _lib in six.itervalues(_libs):
     Nviz_init_render_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 103
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 103
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_destroy_render_window'):
         continue
@@ -917,7 +917,7 @@ for _lib in six.itervalues(_libs):
     Nviz_destroy_render_window.restype = None
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 104
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 104
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_create_render_window'):
         continue
@@ -926,7 +926,7 @@ for _lib in six.itervalues(_libs):
     Nviz_create_render_window.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 105
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/defs/nviz.h: 105
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'Nviz_make_current_render_window'):
         continue
@@ -935,133 +935,133 @@ for _lib in six.itervalues(_libs):
     Nviz_make_current_render_window.restype = c_int
     break
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/ogsf.h: 30
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/ogsf.h: 30
 try:
     GS_UNIT_SIZE = 1000.0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 42
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 42
 try:
     MAP_OBJ_UNDEFINED = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 43
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 43
 try:
     MAP_OBJ_SURF = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 44
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 44
 try:
     MAP_OBJ_VOL = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 45
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 45
 try:
     MAP_OBJ_VECT = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 46
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 46
 try:
     MAP_OBJ_SITE = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 48
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 48
 try:
     DRAW_COARSE = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 49
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 49
 try:
     DRAW_FINE = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 50
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 50
 try:
     DRAW_BOTH = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 53
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 53
 try:
     DRAW_QUICK_SURFACE = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 54
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 54
 try:
     DRAW_QUICK_VLINES = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 55
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 55
 try:
     DRAW_QUICK_VPOINTS = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 56
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 56
 try:
     DRAW_QUICK_VOLUME = 8
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 58
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 58
 try:
     RANGE = (5 * GS_UNIT_SIZE)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 59
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 59
 try:
     RANGE_OFFSET = (2 * GS_UNIT_SIZE)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 60
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 60
 try:
     ZRANGE = (3 * GS_UNIT_SIZE)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 61
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 61
 try:
     ZRANGE_OFFSET = (1 * GS_UNIT_SIZE)
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 63
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 63
 try:
     DEFAULT_SURF_COLOR = 3390463
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 65
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 65
 try:
     FORMAT_PPM = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 66
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 66
 try:
     FORMAT_TIF = 2
 except:
     pass
 
-fringe_data = struct_fringe_data # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 78
+fringe_data = struct_fringe_data # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 78
 
-arrow_data = struct_arrow_data # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 86
+arrow_data = struct_arrow_data # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 86
 
-scalebar_data = struct_scalebar_data # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 93
+scalebar_data = struct_scalebar_data # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 93
 
-render_window = struct_render_window # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 132
+render_window = struct_render_window # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\nviz.h: 132
 
 # No inserted files
 

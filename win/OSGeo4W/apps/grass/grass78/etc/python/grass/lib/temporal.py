@@ -1,7 +1,7 @@
 '''Wrapper for temporal.h
 
 Generated with:
-./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_temporal.7.8 D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/temporal.h -o OBJ.x86_64-w64-mingw32/temporal.py
+./ctypesgen.py --cpp x86_64-w64-mingw32-gcc -E -I/D/src/osgeo4w/src/grass/osgeo4w/osgeo4w/include -D_FILE_OFFSET_BITS=64      -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -I/d/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include -D__GLIBC_HAVE_LONG_LONG -lgrass_temporal.7.8 D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/temporal.h -o OBJ.x86_64-w64-mingw32/temporal.py
 
 Do not modify this file.
 '''
@@ -27,7 +27,7 @@ _libs["grass_temporal.7.8"] = load_library("grass_temporal.7.8")
 
 # No modules
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/datetime.h: 27
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/datetime.h: 27
 class struct_DateTime(Structure):
     pass
 
@@ -60,9 +60,9 @@ struct_DateTime._fields_ = [
     ('tz', c_int),
 ]
 
-DateTime = struct_DateTime # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/datetime.h: 27
+DateTime = struct_DateTime # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/datetime.h: 27
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/gis.h: 588
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/gis.h: 588
 class struct_TimeStamp(Structure):
     pass
 
@@ -75,7 +75,7 @@ struct_TimeStamp._fields_ = [
     ('count', c_int),
 ]
 
-# D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 304
+# D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 304
 class struct__db_connection(Structure):
     pass
 
@@ -102,9 +102,9 @@ struct__db_connection._fields_ = [
     ('group', String),
 ]
 
-dbConnection = struct__db_connection # D:/src/osgeo4w/src/grass/grass-7.8.6RC3/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 304
+dbConnection = struct__db_connection # D:/src/osgeo4w/src/grass/grass-7.8.7/dist.x86_64-w64-mingw32/include/grass/dbmi.h: 304
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 14
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 14
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_set_connection'):
         continue
@@ -113,7 +113,7 @@ for _lib in six.itervalues(_libs):
     tgis_set_connection.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 15
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 15
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_get_connection'):
         continue
@@ -122,7 +122,7 @@ for _lib in six.itervalues(_libs):
     tgis_get_connection.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 16
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 16
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_get_default_driver_name'):
         continue
@@ -131,7 +131,7 @@ for _lib in six.itervalues(_libs):
     tgis_get_default_driver_name.restype = c_char_p
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 17
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 17
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_get_default_database_name'):
         continue
@@ -144,7 +144,7 @@ for _lib in six.itervalues(_libs):
         tgis_get_default_database_name.errcheck = ReturnString
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 18
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 18
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_get_driver_name'):
         continue
@@ -157,7 +157,7 @@ for _lib in six.itervalues(_libs):
         tgis_get_driver_name.errcheck = ReturnString
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 19
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 19
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_get_database_name'):
         continue
@@ -170,7 +170,7 @@ for _lib in six.itervalues(_libs):
         tgis_get_database_name.errcheck = ReturnString
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 20
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 20
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_get_mapset_driver_name'):
         continue
@@ -183,7 +183,7 @@ for _lib in six.itervalues(_libs):
         tgis_get_mapset_driver_name.errcheck = ReturnString
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 21
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 21
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_get_mapset_database_name'):
         continue
@@ -196,7 +196,7 @@ for _lib in six.itervalues(_libs):
         tgis_get_mapset_database_name.errcheck = ReturnString
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 22
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 22
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_set_default_connection'):
         continue
@@ -205,7 +205,7 @@ for _lib in six.itervalues(_libs):
     tgis_set_default_connection.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 49
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 49
 class struct__tgisMap(Structure):
     pass
 
@@ -220,9 +220,9 @@ struct__tgisMap._fields_ = [
     ('ts', struct_TimeStamp),
 ]
 
-tgisMap = struct__tgisMap # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 49
+tgisMap = struct__tgisMap # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 49
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 71
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 71
 class struct__tgisMapList(Structure):
     pass
 
@@ -237,9 +237,9 @@ struct__tgisMapList._fields_ = [
     ('alloc_values', c_int),
 ]
 
-tgisMapList = struct__tgisMapList # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 71
+tgisMapList = struct__tgisMapList # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 71
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 74
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 74
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_init_map_list'):
         continue
@@ -248,7 +248,7 @@ for _lib in six.itervalues(_libs):
     tgis_init_map_list.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 75
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 75
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_free_map_list'):
         continue
@@ -257,7 +257,7 @@ for _lib in six.itervalues(_libs):
     tgis_free_map_list.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 76
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 76
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_new_map_list'):
         continue
@@ -266,7 +266,7 @@ for _lib in six.itervalues(_libs):
     tgis_new_map_list.restype = POINTER(tgisMapList)
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 78
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 78
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_map_list_insert'):
         continue
@@ -275,7 +275,7 @@ for _lib in six.itervalues(_libs):
     tgis_map_list_insert.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 80
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 80
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_map_list_add'):
         continue
@@ -284,7 +284,7 @@ for _lib in six.itervalues(_libs):
     tgis_map_list_add.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 103
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 103
 class struct__tgisExtent(Structure):
     pass
 
@@ -311,13 +311,13 @@ struct__tgisExtent._fields_ = [
     ('bottom', c_double),
 ]
 
-tgisExtent = struct__tgisExtent # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 103
+tgisExtent = struct__tgisExtent # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 103
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 133
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 133
 class struct__tgisDataset(Structure):
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 128
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 128
 class struct__tgisDatasetList(Structure):
     pass
 
@@ -332,7 +332,7 @@ struct__tgisDatasetList._fields_ = [
     ('alloc_values', c_int),
 ]
 
-tgisDatasetList = struct__tgisDatasetList # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 128
+tgisDatasetList = struct__tgisDatasetList # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 128
 
 struct__tgisDataset.__slots__ = [
     'name',
@@ -399,9 +399,9 @@ struct__tgisDataset._fields_ = [
     ('meet', tgisDatasetList),
 ]
 
-tgisDataset = struct__tgisDataset # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 174
+tgisDataset = struct__tgisDataset # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 174
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 178
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 178
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_init_dataset_list'):
         continue
@@ -410,7 +410,7 @@ for _lib in six.itervalues(_libs):
     tgis_init_dataset_list.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 179
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 179
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_free_dataset_list'):
         continue
@@ -419,7 +419,7 @@ for _lib in six.itervalues(_libs):
     tgis_free_dataset_list.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 180
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 180
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_new_dataset_list'):
         continue
@@ -428,7 +428,7 @@ for _lib in six.itervalues(_libs):
     tgis_new_dataset_list.restype = POINTER(tgisDatasetList)
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 182
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 182
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_dataset_list_insert'):
         continue
@@ -437,7 +437,7 @@ for _lib in six.itervalues(_libs):
     tgis_dataset_list_insert.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 187
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 187
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_dataset_list_add'):
         continue
@@ -446,7 +446,7 @@ for _lib in six.itervalues(_libs):
     tgis_dataset_list_add.restype = None
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 191
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 191
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_build_topology'):
         continue
@@ -455,7 +455,7 @@ for _lib in six.itervalues(_libs):
     tgis_build_topology.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 194
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 194
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_build_topology2'):
         continue
@@ -464,7 +464,7 @@ for _lib in six.itervalues(_libs):
     tgis_build_topology2.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 202
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 202
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_create_stds'):
         continue
@@ -473,7 +473,7 @@ for _lib in six.itervalues(_libs):
     tgis_create_stds.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 206
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 206
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_modify_stds'):
         continue
@@ -482,7 +482,7 @@ for _lib in six.itervalues(_libs):
     tgis_modify_stds.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 211
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 211
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_remove_stds'):
         continue
@@ -491,7 +491,7 @@ for _lib in six.itervalues(_libs):
     tgis_remove_stds.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 214
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 214
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_update_stds'):
         continue
@@ -500,7 +500,7 @@ for _lib in six.itervalues(_libs):
     tgis_update_stds.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 218
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 218
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_register_map'):
         continue
@@ -509,7 +509,7 @@ for _lib in six.itervalues(_libs):
     tgis_register_map.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 221
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 221
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_unregister_map'):
         continue
@@ -518,7 +518,7 @@ for _lib in six.itervalues(_libs):
     tgis_unregister_map.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 224
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 224
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_register_maps'):
         continue
@@ -527,7 +527,7 @@ for _lib in six.itervalues(_libs):
     tgis_register_maps.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 227
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 227
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_unregister_maps'):
         continue
@@ -536,7 +536,7 @@ for _lib in six.itervalues(_libs):
     tgis_unregister_maps.restype = c_int
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 230
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 230
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_get_registered_maps'):
         continue
@@ -545,7 +545,7 @@ for _lib in six.itervalues(_libs):
     tgis_get_registered_maps.restype = POINTER(tgisDatasetList)
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 236
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 236
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_get_registered_stds'):
         continue
@@ -554,7 +554,7 @@ for _lib in six.itervalues(_libs):
     tgis_get_registered_stds.restype = POINTER(tgisDatasetList)
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 241
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 241
 for _lib in six.itervalues(_libs):
     if not hasattr(_lib, 'tgis_get_stds_info'):
         continue
@@ -563,87 +563,87 @@ for _lib in six.itervalues(_libs):
     tgis_get_stds_info.restype = POINTER(tgisDataset)
     break
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 9
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 9
 try:
     TGISDB_DEFAULT_DRIVER = 'sqlite'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 11
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 11
 try:
     TGISDB_DEFAULT_SQLITE_PATH = 'tgis/sqlite.db'
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 31
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 31
 try:
     TGIS_TYPE_MAP = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 32
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 32
 try:
     TGIS_TYPE_STDS = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 34
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 34
 try:
     TGIS_RASTER_MAP = 1
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 35
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 35
 try:
     TGIS_RASTER3D_MAP = 2
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 36
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 36
 try:
     TGIS_VECTOR_MAP = 3
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 37
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 37
 try:
     TGIS_STRDS = 4
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 38
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 38
 try:
     TGIS_STR3DS = 5
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 39
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 39
 try:
     TGIS_STVDS = 6
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 41
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 41
 try:
     TGIS_ABSOLUTE_TIME = 0
 except:
     pass
 
-# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 42
+# D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 42
 try:
     TGIS_RELATIVE_TIME = 1
 except:
     pass
 
-_tgisMap = struct__tgisMap # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 49
+_tgisMap = struct__tgisMap # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 49
 
-_tgisMapList = struct__tgisMapList # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 71
+_tgisMapList = struct__tgisMapList # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 71
 
-_tgisExtent = struct__tgisExtent # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 103
+_tgisExtent = struct__tgisExtent # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 103
 
-_tgisDataset = struct__tgisDataset # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 133
+_tgisDataset = struct__tgisDataset # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 133
 
-_tgisDatasetList = struct__tgisDatasetList # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.6RC3\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 128
+_tgisDatasetList = struct__tgisDatasetList # D:\\src\\osgeo4w\\src\\grass\\grass-7.8.7\\dist.x86_64-w64-mingw32\\include\\grass\\temporal.h: 128
 
 # No inserted files
 

@@ -1,79 +1,79 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-<title>r.drain.py - GRASS GIS manual</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="grassdocs.css" type="text/css">
-</head>
-<body bgcolor="white">
-<div id="container">
-
-<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
-<hr class="header">
-
-<h2>NAME</h2>
-<em><b>r.drain.py</b></em>  - Traces a flow through an elevation model or cost surface on a raster map.
-<h2>KEYWORDS</h2>
-<a href="raster.html">raster</a>, <a href="topic_hydrology.html">hydrology</a>, <a href="keywords.html#cost surface">cost surface</a>
-<h2>SYNOPSIS</h2>
-<div id="name"><b>r.drain.py</b><br></div>
-<b>r.drain.py --help</b><br>
-<div id="synopsis"><b>r.drain.py</b> [-<b>cand</b>] <b>input</b>=<em>name</em>  [<b>direction</b>=<em>name</em>]  <b>output</b>=<em>name</em>  [<b>drain</b>=<em>name</em>]   [<b>start_coordinates</b>=<em>east,north</em>[,<i>east,north</i>,...]]   [<b>start_points</b>=<em>name</em>[,<i>name</i>,...]]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
-</div>
-
-<div id="flags">
-<h3>Flags:</h3>
-<dl>
-<dt><b>-c</b></dt>
-<dd>Copy input cell values on output</dd>
-
-<dt><b>-a</b></dt>
-<dd>Accumulate input values along the path</dd>
-
-<dt><b>-n</b></dt>
-<dd>Count cell numbers along the path</dd>
-
-<dt><b>-d</b></dt>
-<dd>The input raster map is a cost surface (direction surface must also be specified)</dd>
-
-<dt><b>--overwrite</b></dt>
-<dd>Allow output files to overwrite existing files</dd>
-<dt><b>--help</b></dt>
-<dd>Print usage summary</dd>
-<dt><b>--verbose</b></dt>
-<dd>Verbose module output</dd>
-<dt><b>--quiet</b></dt>
-<dd>Quiet module output</dd>
-<dt><b>--ui</b></dt>
-<dd>Force launching GUI dialog</dd>
-</dl>
-</div>
-
-<div id="parameters">
-<h3>Parameters:</h3>
-<dl>
-<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name of input elevation or cost surface raster map</dd>
-
-<dt><b>direction</b>=<em>name</em></dt>
-<dd>Name of input movement direction map associated with the cost surface</dd>
-<dd>Direction in degrees CCW from east</dd>
-
-<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
-<dd>Name for output raster map</dd>
-
-<dt><b>drain</b>=<em>name</em></dt>
-<dd>Name for output drain vector map</dd>
-<dd>Recommended for cost surface made using knight's move</dd>
-
-<dt><b>start_coordinates</b>=<em>east,north[,<i>east,north</i>,...]</em></dt>
-<dd>Coordinates of starting point(s) (E,N)</dd>
-
-<dt><b>start_points</b>=<em>name[,<i>name</i>,...]</em></dt>
-<dd>Name of starting vector points map(s)</dd>
-
-</dl>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>r.drain.py - GRASS GIS manual</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="grassdocs.css" type="text/css">
+</head>
+<body bgcolor="white">
+<div id="container">
+
+<a href="index.html"><img src="grass_logo.png" alt="GRASS logo"></a>
+<hr class="header">
+
+<h2>NAME</h2>
+<em><b>r.drain.py</b></em>  - Traces a flow through an elevation model or cost surface on a raster map.
+<h2>KEYWORDS</h2>
+<a href="raster.html">raster</a>, <a href="topic_hydrology.html">hydrology</a>, <a href="keywords.html#cost surface">cost surface</a>
+<h2>SYNOPSIS</h2>
+<div id="name"><b>r.drain.py</b><br></div>
+<b>r.drain.py --help</b><br>
+<div id="synopsis"><b>r.drain.py</b> [-<b>cand</b>] <b>input</b>=<em>name</em>  [<b>direction</b>=<em>name</em>]  <b>output</b>=<em>name</em>  [<b>drain</b>=<em>name</em>]   [<b>start_coordinates</b>=<em>east,north</em>[,<i>east,north</i>,...]]   [<b>start_points</b>=<em>name</em>[,<i>name</i>,...]]   [--<b>overwrite</b>]  [--<b>help</b>]  [--<b>verbose</b>]  [--<b>quiet</b>]  [--<b>ui</b>] 
+</div>
+
+<div id="flags">
+<h3>Flags:</h3>
+<dl>
+<dt><b>-c</b></dt>
+<dd>Copy input cell values on output</dd>
+
+<dt><b>-a</b></dt>
+<dd>Accumulate input values along the path</dd>
+
+<dt><b>-n</b></dt>
+<dd>Count cell numbers along the path</dd>
+
+<dt><b>-d</b></dt>
+<dd>The input raster map is a cost surface (direction surface must also be specified)</dd>
+
+<dt><b>--overwrite</b></dt>
+<dd>Allow output files to overwrite existing files</dd>
+<dt><b>--help</b></dt>
+<dd>Print usage summary</dd>
+<dt><b>--verbose</b></dt>
+<dd>Verbose module output</dd>
+<dt><b>--quiet</b></dt>
+<dd>Quiet module output</dd>
+<dt><b>--ui</b></dt>
+<dd>Force launching GUI dialog</dd>
+</dl>
+</div>
+
+<div id="parameters">
+<h3>Parameters:</h3>
+<dl>
+<dt><b>input</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name of input elevation or cost surface raster map</dd>
+
+<dt><b>direction</b>=<em>name</em></dt>
+<dd>Name of input movement direction map associated with the cost surface</dd>
+<dd>Direction in degrees CCW from east</dd>
+
+<dt><b>output</b>=<em>name</em>&nbsp;<b>[required]</b></dt>
+<dd>Name for output raster map</dd>
+
+<dt><b>drain</b>=<em>name</em></dt>
+<dd>Name for output drain vector map</dd>
+<dd>Recommended for cost surface made using knight's move</dd>
+
+<dt><b>start_coordinates</b>=<em>east,north[,<i>east,north</i>,...]</em></dt>
+<dd>Coordinates of starting point(s) (E,N)</dd>
+
+<dt><b>start_points</b>=<em>name[,<i>name</i>,...]</em></dt>
+<dd>Name of starting vector points map(s)</dd>
+
+</dl>
+</div>
 <div class="toc">
 <h4 class="toc">Table of contents</h4>
 <ul class="toc">
@@ -410,7 +410,14 @@ Roberto Flor (ITC-irst, Trento, Italy)
 <p>
 <i>Last changed: $Date$</i>
 --><h2>SOURCE CODE</h2>
-<p>Available at: <a href="https://github.com/OSGeo/grass/tree/master/scripts/r.drain">r.drain source code</a> (<a href="https://github.com/OSGeo/grass/commits/master/scripts/r.drain">history</a>)</p>
+<p>
+  Available at:
+  <a href="https://github.com/OSGeo/grass/tree/releasebranch_7_8/scripts/r.drain">r.drain source code</a>
+  (<a href="https://github.com/OSGeo/grass/commits/releasebranch_7_8/scripts/r.drain">history</a>)
+</p>
+<p>
+  Accessed: unknown
+</p>
 <hr class="header">
 <p>
 <a href="index.html">Main index</a> |
@@ -421,9 +428,9 @@ Roberto Flor (ITC-irst, Trento, Italy)
 <a href="full_index.html">Full index</a>
 </p>
 <p>
-&copy; 2003-2021
+&copy; 2003-2022
 <a href="http://grass.osgeo.org">GRASS Development Team</a>,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
 </p>
 
 </div>

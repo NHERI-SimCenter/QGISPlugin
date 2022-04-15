@@ -1529,6 +1529,14 @@
               <keywords>raster,surface,elevation,interpolation,splines,no-data filling</keywords>
               <handler>OnMenuCmd</handler>
             </menuitem>
+            <separator />
+            <menuitem>
+              <label>Fill NULL cells using IDW</label>
+              <command>r.fill.stats</command>
+              <help>Rapidly fills 'no data' cells (NULLs) of a raster map with interpolated values (IDW).</help>
+              <keywords>raster,surface,interpolation,IDW,no-data filling</keywords>
+              <handler>OnMenuCmd</handler>
+            </menuitem>
           </items>
         </menu>
         <separator />

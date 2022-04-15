@@ -1,4 +1,4 @@
-.TH variables 1 "" "GRASS 7.8.6RC3" "GRASS GIS User's Manual"
+.TH variables 1 "" "GRASS 7.8.7" "GRASS GIS User's Manual"
 .SH GRASS variables and environment variables
 There are two types of variables:
 .RS 4n
@@ -280,6 +280,12 @@ it may be set to either less, more, or cat.
 [used during install process for generating man pages]
 .br
 set Perl with path.
+.IP "GRASS_PROXY" 4m
+.br
+[used during addon install/reinstall process for generating man
+pages (download commit from GitHub API server and remote modules.xml file)]
+.br
+set the proxy with: GRASS_PROXY=\(dqhttp=<value>,ftp=<value>\(dq.
 .IP "GRASS_SKIP_MAPSET_OWNER_CHECK" 4m
 .br
 By default it is not possible to work with MAPSETs that are
@@ -668,6 +674,6 @@ Keywords index |
 Graphical index |
 Full index
 .PP
-© 2003\-2021
+© 2003\-2022
 GRASS Development Team,
-GRASS GIS 7.8.6RC3 Reference Manual
+GRASS GIS 7.8.7 Reference Manual
