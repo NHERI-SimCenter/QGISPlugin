@@ -2033,7 +2033,7 @@ QgisApp::~QgisApp()
   // This function *MUST* be the last one called, as it destroys in
   // particular GDAL. As above objects can hold GDAL/OGR objects, it is not
   // safe destroying them afterwards
-  QgsApplication::exitQgis();
+  //QgsApplication::exitQgis(); // SG change, leaving this causes a crash on exit. Put in destructor of parent
   // Do *NOT* add anything here !
 }
 

@@ -164,7 +164,7 @@ cmake -G "%CMAKEGEN%" ^
 	-D FCGI_LIBRARY=%O4W_ROOT%/lib/libfcgi.lib ^
 	-D QCA_INCLUDE_DIR=%OSGEO4W_ROOT%\apps\Qt5\include\QtCrypto ^
 	-D QCA_LIBRARY=%OSGEO4W_ROOT%\apps\Qt5\lib\qca-qt5.lib ^
-	-D QSCINTILLA_LIBRARY=%OSGEO4W_ROOT%\apps\Qt5\lib\qscintilla2.lib ^
+	-D QSCINTILLA_LIBRARY=%OSGEO4W_ROOT%\apps\Qt5\lib\qscintilla2_qt5.lib ^
 	-D DART_TESTING_TIMEOUT=60 ^
 	-D PUSH_TO_CDASH=TRUE ^
 	-D CMAKE_PREFIX_PATH=%QTROOTDIR% ^

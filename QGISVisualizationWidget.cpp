@@ -224,7 +224,7 @@ QGISVisualizationWidget::QGISVisualizationWidget(QMainWindow *parent) : Visualiz
 
 QGISVisualizationWidget::~QGISVisualizationWidget()
 {
-
+    // QgsApplication::exitQgis(); To do... call this last so it does not cause a crash
 }
 
 
@@ -311,7 +311,7 @@ SimCenterMapcanvasWidget* QGISVisualizationWidget::testNewMapCanvas()
 
     mapCanvasWidget->setWindowFlag(Qt::Window);
 
-//    auto mapCanvas = mapCanvasWidget->mapCanvas();
+    //    auto mapCanvas = mapCanvasWidget->mapCanvas();
 
     mapCanvasWidget->show();
 
@@ -509,62 +509,62 @@ QgsVectorLayer* QGISVisualizationWidget::duplicateExistingLayer(QgsVectorLayer* 
         return nullptr;
     }
 
-   QgsVectorLayer* dupLayer = this->addVectorLayer(layerType,"All Pipelines");
-   if (dupLayer == nullptr)
-   {
-       this->errorMessage("Error copying the layer "+layer->name() + " could not create a layer in the memory");
-       return nullptr;
-   }
+    QgsVectorLayer* dupLayer = this->addVectorLayer(layerType,"All Pipelines");
+    if (dupLayer == nullptr)
+    {
+        this->errorMessage("Error copying the layer "+layer->name() + " could not create a layer in the memory");
+        return nullptr;
+    }
 
-   auto pr = dupLayer->dataProvider();
-   dupLayer->startEditing();
+    auto pr = dupLayer->dataProvider();
+    dupLayer->startEditing();
 
-   auto res = pr->addAttributes(layer->fields().toList());
+    auto res = pr->addAttributes(layer->fields().toList());
 
-   if(!res)
-   {
-       this->errorMessage("Error adding attributes to the duplicate layer " + dupLayer->name() + ". Error copying the layer "+layer->name());
-       return nullptr;
-   }
+    if(!res)
+    {
+        this->errorMessage("Error adding attributes to the duplicate layer " + dupLayer->name() + ". Error copying the layer "+layer->name());
+        return nullptr;
+    }
 
-   dupLayer->updateFields(); // tell the vector layer to fetch changes from the provider
+    dupLayer->updateFields(); // tell the vector layer to fetch changes from the provider
 
-   // Check if the layer is created, but perhaps not valid
-   if (!dupLayer->isValid())
-   {
-       this->errorMessage("Error copying the layer "+layer->name()+" duplicate layer is not valid");
-       return nullptr;
-   }
+    // Check if the layer is created, but perhaps not valid
+    if (!dupLayer->isValid())
+    {
+        this->errorMessage("Error copying the layer "+layer->name()+" duplicate layer is not valid");
+        return nullptr;
+    }
 
-   // Set the crs of the duplicated layer to the crs of the original layer
-   dupLayer->setCrs(layer->crs());
+    // Set the crs of the duplicated layer to the crs of the original layer
+    dupLayer->setCrs(layer->crs());
 
-   auto layerDupName = layer->name() + ' ' + "copy";
-   dupLayer->setName(layerDupName);
+    auto layerDupName = layer->name() + ' ' + "copy";
+    dupLayer->setName(layerDupName);
 
-   // There could be a better approach to do this... perform a deep copy of the features for now
-   QgsFeatureIterator featIt = layer->getFeatures();
+    // There could be a better approach to do this... perform a deep copy of the features for now
+    QgsFeatureIterator featIt = layer->getFeatures();
 
-   QList<QgsFeature> featureList;
-   QgsFeature feat;
-   while (featIt.nextFeature(feat))
-   {
-       auto newFeat = QgsFeature(feat); // Use the feature copy constructor
+    QList<QgsFeature> featureList;
+    QgsFeature feat;
+    while (featIt.nextFeature(feat))
+    {
+        auto newFeat = QgsFeature(feat); // Use the feature copy constructor
 
-       // Do a deep clone of the geometry
-       newFeat.setGeometry(QgsGeometry(feat.geometry().get()->clone()));
-       featureList.append(newFeat);
-   }
+        // Do a deep clone of the geometry
+        newFeat.setGeometry(QgsGeometry(feat.geometry().get()->clone()));
+        featureList.append(newFeat);
+    }
 
-   // Start editing on the layer
-   dupLayer->startEditing();
+    // Start editing on the layer
+    dupLayer->startEditing();
 
-   dupLayer->dataProvider()->addFeatures(featureList);
+    dupLayer->dataProvider()->addFeatures(featureList);
 
-   dupLayer->commitChanges(true);
-   dupLayer->updateExtents();
+    dupLayer->commitChanges(true);
+    dupLayer->updateExtents();
 
-   this->addMapLayer(dupLayer);
+    this->addMapLayer(dupLayer);
 
     return dupLayer;
 }
@@ -1563,42 +1563,42 @@ int QGISVisualizationWidget::addNewFeatureAttributesToLayer(QgsVectorLayer* laye
         return -1;
     }
 
-//    qDebug()<<"Num attributes after truncate is "<<layer->dataProvider()->attributeIndexes().size();
-//    qDebug()<<"Num existing attributes is "<<existingFields.toList().size();
+    //    qDebug()<<"Num attributes after truncate is "<<layer->dataProvider()->attributeIndexes().size();
+    //    qDebug()<<"Num existing attributes is "<<existingFields.toList().size();
 
-//    for(auto&& it : existingFields.toList())
-//    {
-//       qDebug()<<it.displayName();
-//       qDebug()<<it.type();
-//    }
+    //    for(auto&& it : existingFields.toList())
+    //    {
+    //       qDebug()<<it.displayName();
+    //       qDebug()<<it.type();
+    //    }
 
     res = layer->dataProvider()->addAttributes(existingFields.toList());
 
     if(!res)
     {
-         error = "Error adding attributes to the layer " + layer->name();
-         return -1;
+        error = "Error adding attributes to the layer " + layer->name();
+        return -1;
     }
 
-//    qDebug()<<"Num provider fields before update is "<<layer->dataProvider()->attributeIndexes().size();
+    //    qDebug()<<"Num provider fields before update is "<<layer->dataProvider()->attributeIndexes().size();
 
 
 
     layer->updateFields(); // tell the vector layer to fetch changes from the provider
 
-//    auto numAtrb = featList.first().attributeCount();
-//    auto numField = featList.first().fields().count();
+    //    auto numAtrb = featList.first().attributeCount();
+    //    auto numField = featList.first().fields().count();
 
-//    qDebug()<<"Num feat. fields is "<<numField;
-//    qDebug()<<"Num feat. attributes is "<<numAtrb;
+    //    qDebug()<<"Num feat. fields is "<<numField;
+    //    qDebug()<<"Num feat. attributes is "<<numAtrb;
 
-//    qDebug()<<"Num layer fields is "<<layer->fields().count();
-//    qDebug()<<"Num layer attributes is "<<layer->attributeList().count();
+    //    qDebug()<<"Num layer fields is "<<layer->fields().count();
+    //    qDebug()<<"Num layer attributes is "<<layer->attributeList().count();
 
-//    for(auto&& it : layer->fields().toList())
-//    {
-//       qDebug()<<it.name();
-//    }
+    //    for(auto&& it : layer->fields().toList())
+    //    {
+    //       qDebug()<<it.name();
+    //    }
 
     res = layer->dataProvider()->addFeatures(featList);
 

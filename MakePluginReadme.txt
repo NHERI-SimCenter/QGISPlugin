@@ -48,3 +48,23 @@ Build qca with MSVC (debug/release)
 Need to build qwt(download source and build with .pro file) After build, cd build folder and run 'nmake install' to install dlls (will install in root c:\\ dir)
 
 Finally, need to build scintilla (download source and run pro file) After build, cd build folder and run 'nmake install' to install dlls (will install in Qt dirs)
+
+Curl
+
+cmake C:\Users\Office\Desktop\C++Libraries\curl-7.63.0\curl-7.63.0 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=C:\Users\Office\Desktop\C++Libraries\curl-7.63.0\Install
+
+Tiff
+
+cmake C:\Users\Office\Desktop\C++Libraries\tiff-4.3.0rc1\tiff-4.3.0 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=C:\Users\Office\Desktop\C++Libraries\tiff-4.3.0rc1\install
+
+Proj
+
+cmake C:\Users\Office\Desktop\proj-9.0.0\proj-9.0.0 ^
+-DCMAKE_PREFIX_PATH=C:\OSGeo4W ^
+-DCMAKE_BUILD_TYPE=Release ^
+-DCMAKE_INSTALL_PREFIX=C:\Users\Office\Desktop\proj-9.0.0\install ^
+-DTIFF_LIBRARY=C:\Users\Office\Desktop\C++Libraries\tiff-4.3.0rc1\install\lib\tiff.lib ^
+-DTIFF_INCLUDE_DIR=C:\Users\Office\Desktop\C++Libraries\tiff-4.3.0rc1\install\include ^
+-DCURL_LIBRARY=C:\Users\Office\Desktop\C++Libraries\curl-7.63.0\Install\lib\libcurl_imp.lib ^
+-DCURL_INCLUDE_DIR=C:\Users\Office\Desktop\C++Libraries\curl-7.63.0\Install\include
+
