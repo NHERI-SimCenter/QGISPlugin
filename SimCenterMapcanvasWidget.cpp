@@ -10,6 +10,7 @@
 #include <qgslayertreemodel.h>
 #include <qgslayertreelayer.h>
 #include <qgisapp.h>
+#include <qgsadvanceddigitizingdockwidget.h>
 #include <qgsapplayertreeviewmenuprovider.h>
 #include <qgsmaptoolcapture.h>
 #include <qgsmaptoolselect.h>
@@ -92,7 +93,10 @@ SimCenterMapcanvasWidget::SimCenterMapcanvasWidget(const QString &name, QGISVisu
     mainWidget->addWidget(legendTreeView);
     mainWidget->addWidget(thisMapCanvas);
 
-    mMapTools = std::make_unique<QgsAppMapTools>(thisMapCanvas, nullptr);
+    auto advancedDigitizingDockWidget = new QgsAdvancedDigitizingDockWidget(thisMapCanvas, this);
+    mMapTools = std::make_unique<QgsAppMapTools>(thisMapCanvas, advancedDigitizingDockWidget);
+    advancedDigitizingDockWidget->close();
+    advancedDigitizingDockWidget->setVisible(false);
 
     auto captureTools = mMapTools->captureTools();
 
