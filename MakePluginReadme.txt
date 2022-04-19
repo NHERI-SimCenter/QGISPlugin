@@ -1,3 +1,17 @@
+
+
+Mac OS
+-------
+
+Step 1) Compile the QGIS source
+
+cd the QGIS plugin dir containing the file 'BuildQGIS.sh' and run the 'BuildQGIS.sh' file in sudo. The QGIS source (https://github.com/sgavrilovic/qgis) must be one dir up from the plugin dir. 
+
+Step 2) Run the 'PackageLibs.sh' script to bundle the libs 
+
+Windows
+-------
+
 Need to compile plugin both in release and debug. 
 
 First need to download the dependencies using OSGeo4W and "qgis-rel-dev-deps" branch for the current release

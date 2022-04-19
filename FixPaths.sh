@@ -4,6 +4,8 @@
 
 # This script replaces the absolute path in libraries with the relative @loader_path or @rpath
 
+# Note check the paths on lines 49-53 to ensure versions are correct
+
 # ********* THINGS TO CHANGE START *********
 
 # Set the path where the bundled libs are
@@ -44,8 +46,8 @@ for f in $pathToInstall/lib/*.dylib; do
 
 done
 
-install_name_tool -id @rpath/libgdal.28.dylib $pathToInstall/lib/libgdal.28.dylib
-install_name_tool -id @rpath/libproj.18.dylib $pathToInstall/lib/libproj.18.dylib
+install_name_tool -id @rpath/libgdal.29.dylib $pathToInstall/lib/libgdal.29.dylib
+install_name_tool -id @rpath/libproj.22.dylib $pathToInstall/lib/libproj.22.dylib
 install_name_tool -id @rpath/libqscintilla2_qt5.15.0.0.dylib $pathToInstall/lib/libqscintilla2_qt5.15.0.0.dylib
 install_name_tool -id @rpath/libsqlite3.0.dylib $pathToInstall/lib/libsqlite3.0.dylib
 install_name_tool -id @rpath/libqt5keychain.1.dylib $pathToInstall/lib/libqt5keychain.1.dylib

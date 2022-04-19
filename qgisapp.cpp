@@ -112,6 +112,7 @@
 #include "qgsmaptoolmodifyannotation.h"
 #include "qgsannotationlayer.h"
 #include "qgsdockablewidgethelper.h"
+#include "vertextool/qgsvertexeditor.h"
 
 #include "qgsanalysis.h"
 #include "qgsgeometrycheckregistry.h"
@@ -1218,6 +1219,11 @@ QgisApp::QgisApp( QMainWindow *mainWindow, bool restorePlugins, bool skipVersion
   functionProfile( &QgisApp::createActionGroups, this, QStringLiteral( "Create action group" ) );
 
   // create map tools
+  mVertexEditorDock = new QgsVertexEditor( mMapCanvas );
+  mVertexEditorDock->setObjectName( QStringLiteral( "VertexEditor" ) );
+  addDockWidget( Qt::LeftDockWidgetArea, mVertexEditorDock );
+  mVertexEditorDock->hide();
+
   mMapTools = std::make_unique< QgsAppMapTools >( mMapCanvas, mAdvancedDigitizingDockWidget );
   mDigitizingTechniqueManager = new QgsMapToolsDigitizingTechniqueManager( this );
 
@@ -3734,6 +3740,13 @@ void QgisApp::createToolBars()
       defActionVertexTool = mActionVertexToolActiveLayer;
       break;
   }
+
+  QAction *showVertexEditorAction = new QAction( tr( "Show Vertex Editor" ), this );
+  showVertexEditorAction->setCheckable( true );
+  showVertexEditorAction->setProperty( "no_default_action", true );
+  vertexToolButton->addAction( showVertexEditorAction );
+  mVertexEditorDock->setToggleVisibilityAction( showVertexEditorAction );
+
   vertexToolButton->setDefaultAction( defActionVertexTool );
   QAction *actionVertexTool = mDigitizeToolBar->insertWidget( mActionMultiEditAttributes, vertexToolButton );
   actionVertexTool->setObjectName( QStringLiteral( "ActionVertexTool" ) );

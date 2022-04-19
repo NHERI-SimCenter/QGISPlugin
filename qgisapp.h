@@ -113,6 +113,7 @@ class QgsAbstractMapToolHandler;
 class QgsAppMapTools;
 class QgsMapToolIdentifyAction;
 class Qgs3DMapCanvasWidget;
+class QgsVertexEditor;
 
 class QDomDocument;
 class QNetworkReply;
@@ -893,6 +894,9 @@ class APP_EXPORT QgisApp : public QMainWindow
      * is automatically registered within the QgsApplication::gpsConnectionRegistry().
      */
     void setGpsPanelConnection( QgsGpsConnection *connection );
+
+    //! Returns the application vertex editor
+    QgsVertexEditor *vertexEditor() { return mVertexEditorDock; }
 
     //! refresh map canvas
     void refreshMapCanvas( bool redrawAllLayers = false );
@@ -2763,6 +2767,7 @@ class APP_EXPORT QgisApp : public QMainWindow
     QgsDockWidget *mOverviewDock = nullptr;
     QgsDockWidget *mpGpsDock = nullptr;
     QgsDockWidget *mLogDock = nullptr;
+    QgsVertexEditor *mVertexEditorDock = nullptr;
 
 #ifdef Q_OS_MAC
     //! Window menu action to select this window

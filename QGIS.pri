@@ -5,7 +5,7 @@ mac {
 
 DEFINES += Q_WS_MAC HAVE_STATIC_PROVIDERS #WITH_QTWEBKIT
 
-PATH_TO_QGIS_DEPS=$$PWD/mac/qgis-deps-0.8.0/stage
+PATH_TO_QGIS_DEPS=$$PWD/mac/qgis-deps-0.9/stage
 
 PATH_TO_QGIS_SRC=$$PWD/mac/src
 PATH_TO_INSTALL=$$PWD/mac/Install
