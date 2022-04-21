@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
@@ -26,42 +27,102 @@ class Ui_WidgetLinePatternFill
 {
 public:
     QGridLayout *gridLayout;
-    QLabel *mRotationLabel;
+    QSpacerItem *verticalSpacer;
+    QLabel *mCoordinateReferenceLabel;
     QgsPropertyOverrideButton *mAngleDDBtn;
     QLabel *mDistanceLabel;
+    QgsPropertyOverrideButton *mClippingDDBtn;
+    QLabel *mRotationLabel;
+    QgsPropertyOverrideButton *mDistanceDDBtn;
+    QLabel *mOffsetLabel_2;
+    QComboBox *mClipModeComboBox;
+    QComboBox *mCoordinateReferenceComboBox;
+    QLabel *mOffsetLabel;
+    QgsDoubleSpinBox *mAngleSpinBox;
+    QgsPropertyOverrideButton *mCoordinateReferenceDDBtn;
     QHBoxLayout *horizontalLayout;
     QgsDoubleSpinBox *mDistanceSpinBox;
     QgsUnitSelectionWidget *mDistanceUnitWidget;
-    QLabel *mOffsetLabel;
     QHBoxLayout *horizontalLayout_4;
     QgsDoubleSpinBox *mOffsetSpinBox;
     QgsUnitSelectionWidget *mOffsetUnitWidget;
-    QgsPropertyOverrideButton *mDistanceDDBtn;
-    QgsDoubleSpinBox *mAngleSpinBox;
-    QSpacerItem *verticalSpacer;
 
     void setupUi(QWidget *WidgetLinePatternFill)
     {
         if (WidgetLinePatternFill->objectName().isEmpty())
             WidgetLinePatternFill->setObjectName(QString::fromUtf8("WidgetLinePatternFill"));
-        WidgetLinePatternFill->resize(327, 161);
+        WidgetLinePatternFill->resize(327, 237);
         WidgetLinePatternFill->setWindowTitle(QString::fromUtf8("Form"));
         gridLayout = new QGridLayout(WidgetLinePatternFill);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        mRotationLabel = new QLabel(WidgetLinePatternFill);
-        mRotationLabel->setObjectName(QString::fromUtf8("mRotationLabel"));
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout->addWidget(mRotationLabel, 0, 0, 1, 1);
+        gridLayout->addItem(verticalSpacer, 8, 2, 1, 1);
+
+        mCoordinateReferenceLabel = new QLabel(WidgetLinePatternFill);
+        mCoordinateReferenceLabel->setObjectName(QString::fromUtf8("mCoordinateReferenceLabel"));
+
+        gridLayout->addWidget(mCoordinateReferenceLabel, 0, 0, 1, 1);
 
         mAngleDDBtn = new QgsPropertyOverrideButton(WidgetLinePatternFill);
         mAngleDDBtn->setObjectName(QString::fromUtf8("mAngleDDBtn"));
 
-        gridLayout->addWidget(mAngleDDBtn, 0, 3, 1, 1);
+        gridLayout->addWidget(mAngleDDBtn, 1, 3, 1, 1);
 
         mDistanceLabel = new QLabel(WidgetLinePatternFill);
         mDistanceLabel->setObjectName(QString::fromUtf8("mDistanceLabel"));
 
-        gridLayout->addWidget(mDistanceLabel, 1, 0, 1, 1);
+        gridLayout->addWidget(mDistanceLabel, 2, 0, 1, 1);
+
+        mClippingDDBtn = new QgsPropertyOverrideButton(WidgetLinePatternFill);
+        mClippingDDBtn->setObjectName(QString::fromUtf8("mClippingDDBtn"));
+
+        gridLayout->addWidget(mClippingDDBtn, 4, 3, 1, 1);
+
+        mRotationLabel = new QLabel(WidgetLinePatternFill);
+        mRotationLabel->setObjectName(QString::fromUtf8("mRotationLabel"));
+
+        gridLayout->addWidget(mRotationLabel, 1, 0, 1, 1);
+
+        mDistanceDDBtn = new QgsPropertyOverrideButton(WidgetLinePatternFill);
+        mDistanceDDBtn->setObjectName(QString::fromUtf8("mDistanceDDBtn"));
+
+        gridLayout->addWidget(mDistanceDDBtn, 2, 3, 1, 1);
+
+        mOffsetLabel_2 = new QLabel(WidgetLinePatternFill);
+        mOffsetLabel_2->setObjectName(QString::fromUtf8("mOffsetLabel_2"));
+
+        gridLayout->addWidget(mOffsetLabel_2, 4, 0, 1, 1);
+
+        mClipModeComboBox = new QComboBox(WidgetLinePatternFill);
+        mClipModeComboBox->setObjectName(QString::fromUtf8("mClipModeComboBox"));
+
+        gridLayout->addWidget(mClipModeComboBox, 4, 2, 1, 1);
+
+        mCoordinateReferenceComboBox = new QComboBox(WidgetLinePatternFill);
+        mCoordinateReferenceComboBox->setObjectName(QString::fromUtf8("mCoordinateReferenceComboBox"));
+
+        gridLayout->addWidget(mCoordinateReferenceComboBox, 0, 2, 1, 1);
+
+        mOffsetLabel = new QLabel(WidgetLinePatternFill);
+        mOffsetLabel->setObjectName(QString::fromUtf8("mOffsetLabel"));
+
+        gridLayout->addWidget(mOffsetLabel, 3, 0, 1, 1);
+
+        mAngleSpinBox = new QgsDoubleSpinBox(WidgetLinePatternFill);
+        mAngleSpinBox->setObjectName(QString::fromUtf8("mAngleSpinBox"));
+        mAngleSpinBox->setWrapping(true);
+        mAngleSpinBox->setMinimum(-360.000000000000000);
+        mAngleSpinBox->setMaximum(360.000000000000000);
+        mAngleSpinBox->setSingleStep(0.500000000000000);
+        mAngleSpinBox->setProperty("showClearButton", QVariant(true));
+
+        gridLayout->addWidget(mAngleSpinBox, 1, 2, 1, 1);
+
+        mCoordinateReferenceDDBtn = new QgsPropertyOverrideButton(WidgetLinePatternFill);
+        mCoordinateReferenceDDBtn->setObjectName(QString::fromUtf8("mCoordinateReferenceDDBtn"));
+
+        gridLayout->addWidget(mCoordinateReferenceDDBtn, 0, 3, 1, 1);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
@@ -87,12 +148,7 @@ public:
         horizontalLayout->addWidget(mDistanceUnitWidget);
 
 
-        gridLayout->addLayout(horizontalLayout, 1, 2, 1, 1);
-
-        mOffsetLabel = new QLabel(WidgetLinePatternFill);
-        mOffsetLabel->setObjectName(QString::fromUtf8("mOffsetLabel"));
-
-        gridLayout->addWidget(mOffsetLabel, 2, 0, 1, 1);
+        gridLayout->addLayout(horizontalLayout, 2, 2, 1, 1);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
@@ -115,28 +171,10 @@ public:
         horizontalLayout_4->addWidget(mOffsetUnitWidget);
 
 
-        gridLayout->addLayout(horizontalLayout_4, 2, 2, 1, 1);
+        gridLayout->addLayout(horizontalLayout_4, 3, 2, 1, 1);
 
-        mDistanceDDBtn = new QgsPropertyOverrideButton(WidgetLinePatternFill);
-        mDistanceDDBtn->setObjectName(QString::fromUtf8("mDistanceDDBtn"));
-
-        gridLayout->addWidget(mDistanceDDBtn, 1, 3, 1, 1);
-
-        mAngleSpinBox = new QgsDoubleSpinBox(WidgetLinePatternFill);
-        mAngleSpinBox->setObjectName(QString::fromUtf8("mAngleSpinBox"));
-        mAngleSpinBox->setWrapping(true);
-        mAngleSpinBox->setMinimum(-360.000000000000000);
-        mAngleSpinBox->setMaximum(360.000000000000000);
-        mAngleSpinBox->setSingleStep(0.500000000000000);
-        mAngleSpinBox->setProperty("showClearButton", QVariant(true));
-
-        gridLayout->addWidget(mAngleSpinBox, 0, 2, 1, 1);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer, 3, 2, 1, 1);
-
-        gridLayout->setColumnStretch(1, 1);
+        QWidget::setTabOrder(mCoordinateReferenceComboBox, mCoordinateReferenceDDBtn);
+        QWidget::setTabOrder(mCoordinateReferenceDDBtn, mAngleSpinBox);
         QWidget::setTabOrder(mAngleSpinBox, mAngleDDBtn);
         QWidget::setTabOrder(mAngleDDBtn, mDistanceSpinBox);
         QWidget::setTabOrder(mDistanceSpinBox, mDistanceUnitWidget);
@@ -151,12 +189,16 @@ public:
 
     void retranslateUi(QWidget *WidgetLinePatternFill)
     {
-        mRotationLabel->setText(QCoreApplication::translate("WidgetLinePatternFill", "Rotation", nullptr));
+        mCoordinateReferenceLabel->setText(QCoreApplication::translate("WidgetLinePatternFill", "Alignment", nullptr));
         mAngleDDBtn->setText(QCoreApplication::translate("WidgetLinePatternFill", "\342\200\246", nullptr));
         mDistanceLabel->setText(QCoreApplication::translate("WidgetLinePatternFill", "Spacing", nullptr));
-        mOffsetLabel->setText(QCoreApplication::translate("WidgetLinePatternFill", "Offset", nullptr));
+        mClippingDDBtn->setText(QCoreApplication::translate("WidgetLinePatternFill", "\342\200\246", nullptr));
+        mRotationLabel->setText(QCoreApplication::translate("WidgetLinePatternFill", "Rotation", nullptr));
         mDistanceDDBtn->setText(QCoreApplication::translate("WidgetLinePatternFill", "\342\200\246", nullptr));
+        mOffsetLabel_2->setText(QCoreApplication::translate("WidgetLinePatternFill", "Clipping", nullptr));
+        mOffsetLabel->setText(QCoreApplication::translate("WidgetLinePatternFill", "Offset", nullptr));
         mAngleSpinBox->setSuffix(QCoreApplication::translate("WidgetLinePatternFill", " \302\260", nullptr));
+        mCoordinateReferenceDDBtn->setText(QCoreApplication::translate("WidgetLinePatternFill", "\342\200\246", nullptr));
         (void)WidgetLinePatternFill;
     } // retranslateUi
 

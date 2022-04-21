@@ -20,9 +20,9 @@
 #include "qgis_sip.h"
 #include "qgis.h"
 #include "qgsrectangle.h"
-#include "qgsrendercontext.h"
 #include "qgsfields.h"
 #include "qgsfeaturerequest.h"
+#include "qgsconfig.h"
 
 #include <QList>
 #include <QString>
@@ -37,6 +37,7 @@ class QgsVectorLayer;
 class QgsPaintEffect;
 class QgsReadWriteContext;
 class QgsStyleEntityVisitorInterface;
+class QgsRenderContext;
 
 typedef QMap<QString, QString> QgsStringMap SIP_SKIP;
 
@@ -355,6 +356,20 @@ class CORE_EXPORT QgsFeatureRenderer
     virtual void setLegendSymbolItem( const QString &key, QgsSymbol *symbol SIP_TRANSFER );
 
     /**
+     * Attempts to convert the specified legend rule \a key to a QGIS expression matching
+     * the features displayed using that key.
+     *
+     * \param key legend key
+     * \param layer associated vector layer
+     * \param ok will be set to TRUE if legend key was successfully converted to a filter expression
+     *
+     * \returns QGIS expression string for matching features with the specified key
+     *
+     * \since QGIS 3.26
+     */
+    virtual QString legendKeyToExpression( const QString &key, QgsVectorLayer *layer, bool &ok SIP_OUT ) const;
+
+    /**
      * Returns a list of symbology items for the legend
      * \since QGIS 2.6
      */
@@ -415,7 +430,7 @@ class CORE_EXPORT QgsFeatureRenderer
      * \see paintEffect
      * \since QGIS 2.9
      */
-    void setPaintEffect( QgsPaintEffect *effect );
+    void setPaintEffect( QgsPaintEffect *effect SIP_TRANSFER );
 
     /**
      * Returns whether the renderer must render as a raster.

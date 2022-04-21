@@ -29,6 +29,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QStackedWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTreeView>
 #include <QtWidgets/QTreeWidget>
@@ -266,16 +267,13 @@ public:
     QLineEdit *mLayerAttributionLineEdit;
     QLabel *mLayerAttributionUrlLabel;
     QLineEdit *mLayerAttributionUrlLineEdit;
-    QgsCollapsibleGroupBox *mMetaMetaUrlGrpBx;
-    QGridLayout *gridLayout_9;
-    QLabel *mLayerMetadataUrlLabel;
-    QLineEdit *mLayerMetadataUrlLineEdit;
-    QHBoxLayout *horizontalLayout_8;
-    QLabel *mLayerMetadataUrlTypeLabel;
-    QComboBox *mLayerMetadataUrlTypeComboBox;
-    QLabel *mLayerMetadataUrlFormatLabel;
-    QComboBox *mLayerMetadataUrlFormatComboBox;
-    QSpacerItem *horizontalSpacer_5;
+    QGroupBox *groupBox;
+    QVBoxLayout *verticalLayout_34;
+    QHBoxLayout *horizontalLayout_10;
+    QSpacerItem *horizontalSpacer_6;
+    QPushButton *buttonAddMetadataUrl;
+    QPushButton *buttonRemoveMetadataUrl;
+    QTableView *tableViewMetadataUrl;
     QgsCollapsibleGroupBox *mMetaLegendGrpBx;
     QGridLayout *gridLayout_2;
     QHBoxLayout *horizontalLayout_2;
@@ -1326,6 +1324,7 @@ public:
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         verticalLayout_22 = new QVBoxLayout(groupBox_3);
         verticalLayout_22->setObjectName(QString::fromUtf8("verticalLayout_22"));
+        verticalLayout_22->setContentsMargins(0, 0, 0, 0);
         mLegendConfigEmbeddedWidget = new QgsLayerTreeEmbeddedConfigWidget(groupBox_3);
         mLegendConfigEmbeddedWidget->setObjectName(QString::fromUtf8("mLegendConfigEmbeddedWidget"));
 
@@ -1460,58 +1459,40 @@ public:
 
         verticalLayout_13->addWidget(mMetaAttributionGrpBx);
 
-        mMetaMetaUrlGrpBx = new QgsCollapsibleGroupBox(scrollAreaWidgetContents);
-        mMetaMetaUrlGrpBx->setObjectName(QString::fromUtf8("mMetaMetaUrlGrpBx"));
-        mMetaMetaUrlGrpBx->setProperty("syncGroup", QVariant(QString::fromUtf8("vectormeta")));
-        gridLayout_9 = new QGridLayout(mMetaMetaUrlGrpBx);
-        gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
-        mLayerMetadataUrlLabel = new QLabel(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlLabel->setObjectName(QString::fromUtf8("mLayerMetadataUrlLabel"));
+        groupBox = new QGroupBox(scrollAreaWidgetContents);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        verticalLayout_34 = new QVBoxLayout(groupBox);
+        verticalLayout_34->setObjectName(QString::fromUtf8("verticalLayout_34"));
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
+        horizontalSpacer_6 = new QSpacerItem(566, 21, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_9->addWidget(mLayerMetadataUrlLabel, 0, 0, 1, 1);
+        horizontalLayout_10->addItem(horizontalSpacer_6);
 
-        mLayerMetadataUrlLineEdit = new QLineEdit(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlLineEdit->setObjectName(QString::fromUtf8("mLayerMetadataUrlLineEdit"));
+        buttonAddMetadataUrl = new QPushButton(groupBox);
+        buttonAddMetadataUrl->setObjectName(QString::fromUtf8("buttonAddMetadataUrl"));
+        buttonAddMetadataUrl->setText(QString::fromUtf8(""));
+        buttonAddMetadataUrl->setIcon(icon20);
 
-        gridLayout_9->addWidget(mLayerMetadataUrlLineEdit, 0, 1, 1, 1);
+        horizontalLayout_10->addWidget(buttonAddMetadataUrl);
 
-        horizontalLayout_8 = new QHBoxLayout();
-        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
-        mLayerMetadataUrlTypeLabel = new QLabel(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlTypeLabel->setObjectName(QString::fromUtf8("mLayerMetadataUrlTypeLabel"));
+        buttonRemoveMetadataUrl = new QPushButton(groupBox);
+        buttonRemoveMetadataUrl->setObjectName(QString::fromUtf8("buttonRemoveMetadataUrl"));
+        buttonRemoveMetadataUrl->setText(QString::fromUtf8(""));
+        buttonRemoveMetadataUrl->setIcon(icon21);
 
-        horizontalLayout_8->addWidget(mLayerMetadataUrlTypeLabel);
-
-        mLayerMetadataUrlTypeComboBox = new QComboBox(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlTypeComboBox->addItem(QString::fromUtf8(""));
-        mLayerMetadataUrlTypeComboBox->addItem(QString::fromUtf8("FGDC"));
-        mLayerMetadataUrlTypeComboBox->addItem(QString::fromUtf8("TC211"));
-        mLayerMetadataUrlTypeComboBox->setObjectName(QString::fromUtf8("mLayerMetadataUrlTypeComboBox"));
-
-        horizontalLayout_8->addWidget(mLayerMetadataUrlTypeComboBox);
-
-        mLayerMetadataUrlFormatLabel = new QLabel(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlFormatLabel->setObjectName(QString::fromUtf8("mLayerMetadataUrlFormatLabel"));
-
-        horizontalLayout_8->addWidget(mLayerMetadataUrlFormatLabel);
-
-        mLayerMetadataUrlFormatComboBox = new QComboBox(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlFormatComboBox->addItem(QString::fromUtf8(""));
-        mLayerMetadataUrlFormatComboBox->addItem(QString::fromUtf8("text/plain"));
-        mLayerMetadataUrlFormatComboBox->addItem(QString::fromUtf8("text/xml"));
-        mLayerMetadataUrlFormatComboBox->setObjectName(QString::fromUtf8("mLayerMetadataUrlFormatComboBox"));
-
-        horizontalLayout_8->addWidget(mLayerMetadataUrlFormatComboBox);
-
-        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_8->addItem(horizontalSpacer_5);
+        horizontalLayout_10->addWidget(buttonRemoveMetadataUrl);
 
 
-        gridLayout_9->addLayout(horizontalLayout_8, 1, 1, 1, 1);
+        verticalLayout_34->addLayout(horizontalLayout_10);
+
+        tableViewMetadataUrl = new QTableView(groupBox);
+        tableViewMetadataUrl->setObjectName(QString::fromUtf8("tableViewMetadataUrl"));
+
+        verticalLayout_34->addWidget(tableViewMetadataUrl);
 
 
-        verticalLayout_13->addWidget(mMetaMetaUrlGrpBx);
+        verticalLayout_13->addWidget(groupBox);
 
         mMetaLegendGrpBx = new QgsCollapsibleGroupBox(scrollAreaWidgetContents);
         mMetaLegendGrpBx->setObjectName(QString::fromUtf8("mMetaLegendGrpBx"));
@@ -1681,10 +1662,9 @@ public:
         QWidget::setTabOrder(mLayerDataUrlLineEdit, mLayerDataUrlFormatComboBox);
         QWidget::setTabOrder(mLayerDataUrlFormatComboBox, mLayerAttributionLineEdit);
         QWidget::setTabOrder(mLayerAttributionLineEdit, mLayerAttributionUrlLineEdit);
-        QWidget::setTabOrder(mLayerAttributionUrlLineEdit, mLayerMetadataUrlLineEdit);
-        QWidget::setTabOrder(mLayerMetadataUrlLineEdit, mLayerMetadataUrlTypeComboBox);
-        QWidget::setTabOrder(mLayerMetadataUrlTypeComboBox, mLayerMetadataUrlFormatComboBox);
-        QWidget::setTabOrder(mLayerMetadataUrlFormatComboBox, mLayerLegendUrlLineEdit);
+        QWidget::setTabOrder(mLayerAttributionUrlLineEdit, buttonAddMetadataUrl);
+        QWidget::setTabOrder(buttonAddMetadataUrl, buttonRemoveMetadataUrl);
+        QWidget::setTabOrder(buttonRemoveMetadataUrl, mLayerLegendUrlLineEdit);
         QWidget::setTabOrder(mLayerLegendUrlLineEdit, mLayerLegendUrlFormatComboBox);
         QWidget::setTabOrder(mLayerLegendUrlFormatComboBox, mWmsDimensionsTreeWidget);
         QWidget::setTabOrder(mWmsDimensionsTreeWidget, mButtonAddWmsDimension);
@@ -1696,7 +1676,7 @@ public:
         QObject::connect(mRefreshLayerNotificationCheckBox, SIGNAL(toggled(bool)), mNotificationFrame, SLOT(setEnabled(bool)));
         QObject::connect(mNotificationMessageCheckBox, SIGNAL(toggled(bool)), mNotifyMessagValueLineEdit, SLOT(setEnabled(bool)));
 
-        mOptionsStackedWidget->setCurrentIndex(12);
+        mOptionsStackedWidget->setCurrentIndex(0);
         widgetStackRenderers->setCurrentIndex(-1);
         mLayerLegendUrlFormatComboBox->setCurrentIndex(0);
 
@@ -1937,30 +1917,21 @@ public:
 #if QT_CONFIG(tooltip)
         mLayerAbstractTextEdit->setToolTip(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "The abstract is a descriptive narrative providing more information about the layer.", nullptr));
 #endif // QT_CONFIG(tooltip)
-        mLayerDataUrlLabel->setText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "DataUrl", nullptr));
+        mLayerDataUrlLabel->setText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Data URL", nullptr));
         mMetaAttributionGrpBx->setTitle(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Attribution", nullptr));
         mLayerAttributionLabel->setText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Title", nullptr));
 #if QT_CONFIG(tooltip)
         mLayerAttributionLineEdit->setToolTip(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Attribution's title indicates the provider of the layer.", nullptr));
 #endif // QT_CONFIG(tooltip)
         mLayerAttributionLineEdit->setPlaceholderText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Attribution's title indicates the provider of the data layer.", nullptr));
-        mLayerAttributionUrlLabel->setText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Url", nullptr));
+        mLayerAttributionUrlLabel->setText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "URL", nullptr));
 #if QT_CONFIG(tooltip)
         mLayerAttributionUrlLineEdit->setToolTip(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Attribution's url gives a link to the webpage of the provider of the data layer.", nullptr));
 #endif // QT_CONFIG(tooltip)
         mLayerAttributionUrlLineEdit->setPlaceholderText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Attribution's url gives a link to the webpage of the provider of the data layer.", nullptr));
-        mMetaMetaUrlGrpBx->setTitle(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "MetadataUrl", nullptr));
-        mLayerMetadataUrlLabel->setText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Url", nullptr));
-#if QT_CONFIG(tooltip)
-        mLayerMetadataUrlLineEdit->setToolTip(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "The URL of the metadata document.", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mLayerMetadataUrlLineEdit->setPlaceholderText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "The URL of the metadata document.", nullptr));
-        mLayerMetadataUrlTypeLabel->setText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Type", nullptr));
-
-        mLayerMetadataUrlFormatLabel->setText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Format", nullptr));
-
-        mMetaLegendGrpBx->setTitle(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "LegendUrl", nullptr));
-        mLayerLegendUrlLabel->setText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Url", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Metadata URL", nullptr));
+        mMetaLegendGrpBx->setTitle(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "Legend URL", nullptr));
+        mLayerLegendUrlLabel->setText(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "URL", nullptr));
 #if QT_CONFIG(tooltip)
         mLayerLegendUrlLineEdit->setToolTip(QCoreApplication::translate("QgsVectorLayerPropertiesBase", "A URL of the legend image.", nullptr));
 #endif // QT_CONFIG(tooltip)

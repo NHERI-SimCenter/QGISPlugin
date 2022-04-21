@@ -21,6 +21,7 @@
 #include <QtWidgets/QWidget>
 #include "qgscoordinateoperationwidget.h"
 #include "qgsprojectionselectionwidget.h"
+#include "qgsscrollarea.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -28,7 +29,9 @@ class Ui_QgsDatumTransformDialogBase
 {
 public:
     QGridLayout *gridLayout;
-    QDialogButtonBox *mButtonBox;
+    QgsScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
+    QVBoxLayout *verticalLayout_3;
     QTextEdit *textEdit;
     QStackedWidget *mCrsStackedWidget;
     QWidget *page;
@@ -36,8 +39,8 @@ public:
     QGridLayout *gridLayout_4;
     QLabel *label;
     QgsProjectionSelectionWidget *mSourceProjectionSelectionWidget;
-    QLabel *label_2;
     QgsProjectionSelectionWidget *mDestinationProjectionSelectionWidget;
+    QLabel *label_2;
     QWidget *page_2;
     QVBoxLayout *verticalLayout_2;
     QGridLayout *gridLayout_5;
@@ -46,22 +49,29 @@ public:
     QLabel *mDestCrsLabel;
     QLabel *mSourceCrsLabel;
     QgsCoordinateOperationWidget *mCoordinateOperationsWidget;
+    QDialogButtonBox *mButtonBox;
 
     void setupUi(QDialog *QgsDatumTransformDialogBase)
     {
         if (QgsDatumTransformDialogBase->objectName().isEmpty())
             QgsDatumTransformDialogBase->setObjectName(QString::fromUtf8("QgsDatumTransformDialogBase"));
-        QgsDatumTransformDialogBase->resize(651, 433);
+        QgsDatumTransformDialogBase->resize(651, 450);
+        QgsDatumTransformDialogBase->setMinimumSize(QSize(640, 450));
         gridLayout = new QGridLayout(QgsDatumTransformDialogBase);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        mButtonBox = new QDialogButtonBox(QgsDatumTransformDialogBase);
-        mButtonBox->setObjectName(QString::fromUtf8("mButtonBox"));
-        mButtonBox->setOrientation(Qt::Horizontal);
-        mButtonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok);
-
-        gridLayout->addWidget(mButtonBox, 4, 0, 1, 2);
-
-        textEdit = new QTextEdit(QgsDatumTransformDialogBase);
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        scrollArea = new QgsScrollArea(QgsDatumTransformDialogBase);
+        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setFrameShape(QFrame::NoFrame);
+        scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 651, 419));
+        verticalLayout_3 = new QVBoxLayout(scrollAreaWidgetContents);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(9, 9, 9, 9);
+        textEdit = new QTextEdit(scrollAreaWidgetContents);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
@@ -72,15 +82,20 @@ public:
         textEdit->setAcceptDrops(false);
         textEdit->setFrameShadow(QFrame::Plain);
         textEdit->setLineWidth(2);
-        textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         textEdit->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
         textEdit->setReadOnly(true);
 
-        gridLayout->addWidget(textEdit, 0, 0, 1, 2);
+        verticalLayout_3->addWidget(textEdit);
 
-        mCrsStackedWidget = new QStackedWidget(QgsDatumTransformDialogBase);
+        mCrsStackedWidget = new QStackedWidget(scrollAreaWidgetContents);
         mCrsStackedWidget->setObjectName(QString::fromUtf8("mCrsStackedWidget"));
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(mCrsStackedWidget->sizePolicy().hasHeightForWidth());
+        mCrsStackedWidget->setSizePolicy(sizePolicy1);
         page = new QWidget();
         page->setObjectName(QString::fromUtf8("page"));
         verticalLayout = new QVBoxLayout(page);
@@ -98,17 +113,16 @@ public:
 
         gridLayout_4->addWidget(mSourceProjectionSelectionWidget, 0, 1, 1, 1);
 
-        label_2 = new QLabel(page);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-
-        gridLayout_4->addWidget(label_2, 1, 0, 1, 1);
-
         mDestinationProjectionSelectionWidget = new QgsProjectionSelectionWidget(page);
         mDestinationProjectionSelectionWidget->setObjectName(QString::fromUtf8("mDestinationProjectionSelectionWidget"));
 
         gridLayout_4->addWidget(mDestinationProjectionSelectionWidget, 1, 1, 1, 1);
 
-        gridLayout_4->setColumnStretch(1, 1);
+        label_2 = new QLabel(page);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        gridLayout_4->addWidget(label_2, 1, 0, 1, 1);
+
 
         verticalLayout->addLayout(gridLayout_4);
 
@@ -146,14 +160,29 @@ public:
 
         mCrsStackedWidget->addWidget(page_2);
 
-        gridLayout->addWidget(mCrsStackedWidget, 1, 0, 1, 2);
+        verticalLayout_3->addWidget(mCrsStackedWidget);
 
-        mCoordinateOperationsWidget = new QgsCoordinateOperationWidget(QgsDatumTransformDialogBase);
+        mCoordinateOperationsWidget = new QgsCoordinateOperationWidget(scrollAreaWidgetContents);
         mCoordinateOperationsWidget->setObjectName(QString::fromUtf8("mCoordinateOperationsWidget"));
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(mCoordinateOperationsWidget->sizePolicy().hasHeightForWidth());
+        mCoordinateOperationsWidget->setSizePolicy(sizePolicy2);
 
-        gridLayout->addWidget(mCoordinateOperationsWidget, 3, 0, 1, 2);
+        verticalLayout_3->addWidget(mCoordinateOperationsWidget);
 
-        gridLayout->setRowStretch(3, 1);
+        scrollArea->setWidget(scrollAreaWidgetContents);
+
+        gridLayout->addWidget(scrollArea, 0, 0, 1, 1);
+
+        mButtonBox = new QDialogButtonBox(QgsDatumTransformDialogBase);
+        mButtonBox->setObjectName(QString::fromUtf8("mButtonBox"));
+        mButtonBox->setOrientation(Qt::Horizontal);
+        mButtonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok);
+
+        gridLayout->addWidget(mButtonBox, 1, 0, 1, 1);
+
 
         retranslateUi(QgsDatumTransformDialogBase);
         QObject::connect(mButtonBox, SIGNAL(accepted()), QgsDatumTransformDialogBase, SLOT(accept()));
@@ -171,8 +200,8 @@ public:
         textEdit->setHtml(QCoreApplication::translate("QgsDatumTransformDialogBase", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Cantarell'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Multiple operations are possible for converting coordinates between these two Coordinate Reference Systems.</span> Please select the appropriate conversion operation, given the desired area of use, origins of your data, and any other constraints which may alter the &quot;fit for purpose&quot; for particular transformation operations.</p></body></html>", nullptr));
+"</style></head><body style=\" font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Cantarell'; font-weight:600;\">Multiple operations are possible for converting coordinates between these two Coordinate Reference Systems.</span><span style=\" font-family:'Cantarell';\"> Please select the appropriate conversion operation, given the desired area of use, origins of your data, and any other constraints which may alter the &quot;fit for purpose&quot; for particular transformation operations.</span></p></body></html>", nullptr));
         label->setText(QCoreApplication::translate("QgsDatumTransformDialogBase", "Source CRS", nullptr));
         label_2->setText(QCoreApplication::translate("QgsDatumTransformDialogBase", "Destination CRS", nullptr));
         label_3->setText(QCoreApplication::translate("QgsDatumTransformDialogBase", "Source CRS", nullptr));

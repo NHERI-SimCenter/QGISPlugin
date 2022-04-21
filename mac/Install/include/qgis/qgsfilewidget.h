@@ -116,7 +116,7 @@ class GUI_EXPORT QgsFileWidget : public QWidget
     /**
      * Sets whether the widget should be read only.
      */
-    void setReadOnly( bool readOnly );
+    virtual void setReadOnly( bool readOnly );
 
     /**
      * Returns the open file dialog title.
@@ -298,6 +298,7 @@ class GUI_EXPORT QgsFileWidget : public QWidget
     void openFileDialog();
     void textEdited( const QString &path );
     void editLink();
+    void fileDropped( const QString &filePath );
 
   protected:
 
@@ -379,7 +380,20 @@ class GUI_EXPORT QgsFileDropEdit: public QgsHighlightableLineEdit
 
     void setFilters( const QString &filters );
 
+    //! Returns file names if object meets drop criteria.
+    QStringList acceptableFilePaths( QDropEvent *event ) const;
+
+  signals:
+
+    /**
+     * Emitted when the file \a filePath is droppen onto the line edit.
+     */
+    void fileDropped( const QString &filePath );
+
   protected:
+
+    //! Returns file name if object meets drop criteria.
+    QString acceptableFilePath( QDropEvent *event ) const;
 
     void dragEnterEvent( QDragEnterEvent *event ) override;
     void dragLeaveEvent( QDragLeaveEvent *event ) override;
@@ -387,8 +401,6 @@ class GUI_EXPORT QgsFileDropEdit: public QgsHighlightableLineEdit
 
   private:
 
-    //! Returns file name if object meets drop criteria.
-    QString acceptableFilePath( QDropEvent *event ) const;
 
     QStringList mAcceptableExtensions;
     QgsFileWidget::StorageMode mStorageMode = QgsFileWidget::GetFile;

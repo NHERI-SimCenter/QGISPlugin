@@ -100,7 +100,6 @@ public:
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         verticalLayout_4 = new QVBoxLayout(groupBox_3);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
         mWidthMethodComboBox = new QComboBox(groupBox_3);
         mWidthMethodComboBox->setObjectName(QString::fromUtf8("mWidthMethodComboBox"));
 
@@ -258,7 +257,6 @@ public:
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         verticalLayout_5 = new QVBoxLayout(groupBox);
         verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
         mColorMethodComboBox = new QComboBox(groupBox);
         mColorMethodComboBox->setObjectName(QString::fromUtf8("mColorMethodComboBox"));
 

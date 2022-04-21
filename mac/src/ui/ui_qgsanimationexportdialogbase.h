@@ -66,7 +66,7 @@ public:
     {
         if (QgsAnimationExportDialogBase->objectName().isEmpty())
             QgsAnimationExportDialogBase->setObjectName(QString::fromUtf8("QgsAnimationExportDialogBase"));
-        QgsAnimationExportDialogBase->resize(600, 629);
+        QgsAnimationExportDialogBase->resize(600, 456);
         gridLayout_5 = new QGridLayout(QgsAnimationExportDialogBase);
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
         mOutputDirLabel_2 = new QLabel(QgsAnimationExportDialogBase);
@@ -220,7 +220,7 @@ public:
         buttonBox = new QDialogButtonBox(QgsAnimationExportDialogBase);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setOrientation(Qt::Horizontal);
-        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Save);
+        buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Save);
 
         gridLayout_5->addWidget(buttonBox, 7, 0, 1, 2);
 
@@ -250,6 +250,9 @@ public:
         mEndDateTime->setDisplayFormat(QCoreApplication::translate("QgsAnimationExportDialogBase", "M/d/yyyy h:mm AP", nullptr));
         label_5->setText(QCoreApplication::translate("QgsAnimationExportDialogBase", "to ", nullptr));
         mStartDateTime->setDisplayFormat(QCoreApplication::translate("QgsAnimationExportDialogBase", "M/d/yyyy h:mm AP", nullptr));
+#if QT_CONFIG(tooltip)
+        mSetToProjectTimeButton->setToolTip(QCoreApplication::translate("QgsAnimationExportDialogBase", "Set to the project fixed time extent or the extent from the project's layers", nullptr));
+#endif // QT_CONFIG(tooltip)
         mSetToProjectTimeButton->setText(QString());
         label_2->setText(QCoreApplication::translate("QgsAnimationExportDialogBase", "Step (frame length)", nullptr));
         mTimeStepsComboBox->setCurrentText(QString());

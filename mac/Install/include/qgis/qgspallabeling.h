@@ -15,9 +15,6 @@
  *                                                                         *
  ***************************************************************************/
 
-//Note: although this file is in the core library, it is not part of the stable API
-//and might change at any time!
-
 #ifndef QGSPALLABELING_H
 #define QGSPALLABELING_H
 
@@ -46,6 +43,7 @@
 #include "qgslabellinesettings.h"
 #include "qgslabeling.h"
 #include "qgslabelposition.h"
+#include "qgscoordinatetransform.h"
 
 class QgsTextDocument;
 
@@ -240,6 +238,7 @@ class CORE_EXPORT QgsPalLayerSettings
       FontLetterSpacing = 28, //!< Letter spacing
       FontWordSpacing = 29, //!< Word spacing
       FontBlendMode = 30, //!< Text blend mode
+      FontStretchFactor = 113, //!< Font stretch factor, since QGIS 3.24
 
       // text formatting
       MultiLineWrapChar = 31,
@@ -322,6 +321,7 @@ class CORE_EXPORT QgsPalLayerSettings
       // (data defined only)
       PositionX = 9, //!< X-coordinate data defined label position
       PositionY = 10, //!< Y-coordinate data defined label position
+      PositionPoint = 114, //!< Point-coordinate data defined label position
       Hali = 11, //!< Horizontal alignment for data defined label position (Left, Center, Right)
       Vali = 12, //!< Vertical alignment for data defined label position (Bottom, Base, Half, Cap, Top)
       Rotation = 14, //!< Label rotation (deprecated, for old project compatibility only)
@@ -336,6 +336,8 @@ class CORE_EXPORT QgsPalLayerSettings
       PolygonLabelOutside = 109, //!< Whether labels outside a polygon feature are permitted, or should be forced (since QGIS 3.14)
       LineAnchorPercent = 111, //!< Portion along line at which labels should be anchored (since QGIS 3.16)
       LineAnchorClipping = 112, //!< Clipping mode for line anchor calculation (since QGIS 3.20)
+      LineAnchorType = 115, //!< Line anchor type (since QGIS 3.26)
+      LineAnchorTextPoint = 116, //!< Line anchor text point (since QGIS 3.26)
 
       // rendering
       ScaleVisibility = 23,
@@ -635,6 +637,20 @@ class CORE_EXPORT QgsPalLayerSettings
 
     //! True if label rotation should be preserved during label pin/unpin operations.
     bool preserveRotation = true;
+
+    /**
+     * Unit for rotation of labels.
+     * \see setRotationUnit()
+     * \since QGIS 3.22
+     */
+    QgsUnitTypes::AngleUnit rotationUnit() const;
+
+    /**
+      * Set unit for rotation of labels.
+      * \see rotationUnit()
+      * \since QGIS 3.22
+      */
+    void setRotationUnit( QgsUnitTypes::AngleUnit angleUnit );
 
     /**
      * Maximum angle between inside curved label characters (valid range 20.0 to 60.0).
@@ -1133,6 +1149,9 @@ class CORE_EXPORT QgsPalLayerSettings
     QString mLegendString = QObject::tr( "Aa" );
 
     Qgis::UnplacedLabelVisibility mUnplacedVisibility = Qgis::UnplacedLabelVisibility::FollowEngineSetting;
+
+    //! Unit for rotation of labels.
+    QgsUnitTypes::AngleUnit mRotationUnit = QgsUnitTypes::AngleDegrees;
 
     static void initPropertyDefinitions();
 };

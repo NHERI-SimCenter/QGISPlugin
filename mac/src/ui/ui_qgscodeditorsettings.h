@@ -18,7 +18,6 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListWidget>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
@@ -30,6 +29,7 @@
 #include "qgscodeeditorpython.h"
 #include "qgscodeeditorsql.h"
 #include "qgscolorbutton.h"
+#include "qgsscrollarea.h"
 #include "qgsspinbox.h"
 
 QT_BEGIN_NAMESPACE
@@ -61,7 +61,7 @@ public:
     QWidget *page_6;
     QVBoxLayout *verticalLayout_5;
     QgsCodeEditorJavascript *mJsPreview;
-    QScrollArea *scrollArea;
+    QgsScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QGridLayout *gridLayout;
     QGroupBox *mOverrideFontGroupBox;
@@ -245,7 +245,7 @@ public:
 
         horizontalLayout->setStretch(1, 1);
         mSplitter->addWidget(groupBox);
-        scrollArea = new QScrollArea(mSplitter);
+        scrollArea = new QgsScrollArea(mSplitter);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         scrollArea->setFrameShape(QFrame::NoFrame);
         scrollArea->setWidgetResizable(true);

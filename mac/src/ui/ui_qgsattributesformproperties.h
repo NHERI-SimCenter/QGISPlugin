@@ -17,11 +17,11 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QWidget>
+#include "qgsscrollarea.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -48,7 +48,7 @@ public:
     QToolButton *mRemoveTabOrGroupButton;
     QToolButton *mAddTabOrGroupButton;
     QToolButton *mInvertSelectionButton;
-    QScrollArea *scrollArea_2;
+    QgsScrollArea *scrollArea_2;
     QWidget *scrollAreaWidgetContents_5;
     QGridLayout *gridLayout_4;
     QWidget *mAttributeTypeFrame;
@@ -171,7 +171,7 @@ public:
         gridLayout_3->addWidget(mInvertSelectionButton, 3, 2, 1, 1);
 
         splitter->addWidget(widget);
-        scrollArea_2 = new QScrollArea(splitter);
+        scrollArea_2 = new QgsScrollArea(splitter);
         scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
         scrollArea_2->setMinimumSize(QSize(600, 0));
         scrollArea_2->setWidgetResizable(true);
@@ -220,7 +220,13 @@ public:
         label_2->setText(QCoreApplication::translate("QgsAttributesFormProperties", "Edit UI", nullptr));
         pbnSelectEditForm->setText(QCoreApplication::translate("QgsAttributesFormProperties", "\342\200\246", nullptr));
         mRemoveTabOrGroupButton->setText(QCoreApplication::translate("QgsAttributesFormProperties", "\342\200\246", nullptr));
+#if QT_CONFIG(tooltip)
+        mRemoveTabOrGroupButton->setToolTip(QCoreApplication::translate("QgsAttributesFormProperties", "Remove selected item(s) from the form layout", nullptr));
+#endif // QT_CONFIG(tooltip)
         mAddTabOrGroupButton->setText(QCoreApplication::translate("QgsAttributesFormProperties", "\342\200\246", nullptr));
+#if QT_CONFIG(tooltip)
+        mAddTabOrGroupButton->setToolTip(QCoreApplication::translate("QgsAttributesFormProperties", "Add a new tab or group to the form layout", nullptr));
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         mInvertSelectionButton->setToolTip(QCoreApplication::translate("QgsAttributesFormProperties", "Invert selection", nullptr));
 #endif // QT_CONFIG(tooltip)

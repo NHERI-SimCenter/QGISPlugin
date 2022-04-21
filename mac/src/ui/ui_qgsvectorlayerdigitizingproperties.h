@@ -17,10 +17,10 @@
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "qgsscrollarea.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -28,7 +28,7 @@ class Ui_QgsVectorLayerDigitizingPropertiesPage
 {
 public:
     QVBoxLayout *verticalLayout;
-    QScrollArea *scrollArea_2;
+    QgsScrollArea *scrollArea_2;
     QWidget *scrollAreaWidgetContents_2;
     QVBoxLayout *verticalLayout_20;
     QGroupBox *mGeometryAutoFixesGroupBox;
@@ -51,7 +51,7 @@ public:
         verticalLayout = new QVBoxLayout(QgsVectorLayerDigitizingPropertiesPage);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        scrollArea_2 = new QScrollArea(QgsVectorLayerDigitizingPropertiesPage);
+        scrollArea_2 = new QgsScrollArea(QgsVectorLayerDigitizingPropertiesPage);
         scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
         scrollArea_2->setFrameShape(QFrame::NoFrame);
         scrollArea_2->setWidgetResizable(true);

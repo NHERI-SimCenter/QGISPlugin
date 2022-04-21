@@ -9,19 +9,19 @@
 // or else upgrading old project file will not work
 // reliably.
 // TODO QGIS 4: remove in favor of _QGIS_VERSION
-#define VERSION "3.21.0-Master"
-#define _QGIS_VERSION "3.21.0-Master"
+#define VERSION "3.25.0-Master"
+#define _QGIS_VERSION "3.25.0-Master"
 
 //used in vim src/core/qgis.cpp
 //The way below should work but it resolves to a number like 0110 which the compiler treats as octal I think
 //because debuggin it out shows the decimal number 72 which results in incorrect version status.
 //As a short term fix I (Tim) am defining the version in top level cmake. It would be good to
 //reinstate this more generic approach below at some point though
-//#define VERSION_INT 3210
+//#define VERSION_INT 3250
 // TODO QGIS 4: Remove in favor of _QGIS_VERSION_INT
-#define VERSION_INT 32100
-#define _QGIS_VERSION_INT 32100
-#define ABISYM(x) x ## 32100
+#define VERSION_INT 32500
+#define _QGIS_VERSION_INT 32500
+#define ABISYM(x) x ## 32500
 //used in main.cpp and anywhere else where the release name is needed
 #define RELEASE_NAME "Master"
 
@@ -36,7 +36,7 @@
 #define QGIS_SERVER_MODULE_SUBDIR "lib/qgis/server"
 
 #if !defined(QSCINTILLA_VERSION_STR)
-#define QSCINTILLA_VERSION_STR "2.11.4"
+#define QSCINTILLA_VERSION_STR "2.11.5"
 #endif
 
 #if defined( __APPLE__ )
@@ -46,10 +46,14 @@
 
 #define QT_PLUGINS_DIR "/opt/Qt/5.15.2/clang_64/plugins"
 
-#define PYTHON_VERSION "3.8.7"
+#define PYTHON_VERSION "3.9.12"
 #define PYTHON_VERSION_MAJOR "3"
-#define PYTHON_VERSION_MINOR "8"
-#define PYTHON_VERSION_PATCH "7"
+#define PYTHON_VERSION_MINOR "9"
+#define PYTHON_VERSION_PATCH "12"
+
+#define PROJ_VERSION_MAJOR 8
+#define PROJ_VERSION_MINOR 1
+#define PROJ_VERSION_PATCH 1
 
 /* #undef USING_NMAKE */
 
@@ -94,7 +98,9 @@
 
 #define HAVE_EPT
 
-/* #undef HAVE_PDAL */
+#define HAVE_COPC
+
+/* #undef HAVE_PDAL_QGIS */
 #define PDAL_VERSION ""
 #define PDAL_VERSION_MAJOR_INT 
 #define PDAL_VERSION_MINOR_INT 
@@ -103,6 +109,12 @@
 #define PDAL_VERSION_MICRO ""
 
 /* #undef ENABLE_TESTS */
+
+/* #undef HAS_KDE_QT5_PDF_TRANSFORM_FIX */
+/* #undef HAS_KDE_QT5_SMALL_CAPS_FIX */
+/* #undef HAS_KDE_QT5_FONT_STRETCH_FIX */
+
+/* #undef HAVE_CRASH_HANDLER */
 
 #endif
 

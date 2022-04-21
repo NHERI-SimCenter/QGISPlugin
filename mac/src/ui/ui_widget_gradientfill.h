@@ -112,7 +112,8 @@ public:
 
         spinRefPoint1Y = new QgsDoubleSpinBox(WidgetGradientFill);
         spinRefPoint1Y->setObjectName(QString::fromUtf8("spinRefPoint1Y"));
-        spinRefPoint1Y->setMaximum(1.000000000000000);
+        spinRefPoint1Y->setMinimum(-10.000000000000000);
+        spinRefPoint1Y->setMaximum(10.000000000000000);
         spinRefPoint1Y->setSingleStep(0.200000000000000);
 
         gridLayout->addWidget(spinRefPoint1Y, 7, 2, 1, 1);
@@ -219,7 +220,8 @@ public:
 
         spinRefPoint2Y = new QgsDoubleSpinBox(WidgetGradientFill);
         spinRefPoint2Y->setObjectName(QString::fromUtf8("spinRefPoint2Y"));
-        spinRefPoint2Y->setMaximum(1.000000000000000);
+        spinRefPoint2Y->setMinimum(-10.000000000000000);
+        spinRefPoint2Y->setMaximum(10.000000000000000);
         spinRefPoint2Y->setSingleStep(0.200000000000000);
         spinRefPoint2Y->setValue(1.000000000000000);
 
@@ -277,7 +279,8 @@ public:
 
         spinRefPoint1X = new QgsDoubleSpinBox(WidgetGradientFill);
         spinRefPoint1X->setObjectName(QString::fromUtf8("spinRefPoint1X"));
-        spinRefPoint1X->setMaximum(1.000000000000000);
+        spinRefPoint1X->setMinimum(-10.000000000000000);
+        spinRefPoint1X->setMaximum(10.000000000000000);
         spinRefPoint1X->setSingleStep(0.200000000000000);
         spinRefPoint1X->setValue(0.500000000000000);
 
@@ -285,7 +288,8 @@ public:
 
         spinRefPoint2X = new QgsDoubleSpinBox(WidgetGradientFill);
         spinRefPoint2X->setObjectName(QString::fromUtf8("spinRefPoint2X"));
-        spinRefPoint2X->setMaximum(1.000000000000000);
+        spinRefPoint2X->setMinimum(-10.000000000000000);
+        spinRefPoint2X->setMaximum(10.000000000000000);
         spinRefPoint2X->setSingleStep(0.200000000000000);
         spinRefPoint2X->setValue(0.500000000000000);
 

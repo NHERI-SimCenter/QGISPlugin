@@ -23,7 +23,6 @@
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <qgscollapsiblegroupbox.h>
-#include "qgscolorbutton.h"
 #include "qgsdoublespinbox.h"
 #include "qgsfontbutton.h"
 #include "qgsscrollarea.h"
@@ -46,28 +45,24 @@ public:
     QPlainTextEdit *mTextEdit;
     QgsCollapsibleGroupBoxBasic *mAppearanceGroup;
     QGridLayout *gridLayout;
-    QLabel *mHorizontalAlignementLabel;
-    QgsDoubleSpinBox *mMarginYDoubleSpinBox;
-    QHBoxLayout *horizontalLayout_6;
-    QRadioButton *mTopRadioButton;
-    QRadioButton *mMiddleRadioButton;
-    QRadioButton *mBottomRadioButton;
-    QSpacerItem *horizontalSpacer_3;
-    QLabel *mMarginYLabel;
-    QLabel *mMarginXLabel;
-    QgsDoubleSpinBox *mMarginXDoubleSpinBox;
-    QLabel *label_2;
-    QLabel *mVerticalAlignementLabel;
     QgsFontButton *mFontButton;
-    QHBoxLayout *horizontalLayout;
-    QgsColorButton *mFontColorButton;
-    QSpacerItem *horizontalSpacer_2;
     QGridLayout *gridLayout_3;
     QRadioButton *mLeftRadioButton;
     QRadioButton *mJustifyRadioButton;
     QRadioButton *mRightRadioButton;
     QRadioButton *mCenterRadioButton;
     QSpacerItem *horizontalSpacer;
+    QLabel *mMarginXLabel;
+    QLabel *mMarginYLabel;
+    QgsDoubleSpinBox *mMarginYDoubleSpinBox;
+    QgsDoubleSpinBox *mMarginXDoubleSpinBox;
+    QLabel *mHorizontalAlignementLabel;
+    QHBoxLayout *horizontalLayout_6;
+    QRadioButton *mTopRadioButton;
+    QRadioButton *mMiddleRadioButton;
+    QRadioButton *mBottomRadioButton;
+    QSpacerItem *horizontalSpacer_3;
+    QLabel *mVerticalAlignementLabel;
     QButtonGroup *buttonGroup;
     QButtonGroup *buttonGroup_2;
 
@@ -162,73 +157,6 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        mHorizontalAlignementLabel = new QLabel(mAppearanceGroup);
-        mHorizontalAlignementLabel->setObjectName(QString::fromUtf8("mHorizontalAlignementLabel"));
-
-        gridLayout->addWidget(mHorizontalAlignementLabel, 4, 0, 1, 2);
-
-        mMarginYDoubleSpinBox = new QgsDoubleSpinBox(mAppearanceGroup);
-        mMarginYDoubleSpinBox->setObjectName(QString::fromUtf8("mMarginYDoubleSpinBox"));
-        mMarginYDoubleSpinBox->setMinimum(-99.989999999999995);
-
-        gridLayout->addWidget(mMarginYDoubleSpinBox, 3, 1, 1, 1);
-
-        horizontalLayout_6 = new QHBoxLayout();
-        horizontalLayout_6->setSpacing(6);
-        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
-        mTopRadioButton = new QRadioButton(mAppearanceGroup);
-        buttonGroup = new QButtonGroup(QgsLayoutLabelWidgetBase);
-        buttonGroup->setObjectName(QString::fromUtf8("buttonGroup"));
-        buttonGroup->addButton(mTopRadioButton);
-        mTopRadioButton->setObjectName(QString::fromUtf8("mTopRadioButton"));
-
-        horizontalLayout_6->addWidget(mTopRadioButton);
-
-        mMiddleRadioButton = new QRadioButton(mAppearanceGroup);
-        buttonGroup->addButton(mMiddleRadioButton);
-        mMiddleRadioButton->setObjectName(QString::fromUtf8("mMiddleRadioButton"));
-
-        horizontalLayout_6->addWidget(mMiddleRadioButton);
-
-        mBottomRadioButton = new QRadioButton(mAppearanceGroup);
-        buttonGroup->addButton(mBottomRadioButton);
-        mBottomRadioButton->setObjectName(QString::fromUtf8("mBottomRadioButton"));
-
-        horizontalLayout_6->addWidget(mBottomRadioButton);
-
-        horizontalSpacer_3 = new QSpacerItem(0, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_6->addItem(horizontalSpacer_3);
-
-
-        gridLayout->addLayout(horizontalLayout_6, 8, 0, 1, 2);
-
-        mMarginYLabel = new QLabel(mAppearanceGroup);
-        mMarginYLabel->setObjectName(QString::fromUtf8("mMarginYLabel"));
-
-        gridLayout->addWidget(mMarginYLabel, 3, 0, 1, 1);
-
-        mMarginXLabel = new QLabel(mAppearanceGroup);
-        mMarginXLabel->setObjectName(QString::fromUtf8("mMarginXLabel"));
-
-        gridLayout->addWidget(mMarginXLabel, 2, 0, 1, 1);
-
-        mMarginXDoubleSpinBox = new QgsDoubleSpinBox(mAppearanceGroup);
-        mMarginXDoubleSpinBox->setObjectName(QString::fromUtf8("mMarginXDoubleSpinBox"));
-        mMarginXDoubleSpinBox->setMinimum(-99.989999999999995);
-
-        gridLayout->addWidget(mMarginXDoubleSpinBox, 2, 1, 1, 1);
-
-        label_2 = new QLabel(mAppearanceGroup);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-
-        gridLayout->addWidget(label_2, 1, 0, 1, 1);
-
-        mVerticalAlignementLabel = new QLabel(mAppearanceGroup);
-        mVerticalAlignementLabel->setObjectName(QString::fromUtf8("mVerticalAlignementLabel"));
-
-        gridLayout->addWidget(mVerticalAlignementLabel, 7, 0, 1, 2);
-
         mFontButton = new QgsFontButton(mAppearanceGroup);
         mFontButton->setObjectName(QString::fromUtf8("mFontButton"));
         QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Fixed);
@@ -238,23 +166,6 @@ public:
         mFontButton->setSizePolicy(sizePolicy3);
 
         gridLayout->addWidget(mFontButton, 0, 0, 1, 2);
-
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        mFontColorButton = new QgsColorButton(mAppearanceGroup);
-        mFontColorButton->setObjectName(QString::fromUtf8("mFontColorButton"));
-        mFontColorButton->setMinimumSize(QSize(120, 0));
-        mFontColorButton->setMaximumSize(QSize(120, 16777215));
-
-        horizontalLayout->addWidget(mFontColorButton);
-
-        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout->addItem(horizontalSpacer_2);
-
-
-        gridLayout->addLayout(horizontalLayout, 1, 1, 1, 1);
 
         gridLayout_3 = new QGridLayout();
         gridLayout_3->setSpacing(6);
@@ -290,7 +201,69 @@ public:
         gridLayout_3->addItem(horizontalSpacer, 0, 4, 1, 1);
 
 
-        gridLayout->addLayout(gridLayout_3, 5, 0, 1, 2);
+        gridLayout->addLayout(gridLayout_3, 4, 0, 1, 2);
+
+        mMarginXLabel = new QLabel(mAppearanceGroup);
+        mMarginXLabel->setObjectName(QString::fromUtf8("mMarginXLabel"));
+
+        gridLayout->addWidget(mMarginXLabel, 1, 0, 1, 1);
+
+        mMarginYLabel = new QLabel(mAppearanceGroup);
+        mMarginYLabel->setObjectName(QString::fromUtf8("mMarginYLabel"));
+
+        gridLayout->addWidget(mMarginYLabel, 2, 0, 1, 1);
+
+        mMarginYDoubleSpinBox = new QgsDoubleSpinBox(mAppearanceGroup);
+        mMarginYDoubleSpinBox->setObjectName(QString::fromUtf8("mMarginYDoubleSpinBox"));
+        mMarginYDoubleSpinBox->setMinimum(-99.989999999999995);
+
+        gridLayout->addWidget(mMarginYDoubleSpinBox, 2, 1, 1, 1);
+
+        mMarginXDoubleSpinBox = new QgsDoubleSpinBox(mAppearanceGroup);
+        mMarginXDoubleSpinBox->setObjectName(QString::fromUtf8("mMarginXDoubleSpinBox"));
+        mMarginXDoubleSpinBox->setMinimum(-99.989999999999995);
+
+        gridLayout->addWidget(mMarginXDoubleSpinBox, 1, 1, 1, 1);
+
+        mHorizontalAlignementLabel = new QLabel(mAppearanceGroup);
+        mHorizontalAlignementLabel->setObjectName(QString::fromUtf8("mHorizontalAlignementLabel"));
+
+        gridLayout->addWidget(mHorizontalAlignementLabel, 3, 0, 1, 2);
+
+        horizontalLayout_6 = new QHBoxLayout();
+        horizontalLayout_6->setSpacing(6);
+        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        mTopRadioButton = new QRadioButton(mAppearanceGroup);
+        buttonGroup = new QButtonGroup(QgsLayoutLabelWidgetBase);
+        buttonGroup->setObjectName(QString::fromUtf8("buttonGroup"));
+        buttonGroup->addButton(mTopRadioButton);
+        mTopRadioButton->setObjectName(QString::fromUtf8("mTopRadioButton"));
+
+        horizontalLayout_6->addWidget(mTopRadioButton);
+
+        mMiddleRadioButton = new QRadioButton(mAppearanceGroup);
+        buttonGroup->addButton(mMiddleRadioButton);
+        mMiddleRadioButton->setObjectName(QString::fromUtf8("mMiddleRadioButton"));
+
+        horizontalLayout_6->addWidget(mMiddleRadioButton);
+
+        mBottomRadioButton = new QRadioButton(mAppearanceGroup);
+        buttonGroup->addButton(mBottomRadioButton);
+        mBottomRadioButton->setObjectName(QString::fromUtf8("mBottomRadioButton"));
+
+        horizontalLayout_6->addWidget(mBottomRadioButton);
+
+        horizontalSpacer_3 = new QSpacerItem(0, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_6->addItem(horizontalSpacer_3);
+
+
+        gridLayout->addLayout(horizontalLayout_6, 7, 0, 1, 2);
+
+        mVerticalAlignementLabel = new QLabel(mAppearanceGroup);
+        mVerticalAlignementLabel->setObjectName(QString::fromUtf8("mVerticalAlignementLabel"));
+
+        gridLayout->addWidget(mVerticalAlignementLabel, 6, 0, 1, 2);
 
 
         mainLayout->addWidget(mAppearanceGroup);
@@ -306,8 +279,7 @@ public:
         QWidget::setTabOrder(mInsertExpressionButton, mDynamicTextButton);
         QWidget::setTabOrder(mDynamicTextButton, mAppearanceGroup);
         QWidget::setTabOrder(mAppearanceGroup, mFontButton);
-        QWidget::setTabOrder(mFontButton, mFontColorButton);
-        QWidget::setTabOrder(mFontColorButton, mMarginXDoubleSpinBox);
+        QWidget::setTabOrder(mFontButton, mMarginXDoubleSpinBox);
         QWidget::setTabOrder(mMarginXDoubleSpinBox, mMarginYDoubleSpinBox);
         QWidget::setTabOrder(mMarginYDoubleSpinBox, mLeftRadioButton);
         QWidget::setTabOrder(mLeftRadioButton, mCenterRadioButton);
@@ -331,23 +303,21 @@ public:
         mInsertExpressionButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Insert/Edit Expression\342\200\246", nullptr));
         mHtmlCheckBox->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Render as HTML", nullptr));
         mAppearanceGroup->setTitle(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Appearance", nullptr));
-        mHorizontalAlignementLabel->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Horizontal alignment", nullptr));
-        mMarginYDoubleSpinBox->setSuffix(QCoreApplication::translate("QgsLayoutLabelWidgetBase", " mm", nullptr));
-        mTopRadioButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Top", nullptr));
-        mMiddleRadioButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Middle", nullptr));
-        mBottomRadioButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Bottom", nullptr));
-        mMarginYLabel->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Vertical margin", nullptr));
-        mMarginXLabel->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Horizontal margin", nullptr));
-        mMarginXDoubleSpinBox->setPrefix(QString());
-        mMarginXDoubleSpinBox->setSuffix(QCoreApplication::translate("QgsLayoutLabelWidgetBase", " mm", nullptr));
-        label_2->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Font color", nullptr));
-        mVerticalAlignementLabel->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Vertical alignment", nullptr));
         mFontButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Font", nullptr));
-        mFontColorButton->setText(QString());
         mLeftRadioButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Left", nullptr));
         mJustifyRadioButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Justify", nullptr));
         mRightRadioButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Right", nullptr));
         mCenterRadioButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Center", nullptr));
+        mMarginXLabel->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Horizontal margin", nullptr));
+        mMarginYLabel->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Vertical margin", nullptr));
+        mMarginYDoubleSpinBox->setSuffix(QCoreApplication::translate("QgsLayoutLabelWidgetBase", " mm", nullptr));
+        mMarginXDoubleSpinBox->setPrefix(QString());
+        mMarginXDoubleSpinBox->setSuffix(QCoreApplication::translate("QgsLayoutLabelWidgetBase", " mm", nullptr));
+        mHorizontalAlignementLabel->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Horizontal alignment", nullptr));
+        mTopRadioButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Top", nullptr));
+        mMiddleRadioButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Middle", nullptr));
+        mBottomRadioButton->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Bottom", nullptr));
+        mVerticalAlignementLabel->setText(QCoreApplication::translate("QgsLayoutLabelWidgetBase", "Vertical alignment", nullptr));
     } // retranslateUi
 
 };

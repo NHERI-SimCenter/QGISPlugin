@@ -12,11 +12,15 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QDialog>
-#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QSplitter>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
+#include "qgscrsdefinitionwidget.h"
+#include "qgspanelwidget.h"
 #include "qgsprojectionselectiontreewidget.h"
 
 QT_BEGIN_NAMESPACE
@@ -24,29 +28,40 @@ QT_BEGIN_NAMESPACE
 class Ui_QgsGenericProjectionSelectorBase
 {
 public:
-    QVBoxLayout *verticalLayout;
+    QVBoxLayout *verticalLayout_4;
     QSplitter *mSplitter;
     QTextEdit *textEdit;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_3;
+    QComboBox *mComboCrsType;
+    QStackedWidget *mStackedWidget;
+    QWidget *mPageDatabase;
+    QVBoxLayout *verticalLayout_2;
     QgsProjectionSelectionTreeWidget *projectionSelector;
-    QDialogButtonBox *mButtonBox;
+    QWidget *mPageCustom;
+    QVBoxLayout *verticalLayout_5;
+    QgsCrsDefinitionWidget *mCrsDefinitionWidget;
+    QWidget *mPageNoCrs;
+    QVBoxLayout *verticalLayout;
+    QLabel *mLabelNoCrs;
 
-    void setupUi(QDialog *QgsGenericProjectionSelectorBase)
+    void setupUi(QgsPanelWidget *QgsGenericProjectionSelectorBase)
     {
         if (QgsGenericProjectionSelectorBase->objectName().isEmpty())
             QgsGenericProjectionSelectorBase->setObjectName(QString::fromUtf8("QgsGenericProjectionSelectorBase"));
-        QgsGenericProjectionSelectorBase->resize(605, 563);
+        QgsGenericProjectionSelectorBase->setProperty("modal", QVariant(false));
+        QgsGenericProjectionSelectorBase->resize(342, 636);
         QIcon icon;
         icon.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
         QgsGenericProjectionSelectorBase->setWindowIcon(icon);
-        QgsGenericProjectionSelectorBase->setModal(true);
-        verticalLayout = new QVBoxLayout(QgsGenericProjectionSelectorBase);
-        verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout_4 = new QVBoxLayout(QgsGenericProjectionSelectorBase);
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
         mSplitter = new QSplitter(QgsGenericProjectionSelectorBase);
         mSplitter->setObjectName(QString::fromUtf8("mSplitter"));
         mSplitter->setOrientation(Qt::Vertical);
-        mSplitter->setChildrenCollapsible(false);
         textEdit = new QTextEdit(mSplitter);
         textEdit->setObjectName(QString::fromUtf8("textEdit"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -60,30 +75,79 @@ public:
         textEdit->setLineWidth(2);
         textEdit->setReadOnly(true);
         mSplitter->addWidget(textEdit);
-        projectionSelector = new QgsProjectionSelectionTreeWidget(mSplitter);
+        widget = new QWidget(mSplitter);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        verticalLayout_3 = new QVBoxLayout(widget);
+        verticalLayout_3->setSpacing(6);
+        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
+        mComboCrsType = new QComboBox(widget);
+        mComboCrsType->setObjectName(QString::fromUtf8("mComboCrsType"));
+
+        verticalLayout_3->addWidget(mComboCrsType);
+
+        mStackedWidget = new QStackedWidget(widget);
+        mStackedWidget->setObjectName(QString::fromUtf8("mStackedWidget"));
+        mPageDatabase = new QWidget();
+        mPageDatabase->setObjectName(QString::fromUtf8("mPageDatabase"));
+        verticalLayout_2 = new QVBoxLayout(mPageDatabase);
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        projectionSelector = new QgsProjectionSelectionTreeWidget(mPageDatabase);
         projectionSelector->setObjectName(QString::fromUtf8("projectionSelector"));
-        mSplitter->addWidget(projectionSelector);
 
-        verticalLayout->addWidget(mSplitter);
+        verticalLayout_2->addWidget(projectionSelector);
 
-        mButtonBox = new QDialogButtonBox(QgsGenericProjectionSelectorBase);
-        mButtonBox->setObjectName(QString::fromUtf8("mButtonBox"));
-        mButtonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok);
-        mButtonBox->setCenterButtons(false);
+        mStackedWidget->addWidget(mPageDatabase);
+        mPageCustom = new QWidget();
+        mPageCustom->setObjectName(QString::fromUtf8("mPageCustom"));
+        verticalLayout_5 = new QVBoxLayout(mPageCustom);
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
+        mCrsDefinitionWidget = new QgsCrsDefinitionWidget(mPageCustom);
+        mCrsDefinitionWidget->setObjectName(QString::fromUtf8("mCrsDefinitionWidget"));
 
-        verticalLayout->addWidget(mButtonBox);
+        verticalLayout_5->addWidget(mCrsDefinitionWidget);
+
+        mStackedWidget->addWidget(mPageCustom);
+        mPageNoCrs = new QWidget();
+        mPageNoCrs->setObjectName(QString::fromUtf8("mPageNoCrs"));
+        verticalLayout = new QVBoxLayout(mPageNoCrs);
+        verticalLayout->setSpacing(6);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        mLabelNoCrs = new QLabel(mPageNoCrs);
+        mLabelNoCrs->setObjectName(QString::fromUtf8("mLabelNoCrs"));
+        mLabelNoCrs->setWordWrap(true);
+
+        verticalLayout->addWidget(mLabelNoCrs);
+
+        mStackedWidget->addWidget(mPageNoCrs);
+
+        verticalLayout_3->addWidget(mStackedWidget);
+
+        mSplitter->addWidget(widget);
+
+        verticalLayout_4->addWidget(mSplitter);
 
 
         retranslateUi(QgsGenericProjectionSelectorBase);
-        QObject::connect(mButtonBox, SIGNAL(accepted()), QgsGenericProjectionSelectorBase, SLOT(accept()));
-        QObject::connect(mButtonBox, SIGNAL(rejected()), QgsGenericProjectionSelectorBase, SLOT(reject()));
+
+        mStackedWidget->setCurrentIndex(2);
+
 
         QMetaObject::connectSlotsByName(QgsGenericProjectionSelectorBase);
     } // setupUi
 
-    void retranslateUi(QDialog *QgsGenericProjectionSelectorBase)
+    void retranslateUi(QgsPanelWidget *QgsGenericProjectionSelectorBase)
     {
         QgsGenericProjectionSelectorBase->setWindowTitle(QCoreApplication::translate("QgsGenericProjectionSelectorBase", "Coordinate Reference System Selector", nullptr));
+        mLabelNoCrs->setText(QString());
     } // retranslateUi
 
 };

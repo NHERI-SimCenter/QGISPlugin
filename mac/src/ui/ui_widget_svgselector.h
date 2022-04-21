@@ -182,7 +182,6 @@ public:
 
         mSourceLineEdit = new QgsPictureSourceLineEditBase(WidgetSvgSelector);
         mSourceLineEdit->setObjectName(QString::fromUtf8("mSourceLineEdit"));
-        mSourceLineEdit->setMinimumSize(QSize(0, 20));
         mSourceLineEdit->setFocusPolicy(Qt::StrongFocus);
 
         gridLayout->addWidget(mSourceLineEdit, 3, 0, 1, 1);

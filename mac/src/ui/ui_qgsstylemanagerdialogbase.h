@@ -21,6 +21,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QStackedWidget>
@@ -66,6 +67,7 @@ public:
     QPushButton *btnEditItem;
     QPushButton *mCopyToDefaultButton;
     QSpacerItem *horizontalSpacer;
+    QSlider *mSliderIconSize;
     QHBoxLayout *horizontalLayout_7;
     QToolButton *mButtonIconView;
     QToolButton *mButtonListView;
@@ -95,7 +97,7 @@ public:
     {
         if (QgsStyleManagerDialogBase->objectName().isEmpty())
             QgsStyleManagerDialogBase->setObjectName(QString::fromUtf8("QgsStyleManagerDialogBase"));
-        QgsStyleManagerDialogBase->resize(867, 410);
+        QgsStyleManagerDialogBase->resize(950, 419);
         actnRemoveItem = new QAction(QgsStyleManagerDialogBase);
         actnRemoveItem->setObjectName(QString::fromUtf8("actnRemoveItem"));
         actnRemoveItem->setEnabled(false);
@@ -244,6 +246,17 @@ public:
         horizontalSpacer = new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         symbolBtnsLayout->addItem(horizontalSpacer);
+
+        mSliderIconSize = new QSlider(widget_2);
+        mSliderIconSize->setObjectName(QString::fromUtf8("mSliderIconSize"));
+        mSliderIconSize->setMinimum(0);
+        mSliderIconSize->setMaximum(10);
+        mSliderIconSize->setPageStep(1);
+        mSliderIconSize->setValue(0);
+        mSliderIconSize->setTracking(true);
+        mSliderIconSize->setOrientation(Qt::Horizontal);
+
+        symbolBtnsLayout->addWidget(mSliderIconSize);
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setSpacing(0);
@@ -415,7 +428,8 @@ public:
         QWidget::setTabOrder(btnAddItem, btnRemoveItem);
         QWidget::setTabOrder(btnRemoveItem, btnEditItem);
         QWidget::setTabOrder(btnEditItem, mCopyToDefaultButton);
-        QWidget::setTabOrder(mCopyToDefaultButton, mButtonIconView);
+        QWidget::setTabOrder(mCopyToDefaultButton, mSliderIconSize);
+        QWidget::setTabOrder(mSliderIconSize, mButtonIconView);
         QWidget::setTabOrder(mButtonIconView, mButtonListView);
         QWidget::setTabOrder(mButtonListView, searchBox);
 
@@ -506,6 +520,9 @@ public:
         mCopyToDefaultButton->setToolTip(QCoreApplication::translate("QgsStyleManagerDialogBase", "Copies the selected items to the default style library", nullptr));
 #endif // QT_CONFIG(tooltip)
         mCopyToDefaultButton->setText(QCoreApplication::translate("QgsStyleManagerDialogBase", "Copy to Default Style\342\200\246", nullptr));
+#if QT_CONFIG(tooltip)
+        mSliderIconSize->setToolTip(QCoreApplication::translate("QgsStyleManagerDialogBase", "Thumbnail size", nullptr));
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         mButtonIconView->setToolTip(QCoreApplication::translate("QgsStyleManagerDialogBase", "Icon View", nullptr));
 #endif // QT_CONFIG(tooltip)

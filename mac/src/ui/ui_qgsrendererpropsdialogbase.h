@@ -189,6 +189,8 @@ public:
 
         mOpacityWidget = new QgsOpacityWidget(mLayerRenderingGroupBox);
         mOpacityWidget->setObjectName(QString::fromUtf8("mOpacityWidget"));
+        sizePolicy.setHeightForWidth(mOpacityWidget->sizePolicy().hasHeightForWidth());
+        mOpacityWidget->setSizePolicy(sizePolicy);
         mOpacityWidget->setFocusPolicy(Qt::StrongFocus);
 
         gridLayout->addWidget(mOpacityWidget, 0, 1, 1, 2);

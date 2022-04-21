@@ -15,13 +15,13 @@
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "qgsdualview.h"
 #include "qgsfeaturefilterwidget_p.h"
 #include "qgsmessagebar.h"
+#include "qgsscrollarea.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -39,7 +39,7 @@ public:
     QVBoxLayout *verticalLayout;
     QToolBar *mToolbar;
     QgsMessageBar *mMessageBar;
-    QScrollArea *scrollArea;
+    QgsScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QVBoxLayout *verticalLayout_2;
     QgsDualView *mDualView;
@@ -110,7 +110,7 @@ public:
 
         verticalLayout->addWidget(mMessageBar);
 
-        scrollArea = new QScrollArea(QgsFeatureSelectionDlg);
+        scrollArea = new QgsScrollArea(QgsFeatureSelectionDlg);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();

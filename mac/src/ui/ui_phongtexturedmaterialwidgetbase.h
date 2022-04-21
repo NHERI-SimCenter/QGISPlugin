@@ -41,7 +41,7 @@ public:
     {
         if (PhongTexturedMaterialWidgetBase->objectName().isEmpty())
             PhongTexturedMaterialWidgetBase->setObjectName(QString::fromUtf8("PhongTexturedMaterialWidgetBase"));
-        PhongTexturedMaterialWidgetBase->resize(394, 197);
+        PhongTexturedMaterialWidgetBase->resize(394, 252);
         PhongTexturedMaterialWidgetBase->setWindowTitle(QString::fromUtf8("Form"));
         gridLayout = new QGridLayout(PhongTexturedMaterialWidgetBase);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -135,11 +135,20 @@ public:
     void retranslateUi(QWidget *PhongTexturedMaterialWidgetBase)
     {
         textureRotationSpinBox->setSuffix(QCoreApplication::translate("PhongTexturedMaterialWidgetBase", " \302\260", nullptr));
+#if QT_CONFIG(tooltip)
+        lblSpecular->setToolTip(QCoreApplication::translate("PhongTexturedMaterialWidgetBase", "Color of light reflecting from smooth surfaces.", nullptr));
+#endif // QT_CONFIG(tooltip)
         lblSpecular->setText(QCoreApplication::translate("PhongTexturedMaterialWidgetBase", "Specular", nullptr));
         lblTextureScale->setText(QCoreApplication::translate("PhongTexturedMaterialWidgetBase", "Texture scale", nullptr));
         textureScaleSpinBox->setSuffix(QCoreApplication::translate("PhongTexturedMaterialWidgetBase", " %", nullptr));
+#if QT_CONFIG(tooltip)
+        lblAmbient->setToolTip(QCoreApplication::translate("PhongTexturedMaterialWidgetBase", "Color of light that is scattered around the entire scene.", nullptr));
+#endif // QT_CONFIG(tooltip)
         lblAmbient->setText(QCoreApplication::translate("PhongTexturedMaterialWidgetBase", "Ambient", nullptr));
         lblTextureRotation->setText(QCoreApplication::translate("PhongTexturedMaterialWidgetBase", "Texture rotation", nullptr));
+#if QT_CONFIG(tooltip)
+        lblShininess->setToolTip(QCoreApplication::translate("PhongTexturedMaterialWidgetBase", "How shiny smooth surfaces are.", nullptr));
+#endif // QT_CONFIG(tooltip)
         lblShininess->setText(QCoreApplication::translate("PhongTexturedMaterialWidgetBase", "Shininess", nullptr));
         lblTextureScale_2->setText(QCoreApplication::translate("PhongTexturedMaterialWidgetBase", "Diffuse texture", nullptr));
         (void)PhongTexturedMaterialWidgetBase;

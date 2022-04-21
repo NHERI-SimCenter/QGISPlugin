@@ -30,7 +30,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QStackedWidget>
-#include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
@@ -42,10 +42,7 @@
 #include "qgsfilecontentsourcelineedit.h"
 #include "qgsfilterlineedit.h"
 #include "qgslayertreeembeddedconfigwidget.h"
-#include "qgsopacitywidget.h"
 #include "qgsprojectionselectionwidget.h"
-#include "qgspropertyoverridebutton.h"
-#include "qgsrasterbandcombobox.h"
 #include "qgsscalerangewidget.h"
 #include "qgsscrollarea.h"
 #include "qgsspinbox.h"
@@ -136,37 +133,7 @@ public:
     QSpacerItem *verticalSpacer;
     QWidget *mOptsPage_Transparency;
     QVBoxLayout *verticalLayout_4;
-    QgsScrollArea *scrollArea_2;
-    QWidget *scrollAreaWidgetContents_2;
-    QVBoxLayout *verticalLayout_5;
-    QgsCollapsibleGroupBox *gboxNoDataValue_2;
-    QGridLayout *gridLayout_13;
-    QgsOpacityWidget *mOpacityWidget;
-    QgsPropertyOverrideButton *mOpacityDDBtn;
-    QgsCollapsibleGroupBox *gboxNoDataValue;
-    QGridLayout *gridLayout_11;
-    QHBoxLayout *horizontalLayout_5;
-    QCheckBox *mSrcNoDataValueCheckBox;
-    QLabel *lblSrcNoDataValue;
-    QHBoxLayout *horizontalLayout_6;
-    QLabel *lblUserNoDataValueLabel;
-    QLineEdit *leNoDataValue;
-    QgsCollapsibleGroupBox *gboxCustomTransparency;
-    QGridLayout *gridLayout_3;
-    QVBoxLayout *_2;
-    QToolButton *pbnAddValuesManually;
-    QToolButton *pbnAddValuesFromDisplay;
-    QToolButton *pbnRemoveSelectedRow;
-    QToolButton *pbnDefaultValues;
-    QToolButton *pbnImportTransparentPixelValues;
-    QToolButton *pbnExportTransparentPixelValues;
-    QSpacerItem *verticalSpacer_2;
-    QHBoxLayout *horizontalLayout_7;
-    QLabel *lblTransparent;
-    QgsRasterBandComboBox *cboxTransparencyBand;
-    QTableWidget *tableTransparency;
-    QLabel *label_6;
-    QSpacerItem *verticalSpacer_5;
+    QgsScrollArea *transparencyScrollArea;
     QWidget *mOptsPage_Histogram;
     QVBoxLayout *verticalLayout_15;
     QgsScrollArea *scrollArea_6;
@@ -209,12 +176,13 @@ public:
     QVBoxLayout *verticalLayout_13;
     QFrame *metadataFrame;
     QWidget *mOptsPage_Legend;
-    QGridLayout *gridLayout_15;
+    QVBoxLayout *verticalLayout_151;
+    QHBoxLayout *horizontalLayout_5;
+    QLabel *mLegendPlaceholderLabel;
+    QgsImageSourceLineEdit *mLegendPlaceholderWidget;
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout_17;
     QgsLayerTreeEmbeddedConfigWidget *mLegendConfigEmbeddedWidget;
-    QgsImageSourceLineEdit *mLegendPlaceholderWidget;
-    QLabel *mLegendPlaceholderLabel;
     QWidget *mOptsPage_Server;
     QVBoxLayout *verticalLayout_8;
     QgsScrollArea *scrollArea_4;
@@ -242,15 +210,12 @@ public:
     QLabel *mLayerAttributionUrlLabel;
     QLineEdit *mLayerAttributionUrlLineEdit;
     QgsCollapsibleGroupBox *mMetaMetaUrlGrpBx;
-    QGridLayout *gridLayout_9;
-    QLabel *mLayerMetadataUrlLabel;
-    QLineEdit *mLayerMetadataUrlLineEdit;
-    QHBoxLayout *horizontalLayout_8;
-    QLabel *mLayerMetadataUrlTypeLabel;
-    QComboBox *mLayerMetadataUrlTypeComboBox;
-    QLabel *mLayerMetadataUrlFormatLabel;
-    QComboBox *mLayerMetadataUrlFormatComboBox;
-    QSpacerItem *horizontalSpacer_4;
+    QVBoxLayout *verticalLayout_18;
+    QHBoxLayout *horizontalLayout_4;
+    QSpacerItem *horizontalSpacer_3;
+    QPushButton *buttonAddMetadataUrl;
+    QPushButton *buttonRemoveMetadataUrl;
+    QTableView *tableViewMetadataUrl;
     QgsCollapsibleGroupBox *mMetaLegendGrpBx;
     QGridLayout *gridLayout_10;
     QHBoxLayout *horizontalLayout_11;
@@ -387,7 +352,7 @@ public:
         scrollArea_3->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 650, 673));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 253, 392));
         verticalLayout_7 = new QVBoxLayout(scrollAreaWidgetContents_3);
         verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
         horizontalLayout_14 = new QHBoxLayout();
@@ -461,7 +426,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 643, 679));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 462, 306));
         verticalLayout_10 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
         verticalLayout_10->setContentsMargins(0, 0, 0, 0);
@@ -778,200 +743,12 @@ public:
         verticalLayout_4 = new QVBoxLayout(mOptsPage_Transparency);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
         verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        scrollArea_2 = new QgsScrollArea(mOptsPage_Transparency);
-        scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
-        scrollArea_2->setFrameShape(QFrame::NoFrame);
-        scrollArea_2->setWidgetResizable(true);
-        scrollAreaWidgetContents_2 = new QWidget();
-        scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 643, 679));
-        verticalLayout_5 = new QVBoxLayout(scrollAreaWidgetContents_2);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        gboxNoDataValue_2 = new QgsCollapsibleGroupBox(scrollAreaWidgetContents_2);
-        gboxNoDataValue_2->setObjectName(QString::fromUtf8("gboxNoDataValue_2"));
-        gboxNoDataValue_2->setProperty("syncGroup", QVariant(QString::fromUtf8("rastertransp")));
-        gridLayout_13 = new QGridLayout(gboxNoDataValue_2);
-        gridLayout_13->setObjectName(QString::fromUtf8("gridLayout_13"));
-        mOpacityWidget = new QgsOpacityWidget(gboxNoDataValue_2);
-        mOpacityWidget->setObjectName(QString::fromUtf8("mOpacityWidget"));
-        mOpacityWidget->setFocusPolicy(Qt::StrongFocus);
+        transparencyScrollArea = new QgsScrollArea(mOptsPage_Transparency);
+        transparencyScrollArea->setObjectName(QString::fromUtf8("transparencyScrollArea"));
+        transparencyScrollArea->setFrameShape(QFrame::NoFrame);
+        transparencyScrollArea->setWidgetResizable(true);
 
-        gridLayout_13->addWidget(mOpacityWidget, 0, 0, 1, 1);
-
-        mOpacityDDBtn = new QgsPropertyOverrideButton(gboxNoDataValue_2);
-        mOpacityDDBtn->setObjectName(QString::fromUtf8("mOpacityDDBtn"));
-
-        gridLayout_13->addWidget(mOpacityDDBtn, 0, 1, 1, 1);
-
-
-        verticalLayout_5->addWidget(gboxNoDataValue_2);
-
-        gboxNoDataValue = new QgsCollapsibleGroupBox(scrollAreaWidgetContents_2);
-        gboxNoDataValue->setObjectName(QString::fromUtf8("gboxNoDataValue"));
-        gboxNoDataValue->setProperty("syncGroup", QVariant(QString::fromUtf8("rastertransp")));
-        gridLayout_11 = new QGridLayout(gboxNoDataValue);
-        gridLayout_11->setObjectName(QString::fromUtf8("gridLayout_11"));
-        horizontalLayout_5 = new QHBoxLayout();
-        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
-        horizontalLayout_5->setContentsMargins(1, -1, -1, -1);
-        mSrcNoDataValueCheckBox = new QCheckBox(gboxNoDataValue);
-        mSrcNoDataValueCheckBox->setObjectName(QString::fromUtf8("mSrcNoDataValueCheckBox"));
-
-        horizontalLayout_5->addWidget(mSrcNoDataValueCheckBox);
-
-        lblSrcNoDataValue = new QLabel(gboxNoDataValue);
-        lblSrcNoDataValue->setObjectName(QString::fromUtf8("lblSrcNoDataValue"));
-        QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Preferred);
-        sizePolicy4.setHorizontalStretch(0);
-        sizePolicy4.setVerticalStretch(0);
-        sizePolicy4.setHeightForWidth(lblSrcNoDataValue->sizePolicy().hasHeightForWidth());
-        lblSrcNoDataValue->setSizePolicy(sizePolicy4);
-
-        horizontalLayout_5->addWidget(lblSrcNoDataValue);
-
-
-        gridLayout_11->addLayout(horizontalLayout_5, 0, 0, 1, 1);
-
-        horizontalLayout_6 = new QHBoxLayout();
-        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
-        lblUserNoDataValueLabel = new QLabel(gboxNoDataValue);
-        lblUserNoDataValueLabel->setObjectName(QString::fromUtf8("lblUserNoDataValueLabel"));
-
-        horizontalLayout_6->addWidget(lblUserNoDataValueLabel);
-
-        leNoDataValue = new QLineEdit(gboxNoDataValue);
-        leNoDataValue->setObjectName(QString::fromUtf8("leNoDataValue"));
-
-        horizontalLayout_6->addWidget(leNoDataValue);
-
-
-        gridLayout_11->addLayout(horizontalLayout_6, 1, 0, 1, 1);
-
-
-        verticalLayout_5->addWidget(gboxNoDataValue);
-
-        gboxCustomTransparency = new QgsCollapsibleGroupBox(scrollAreaWidgetContents_2);
-        gboxCustomTransparency->setObjectName(QString::fromUtf8("gboxCustomTransparency"));
-        sizePolicy2.setHeightForWidth(gboxCustomTransparency->sizePolicy().hasHeightForWidth());
-        gboxCustomTransparency->setSizePolicy(sizePolicy2);
-        gboxCustomTransparency->setProperty("syncGroup", QVariant(QString::fromUtf8("rastertransp")));
-        gridLayout_3 = new QGridLayout(gboxCustomTransparency);
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        _2 = new QVBoxLayout();
-        _2->setObjectName(QString::fromUtf8("_2"));
-        _2->setContentsMargins(0, 6, 0, 6);
-        pbnAddValuesManually = new QToolButton(gboxCustomTransparency);
-        pbnAddValuesManually->setObjectName(QString::fromUtf8("pbnAddValuesManually"));
-        QIcon icon12;
-        icon12.addFile(QString::fromUtf8(":/images/themes/default/symbologyAdd.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        pbnAddValuesManually->setIcon(icon12);
-
-        _2->addWidget(pbnAddValuesManually);
-
-        pbnAddValuesFromDisplay = new QToolButton(gboxCustomTransparency);
-        pbnAddValuesFromDisplay->setObjectName(QString::fromUtf8("pbnAddValuesFromDisplay"));
-        pbnAddValuesFromDisplay->setEnabled(true);
-        QIcon icon13;
-        icon13.addFile(QString::fromUtf8(":/images/themes/default/mActionContextHelp.png"), QSize(), QIcon::Normal, QIcon::Off);
-        pbnAddValuesFromDisplay->setIcon(icon13);
-
-        _2->addWidget(pbnAddValuesFromDisplay);
-
-        pbnRemoveSelectedRow = new QToolButton(gboxCustomTransparency);
-        pbnRemoveSelectedRow->setObjectName(QString::fromUtf8("pbnRemoveSelectedRow"));
-        QIcon icon14;
-        icon14.addFile(QString::fromUtf8(":/images/themes/default/symbologyRemove.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        pbnRemoveSelectedRow->setIcon(icon14);
-
-        _2->addWidget(pbnRemoveSelectedRow);
-
-        pbnDefaultValues = new QToolButton(gboxCustomTransparency);
-        pbnDefaultValues->setObjectName(QString::fromUtf8("pbnDefaultValues"));
-        QIcon icon15;
-        icon15.addFile(QString::fromUtf8(":/images/themes/default/mActionOpenTable.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        pbnDefaultValues->setIcon(icon15);
-
-        _2->addWidget(pbnDefaultValues);
-
-        pbnImportTransparentPixelValues = new QToolButton(gboxCustomTransparency);
-        pbnImportTransparentPixelValues->setObjectName(QString::fromUtf8("pbnImportTransparentPixelValues"));
-        QIcon icon16;
-        icon16.addFile(QString::fromUtf8(":/images/themes/default/mActionFileOpen.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        pbnImportTransparentPixelValues->setIcon(icon16);
-
-        _2->addWidget(pbnImportTransparentPixelValues);
-
-        pbnExportTransparentPixelValues = new QToolButton(gboxCustomTransparency);
-        pbnExportTransparentPixelValues->setObjectName(QString::fromUtf8("pbnExportTransparentPixelValues"));
-        QIcon icon17;
-        icon17.addFile(QString::fromUtf8(":/images/themes/default/mActionFileSave.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        pbnExportTransparentPixelValues->setIcon(icon17);
-
-        _2->addWidget(pbnExportTransparentPixelValues);
-
-        verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        _2->addItem(verticalSpacer_2);
-
-
-        gridLayout_3->addLayout(_2, 2, 1, 1, 1);
-
-        horizontalLayout_7 = new QHBoxLayout();
-        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
-        lblTransparent = new QLabel(gboxCustomTransparency);
-        lblTransparent->setObjectName(QString::fromUtf8("lblTransparent"));
-        QSizePolicy sizePolicy5(QSizePolicy::Maximum, QSizePolicy::Preferred);
-        sizePolicy5.setHorizontalStretch(0);
-        sizePolicy5.setVerticalStretch(0);
-        sizePolicy5.setHeightForWidth(lblTransparent->sizePolicy().hasHeightForWidth());
-        lblTransparent->setSizePolicy(sizePolicy5);
-
-        horizontalLayout_7->addWidget(lblTransparent);
-
-        cboxTransparencyBand = new QgsRasterBandComboBox(gboxCustomTransparency);
-        cboxTransparencyBand->setObjectName(QString::fromUtf8("cboxTransparencyBand"));
-        cboxTransparencyBand->setEnabled(true);
-        QSizePolicy sizePolicy6(QSizePolicy::Minimum, QSizePolicy::Fixed);
-        sizePolicy6.setHorizontalStretch(0);
-        sizePolicy6.setVerticalStretch(0);
-        sizePolicy6.setHeightForWidth(cboxTransparencyBand->sizePolicy().hasHeightForWidth());
-        cboxTransparencyBand->setSizePolicy(sizePolicy6);
-        cboxTransparencyBand->setMinimumSize(QSize(150, 0));
-
-        horizontalLayout_7->addWidget(cboxTransparencyBand);
-
-
-        gridLayout_3->addLayout(horizontalLayout_7, 0, 0, 1, 1);
-
-        tableTransparency = new QTableWidget(gboxCustomTransparency);
-        tableTransparency->setObjectName(QString::fromUtf8("tableTransparency"));
-        tableTransparency->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-        tableTransparency->setAlternatingRowColors(true);
-        tableTransparency->setSelectionMode(QAbstractItemView::SingleSelection);
-        tableTransparency->setSelectionBehavior(QAbstractItemView::SelectRows);
-        tableTransparency->setShowGrid(false);
-        tableTransparency->setRowCount(0);
-        tableTransparency->setColumnCount(0);
-        tableTransparency->horizontalHeader()->setStretchLastSection(true);
-
-        gridLayout_3->addWidget(tableTransparency, 2, 0, 1, 1);
-
-        label_6 = new QLabel(gboxCustomTransparency);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
-
-        gridLayout_3->addWidget(label_6, 1, 0, 1, 1);
-
-
-        verticalLayout_5->addWidget(gboxCustomTransparency);
-
-        verticalSpacer_5 = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        verticalLayout_5->addItem(verticalSpacer_5);
-
-        scrollArea_2->setWidget(scrollAreaWidgetContents_2);
-
-        verticalLayout_4->addWidget(scrollArea_2);
+        verticalLayout_4->addWidget(transparencyScrollArea);
 
         mOptionsStackedWidget->addWidget(mOptsPage_Transparency);
         mOptsPage_Histogram = new QWidget();
@@ -985,7 +762,7 @@ public:
         scrollArea_6->setWidgetResizable(true);
         scrollAreaWidgetContents_6 = new QWidget();
         scrollAreaWidgetContents_6->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_6"));
-        scrollAreaWidgetContents_6->setGeometry(QRect(0, 0, 643, 679));
+        scrollAreaWidgetContents_6->setGeometry(QRect(0, 0, 89, 31));
         verticalLayout_16 = new QVBoxLayout(scrollAreaWidgetContents_6);
         verticalLayout_16->setObjectName(QString::fromUtf8("verticalLayout_16"));
         verticalLayout_16->setContentsMargins(0, 0, 0, 0);
@@ -1084,7 +861,7 @@ public:
         scrollArea_5->setWidgetResizable(true);
         scrollAreaWidgetContents_5 = new QWidget();
         scrollAreaWidgetContents_5->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_5"));
-        scrollAreaWidgetContents_5->setGeometry(QRect(0, 0, 650, 673));
+        scrollAreaWidgetContents_5->setGeometry(QRect(0, 0, 442, 155));
         verticalLayout_12 = new QVBoxLayout(scrollAreaWidgetContents_5);
         verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
         verticalLayout_12->setContentsMargins(0, 0, 0, 0);
@@ -1114,11 +891,11 @@ public:
 
         tePyramidDescription = new QTextEdit(mPyramidsGrpBx);
         tePyramidDescription->setObjectName(QString::fromUtf8("tePyramidDescription"));
-        QSizePolicy sizePolicy7(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy7.setHorizontalStretch(4);
-        sizePolicy7.setVerticalStretch(0);
-        sizePolicy7.setHeightForWidth(tePyramidDescription->sizePolicy().hasHeightForWidth());
-        tePyramidDescription->setSizePolicy(sizePolicy7);
+        QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy4.setHorizontalStretch(4);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(tePyramidDescription->sizePolicy().hasHeightForWidth());
+        tePyramidDescription->setSizePolicy(sizePolicy4);
 
         gridLayout_8->addWidget(tePyramidDescription, 0, 0, 2, 1);
 
@@ -1182,34 +959,41 @@ public:
         mOptionsStackedWidget->addWidget(mOptsPage_Metadata);
         mOptsPage_Legend = new QWidget();
         mOptsPage_Legend->setObjectName(QString::fromUtf8("mOptsPage_Legend"));
-        gridLayout_15 = new QGridLayout(mOptsPage_Legend);
-        gridLayout_15->setObjectName(QString::fromUtf8("gridLayout_15"));
+        verticalLayout_151 = new QVBoxLayout(mOptsPage_Legend);
+        verticalLayout_151->setObjectName(QString::fromUtf8("verticalLayout_151"));
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        horizontalLayout_5->setContentsMargins(-1, 0, 0, -1);
+        mLegendPlaceholderLabel = new QLabel(mOptsPage_Legend);
+        mLegendPlaceholderLabel->setObjectName(QString::fromUtf8("mLegendPlaceholderLabel"));
+
+        horizontalLayout_5->addWidget(mLegendPlaceholderLabel);
+
+        mLegendPlaceholderWidget = new QgsImageSourceLineEdit(mOptsPage_Legend);
+        mLegendPlaceholderWidget->setObjectName(QString::fromUtf8("mLegendPlaceholderWidget"));
+
+        horizontalLayout_5->addWidget(mLegendPlaceholderWidget);
+
+
+        verticalLayout_151->addLayout(horizontalLayout_5);
+
         groupBox = new QGroupBox(mOptsPage_Legend);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        QSizePolicy sizePolicy8(QSizePolicy::Preferred, QSizePolicy::Expanding);
-        sizePolicy8.setHorizontalStretch(0);
-        sizePolicy8.setVerticalStretch(0);
-        sizePolicy8.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
-        groupBox->setSizePolicy(sizePolicy8);
+        QSizePolicy sizePolicy5(QSizePolicy::Preferred, QSizePolicy::Expanding);
+        sizePolicy5.setHorizontalStretch(0);
+        sizePolicy5.setVerticalStretch(0);
+        sizePolicy5.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
+        groupBox->setSizePolicy(sizePolicy5);
         verticalLayout_17 = new QVBoxLayout(groupBox);
         verticalLayout_17->setObjectName(QString::fromUtf8("verticalLayout_17"));
+        verticalLayout_17->setContentsMargins(0, 0, 0, 0);
         mLegendConfigEmbeddedWidget = new QgsLayerTreeEmbeddedConfigWidget(groupBox);
         mLegendConfigEmbeddedWidget->setObjectName(QString::fromUtf8("mLegendConfigEmbeddedWidget"));
 
         verticalLayout_17->addWidget(mLegendConfigEmbeddedWidget);
 
 
-        gridLayout_15->addWidget(groupBox, 2, 0, 1, 1);
-
-        mLegendPlaceholderWidget = new QgsImageSourceLineEdit(mOptsPage_Legend);
-        mLegendPlaceholderWidget->setObjectName(QString::fromUtf8("mLegendPlaceholderWidget"));
-
-        gridLayout_15->addWidget(mLegendPlaceholderWidget, 1, 0, 1, 1);
-
-        mLegendPlaceholderLabel = new QLabel(mOptsPage_Legend);
-        mLegendPlaceholderLabel->setObjectName(QString::fromUtf8("mLegendPlaceholderLabel"));
-
-        gridLayout_15->addWidget(mLegendPlaceholderLabel, 0, 0, 1, 1);
+        verticalLayout_151->addWidget(groupBox);
 
         mOptionsStackedWidget->addWidget(mOptsPage_Legend);
         mOptsPage_Server = new QWidget();
@@ -1223,7 +1007,7 @@ public:
         scrollArea_4->setWidgetResizable(true);
         scrollAreaWidgetContents_4 = new QWidget();
         scrollAreaWidgetContents_4->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_4"));
-        scrollAreaWidgetContents_4->setGeometry(QRect(0, 0, 629, 793));
+        scrollAreaWidgetContents_4->setGeometry(QRect(0, 0, 263, 566));
         gridLayout_12 = new QGridLayout(scrollAreaWidgetContents_4);
         gridLayout_12->setObjectName(QString::fromUtf8("gridLayout_12"));
         gridLayout_12->setContentsMargins(0, 0, 0, 0);
@@ -1292,11 +1076,11 @@ public:
 
         mLayerAbstractTextEdit = new QTextEdit(mMetaDescriptionGrpBx);
         mLayerAbstractTextEdit->setObjectName(QString::fromUtf8("mLayerAbstractTextEdit"));
-        QSizePolicy sizePolicy9(QSizePolicy::Expanding, QSizePolicy::Minimum);
-        sizePolicy9.setHorizontalStretch(0);
-        sizePolicy9.setVerticalStretch(0);
-        sizePolicy9.setHeightForWidth(mLayerAbstractTextEdit->sizePolicy().hasHeightForWidth());
-        mLayerAbstractTextEdit->setSizePolicy(sizePolicy9);
+        QSizePolicy sizePolicy6(QSizePolicy::Expanding, QSizePolicy::Minimum);
+        sizePolicy6.setHorizontalStretch(0);
+        sizePolicy6.setVerticalStretch(0);
+        sizePolicy6.setHeightForWidth(mLayerAbstractTextEdit->sizePolicy().hasHeightForWidth());
+        mLayerAbstractTextEdit->setSizePolicy(sizePolicy6);
         mLayerAbstractTextEdit->setMaximumSize(QSize(16777215, 50));
 
         gridLayout_5->addWidget(mLayerAbstractTextEdit, 3, 1, 1, 1);
@@ -1340,52 +1124,38 @@ public:
         mMetaMetaUrlGrpBx = new QgsCollapsibleGroupBox(scrollAreaWidgetContents_4);
         mMetaMetaUrlGrpBx->setObjectName(QString::fromUtf8("mMetaMetaUrlGrpBx"));
         mMetaMetaUrlGrpBx->setProperty("syncGroup", QVariant(QString::fromUtf8("vectormeta")));
-        gridLayout_9 = new QGridLayout(mMetaMetaUrlGrpBx);
-        gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
-        mLayerMetadataUrlLabel = new QLabel(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlLabel->setObjectName(QString::fromUtf8("mLayerMetadataUrlLabel"));
+        verticalLayout_18 = new QVBoxLayout(mMetaMetaUrlGrpBx);
+        verticalLayout_18->setObjectName(QString::fromUtf8("verticalLayout_18"));
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout_9->addWidget(mLayerMetadataUrlLabel, 0, 0, 1, 1);
+        horizontalLayout_4->addItem(horizontalSpacer_3);
 
-        mLayerMetadataUrlLineEdit = new QLineEdit(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlLineEdit->setObjectName(QString::fromUtf8("mLayerMetadataUrlLineEdit"));
+        buttonAddMetadataUrl = new QPushButton(mMetaMetaUrlGrpBx);
+        buttonAddMetadataUrl->setObjectName(QString::fromUtf8("buttonAddMetadataUrl"));
+        QIcon icon12;
+        icon12.addFile(QString::fromUtf8(":/images/themes/default/symbologyAdd.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        buttonAddMetadataUrl->setIcon(icon12);
 
-        gridLayout_9->addWidget(mLayerMetadataUrlLineEdit, 0, 1, 1, 1);
+        horizontalLayout_4->addWidget(buttonAddMetadataUrl);
 
-        horizontalLayout_8 = new QHBoxLayout();
-        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
-        mLayerMetadataUrlTypeLabel = new QLabel(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlTypeLabel->setObjectName(QString::fromUtf8("mLayerMetadataUrlTypeLabel"));
+        buttonRemoveMetadataUrl = new QPushButton(mMetaMetaUrlGrpBx);
+        buttonRemoveMetadataUrl->setObjectName(QString::fromUtf8("buttonRemoveMetadataUrl"));
+        buttonRemoveMetadataUrl->setText(QString::fromUtf8(""));
+        QIcon icon13;
+        icon13.addFile(QString::fromUtf8(":/images/themes/default/symbologyRemove.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        buttonRemoveMetadataUrl->setIcon(icon13);
 
-        horizontalLayout_8->addWidget(mLayerMetadataUrlTypeLabel);
-
-        mLayerMetadataUrlTypeComboBox = new QComboBox(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlTypeComboBox->addItem(QString::fromUtf8(""));
-        mLayerMetadataUrlTypeComboBox->addItem(QString::fromUtf8("FGDC"));
-        mLayerMetadataUrlTypeComboBox->addItem(QString::fromUtf8("TC211"));
-        mLayerMetadataUrlTypeComboBox->setObjectName(QString::fromUtf8("mLayerMetadataUrlTypeComboBox"));
-
-        horizontalLayout_8->addWidget(mLayerMetadataUrlTypeComboBox);
-
-        mLayerMetadataUrlFormatLabel = new QLabel(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlFormatLabel->setObjectName(QString::fromUtf8("mLayerMetadataUrlFormatLabel"));
-
-        horizontalLayout_8->addWidget(mLayerMetadataUrlFormatLabel);
-
-        mLayerMetadataUrlFormatComboBox = new QComboBox(mMetaMetaUrlGrpBx);
-        mLayerMetadataUrlFormatComboBox->addItem(QString::fromUtf8(""));
-        mLayerMetadataUrlFormatComboBox->addItem(QString::fromUtf8("text/plain"));
-        mLayerMetadataUrlFormatComboBox->addItem(QString::fromUtf8("text/xml"));
-        mLayerMetadataUrlFormatComboBox->setObjectName(QString::fromUtf8("mLayerMetadataUrlFormatComboBox"));
-
-        horizontalLayout_8->addWidget(mLayerMetadataUrlFormatComboBox);
-
-        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_8->addItem(horizontalSpacer_4);
+        horizontalLayout_4->addWidget(buttonRemoveMetadataUrl);
 
 
-        gridLayout_9->addLayout(horizontalLayout_8, 1, 1, 1, 1);
+        verticalLayout_18->addLayout(horizontalLayout_4);
+
+        tableViewMetadataUrl = new QTableView(mMetaMetaUrlGrpBx);
+        tableViewMetadataUrl->setObjectName(QString::fromUtf8("tableViewMetadataUrl"));
+
+        verticalLayout_18->addWidget(tableViewMetadataUrl);
 
 
         gridLayout_12->addWidget(mMetaMetaUrlGrpBx, 2, 0, 1, 1);
@@ -1465,11 +1235,11 @@ public:
 
         mButtonBoxFrame = new QFrame(QgsRasterLayerPropertiesBase);
         mButtonBoxFrame->setObjectName(QString::fromUtf8("mButtonBoxFrame"));
-        QSizePolicy sizePolicy10(QSizePolicy::Preferred, QSizePolicy::Maximum);
-        sizePolicy10.setHorizontalStretch(0);
-        sizePolicy10.setVerticalStretch(0);
-        sizePolicy10.setHeightForWidth(mButtonBoxFrame->sizePolicy().hasHeightForWidth());
-        mButtonBoxFrame->setSizePolicy(sizePolicy10);
+        QSizePolicy sizePolicy7(QSizePolicy::Preferred, QSizePolicy::Maximum);
+        sizePolicy7.setHorizontalStretch(0);
+        sizePolicy7.setVerticalStretch(0);
+        sizePolicy7.setHeightForWidth(mButtonBoxFrame->sizePolicy().hasHeightForWidth());
+        mButtonBoxFrame->setSizePolicy(sizePolicy7);
         mButtonBoxFrame->setFrameShape(QFrame::NoFrame);
         mButtonBoxFrame->setFrameShadow(QFrame::Raised);
         gridLayout = new QGridLayout(mButtonBoxFrame);
@@ -1511,19 +1281,8 @@ public:
         QWidget::setTabOrder(mZoomedInResamplingComboBox, mZoomedOutResamplingComboBox);
         QWidget::setTabOrder(mZoomedOutResamplingComboBox, mMaximumOversamplingSpinBox);
         QWidget::setTabOrder(mMaximumOversamplingSpinBox, mCbEarlyResampling);
-        QWidget::setTabOrder(mCbEarlyResampling, scrollArea_2);
-        QWidget::setTabOrder(scrollArea_2, mOpacityWidget);
-        QWidget::setTabOrder(mOpacityWidget, mOpacityDDBtn);
-        QWidget::setTabOrder(mOpacityDDBtn, mSrcNoDataValueCheckBox);
-        QWidget::setTabOrder(mSrcNoDataValueCheckBox, leNoDataValue);
-        QWidget::setTabOrder(leNoDataValue, tableTransparency);
-        QWidget::setTabOrder(tableTransparency, pbnAddValuesManually);
-        QWidget::setTabOrder(pbnAddValuesManually, pbnAddValuesFromDisplay);
-        QWidget::setTabOrder(pbnAddValuesFromDisplay, pbnRemoveSelectedRow);
-        QWidget::setTabOrder(pbnRemoveSelectedRow, pbnDefaultValues);
-        QWidget::setTabOrder(pbnDefaultValues, pbnImportTransparentPixelValues);
-        QWidget::setTabOrder(pbnImportTransparentPixelValues, pbnExportTransparentPixelValues);
-        QWidget::setTabOrder(pbnExportTransparentPixelValues, scrollArea_6);
+        QWidget::setTabOrder(mCbEarlyResampling, transparencyScrollArea);
+        QWidget::setTabOrder(transparencyScrollArea, scrollArea_6);
         QWidget::setTabOrder(scrollArea_6, chkUseScaleDependentRendering);
         QWidget::setTabOrder(chkUseScaleDependentRendering, mRefreshLayerCheckBox);
         QWidget::setTabOrder(mRefreshLayerCheckBox, mRefreshLayerIntervalSpinBox);
@@ -1542,10 +1301,9 @@ public:
         QWidget::setTabOrder(mLayerDataUrlLineEdit, mLayerDataUrlFormatComboBox);
         QWidget::setTabOrder(mLayerDataUrlFormatComboBox, mLayerAttributionLineEdit);
         QWidget::setTabOrder(mLayerAttributionLineEdit, mLayerAttributionUrlLineEdit);
-        QWidget::setTabOrder(mLayerAttributionUrlLineEdit, mLayerMetadataUrlLineEdit);
-        QWidget::setTabOrder(mLayerMetadataUrlLineEdit, mLayerMetadataUrlTypeComboBox);
-        QWidget::setTabOrder(mLayerMetadataUrlTypeComboBox, mLayerMetadataUrlFormatComboBox);
-        QWidget::setTabOrder(mLayerMetadataUrlFormatComboBox, mLayerLegendUrlLineEdit);
+        QWidget::setTabOrder(mLayerAttributionUrlLineEdit, buttonAddMetadataUrl);
+        QWidget::setTabOrder(buttonAddMetadataUrl, buttonRemoveMetadataUrl);
+        QWidget::setTabOrder(buttonRemoveMetadataUrl, mLayerLegendUrlLineEdit);
         QWidget::setTabOrder(mLayerLegendUrlLineEdit, mLayerLegendUrlFormatComboBox);
         QWidget::setTabOrder(mLayerLegendUrlFormatComboBox, mWMSPrintLayerLineEdit);
         QWidget::setTabOrder(mWMSPrintLayerLineEdit, mPublishDataSourceUrlCheckBox);
@@ -1620,7 +1378,7 @@ public:
         mSourceGroupBox->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Layer Source", nullptr));
         mBandRenderingGrpBx->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Band Rendering", nullptr));
         mRenderTypeLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Render type", nullptr));
-        mColorRenderingGrpBox->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Color Rendering", nullptr));
+        mColorRenderingGrpBox->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Layer Rendering", nullptr));
         label_3->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Hue", nullptr));
         mBlendTypeLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Blending mode", nullptr));
         label_2->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Brightness", nullptr));
@@ -1647,51 +1405,6 @@ public:
         mZoomedOutResamplingLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "out", nullptr));
         mMaximumOversamplingLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Oversampling", nullptr));
         mCbEarlyResampling->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Early resampling", nullptr));
-        gboxNoDataValue_2->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Global Opacity", nullptr));
-        mOpacityDDBtn->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "\342\200\246", nullptr));
-        gboxNoDataValue->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "No Data Value", nullptr));
-#if QT_CONFIG(tooltip)
-        mSrcNoDataValueCheckBox->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Use original source no data value.", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mSrcNoDataValueCheckBox->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "No data value", nullptr));
-#if QT_CONFIG(tooltip)
-        lblSrcNoDataValue->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Original data source no data value, if exists.", nullptr));
-#endif // QT_CONFIG(tooltip)
-        lblSrcNoDataValue->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "<src no data value>", nullptr));
-#if QT_CONFIG(tooltip)
-        lblUserNoDataValueLabel->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Additional user defined no data value.", nullptr));
-#endif // QT_CONFIG(tooltip)
-        lblUserNoDataValueLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Additional no data value", nullptr));
-#if QT_CONFIG(tooltip)
-        leNoDataValue->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Additional user defined no data value.", nullptr));
-#endif // QT_CONFIG(tooltip)
-        gboxCustomTransparency->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Custom Transparency Options", nullptr));
-#if QT_CONFIG(tooltip)
-        pbnAddValuesManually->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Add values manually", nullptr));
-#endif // QT_CONFIG(tooltip)
-        pbnAddValuesManually->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "\342\200\246", nullptr));
-#if QT_CONFIG(tooltip)
-        pbnAddValuesFromDisplay->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Add values from display", nullptr));
-#endif // QT_CONFIG(tooltip)
-        pbnAddValuesFromDisplay->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "\342\200\246", nullptr));
-#if QT_CONFIG(tooltip)
-        pbnRemoveSelectedRow->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Remove selected row", nullptr));
-#endif // QT_CONFIG(tooltip)
-        pbnRemoveSelectedRow->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "\342\200\246", nullptr));
-#if QT_CONFIG(tooltip)
-        pbnDefaultValues->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Default values", nullptr));
-#endif // QT_CONFIG(tooltip)
-        pbnDefaultValues->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "\342\200\246", nullptr));
-#if QT_CONFIG(tooltip)
-        pbnImportTransparentPixelValues->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Import from file", nullptr));
-#endif // QT_CONFIG(tooltip)
-        pbnImportTransparentPixelValues->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "\342\200\246", nullptr));
-#if QT_CONFIG(tooltip)
-        pbnExportTransparentPixelValues->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Export to file", nullptr));
-#endif // QT_CONFIG(tooltip)
-        pbnExportTransparentPixelValues->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "\342\200\246", nullptr));
-        lblTransparent->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Transparency band", nullptr));
-        label_6->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Transparent pixel list", nullptr));
         mHistogramGrpBx->setTitle(QString());
         chkUseScaleDependentRendering->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Scale Dependent Visibility", nullptr));
 #if QT_CONFIG(tooltip)
@@ -1710,7 +1423,7 @@ public:
         tePyramidDescription->setHtml(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Noto Sans'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Cantarell'; font-size:11pt;\"><br /></span></p></body></html>", nullptr));
         buttonBuildPyramids->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Build Pyramids", nullptr));
         cboResamplingMethod->setItemText(0, QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Average", nullptr));
@@ -1721,11 +1434,11 @@ public:
         cbxPyramidsFormat->setItemText(2, QCoreApplication::translate("QgsRasterLayerPropertiesBase", "External (Erdas Imagine)", nullptr));
 
         label_11->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Overview format", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Embedded Widgets in Legend", nullptr));
         mLegendPlaceholderLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Legend placeholder image", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Embedded Widgets in Legend", nullptr));
         mMetaDescriptionGrpBx->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Description", nullptr));
         mLayerTitleLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Title", nullptr));
-        mLayerKeywordListLabel_3->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Data Url", nullptr));
+        mLayerKeywordListLabel_3->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Data URL", nullptr));
 #if QT_CONFIG(tooltip)
         mLayerDataUrlLineEdit->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "A URL of the data presentation.", nullptr));
 #endif // QT_CONFIG(tooltip)
@@ -1756,23 +1469,15 @@ public:
         mLayerAttributionLineEdit->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Attribution's title indicates the provider of the layer.", nullptr));
 #endif // QT_CONFIG(tooltip)
         mLayerAttributionLineEdit->setPlaceholderText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Attribution's title indicates the provider of the layer.", nullptr));
-        mLayerAttributionUrlLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Url", nullptr));
+        mLayerAttributionUrlLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "URL", nullptr));
 #if QT_CONFIG(tooltip)
         mLayerAttributionUrlLineEdit->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Attribution's url gives a link to the webpage of the provider of the data layer.", nullptr));
 #endif // QT_CONFIG(tooltip)
         mLayerAttributionUrlLineEdit->setPlaceholderText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Attribution's url gives a link to the webpage of the provider of the data layer.", nullptr));
-        mMetaMetaUrlGrpBx->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "MetadataUrl", nullptr));
-        mLayerMetadataUrlLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Url", nullptr));
-#if QT_CONFIG(tooltip)
-        mLayerMetadataUrlLineEdit->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "The URL of the metadata document.", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mLayerMetadataUrlLineEdit->setPlaceholderText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "The URL of the metadata document.", nullptr));
-        mLayerMetadataUrlTypeLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Type", nullptr));
-
-        mLayerMetadataUrlFormatLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Format", nullptr));
-
-        mMetaLegendGrpBx->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "LegendUrl", nullptr));
-        mLayerLegendUrlLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Url", nullptr));
+        mMetaMetaUrlGrpBx->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Metadata URL", nullptr));
+        buttonAddMetadataUrl->setText(QString());
+        mMetaLegendGrpBx->setTitle(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "Legend URL", nullptr));
+        mLayerLegendUrlLabel->setText(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "URL", nullptr));
 #if QT_CONFIG(tooltip)
         mLayerLegendUrlLineEdit->setToolTip(QCoreApplication::translate("QgsRasterLayerPropertiesBase", "A URL of the legend image.", nullptr));
 #endif // QT_CONFIG(tooltip)

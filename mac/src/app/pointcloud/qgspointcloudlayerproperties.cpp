@@ -30,6 +30,7 @@
 #include "qgspointcloudattributemodel.h"
 #include "qgsdatumtransformdialog.h"
 #include "qgspointcloudlayerelevationproperties.h"
+#include "qgspointcloudquerybuilder.h"
 #include <QFileDialog>
 #include <QMenu>
 #include <QMessageBox>
@@ -47,6 +48,7 @@ QgsPointCloudLayerProperties::QgsPointCloudLayerProperties( QgsPointCloudLayer *
   connect( this, &QDialog::rejected, this, &QgsPointCloudLayerProperties::onCancel );
   connect( buttonBox->button( QDialogButtonBox::Apply ), &QAbstractButton::clicked, this, &QgsPointCloudLayerProperties::apply );
   connect( buttonBox, &QDialogButtonBox::helpRequested, this, &QgsPointCloudLayerProperties::showHelp );
+  connect( pbnQueryBuilder, &QPushButton::clicked, this, &QgsPointCloudLayerProperties::pbnQueryBuilder_clicked );
 
   connect( mCrsSelector, &QgsProjectionSelectionWidget::crsChanged, this, &QgsPointCloudLayerProperties::crsChanged );
 
@@ -105,6 +107,8 @@ QgsPointCloudLayerProperties::QgsPointCloudLayerProperties( QgsPointCloudLayer *
   mStatisticsTableView->setModel( new QgsPointCloudAttributeStatisticsModel( mLayer, mStatisticsTableView ) );
   mStatisticsTableView->verticalHeader()->hide();
 
+  mBackupCrs = mLayer->crs();
+
   if ( mLayer->dataProvider() && !mLayer->dataProvider()->metadataClasses( QStringLiteral( "Classification" ) ).isEmpty() )
   {
     mClassificationStatisticsTableView->setModel( new QgsPointCloudClassificationStatisticsModel( mLayer, QStringLiteral( "Classification" ), mStatisticsTableView ) );
@@ -146,6 +150,7 @@ void QgsPointCloudLayerProperties::apply()
   mMetadataWidget->acceptMetadata();
 
   mLayer->setName( mLayerOrigNameLineEdit->text() );
+  mBackupCrs = mLayer->crs();
 
   for ( QgsMapLayerConfigWidget *w : mConfigWidgets )
     w->apply();
@@ -155,6 +160,9 @@ void QgsPointCloudLayerProperties::apply()
 
 void QgsPointCloudLayerProperties::onCancel()
 {
+  if ( mBackupCrs != mLayer->crs() )
+    mLayer->setCrs( mBackupCrs );
+
   if ( mOldStyle.xmlData() != mLayer->styleManager()->style( mLayer->styleManager()->currentStyle() ).xmlData() )
   {
     // need to reset style to previous - style applied directly to the layer (not in apply())
@@ -184,6 +192,15 @@ void QgsPointCloudLayerProperties::syncToLayer()
   connect( mInformationTextBrowser, &QTextBrowser::anchorClicked, this, &QgsPointCloudLayerProperties::urlClicked );
 
   mCrsSelector->setCrs( mLayer->crs() );
+
+  mSubsetGroupBox->setEnabled( true );
+  txtSubsetSQL->setText( mLayer->subsetString() );
+  txtSubsetSQL->setReadOnly( true );
+  txtSubsetSQL->setCaretWidth( 0 );
+  txtSubsetSQL->setCaretLineVisible( false );
+  pbnQueryBuilder->setEnabled( mLayer &&
+                               mLayer->dataProvider() &&
+                               mLayer->dataProvider()->supportsSubsetString() );
 
   for ( QgsMapLayerConfigWidget *w : mConfigWidgets )
     w->syncToLayer( mLayer );
@@ -408,9 +425,19 @@ void QgsPointCloudLayerProperties::urlClicked( const QUrl &url )
 {
   const QFileInfo file( url.toLocalFile() );
   if ( file.exists() && !file.isDir() )
-    QgsGui::instance()->nativePlatformInterface()->openFileExplorerAndSelectFile( url.toLocalFile() );
+    QgsGui::nativePlatformInterface()->openFileExplorerAndSelectFile( url.toLocalFile() );
   else
     QDesktopServices::openUrl( url );
+}
+
+void QgsPointCloudLayerProperties::pbnQueryBuilder_clicked()
+{
+  QgsPointCloudQueryBuilder qb { mLayer };
+  qb.setSubsetString( mLayer->subsetString() );
+  if ( qb.exec() )
+  {
+    txtSubsetSQL->setText( qb.subsetString() );
+  }
 }
 
 void QgsPointCloudLayerProperties::crsChanged( const QgsCoordinateReferenceSystem &crs )
@@ -488,13 +515,13 @@ QVariant QgsPointCloudAttributeStatisticsModel::data( const QModelIndex &index, 
       switch ( index.column() )
       {
         case Name:
-          return QVariant( Qt::AlignLeft | Qt::AlignVCenter );
+          return static_cast<Qt::Alignment::Int>( Qt::AlignLeft | Qt::AlignVCenter );
 
         case Min:
         case Max:
         case Mean:
         case StDev:
-          return QVariant( Qt::AlignRight | Qt::AlignVCenter );
+          return static_cast<Qt::Alignment::Int>( Qt::AlignRight | Qt::AlignVCenter );
 
       }
       return QVariant();

@@ -5,9 +5,28 @@ Mac OS
 
 Step 1) Compile the QGIS source
 
-cd the QGIS plugin dir containing the file 'BuildQGIS.sh' and run the 'BuildQGIS.sh' file in sudo. The QGIS source (https://github.com/sgavrilovic/qgis) must be one dir up from the plugin dir. 
+cd the QGIS plugin dir containing the file 'BuildQGIS.sh' and run the 'BuildQGIS.sh' file in sudo. The QGIS source (https://github.com/sgavrilovic/qgis) must be one dir down from the QGISPlugin dir. First go into 'BuildQGIS.sh' and change the paths at the top of the file to match your system.
 
-Step 2) Run the 'PackageLibs.sh' script to bundle the libs 
+Step 2) Run the 'PackageLibs.sh' script to bundle the libs. It will use dylib_bundler: brew install dylibbundler
+
+If dylib_bundler throws an error, cannot find lib, pass it the path to /opt/QGIS/qgis-deps-0.9/stage/lib, or wherever the QGIS deps are
+
+
+Step 3) Run the 'FixPaths.sh' script to make the dylib. dependency paths rpaths in the install folder. You may have to run this script more than once, until it no longer says "changing path for ... "
+
+
+Note: had to build QCA on system, did not use the QCA that came bundled with QGIS deps
+
+Build QCA
+
+cmake .. -DCMAKE_PREFIX_PATH=/Users/steve/Qt/5.15.2/clang_64 -D CMAKE_OSX_DEPLOYMENT_TARGET=10.13 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/Users/steve/Desktop/C++Libraries/qca/QCAInstall
+
+
+Step 4) Copy over the include, share, etc. folders from the QGIS/Install 
+
+Issues: 
+
+If the plugins will not load, check the plugins output text in the visualization widget by clicking on the message icon in the bottom right corner. It will usually complain about missing simlinks that dylib bundler does not pick up. 
 
 Windows
 -------

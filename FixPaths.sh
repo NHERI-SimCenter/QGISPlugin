@@ -9,6 +9,8 @@
 # ********* THINGS TO CHANGE START *********
 
 # Set the path where the bundled libs are
+pathToQca="/Users/steve/Desktop/SimCenter/QGISPlugin/mac/qgis-deps-0.9/stage/lib/qca-qt5.framework/Versions/2.3.1/qca-qt5"
+
 pathToInstall="/Users/steve/Desktop/SimCenter/QGISPlugin/mac/Install"
 
 # ********* THINGS TO CHANGE END *********
@@ -28,7 +30,7 @@ for f in $pathToInstall/lib/*.dylib; do
 
 			[ firstString == "" ] && continue
 
-			secondString="@loader_path"
+			secondString="@rpath"
 
 			result=$secondString/"${firstString##*/}"
 
@@ -83,3 +85,6 @@ for f in $pathToInstall/qgis/plugins/*.so; do
         fi
     done
 done
+
+# install_name_tool -id @rpath/qca-qt5.framework/Versions/2.3.1/qca-qt5 $pathToQca
+# install_name_tool -change @rpath/libqt5keychain.1.dylib $pathToInstall/lib/libqt5keychain.1.dylib

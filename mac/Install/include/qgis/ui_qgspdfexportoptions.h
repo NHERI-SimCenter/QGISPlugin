@@ -34,6 +34,9 @@ class Ui_QgsPdfExportOptionsDialog
 {
 public:
     QVBoxLayout *verticalLayout;
+    QgsScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
+    QVBoxLayout *verticalLayout_6;
     QgsCollapsibleGroupBoxBasic *groupBox;
     QGridLayout *gridLayout;
     QLabel *label_6;
@@ -45,9 +48,6 @@ public:
     QComboBox *mComboImageCompression;
     QgsCollapsibleGroupBoxBasic *mGeoPDFGroupBox;
     QVBoxLayout *verticalLayout_2;
-    QgsScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
-    QVBoxLayout *verticalLayout_6;
     QStackedWidget *mGeoPDFOptionsStackedWidget;
     QWidget *page;
     QVBoxLayout *verticalLayout_3;
@@ -77,7 +77,17 @@ public:
         QgsPdfExportOptionsDialog->resize(489, 730);
         verticalLayout = new QVBoxLayout(QgsPdfExportOptionsDialog);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        groupBox = new QgsCollapsibleGroupBoxBasic(QgsPdfExportOptionsDialog);
+        scrollArea = new QgsScrollArea(QgsPdfExportOptionsDialog);
+        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setFrameShape(QFrame::NoFrame);
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 457, 944));
+        verticalLayout_6 = new QVBoxLayout(scrollAreaWidgetContents);
+        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
+        groupBox = new QgsCollapsibleGroupBoxBasic(scrollAreaWidgetContents);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
         gridLayout = new QGridLayout(groupBox);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -120,25 +130,16 @@ public:
 
         gridLayout->setColumnStretch(1, 1);
 
-        verticalLayout->addWidget(groupBox);
+        verticalLayout_6->addWidget(groupBox);
 
-        mGeoPDFGroupBox = new QgsCollapsibleGroupBoxBasic(QgsPdfExportOptionsDialog);
+        mGeoPDFGroupBox = new QgsCollapsibleGroupBoxBasic(scrollAreaWidgetContents);
         mGeoPDFGroupBox->setObjectName(QString::fromUtf8("mGeoPDFGroupBox"));
         mGeoPDFGroupBox->setCheckable(true);
         mGeoPDFGroupBox->setChecked(true);
         verticalLayout_2 = new QVBoxLayout(mGeoPDFGroupBox);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        scrollArea = new QgsScrollArea(mGeoPDFGroupBox);
-        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
-        scrollArea->setFrameShape(QFrame::NoFrame);
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -316, 451, 648));
-        verticalLayout_6 = new QVBoxLayout(scrollAreaWidgetContents);
-        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
-        mGeoPDFOptionsStackedWidget = new QStackedWidget(scrollAreaWidgetContents);
+        mGeoPDFOptionsStackedWidget = new QStackedWidget(mGeoPDFGroupBox);
         mGeoPDFOptionsStackedWidget->setObjectName(QString::fromUtf8("mGeoPDFOptionsStackedWidget"));
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -209,16 +210,12 @@ public:
         gridLayout_3->setRowStretch(3, 5);
         mGeoPDFOptionsStackedWidget->addWidget(page_2);
 
-        verticalLayout_6->addWidget(mGeoPDFOptionsStackedWidget);
-
-        scrollArea->setWidget(scrollAreaWidgetContents);
-
-        verticalLayout_2->addWidget(scrollArea);
+        verticalLayout_2->addWidget(mGeoPDFOptionsStackedWidget);
 
 
-        verticalLayout->addWidget(mGeoPDFGroupBox);
+        verticalLayout_6->addWidget(mGeoPDFGroupBox);
 
-        groupBox_2 = new QgsCollapsibleGroupBoxBasic(QgsPdfExportOptionsDialog);
+        groupBox_2 = new QgsCollapsibleGroupBoxBasic(scrollAreaWidgetContents);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         gridLayout_2 = new QGridLayout(groupBox_2);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
@@ -235,11 +232,15 @@ public:
         gridLayout_2->addWidget(mSimplifyGeometriesCheckbox, 1, 0, 1, 1);
 
 
-        verticalLayout->addWidget(groupBox_2);
+        verticalLayout_6->addWidget(groupBox_2);
 
-        horizontalSpacer = new QSpacerItem(6, 2, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        horizontalSpacer = new QSpacerItem(6, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout->addItem(horizontalSpacer);
+        verticalLayout_6->addItem(horizontalSpacer);
+
+        scrollArea->setWidget(scrollAreaWidgetContents);
+
+        verticalLayout->addWidget(scrollArea);
 
         buttonBox = new QDialogButtonBox(QgsPdfExportOptionsDialog);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
@@ -248,13 +249,13 @@ public:
 
         verticalLayout->addWidget(buttonBox);
 
+        QWidget::setTabOrder(scrollArea, mForceVectorCheckBox);
         QWidget::setTabOrder(mForceVectorCheckBox, mAppendGeoreferenceCheckbox);
         QWidget::setTabOrder(mAppendGeoreferenceCheckbox, mIncludeMetadataCheckbox);
         QWidget::setTabOrder(mIncludeMetadataCheckbox, mTextRenderFormatComboBox);
         QWidget::setTabOrder(mTextRenderFormatComboBox, mComboImageCompression);
         QWidget::setTabOrder(mComboImageCompression, mGeoPDFGroupBox);
-        QWidget::setTabOrder(mGeoPDFGroupBox, scrollArea);
-        QWidget::setTabOrder(scrollArea, mGeoPdfFormatComboBox);
+        QWidget::setTabOrder(mGeoPDFGroupBox, mGeoPdfFormatComboBox);
         QWidget::setTabOrder(mGeoPdfFormatComboBox, mIncludeMapThemesCheck);
         QWidget::setTabOrder(mIncludeMapThemesCheck, mThemesList);
         QWidget::setTabOrder(mThemesList, mGeoPdfStructureTree);

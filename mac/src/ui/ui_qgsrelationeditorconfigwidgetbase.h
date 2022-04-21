@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCheckBox>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -21,6 +22,9 @@ class Ui_QgsRelationEditorConfigWidgetBase
 {
 public:
     QVBoxLayout *verticalLayout;
+    QCheckBox *mShowFirstFeature;
+    QGroupBox *mButtonsVisibility;
+    QVBoxLayout *verticalLayout_2;
     QCheckBox *mRelationShowLinkCheckBox;
     QCheckBox *mRelationShowUnlinkCheckBox;
     QCheckBox *mRelationShowSaveChildEditsCheckBox;
@@ -33,43 +37,60 @@ public:
     {
         if (QgsRelationEditorConfigWidgetBase->objectName().isEmpty())
             QgsRelationEditorConfigWidgetBase->setObjectName(QString::fromUtf8("QgsRelationEditorConfigWidgetBase"));
-        QgsRelationEditorConfigWidgetBase->resize(274, 215);
+        QgsRelationEditorConfigWidgetBase->resize(472, 288);
         verticalLayout = new QVBoxLayout(QgsRelationEditorConfigWidgetBase);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        mRelationShowLinkCheckBox = new QCheckBox(QgsRelationEditorConfigWidgetBase);
+        mShowFirstFeature = new QCheckBox(QgsRelationEditorConfigWidgetBase);
+        mShowFirstFeature->setObjectName(QString::fromUtf8("mShowFirstFeature"));
+
+        verticalLayout->addWidget(mShowFirstFeature);
+
+        mButtonsVisibility = new QGroupBox(QgsRelationEditorConfigWidgetBase);
+        mButtonsVisibility->setObjectName(QString::fromUtf8("mButtonsVisibility"));
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(4);
+        sizePolicy.setHeightForWidth(mButtonsVisibility->sizePolicy().hasHeightForWidth());
+        mButtonsVisibility->setSizePolicy(sizePolicy);
+        verticalLayout_2 = new QVBoxLayout(mButtonsVisibility);
+        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        mRelationShowLinkCheckBox = new QCheckBox(mButtonsVisibility);
         mRelationShowLinkCheckBox->setObjectName(QString::fromUtf8("mRelationShowLinkCheckBox"));
 
-        verticalLayout->addWidget(mRelationShowLinkCheckBox);
+        verticalLayout_2->addWidget(mRelationShowLinkCheckBox);
 
-        mRelationShowUnlinkCheckBox = new QCheckBox(QgsRelationEditorConfigWidgetBase);
+        mRelationShowUnlinkCheckBox = new QCheckBox(mButtonsVisibility);
         mRelationShowUnlinkCheckBox->setObjectName(QString::fromUtf8("mRelationShowUnlinkCheckBox"));
 
-        verticalLayout->addWidget(mRelationShowUnlinkCheckBox);
+        verticalLayout_2->addWidget(mRelationShowUnlinkCheckBox);
 
-        mRelationShowSaveChildEditsCheckBox = new QCheckBox(QgsRelationEditorConfigWidgetBase);
+        mRelationShowSaveChildEditsCheckBox = new QCheckBox(mButtonsVisibility);
         mRelationShowSaveChildEditsCheckBox->setObjectName(QString::fromUtf8("mRelationShowSaveChildEditsCheckBox"));
 
-        verticalLayout->addWidget(mRelationShowSaveChildEditsCheckBox);
+        verticalLayout_2->addWidget(mRelationShowSaveChildEditsCheckBox);
 
-        mRelationShowAddChildCheckBox = new QCheckBox(QgsRelationEditorConfigWidgetBase);
+        mRelationShowAddChildCheckBox = new QCheckBox(mButtonsVisibility);
         mRelationShowAddChildCheckBox->setObjectName(QString::fromUtf8("mRelationShowAddChildCheckBox"));
 
-        verticalLayout->addWidget(mRelationShowAddChildCheckBox);
+        verticalLayout_2->addWidget(mRelationShowAddChildCheckBox);
 
-        mRelationShowDuplicateChildFeatureCheckBox = new QCheckBox(QgsRelationEditorConfigWidgetBase);
+        mRelationShowDuplicateChildFeatureCheckBox = new QCheckBox(mButtonsVisibility);
         mRelationShowDuplicateChildFeatureCheckBox->setObjectName(QString::fromUtf8("mRelationShowDuplicateChildFeatureCheckBox"));
 
-        verticalLayout->addWidget(mRelationShowDuplicateChildFeatureCheckBox);
+        verticalLayout_2->addWidget(mRelationShowDuplicateChildFeatureCheckBox);
 
-        mRelationDeleteChildFeatureCheckBox = new QCheckBox(QgsRelationEditorConfigWidgetBase);
+        mRelationDeleteChildFeatureCheckBox = new QCheckBox(mButtonsVisibility);
         mRelationDeleteChildFeatureCheckBox->setObjectName(QString::fromUtf8("mRelationDeleteChildFeatureCheckBox"));
 
-        verticalLayout->addWidget(mRelationDeleteChildFeatureCheckBox);
+        verticalLayout_2->addWidget(mRelationDeleteChildFeatureCheckBox);
 
-        mRelationShowZoomToFeatureCheckBox = new QCheckBox(QgsRelationEditorConfigWidgetBase);
+        mRelationShowZoomToFeatureCheckBox = new QCheckBox(mButtonsVisibility);
         mRelationShowZoomToFeatureCheckBox->setObjectName(QString::fromUtf8("mRelationShowZoomToFeatureCheckBox"));
 
-        verticalLayout->addWidget(mRelationShowZoomToFeatureCheckBox);
+        verticalLayout_2->addWidget(mRelationShowZoomToFeatureCheckBox);
+
+
+        verticalLayout->addWidget(mButtonsVisibility);
 
 
         retranslateUi(QgsRelationEditorConfigWidgetBase);
@@ -80,9 +101,14 @@ public:
     void retranslateUi(QWidget *QgsRelationEditorConfigWidgetBase)
     {
         QgsRelationEditorConfigWidgetBase->setWindowTitle(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Attribute Widget Relation Edit Widget", nullptr));
-        mRelationShowLinkCheckBox->setText(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Show link button", nullptr));
-        mRelationShowUnlinkCheckBox->setText(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Show unlink button", nullptr));
-        mRelationShowSaveChildEditsCheckBox->setText(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Show save child layer edits button", nullptr));
+#if QT_CONFIG(tooltip)
+        mShowFirstFeature->setToolTip(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Unchecking this can lead to faster loading time of attribute forms and avoid unnecessary queries.", nullptr));
+#endif // QT_CONFIG(tooltip)
+        mShowFirstFeature->setText(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Automatically select first child feature and show attribute form", nullptr));
+        mButtonsVisibility->setTitle(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Toolbar buttons", nullptr));
+        mRelationShowLinkCheckBox->setText(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Link child feature", nullptr));
+        mRelationShowUnlinkCheckBox->setText(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Unlink child feature", nullptr));
+        mRelationShowSaveChildEditsCheckBox->setText(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Save child layer edits", nullptr));
         mRelationShowAddChildCheckBox->setText(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Add child feature", nullptr));
         mRelationShowDuplicateChildFeatureCheckBox->setText(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Duplicate child feature", nullptr));
         mRelationDeleteChildFeatureCheckBox->setText(QCoreApplication::translate("QgsRelationEditorConfigWidgetBase", "Delete child feature", nullptr));

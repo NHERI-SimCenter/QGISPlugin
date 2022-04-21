@@ -25,9 +25,11 @@
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QWidget>
 #include "auth/qgsauthsettingswidget.h"
 #include "qgscollapsiblegroupbox.h"
 #include "qgsfilewidget.h"
+#include "qgsscrollarea.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -35,6 +37,9 @@ class Ui_QgsOgrSourceSelectBase
 {
 public:
     QVBoxLayout *verticalLayout_4;
+    QgsScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
+    QVBoxLayout *verticalLayout_5;
     QVBoxLayout *verticalLayout_2;
     QGroupBox *srcGroupBox_2;
     QVBoxLayout *verticalLayout;
@@ -89,7 +94,7 @@ public:
         if (QgsOgrSourceSelectBase->objectName().isEmpty())
             QgsOgrSourceSelectBase->setObjectName(QString::fromUtf8("QgsOgrSourceSelectBase"));
         QgsOgrSourceSelectBase->setWindowModality(Qt::WindowModal);
-        QgsOgrSourceSelectBase->resize(521, 775);
+        QgsOgrSourceSelectBase->resize(522, 493);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -102,10 +107,22 @@ public:
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
         verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
+        scrollArea = new QgsScrollArea(QgsOgrSourceSelectBase);
+        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setFrameShape(QFrame::NoFrame);
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, -282, 508, 745));
+        verticalLayout_5 = new QVBoxLayout(scrollAreaWidgetContents);
+        verticalLayout_5->setSpacing(6);
+        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
-        srcGroupBox_2 = new QGroupBox(QgsOgrSourceSelectBase);
+        srcGroupBox_2 = new QGroupBox(scrollAreaWidgetContents);
         srcGroupBox_2->setObjectName(QString::fromUtf8("srcGroupBox_2"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
@@ -166,7 +183,7 @@ public:
 
         verticalLayout_2->addWidget(srcGroupBox_2);
 
-        protocolGroupBox = new QGroupBox(QgsOgrSourceSelectBase);
+        protocolGroupBox = new QGroupBox(scrollAreaWidgetContents);
         protocolGroupBox->setObjectName(QString::fromUtf8("protocolGroupBox"));
         sizePolicy1.setHeightForWidth(protocolGroupBox->sizePolicy().hasHeightForWidth());
         protocolGroupBox->setSizePolicy(sizePolicy1);
@@ -245,7 +262,7 @@ public:
 
         verticalLayout_2->addWidget(protocolGroupBox);
 
-        fileGroupBox = new QGroupBox(QgsOgrSourceSelectBase);
+        fileGroupBox = new QGroupBox(scrollAreaWidgetContents);
         fileGroupBox->setObjectName(QString::fromUtf8("fileGroupBox"));
         QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy3.setHorizontalStretch(0);
@@ -282,7 +299,7 @@ public:
 
         verticalLayout_2->addWidget(fileGroupBox);
 
-        dbGroupBox = new QGroupBox(QgsOgrSourceSelectBase);
+        dbGroupBox = new QGroupBox(scrollAreaWidgetContents);
         dbGroupBox->setObjectName(QString::fromUtf8("dbGroupBox"));
         sizePolicy3.setHeightForWidth(dbGroupBox->sizePolicy().hasHeightForWidth());
         dbGroupBox->setSizePolicy(sizePolicy3);
@@ -340,7 +357,7 @@ public:
 
         verticalLayout_2->addWidget(dbGroupBox);
 
-        mOpenOptionsGroupBox = new QgsCollapsibleGroupBox(QgsOgrSourceSelectBase);
+        mOpenOptionsGroupBox = new QgsCollapsibleGroupBox(scrollAreaWidgetContents);
         mOpenOptionsGroupBox->setObjectName(QString::fromUtf8("mOpenOptionsGroupBox"));
         openOptionsVBoxLayout = new QVBoxLayout(mOpenOptionsGroupBox);
         openOptionsVBoxLayout->setSpacing(6);
@@ -362,11 +379,15 @@ public:
         verticalLayout_2->addWidget(mOpenOptionsGroupBox);
 
 
-        verticalLayout_4->addLayout(verticalLayout_2);
+        verticalLayout_5->addLayout(verticalLayout_2);
 
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_4->addItem(verticalSpacer);
+        verticalLayout_5->addItem(verticalSpacer);
+
+        scrollArea->setWidget(scrollAreaWidgetContents);
+
+        verticalLayout_4->addWidget(scrollArea);
 
         buttonBox = new QDialogButtonBox(QgsOgrSourceSelectBase);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));

@@ -27,6 +27,8 @@ class Ui_QgsRendererWidgetContainerBase
 public:
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_2;
     QToolButton *mBackButton;
     QLabel *mTitleText;
     QToolButton *mMenuButton;
@@ -42,11 +44,17 @@ public:
         QgsRendererWidgetContainerBase->resize(375, 628);
         QgsRendererWidgetContainerBase->setWindowTitle(QString::fromUtf8("Form"));
         verticalLayout_2 = new QVBoxLayout(QgsRendererWidgetContainerBase);
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        mBackButton = new QToolButton(QgsRendererWidgetContainerBase);
+        widget = new QWidget(QgsRendererWidgetContainerBase);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setMinimumSize(QSize(55, 0));
+        horizontalLayout_2 = new QHBoxLayout(widget);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        mBackButton = new QToolButton(widget);
         mBackButton->setObjectName(QString::fromUtf8("mBackButton"));
         QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -59,9 +67,9 @@ public:
         mBackButton->setAutoRepeat(false);
         mBackButton->setPopupMode(QToolButton::InstantPopup);
 
-        horizontalLayout->addWidget(mBackButton);
+        horizontalLayout_2->addWidget(mBackButton);
 
-        mTitleText = new QLabel(QgsRendererWidgetContainerBase);
+        mTitleText = new QLabel(widget);
         mTitleText->setObjectName(QString::fromUtf8("mTitleText"));
         QSizePolicy sizePolicy1(QSizePolicy::Ignored, QSizePolicy::Maximum);
         sizePolicy1.setHorizontalStretch(0);
@@ -69,7 +77,10 @@ public:
         sizePolicy1.setHeightForWidth(mTitleText->sizePolicy().hasHeightForWidth());
         mTitleText->setSizePolicy(sizePolicy1);
 
-        horizontalLayout->addWidget(mTitleText);
+        horizontalLayout_2->addWidget(mTitleText);
+
+
+        horizontalLayout->addWidget(widget);
 
         mMenuButton = new QToolButton(QgsRendererWidgetContainerBase);
         mMenuButton->setObjectName(QString::fromUtf8("mMenuButton"));
@@ -83,6 +94,7 @@ public:
 
         horizontalLayout->addWidget(mMenuButton);
 
+        horizontalLayout->setStretch(0, 1);
 
         verticalLayout_2->addLayout(horizontalLayout);
 
@@ -92,10 +104,10 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 375, 596));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 375, 597));
         verticalLayout = new QVBoxLayout(scrollAreaWidgetContents);
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
         mStackedWidget = new QStackedWidget(scrollAreaWidgetContents);
         mStackedWidget->setObjectName(QString::fromUtf8("mStackedWidget"));
 

@@ -27,7 +27,7 @@
 #include "qgsmeshvariablestrokewidthwidget.h"
 #include "qgsopacitywidget.h"
 #include "qgsunitselectionwidget.h"
-#include "qgscolorrampshaderwidget.h"
+#include "raster/qgscolorrampshaderwidget.h"
 
 QT_BEGIN_NAMESPACE
 

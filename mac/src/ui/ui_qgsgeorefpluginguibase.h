@@ -42,13 +42,14 @@ public:
     QAction *mActionSaveGCPpoints;
     QAction *mActionLoadGCPpoints;
     QAction *mActionGeorefConfig;
-    QAction *mActionRasterProperties;
+    QAction *mActionSourceProperties;
     QAction *mActionMoveGCPPoint;
     QAction *mActionZoomNext;
     QAction *mActionZoomLast;
     QAction *mActionLocalHistogramStretch;
     QAction *mActionFullHistogramStretch;
     QAction *mActionReset;
+    QAction *mActionOpenVector;
     QWidget *mCentralwidget;
     QMenuBar *menubar;
     QMenu *menuFile;
@@ -103,8 +104,8 @@ public:
         mActionLoadGCPpoints->setObjectName(QString::fromUtf8("mActionLoadGCPpoints"));
         mActionGeorefConfig = new QAction(QgsGeorefPluginGuiBase);
         mActionGeorefConfig->setObjectName(QString::fromUtf8("mActionGeorefConfig"));
-        mActionRasterProperties = new QAction(QgsGeorefPluginGuiBase);
-        mActionRasterProperties->setObjectName(QString::fromUtf8("mActionRasterProperties"));
+        mActionSourceProperties = new QAction(QgsGeorefPluginGuiBase);
+        mActionSourceProperties->setObjectName(QString::fromUtf8("mActionSourceProperties"));
         mActionMoveGCPPoint = new QAction(QgsGeorefPluginGuiBase);
         mActionMoveGCPPoint->setObjectName(QString::fromUtf8("mActionMoveGCPPoint"));
         mActionZoomNext = new QAction(QgsGeorefPluginGuiBase);
@@ -120,12 +121,17 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/images/themes/default/mIconClearText.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionReset->setIcon(icon);
+        mActionOpenVector = new QAction(QgsGeorefPluginGuiBase);
+        mActionOpenVector->setObjectName(QString::fromUtf8("mActionOpenVector"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/images/themes/default/mActionAddOgrLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionOpenVector->setIcon(icon1);
         mCentralwidget = new QWidget(QgsGeorefPluginGuiBase);
         mCentralwidget->setObjectName(QString::fromUtf8("mCentralwidget"));
         QgsGeorefPluginGuiBase->setCentralWidget(mCentralwidget);
         menubar = new QMenuBar(QgsGeorefPluginGuiBase);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 872, 25));
+        menubar->setGeometry(QRect(0, 0, 872, 24));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuView = new QMenu(menubar);
@@ -169,6 +175,7 @@ public:
         menubar->addAction(menuSettings->menuAction());
         menuFile->addAction(mActionReset);
         menuFile->addAction(mActionOpenRaster);
+        menuFile->addAction(mActionOpenVector);
         menuFile->addSeparator();
         menuFile->addAction(mActionStartGeoref);
         menuFile->addAction(mActionGDALScript);
@@ -190,9 +197,10 @@ public:
         menuEdit->addAction(mActionDeletePoint);
         menuEdit->addAction(mActionMoveGCPPoint);
         menuSettings->addAction(mActionTransformSettings);
-        menuSettings->addAction(mActionRasterProperties);
+        menuSettings->addAction(mActionSourceProperties);
         menuSettings->addAction(mActionGeorefConfig);
         toolBarFile->addAction(mActionOpenRaster);
+        toolBarFile->addAction(mActionOpenVector);
         toolBarFile->addSeparator();
         toolBarFile->addAction(mActionStartGeoref);
         toolBarFile->addAction(mActionGDALScript);
@@ -321,7 +329,10 @@ public:
 #if QT_CONFIG(shortcut)
         mActionGeorefConfig->setShortcut(QCoreApplication::translate("QgsGeorefPluginGuiBase", "Ctrl+P", nullptr));
 #endif // QT_CONFIG(shortcut)
-        mActionRasterProperties->setText(QCoreApplication::translate("QgsGeorefPluginGuiBase", "Raster Properties\342\200\246", nullptr));
+        mActionSourceProperties->setText(QCoreApplication::translate("QgsGeorefPluginGuiBase", "Source Properties\342\200\246", nullptr));
+#if QT_CONFIG(tooltip)
+        mActionSourceProperties->setToolTip(QCoreApplication::translate("QgsGeorefPluginGuiBase", "Source Properties\342\200\246", nullptr));
+#endif // QT_CONFIG(tooltip)
         mActionMoveGCPPoint->setText(QCoreApplication::translate("QgsGeorefPluginGuiBase", "Move GCP Point", nullptr));
 #if QT_CONFIG(statustip)
         mActionMoveGCPPoint->setStatusTip(QCoreApplication::translate("QgsGeorefPluginGuiBase", "Move GCP point", nullptr));
@@ -331,6 +342,7 @@ public:
         mActionLocalHistogramStretch->setText(QCoreApplication::translate("QgsGeorefPluginGuiBase", "Local Histogram Stretch", nullptr));
         mActionFullHistogramStretch->setText(QCoreApplication::translate("QgsGeorefPluginGuiBase", "Full Histogram Stretch", nullptr));
         mActionReset->setText(QCoreApplication::translate("QgsGeorefPluginGuiBase", "Reset Georeferencer", nullptr));
+        mActionOpenVector->setText(QCoreApplication::translate("QgsGeorefPluginGuiBase", "Open Vector\342\200\246", nullptr));
         menuFile->setTitle(QCoreApplication::translate("QgsGeorefPluginGuiBase", "File", nullptr));
         menuView->setTitle(QCoreApplication::translate("QgsGeorefPluginGuiBase", "View", nullptr));
         menuEdit->setTitle(QCoreApplication::translate("QgsGeorefPluginGuiBase", "Edit", nullptr));

@@ -24,8 +24,8 @@
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "qgsattributetableview.h"
-#include "qgsfeaturelistview.h"
+#include "attributetable/qgsattributetableview.h"
+#include "attributetable/qgsfeaturelistview.h"
 #include "qgspanelwidgetstack.h"
 
 QT_BEGIN_NAMESPACE

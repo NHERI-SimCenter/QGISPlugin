@@ -20,11 +20,11 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QToolButton>
 #include <QtWidgets/QTreeView>
+#include "qgsfilterlineedit.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -32,6 +32,12 @@ class Ui_QgsDbSourceSelectBase
 {
 public:
     QGridLayout *gridLayout_2;
+    QDialogButtonBox *buttonBox;
+    QTreeView *mTablesTreeView;
+    QHBoxLayout *horizontalLayout_3;
+    QSpacerItem *horizontalSpacer_3;
+    QToolButton *mSearchSettingsButton;
+    QgsFilterLineEdit *mSearchTableEdit;
     QGroupBox *connectionsGroupBox;
     QGridLayout *gridLayout;
     QComboBox *cmbConnections;
@@ -43,20 +49,10 @@ public:
     QSpacerItem *horizontalSpacer;
     QPushButton *btnLoad;
     QPushButton *btnSave;
-    QTreeView *mTablesTreeView;
     QHBoxLayout *horizontalLayout_2;
     QCheckBox *cbxAllowGeometrylessTables;
     QSpacerItem *horizontalSpacer_2;
     QCheckBox *mHoldDialogOpen;
-    QGroupBox *mSearchGroupBox;
-    QGridLayout *gridLayout1;
-    QLabel *mSearchLabel;
-    QLabel *mSearchModeLabel;
-    QComboBox *mSearchModeComboBox;
-    QLabel *mSearchColumnsLabel;
-    QComboBox *mSearchColumnComboBox;
-    QLineEdit *mSearchTableEdit;
-    QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *QgsDbSourceSelectBase)
     {
@@ -72,6 +68,52 @@ public:
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        buttonBox = new QDialogButtonBox(QgsDbSourceSelectBase);
+        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
+        buttonBox->setStandardButtons(QDialogButtonBox::Help);
+
+        gridLayout_2->addWidget(buttonBox, 7, 0, 1, 1);
+
+        mTablesTreeView = new QTreeView(QgsDbSourceSelectBase);
+        mTablesTreeView->setObjectName(QString::fromUtf8("mTablesTreeView"));
+        mTablesTreeView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+        mTablesTreeView->setAlternatingRowColors(true);
+        mTablesTreeView->setSelectionMode(QAbstractItemView::ExtendedSelection);
+
+        gridLayout_2->addWidget(mTablesTreeView, 1, 0, 1, 1);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_3);
+
+        mSearchSettingsButton = new QToolButton(QgsDbSourceSelectBase);
+        mSearchSettingsButton->setObjectName(QString::fromUtf8("mSearchSettingsButton"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/images/themes/default/propertyicons/settings.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mSearchSettingsButton->setIcon(icon1);
+        mSearchSettingsButton->setPopupMode(QToolButton::MenuButtonPopup);
+        mSearchSettingsButton->setAutoRaise(true);
+
+        horizontalLayout_3->addWidget(mSearchSettingsButton);
+
+        mSearchTableEdit = new QgsFilterLineEdit(QgsDbSourceSelectBase);
+        mSearchTableEdit->setObjectName(QString::fromUtf8("mSearchTableEdit"));
+        QSizePolicy sizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(mSearchTableEdit->sizePolicy().hasHeightForWidth());
+        mSearchTableEdit->setSizePolicy(sizePolicy);
+        mSearchTableEdit->setMinimumSize(QSize(200, 0));
+        mSearchTableEdit->setProperty("showSearchIcon", QVariant(true));
+
+        horizontalLayout_3->addWidget(mSearchTableEdit);
+
+
+        gridLayout_2->addLayout(horizontalLayout_3, 5, 0, 1, 1);
+
         connectionsGroupBox = new QGroupBox(QgsDbSourceSelectBase);
         connectionsGroupBox->setObjectName(QString::fromUtf8("connectionsGroupBox"));
         gridLayout = new QGridLayout(connectionsGroupBox);
@@ -126,14 +168,6 @@ public:
 
         gridLayout_2->addWidget(connectionsGroupBox, 0, 0, 1, 1);
 
-        mTablesTreeView = new QTreeView(QgsDbSourceSelectBase);
-        mTablesTreeView->setObjectName(QString::fromUtf8("mTablesTreeView"));
-        mTablesTreeView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-        mTablesTreeView->setAlternatingRowColors(true);
-        mTablesTreeView->setSelectionMode(QAbstractItemView::ExtendedSelection);
-
-        gridLayout_2->addWidget(mTablesTreeView, 1, 0, 1, 1);
-
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
@@ -152,68 +186,8 @@ public:
         horizontalLayout_2->addWidget(mHoldDialogOpen);
 
 
-        gridLayout_2->addLayout(horizontalLayout_2, 2, 0, 1, 1);
+        gridLayout_2->addLayout(horizontalLayout_2, 6, 0, 1, 1);
 
-        mSearchGroupBox = new QGroupBox(QgsDbSourceSelectBase);
-        mSearchGroupBox->setObjectName(QString::fromUtf8("mSearchGroupBox"));
-        mSearchGroupBox->setFlat(true);
-        mSearchGroupBox->setCheckable(true);
-        mSearchGroupBox->setChecked(false);
-        gridLayout1 = new QGridLayout(mSearchGroupBox);
-        gridLayout1->setSpacing(6);
-        gridLayout1->setContentsMargins(11, 11, 11, 11);
-        gridLayout1->setObjectName(QString::fromUtf8("gridLayout1"));
-        gridLayout1->setContentsMargins(9, 9, 9, 9);
-        mSearchLabel = new QLabel(mSearchGroupBox);
-        mSearchLabel->setObjectName(QString::fromUtf8("mSearchLabel"));
-        mSearchLabel->setEnabled(true);
-
-        gridLayout1->addWidget(mSearchLabel, 0, 0, 1, 1);
-
-        mSearchModeLabel = new QLabel(mSearchGroupBox);
-        mSearchModeLabel->setObjectName(QString::fromUtf8("mSearchModeLabel"));
-        mSearchModeLabel->setEnabled(true);
-
-        gridLayout1->addWidget(mSearchModeLabel, 2, 0, 1, 2);
-
-        mSearchModeComboBox = new QComboBox(mSearchGroupBox);
-        mSearchModeComboBox->setObjectName(QString::fromUtf8("mSearchModeComboBox"));
-        mSearchModeComboBox->setEnabled(true);
-
-        gridLayout1->addWidget(mSearchModeComboBox, 2, 2, 1, 1);
-
-        mSearchColumnsLabel = new QLabel(mSearchGroupBox);
-        mSearchColumnsLabel->setObjectName(QString::fromUtf8("mSearchColumnsLabel"));
-        mSearchColumnsLabel->setEnabled(true);
-
-        gridLayout1->addWidget(mSearchColumnsLabel, 1, 0, 1, 2);
-
-        mSearchColumnComboBox = new QComboBox(mSearchGroupBox);
-        mSearchColumnComboBox->setObjectName(QString::fromUtf8("mSearchColumnComboBox"));
-        mSearchColumnComboBox->setEnabled(true);
-
-        gridLayout1->addWidget(mSearchColumnComboBox, 1, 2, 1, 1);
-
-        mSearchTableEdit = new QLineEdit(mSearchGroupBox);
-        mSearchTableEdit->setObjectName(QString::fromUtf8("mSearchTableEdit"));
-        mSearchTableEdit->setEnabled(true);
-
-        gridLayout1->addWidget(mSearchTableEdit, 0, 1, 1, 2);
-
-
-        gridLayout_2->addWidget(mSearchGroupBox, 3, 0, 1, 1);
-
-        buttonBox = new QDialogButtonBox(QgsDbSourceSelectBase);
-        buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
-        buttonBox->setStandardButtons(QDialogButtonBox::Help);
-
-        gridLayout_2->addWidget(buttonBox, 4, 0, 1, 1);
-
-#if QT_CONFIG(shortcut)
-        mSearchLabel->setBuddy(mSearchTableEdit);
-        mSearchModeLabel->setBuddy(mSearchModeComboBox);
-        mSearchColumnsLabel->setBuddy(mSearchColumnComboBox);
-#endif // QT_CONFIG(shortcut)
         QWidget::setTabOrder(cmbConnections, btnConnect);
         QWidget::setTabOrder(btnConnect, btnNew);
         QWidget::setTabOrder(btnNew, btnEdit);
@@ -223,20 +197,10 @@ public:
         QWidget::setTabOrder(btnSave, mTablesTreeView);
         QWidget::setTabOrder(mTablesTreeView, cbxAllowGeometrylessTables);
         QWidget::setTabOrder(cbxAllowGeometrylessTables, mHoldDialogOpen);
-        QWidget::setTabOrder(mHoldDialogOpen, mSearchGroupBox);
-        QWidget::setTabOrder(mSearchGroupBox, mSearchTableEdit);
-        QWidget::setTabOrder(mSearchTableEdit, mSearchColumnComboBox);
-        QWidget::setTabOrder(mSearchColumnComboBox, mSearchModeComboBox);
-        QWidget::setTabOrder(mSearchModeComboBox, buttonBox);
+        QWidget::setTabOrder(mHoldDialogOpen, buttonBox);
 
         retranslateUi(QgsDbSourceSelectBase);
         QObject::connect(buttonBox, SIGNAL(rejected()), QgsDbSourceSelectBase, SLOT(reject()));
-        QObject::connect(mSearchGroupBox, SIGNAL(toggled(bool)), mSearchTableEdit, SLOT(setVisible(bool)));
-        QObject::connect(mSearchGroupBox, SIGNAL(toggled(bool)), mSearchColumnComboBox, SLOT(setVisible(bool)));
-        QObject::connect(mSearchGroupBox, SIGNAL(toggled(bool)), mSearchModeComboBox, SLOT(setVisible(bool)));
-        QObject::connect(mSearchGroupBox, SIGNAL(toggled(bool)), mSearchLabel, SLOT(setVisible(bool)));
-        QObject::connect(mSearchGroupBox, SIGNAL(toggled(bool)), mSearchColumnsLabel, SLOT(setVisible(bool)));
-        QObject::connect(mSearchGroupBox, SIGNAL(toggled(bool)), mSearchModeLabel, SLOT(setVisible(bool)));
 
         QMetaObject::connectSlotsByName(QgsDbSourceSelectBase);
     } // setupUi
@@ -244,6 +208,7 @@ public:
     void retranslateUi(QDialog *QgsDbSourceSelectBase)
     {
         QgsDbSourceSelectBase->setWindowTitle(QCoreApplication::translate("QgsDbSourceSelectBase", "Add PostGIS Layers", nullptr));
+        mSearchSettingsButton->setText(QCoreApplication::translate("QgsDbSourceSelectBase", "...", nullptr));
         connectionsGroupBox->setTitle(QCoreApplication::translate("QgsDbSourceSelectBase", "Connections", nullptr));
 #if QT_CONFIG(tooltip)
         btnConnect->setToolTip(QCoreApplication::translate("QgsDbSourceSelectBase", "Connect to selected database", nullptr));
@@ -268,10 +233,6 @@ public:
         btnSave->setText(QCoreApplication::translate("QgsDbSourceSelectBase", "Save", nullptr));
         cbxAllowGeometrylessTables->setText(QCoreApplication::translate("QgsDbSourceSelectBase", "Also list tables with no geometry", nullptr));
         mHoldDialogOpen->setText(QCoreApplication::translate("QgsDbSourceSelectBase", "Keep dialog open", nullptr));
-        mSearchGroupBox->setTitle(QCoreApplication::translate("QgsDbSourceSelectBase", "Search options", nullptr));
-        mSearchLabel->setText(QCoreApplication::translate("QgsDbSourceSelectBase", "Search", nullptr));
-        mSearchModeLabel->setText(QCoreApplication::translate("QgsDbSourceSelectBase", "Search mode", nullptr));
-        mSearchColumnsLabel->setText(QCoreApplication::translate("QgsDbSourceSelectBase", "Search in columns", nullptr));
     } // retranslateUi
 
 };

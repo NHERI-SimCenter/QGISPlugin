@@ -48,11 +48,11 @@ public:
     {
         if (Line3DSymbolWidget->objectName().isEmpty())
             Line3DSymbolWidget->setObjectName(QString::fromUtf8("Line3DSymbolWidget"));
-        Line3DSymbolWidget->resize(382, 229);
+        Line3DSymbolWidget->resize(382, 242);
         Line3DSymbolWidget->setWindowTitle(QString::fromUtf8("Form"));
         verticalLayout = new QVBoxLayout(Line3DSymbolWidget);
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
         formLayout = new QFormLayout();
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         labelHeight = new QLabel(Line3DSymbolWidget);
@@ -84,9 +84,6 @@ public:
         formLayout->setWidget(3, QFormLayout::LabelRole, labelClamping);
 
         cboAltClamping = new QComboBox(Line3DSymbolWidget);
-        cboAltClamping->addItem(QString());
-        cboAltClamping->addItem(QString());
-        cboAltClamping->addItem(QString());
         cboAltClamping->setObjectName(QString::fromUtf8("cboAltClamping"));
 
         formLayout->setWidget(3, QFormLayout::FieldRole, cboAltClamping);
@@ -125,8 +122,8 @@ public:
         groupShading = new QgsCollapsibleGroupBox(Line3DSymbolWidget);
         groupShading->setObjectName(QString::fromUtf8("groupShading"));
         gridLayout = new QGridLayout(groupShading);
-        gridLayout->setContentsMargins(0, 0, 0, 0);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
         widgetMaterial = new QgsMaterialWidget(groupShading);
         widgetMaterial->setObjectName(QString::fromUtf8("widgetMaterial"));
         widgetMaterial->setMinimumSize(QSize(0, 0));
@@ -151,10 +148,6 @@ public:
         labelHeight->setText(QCoreApplication::translate("Line3DSymbolWidget", "Height", nullptr));
         labelExtrusion->setText(QCoreApplication::translate("Line3DSymbolWidget", "Extrusion", nullptr));
         labelClamping->setText(QCoreApplication::translate("Line3DSymbolWidget", "Altitude clamping", nullptr));
-        cboAltClamping->setItemText(0, QCoreApplication::translate("Line3DSymbolWidget", "Absolute", nullptr));
-        cboAltClamping->setItemText(1, QCoreApplication::translate("Line3DSymbolWidget", "Relative", nullptr));
-        cboAltClamping->setItemText(2, QCoreApplication::translate("Line3DSymbolWidget", "Terrain", nullptr));
-
         labelBinding->setText(QCoreApplication::translate("Line3DSymbolWidget", "Altitude binding", nullptr));
         cboAltBinding->setItemText(0, QCoreApplication::translate("Line3DSymbolWidget", "Vertex", nullptr));
         cboAltBinding->setItemText(1, QCoreApplication::translate("Line3DSymbolWidget", "Centroid", nullptr));

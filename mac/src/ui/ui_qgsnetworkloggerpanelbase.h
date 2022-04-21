@@ -28,6 +28,7 @@ public:
     QAction *mActionShowSuccessful;
     QAction *mActionShowTimeouts;
     QAction *mActionSaveLog;
+    QAction *mActionShowCached;
     QVBoxLayout *verticalLayout;
     QToolBar *mToolbar;
     QgsFilterLineEdit *mFilterLineEdit;
@@ -60,6 +61,9 @@ public:
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/images/themes/default/mActionFileSave.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionSaveLog->setIcon(icon2);
+        mActionShowCached = new QAction(QgsNetworkLoggerPanelBase);
+        mActionShowCached->setObjectName(QString::fromUtf8("mActionShowCached"));
+        mActionShowCached->setCheckable(true);
         verticalLayout = new QVBoxLayout(QgsNetworkLoggerPanelBase);
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -101,6 +105,10 @@ public:
         mActionShowSuccessful->setText(QCoreApplication::translate("QgsNetworkLoggerPanelBase", "Show Successful Requests", nullptr));
         mActionShowTimeouts->setText(QCoreApplication::translate("QgsNetworkLoggerPanelBase", "Show Timeouts", nullptr));
         mActionSaveLog->setText(QCoreApplication::translate("QgsNetworkLoggerPanelBase", "Save Log\342\200\246", nullptr));
+        mActionShowCached->setText(QCoreApplication::translate("QgsNetworkLoggerPanelBase", "Show Replies Served from Cache", nullptr));
+#if QT_CONFIG(tooltip)
+        mActionShowCached->setToolTip(QCoreApplication::translate("QgsNetworkLoggerPanelBase", "Show replies served directly from local cached data", nullptr));
+#endif // QT_CONFIG(tooltip)
         (void)QgsNetworkLoggerPanelBase;
     } // retranslateUi
 

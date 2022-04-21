@@ -134,6 +134,9 @@ class CORE_EXPORT QgsOgrProviderUtils
     static QStringList directoryExtensions();
     static QStringList wildcards();
 
+    //! Whether the file is a local file.
+    static bool IsLocalFile( const QString &path );
+
     /**
      * Creates an empty data source
      * \param uri location to store the file(s)
@@ -216,7 +219,7 @@ class CORE_EXPORT QgsOgrProviderUtils
     static void release( QgsOgrLayer *&layer );
 
     //! Release a QgsOgrDataset*
-    static void releaseDataset( QgsOgrDataset *&ds );
+    static void releaseDataset( QgsOgrDataset *ds );
 
     //! Make sure that the existing pool of opened datasets on dsName is not accessible for new getLayer() attempts
     static void invalidateCachedDatasets( const QString &dsName );
@@ -260,7 +263,7 @@ class CORE_EXPORT QgsOgrProviderUtils
         bool updateMode,
         const QString &dsName );
 
-    static QList<QgsProviderSublayerDetails> querySubLayerList( int i, QgsOgrLayer *layer, const QString &driverName, Qgis::SublayerQueryFlags flags, bool isSubLayer,
+    static QList<QgsProviderSublayerDetails> querySubLayerList( int i, QgsOgrLayer *layer, GDALDatasetH hDS, const QString &driverName, Qgis::SublayerQueryFlags flags,
         const QString &baseUri, bool hasSingleLayerOnly, QgsFeedback *feedback = nullptr );
 
     /**

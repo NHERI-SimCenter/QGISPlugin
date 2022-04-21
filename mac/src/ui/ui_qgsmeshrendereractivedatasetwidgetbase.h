@@ -25,7 +25,6 @@ class Ui_QgsMeshRendererActiveDatasetWidgetBase
 public:
     QVBoxLayout *verticalLayout;
     QgsMeshActiveDatasetGroupTreeView *mDatasetGroupTreeView;
-    QLabel *label_2;
     QgsCollapsibleGroupBox *mActiveDatasetMetadataGroup;
     QVBoxLayout *verticalLayout_2;
     QLabel *mActiveDatasetMetadata;
@@ -45,11 +44,6 @@ public:
         mDatasetGroupTreeView->setMinimumSize(QSize(0, 100));
 
         verticalLayout->addWidget(mDatasetGroupTreeView);
-
-        label_2 = new QLabel(QgsMeshRendererActiveDatasetWidgetBase);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-
-        verticalLayout->addWidget(label_2);
 
         mActiveDatasetMetadataGroup = new QgsCollapsibleGroupBox(QgsMeshRendererActiveDatasetWidgetBase);
         mActiveDatasetMetadataGroup->setObjectName(QString::fromUtf8("mActiveDatasetMetadataGroup"));
@@ -72,8 +66,7 @@ public:
 
     void retranslateUi(QWidget *QgsMeshRendererActiveDatasetWidgetBase)
     {
-        label_2->setText(QCoreApplication::translate("QgsMeshRendererActiveDatasetWidgetBase", "Dataset in selected group(s)", nullptr));
-        mActiveDatasetMetadataGroup->setTitle(QCoreApplication::translate("QgsMeshRendererActiveDatasetWidgetBase", "Dataset group Metadata", nullptr));
+        mActiveDatasetMetadataGroup->setTitle(QCoreApplication::translate("QgsMeshRendererActiveDatasetWidgetBase", "Selected Dataset Group(s) Metadata", nullptr));
         mActiveDatasetMetadata->setText(QString());
         (void)QgsMeshRendererActiveDatasetWidgetBase;
     } // retranslateUi

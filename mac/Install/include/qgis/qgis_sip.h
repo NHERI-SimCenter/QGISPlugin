@@ -131,6 +131,11 @@
 #define SIP_FORCE
 
 /*
+ * change the method access to private
+ */
+#define SIP_MAKE_PRIVATE
+
+/*
   * specify an alternative type for SIP argument or return value
   */
 #define SIP_PYALTERNATIVETYPE(type)
@@ -144,7 +149,6 @@
   * remove argument in SIP method
   */
 #define SIP_PYARGREMOVE
-
 
 /*
  * https://www.riverbankcomputing.com/static/Docs/sip/annotations.html?highlight=keepreference#function-annotation-ReleaseGIL
@@ -255,6 +259,7 @@
  */
 #define SIP_MONKEYPATCH_SCOPEENUM
 #define SIP_MONKEYPATCH_SCOPEENUM_UNNEST(OUTSIDE_CLASS,FORMERNAME)
+#define SIP_MONKEYPATCH_FLAGS_UNNEST(OUTSIDE_CLASS,FORMERNAME)
 #define SIP_MONKEYPATCH_COMPAT_NAME(FORMERNAME)
 
 /*

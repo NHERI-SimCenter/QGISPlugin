@@ -26,10 +26,10 @@
 #include <QElapsedTimer>
 
 #include "qgsrendercontext.h"
-
+#include "qgslabelsink.h"
 #include "qgsmapsettings.h"
 #include "qgsmaskidprovider.h"
-#include "qgssettingsentry.h"
+#include "qgssettingsentryimpl.h"
 
 
 class QgsLabelingEngine;
@@ -37,6 +37,7 @@ class QgsLabelingResults;
 class QgsMapLayerRenderer;
 class QgsMapRendererCache;
 class QgsFeatureFilterProvider;
+class QgsRenderedItemResults;
 
 #ifndef SIP_RUN
 /// @cond PRIVATE
@@ -250,6 +251,8 @@ class CORE_EXPORT QgsMapRendererJob : public QObject SIP_ABSTRACT
 
     QgsMapRendererJob( const QgsMapSettings &settings );
 
+    ~QgsMapRendererJob() override;
+
     /**
      * Start the rendering job and immediately return.
      * Does nothing if the rendering is already in progress.
@@ -285,11 +288,30 @@ class CORE_EXPORT QgsMapRendererJob : public QObject SIP_ABSTRACT
     virtual bool usedCachedLabels() const = 0;
 
     /**
+     * Returns a list of the layer IDs for all layers which were redrawn from cached
+     * images.
+     *
+     * This method should only be called after the render job is completed.
+     *
+     * \since QGIS 3.22
+     */
+    QStringList layersRedrawnFromCache() const;
+
+    /**
      * Gets pointer to internal labeling engine (in order to get access to the results).
      * This should not be used if cached labeling was redrawn - see usedCachedLabels().
      * \see usedCachedLabels()
      */
     virtual QgsLabelingResults *takeLabelingResults() = 0 SIP_TRANSFER;
+
+    /**
+     * Takes the rendered item results from the map render job and returns them.
+     *
+     * Ownership is transferred to the caller.
+     *
+     * \since QGIS 3.22
+     */
+    QgsRenderedItemResults *takeRenderedItemResults() SIP_TRANSFER;
 
     /**
      * Set the feature filter provider used by the QgsRenderContext of
@@ -329,6 +351,32 @@ class CORE_EXPORT QgsMapRendererJob : public QObject SIP_ABSTRACT
      * Does not take ownership of the object.
      */
     void setCache( QgsMapRendererCache *cache );
+
+    /**
+     * Returns the label sink associated to this rendering job.
+     * \note Not available in Python bindings.
+     * \since QGIS 3.24
+     */
+    QgsLabelSink *labelSink() const { return mLabelSink; } SIP_SKIP
+
+    /**
+     * Assigns the label sink which will take over responsibility for handling labels
+     * during the rendering job.
+     * \note Ownership is not transferred and the sink must exist for the lifetime of the map rendering job.
+     * \note Not available in Python bindings.
+     * \since QGIS 3.24
+     */
+    void setLabelSink( QgsLabelSink *sink ) { mLabelSink = sink; } SIP_SKIP
+
+    /**
+     * Returns the associated labeling engine feedback object.
+     *
+     * Callers can connect to the signals in this object to receive granular progress reports during the labeling steps.
+     *
+     * \note Not available in Python bindings
+     * \since QGIS 3.24
+     */
+    QgsLabelingEngineFeedback *labelingEngineFeedback() SIP_SKIP;
 
     /**
      * Returns the total time it took to finish the job (in milliseconds).
@@ -379,7 +427,7 @@ class CORE_EXPORT QgsMapRendererJob : public QObject SIP_ABSTRACT
 
 #ifndef SIP_RUN
     //! Settings entry log canvas refresh event
-    static const inline QgsSettingsEntryBool settingsLogCanvasRefreshEvent = QgsSettingsEntryBool( QStringLiteral( "Map/logCanvasRefreshEvent" ), QgsSettings::NoSection, false );
+    static const inline QgsSettingsEntryBool settingsLogCanvasRefreshEvent = QgsSettingsEntryBool( QStringLiteral( "logCanvasRefreshEvent" ), QgsSettings::Prefix::MAP, false );
 #endif
 
   signals:
@@ -392,6 +440,25 @@ class CORE_EXPORT QgsMapRendererJob : public QObject SIP_ABSTRACT
      * \since QGIS 3.0
      */
     void renderingLayersFinished();
+
+
+    /**
+     * Emitted just before rendering starts for a particular layer.
+     *
+     * \note the QgsMapRendererParallelJob subclass does not emit this signal.
+     *
+     * \since QGIS 3.24
+     */
+    void layerRenderingStarted( const QString &layerId );
+
+    /**
+     * Emitted when a layer has completed rendering.
+     *
+     * \note the QgsMapRendererParallelJob subclass does not emit this signal.
+     *
+     * \since QGIS 3.24
+     */
+    void layerRendered( const QString &layerId );
 
     //! emitted when asynchronous rendering is finished (or canceled).
     void finished();
@@ -420,6 +487,12 @@ class CORE_EXPORT QgsMapRendererJob : public QObject SIP_ABSTRACT
      * TRUE if layer rendering time should be recorded.
      */
     bool mRecordRenderingTime = true;
+
+#ifndef SIP_RUN
+    std::unique_ptr< QgsRenderedItemResults > mRenderedItemResults;
+#endif
+
+    QStringList mLayersRedrawnFromCache;
 
     /**
      * Prepares the cache for storing the result of labeling. Returns FALSE if
@@ -530,6 +603,9 @@ class CORE_EXPORT QgsMapRendererJob : public QObject SIP_ABSTRACT
      *  \since QGIS 3.20
      */
     virtual void startPrivate() = 0;
+
+    QgsLabelSink *mLabelSink = nullptr;
+    QgsLabelingEngineFeedback *mLabelingEngineFeedback = nullptr;
 
 };
 

@@ -31,7 +31,7 @@
 #include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "qgseffectstackpropertieswidget.h"
+#include "effects/qgseffectstackpropertieswidget.h"
 #include "qgscollapsiblegroupbox.h"
 #include "qgscolorbutton.h"
 #include "qgsdoublespinbox.h"

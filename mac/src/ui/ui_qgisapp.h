@@ -21,7 +21,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_MainWindowQGIS
+class Ui_MainWindow
 {
 public:
     QAction *mActionNewProject;
@@ -202,8 +202,6 @@ public:
     QAction *mActionNewMemoryLayer;
     QAction *mActionStatisticalSummary;
     QAction *mActionShowAlignRasterTool;
-    QAction *mActionCircularStringCurvePoint;
-    QAction *mActionCircularStringRadius;
     QAction *mActionReportaBug;
     QAction *mActionDiagramProperties;
     QAction *mActionNewGeoPackageLayer;
@@ -213,22 +211,6 @@ public:
     QAction *mActionMoveFeatureCopy;
     QAction *mActionDecorationLayoutExtent;
     QAction *mActionDataSourceManager;
-    QAction *mActionCircle2Points;
-    QAction *mActionCircle3Points;
-    QAction *mActionCircleCenterPoint;
-    QAction *mActionEllipseCenter2Points;
-    QAction *mActionEllipseCenterPoint;
-    QAction *mActionEllipseExtent;
-    QAction *mActionEllipseFoci;
-    QAction *mActionRectangleExtent;
-    QAction *mActionRectangleCenterPoint;
-    QAction *mActionRegularPolygonCenterPoint;
-    QAction *mActionRegularPolygon2Points;
-    QAction *mActionCircle3Tangents;
-    QAction *mActionRectangle3PointsDistance;
-    QAction *mActionCircle2TangentsPoint;
-    QAction *mActionRegularPolygonCenterCorner;
-    QAction *mActionNew3DMapCanvas;
     QAction *mActionShowLayoutManager;
     QAction *mActionNewPrintLayout;
     QAction *mActionNewReport;
@@ -237,7 +219,6 @@ public:
     QAction *mActionCopyLayer;
     QAction *mActionPasteLayer;
     QAction *mActionVertexToolActiveLayer;
-    QAction *mActionRectangle3PointsProjected;
     QAction *mActionShowMeshCalculator;
     QAction *mActionAddMeshLayer;
     QAction *mActionNewVirtualLayer;
@@ -255,6 +236,14 @@ public:
     QAction *mActionMeasureBearing;
     QAction *mActionNewMeshLayer;
     QAction *mActionNewGpxLayer;
+    QAction *mActionCreateAnnotationLayer;
+    QAction *mActionModifyAnnotation;
+    QAction *mMainAnnotationLayerProperties;
+    QAction *mActionNew3DMapCanvas;
+    QAction *mActionManage3DMapViews;
+    QAction *mActionDigitizeWithSegment;
+    QAction *mActionDigitizeShape;
+    QAction *mActionElevationProfile;
     QWidget *centralwidget;
     QMenuBar *menubar;
     QMenu *mProjectMenu;
@@ -263,7 +252,9 @@ public:
     QMenu *mProjectFromTemplateMenu;
     QMenu *mProjectToStorageMenu;
     QMenu *mProjectFromStorageMenu;
+    QMenu *menuImport_Export;
     QMenu *mViewMenu;
+    QMenu *m3DMapViewsMenu;
     QMenu *mMenuMeasure;
     QMenu *mMenuDecorations;
     QMenu *mMenuPreviewMode;
@@ -281,10 +272,6 @@ public:
     QMenu *mEditMenu;
     QMenu *mMenuSelect;
     QMenu *mMenuPasteAs;
-    QMenu *mMenuCircle;
-    QMenu *mMenuEllipse;
-    QMenu *mMenuRectangle;
-    QMenu *mMenuRegularPolygon;
     QMenu *mMenuAnnotation;
     QMenu *mMenuEditAttributes;
     QMenu *mMenuEditGeometry;
@@ -308,12 +295,13 @@ public:
     QToolBar *mShapeDigitizeToolBar;
     QToolBar *mSelectionToolBar;
     QToolBar *mMeshToolBar;
+    QToolBar *mAnnotationsToolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1064, 506);
+        MainWindow->resize(1277, 506);
         mActionNewProject = new QAction(MainWindow);
         mActionNewProject->setObjectName(QString::fromUtf8("mActionNewProject"));
         QIcon icon;
@@ -1166,171 +1154,64 @@ public:
         mActionStatisticalSummary->setIcon(icon140);
         mActionShowAlignRasterTool = new QAction(MainWindow);
         mActionShowAlignRasterTool->setObjectName(QString::fromUtf8("mActionShowAlignRasterTool"));
-        mActionCircularStringCurvePoint = new QAction(MainWindow);
-        mActionCircularStringCurvePoint->setObjectName(QString::fromUtf8("mActionCircularStringCurvePoint"));
-        mActionCircularStringCurvePoint->setCheckable(true);
-        QIcon icon141;
-        icon141.addFile(QString::fromUtf8(":/images/themes/default/mActionCircularStringCurvePoint.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionCircularStringCurvePoint->setIcon(icon141);
-        mActionCircularStringRadius = new QAction(MainWindow);
-        mActionCircularStringRadius->setObjectName(QString::fromUtf8("mActionCircularStringRadius"));
-        mActionCircularStringRadius->setCheckable(true);
-        QIcon icon142;
-        icon142.addFile(QString::fromUtf8(":/images/themes/default/mActionCircularStringRadius.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionCircularStringRadius->setIcon(icon142);
         mActionReportaBug = new QAction(MainWindow);
         mActionReportaBug->setObjectName(QString::fromUtf8("mActionReportaBug"));
         mActionDiagramProperties = new QAction(MainWindow);
         mActionDiagramProperties->setObjectName(QString::fromUtf8("mActionDiagramProperties"));
-        QIcon icon143;
-        icon143.addFile(QString::fromUtf8(":/images/themes/default/propertyicons/diagram.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionDiagramProperties->setIcon(icon143);
+        QIcon icon141;
+        icon141.addFile(QString::fromUtf8(":/images/themes/default/propertyicons/diagram.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionDiagramProperties->setIcon(icon141);
         mActionNewGeoPackageLayer = new QAction(MainWindow);
         mActionNewGeoPackageLayer->setObjectName(QString::fromUtf8("mActionNewGeoPackageLayer"));
-        QIcon icon144;
-        icon144.addFile(QString::fromUtf8(":/images/themes/default/mActionNewGeoPackageLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionNewGeoPackageLayer->setIcon(icon144);
+        QIcon icon142;
+        icon142.addFile(QString::fromUtf8(":/images/themes/default/mActionNewGeoPackageLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionNewGeoPackageLayer->setIcon(icon142);
         mActionMultiEditAttributes = new QAction(MainWindow);
         mActionMultiEditAttributes->setObjectName(QString::fromUtf8("mActionMultiEditAttributes"));
-        QIcon icon145;
-        icon145.addFile(QString::fromUtf8(":/images/themes/default/mActionMultiEdit.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionMultiEditAttributes->setIcon(icon145);
+        QIcon icon143;
+        icon143.addFile(QString::fromUtf8(":/images/themes/default/mActionMultiEdit.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionMultiEditAttributes->setIcon(icon143);
         mActionAddAfsLayer = new QAction(MainWindow);
         mActionAddAfsLayer->setObjectName(QString::fromUtf8("mActionAddAfsLayer"));
-        QIcon icon146;
-        icon146.addFile(QString::fromUtf8(":/images/themes/default/mActionAddAfsLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionAddAfsLayer->setIcon(icon146);
+        QIcon icon144;
+        icon144.addFile(QString::fromUtf8(":/images/themes/default/mActionAddAfsLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionAddAfsLayer->setIcon(icon144);
         mActionSelectByForm = new QAction(MainWindow);
         mActionSelectByForm->setObjectName(QString::fromUtf8("mActionSelectByForm"));
-        QIcon icon147;
-        icon147.addFile(QString::fromUtf8(":/images/themes/default/mIconFormSelect.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionSelectByForm->setIcon(icon147);
+        QIcon icon145;
+        icon145.addFile(QString::fromUtf8(":/images/themes/default/mIconFormSelect.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionSelectByForm->setIcon(icon145);
         mActionMoveFeatureCopy = new QAction(MainWindow);
         mActionMoveFeatureCopy->setObjectName(QString::fromUtf8("mActionMoveFeatureCopy"));
         mActionMoveFeatureCopy->setCheckable(true);
-        QIcon icon148;
-        icon148.addFile(QString::fromUtf8(":/images/themes/default/mActionMoveFeatureCopy.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionMoveFeatureCopy->setIcon(icon148);
+        QIcon icon146;
+        icon146.addFile(QString::fromUtf8(":/images/themes/default/mActionMoveFeatureCopy.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionMoveFeatureCopy->setIcon(icon146);
         mActionDecorationLayoutExtent = new QAction(MainWindow);
         mActionDecorationLayoutExtent->setObjectName(QString::fromUtf8("mActionDecorationLayoutExtent"));
-        QIcon icon149;
-        icon149.addFile(QString::fromUtf8(":/images/themes/default/mActionAddMap.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionDecorationLayoutExtent->setIcon(icon149);
+        QIcon icon147;
+        icon147.addFile(QString::fromUtf8(":/images/themes/default/mActionAddMap.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionDecorationLayoutExtent->setIcon(icon147);
         mActionDataSourceManager = new QAction(MainWindow);
         mActionDataSourceManager->setObjectName(QString::fromUtf8("mActionDataSourceManager"));
-        QIcon icon150;
-        icon150.addFile(QString::fromUtf8(":/images/themes/default/mActionDataSourceManager.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionDataSourceManager->setIcon(icon150);
-        mActionCircle2Points = new QAction(MainWindow);
-        mActionCircle2Points->setObjectName(QString::fromUtf8("mActionCircle2Points"));
-        mActionCircle2Points->setCheckable(true);
-        QIcon icon151;
-        icon151.addFile(QString::fromUtf8(":/images/themes/default/mActionCircle2Points.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionCircle2Points->setIcon(icon151);
-        mActionCircle3Points = new QAction(MainWindow);
-        mActionCircle3Points->setObjectName(QString::fromUtf8("mActionCircle3Points"));
-        mActionCircle3Points->setCheckable(true);
-        QIcon icon152;
-        icon152.addFile(QString::fromUtf8(":/images/themes/default/mActionCircle3Points.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionCircle3Points->setIcon(icon152);
-        mActionCircleCenterPoint = new QAction(MainWindow);
-        mActionCircleCenterPoint->setObjectName(QString::fromUtf8("mActionCircleCenterPoint"));
-        mActionCircleCenterPoint->setCheckable(true);
-        QIcon icon153;
-        icon153.addFile(QString::fromUtf8(":/images/themes/default/mActionCircleCenterPoint.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionCircleCenterPoint->setIcon(icon153);
-        mActionEllipseCenter2Points = new QAction(MainWindow);
-        mActionEllipseCenter2Points->setObjectName(QString::fromUtf8("mActionEllipseCenter2Points"));
-        mActionEllipseCenter2Points->setCheckable(true);
-        QIcon icon154;
-        icon154.addFile(QString::fromUtf8(":/images/themes/default/mActionEllipseCenter2Points.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionEllipseCenter2Points->setIcon(icon154);
-        mActionEllipseCenterPoint = new QAction(MainWindow);
-        mActionEllipseCenterPoint->setObjectName(QString::fromUtf8("mActionEllipseCenterPoint"));
-        mActionEllipseCenterPoint->setCheckable(true);
-        QIcon icon155;
-        icon155.addFile(QString::fromUtf8(":/images/themes/default/mActionEllipseCenterPoint.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionEllipseCenterPoint->setIcon(icon155);
-        mActionEllipseExtent = new QAction(MainWindow);
-        mActionEllipseExtent->setObjectName(QString::fromUtf8("mActionEllipseExtent"));
-        mActionEllipseExtent->setCheckable(true);
-        QIcon icon156;
-        icon156.addFile(QString::fromUtf8(":/images/themes/default/mActionEllipseExtent.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionEllipseExtent->setIcon(icon156);
-        mActionEllipseFoci = new QAction(MainWindow);
-        mActionEllipseFoci->setObjectName(QString::fromUtf8("mActionEllipseFoci"));
-        mActionEllipseFoci->setCheckable(true);
-        QIcon icon157;
-        icon157.addFile(QString::fromUtf8(":/images/themes/default/mActionEllipseFoci.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionEllipseFoci->setIcon(icon157);
-        mActionRectangleExtent = new QAction(MainWindow);
-        mActionRectangleExtent->setObjectName(QString::fromUtf8("mActionRectangleExtent"));
-        mActionRectangleExtent->setCheckable(true);
-        QIcon icon158;
-        icon158.addFile(QString::fromUtf8(":/images/themes/default/mActionRectangleExtent.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionRectangleExtent->setIcon(icon158);
-        mActionRectangleCenterPoint = new QAction(MainWindow);
-        mActionRectangleCenterPoint->setObjectName(QString::fromUtf8("mActionRectangleCenterPoint"));
-        mActionRectangleCenterPoint->setCheckable(true);
-        QIcon icon159;
-        icon159.addFile(QString::fromUtf8(":/images/themes/default/mActionRectangleCenter.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionRectangleCenterPoint->setIcon(icon159);
-        mActionRegularPolygonCenterPoint = new QAction(MainWindow);
-        mActionRegularPolygonCenterPoint->setObjectName(QString::fromUtf8("mActionRegularPolygonCenterPoint"));
-        mActionRegularPolygonCenterPoint->setCheckable(true);
-        QIcon icon160;
-        icon160.addFile(QString::fromUtf8(":/images/themes/default/mActionRegularPolygonCenterPoint.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionRegularPolygonCenterPoint->setIcon(icon160);
-        mActionRegularPolygon2Points = new QAction(MainWindow);
-        mActionRegularPolygon2Points->setObjectName(QString::fromUtf8("mActionRegularPolygon2Points"));
-        mActionRegularPolygon2Points->setCheckable(true);
-        QIcon icon161;
-        icon161.addFile(QString::fromUtf8(":/images/themes/default/mActionRegularPolygon2Points.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionRegularPolygon2Points->setIcon(icon161);
-        mActionCircle3Tangents = new QAction(MainWindow);
-        mActionCircle3Tangents->setObjectName(QString::fromUtf8("mActionCircle3Tangents"));
-        mActionCircle3Tangents->setCheckable(true);
-        QIcon icon162;
-        icon162.addFile(QString::fromUtf8(":/images/themes/default/mActionCircle3Tangents.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionCircle3Tangents->setIcon(icon162);
-        mActionRectangle3PointsDistance = new QAction(MainWindow);
-        mActionRectangle3PointsDistance->setObjectName(QString::fromUtf8("mActionRectangle3PointsDistance"));
-        mActionRectangle3PointsDistance->setCheckable(true);
-        QIcon icon163;
-        icon163.addFile(QString::fromUtf8(":/images/themes/default/mActionRectangle3PointsDistance.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionRectangle3PointsDistance->setIcon(icon163);
-        mActionCircle2TangentsPoint = new QAction(MainWindow);
-        mActionCircle2TangentsPoint->setObjectName(QString::fromUtf8("mActionCircle2TangentsPoint"));
-        mActionCircle2TangentsPoint->setCheckable(true);
-        QIcon icon164;
-        icon164.addFile(QString::fromUtf8(":/images/themes/default/mActionCircle2TangentsPoint.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionCircle2TangentsPoint->setIcon(icon164);
-        mActionRegularPolygonCenterCorner = new QAction(MainWindow);
-        mActionRegularPolygonCenterCorner->setObjectName(QString::fromUtf8("mActionRegularPolygonCenterCorner"));
-        mActionRegularPolygonCenterCorner->setCheckable(true);
-        QIcon icon165;
-        icon165.addFile(QString::fromUtf8(":/images/themes/default/mActionRegularPolygonCenterCorner.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionRegularPolygonCenterCorner->setIcon(icon165);
-        mActionNew3DMapCanvas = new QAction(MainWindow);
-        mActionNew3DMapCanvas->setObjectName(QString::fromUtf8("mActionNew3DMapCanvas"));
-        QIcon icon166;
-        icon166.addFile(QString::fromUtf8(":/images/themes/default/mActionNew3DMap.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionNew3DMapCanvas->setIcon(icon166);
+        QIcon icon148;
+        icon148.addFile(QString::fromUtf8(":/images/themes/default/mActionDataSourceManager.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionDataSourceManager->setIcon(icon148);
         mActionShowLayoutManager = new QAction(MainWindow);
         mActionShowLayoutManager->setObjectName(QString::fromUtf8("mActionShowLayoutManager"));
-        QIcon icon167;
-        icon167.addFile(QString::fromUtf8(":/images/themes/default/mActionLayoutManager.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionShowLayoutManager->setIcon(icon167);
+        QIcon icon149;
+        icon149.addFile(QString::fromUtf8(":/images/themes/default/mActionLayoutManager.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionShowLayoutManager->setIcon(icon149);
         mActionNewPrintLayout = new QAction(MainWindow);
         mActionNewPrintLayout->setObjectName(QString::fromUtf8("mActionNewPrintLayout"));
-        QIcon icon168;
-        icon168.addFile(QString::fromUtf8(":/images/themes/default/mActionNewLayout.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionNewPrintLayout->setIcon(icon168);
+        QIcon icon150;
+        icon150.addFile(QString::fromUtf8(":/images/themes/default/mActionNewLayout.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionNewPrintLayout->setIcon(icon150);
         mActionNewReport = new QAction(MainWindow);
         mActionNewReport->setObjectName(QString::fromUtf8("mActionNewReport"));
-        QIcon icon169;
-        icon169.addFile(QString::fromUtf8(":/images/themes/default/mActionNewReport.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionNewReport->setIcon(icon169);
+        QIcon icon151;
+        icon151.addFile(QString::fromUtf8(":/images/themes/default/mActionNewReport.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionNewReport->setIcon(icon151);
         mActionCloseProject = new QAction(MainWindow);
         mActionCloseProject->setObjectName(QString::fromUtf8("mActionCloseProject"));
         mActionRevertProject = new QAction(MainWindow);
@@ -1345,106 +1226,137 @@ public:
         mActionVertexToolActiveLayer->setObjectName(QString::fromUtf8("mActionVertexToolActiveLayer"));
         mActionVertexToolActiveLayer->setCheckable(true);
         mActionVertexToolActiveLayer->setIcon(icon25);
-        mActionRectangle3PointsProjected = new QAction(MainWindow);
-        mActionRectangle3PointsProjected->setObjectName(QString::fromUtf8("mActionRectangle3PointsProjected"));
-        mActionRectangle3PointsProjected->setCheckable(true);
-        QIcon icon170;
-        icon170.addFile(QString::fromUtf8(":/images/themes/default/mActionRectangle3PointsProjected.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionRectangle3PointsProjected->setIcon(icon170);
         mActionShowMeshCalculator = new QAction(MainWindow);
         mActionShowMeshCalculator->setObjectName(QString::fromUtf8("mActionShowMeshCalculator"));
-        QIcon icon171;
-        icon171.addFile(QString::fromUtf8(":/images/themes/default/mActionShowMeshCalculator.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionShowMeshCalculator->setIcon(icon171);
+        QIcon icon152;
+        icon152.addFile(QString::fromUtf8(":/images/themes/default/mActionShowMeshCalculator.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionShowMeshCalculator->setIcon(icon152);
         mActionAddMeshLayer = new QAction(MainWindow);
         mActionAddMeshLayer->setObjectName(QString::fromUtf8("mActionAddMeshLayer"));
-        QIcon icon172;
-        icon172.addFile(QString::fromUtf8(":/images/themes/default/mActionAddMeshLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionAddMeshLayer->setIcon(icon172);
+        QIcon icon153;
+        icon153.addFile(QString::fromUtf8(":/images/themes/default/mActionAddMeshLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionAddMeshLayer->setIcon(icon153);
         mActionNewVirtualLayer = new QAction(MainWindow);
         mActionNewVirtualLayer->setObjectName(QString::fromUtf8("mActionNewVirtualLayer"));
-        QIcon icon173;
-        icon173.addFile(QString::fromUtf8(":/images/themes/default/mActionNewVirtualLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionNewVirtualLayer->setIcon(icon173);
+        QIcon icon154;
+        icon154.addFile(QString::fromUtf8(":/images/themes/default/mActionNewVirtualLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionNewVirtualLayer->setIcon(icon154);
         mActionShowUnplacedLabels = new QAction(MainWindow);
         mActionShowUnplacedLabels->setObjectName(QString::fromUtf8("mActionShowUnplacedLabels"));
         mActionShowUnplacedLabels->setCheckable(true);
-        QIcon icon174;
-        icon174.addFile(QString::fromUtf8(":/images/themes/default/mActionShowUnplacedLabel.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionShowUnplacedLabels->setIcon(icon174);
+        QIcon icon155;
+        icon155.addFile(QString::fromUtf8(":/images/themes/default/mActionShowUnplacedLabel.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionShowUnplacedLabels->setIcon(icon155);
         mActionReselect = new QAction(MainWindow);
         mActionReselect->setObjectName(QString::fromUtf8("mActionReselect"));
         mActionTemporalController = new QAction(MainWindow);
         mActionTemporalController->setObjectName(QString::fromUtf8("mActionTemporalController"));
-        QIcon icon175;
-        icon175.addFile(QString::fromUtf8(":/images/themes/default/propertyicons/temporal.svg"), QSize(), QIcon::Normal, QIcon::On);
-        mActionTemporalController->setIcon(icon175);
+        QIcon icon156;
+        icon156.addFile(QString::fromUtf8(":/images/themes/default/propertyicons/temporal.svg"), QSize(), QIcon::Normal, QIcon::On);
+        mActionTemporalController->setIcon(icon156);
         mActionAddXyzLayer = new QAction(MainWindow);
         mActionAddXyzLayer->setObjectName(QString::fromUtf8("mActionAddXyzLayer"));
-        QIcon icon176;
-        icon176.addFile(QString::fromUtf8(":/images/themes/default/mActionAddXyzLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionAddXyzLayer->setIcon(icon176);
+        QIcon icon157;
+        icon157.addFile(QString::fromUtf8(":/images/themes/default/mActionAddXyzLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionAddXyzLayer->setIcon(icon157);
         mActionAddVectorTileLayer = new QAction(MainWindow);
         mActionAddVectorTileLayer->setObjectName(QString::fromUtf8("mActionAddVectorTileLayer"));
-        QIcon icon177;
-        icon177.addFile(QString::fromUtf8(":/images/themes/default/mActionAddVectorTileLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionAddVectorTileLayer->setIcon(icon177);
+        QIcon icon158;
+        icon158.addFile(QString::fromUtf8(":/images/themes/default/mActionAddVectorTileLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionAddVectorTileLayer->setIcon(icon158);
         mActionShowGeoreferencer = new QAction(MainWindow);
         mActionShowGeoreferencer->setObjectName(QString::fromUtf8("mActionShowGeoreferencer"));
-        QIcon icon178;
-        icon178.addFile(QString::fromUtf8(":/images/themes/default/georeferencer/mGeorefRun.png"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionShowGeoreferencer->setIcon(icon178);
+        QIcon icon159;
+        icon159.addFile(QString::fromUtf8(":/images/themes/default/georeferencer/mGeorefRun.png"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionShowGeoreferencer->setIcon(icon159);
         mActionDecreaseGamma = new QAction(MainWindow);
         mActionDecreaseGamma->setObjectName(QString::fromUtf8("mActionDecreaseGamma"));
-        QIcon icon179;
-        icon179.addFile(QString::fromUtf8(":/images/themes/default/mActionDecreaseGamma.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionDecreaseGamma->setIcon(icon179);
+        QIcon icon160;
+        icon160.addFile(QString::fromUtf8(":/images/themes/default/mActionDecreaseGamma.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionDecreaseGamma->setIcon(icon160);
         mActionIncreaseGamma = new QAction(MainWindow);
         mActionIncreaseGamma->setObjectName(QString::fromUtf8("mActionIncreaseGamma"));
-        QIcon icon180;
-        icon180.addFile(QString::fromUtf8(":/images/themes/default/mActionIncreaseGamma.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionIncreaseGamma->setIcon(icon180);
+        QIcon icon161;
+        icon161.addFile(QString::fromUtf8(":/images/themes/default/mActionIncreaseGamma.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionIncreaseGamma->setIcon(icon161);
         mActionDigitizeWithCurve = new QAction(MainWindow);
         mActionDigitizeWithCurve->setObjectName(QString::fromUtf8("mActionDigitizeWithCurve"));
         mActionDigitizeWithCurve->setCheckable(true);
         mActionDigitizeWithCurve->setEnabled(false);
-        QIcon icon181;
-        icon181.addFile(QString::fromUtf8(":/images/themes/default/mActionDigitizeWithCurve.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionDigitizeWithCurve->setIcon(icon181);
+        QIcon icon162;
+        icon162.addFile(QString::fromUtf8(":/images/themes/default/mActionDigitizeWithCurve.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionDigitizeWithCurve->setIcon(icon162);
         mActionAddPointCloudLayer = new QAction(MainWindow);
         mActionAddPointCloudLayer->setObjectName(QString::fromUtf8("mActionAddPointCloudLayer"));
-        QIcon icon182;
-        icon182.addFile(QString::fromUtf8(":/images/themes/default/mActionAddPointCloudLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionAddPointCloudLayer->setIcon(icon182);
+        QIcon icon163;
+        icon163.addFile(QString::fromUtf8(":/images/themes/default/mActionAddPointCloudLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionAddPointCloudLayer->setIcon(icon163);
         mActionStreamDigitize = new QAction(MainWindow);
         mActionStreamDigitize->setObjectName(QString::fromUtf8("mActionStreamDigitize"));
         mActionStreamDigitize->setCheckable(true);
         mActionStreamDigitize->setEnabled(true);
-        QIcon icon183;
-        icon183.addFile(QString::fromUtf8(":/images/themes/default/mActionStreamingDigitize.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionStreamDigitize->setIcon(icon183);
+        QIcon icon164;
+        icon164.addFile(QString::fromUtf8(":/images/themes/default/mActionStreamingDigitize.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionStreamDigitize->setIcon(icon164);
         mActionMeasureBearing = new QAction(MainWindow);
         mActionMeasureBearing->setObjectName(QString::fromUtf8("mActionMeasureBearing"));
         mActionMeasureBearing->setCheckable(true);
-        QIcon icon184;
-        icon184.addFile(QString::fromUtf8(":/images/themes/default/mActionMeasureBearing.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionMeasureBearing->setIcon(icon184);
+        QIcon icon165;
+        icon165.addFile(QString::fromUtf8(":/images/themes/default/mActionMeasureBearing.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionMeasureBearing->setIcon(icon165);
         mActionNewMeshLayer = new QAction(MainWindow);
         mActionNewMeshLayer->setObjectName(QString::fromUtf8("mActionNewMeshLayer"));
-        QIcon icon185;
-        icon185.addFile(QString::fromUtf8(":/images/themes/default/mActionNewMeshLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionNewMeshLayer->setIcon(icon185);
+        QIcon icon166;
+        icon166.addFile(QString::fromUtf8(":/images/themes/default/mActionNewMeshLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionNewMeshLayer->setIcon(icon166);
         mActionNewGpxLayer = new QAction(MainWindow);
         mActionNewGpxLayer->setObjectName(QString::fromUtf8("mActionNewGpxLayer"));
-        QIcon icon186;
-        icon186.addFile(QString::fromUtf8(":/images/themes/default/mActionNewGpx.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionNewGpxLayer->setIcon(icon186);
+        QIcon icon167;
+        icon167.addFile(QString::fromUtf8(":/images/themes/default/mActionNewGpx.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionNewGpxLayer->setIcon(icon167);
+        mActionCreateAnnotationLayer = new QAction(MainWindow);
+        mActionCreateAnnotationLayer->setObjectName(QString::fromUtf8("mActionCreateAnnotationLayer"));
+        QIcon icon168;
+        icon168.addFile(QString::fromUtf8(":/images/themes/default/mActionCreateAnnotationLayer.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionCreateAnnotationLayer->setIcon(icon168);
+        mActionModifyAnnotation = new QAction(MainWindow);
+        mActionModifyAnnotation->setObjectName(QString::fromUtf8("mActionModifyAnnotation"));
+        mActionModifyAnnotation->setCheckable(true);
+        QIcon icon169;
+        icon169.addFile(QString::fromUtf8(":/images/themes/default/mActionSelect.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionModifyAnnotation->setIcon(icon169);
+        mMainAnnotationLayerProperties = new QAction(MainWindow);
+        mMainAnnotationLayerProperties->setObjectName(QString::fromUtf8("mMainAnnotationLayerProperties"));
+        mActionNew3DMapCanvas = new QAction(MainWindow);
+        mActionNew3DMapCanvas->setObjectName(QString::fromUtf8("mActionNew3DMapCanvas"));
+        QIcon icon170;
+        icon170.addFile(QString::fromUtf8(":/images/themes/default/mActionNew3DMap.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionNew3DMapCanvas->setIcon(icon170);
+        mActionManage3DMapViews = new QAction(MainWindow);
+        mActionManage3DMapViews->setObjectName(QString::fromUtf8("mActionManage3DMapViews"));
+        mActionDigitizeWithSegment = new QAction(MainWindow);
+        mActionDigitizeWithSegment->setObjectName(QString::fromUtf8("mActionDigitizeWithSegment"));
+        mActionDigitizeWithSegment->setCheckable(true);
+        QIcon icon171;
+        icon171.addFile(QString::fromUtf8(":/images/themes/default/mActionDigitizeWithSegment.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionDigitizeWithSegment->setIcon(icon171);
+        mActionDigitizeShape = new QAction(MainWindow);
+        mActionDigitizeShape->setObjectName(QString::fromUtf8("mActionDigitizeShape"));
+        mActionDigitizeShape->setCheckable(true);
+        QIcon icon172;
+        icon172.addFile(QString::fromUtf8(":/images/themes/default/mActionDigitizeShape.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionDigitizeShape->setIcon(icon172);
+        mActionElevationProfile = new QAction(MainWindow);
+        mActionElevationProfile->setObjectName(QString::fromUtf8("mActionElevationProfile"));
+        QIcon icon173;
+        icon173.addFile(QString::fromUtf8(":/images/themes/default/mLayoutItem3DMap.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionElevationProfile->setIcon(icon173);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar();
+        menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1064, 24));
+        menubar->setGeometry(QRect(0, 0, 1277, 22));
         mProjectMenu = new QMenu(menubar);
         mProjectMenu->setObjectName(QString::fromUtf8("mProjectMenu"));
         mRecentProjectsMenu = new QMenu(mProjectMenu);
@@ -1457,8 +1369,12 @@ public:
         mProjectToStorageMenu->setObjectName(QString::fromUtf8("mProjectToStorageMenu"));
         mProjectFromStorageMenu = new QMenu(mProjectMenu);
         mProjectFromStorageMenu->setObjectName(QString::fromUtf8("mProjectFromStorageMenu"));
+        menuImport_Export = new QMenu(mProjectMenu);
+        menuImport_Export->setObjectName(QString::fromUtf8("menuImport_Export"));
         mViewMenu = new QMenu(menubar);
         mViewMenu->setObjectName(QString::fromUtf8("mViewMenu"));
+        m3DMapViewsMenu = new QMenu(mViewMenu);
+        m3DMapViewsMenu->setObjectName(QString::fromUtf8("m3DMapViewsMenu"));
         mMenuMeasure = new QMenu(mViewMenu);
         mMenuMeasure->setObjectName(QString::fromUtf8("mMenuMeasure"));
         mMenuDecorations = new QMenu(mViewMenu);
@@ -1493,14 +1409,6 @@ public:
         mMenuSelect->setObjectName(QString::fromUtf8("mMenuSelect"));
         mMenuPasteAs = new QMenu(mEditMenu);
         mMenuPasteAs->setObjectName(QString::fromUtf8("mMenuPasteAs"));
-        mMenuCircle = new QMenu(mEditMenu);
-        mMenuCircle->setObjectName(QString::fromUtf8("mMenuCircle"));
-        mMenuEllipse = new QMenu(mEditMenu);
-        mMenuEllipse->setObjectName(QString::fromUtf8("mMenuEllipse"));
-        mMenuRectangle = new QMenu(mEditMenu);
-        mMenuRectangle->setObjectName(QString::fromUtf8("mMenuRectangle"));
-        mMenuRegularPolygon = new QMenu(mEditMenu);
-        mMenuRegularPolygon->setObjectName(QString::fromUtf8("mMenuRegularPolygon"));
         mMenuAnnotation = new QMenu(mEditMenu);
         mMenuAnnotation->setObjectName(QString::fromUtf8("mMenuAnnotation"));
         mMenuEditAttributes = new QMenu(mEditMenu);
@@ -1569,6 +1477,9 @@ public:
         mMeshToolBar = new QToolBar(MainWindow);
         mMeshToolBar->setObjectName(QString::fromUtf8("mMeshToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mMeshToolBar);
+        mAnnotationsToolBar = new QToolBar(MainWindow);
+        mAnnotationsToolBar->setObjectName(QString::fromUtf8("mAnnotationsToolBar"));
+        MainWindow->addToolBar(Qt::TopToolBarArea, mAnnotationsToolBar);
 
         menubar->addAction(mProjectMenu->menuAction());
         menubar->addAction(mEditMenu->menuAction());
@@ -1596,6 +1507,7 @@ public:
         mProjectMenu->addSeparator();
         mProjectMenu->addAction(mActionProjectProperties);
         mProjectMenu->addAction(mActionSnappingOptions);
+        mProjectMenu->addAction(menuImport_Export->menuAction());
         mProjectMenu->addSeparator();
         mProjectMenu->addAction(mActionNewPrintLayout);
         mProjectMenu->addAction(mActionNewReport);
@@ -1603,8 +1515,13 @@ public:
         mProjectMenu->addAction(mLayoutsMenu->menuAction());
         mProjectMenu->addSeparator();
         mProjectMenu->addAction(mActionExit);
+        menuImport_Export->addAction(mActionSaveMapAsImage);
+        menuImport_Export->addAction(mActionSaveMapAsPdf);
+        menuImport_Export->addAction(mActionDxfExport);
+        menuImport_Export->addSeparator();
+        menuImport_Export->addAction(mActionDwgImport);
         mViewMenu->addAction(mActionNewMapCanvas);
-        mViewMenu->addAction(mActionNew3DMapCanvas);
+        mViewMenu->addAction(m3DMapViewsMenu->menuAction());
         mViewMenu->addAction(mActionPan);
         mViewMenu->addAction(mActionPanToSelected);
         mViewMenu->addAction(mActionZoomIn);
@@ -1613,6 +1530,7 @@ public:
         mViewMenu->addAction(mActionIdentify);
         mViewMenu->addAction(mMenuMeasure->menuAction());
         mViewMenu->addAction(mActionStatisticalSummary);
+        mViewMenu->addAction(mActionElevationProfile);
         mViewMenu->addSeparator();
         mViewMenu->addAction(mActionZoomFullExtent);
         mViewMenu->addAction(mActionZoomToSelected);
@@ -1630,6 +1548,8 @@ public:
         mViewMenu->addAction(mActionDraw);
         mViewMenu->addSeparator();
         mViewMenu->addAction(mMenuLayerVisibility->menuAction());
+        m3DMapViewsMenu->addAction(mActionNew3DMapCanvas);
+        m3DMapViewsMenu->addAction(mActionManage3DMapViews);
         mMenuMeasure->addAction(mActionMeasure);
         mMenuMeasure->addAction(mActionMeasureArea);
         mMenuMeasure->addAction(mActionMeasureBearing);
@@ -1659,6 +1579,7 @@ public:
         mLayerMenu->addAction(mAddLayerMenu->menuAction());
         mLayerMenu->addAction(mActionEmbedLayers);
         mLayerMenu->addAction(mActionAddLayerDefinition);
+        mLayerMenu->addAction(mActionShowGeoreferencer);
         mLayerMenu->addSeparator();
         mLayerMenu->addAction(mActionCopyStyle);
         mLayerMenu->addAction(mActionPasteStyle);
@@ -1692,7 +1613,6 @@ public:
         mNewLayerMenu->addAction(mActionNewMemoryLayer);
         mNewLayerMenu->addAction(mActionNewMeshLayer);
         mNewLayerMenu->addAction(mActionNewGpxLayer);
-        mNewLayerMenu->addSeparator();
         mNewLayerMenu->addAction(mActionNewVirtualLayer);
         mAddLayerMenu->addAction(mActionAddOgrLayer);
         mAddLayerMenu->addAction(mActionAddRasterLayer);
@@ -1740,7 +1660,6 @@ public:
         mSettingsMenu->addAction(mActionOptions);
         mRasterMenu->addAction(mActionShowRasterCalculator);
         mRasterMenu->addAction(mActionShowAlignRasterTool);
-        mRasterMenu->addAction(mActionShowGeoreferencer);
         mEditMenu->addAction(mActionUndo);
         mEditMenu->addAction(mActionRedo);
         mEditMenu->addSeparator();
@@ -1752,12 +1671,6 @@ public:
         mEditMenu->addAction(mMenuSelect->menuAction());
         mEditMenu->addSeparator();
         mEditMenu->addAction(mActionAddFeature);
-        mEditMenu->addAction(mActionCircularStringCurvePoint);
-        mEditMenu->addAction(mActionCircularStringRadius);
-        mEditMenu->addAction(mMenuCircle->menuAction());
-        mEditMenu->addAction(mMenuRectangle->menuAction());
-        mEditMenu->addAction(mMenuRegularPolygon->menuAction());
-        mEditMenu->addAction(mMenuEllipse->menuAction());
         mEditMenu->addAction(mMenuAnnotation->menuAction());
         mEditMenu->addSeparator();
         mEditMenu->addAction(mMenuEditAttributes->menuAction());
@@ -1777,22 +1690,6 @@ public:
         mMenuSelect->addAction(mActionInvertSelection);
         mMenuPasteAs->addAction(mActionPasteAsNewVector);
         mMenuPasteAs->addAction(mActionPasteAsNewMemoryVector);
-        mMenuCircle->addAction(mActionCircle2Points);
-        mMenuCircle->addAction(mActionCircle3Points);
-        mMenuCircle->addAction(mActionCircle3Tangents);
-        mMenuCircle->addAction(mActionCircle2TangentsPoint);
-        mMenuCircle->addAction(mActionCircleCenterPoint);
-        mMenuEllipse->addAction(mActionEllipseCenter2Points);
-        mMenuEllipse->addAction(mActionEllipseCenterPoint);
-        mMenuEllipse->addAction(mActionEllipseExtent);
-        mMenuEllipse->addAction(mActionEllipseFoci);
-        mMenuRectangle->addAction(mActionRectangleExtent);
-        mMenuRectangle->addAction(mActionRectangleCenterPoint);
-        mMenuRectangle->addAction(mActionRectangle3PointsDistance);
-        mMenuRectangle->addAction(mActionRectangle3PointsProjected);
-        mMenuRegularPolygon->addAction(mActionRegularPolygonCenterPoint);
-        mMenuRegularPolygon->addAction(mActionRegularPolygonCenterCorner);
-        mMenuRegularPolygon->addAction(mActionRegularPolygon2Points);
         mMenuAnnotation->addAction(mActionTextAnnotation);
         mMenuAnnotation->addAction(mActionFormAnnotation);
         mMenuAnnotation->addAction(mActionHtmlAnnotation);
@@ -1909,9 +1806,8 @@ public:
         mDataSourceManagerToolBar->addAction(mActionNewSpatiaLiteLayer);
         mDataSourceManagerToolBar->addAction(mActionNewMemoryLayer);
         mDataSourceManagerToolBar->addAction(mActionNewMeshLayer);
-        mDataSourceManagerToolBar->addSeparator();
         mDataSourceManagerToolBar->addAction(mActionNewVirtualLayer);
-        mDataSourceManagerToolBar->addSeparator();
+        mAnnotationsToolBar->addAction(mActionModifyAnnotation);
 
         retranslateUi(MainWindow);
 
@@ -2321,7 +2217,7 @@ public:
         mActionDecorationGrid->setToolTip(QCoreApplication::translate("MainWindow", "Grid", nullptr));
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(whatsthis)
-        mActionDecorationGrid->setWhatsThis(QCoreApplication::translate("MainWindow", "Creates a scale bar that is displayed on the map canvas", nullptr));
+        mActionDecorationGrid->setWhatsThis(QCoreApplication::translate("MainWindow", "Creates a grid that is displayed on the map canvas", nullptr));
 #endif // QT_CONFIG(whatsthis)
         mActionPinLabels->setText(QCoreApplication::translate("MainWindow", "Pin/Unpin Labels and Diagrams", nullptr));
 #if QT_CONFIG(tooltip)
@@ -2505,14 +2401,6 @@ public:
         mActionStatisticalSummary->setToolTip(QCoreApplication::translate("MainWindow", "Show Statistical Summary", nullptr));
 #endif // QT_CONFIG(tooltip)
         mActionShowAlignRasterTool->setText(QCoreApplication::translate("MainWindow", "Align Rasters\342\200\246", nullptr));
-        mActionCircularStringCurvePoint->setText(QCoreApplication::translate("MainWindow", "Add Circular String", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionCircularStringCurvePoint->setToolTip(QCoreApplication::translate("MainWindow", "Add Circular String", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionCircularStringRadius->setText(QCoreApplication::translate("MainWindow", "Add Circular String by Radius", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionCircularStringRadius->setToolTip(QCoreApplication::translate("MainWindow", "Add Circular String by Radius", nullptr));
-#endif // QT_CONFIG(tooltip)
         mActionReportaBug->setText(QCoreApplication::translate("MainWindow", "Report an Issue", nullptr));
         mActionDiagramProperties->setText(QCoreApplication::translate("MainWindow", "Diagram Options", nullptr));
 #if QT_CONFIG(tooltip)
@@ -2552,73 +2440,6 @@ public:
 #if QT_CONFIG(shortcut)
         mActionDataSourceManager->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+L", nullptr));
 #endif // QT_CONFIG(shortcut)
-        mActionCircle2Points->setText(QCoreApplication::translate("MainWindow", "Add Circle from &2 Points", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionCircle2Points->setToolTip(QCoreApplication::translate("MainWindow", "Add Circle from 2 Points", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionCircle3Points->setText(QCoreApplication::translate("MainWindow", "Add Circle from &3 Points", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionCircle3Points->setToolTip(QCoreApplication::translate("MainWindow", "Add Circle from 3 Points", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionCircleCenterPoint->setText(QCoreApplication::translate("MainWindow", "&Add Circle by a Center Point and Another Point", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionCircleCenterPoint->setToolTip(QCoreApplication::translate("MainWindow", "Add Circle by a Center Point and Another Point", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionEllipseCenter2Points->setText(QCoreApplication::translate("MainWindow", "&Add Ellipse from Center and 2 Points", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionEllipseCenter2Points->setToolTip(QCoreApplication::translate("MainWindow", "Add Ellipse from Center and 2 Points", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionEllipseCenterPoint->setText(QCoreApplication::translate("MainWindow", "Add Ellipse from &Center and a Point", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionEllipseCenterPoint->setToolTip(QCoreApplication::translate("MainWindow", "Add Ellipse from center and a point", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionEllipseExtent->setText(QCoreApplication::translate("MainWindow", "Add Ellipse from &Extent", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionEllipseExtent->setToolTip(QCoreApplication::translate("MainWindow", "Add Ellipse from Extent", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionEllipseFoci->setText(QCoreApplication::translate("MainWindow", "Add Ellipse from &Foci", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionEllipseFoci->setToolTip(QCoreApplication::translate("MainWindow", "Add Ellipse from Foci", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionRectangleExtent->setText(QCoreApplication::translate("MainWindow", "&Add Rectangle from Extent", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionRectangleExtent->setToolTip(QCoreApplication::translate("MainWindow", "Add Rectangle from Extent", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionRectangleCenterPoint->setText(QCoreApplication::translate("MainWindow", "Add &Rectangle from Center and a Point", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionRectangleCenterPoint->setToolTip(QCoreApplication::translate("MainWindow", "Add Rectangle from Center and a Point", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionRegularPolygonCenterPoint->setText(QCoreApplication::translate("MainWindow", "&Add Regular Polygon from Center and a Point", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionRegularPolygonCenterPoint->setToolTip(QCoreApplication::translate("MainWindow", "Add Regular Polygon from Center and a Point", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionRegularPolygon2Points->setText(QCoreApplication::translate("MainWindow", "Add &Regular Polygon from 2 Points", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionRegularPolygon2Points->setToolTip(QCoreApplication::translate("MainWindow", "Add Regular Polygon from 2 Points", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionCircle3Tangents->setText(QCoreApplication::translate("MainWindow", "Add &Circle from 3 Tangents", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionCircle3Tangents->setToolTip(QCoreApplication::translate("MainWindow", "Add Circle from 3 Tangents", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionRectangle3PointsDistance->setText(QCoreApplication::translate("MainWindow", "Add Rectangle &from 3 Points (Distance from 2nd and 3rd point)", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionRectangle3PointsDistance->setToolTip(QCoreApplication::translate("MainWindow", "Add Rectangle from 3 Points (Distance from 2nd and 3rd Point)", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionCircle2TangentsPoint->setText(QCoreApplication::translate("MainWindow", "Add Circle &from 2 Tangents and a Point", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionCircle2TangentsPoint->setToolTip(QCoreApplication::translate("MainWindow", "Add Circle from 2 Tangents and a Point", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionRegularPolygonCenterCorner->setText(QCoreApplication::translate("MainWindow", "Add Regular &Polygon from Center and a Corner", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionRegularPolygonCenterCorner->setToolTip(QCoreApplication::translate("MainWindow", "Add Regular Polygon from Center and a Corner", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionNew3DMapCanvas->setText(QCoreApplication::translate("MainWindow", "New &3D Map View", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionNew3DMapCanvas->setToolTip(QCoreApplication::translate("MainWindow", "New 3D Map View", nullptr));
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(shortcut)
-        mActionNew3DMapCanvas->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Alt+M", nullptr));
-#endif // QT_CONFIG(shortcut)
         mActionShowLayoutManager->setText(QCoreApplication::translate("MainWindow", "Layout Manager\342\200\246", nullptr));
 #if QT_CONFIG(tooltip)
         mActionShowLayoutManager->setToolTip(QCoreApplication::translate("MainWindow", "Show Layout Manager", nullptr));
@@ -2657,10 +2478,6 @@ public:
 "Shift+click/drag to add vertices to selection.\n"
 "Ctrl+click/drag to remove vertices from selection.\n"
 "Shift+R to enable range selection.", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionRectangle3PointsProjected->setText(QCoreApplication::translate("MainWindow", "Add Rectangle &from 3 Points (Distance from projected point on segment p1 and p2)", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionRectangle3PointsProjected->setToolTip(QCoreApplication::translate("MainWindow", "Add Rectangle from 3 Points (Distance from Projected Point on Segment p1 and p2)", nullptr));
 #endif // QT_CONFIG(tooltip)
         mActionShowMeshCalculator->setText(QCoreApplication::translate("MainWindow", "Mesh Calculator\342\200\246", nullptr));
         mActionAddMeshLayer->setText(QCoreApplication::translate("MainWindow", "Add Mesh Layer...", nullptr));
@@ -2722,6 +2539,26 @@ public:
 #if QT_CONFIG(tooltip)
         mActionNewGpxLayer->setToolTip(QCoreApplication::translate("MainWindow", "New GPX Layer", nullptr));
 #endif // QT_CONFIG(tooltip)
+        mActionCreateAnnotationLayer->setText(QCoreApplication::translate("MainWindow", "New Annotation Layer", nullptr));
+        mActionModifyAnnotation->setText(QCoreApplication::translate("MainWindow", "Modify Annotations", nullptr));
+#if QT_CONFIG(tooltip)
+        mActionModifyAnnotation->setToolTip(QCoreApplication::translate("MainWindow", "Modify Annotations", nullptr));
+#endif // QT_CONFIG(tooltip)
+        mMainAnnotationLayerProperties->setText(QCoreApplication::translate("MainWindow", "Main Annotation Layer Properties\342\200\246", nullptr));
+        mActionNew3DMapCanvas->setText(QCoreApplication::translate("MainWindow", "New &3D Map View", nullptr));
+#if QT_CONFIG(tooltip)
+        mActionNew3DMapCanvas->setToolTip(QCoreApplication::translate("MainWindow", "New 3D Map View", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(shortcut)
+        mActionNew3DMapCanvas->setShortcut(QCoreApplication::translate("MainWindow", "Ctrl+Alt+M", nullptr));
+#endif // QT_CONFIG(shortcut)
+        mActionManage3DMapViews->setText(QCoreApplication::translate("MainWindow", "Manage 3D Map Views", nullptr));
+        mActionDigitizeWithSegment->setText(QCoreApplication::translate("MainWindow", "Digitize with Segment", nullptr));
+        mActionDigitizeShape->setText(QCoreApplication::translate("MainWindow", "Digitize Shape", nullptr));
+        mActionElevationProfile->setText(QCoreApplication::translate("MainWindow", "Elevation Profile", nullptr));
+#if QT_CONFIG(tooltip)
+        mActionElevationProfile->setToolTip(QCoreApplication::translate("MainWindow", "Open an interactive elevation profile chart", nullptr));
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         menubar->setToolTip(QCoreApplication::translate("MainWindow", "Menu Toolbar", nullptr));
 #endif // QT_CONFIG(tooltip)
@@ -2731,7 +2568,9 @@ public:
         mProjectFromTemplateMenu->setTitle(QCoreApplication::translate("MainWindow", "New from Template", nullptr));
         mProjectToStorageMenu->setTitle(QCoreApplication::translate("MainWindow", "Save To", nullptr));
         mProjectFromStorageMenu->setTitle(QCoreApplication::translate("MainWindow", "Open From", nullptr));
+        menuImport_Export->setTitle(QCoreApplication::translate("MainWindow", "Import/Export", nullptr));
         mViewMenu->setTitle(QCoreApplication::translate("MainWindow", "&View", nullptr));
+        m3DMapViewsMenu->setTitle(QCoreApplication::translate("MainWindow", "&3D Map Views", nullptr));
         mMenuMeasure->setTitle(QCoreApplication::translate("MainWindow", "Measure", nullptr));
         mMenuDecorations->setTitle(QCoreApplication::translate("MainWindow", "&Decorations", nullptr));
         mMenuPreviewMode->setTitle(QCoreApplication::translate("MainWindow", "Preview Mode", nullptr));
@@ -2749,10 +2588,6 @@ public:
         mEditMenu->setTitle(QCoreApplication::translate("MainWindow", "&Edit", nullptr));
         mMenuSelect->setTitle(QCoreApplication::translate("MainWindow", "Select", nullptr));
         mMenuPasteAs->setTitle(QCoreApplication::translate("MainWindow", "Paste Features As", nullptr));
-        mMenuCircle->setTitle(QCoreApplication::translate("MainWindow", "Add Circle", nullptr));
-        mMenuEllipse->setTitle(QCoreApplication::translate("MainWindow", "Add Ellipse", nullptr));
-        mMenuRectangle->setTitle(QCoreApplication::translate("MainWindow", "Add Rectangle", nullptr));
-        mMenuRegularPolygon->setTitle(QCoreApplication::translate("MainWindow", "Add Regular Polygon", nullptr));
         mMenuAnnotation->setTitle(QCoreApplication::translate("MainWindow", "Add Annotation", nullptr));
         mMenuEditAttributes->setTitle(QCoreApplication::translate("MainWindow", "Edit Attributes", nullptr));
         mMenuEditGeometry->setTitle(QCoreApplication::translate("MainWindow", "Edit Geometry", nullptr));
@@ -2829,13 +2664,20 @@ public:
         mSelectionToolBar->setToolTip(QCoreApplication::translate("MainWindow", "Selection Toolbar", nullptr));
 #endif // QT_CONFIG(tooltip)
         mMeshToolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "Mesh Digitizing Toolbar", nullptr));
+#if QT_CONFIG(tooltip)
+        mMeshToolBar->setToolTip(QCoreApplication::translate("MainWindow", "Mesh Digitizing Toolbar", nullptr));
+#endif // QT_CONFIG(tooltip)
+        mAnnotationsToolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "Annotations Toolbar", nullptr));
+#if QT_CONFIG(tooltip)
+        mAnnotationsToolBar->setToolTip(QCoreApplication::translate("MainWindow", "Annotations Toolbar", nullptr));
+#endif // QT_CONFIG(tooltip)
         (void)MainWindow;
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class MainWindowQGIS: public Ui_MainWindowQGIS {};
+    class MainWindow: public Ui_MainWindow {};
 } // namespace Ui
 
 QT_END_NAMESPACE

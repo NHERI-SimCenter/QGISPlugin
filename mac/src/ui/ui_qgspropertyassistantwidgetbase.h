@@ -70,7 +70,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(mOutputWidget->sizePolicy().hasHeightForWidth());
         mOutputWidget->setSizePolicy(sizePolicy);
-        mOutputWidget->setMinimumSize(QSize(0, 20));
+        mOutputWidget->setMinimumSize(QSize(0, 0));
         gridLayout = new QGridLayout(mOutputWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);

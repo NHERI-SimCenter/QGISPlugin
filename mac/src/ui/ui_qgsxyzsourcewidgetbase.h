@@ -15,6 +15,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QVBoxLayout>
@@ -29,24 +30,26 @@ class Ui_QgsXyzSourceWidgetBase
 public:
     QGridLayout *gridLayout;
     QCheckBox *mCheckBoxZMax;
-    QLabel *lblReferer;
-    QLineEdit *mEditReferer;
-    QLabel *label_3;
-    QLineEdit *mEditUrl;
     QgsSpinBox *mSpinZMax;
     QgsSpinBox *mSpinZMin;
     QComboBox *mComboTileResolution;
+    QCheckBox *mCheckBoxZMin;
+    QLabel *lblReferer;
+    QLineEdit *mEditUrl;
+    QLabel *label_2;
+    QLabel *label_3;
     QGroupBox *mAuthGroupBox;
     QVBoxLayout *verticalLayout_3;
     QgsAuthSettingsWidget *mAuthSettings;
-    QCheckBox *mCheckBoxZMin;
-    QLabel *label_2;
+    QLineEdit *mEditReferer;
+    QHBoxLayout *mInterpretationLayout;
+    QLabel *label;
 
     void setupUi(QgsProviderSourceWidget *QgsXyzSourceWidgetBase)
     {
         if (QgsXyzSourceWidgetBase->objectName().isEmpty())
             QgsXyzSourceWidgetBase->setObjectName(QString::fromUtf8("QgsXyzSourceWidgetBase"));
-        QgsXyzSourceWidgetBase->resize(362, 217);
+        QgsXyzSourceWidgetBase->resize(360, 237);
         gridLayout = new QGridLayout(QgsXyzSourceWidgetBase);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -55,26 +58,6 @@ public:
         mCheckBoxZMax->setChecked(true);
 
         gridLayout->addWidget(mCheckBoxZMax, 3, 0, 1, 1);
-
-        lblReferer = new QLabel(QgsXyzSourceWidgetBase);
-        lblReferer->setObjectName(QString::fromUtf8("lblReferer"));
-
-        gridLayout->addWidget(lblReferer, 4, 0, 1, 1);
-
-        mEditReferer = new QLineEdit(QgsXyzSourceWidgetBase);
-        mEditReferer->setObjectName(QString::fromUtf8("mEditReferer"));
-
-        gridLayout->addWidget(mEditReferer, 4, 1, 1, 1);
-
-        label_3 = new QLabel(QgsXyzSourceWidgetBase);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        gridLayout->addWidget(label_3, 5, 0, 1, 1);
-
-        mEditUrl = new QLineEdit(QgsXyzSourceWidgetBase);
-        mEditUrl->setObjectName(QString::fromUtf8("mEditUrl"));
-
-        gridLayout->addWidget(mEditUrl, 0, 1, 1, 1);
 
         mSpinZMax = new QgsSpinBox(QgsXyzSourceWidgetBase);
         mSpinZMax->setObjectName(QString::fromUtf8("mSpinZMax"));
@@ -102,6 +85,32 @@ public:
 
         gridLayout->addWidget(mComboTileResolution, 5, 1, 1, 1);
 
+        mCheckBoxZMin = new QCheckBox(QgsXyzSourceWidgetBase);
+        mCheckBoxZMin->setObjectName(QString::fromUtf8("mCheckBoxZMin"));
+        mCheckBoxZMin->setChecked(true);
+
+        gridLayout->addWidget(mCheckBoxZMin, 2, 0, 1, 1);
+
+        lblReferer = new QLabel(QgsXyzSourceWidgetBase);
+        lblReferer->setObjectName(QString::fromUtf8("lblReferer"));
+
+        gridLayout->addWidget(lblReferer, 4, 0, 1, 1);
+
+        mEditUrl = new QLineEdit(QgsXyzSourceWidgetBase);
+        mEditUrl->setObjectName(QString::fromUtf8("mEditUrl"));
+
+        gridLayout->addWidget(mEditUrl, 0, 1, 1, 1);
+
+        label_2 = new QLabel(QgsXyzSourceWidgetBase);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        gridLayout->addWidget(label_2, 0, 0, 1, 1);
+
+        label_3 = new QLabel(QgsXyzSourceWidgetBase);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+
+        gridLayout->addWidget(label_3, 5, 0, 1, 1);
+
         mAuthGroupBox = new QGroupBox(QgsXyzSourceWidgetBase);
         mAuthGroupBox->setObjectName(QString::fromUtf8("mAuthGroupBox"));
         verticalLayout_3 = new QVBoxLayout(mAuthGroupBox);
@@ -115,16 +124,21 @@ public:
 
         gridLayout->addWidget(mAuthGroupBox, 1, 0, 1, 2);
 
-        mCheckBoxZMin = new QCheckBox(QgsXyzSourceWidgetBase);
-        mCheckBoxZMin->setObjectName(QString::fromUtf8("mCheckBoxZMin"));
-        mCheckBoxZMin->setChecked(true);
+        mEditReferer = new QLineEdit(QgsXyzSourceWidgetBase);
+        mEditReferer->setObjectName(QString::fromUtf8("mEditReferer"));
 
-        gridLayout->addWidget(mCheckBoxZMin, 2, 0, 1, 1);
+        gridLayout->addWidget(mEditReferer, 4, 1, 1, 1);
 
-        label_2 = new QLabel(QgsXyzSourceWidgetBase);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        mInterpretationLayout = new QHBoxLayout();
+        mInterpretationLayout->setSpacing(0);
+        mInterpretationLayout->setObjectName(QString::fromUtf8("mInterpretationLayout"));
 
-        gridLayout->addWidget(label_2, 0, 0, 1, 1);
+        gridLayout->addLayout(mInterpretationLayout, 6, 1, 1, 1);
+
+        label = new QLabel(QgsXyzSourceWidgetBase);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        gridLayout->addWidget(label, 6, 0, 1, 1);
 
 #if QT_CONFIG(shortcut)
         lblReferer->setBuddy(mEditReferer);
@@ -145,22 +159,23 @@ public:
     {
         QgsXyzSourceWidgetBase->setWindowTitle(QCoreApplication::translate("QgsXyzSourceWidgetBase", "XYZ Connection", nullptr));
         mCheckBoxZMax->setText(QCoreApplication::translate("QgsXyzSourceWidgetBase", "Max. Zoom Level", nullptr));
-        lblReferer->setText(QCoreApplication::translate("QgsXyzSourceWidgetBase", "Referer", nullptr));
-#if QT_CONFIG(tooltip)
-        mEditReferer->setToolTip(QCoreApplication::translate("QgsXyzSourceWidgetBase", "Optional custom referer", nullptr));
-#endif // QT_CONFIG(tooltip)
-        label_3->setText(QCoreApplication::translate("QgsXyzSourceWidgetBase", "Tile Resolution", nullptr));
-#if QT_CONFIG(tooltip)
-        mEditUrl->setToolTip(QCoreApplication::translate("QgsXyzSourceWidgetBase", "URL of the connection, {x}, {y}, and {z} will be replaced with actual values. Use {-y} for inverted y axis.", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mEditUrl->setPlaceholderText(QCoreApplication::translate("QgsXyzSourceWidgetBase", "http://example.com/{z}/{x}/{y}.png", nullptr));
         mComboTileResolution->setItemText(0, QCoreApplication::translate("QgsXyzSourceWidgetBase", "Unknown (not scaled)", nullptr));
         mComboTileResolution->setItemText(1, QCoreApplication::translate("QgsXyzSourceWidgetBase", "Standard (256x256 / 96 DPI)", nullptr));
         mComboTileResolution->setItemText(2, QCoreApplication::translate("QgsXyzSourceWidgetBase", "High (512x512 / 192 DPI)", nullptr));
 
-        mAuthGroupBox->setTitle(QCoreApplication::translate("QgsXyzSourceWidgetBase", "Authentication", nullptr));
         mCheckBoxZMin->setText(QCoreApplication::translate("QgsXyzSourceWidgetBase", "Min. Zoom Level", nullptr));
+        lblReferer->setText(QCoreApplication::translate("QgsXyzSourceWidgetBase", "Referer", nullptr));
+#if QT_CONFIG(tooltip)
+        mEditUrl->setToolTip(QCoreApplication::translate("QgsXyzSourceWidgetBase", "URL of the connection, {x}, {y}, and {z} will be replaced with actual values. Use {-y} for inverted y axis.", nullptr));
+#endif // QT_CONFIG(tooltip)
+        mEditUrl->setPlaceholderText(QCoreApplication::translate("QgsXyzSourceWidgetBase", "http://example.com/{z}/{x}/{y}.png", nullptr));
         label_2->setText(QCoreApplication::translate("QgsXyzSourceWidgetBase", "URL", nullptr));
+        label_3->setText(QCoreApplication::translate("QgsXyzSourceWidgetBase", "Tile Resolution", nullptr));
+        mAuthGroupBox->setTitle(QCoreApplication::translate("QgsXyzSourceWidgetBase", "Authentication", nullptr));
+#if QT_CONFIG(tooltip)
+        mEditReferer->setToolTip(QCoreApplication::translate("QgsXyzSourceWidgetBase", "Optional custom referer", nullptr));
+#endif // QT_CONFIG(tooltip)
+        label->setText(QCoreApplication::translate("QgsXyzSourceWidgetBase", "Interpretation", nullptr));
     } // retranslateUi
 
 };

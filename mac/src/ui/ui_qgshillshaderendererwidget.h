@@ -27,9 +27,6 @@ class Ui_QgsHillShadeWidget
 {
 public:
     QGridLayout *gridLayout;
-    QVBoxLayout *verticalLayout;
-    QDial *mLightAzimuthDial;
-    QgsDoubleSpinBox *mLightAzimuth;
     QLabel *label_2;
     QLabel *label;
     QLabel *label_3;
@@ -40,6 +37,9 @@ public:
     QgsDoubleSpinBox *mZFactor;
     QCheckBox *mMultiDirection;
     QLabel *label_5;
+    QVBoxLayout *verticalLayout;
+    QDial *mLightAzimuthDial;
+    QgsDoubleSpinBox *mLightAzimuth;
 
     void setupUi(QWidget *QgsHillShadeWidget)
     {
@@ -50,39 +50,6 @@ public:
         gridLayout = new QGridLayout(QgsHillShadeWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        mLightAzimuthDial = new QDial(QgsHillShadeWidget);
-        mLightAzimuthDial->setObjectName(QString::fromUtf8("mLightAzimuthDial"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(mLightAzimuthDial->sizePolicy().hasHeightForWidth());
-        mLightAzimuthDial->setSizePolicy(sizePolicy);
-        mLightAzimuthDial->setMaximum(360);
-        mLightAzimuthDial->setValue(0);
-        mLightAzimuthDial->setSliderPosition(0);
-        mLightAzimuthDial->setInvertedAppearance(false);
-        mLightAzimuthDial->setInvertedControls(false);
-        mLightAzimuthDial->setWrapping(true);
-        mLightAzimuthDial->setNotchTarget(10.000000000000000);
-        mLightAzimuthDial->setNotchesVisible(true);
-
-        verticalLayout->addWidget(mLightAzimuthDial);
-
-        mLightAzimuth = new QgsDoubleSpinBox(QgsHillShadeWidget);
-        mLightAzimuth->setObjectName(QString::fromUtf8("mLightAzimuth"));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(mLightAzimuth->sizePolicy().hasHeightForWidth());
-        mLightAzimuth->setSizePolicy(sizePolicy1);
-
-        verticalLayout->addWidget(mLightAzimuth);
-
-
-        gridLayout->addLayout(verticalLayout, 2, 1, 1, 2);
-
         label_2 = new QLabel(QgsHillShadeWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
 
@@ -100,8 +67,11 @@ public:
 
         mLightAngle = new QgsDoubleSpinBox(QgsHillShadeWidget);
         mLightAngle->setObjectName(QString::fromUtf8("mLightAngle"));
-        sizePolicy1.setHeightForWidth(mLightAngle->sizePolicy().hasHeightForWidth());
-        mLightAngle->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(mLightAngle->sizePolicy().hasHeightForWidth());
+        mLightAngle->setSizePolicy(sizePolicy);
         mLightAngle->setSingleStep(5.000000000000000);
         mLightAngle->setValue(45.000000000000000);
 
@@ -123,8 +93,8 @@ public:
 
         mZFactor = new QgsDoubleSpinBox(QgsHillShadeWidget);
         mZFactor->setObjectName(QString::fromUtf8("mZFactor"));
-        sizePolicy1.setHeightForWidth(mZFactor->sizePolicy().hasHeightForWidth());
-        mZFactor->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(mZFactor->sizePolicy().hasHeightForWidth());
+        mZFactor->setSizePolicy(sizePolicy);
         mZFactor->setDecimals(8);
         mZFactor->setValue(1.000000000000000);
 
@@ -140,6 +110,36 @@ public:
 
         gridLayout->addWidget(label_5, 4, 0, 1, 1);
 
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        mLightAzimuthDial = new QDial(QgsHillShadeWidget);
+        mLightAzimuthDial->setObjectName(QString::fromUtf8("mLightAzimuthDial"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(mLightAzimuthDial->sizePolicy().hasHeightForWidth());
+        mLightAzimuthDial->setSizePolicy(sizePolicy1);
+        mLightAzimuthDial->setMaximum(360);
+        mLightAzimuthDial->setValue(0);
+        mLightAzimuthDial->setSliderPosition(0);
+        mLightAzimuthDial->setInvertedAppearance(false);
+        mLightAzimuthDial->setInvertedControls(false);
+        mLightAzimuthDial->setWrapping(true);
+        mLightAzimuthDial->setNotchTarget(10.000000000000000);
+        mLightAzimuthDial->setNotchesVisible(true);
+
+        verticalLayout->addWidget(mLightAzimuthDial);
+
+        mLightAzimuth = new QgsDoubleSpinBox(QgsHillShadeWidget);
+        mLightAzimuth->setObjectName(QString::fromUtf8("mLightAzimuth"));
+        sizePolicy.setHeightForWidth(mLightAzimuth->sizePolicy().hasHeightForWidth());
+        mLightAzimuth->setSizePolicy(sizePolicy);
+
+        verticalLayout->addWidget(mLightAzimuth);
+
+
+        gridLayout->addLayout(verticalLayout, 2, 2, 1, 1);
+
         QWidget::setTabOrder(mBandsCombo, mLightAngle);
         QWidget::setTabOrder(mLightAngle, mLightAzimuthDial);
         QWidget::setTabOrder(mLightAzimuthDial, mLightAzimuth);
@@ -153,7 +153,6 @@ public:
 
     void retranslateUi(QWidget *QgsHillShadeWidget)
     {
-        mLightAzimuth->setSuffix(QCoreApplication::translate("QgsHillShadeWidget", "\313\232", nullptr));
         label_2->setText(QCoreApplication::translate("QgsHillShadeWidget", "Altitude", nullptr));
         label->setText(QCoreApplication::translate("QgsHillShadeWidget", "Azimuth", nullptr));
         label_3->setText(QCoreApplication::translate("QgsHillShadeWidget", "Z Factor", nullptr));
@@ -161,6 +160,7 @@ public:
         label_4->setText(QCoreApplication::translate("QgsHillShadeWidget", "Band", nullptr));
         mMultiDirection->setText(QString());
         label_5->setText(QCoreApplication::translate("QgsHillShadeWidget", "Multidirectional", nullptr));
+        mLightAzimuth->setSuffix(QCoreApplication::translate("QgsHillShadeWidget", "\313\232", nullptr));
         (void)QgsHillShadeWidget;
     } // retranslateUi
 

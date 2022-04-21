@@ -30,6 +30,7 @@
 #include "qgspolygon.h"
 #include "qgsgeometry.h"
 #include "qgsogrutils.h"
+#include "qgscoordinatereferencesystem.h"
 
 #include <QString>
 #include <QStringList>
@@ -1507,7 +1508,7 @@ void QgsDwgImporter::addEntity( OGRFeatureDefnH dfn, OGRFeatureH f, const DRW_En
   mEntities++;
   if ( mTime.elapsed() > 1000 )
   {
-    progress( tr( "%1 entities processed." ).arg( mEntities ) );
+    progress( tr( "%n entities processed.", nullptr, mEntities ) );
     mTime.restart();
   }
 

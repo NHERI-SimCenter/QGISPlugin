@@ -27,6 +27,8 @@
 #include "qgsmeshrenderersettings.h"
 #include "qgsmeshtimesettings.h"
 #include "qgsmeshsimplificationsettings.h"
+#include "qgscoordinatetransform.h"
+#include "qgsabstractprofilesource.h"
 
 class QgsMapLayerRenderer;
 struct QgsMeshLayerRendererCache;
@@ -38,6 +40,7 @@ class QgsMesh3dAveragingMethod;
 class QgsMeshLayerTemporalProperties;
 class QgsMeshDatasetGroupStore;
 class QgsMeshEditor;
+class QgsMeshLayerElevationProperties;
 
 /**
  * \ingroup core
@@ -92,7 +95,7 @@ class QgsMeshEditor;
  *
  * \since QGIS 3.2
  */
-class CORE_EXPORT QgsMeshLayer : public QgsMapLayer
+class CORE_EXPORT QgsMeshLayer : public QgsMapLayer, public QgsAbstractProfileSource
 {
     Q_OBJECT
   public:
@@ -111,7 +114,16 @@ class CORE_EXPORT QgsMeshLayer : public QgsMapLayer
         : transformContext( transformContext )
       {}
 
+      /**
+       * Coordinate transform context
+       */
       QgsCoordinateTransformContext transformContext;
+
+      /**
+       * Set to TRUE if the default layer style should be loaded.
+       * \since QGIS 3.22
+       */
+      bool loadDefaultStyle = true;
 
       /**
        * Controls whether the layer is allowed to have an invalid/unknown CRS.
@@ -165,6 +177,7 @@ class CORE_EXPORT QgsMeshLayer : public QgsMapLayer
     QgsMeshLayer *clone() const override SIP_FACTORY;
     QgsRectangle extent() const override;
     QgsMapLayerRenderer *createMapRenderer( QgsRenderContext &rendererContext ) override SIP_FACTORY;
+    QgsAbstractProfileGenerator *createProfileGenerator( const QgsProfileRequest &request ) override SIP_FACTORY;
     bool readSymbology( const QDomNode &node, QString &errorMessage,
                         QgsReadWriteContext &context, QgsMapLayer::StyleCategories categories = QgsMapLayer::AllStyleCategories ) override;
     bool writeSymbology( QDomNode &node, QDomDocument &doc, QString &errorMessage,
@@ -176,11 +189,13 @@ class CORE_EXPORT QgsMeshLayer : public QgsMapLayer
     bool readXml( const QDomNode &layer_node, QgsReadWriteContext &context ) override;
     bool writeXml( QDomNode &layer_node, QDomDocument &doc, const QgsReadWriteContext &context ) const override;
     QgsMapLayerTemporalProperties *temporalProperties() override;
+    QgsMapLayerElevationProperties *elevationProperties() override;
     void reload() override;
     QStringList subLayers() const override;
     QString htmlMetadata() const override;
     bool isEditable() const override;
     bool supportsEditing() const override;
+    QString loadDefaultStyle( bool &resultFlag SIP_OUT ) FINAL;
 
     //! Returns the provider type for this layer
     QString providerType() const;
@@ -572,6 +587,22 @@ class CORE_EXPORT QgsMeshLayer : public QgsMapLayer
     QgsMeshDatasetIndex datasetIndexAtRelativeTime( const QgsInterval &relativeTime, int datasetGroupIndex ) const;
 
     /**
+      * Returns a list of dataset indexes from datasets group that are in a interval time from the layer reference time.
+      * Dataset index is valid even the temporal properties is inactive. This method is used for calculation on mesh layer.
+      *
+      * \param startRelativeTime the start time of the relative interval from the reference time.
+      * \param endRelativeTime the end time of the relative interval from the reference time.
+      * \param datasetGroupIndex the index of the dataset group
+      * \returns dataset index
+      *
+      * \note indexes are used to distinguish all the dataset groups handled by the layer (from dataprovider, extra dataset group,...)
+      * In the layer scope, those indexes are different from the data provider indexes.
+      *
+      * \since QGIS 3.22
+      */
+    QList<QgsMeshDatasetIndex> datasetIndexInRelativeTimeInterval( const QgsInterval &startRelativeTime, const QgsInterval &endRelativeTime, int datasetGroupIndex ) const;
+
+    /**
       * Returns dataset index from active scalar group depending on the time range.
       * If the temporal properties is not active, return the static dataset
       *
@@ -671,6 +702,26 @@ class CORE_EXPORT QgsMeshLayer : public QgsMapLayer
     QgsPointXY snapOnElement( QgsMesh::ElementType elementType, const QgsPointXY &point, double searchRadius );
 
     /**
+     * Returns a list of vertex indexes that meet the condition defined by \a expression with the context \a expressionContext
+     *
+     * To express the relation with a vertex, the expression can be defined with function returning value
+     * linked to the current vertex, like " $vertex_z ", "$vertex_as_point"
+     *
+     * \since QGIS 3.22
+     */
+    QList<int> selectVerticesByExpression( QgsExpression expression );
+
+    /**
+     * Returns a list of faces indexes that meet the condition defined by \a expression with the context \a expressionContext
+     *
+     * To express the relation with a face, the expression can be defined with function returning value
+     * linked to the current face, like " $face_area "
+     *
+     * \since QGIS 3.22
+     */
+    QList<int> selectFacesByExpression( QgsExpression expression );
+
+    /**
       * Returns the root items of the dataset group tree item
       *
       * \return the root item
@@ -760,6 +811,17 @@ class CORE_EXPORT QgsMeshLayer : public QgsMapLayer
     void stopFrameEditing( const QgsCoordinateTransform &transform );
 
     /**
+    * Re-indexes the faces and vertices, and renumber the indexes if \a renumber is TRUE.
+    * rebuilds the triangular mesh and its spatial index with \a transform,
+    * clean the undostack
+    *
+    * Returns FALSE if the operation fails
+    *
+    * \since QGIS 3.22
+    */
+    bool reindex( const QgsCoordinateTransform &transform, bool renumber );
+
+    /**
     * Returns a pointer to the mesh editor own by the mesh layer
     *
     * \since QGIS 3.22
@@ -782,12 +844,16 @@ class CORE_EXPORT QgsMeshLayer : public QgsMapLayer
     /**
     * Returns the vertices count of the mesh frame
     *
+    * \note during mesh editing, some vertices can be void and are not included in this returned value
+    *
     *  \since QGIS 3.22
     */
     int meshVertexCount() const;
 
     /**
     * Returns the faces count of the mesh frame
+    *
+    * \note during mesh editing, some faces can be void and are not included in this returned value
     *
     * \since QGIS 3.22
     */
@@ -894,6 +960,7 @@ class CORE_EXPORT QgsMeshLayer : public QgsMapLayer
     QgsMeshSimplificationSettings mSimplificationSettings;
 
     QgsMeshLayerTemporalProperties *mTemporalProperties = nullptr;
+    QgsMeshLayerElevationProperties *mElevationProperties = nullptr;
 
     //! Temporal unit used by the provider
     QgsUnitTypes::TemporalUnit mTemporalUnit = QgsUnitTypes::TemporalHours;

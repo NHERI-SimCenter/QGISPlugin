@@ -101,6 +101,7 @@ class CORE_EXPORT QgsMeshDriverMetadata
      * \param capabilities driver's capabilities
      * \param writeDatasetOnFileSuffix suffix used to write datasets on file
      * \param writeMeshFrameOnFileSuffix suffix used to write mesh frame on file
+     * \param maxVerticesPerface maximum vertices count per face supported by the driver
      *
      * \since QGIS 3.22
      */
@@ -108,7 +109,8 @@ class CORE_EXPORT QgsMeshDriverMetadata
                            const QString &description,
                            const MeshDriverCapabilities &capabilities,
                            const QString &writeDatasetOnFileSuffix,
-                           const QString &writeMeshFrameOnFileSuffix );
+                           const QString &writeMeshFrameOnFileSuffix,
+                           int maxVerticesPerface );
 
     /**
      * Returns the capabilities for this driver.
@@ -137,12 +139,20 @@ class CORE_EXPORT QgsMeshDriverMetadata
      */
     QString writeMeshFrameOnFileSuffix() const;
 
+    /**
+     * Returns the maximum number of vertices per face supported by the driver
+     *
+     * \since QGIS 3.22
+     */
+    int maximumVerticesCountPerFace() const;
+
   private:
     QString mName;
     QString mDescription;
     MeshDriverCapabilities mCapabilities;
     QString mWriteDatasetOnFileSuffix;
     QString mWriteMeshFrameOnFileSuffix;
+    int mMaxVerticesPerFace = -1;
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS( QgsMeshDriverMetadata::MeshDriverCapabilities )
@@ -456,13 +466,22 @@ class CORE_EXPORT QgsProviderMetadata : public QObject
       const QStringList &createOptions = QStringList() ) SIP_FACTORY;
 
     /**
-     * Creates mesh data source, that is the mesh frame stored in file, memory or with other way (depending of the provider)
+     * Creates mesh data source from a file name \a fileName and a driver \a driverName, that is the mesh frame stored in file, memory or with other way (depending of the provider)
      * \since QGIS 3.16
      */
     virtual bool createMeshData(
       const QgsMesh &mesh,
-      const QString uri,
+      const QString &fileName,
       const QString &driverName,
+      const QgsCoordinateReferenceSystem &crs ) const;
+
+    /**
+     * Creates mesh data source from an \a uri, that is the mesh frame stored in file, memory or with other way (depending of the provider)
+     * \since QGIS 3.22
+     */
+    virtual bool createMeshData(
+      const QgsMesh &mesh,
+      const QString &uri,
       const QgsCoordinateReferenceSystem &crs ) const;
 
     /**
@@ -517,19 +536,42 @@ class CORE_EXPORT QgsProviderMetadata : public QObject
                             QStringList &descriptions, QString &errCause );
 
     /**
+     * Returns TRUE if a layer style with the specified \a styleId exists in the provider defined by \a uri.
+     *
+     * \param uri provider URI
+     * \param styleId style ID to test for
+     * \param errorCause will be set to a descriptive error message, if an error occurs while checking if the style exists
+     * \returns TRUE if the layer style already exists
+     *
+     * \see getStyleById()
+     * \since QGIS 3.24
+     */
+    virtual bool styleExists( const QString &uri, const QString &styleId, QString &errorCause SIP_OUT );
+
+    /**
      * Gets a layer style defined by \a uri
+     *
+     * \see styleExists()
+     *
      * \since QGIS 3.10
      */
-    virtual QString getStyleById( const QString &uri, QString styleId, QString &errCause );
+    virtual QString getStyleById( const QString &uri, const QString &styleId, QString &errCause );
 
     /**
      * Deletes a layer style defined by \a styleId
      * \since QGIS 3.10
      */
-    virtual bool deleteStyleById( const QString &uri, QString styleId, QString &errCause );
+    virtual bool deleteStyleById( const QString &uri, const QString &styleId, QString &errCause );
 
     /**
-     * Saves a layer style to provider
+     * Saves a layer style to provider.
+     *
+     * \note Prior to QGIS 3.24, this method would show a message box warning when a
+     * style with the same \a styleName already existed to confirm replacing the style with the user.
+     * Since 3.24, calling this method will ALWAYS overwrite any existing style with the same name.
+     * Use styleExists() to test in advance if a style already exists and handle this appropriately
+     * in your client code.
+     *
      * \since QGIS 3.10
      */
     virtual bool saveStyle( const QString &uri, const QString &qmlStyle, const QString &sldStyle,

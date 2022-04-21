@@ -15,12 +15,12 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "qgsdoublespinbox.h"
+#include "qgsscrollarea.h"
 #include "qgsspinbox.h"
 
 QT_BEGIN_NAMESPACE
@@ -30,7 +30,7 @@ class Ui_Qgs3DOptionsBase
 public:
     QVBoxLayout *verticalLayout_6;
     QSplitter *mSplitter;
-    QScrollArea *scrollArea;
+    QgsScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QGridLayout *gridLayout_2;
     QGroupBox *cameraTerrain;
@@ -59,7 +59,7 @@ public:
         mSplitter = new QSplitter(Qgs3DOptionsBase);
         mSplitter->setObjectName(QString::fromUtf8("mSplitter"));
         mSplitter->setOrientation(Qt::Vertical);
-        scrollArea = new QScrollArea(mSplitter);
+        scrollArea = new QgsScrollArea(mSplitter);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         scrollArea->setFrameShape(QFrame::NoFrame);
         scrollArea->setWidgetResizable(true);

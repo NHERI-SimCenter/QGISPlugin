@@ -65,6 +65,7 @@ public:
     QAction *mActionHidePanels;
     QAction *mActionPan;
     QAction *mActionSelectMoveItem;
+    QAction *mActionNew;
     QWidget *centralwidget;
     QVBoxLayout *mainLayout;
     QgsModelGraphicsView *mView;
@@ -230,6 +231,11 @@ public:
         QIcon icon18;
         icon18.addFile(QString::fromUtf8(":/images/themes/default/mActionSelect.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionSelectMoveItem->setIcon(icon18);
+        mActionNew = new QAction(QgsModelDesignerDialogBase);
+        mActionNew->setObjectName(QString::fromUtf8("mActionNew"));
+        QIcon icon19;
+        icon19.addFile(QString::fromUtf8(":/images/themes/default/mActionFileNew.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionNew->setIcon(icon19);
         centralwidget = new QWidget(QgsModelDesignerDialogBase);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         mainLayout = new QVBoxLayout(centralwidget);
@@ -408,6 +414,7 @@ public:
         menu_Model->addAction(mActionRun);
         menu_Model->addAction(mActionReorderInputs);
         menu_Model->addSeparator();
+        menu_Model->addAction(mActionNew);
         menu_Model->addAction(mActionOpen);
         menu_Model->addAction(mActionSave);
         menu_Model->addAction(mActionSaveAs);
@@ -438,6 +445,7 @@ public:
         mMenuEdit->addAction(mActionDeleteComponents);
         mMenuEdit->addSeparator();
         mMenuEdit->addAction(mActionAddGroupBox);
+        mToolbar->addAction(mActionNew);
         mToolbar->addAction(mActionOpen);
         mToolbar->addAction(mActionSave);
         mToolbar->addAction(mActionSaveAs);
@@ -581,6 +589,7 @@ public:
 #if QT_CONFIG(shortcut)
         mActionSelectMoveItem->setShortcut(QCoreApplication::translate("QgsModelDesignerDialogBase", "V", nullptr));
 #endif // QT_CONFIG(shortcut)
+        mActionNew->setText(QCoreApplication::translate("QgsModelDesignerDialogBase", "New Model\342\200\246", nullptr));
         menu_Model->setTitle(QCoreApplication::translate("QgsModelDesignerDialogBase", "&Model", nullptr));
         menuExport->setTitle(QCoreApplication::translate("QgsModelDesignerDialogBase", "Export", nullptr));
         mMenuView->setTitle(QCoreApplication::translate("QgsModelDesignerDialogBase", "&View", nullptr));

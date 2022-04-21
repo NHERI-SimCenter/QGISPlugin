@@ -92,8 +92,14 @@ public:
 
     void retranslateUi(QWidget *QgsMeshStaticDatasetWidget)
     {
+#if QT_CONFIG(tooltip)
+        mVectorDatasetComboBox->setToolTip(QCoreApplication::translate("QgsMeshStaticDatasetWidget", "Select the timestamp to use for the vector dataset group display", nullptr));
+#endif // QT_CONFIG(tooltip)
         label_3->setText(QCoreApplication::translate("QgsMeshStaticDatasetWidget", "Vector Dataset Group", nullptr));
         label->setText(QCoreApplication::translate("QgsMeshStaticDatasetWidget", "Scalar Dataset Group", nullptr));
+#if QT_CONFIG(tooltip)
+        mScalarDatasetComboBox->setToolTip(QCoreApplication::translate("QgsMeshStaticDatasetWidget", "Select the timestamp to use for the scalar dataset group display", nullptr));
+#endif // QT_CONFIG(tooltip)
         mScalarName->setText(QCoreApplication::translate("QgsMeshStaticDatasetWidget", "Name", nullptr));
         mVectorName->setText(QCoreApplication::translate("QgsMeshStaticDatasetWidget", "Name", nullptr));
         (void)QgsMeshStaticDatasetWidget;

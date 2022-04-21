@@ -1,8 +1,8 @@
-# Install script for directory: /Users/steve/Desktop/C++Libraries/QGIS/QGIS/src/ui
+# Install script for directory: /Users/steve/Desktop/SimCenter/QGIS/QGIS/src/ui
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/Users/steve/Desktop/C++Libraries/QGIS/Install")
+  set(CMAKE_INSTALL_PREFIX "/Users/steve/Desktop/SimCenter/QGIS/Install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

@@ -51,10 +51,12 @@ public:
     QgsCollapsibleGroupBox *groupBox_2;
     QGridLayout *gridLayout;
     QLabel *label_4;
-    QgsDoubleSpinBox *mPositionSpinBox;
     QPushButton *mDeleteStopButton;
-    QSpacerItem *horizontalSpacer;
     QgsCompoundColorWidget *mColorWidget;
+    QgsDoubleSpinBox *mPositionSpinBox;
+    QSpacerItem *horizontalSpacer;
+    QComboBox *mStopColorSpec;
+    QComboBox *mStopDirection;
     QgsCollapsibleGroupBox *mPlotGroupBox;
     QVBoxLayout *verticalLayout_3;
     QwtPlot *mPlot;
@@ -144,7 +146,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 850, 498));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 850, 494));
         verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
@@ -157,26 +159,36 @@ public:
 
         gridLayout->addWidget(label_4, 0, 0, 1, 1);
 
+        mDeleteStopButton = new QPushButton(groupBox_2);
+        mDeleteStopButton->setObjectName(QString::fromUtf8("mDeleteStopButton"));
+
+        gridLayout->addWidget(mDeleteStopButton, 0, 5, 1, 1);
+
+        mColorWidget = new QgsCompoundColorWidget(groupBox_2);
+        mColorWidget->setObjectName(QString::fromUtf8("mColorWidget"));
+        mColorWidget->setFocusPolicy(Qt::StrongFocus);
+
+        gridLayout->addWidget(mColorWidget, 1, 0, 1, 5);
+
         mPositionSpinBox = new QgsDoubleSpinBox(groupBox_2);
         mPositionSpinBox->setObjectName(QString::fromUtf8("mPositionSpinBox"));
         mPositionSpinBox->setDecimals(1);
 
         gridLayout->addWidget(mPositionSpinBox, 0, 1, 1, 1);
 
-        mDeleteStopButton = new QPushButton(groupBox_2);
-        mDeleteStopButton->setObjectName(QString::fromUtf8("mDeleteStopButton"));
-
-        gridLayout->addWidget(mDeleteStopButton, 0, 2, 1, 1);
-
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        gridLayout->addItem(horizontalSpacer, 0, 3, 1, 1);
+        gridLayout->addItem(horizontalSpacer, 0, 4, 1, 1);
 
-        mColorWidget = new QgsCompoundColorWidget(groupBox_2);
-        mColorWidget->setObjectName(QString::fromUtf8("mColorWidget"));
-        mColorWidget->setFocusPolicy(Qt::StrongFocus);
+        mStopColorSpec = new QComboBox(groupBox_2);
+        mStopColorSpec->setObjectName(QString::fromUtf8("mStopColorSpec"));
 
-        gridLayout->addWidget(mColorWidget, 1, 0, 1, 4);
+        gridLayout->addWidget(mStopColorSpec, 0, 2, 1, 1);
+
+        mStopDirection = new QComboBox(groupBox_2);
+        mStopDirection->setObjectName(QString::fromUtf8("mStopDirection"));
+
+        gridLayout->addWidget(mStopDirection, 0, 3, 1, 1);
 
 
         verticalLayout_2->addWidget(groupBox_2);
@@ -259,7 +271,9 @@ public:
         QWidget::setTabOrder(cboType, mStopEditor);
         QWidget::setTabOrder(mStopEditor, scrollArea);
         QWidget::setTabOrder(scrollArea, mPositionSpinBox);
-        QWidget::setTabOrder(mPositionSpinBox, mDeleteStopButton);
+        QWidget::setTabOrder(mPositionSpinBox, mStopColorSpec);
+        QWidget::setTabOrder(mStopColorSpec, mStopDirection);
+        QWidget::setTabOrder(mStopDirection, mDeleteStopButton);
         QWidget::setTabOrder(mDeleteStopButton, mColorWidget);
         QWidget::setTabOrder(mColorWidget, mPlotHueCheckbox);
         QWidget::setTabOrder(mPlotHueCheckbox, mPlotSaturationCheckbox);
@@ -284,8 +298,8 @@ public:
         label_3->setText(QCoreApplication::translate("QgsGradientColorRampDialogBase", "&Type", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("QgsGradientColorRampDialogBase", "Gradient Stop", nullptr));
         label_4->setText(QCoreApplication::translate("QgsGradientColorRampDialogBase", "Relative &position", nullptr));
-        mPositionSpinBox->setSuffix(QCoreApplication::translate("QgsGradientColorRampDialogBase", " %", nullptr));
         mDeleteStopButton->setText(QCoreApplication::translate("QgsGradientColorRampDialogBase", "&Delete Stop", nullptr));
+        mPositionSpinBox->setSuffix(QCoreApplication::translate("QgsGradientColorRampDialogBase", " %", nullptr));
         mPlotGroupBox->setTitle(QCoreApplication::translate("QgsGradientColorRampDialogBase", "Plot", nullptr));
         mPlotHueCheckbox->setText(QCoreApplication::translate("QgsGradientColorRampDialogBase", "Hue", nullptr));
         mPlotSaturationCheckbox->setText(QCoreApplication::translate("QgsGradientColorRampDialogBase", "Saturation", nullptr));

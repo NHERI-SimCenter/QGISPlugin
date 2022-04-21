@@ -86,7 +86,6 @@ class QgsOgrProvider final: public QgsVectorDataProvider
     uint subLayerCount() const override;
     QStringList subLayers() const override;
     QgsLayerMetadata layerMetadata() const override;
-    QStringList subLayersWithoutFeatureCount() const;
     QString storageType() const override;
     QgsFeatureIterator getFeatures( const QgsFeatureRequest &request ) const override;
     QString subsetString() const override;
@@ -125,6 +124,7 @@ class QgsOgrProvider final: public QgsVectorDataProvider
     QStringList uniqueStringsMatching( int index, const QString &substring, int limit = -1,
                                        QgsFeedback *feedback = nullptr ) const override;
     QgsFeatureSource::SpatialIndexPresence hasSpatialIndex() const override;
+    Qgis::VectorLayerTypeFlags vectorLayerTypeFlags() const override;
 
     QString name() const override;
     static QString providerKey();
@@ -330,6 +330,9 @@ class QgsOgrProvider final: public QgsVectorDataProvider
     * and the new file will be opened.
     */
     void reloadProviderData() override;
+
+    //! Invalidate GDAL /vsicurl/ RAM cache for mFilePath
+    void invalidateNetworkCache();
 };
 
 ///@endcond

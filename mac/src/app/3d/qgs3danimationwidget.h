@@ -20,7 +20,7 @@
 #include <memory>
 
 #include "ui_animation3dwidget.h"
-
+#include <qgs3danimationsettings.h>
 
 class Qgs3DAnimationSettings;
 class QgsCameraController;
@@ -31,7 +31,6 @@ class Qgs3DAnimationWidget : public QWidget, private Ui::Animation3DWidget
     Q_OBJECT
   public:
     explicit Qgs3DAnimationWidget( QWidget *parent = nullptr );
-    ~Qgs3DAnimationWidget() override;
 
     void setCameraController( QgsCameraController *cameraController );
 

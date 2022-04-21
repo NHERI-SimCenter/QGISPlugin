@@ -316,6 +316,7 @@ class CORE_EXPORT QgsCategorizedSymbolRenderer : public QgsFeatureRenderer
     QDomElement save( QDomDocument &doc, const QgsReadWriteContext &context ) override;
     QgsLegendSymbolList legendSymbolItems() const override;
     QSet< QString > legendKeysForFeature( const QgsFeature &feature, QgsRenderContext &context ) const override;
+    QString legendKeyToExpression( const QString &key, QgsVectorLayer *layer, bool &ok ) const override;
 
     /**
      * Returns the renderer's source symbol, which is the base symbol used for the each categories' symbol before applying
@@ -441,6 +442,18 @@ class CORE_EXPORT QgsCategorizedSymbolRenderer : public QgsFeatureRenderer
      */
     static QgsCategoryList createCategories( const QVariantList &values, const QgsSymbol *symbol, QgsVectorLayer *layer = nullptr, const QString &fieldName = QString() );
 
+    /**
+     *  Returns a localized representation of \a value with the given \a precision,
+     *  if precision is -1 then precision is guessed from the default QVariant::toString
+     *  output.
+     *
+     *  \note Precision is ignored for integers.
+     *
+     *  \since QGIS 3.22.1
+     */
+    static QString displayString( const QVariant &value, int precision = -1 );
+
+
   protected:
     QString mAttrName;
     QgsCategoryList mCategories;
@@ -498,6 +511,7 @@ class CORE_EXPORT QgsCategorizedSymbolRenderer : public QgsFeatureRenderer
 
     //! Returns list of legend symbol items from individual categories
     QgsLegendSymbolList baseLegendSymbolItems() const;
+
 };
 
 #endif // QGSCATEGORIZEDSYMBOLRENDERER_H

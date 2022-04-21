@@ -42,7 +42,7 @@
 #include <QtWidgets/QWidget>
 #include <qgscolorschemelist.h>
 #include <qgsvariableeditorwidget.h>
-#include "qgsauthsettingswidget.h"
+#include "auth/qgsauthsettingswidget.h"
 #include "qgsautheditorwidgets.h"
 #include "qgscollapsiblegroupbox.h"
 #include "qgscolorbutton.h"
@@ -437,6 +437,7 @@ public:
     QLabel *label_15;
     QSpacerItem *horizontalSpacer_6;
     QComboBox *cmbLegendDoubleClickAction;
+    QCheckBox *mShowFeatureCountByDefaultCheckBox;
     QCheckBox *cbxLegendClassifiers;
     QHBoxLayout *horizontalLayout_34;
     QLabel *label_58;
@@ -561,9 +562,9 @@ public:
     QgsCollapsibleGroupBox *mSnappingGroupBox;
     QGridLayout *gridLayout_3;
     QCheckBox *mSnappingEnabledDefault;
-    QLabel *mDefaultSnapModeLabel;
+    QLabel *mDefaultSnapTypeLabel;
     QSpacerItem *spacerItem6;
-    QComboBox *mDefaultSnapModeComboBox;
+    QComboBox *mDefaultSnapTypeComboBox;
     QLabel *mDefaultSnappingToleranceTextLabel;
     QSpacerItem *spacerItem7;
     QgsDoubleSpinBox *mDefaultSnappingToleranceSpinBox;
@@ -2771,6 +2772,11 @@ public:
 
         verticalLayout_21->addLayout(horizontalLayout_8);
 
+        mShowFeatureCountByDefaultCheckBox = new QCheckBox(mLegendGrpBx);
+        mShowFeatureCountByDefaultCheckBox->setObjectName(QString::fromUtf8("mShowFeatureCountByDefaultCheckBox"));
+
+        verticalLayout_21->addWidget(mShowFeatureCountByDefaultCheckBox);
+
         cbxLegendClassifiers = new QCheckBox(mLegendGrpBx);
         cbxLegendClassifiers->setObjectName(QString::fromUtf8("cbxLegendClassifiers"));
 
@@ -3462,21 +3468,21 @@ public:
 
         gridLayout_3->addWidget(mSnappingEnabledDefault, 0, 0, 1, 4);
 
-        mDefaultSnapModeLabel = new QLabel(mSnappingGroupBox);
-        mDefaultSnapModeLabel->setObjectName(QString::fromUtf8("mDefaultSnapModeLabel"));
+        mDefaultSnapTypeLabel = new QLabel(mSnappingGroupBox);
+        mDefaultSnapTypeLabel->setObjectName(QString::fromUtf8("mDefaultSnapTypeLabel"));
 
-        gridLayout_3->addWidget(mDefaultSnapModeLabel, 1, 0, 1, 1);
+        gridLayout_3->addWidget(mDefaultSnapTypeLabel, 1, 0, 1, 1);
 
         spacerItem6 = new QSpacerItem(273, 19, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout_3->addItem(spacerItem6, 1, 1, 1, 1);
 
-        mDefaultSnapModeComboBox = new QComboBox(mSnappingGroupBox);
-        mDefaultSnapModeComboBox->setObjectName(QString::fromUtf8("mDefaultSnapModeComboBox"));
-        sizePolicy4.setHeightForWidth(mDefaultSnapModeComboBox->sizePolicy().hasHeightForWidth());
-        mDefaultSnapModeComboBox->setSizePolicy(sizePolicy4);
+        mDefaultSnapTypeComboBox = new QComboBox(mSnappingGroupBox);
+        mDefaultSnapTypeComboBox->setObjectName(QString::fromUtf8("mDefaultSnapTypeComboBox"));
+        sizePolicy4.setHeightForWidth(mDefaultSnapTypeComboBox->sizePolicy().hasHeightForWidth());
+        mDefaultSnapTypeComboBox->setSizePolicy(sizePolicy4);
 
-        gridLayout_3->addWidget(mDefaultSnapModeComboBox, 1, 2, 1, 1);
+        gridLayout_3->addWidget(mDefaultSnapTypeComboBox, 1, 2, 1, 1);
 
         mDefaultSnappingToleranceTextLabel = new QLabel(mSnappingGroupBox);
         mDefaultSnappingToleranceTextLabel->setObjectName(QString::fromUtf8("mDefaultSnappingToleranceTextLabel"));
@@ -4435,7 +4441,8 @@ public:
         QWidget::setTabOrder(mOptionsScrollArea_06, pbnSelectionColor);
         QWidget::setTabOrder(pbnSelectionColor, pbnCanvasColor);
         QWidget::setTabOrder(pbnCanvasColor, cmbLegendDoubleClickAction);
-        QWidget::setTabOrder(cmbLegendDoubleClickAction, cbxLegendClassifiers);
+        QWidget::setTabOrder(cmbLegendDoubleClickAction, mShowFeatureCountByDefaultCheckBox);
+        QWidget::setTabOrder(mShowFeatureCountByDefaultCheckBox, cbxLegendClassifiers);
         QWidget::setTabOrder(cbxLegendClassifiers, mLegendGraphicResolutionSpinBox);
         QWidget::setTabOrder(mLegendGraphicResolutionSpinBox, mLegendSymbolMinimumSizeSpinBox);
         QWidget::setTabOrder(mLegendSymbolMinimumSizeSpinBox, mLegendSymbolMaximumSizeSpinBox);
@@ -4481,8 +4488,8 @@ public:
         QWidget::setTabOrder(mLineColorToolButton, mFillColorToolButton);
         QWidget::setTabOrder(mFillColorToolButton, mLineGhostCheckBox);
         QWidget::setTabOrder(mLineGhostCheckBox, mSnappingEnabledDefault);
-        QWidget::setTabOrder(mSnappingEnabledDefault, mDefaultSnapModeComboBox);
-        QWidget::setTabOrder(mDefaultSnapModeComboBox, mDefaultSnappingToleranceSpinBox);
+        QWidget::setTabOrder(mSnappingEnabledDefault, mDefaultSnapTypeComboBox);
+        QWidget::setTabOrder(mDefaultSnapTypeComboBox, mDefaultSnappingToleranceSpinBox);
         QWidget::setTabOrder(mDefaultSnappingToleranceSpinBox, mDefaultSnappingToleranceComboBox);
         QWidget::setTabOrder(mDefaultSnappingToleranceComboBox, mSearchRadiusVertexEditSpinBox);
         QWidget::setTabOrder(mSearchRadiusVertexEditSpinBox, mSearchRadiusVertexEditComboBox);
@@ -4853,6 +4860,7 @@ public:
         cmbLegendDoubleClickAction->setItemText(1, QCoreApplication::translate("QgsOptionsBase", "Open attribute table", nullptr));
         cmbLegendDoubleClickAction->setItemText(2, QCoreApplication::translate("QgsOptionsBase", "Open layer styling dock", nullptr));
 
+        mShowFeatureCountByDefaultCheckBox->setText(QCoreApplication::translate("QgsOptionsBase", "Show feature count for newly added layers", nullptr));
         cbxLegendClassifiers->setText(QCoreApplication::translate("QgsOptionsBase", "Display classification attribute in layer titles", nullptr));
         label_58->setText(QCoreApplication::translate("QgsOptionsBase", "WMS getLegendGraphic resolution", nullptr));
 #if QT_CONFIG(tooltip)
@@ -4883,7 +4891,7 @@ public:
         mMapTipsDelaySpinBox->setSuffix(QCoreApplication::translate("QgsOptionsBase", " ms", nullptr));
         groupBox_32->setTitle(QCoreApplication::translate("QgsOptionsBase", "DPI", nullptr));
 #if QT_CONFIG(tooltip)
-        mRespectScreenDpiCheckBox->setToolTip(QCoreApplication::translate("QgsOptionsBase", "<html><head/><body><p>If respect screen DPI is activated, symbology on the map canvas will be rendered with appropriate screen DPI. This means that a symbol with 1mm size will be rendered with 1mm size on every screen (provided it is configured correctly at the system).</p><p><br/></p><p><span style=\" font-weight:600;\">Note:</span></p><p>This is only possible since QGIS 3.20.</p><p>Any earlier version of QGIS will render symbology on the map canvas smaller on HiDPI screens.</p><p>Requires a restart</p></body></html>", nullptr));
+        mRespectScreenDpiCheckBox->setToolTip(QCoreApplication::translate("QgsOptionsBase", "<html><head/><body><p>If respect screen DPI is activated, symbology on the map canvas will be rendered with appropriate screen DPI. This means that a symbol with 1mm size will be rendered with 1mm size on every screen (provided it is configured correctly at the system).</p><p><br/></p><p><span style=\" font-weight:600;\">Note:</span></p><p>If disabled, this will activate legacy behavior (QGIS <= 3.20) and will render symbology on the map canvas smaller on HiDPI screens.</p><p>Requires a restart</p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
         mRespectScreenDpiCheckBox->setText(QCoreApplication::translate("QgsOptionsBase", "Respect screen DPI", nullptr));
         mIdentifyGroupBox->setTitle(QCoreApplication::translate("QgsOptionsBase", "Identify", nullptr));
@@ -5003,7 +5011,7 @@ public:
         mLineGhostCheckBox->setText(QCoreApplication::translate("QgsOptionsBase", "Don't update rubber band during vertex editing", nullptr));
         mSnappingGroupBox->setTitle(QCoreApplication::translate("QgsOptionsBase", "Snapping", nullptr));
         mSnappingEnabledDefault->setText(QCoreApplication::translate("QgsOptionsBase", "Enable snapping by default", nullptr));
-        mDefaultSnapModeLabel->setText(QCoreApplication::translate("QgsOptionsBase", "Default snap mode", nullptr));
+        mDefaultSnapTypeLabel->setText(QCoreApplication::translate("QgsOptionsBase", "Default snapping type", nullptr));
         mDefaultSnappingToleranceTextLabel->setText(QCoreApplication::translate("QgsOptionsBase", "Default snapping tolerance", nullptr));
         mDefaultSnappingToleranceComboBox->setItemText(0, QCoreApplication::translate("QgsOptionsBase", "map units", nullptr));
         mDefaultSnappingToleranceComboBox->setItemText(1, QCoreApplication::translate("QgsOptionsBase", "pixels", nullptr));

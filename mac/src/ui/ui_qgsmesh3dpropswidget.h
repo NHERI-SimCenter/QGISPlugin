@@ -29,7 +29,7 @@
 #include "qgscollapsiblegroupbox.h"
 #include "qgscolorbutton.h"
 #include "qgsdoublespinbox.h"
-#include "qgscolorrampshaderwidget.h"
+#include "raster/qgscolorrampshaderwidget.h"
 
 QT_BEGIN_NAMESPACE
 

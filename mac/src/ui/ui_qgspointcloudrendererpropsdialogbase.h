@@ -50,13 +50,15 @@ public:
     QComboBox *mPointStyleComboBox;
     QGroupBox *mLayerRenderingGroupBox;
     QGridLayout *gridLayout;
-    QgsDoubleSpinBox *mMaxErrorSpinBox;
-    QgsBlendModeComboBox *mBlendModeComboBox;
-    QLabel *lblBlend;
-    QgsOpacityWidget *mOpacityWidget;
-    QgsUnitSelectionWidget *mMaxErrorUnitWidget;
-    QLabel *lblTransparency;
     QLabel *lblTransparency_2;
+    QgsDoubleSpinBox *mMaxErrorSpinBox;
+    QgsOpacityWidget *mOpacityWidget;
+    QLabel *lblTransparency;
+    QLabel *lblBlend;
+    QgsUnitSelectionWidget *mMaxErrorUnitWidget;
+    QgsBlendModeComboBox *mBlendModeComboBox;
+    QLabel *lblDrawOrder;
+    QComboBox *mDrawOrderComboBox;
 
     void setupUi(QgsPanelWidget *QgsPointCloudRendererPropsDialogBase)
     {
@@ -157,48 +159,60 @@ public:
         gridLayout = new QGridLayout(mLayerRenderingGroupBox);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, -1, 3, -1);
+        lblTransparency_2 = new QLabel(mLayerRenderingGroupBox);
+        lblTransparency_2->setObjectName(QString::fromUtf8("lblTransparency_2"));
+
+        gridLayout->addWidget(lblTransparency_2, 1, 0, 1, 1);
+
         mMaxErrorSpinBox = new QgsDoubleSpinBox(mLayerRenderingGroupBox);
         mMaxErrorSpinBox->setObjectName(QString::fromUtf8("mMaxErrorSpinBox"));
         mMaxErrorSpinBox->setDecimals(6);
         mMaxErrorSpinBox->setMaximum(99999999999.000000000000000);
         mMaxErrorSpinBox->setValue(0.300000000000000);
 
-        gridLayout->addWidget(mMaxErrorSpinBox, 0, 1, 1, 2);
-
-        mBlendModeComboBox = new QgsBlendModeComboBox(mLayerRenderingGroupBox);
-        mBlendModeComboBox->setObjectName(QString::fromUtf8("mBlendModeComboBox"));
-        sizePolicy.setHeightForWidth(mBlendModeComboBox->sizePolicy().hasHeightForWidth());
-        mBlendModeComboBox->setSizePolicy(sizePolicy);
-
-        gridLayout->addWidget(mBlendModeComboBox, 2, 1, 1, 3);
-
-        lblBlend = new QLabel(mLayerRenderingGroupBox);
-        lblBlend->setObjectName(QString::fromUtf8("lblBlend"));
-
-        gridLayout->addWidget(lblBlend, 2, 0, 1, 1);
+        gridLayout->addWidget(mMaxErrorSpinBox, 1, 1, 1, 2);
 
         mOpacityWidget = new QgsOpacityWidget(mLayerRenderingGroupBox);
         mOpacityWidget->setObjectName(QString::fromUtf8("mOpacityWidget"));
         mOpacityWidget->setFocusPolicy(Qt::StrongFocus);
 
-        gridLayout->addWidget(mOpacityWidget, 1, 1, 1, 3);
+        gridLayout->addWidget(mOpacityWidget, 2, 1, 1, 3);
+
+        lblTransparency = new QLabel(mLayerRenderingGroupBox);
+        lblTransparency->setObjectName(QString::fromUtf8("lblTransparency"));
+
+        gridLayout->addWidget(lblTransparency, 2, 0, 1, 1);
+
+        lblBlend = new QLabel(mLayerRenderingGroupBox);
+        lblBlend->setObjectName(QString::fromUtf8("lblBlend"));
+
+        gridLayout->addWidget(lblBlend, 3, 0, 1, 1);
 
         mMaxErrorUnitWidget = new QgsUnitSelectionWidget(mLayerRenderingGroupBox);
         mMaxErrorUnitWidget->setObjectName(QString::fromUtf8("mMaxErrorUnitWidget"));
         mMaxErrorUnitWidget->setMinimumSize(QSize(0, 0));
         mMaxErrorUnitWidget->setFocusPolicy(Qt::StrongFocus);
 
-        gridLayout->addWidget(mMaxErrorUnitWidget, 0, 3, 1, 1);
+        gridLayout->addWidget(mMaxErrorUnitWidget, 1, 3, 1, 1);
 
-        lblTransparency = new QLabel(mLayerRenderingGroupBox);
-        lblTransparency->setObjectName(QString::fromUtf8("lblTransparency"));
+        mBlendModeComboBox = new QgsBlendModeComboBox(mLayerRenderingGroupBox);
+        mBlendModeComboBox->setObjectName(QString::fromUtf8("mBlendModeComboBox"));
+        sizePolicy.setHeightForWidth(mBlendModeComboBox->sizePolicy().hasHeightForWidth());
+        mBlendModeComboBox->setSizePolicy(sizePolicy);
 
-        gridLayout->addWidget(lblTransparency, 1, 0, 1, 1);
+        gridLayout->addWidget(mBlendModeComboBox, 3, 1, 1, 3);
 
-        lblTransparency_2 = new QLabel(mLayerRenderingGroupBox);
-        lblTransparency_2->setObjectName(QString::fromUtf8("lblTransparency_2"));
+        lblDrawOrder = new QLabel(mLayerRenderingGroupBox);
+        lblDrawOrder->setObjectName(QString::fromUtf8("lblDrawOrder"));
 
-        gridLayout->addWidget(lblTransparency_2, 0, 0, 1, 1);
+        gridLayout->addWidget(lblDrawOrder, 0, 0, 1, 1);
+
+        mDrawOrderComboBox = new QComboBox(mLayerRenderingGroupBox);
+        mDrawOrderComboBox->setObjectName(QString::fromUtf8("mDrawOrderComboBox"));
+        sizePolicy.setHeightForWidth(mDrawOrderComboBox->sizePolicy().hasHeightForWidth());
+        mDrawOrderComboBox->setSizePolicy(sizePolicy);
+
+        gridLayout->addWidget(mDrawOrderComboBox, 0, 1, 1, 3);
 
 
         verticalLayout_2->addWidget(mLayerRenderingGroupBox);
@@ -231,9 +245,10 @@ public:
         lblTransparency_4->setText(QCoreApplication::translate("QgsPointCloudRendererPropsDialogBase", "Point size", nullptr));
         label_2->setText(QCoreApplication::translate("QgsPointCloudRendererPropsDialogBase", "Style", nullptr));
         mLayerRenderingGroupBox->setTitle(QCoreApplication::translate("QgsPointCloudRendererPropsDialogBase", "Layer Rendering", nullptr));
-        lblBlend->setText(QCoreApplication::translate("QgsPointCloudRendererPropsDialogBase", "Blending mode", nullptr));
-        lblTransparency->setText(QCoreApplication::translate("QgsPointCloudRendererPropsDialogBase", "Opacity", nullptr));
         lblTransparency_2->setText(QCoreApplication::translate("QgsPointCloudRendererPropsDialogBase", "Maximum error", nullptr));
+        lblTransparency->setText(QCoreApplication::translate("QgsPointCloudRendererPropsDialogBase", "Opacity", nullptr));
+        lblBlend->setText(QCoreApplication::translate("QgsPointCloudRendererPropsDialogBase", "Blending mode", nullptr));
+        lblDrawOrder->setText(QCoreApplication::translate("QgsPointCloudRendererPropsDialogBase", "Draw order", nullptr));
     } // retranslateUi
 
 };

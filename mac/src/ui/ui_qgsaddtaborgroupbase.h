@@ -15,8 +15,8 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QDialogButtonBox>
-#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QRadioButton>
@@ -28,16 +28,16 @@ QT_BEGIN_NAMESPACE
 class Ui_QgsAddTabOrGroupBase
 {
 public:
-    QFormLayout *formLayout;
-    QGridLayout *gridLayout;
+    QGridLayout *gridLayout_0;
     QLabel *label;
     QLineEdit *mName;
-    QLabel *label_2;
+    QLabel *label_3;
+    QSpacerItem *verticalSpacer;
+    QGroupBox *groupBox;
+    QGridLayout *gridLayout_2;
     QRadioButton *mTabButton;
     QRadioButton *mGroupButton;
     QComboBox *mTabList;
-    QSpacerItem *verticalSpacer;
-    QLabel *label_3;
     QgsSpinBox *mColumnCountSpinBox;
     QDialogButtonBox *buttonBox;
     QButtonGroup *buttonGroup;
@@ -48,72 +48,81 @@ public:
             QgsAddTabOrGroupBase->setObjectName(QString::fromUtf8("QgsAddTabOrGroupBase"));
         QgsAddTabOrGroupBase->resize(447, 238);
         QgsAddTabOrGroupBase->setWindowTitle(QString::fromUtf8("Dialog"));
-        formLayout = new QFormLayout(QgsAddTabOrGroupBase);
-        formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        gridLayout = new QGridLayout();
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout_0 = new QGridLayout(QgsAddTabOrGroupBase);
+        gridLayout_0->setObjectName(QString::fromUtf8("gridLayout_0"));
         label = new QLabel(QgsAddTabOrGroupBase);
         label->setObjectName(QString::fromUtf8("label"));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
+        label->setSizePolicy(sizePolicy);
 
-        gridLayout->addWidget(label, 0, 0, 1, 1);
+        gridLayout_0->addWidget(label, 0, 0, 1, 1);
 
         mName = new QLineEdit(QgsAddTabOrGroupBase);
         mName->setObjectName(QString::fromUtf8("mName"));
 
-        gridLayout->addWidget(mName, 0, 1, 1, 2);
+        gridLayout_0->addWidget(mName, 0, 1, 1, 1);
 
-        label_2 = new QLabel(QgsAddTabOrGroupBase);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_3 = new QLabel(QgsAddTabOrGroupBase);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        sizePolicy.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy);
 
-        gridLayout->addWidget(label_2, 0, 3, 1, 1);
+        gridLayout_0->addWidget(label_3, 2, 0, 1, 1);
 
-        mTabButton = new QRadioButton(QgsAddTabOrGroupBase);
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_0->addItem(verticalSpacer, 3, 0, 1, 1);
+
+        groupBox = new QGroupBox(QgsAddTabOrGroupBase);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        gridLayout_2 = new QGridLayout(groupBox);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        mTabButton = new QRadioButton(groupBox);
         buttonGroup = new QButtonGroup(QgsAddTabOrGroupBase);
         buttonGroup->setObjectName(QString::fromUtf8("buttonGroup"));
         buttonGroup->addButton(mTabButton);
         mTabButton->setObjectName(QString::fromUtf8("mTabButton"));
         mTabButton->setChecked(true);
 
-        gridLayout->addWidget(mTabButton, 1, 0, 1, 2);
+        gridLayout_2->addWidget(mTabButton, 0, 0, 1, 1);
 
-        mGroupButton = new QRadioButton(QgsAddTabOrGroupBase);
+        mGroupButton = new QRadioButton(groupBox);
         buttonGroup->addButton(mGroupButton);
         mGroupButton->setObjectName(QString::fromUtf8("mGroupButton"));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(mGroupButton->sizePolicy().hasHeightForWidth());
+        mGroupButton->setSizePolicy(sizePolicy1);
         mGroupButton->setChecked(false);
 
-        gridLayout->addWidget(mGroupButton, 2, 0, 1, 2);
+        gridLayout_2->addWidget(mGroupButton, 1, 0, 1, 1);
 
-        mTabList = new QComboBox(QgsAddTabOrGroupBase);
+        mTabList = new QComboBox(groupBox);
         mTabList->setObjectName(QString::fromUtf8("mTabList"));
         mTabList->setEnabled(true);
 
-        gridLayout->addWidget(mTabList, 2, 2, 1, 2);
+        gridLayout_2->addWidget(mTabList, 1, 1, 1, 1);
 
 
-        formLayout->setLayout(0, QFormLayout::SpanningRole, gridLayout);
-
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        formLayout->setItem(3, QFormLayout::LabelRole, verticalSpacer);
-
-        label_3 = new QLabel(QgsAddTabOrGroupBase);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
-
-        formLayout->setWidget(1, QFormLayout::LabelRole, label_3);
+        gridLayout_0->addWidget(groupBox, 1, 0, 1, 2);
 
         mColumnCountSpinBox = new QgsSpinBox(QgsAddTabOrGroupBase);
         mColumnCountSpinBox->setObjectName(QString::fromUtf8("mColumnCountSpinBox"));
         mColumnCountSpinBox->setMinimum(1);
         mColumnCountSpinBox->setMaximum(5);
 
-        formLayout->setWidget(1, QFormLayout::FieldRole, mColumnCountSpinBox);
+        gridLayout_0->addWidget(mColumnCountSpinBox, 2, 1, 1, 1);
 
         buttonBox = new QDialogButtonBox(QgsAddTabOrGroupBase);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
         buttonBox->setOrientation(Qt::Horizontal);
         buttonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Help|QDialogButtonBox::Ok);
 
-        formLayout->setWidget(4, QFormLayout::SpanningRole, buttonBox);
+        gridLayout_0->addWidget(buttonBox, 4, 0, 1, 2);
 
         QWidget::setTabOrder(mName, mTabButton);
         QWidget::setTabOrder(mTabButton, mGroupButton);
@@ -129,11 +138,11 @@ public:
 
     void retranslateUi(QDialog *QgsAddTabOrGroupBase)
     {
-        label->setText(QCoreApplication::translate("QgsAddTabOrGroupBase", "Create container", nullptr));
-        label_2->setText(QCoreApplication::translate("QgsAddTabOrGroupBase", "as", nullptr));
-        mTabButton->setText(QCoreApplication::translate("QgsAddTabOrGroupBase", "a tab", nullptr));
-        mGroupButton->setText(QCoreApplication::translate("QgsAddTabOrGroupBase", "a group in container", nullptr));
+        label->setText(QCoreApplication::translate("QgsAddTabOrGroupBase", "Label", nullptr));
         label_3->setText(QCoreApplication::translate("QgsAddTabOrGroupBase", "Number of columns", nullptr));
+        groupBox->setTitle(QCoreApplication::translate("QgsAddTabOrGroupBase", "Container Type", nullptr));
+        mTabButton->setText(QCoreApplication::translate("QgsAddTabOrGroupBase", "Tab", nullptr));
+        mGroupButton->setText(QCoreApplication::translate("QgsAddTabOrGroupBase", "Group box in container", nullptr));
         (void)QgsAddTabOrGroupBase;
     } // retranslateUi
 

@@ -63,6 +63,7 @@ public:
     QHBoxLayout *horizontalLayout_5;
     QPushButton *mSelectAllAttributes;
     QPushButton *mDeselectAllAttributes;
+    QCheckBox *mUseAliasesForExportedName;
     QCheckBox *mReplaceRawFieldValues;
     QCheckBox *mCheckPersistMetadata;
     QHBoxLayout *horizontalLayout_2;
@@ -220,6 +221,11 @@ public:
 
 
         verticalLayout_4->addLayout(horizontalLayout_5);
+
+        mUseAliasesForExportedName = new QCheckBox(mAttributesSelection);
+        mUseAliasesForExportedName->setObjectName(QString::fromUtf8("mUseAliasesForExportedName"));
+
+        verticalLayout_4->addWidget(mUseAliasesForExportedName);
 
         mReplaceRawFieldValues = new QCheckBox(mAttributesSelection);
         mReplaceRawFieldValues->setObjectName(QString::fromUtf8("mReplaceRawFieldValues"));
@@ -447,6 +453,7 @@ public:
         mAttributesSelection->setTitle(QCoreApplication::translate("QgsVectorLayerSaveAsDialogBase", "Select fields to export and their export options", nullptr));
         mSelectAllAttributes->setText(QCoreApplication::translate("QgsVectorLayerSaveAsDialogBase", "Select All", nullptr));
         mDeselectAllAttributes->setText(QCoreApplication::translate("QgsVectorLayerSaveAsDialogBase", "Deselect All", nullptr));
+        mUseAliasesForExportedName->setText(QCoreApplication::translate("QgsVectorLayerSaveAsDialogBase", "Use aliases for exported name", nullptr));
         mReplaceRawFieldValues->setText(QCoreApplication::translate("QgsVectorLayerSaveAsDialogBase", "Replace all selected raw field values by displayed values", nullptr));
 #if QT_CONFIG(tooltip)
         mCheckPersistMetadata->setToolTip(QCoreApplication::translate("QgsVectorLayerSaveAsDialogBase", "If checked, any metadata present in the source layer will be copied to the output layer.", nullptr));

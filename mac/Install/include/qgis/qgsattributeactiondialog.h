@@ -35,6 +35,10 @@ back to QgsVectorLayer.
 class QgsActionManager;
 class QgsVectorLayer;
 
+/**
+ * \ingroup gui
+ * \class QgsAttributeActionDialog
+ */
 class GUI_EXPORT QgsAttributeActionDialog: public QWidget, private Ui::QgsAttributeActionDialogBase
 {
     Q_OBJECT
@@ -49,6 +53,13 @@ class GUI_EXPORT QgsAttributeActionDialog: public QWidget, private Ui::QgsAttrib
       ActionScopes,
       NotificationMessage,
       EnabledOnlyWhenEditable
+    };
+
+    //! UserRole for Type data
+    enum Role
+    {
+      ActionType = Qt::UserRole,
+      ActionId  = Qt::UserRole + 1
     };
 
   public:

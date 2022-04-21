@@ -27,7 +27,8 @@
 #include "qgsexpression.h"
 #include "qgsexpressioncontext.h"
 #include "qgssimplifymethod.h"
-
+#include "qgscoordinatetransformcontext.h"
+#include "qgscoordinatereferencesystem.h"
 
 
 /**
@@ -221,6 +222,18 @@ class CORE_EXPORT QgsFeatureRequest
 
         // friend inline int qHash(const OrderByClause &a) { return qHash(a.mExpression.expression()) ^ qHash(a.mAscending) ^ qHash( a.mNullsFirst); }
 
+        bool operator==( const OrderByClause &v ) const
+        {
+          return mExpression == v.mExpression &&
+                 mAscending == v.mAscending &&
+                 mNullsFirst == v.mNullsFirst;
+        }
+
+        bool operator!=( const OrderByClause &v ) const
+        {
+          return !( v == *this );
+        }
+
       private:
         QgsExpression mExpression;
         bool mAscending;
@@ -405,6 +418,16 @@ class CORE_EXPORT QgsFeatureRequest
      * \since QGIS 3.22
      */
     QgsGeometry referenceGeometry() const { return mReferenceGeometry; }
+
+    /**
+     * Returns the reference geometry engine used for spatial filtering of features.
+     *
+     * This is to avoid re-creating the engine.
+     *
+     * \see referenceGeometry()
+     * \since QGIS 3.22
+     */
+    std::shared_ptr< QgsGeometryEngine > referenceGeometryEngine() const SIP_SKIP { return mReferenceGeometryEngine; }
 
     /**
      * Returns the maximum distance from the referenceGeometry() of fetched
@@ -643,6 +666,12 @@ class CORE_EXPORT QgsFeatureRequest
      * To revert a call to setSubsetOfAttributes and fetch all available attributes,
      * the SubsetOfAttributes flag should be removed from the request.
      *
+     * \note This is intended as hint to data providers for optimising feature retrieval. Depending
+     * on the provider, it may be trivial for the provider to always return all attributes instead of
+     * the requested subset, or actually result in slower retrieval when the attributes are filtered out.
+     * In these cases the provider may ignore this hint and return all attributes regardless of the
+     * requested attributes.
+     *
      * \see subsetOfAttributes()
      * \see setNoAttributes()
      */
@@ -654,6 +683,11 @@ class CORE_EXPORT QgsFeatureRequest
      * To revert a call to setNoAttributes and fetch all or some available attributes,
      * the SubsetOfAttributes flag should be removed from the request.
      *
+     * \note This is intended as hint to data providers for optimising feature retrieval. Depending
+     * on the provider, it may be trivial for the provider to always return all attributes instead of
+     * removing them. In these cases the provider may ignore this hint and return all attributes
+     * regardless of whether this method has been called.
+     *
      * \see setSubsetOfAttributes()
      *
      * \since QGIS 3.4
@@ -664,6 +698,12 @@ class CORE_EXPORT QgsFeatureRequest
      * Returns the subset of attributes which at least need to be fetched.
      * \returns A list of attributes to be fetched
      *
+     * \note This is intended as hint to data providers for optimising feature retrieval. Depending
+     * on the provider, it may be trivial for the provider to always return all attributes instead of
+     * the requested subset, or actually result in slower retrieval when the attributes are filtered out.
+     * In these cases the provider may ignore this hint and return all attributes regardless of the
+     * requested attributes.
+     *
      * \see setSubsetOfAttributes()
      * \see setNoAttributes()
      */
@@ -672,12 +712,24 @@ class CORE_EXPORT QgsFeatureRequest
     /**
      * Sets a subset of attributes by names that will be fetched.
      *
+     * \note This is intended as hint to data providers for optimising feature retrieval. Depending
+     * on the provider, it may be trivial for the provider to always return all attributes instead of
+     * the requested subset, or actually result in slower retrieval when the attributes are filtered out.
+     * In these cases the provider may ignore this hint and return all attributes regardless of the
+     * requested attributes.
+     *
      * \see subsetOfAttributes()
      */
     QgsFeatureRequest &setSubsetOfAttributes( const QStringList &attrNames, const QgsFields &fields );
 
     /**
      * Sets a subset of attributes by names that will be fetched.
+     *
+     * \note This is intended as hint to data providers for optimising feature retrieval. Depending
+     * on the provider, it may be trivial for the provider to always return all attributes instead of
+     * the requested subset, or actually result in slower retrieval when the attributes are filtered out.
+     * In these cases the provider may ignore this hint and return all attributes regardless of the
+     * requested attributes.
      *
      * \see subsetOfAttributes()
      */
@@ -917,7 +969,7 @@ class CORE_EXPORT QgsFeatureRequest
     /**
      * Prepared geometry engine for mReferenceGeometry.
      */
-    std::unique_ptr< QgsGeometryEngine > mReferenceGeometryEngine;
+    std::shared_ptr< QgsGeometryEngine > mReferenceGeometryEngine;
 
     /**
      * Maximum distance from reference geometry.

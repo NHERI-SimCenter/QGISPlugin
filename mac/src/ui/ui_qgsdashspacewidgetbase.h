@@ -12,7 +12,9 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTreeWidget>
@@ -30,6 +32,9 @@ public:
     QPushButton *mRemoveButton;
     QSpacerItem *verticalSpacer;
     QTreeWidget *mDashSpaceTreeWidget;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label;
+    QLabel *mPatternLengthLabel;
 
     void setupUi(QgsPanelWidget *QgsDashSpaceWidgetBase)
     {
@@ -63,6 +68,24 @@ public:
 
         gridLayout->addWidget(mDashSpaceTreeWidget, 0, 0, 1, 1);
 
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(-1, -1, -1, 0);
+        label = new QLabel(QgsDashSpaceWidgetBase);
+        label->setObjectName(QString::fromUtf8("label"));
+
+        horizontalLayout->addWidget(label);
+
+        mPatternLengthLabel = new QLabel(QgsDashSpaceWidgetBase);
+        mPatternLengthLabel->setObjectName(QString::fromUtf8("mPatternLengthLabel"));
+        mPatternLengthLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
+
+        horizontalLayout->addWidget(mPatternLengthLabel);
+
+        horizontalLayout->setStretch(1, 1);
+
+        gridLayout->addLayout(horizontalLayout, 1, 0, 1, 2);
+
 
         retranslateUi(QgsDashSpaceWidgetBase);
 
@@ -77,6 +100,8 @@ public:
         QTreeWidgetItem *___qtreewidgetitem = mDashSpaceTreeWidget->headerItem();
         ___qtreewidgetitem->setText(1, QCoreApplication::translate("QgsDashSpaceWidgetBase", "Space", nullptr));
         ___qtreewidgetitem->setText(0, QCoreApplication::translate("QgsDashSpaceWidgetBase", "Dash", nullptr));
+        label->setText(QCoreApplication::translate("QgsDashSpaceWidgetBase", "Pattern length", nullptr));
+        mPatternLengthLabel->setText(QString());
     } // retranslateUi
 
 };

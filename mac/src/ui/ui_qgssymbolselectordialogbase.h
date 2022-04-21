@@ -17,12 +17,12 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTreeView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "qgsscrollarea.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -46,7 +46,7 @@ public:
     QFrame *line;
     QFrame *frame;
     QVBoxLayout *verticalLayout_2;
-    QScrollArea *scrollArea;
+    QgsScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QVBoxLayout *verticalLayout;
     QStackedWidget *stackedWidget;
@@ -172,7 +172,7 @@ public:
 
         gridLayout_2->addWidget(frame, 4, 0, 1, 1);
 
-        scrollArea = new QScrollArea(QgsSymbolSelectorDialogBase);
+        scrollArea = new QgsScrollArea(QgsSymbolSelectorDialogBase);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         scrollArea->setFrameShape(QFrame::NoFrame);
         scrollArea->setWidgetResizable(true);

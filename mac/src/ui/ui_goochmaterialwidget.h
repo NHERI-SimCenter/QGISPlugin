@@ -47,7 +47,7 @@ public:
     {
         if (GoochMaterialWidget->objectName().isEmpty())
             GoochMaterialWidget->setObjectName(QString::fromUtf8("GoochMaterialWidget"));
-        GoochMaterialWidget->resize(394, 230);
+        GoochMaterialWidget->resize(394, 326);
         GoochMaterialWidget->setWindowTitle(QString::fromUtf8("Form"));
         gridLayout = new QGridLayout(GoochMaterialWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -181,9 +181,18 @@ public:
 
     void retranslateUi(QWidget *GoochMaterialWidget)
     {
+#if QT_CONFIG(tooltip)
+        lblShininess->setToolTip(QCoreApplication::translate("GoochMaterialWidget", "How shiny smooth surfaces are.", nullptr));
+#endif // QT_CONFIG(tooltip)
         lblShininess->setText(QCoreApplication::translate("GoochMaterialWidget", "Shininess", nullptr));
         lblAmbient_2->setText(QCoreApplication::translate("GoochMaterialWidget", "Cool", nullptr));
+#if QT_CONFIG(tooltip)
+        lblDiffuse->setToolTip(QCoreApplication::translate("GoochMaterialWidget", "Color of light reflected from rough surfaces.", nullptr));
+#endif // QT_CONFIG(tooltip)
         lblDiffuse->setText(QCoreApplication::translate("GoochMaterialWidget", "Diffuse", nullptr));
+#if QT_CONFIG(tooltip)
+        lblSpecular->setToolTip(QCoreApplication::translate("GoochMaterialWidget", "Color of light reflecting from smooth surfaces.", nullptr));
+#endif // QT_CONFIG(tooltip)
         lblSpecular->setText(QCoreApplication::translate("GoochMaterialWidget", "Specular", nullptr));
         lblShininess_2->setText(QCoreApplication::translate("GoochMaterialWidget", "Alpha", nullptr));
         lblShininess_3->setText(QCoreApplication::translate("GoochMaterialWidget", "Beta", nullptr));

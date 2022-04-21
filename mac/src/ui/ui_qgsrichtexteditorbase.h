@@ -82,56 +82,31 @@ public:
         mActionInsertLink->setObjectName(QString::fromUtf8("mActionInsertLink"));
         mActionInsertLink->setCheckable(true);
         QIcon icon5;
-        QString iconThemeName = QString::fromUtf8("insert-link");
-        if (QIcon::hasThemeIcon(iconThemeName)) {
-            icon5 = QIcon::fromTheme(iconThemeName);
-        } else {
-            icon5.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
-        }
+        icon5.addFile(QString::fromUtf8(":/images/themes/default/mActionEditInsertLink.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionInsertLink->setIcon(icon5);
         mActionBold = new QAction(QgsRichTextEditorBase);
         mActionBold->setObjectName(QString::fromUtf8("mActionBold"));
         mActionBold->setCheckable(true);
         QIcon icon6;
-        iconThemeName = QString::fromUtf8("format-text-bold");
-        if (QIcon::hasThemeIcon(iconThemeName)) {
-            icon6 = QIcon::fromTheme(iconThemeName);
-        } else {
-            icon6.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
-        }
+        icon6.addFile(QString::fromUtf8(":/images/themes/default/mActionEditBold.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionBold->setIcon(icon6);
         mActionItalic = new QAction(QgsRichTextEditorBase);
         mActionItalic->setObjectName(QString::fromUtf8("mActionItalic"));
         mActionItalic->setCheckable(true);
         QIcon icon7;
-        iconThemeName = QString::fromUtf8("format-text-italic");
-        if (QIcon::hasThemeIcon(iconThemeName)) {
-            icon7 = QIcon::fromTheme(iconThemeName);
-        } else {
-            icon7.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
-        }
+        icon7.addFile(QString::fromUtf8(":/images/themes/default/mActionEditItalic.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionItalic->setIcon(icon7);
         mActionUnderline = new QAction(QgsRichTextEditorBase);
         mActionUnderline->setObjectName(QString::fromUtf8("mActionUnderline"));
         mActionUnderline->setCheckable(true);
         QIcon icon8;
-        iconThemeName = QString::fromUtf8("format-text-underline");
-        if (QIcon::hasThemeIcon(iconThemeName)) {
-            icon8 = QIcon::fromTheme(iconThemeName);
-        } else {
-            icon8.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
-        }
+        icon8.addFile(QString::fromUtf8(":/images/themes/default/mActionEditUnderline.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionUnderline->setIcon(icon8);
         mActionStrikeOut = new QAction(QgsRichTextEditorBase);
         mActionStrikeOut->setObjectName(QString::fromUtf8("mActionStrikeOut"));
         mActionStrikeOut->setCheckable(true);
         QIcon icon9;
-        iconThemeName = QString::fromUtf8("format-text-strikethrough");
-        if (QIcon::hasThemeIcon(iconThemeName)) {
-            icon9 = QIcon::fromTheme(iconThemeName);
-        } else {
-            icon9.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
-        }
+        icon9.addFile(QString::fromUtf8(":/images/themes/default/mActionStrikeOut.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionStrikeOut->setIcon(icon9);
         mActionBulletList = new QAction(QgsRichTextEditorBase);
         mActionBulletList->setObjectName(QString::fromUtf8("mActionBulletList"));
@@ -142,32 +117,17 @@ public:
         mActionDecreaseIndent = new QAction(QgsRichTextEditorBase);
         mActionDecreaseIndent->setObjectName(QString::fromUtf8("mActionDecreaseIndent"));
         QIcon icon10;
-        iconThemeName = QString::fromUtf8("format-indent-less");
-        if (QIcon::hasThemeIcon(iconThemeName)) {
-            icon10 = QIcon::fromTheme(iconThemeName);
-        } else {
-            icon10.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
-        }
+        icon10.addFile(QString::fromUtf8(":/images/themes/default/mActionEditIndentLess.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionDecreaseIndent->setIcon(icon10);
         mActionIncreaseIndent = new QAction(QgsRichTextEditorBase);
         mActionIncreaseIndent->setObjectName(QString::fromUtf8("mActionIncreaseIndent"));
         QIcon icon11;
-        iconThemeName = QString::fromUtf8("format-indent-more");
-        if (QIcon::hasThemeIcon(iconThemeName)) {
-            icon11 = QIcon::fromTheme(iconThemeName);
-        } else {
-            icon11.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
-        }
+        icon11.addFile(QString::fromUtf8(":/images/themes/default/mActionEditIndentMore.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionIncreaseIndent->setIcon(icon11);
         mActionInsertImage = new QAction(QgsRichTextEditorBase);
         mActionInsertImage->setObjectName(QString::fromUtf8("mActionInsertImage"));
         QIcon icon12;
-        iconThemeName = QString::fromUtf8("insert-image");
-        if (QIcon::hasThemeIcon(iconThemeName)) {
-            icon12 = QIcon::fromTheme(iconThemeName);
-        } else {
-            icon12.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
-        }
+        icon12.addFile(QString::fromUtf8(":/images/themes/default/mActionEditInsertImage.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionInsertImage->setIcon(icon12);
         mActionEditSource = new QAction(QgsRichTextEditorBase);
         mActionEditSource->setObjectName(QString::fromUtf8("mActionEditSource"));

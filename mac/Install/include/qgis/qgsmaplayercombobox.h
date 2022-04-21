@@ -74,6 +74,16 @@ class GUI_EXPORT QgsMapLayerComboBox : public QComboBox
     QStringList excludedProviders() const;
 
     /**
+     * Sets the \a project from which map layers are shown.
+     *
+     * If \a project is NULLPTR then QgsProject::instance() will be used.
+     *
+     * \since QGIS 3.24
+     */
+    void setProject( QgsProject *project );
+
+
+    /**
      * Sets whether an optional empty layer ("not set") option is shown in the combo box.
      *
      * Since QGIS 3.20, the optional \a text and \a icon arguments allows the text and icon for the empty layer item to be set.
@@ -119,6 +129,25 @@ class GUI_EXPORT QgsMapLayerComboBox : public QComboBox
      * \since QGIS 3.0
      */
     QStringList additionalItems() const;
+
+    /**
+     * Sets a list of additional \a layers to include in the combobox.
+     *
+     * This method allows adding additional layers, which are not part of a project's
+     * layers, into the combobox.
+     *
+     * \see additionalLayers()
+     * \since QGIS 3.22
+     */
+    void setAdditionalLayers( const QList<QgsMapLayer *> &layers );
+
+    /**
+     * Returns the list of additional layers added to the combobox.
+     *
+     * \see setAdditionalLayers()
+     * \since QGIS 3.22
+     */
+    QList< QgsMapLayer * > additionalLayers() const;
 
     /**
      * Returns the current layer selected in the combo box.

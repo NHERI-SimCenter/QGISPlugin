@@ -20,6 +20,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
 #include <QtWidgets/QStackedWidget>
@@ -27,6 +28,7 @@
 #include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "qgscodeeditorsql.h"
 #include "qgscollapsiblegroupbox.h"
 #include "qgsfilterlineedit.h"
 #include "qgsprojectionselectionwidget.h"
@@ -60,6 +62,11 @@ public:
     QgsProjectionSelectionWidget *mCrsSelector;
     QLabel *label_7;
     QFrame *line_2;
+    QgsCollapsibleGroupBox *mSubsetGroupBox;
+    QGridLayout *gridLayout_2;
+    QPushButton *pbnQueryBuilder;
+    QSpacerItem *horizontalSpacer;
+    QgsCodeEditorSQL *txtSubsetSQL;
     QSpacerItem *verticalSpacer;
     QWidget *mOptsPage_Metadata;
     QVBoxLayout *verticalLayout_5;
@@ -221,6 +228,32 @@ public:
 
         verticalLayout_9->addWidget(mCrsGroupBox);
 
+        mSubsetGroupBox = new QgsCollapsibleGroupBox(mOptsPage_Source);
+        mSubsetGroupBox->setObjectName(QString::fromUtf8("mSubsetGroupBox"));
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(3);
+        sizePolicy2.setHeightForWidth(mSubsetGroupBox->sizePolicy().hasHeightForWidth());
+        mSubsetGroupBox->setSizePolicy(sizePolicy2);
+        gridLayout_2 = new QGridLayout(mSubsetGroupBox);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        pbnQueryBuilder = new QPushButton(mSubsetGroupBox);
+        pbnQueryBuilder->setObjectName(QString::fromUtf8("pbnQueryBuilder"));
+
+        gridLayout_2->addWidget(pbnQueryBuilder, 1, 1, 1, 1);
+
+        horizontalSpacer = new QSpacerItem(0, 21, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        gridLayout_2->addItem(horizontalSpacer, 1, 0, 1, 1);
+
+        txtSubsetSQL = new QgsCodeEditorSQL(mSubsetGroupBox);
+        txtSubsetSQL->setObjectName(QString::fromUtf8("txtSubsetSQL"));
+
+        gridLayout_2->addWidget(txtSubsetSQL, 0, 0, 1, 2);
+
+
+        verticalLayout_9->addWidget(mSubsetGroupBox);
+
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout_9->addItem(verticalSpacer);
@@ -279,11 +312,11 @@ public:
 
         mButtonBoxFrame = new QFrame(QgsPointCloudLayerPropertiesBase);
         mButtonBoxFrame->setObjectName(QString::fromUtf8("mButtonBoxFrame"));
-        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Maximum);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(mButtonBoxFrame->sizePolicy().hasHeightForWidth());
-        mButtonBoxFrame->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy3(QSizePolicy::Preferred, QSizePolicy::Maximum);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(mButtonBoxFrame->sizePolicy().hasHeightForWidth());
+        mButtonBoxFrame->setSizePolicy(sizePolicy3);
         mButtonBoxFrame->setFrameShape(QFrame::NoFrame);
         mButtonBoxFrame->setFrameShadow(QFrame::Raised);
         gridLayout = new QGridLayout(mButtonBoxFrame);
@@ -304,7 +337,7 @@ public:
         retranslateUi(QgsPointCloudLayerPropertiesBase);
         QObject::connect(mOptionsListWidget, SIGNAL(currentRowChanged(int)), mOptionsStackedWidget, SLOT(setCurrentIndex(int)));
 
-        mOptionsStackedWidget->setCurrentIndex(2);
+        mOptionsStackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(QgsPointCloudLayerPropertiesBase);
@@ -342,6 +375,8 @@ public:
         label_6->setText(QCoreApplication::translate("QgsPointCloudLayerPropertiesBase", "Layer name", nullptr));
         mCrsGroupBox->setTitle(QCoreApplication::translate("QgsPointCloudLayerPropertiesBase", "Assigned Coordinate Reference System (CRS)", nullptr));
         label_7->setText(QCoreApplication::translate("QgsPointCloudLayerPropertiesBase", "<html><head/><body><p><span style=\" font-weight:600;\">Changing this option does not modify the original data source or perform any reprojection of points. Rather, it can be used to override the layer's CRS within this project if it could not be detected or has been incorrectly detected.</span></p></body></html>", nullptr));
+        mSubsetGroupBox->setTitle(QCoreApplication::translate("QgsPointCloudLayerPropertiesBase", "Provider Feature Filter", nullptr));
+        pbnQueryBuilder->setText(QCoreApplication::translate("QgsPointCloudLayerPropertiesBase", "Query Builder", nullptr));
         groupBox->setTitle(QCoreApplication::translate("QgsPointCloudLayerPropertiesBase", "Attribute Statistics", nullptr));
         mClassificationStatsGroupBox->setTitle(QCoreApplication::translate("QgsPointCloudLayerPropertiesBase", "Classification Statistics", nullptr));
     } // retranslateUi

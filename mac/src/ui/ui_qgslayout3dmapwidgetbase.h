@@ -15,10 +15,10 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "qgsdoublespinbox.h"
+#include "qgsscrollarea.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -27,7 +27,7 @@ class Ui_QgsLayout3DMapWidgetBase
 public:
     QVBoxLayout *verticalLayout_2;
     QLabel *mLabel;
-    QScrollArea *scrollArea;
+    QgsScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents_2;
     QVBoxLayout *mainLayout;
     QGroupBox *groupBox_3;
@@ -69,7 +69,7 @@ public:
 
         verticalLayout_2->addWidget(mLabel);
 
-        scrollArea = new QScrollArea(QgsLayout3DMapWidgetBase);
+        scrollArea = new QgsScrollArea(QgsLayout3DMapWidgetBase);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();

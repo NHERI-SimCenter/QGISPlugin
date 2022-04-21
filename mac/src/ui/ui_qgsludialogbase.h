@@ -15,8 +15,8 @@
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QSpacerItem>
+#include "qgsdoublespinbox.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -25,17 +25,17 @@ class Ui_QgsLUDialogBase
 public:
     QGridLayout *gridLayout;
     QLabel *mLowerLabel;
-    QLineEdit *mLowerEdit;
     QLabel *mUpperLabel;
-    QLineEdit *mUpperEdit;
     QDialogButtonBox *buttonBox;
     QSpacerItem *verticalSpacer;
+    QgsDoubleSpinBox *mLowerEdit;
+    QgsDoubleSpinBox *mUpperEdit;
 
     void setupUi(QDialog *QgsLUDialogBase)
     {
         if (QgsLUDialogBase->objectName().isEmpty())
             QgsLUDialogBase->setObjectName(QString::fromUtf8("QgsLUDialogBase"));
-        QgsLUDialogBase->resize(227, 122);
+        QgsLUDialogBase->resize(302, 122);
         QgsLUDialogBase->setModal(true);
         gridLayout = new QGridLayout(QgsLUDialogBase);
         gridLayout->setSpacing(6);
@@ -46,20 +46,10 @@ public:
 
         gridLayout->addWidget(mLowerLabel, 0, 0, 1, 1);
 
-        mLowerEdit = new QLineEdit(QgsLUDialogBase);
-        mLowerEdit->setObjectName(QString::fromUtf8("mLowerEdit"));
-
-        gridLayout->addWidget(mLowerEdit, 0, 1, 1, 1);
-
         mUpperLabel = new QLabel(QgsLUDialogBase);
         mUpperLabel->setObjectName(QString::fromUtf8("mUpperLabel"));
 
         gridLayout->addWidget(mUpperLabel, 1, 0, 1, 1);
-
-        mUpperEdit = new QLineEdit(QgsLUDialogBase);
-        mUpperEdit->setObjectName(QString::fromUtf8("mUpperEdit"));
-
-        gridLayout->addWidget(mUpperEdit, 1, 1, 1, 1);
 
         buttonBox = new QDialogButtonBox(QgsLUDialogBase);
         buttonBox->setObjectName(QString::fromUtf8("buttonBox"));
@@ -71,10 +61,22 @@ public:
 
         gridLayout->addItem(verticalSpacer, 2, 0, 1, 1);
 
-#if QT_CONFIG(shortcut)
-        mLowerLabel->setBuddy(mLowerEdit);
-        mUpperLabel->setBuddy(mUpperEdit);
-#endif // QT_CONFIG(shortcut)
+        mLowerEdit = new QgsDoubleSpinBox(QgsLUDialogBase);
+        mLowerEdit->setObjectName(QString::fromUtf8("mLowerEdit"));
+        mLowerEdit->setDecimals(12);
+        mLowerEdit->setMinimum(-1000000000000.000000000000000);
+        mLowerEdit->setMaximum(1000000000000.000000000000000);
+
+        gridLayout->addWidget(mLowerEdit, 0, 1, 1, 1);
+
+        mUpperEdit = new QgsDoubleSpinBox(QgsLUDialogBase);
+        mUpperEdit->setObjectName(QString::fromUtf8("mUpperEdit"));
+        mUpperEdit->setDecimals(12);
+        mUpperEdit->setMinimum(-1000000000000.000000000000000);
+        mUpperEdit->setMaximum(1000000000000.000000000000000);
+
+        gridLayout->addWidget(mUpperEdit, 1, 1, 1, 1);
+
 
         retranslateUi(QgsLUDialogBase);
         QObject::connect(buttonBox, SIGNAL(accepted()), QgsLUDialogBase, SLOT(accept()));

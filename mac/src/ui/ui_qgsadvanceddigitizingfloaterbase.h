@@ -22,20 +22,24 @@ class Ui_QgsAdvancedDigitizingFloaterBase
 {
 public:
     QGridLayout *gridLayout;
-    QLabel *mDistanceLabel;
-    QLabel *mAngleLabel;
+    QLabel *mZLabel;
     QLabel *mXLabel;
-    QLineEdit *mAngleLineEdit;
     QLineEdit *mDistanceLineEdit;
+    QLabel *mDistanceLabel;
     QLineEdit *mXLineEdit;
     QLabel *mYLabel;
     QLineEdit *mYLineEdit;
+    QLabel *mAngleLabel;
+    QLineEdit *mAngleLineEdit;
+    QLabel *mMLabel;
+    QLineEdit *mZLineEdit;
+    QLineEdit *mMLineEdit;
 
     void setupUi(QWidget *QgsAdvancedDigitizingFloaterBase)
     {
         if (QgsAdvancedDigitizingFloaterBase->objectName().isEmpty())
             QgsAdvancedDigitizingFloaterBase->setObjectName(QString::fromUtf8("QgsAdvancedDigitizingFloaterBase"));
-        QgsAdvancedDigitizingFloaterBase->resize(279, 142);
+        QgsAdvancedDigitizingFloaterBase->resize(310, 189);
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 127));
         brush.setStyle(Qt::SolidPattern);
@@ -52,17 +56,11 @@ public:
         gridLayout->setHorizontalSpacing(2);
         gridLayout->setVerticalSpacing(0);
         gridLayout->setContentsMargins(2, 0, 0, 0);
-        mDistanceLabel = new QLabel(QgsAdvancedDigitizingFloaterBase);
-        mDistanceLabel->setObjectName(QString::fromUtf8("mDistanceLabel"));
-        mDistanceLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        mZLabel = new QLabel(QgsAdvancedDigitizingFloaterBase);
+        mZLabel->setObjectName(QString::fromUtf8("mZLabel"));
+        mZLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
 
-        gridLayout->addWidget(mDistanceLabel, 2, 1, 1, 1);
-
-        mAngleLabel = new QLabel(QgsAdvancedDigitizingFloaterBase);
-        mAngleLabel->setObjectName(QString::fromUtf8("mAngleLabel"));
-        mAngleLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
-
-        gridLayout->addWidget(mAngleLabel, 3, 1, 1, 1);
+        gridLayout->addWidget(mZLabel, 6, 1, 1, 1);
 
         mXLabel = new QLabel(QgsAdvancedDigitizingFloaterBase);
         mXLabel->setObjectName(QString::fromUtf8("mXLabel"));
@@ -70,19 +68,18 @@ public:
 
         gridLayout->addWidget(mXLabel, 4, 1, 1, 1);
 
-        mAngleLineEdit = new QLineEdit(QgsAdvancedDigitizingFloaterBase);
-        mAngleLineEdit->setObjectName(QString::fromUtf8("mAngleLineEdit"));
-        mAngleLineEdit->setMinimumSize(QSize(40, 0));
-        mAngleLineEdit->setFrame(false);
-
-        gridLayout->addWidget(mAngleLineEdit, 3, 3, 1, 1);
-
         mDistanceLineEdit = new QLineEdit(QgsAdvancedDigitizingFloaterBase);
         mDistanceLineEdit->setObjectName(QString::fromUtf8("mDistanceLineEdit"));
         mDistanceLineEdit->setFrame(false);
         mDistanceLineEdit->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         gridLayout->addWidget(mDistanceLineEdit, 2, 3, 1, 1);
+
+        mDistanceLabel = new QLabel(QgsAdvancedDigitizingFloaterBase);
+        mDistanceLabel->setObjectName(QString::fromUtf8("mDistanceLabel"));
+        mDistanceLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout->addWidget(mDistanceLabel, 2, 1, 1, 1);
 
         mXLineEdit = new QLineEdit(QgsAdvancedDigitizingFloaterBase);
         mXLineEdit->setObjectName(QString::fromUtf8("mXLineEdit"));
@@ -104,6 +101,39 @@ public:
 
         gridLayout->addWidget(mYLineEdit, 5, 3, 1, 1);
 
+        mAngleLabel = new QLabel(QgsAdvancedDigitizingFloaterBase);
+        mAngleLabel->setObjectName(QString::fromUtf8("mAngleLabel"));
+        mAngleLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout->addWidget(mAngleLabel, 3, 1, 1, 1);
+
+        mAngleLineEdit = new QLineEdit(QgsAdvancedDigitizingFloaterBase);
+        mAngleLineEdit->setObjectName(QString::fromUtf8("mAngleLineEdit"));
+        mAngleLineEdit->setMinimumSize(QSize(40, 0));
+        mAngleLineEdit->setFrame(false);
+
+        gridLayout->addWidget(mAngleLineEdit, 3, 3, 1, 1);
+
+        mMLabel = new QLabel(QgsAdvancedDigitizingFloaterBase);
+        mMLabel->setObjectName(QString::fromUtf8("mMLabel"));
+        mMLabel->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+
+        gridLayout->addWidget(mMLabel, 7, 1, 1, 1);
+
+        mZLineEdit = new QLineEdit(QgsAdvancedDigitizingFloaterBase);
+        mZLineEdit->setObjectName(QString::fromUtf8("mZLineEdit"));
+        mZLineEdit->setSizeIncrement(QSize(40, 0));
+        mZLineEdit->setFrame(false);
+
+        gridLayout->addWidget(mZLineEdit, 6, 3, 1, 1);
+
+        mMLineEdit = new QLineEdit(QgsAdvancedDigitizingFloaterBase);
+        mMLineEdit->setObjectName(QString::fromUtf8("mMLineEdit"));
+        mMLineEdit->setSizeIncrement(QSize(40, 0));
+        mMLineEdit->setFrame(false);
+
+        gridLayout->addWidget(mMLineEdit, 7, 3, 1, 1);
+
         QWidget::setTabOrder(mDistanceLineEdit, mAngleLineEdit);
         QWidget::setTabOrder(mAngleLineEdit, mXLineEdit);
         QWidget::setTabOrder(mXLineEdit, mYLineEdit);
@@ -115,17 +145,13 @@ public:
 
     void retranslateUi(QWidget *QgsAdvancedDigitizingFloaterBase)
     {
-        mDistanceLabel->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "d", nullptr));
-        mAngleLabel->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "a", nullptr));
+        mZLabel->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "z", nullptr));
         mXLabel->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "x", nullptr));
-#if QT_CONFIG(tooltip)
-        mAngleLineEdit->setToolTip(QString());
-#endif // QT_CONFIG(tooltip)
-        mAngleLineEdit->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "-", nullptr));
 #if QT_CONFIG(tooltip)
         mDistanceLineEdit->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
         mDistanceLineEdit->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "-", nullptr));
+        mDistanceLabel->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "d", nullptr));
 #if QT_CONFIG(tooltip)
         mXLineEdit->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
@@ -135,6 +161,14 @@ public:
         mYLineEdit->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
         mYLineEdit->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "-", nullptr));
+        mAngleLabel->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "a", nullptr));
+#if QT_CONFIG(tooltip)
+        mAngleLineEdit->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        mAngleLineEdit->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "-", nullptr));
+        mMLabel->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "m", nullptr));
+        mZLineEdit->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "-", nullptr));
+        mMLineEdit->setText(QCoreApplication::translate("QgsAdvancedDigitizingFloaterBase", "-", nullptr));
         (void)QgsAdvancedDigitizingFloaterBase;
     } // retranslateUi
 

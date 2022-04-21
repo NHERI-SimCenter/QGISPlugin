@@ -15,6 +15,7 @@
 
 #include "qgisapp.h"
 #include "qgsclipboard.h"
+#include "qgsexpressionutils.h"
 #include "qgsmapcanvas.h"
 #include "qgsproject.h"
 #include "qgssettings.h"
@@ -78,6 +79,9 @@ QgsStatisticalSummaryDockWidget::QgsStatisticalSummaryDockWidget( QWidget *paren
 
   mStatisticsMenu = new QMenu( mOptionsToolButton );
   mOptionsToolButton->setMenu( mStatisticsMenu );
+  mSyncAction = new QAction( tr( "Keep synchronized with TOC" ) );
+  mSyncAction->setCheckable( true );
+  connect( mSyncAction, &QAction::toggled, this, &QgsStatisticalSummaryDockWidget::manageSyncLayer );
 
   mFieldType = DataType::Numeric;
   mPreviousFieldType = DataType::Numeric;
@@ -103,6 +107,7 @@ void QgsStatisticalSummaryDockWidget::fieldChanged()
   if ( mFieldExpressionWidget->expression() != mExpression )
   {
     mExpression = mFieldExpressionWidget->expression();
+    mLastExpression.insert( mLayerComboBox->currentLayer()->id(), mFieldExpressionWidget->currentText() );
     refreshStatistics();
   }
 }
@@ -135,6 +140,20 @@ void QgsStatisticalSummaryDockWidget::copyStatistics()
   }
 }
 
+void QgsStatisticalSummaryDockWidget::manageSyncLayer( bool checked )
+{
+  mLayerComboBox->setEnabled( !checked );
+  if ( checked )
+  {
+    connect( QgisApp::instance(), &QgisApp::activeLayerChanged, mLayerComboBox, &QgsMapLayerComboBox::setLayer );
+    mLayerComboBox->setLayer( QgisApp::instance()->activeLayer() );
+  }
+  else
+  {
+    disconnect( QgisApp::instance(), &QgisApp::activeLayerChanged, mLayerComboBox, &QgsMapLayerComboBox::setLayer );
+  }
+}
+
 void QgsStatisticalSummaryDockWidget::refreshStatistics()
 {
   if ( !mLayer || mFieldExpressionWidget->currentField().isEmpty() || ( mFieldExpressionWidget->isExpression() && !mFieldExpressionWidget->isValidExpression() ) )
@@ -158,6 +177,29 @@ void QgsStatisticalSummaryDockWidget::refreshStatistics()
   if ( !mFieldExpressionWidget->isExpression() )
   {
     mFieldType = fieldType( mFieldExpressionWidget->currentField() );
+  }
+  else
+  {
+    QgsExpressionContext context;
+    context.appendScopes( QgsExpressionContextUtils::globalProjectLayerScopes( mLayer ) );
+    QgsFeatureRequest request;
+    if ( mSelectedOnlyCheckBox->isChecked() )
+      request.setFilterFids( mLayer->selectedFeatureIds() );
+
+    std::tuple<QVariant::Type, int> returnType = QgsExpressionUtils::determineResultType( mFieldExpressionWidget->expression(), mLayer, request, context );
+    switch ( std::get<0>( returnType ) )
+    {
+      case QVariant::String:
+        mFieldType = DataType::String;
+        break;
+      case QVariant::Date:
+      case QVariant::DateTime:
+        mFieldType = DataType::DateTime;
+        break;
+      default:
+        mFieldType = DataType::Numeric;
+        break;
+    }
   }
 
   if ( mFieldType != mPreviousFieldType )
@@ -352,12 +394,12 @@ void QgsStatisticalSummaryDockWidget::layerChanged( QgsMapLayer *layer )
 
   mLayer = newLayer;
 
-  // clear expression, so that we don't force an unwanted recalculation
-  mFieldExpressionWidget->setExpression( QString() );
   mFieldExpressionWidget->setLayer( mLayer );
 
   if ( mLayer )
   {
+    // Get last expression
+    mFieldExpressionWidget->setExpression( mLastExpression.value( mLayer->id(), QString() ) );
     connect( mLayer, &QgsVectorLayer::selectionChanged, this, &QgsStatisticalSummaryDockWidget::layerSelectionChanged );
   }
 
@@ -415,6 +457,10 @@ void QgsStatisticalSummaryDockWidget::layersRemoved( const QStringList &layers )
     disconnect( mLayer, &QgsVectorLayer::selectionChanged, this, &QgsStatisticalSummaryDockWidget::layerSelectionChanged );
     mLayer = nullptr;
   }
+  for ( QString layerId : layers )
+  {
+    mLastExpression.remove( layerId );
+  }
 }
 
 void QgsStatisticalSummaryDockWidget::layerSelectionChanged()
@@ -458,7 +504,7 @@ void QgsStatisticalSummaryDockWidget::updateDateTimeStatistics()
   for ( const QgsDateTimeStatisticalSummary::Statistic stat : constStatsToDisplay )
   {
     const QString value = ( stat == QgsDateTimeStatisticalSummary::Range
-                            ? tr( "%1 seconds" ).arg( stats.range().seconds() )
+                            ? tr( "%n second(s)", nullptr, stats.range().seconds() )
                             : stats.statistic( stat ).toString() );
 
     addRow( row, QgsDateTimeStatisticalSummary::displayName( stat ),
@@ -558,6 +604,9 @@ void QgsStatisticalSummaryDockWidget::refreshStatisticsMenu()
       break;
     }
   }
+
+  mStatisticsMenu->addSeparator();
+  mStatisticsMenu->addAction( mSyncAction );
 }
 
 QgsStatisticalSummaryDockWidget::DataType QgsStatisticalSummaryDockWidget::fieldType( const QString &fieldName )

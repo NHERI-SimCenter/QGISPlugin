@@ -30,16 +30,17 @@ class Ui_QgsProviderSublayersDialogBase
 {
 public:
     QGridLayout *gridLayout;
-    QLabel *mLblFilePath;
     QDialogButtonBox *mButtonBox;
     QHBoxLayout *horizontalLayout;
     QPushButton *mBtnSelectAll;
     QPushButton *mBtnDeselectAll;
-    QCheckBox *mCbxAddToGroup;
     QSpacerItem *horizontalSpacer;
+    QLabel *mLblFilePath;
+    QCheckBox *mCheckShowSystem;
     QVBoxLayout *verticalLayout;
     QgsFilterLineEdit *mSearchLineEdit;
     QTreeView *mLayersTree;
+    QCheckBox *mCbxAddToGroup;
 
     void setupUi(QDialog *QgsProviderSublayersDialogBase)
     {
@@ -51,19 +52,12 @@ public:
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(9, 9, 9, 9);
-        mLblFilePath = new QLabel(QgsProviderSublayersDialogBase);
-        mLblFilePath->setObjectName(QString::fromUtf8("mLblFilePath"));
-        mLblFilePath->setWordWrap(true);
-        mLblFilePath->setTextInteractionFlags(Qt::TextSelectableByMouse);
-
-        gridLayout->addWidget(mLblFilePath, 0, 0, 1, 1);
-
         mButtonBox = new QDialogButtonBox(QgsProviderSublayersDialogBase);
         mButtonBox->setObjectName(QString::fromUtf8("mButtonBox"));
         mButtonBox->setOrientation(Qt::Horizontal);
         mButtonBox->setStandardButtons(QDialogButtonBox::Cancel|QDialogButtonBox::Ok);
 
-        gridLayout->addWidget(mButtonBox, 5, 0, 1, 1);
+        gridLayout->addWidget(mButtonBox, 7, 0, 1, 1);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
@@ -78,17 +72,24 @@ public:
 
         horizontalLayout->addWidget(mBtnDeselectAll);
 
-        mCbxAddToGroup = new QCheckBox(QgsProviderSublayersDialogBase);
-        mCbxAddToGroup->setObjectName(QString::fromUtf8("mCbxAddToGroup"));
-
-        horizontalLayout->addWidget(mCbxAddToGroup);
-
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
 
 
         gridLayout->addLayout(horizontalLayout, 4, 0, 1, 1);
+
+        mLblFilePath = new QLabel(QgsProviderSublayersDialogBase);
+        mLblFilePath->setObjectName(QString::fromUtf8("mLblFilePath"));
+        mLblFilePath->setWordWrap(true);
+        mLblFilePath->setTextInteractionFlags(Qt::TextSelectableByMouse);
+
+        gridLayout->addWidget(mLblFilePath, 0, 0, 1, 1);
+
+        mCheckShowSystem = new QCheckBox(QgsProviderSublayersDialogBase);
+        mCheckShowSystem->setObjectName(QString::fromUtf8("mCheckShowSystem"));
+
+        gridLayout->addWidget(mCheckShowSystem, 6, 0, 1, 1);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(0);
@@ -110,10 +111,16 @@ public:
 
         gridLayout->addLayout(verticalLayout, 2, 0, 1, 1);
 
+        mCbxAddToGroup = new QCheckBox(QgsProviderSublayersDialogBase);
+        mCbxAddToGroup->setObjectName(QString::fromUtf8("mCbxAddToGroup"));
+
+        gridLayout->addWidget(mCbxAddToGroup, 5, 0, 1, 1);
+
         QWidget::setTabOrder(mSearchLineEdit, mLayersTree);
         QWidget::setTabOrder(mLayersTree, mBtnSelectAll);
         QWidget::setTabOrder(mBtnSelectAll, mBtnDeselectAll);
         QWidget::setTabOrder(mBtnDeselectAll, mCbxAddToGroup);
+        QWidget::setTabOrder(mCbxAddToGroup, mCheckShowSystem);
 
         retranslateUi(QgsProviderSublayersDialogBase);
 
@@ -123,13 +130,14 @@ public:
     void retranslateUi(QDialog *QgsProviderSublayersDialogBase)
     {
         QgsProviderSublayersDialogBase->setWindowTitle(QCoreApplication::translate("QgsProviderSublayersDialogBase", "Select Layers to Load", nullptr));
+        mBtnSelectAll->setText(QCoreApplication::translate("QgsProviderSublayersDialogBase", "Select All", nullptr));
+        mBtnDeselectAll->setText(QCoreApplication::translate("QgsProviderSublayersDialogBase", "Deselect All", nullptr));
 #if QT_CONFIG(tooltip)
         mLblFilePath->setToolTip(QCoreApplication::translate("QgsProviderSublayersDialogBase", "Current file source", nullptr));
 #endif // QT_CONFIG(tooltip)
-        mBtnSelectAll->setText(QCoreApplication::translate("QgsProviderSublayersDialogBase", "Select All", nullptr));
-        mBtnDeselectAll->setText(QCoreApplication::translate("QgsProviderSublayersDialogBase", "Deselect All", nullptr));
-        mCbxAddToGroup->setText(QCoreApplication::translate("QgsProviderSublayersDialogBase", "Add layers to a group", nullptr));
+        mCheckShowSystem->setText(QCoreApplication::translate("QgsProviderSublayersDialogBase", "Show system and internal tables", nullptr));
         mSearchLineEdit->setPlaceholderText(QCoreApplication::translate("QgsProviderSublayersDialogBase", "Search\342\200\246", nullptr));
+        mCbxAddToGroup->setText(QCoreApplication::translate("QgsProviderSublayersDialogBase", "Add layers to a group", nullptr));
     } // retranslateUi
 
 };

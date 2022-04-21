@@ -54,6 +54,10 @@ class QgsAttributeFormContainerEdit;
 class QgsAttributeTypeDialog;
 class QgsAttributeWidgetEdit;
 
+/**
+ * \ingroup gui
+ * \class QgsAttributesFormProperties
+ */
 class GUI_EXPORT QgsAttributesFormProperties : public QWidget, public QgsExpressionContextGenerator, private Ui_QgsAttributesFormProperties
 {
     Q_OBJECT
@@ -88,6 +92,10 @@ class GUI_EXPORT QgsAttributesFormProperties : public QWidget, public QgsExpress
       QString htmlCode;
     };
 
+    /**
+     * \ingroup gui
+     * \class DnDTreeItemData
+     */
     class DnDTreeItemData : public QTreeWidgetItem
     {
       public:
@@ -98,7 +106,8 @@ class GUI_EXPORT QgsAttributesFormProperties : public QWidget, public QgsExpress
           Container, //!< Container for the form
           QmlWidget,
           HtmlWidget,
-          WidgetType //!< In the widget tree, the type of widget
+          WidgetType, //!< In the widget tree, the type of widget
+          Action //!< Layer action
         };
 
         //do we need that
@@ -128,11 +137,57 @@ class GUI_EXPORT QgsAttributesFormProperties : public QWidget, public QgsExpress
         bool showAsGroupBox() const;
         void setShowAsGroupBox( bool showAsGroupBox );
 
+        /**
+         * For group box containers  returns if this group box is collapsed.
+         *
+         * \returns TRUE if the group box is collapsed, FALSE otherwise.
+         * \see collapsed()
+         * \see setCollapsed()
+         * \since QGIS 3.26
+         */
+        bool collapsed() const { return mCollapsed; };
+
+        /**
+         * For group box containers  sets if this group box is \a collapsed.
+         *
+         * \see collapsed()
+         * \see setCollapsed()
+         * \since QGIS 3.26
+         */
+        void setCollapsed( bool collapsed ) { mCollapsed = collapsed; };
+
         bool showLabel() const;
         void setShowLabel( bool showLabel );
 
         QgsOptionalExpression visibilityExpression() const;
+
+        /**
+         * Sets the optional \a visibilityExpression that dynamically controls the visibility status of a container.
+         *
+         * \see visibilityExpression()
+         * \since QGIS 3.26
+         */
         void setVisibilityExpression( const QgsOptionalExpression &visibilityExpression );
+
+        /**
+         * Returns the optional expression that dynamically controls the collapsed status of a group box container.
+         *
+         * \see collapsed()
+         * \see setCollapsed()
+         * \see setCollapsedExpression()
+         * \since QGIS 3.26
+         */
+        QgsOptionalExpression collapsedExpression() const;
+
+        /**
+         * Sets the optional \a collapsedExpression that dynamically controls the collapsed status of a group box container.
+         *
+         * \see collapsed()
+         * \see setCollapsed()
+         * \see collapsedExpression()
+         * \since QGIS 3.26
+         */
+        void setCollapsedExpression( const QgsOptionalExpression &collapsedExpression );
 
         RelationEditorConfiguration relationEditorConfiguration() const;
         void setRelationEditorConfiguration( RelationEditorConfiguration relationEditorConfiguration );
@@ -158,6 +213,8 @@ class GUI_EXPORT QgsAttributesFormProperties : public QWidget, public QgsExpress
         QmlElementEditorConfiguration mQmlElementEditorConfiguration;
         HtmlElementEditorConfiguration mHtmlElementEditorConfiguration;
         QColor mBackgroundColor;
+        bool mCollapsed = false;
+        QgsOptionalExpression mCollapsedExpression;
     };
 
 
@@ -260,14 +317,16 @@ QDataStream &operator>> ( QDataStream &stream, QgsAttributesFormProperties::DnDT
 
 
 /**
- * This class overrides mime type handling to be able to work with
+ * \ingroup gui
+ * \class QgsAttributesDnDTree
+ *
+ * \brief This class overrides mime type handling to be able to work with
  * the drag and drop attribute editor.
  *
  * The mime type is application/x-qgsattributetablefield
  *
  * Graphical representation for the attribute editor drag and drop editor
  */
-
 class GUI_EXPORT QgsAttributesDnDTree : public QTreeWidget
 {
     Q_OBJECT

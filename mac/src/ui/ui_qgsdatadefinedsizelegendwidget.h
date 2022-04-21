@@ -49,7 +49,7 @@ public:
     QToolButton *btnRemoveClass;
     QSpacerItem *horizontalSpacer;
     QTreeView *viewSizeClasses;
-    QGroupBox *groupBox;
+    QGroupBox *groupBoxOptions;
     QGridLayout *gridLayout;
     QComboBox *cboAlignSymbols;
     QLabel *label;
@@ -142,23 +142,23 @@ public:
 
         verticalLayout->addWidget(groupManualSizeClasses);
 
-        groupBox = new QGroupBox(QgsDataDefinedSizeLegendWidget);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        gridLayout = new QGridLayout(groupBox);
+        groupBoxOptions = new QGroupBox(QgsDataDefinedSizeLegendWidget);
+        groupBoxOptions->setObjectName(QString::fromUtf8("groupBoxOptions"));
+        gridLayout = new QGridLayout(groupBoxOptions);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        cboAlignSymbols = new QComboBox(groupBox);
+        cboAlignSymbols = new QComboBox(groupBoxOptions);
         cboAlignSymbols->addItem(QString());
         cboAlignSymbols->addItem(QString());
         cboAlignSymbols->setObjectName(QString::fromUtf8("cboAlignSymbols"));
 
         gridLayout->addWidget(cboAlignSymbols, 0, 1, 1, 1);
 
-        label = new QLabel(groupBox);
+        label = new QLabel(groupBoxOptions);
         label->setObjectName(QString::fromUtf8("label"));
 
         gridLayout->addWidget(label, 0, 0, 1, 1);
 
-        mLineSymbolButton = new QgsSymbolButton(groupBox);
+        mLineSymbolButton = new QgsSymbolButton(groupBoxOptions);
         mLineSymbolButton->setObjectName(QString::fromUtf8("mLineSymbolButton"));
         QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -168,13 +168,13 @@ public:
 
         gridLayout->addWidget(mLineSymbolButton, 1, 1, 1, 1);
 
-        label_3 = new QLabel(groupBox);
+        label_3 = new QLabel(groupBoxOptions);
         label_3->setObjectName(QString::fromUtf8("label_3"));
 
         gridLayout->addWidget(label_3, 1, 0, 1, 1);
 
 
-        verticalLayout->addWidget(groupBox);
+        verticalLayout->addWidget(groupBoxOptions);
 
 
         horizontalLayout_4->addLayout(verticalLayout);
@@ -224,7 +224,7 @@ public:
         btnRemoveClass->setToolTip(QCoreApplication::translate("QgsDataDefinedSizeLegendWidget", "Remove selected class", nullptr));
 #endif // QT_CONFIG(tooltip)
         btnRemoveClass->setText(QCoreApplication::translate("QgsDataDefinedSizeLegendWidget", "\342\200\246", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("QgsDataDefinedSizeLegendWidget", "Options (collapsed only)", nullptr));
+        groupBoxOptions->setTitle(QCoreApplication::translate("QgsDataDefinedSizeLegendWidget", "Options", nullptr));
         cboAlignSymbols->setItemText(0, QCoreApplication::translate("QgsDataDefinedSizeLegendWidget", "Bottom", nullptr));
         cboAlignSymbols->setItemText(1, QCoreApplication::translate("QgsDataDefinedSizeLegendWidget", "Center", nullptr));
 

@@ -31,13 +31,13 @@ fi
 # The name of the libs folder
 libsdir=$pathToInstall/lib
 
-# # Remove the libs dir if it exists, dylib bundler will make one
-# if [ -d "$libsdir" ]; then
-# echo "Lib directory " $libsdir " exists, removing"
-# rm -dr $libsdir
-# fi
-#
-# mkdir $libsdir
+# Remove the libs dir if it exists, dylib bundler will make one
+if [ -d "$libsdir" ]; then
+echo "Lib directory " $libsdir " exists, removing"
+rm -dr $libsdir
+fi
+
+mkdir $libsdir
 
 libsdirTemp=$pathToInstall/Temp
 
@@ -49,21 +49,12 @@ fi
 
 mkdir $libsdirTemp
 
-# QGISVersion="3.21.0"
-# Copy over the items from the QGIS Install libs folder into the temp folder
-# cp –R $pathQGISlibs/* $libsdirTemp/
-
-#cp $pathQGISlibs/libqgis_3d.$QGISVersion.dylib $libsdirTemp/
-#cp $pathQGISlibs/libqgis_analysis.$QGISVersion.dylib $libsdirTemp/
-#cp $pathQGISlibs/libqgis_core.$QGISVersion.dylib $libsdirTemp/
-#cp $pathQGISlibs/libqgis_gui.$QGISVersion.dylib $libsdirTemp/
-#cp $pathQGISlibs/libqgis_native.$QGISVersion.dylib $libsdirTemp/
-#cp $pathQGISlibs/libqgisgrass7.$QGISVersion.dylib $libsdirTemp/
-
 # use -R to do a recursive copy, will copy symlinks by default
+# Copy over the items from the QGIS Install libs folder into the temp folder
+cp –R $pathQGISlibs/*.dylib $libsdirTemp/
 
 # Copy the required dependency libs into the temp folder
-cp -R $pathDeplibs/libgdal.30.dylib $libsdirTemp/
+cp -R $pathDeplibs/libgdal.29.dylib $libsdirTemp/
 
 cp -R $pathDeplibs/libproj.22.1.1.dylib $libsdirTemp/
 cp -R $pathDeplibs/libproj.22.dylib $libsdirTemp/

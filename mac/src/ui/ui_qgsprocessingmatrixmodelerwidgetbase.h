@@ -46,7 +46,6 @@ public:
         gridLayout->setContentsMargins(0, 0, 0, 0);
         mTableView = new QTableView(QgsProcessingMatrixModelerWidgetBase);
         mTableView->setObjectName(QString::fromUtf8("mTableView"));
-        mTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
         mTableView->horizontalHeader()->setStretchLastSection(true);
 
         gridLayout->addWidget(mTableView, 0, 0, 8, 1);

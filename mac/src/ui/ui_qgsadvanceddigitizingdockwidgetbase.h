@@ -29,6 +29,7 @@ class Ui_QgsAdvancedDigitizingDockWidgetBase
 {
 public:
     QAction *mToggleFloaterAction;
+    QAction *mConstructionAction;
     QWidget *dockWidgetContents;
     QAction *mEnableAction;
     QAction *mConstructionModeAction;
@@ -43,32 +44,42 @@ public:
     QVBoxLayout *verticalLayout;
     QWidget *mInputWidgets;
     QGridLayout *mInputLayout;
-    QLabel *label_4;
-    QLineEdit *mYLineEdit;
-    QToolButton *mLockYButton;
-    QToolButton *mLockXButton;
     QToolButton *mRelativeYButton;
+    QLabel *label;
+    QToolButton *mRelativeAngleButton;
+    QToolButton *mRelativeMButton;
+    QLineEdit *mMLineEdit;
+    QLineEdit *mDistanceLineEdit;
+    QToolButton *mRepeatingLockMButton;
+    QToolButton *mRepeatingLockXButton;
+    QToolButton *mRepeatingLockDistanceButton;
+    QLabel *mZLabel;
+    QLineEdit *mAngleLineEdit;
+    QToolButton *mLockXButton;
+    QToolButton *mRelativeZButton;
+    QLabel *label_2;
     QToolButton *mLockAngleButton;
     QLineEdit *mXLineEdit;
-    QLabel *label_2;
-    QToolButton *mRelativeAngleButton;
-    QLineEdit *mAngleLineEdit;
-    QLabel *label_3;
-    QLabel *label;
+    QLabel *mLabelX;
+    QToolButton *mLockMButton;
+    QToolButton *mLockZButton;
+    QLineEdit *mYLineEdit;
+    QLabel *mLabelY;
+    QToolButton *mRepeatingLockZButton;
     QToolButton *mLockDistanceButton;
-    QLineEdit *mDistanceLineEdit;
-    QToolButton *mRelativeXButton;
-    QToolButton *mRepeatingLockDistanceButton;
     QToolButton *mRepeatingLockAngleButton;
-    QToolButton *mRepeatingLockXButton;
+    QToolButton *mRelativeXButton;
+    QLineEdit *mZLineEdit;
+    QToolButton *mLockYButton;
     QToolButton *mRepeatingLockYButton;
+    QLabel *mMLabel;
     QSpacerItem *verticalSpacer;
 
     void setupUi(QgsDockWidget *QgsAdvancedDigitizingDockWidgetBase)
     {
         if (QgsAdvancedDigitizingDockWidgetBase->objectName().isEmpty())
             QgsAdvancedDigitizingDockWidgetBase->setObjectName(QString::fromUtf8("QgsAdvancedDigitizingDockWidgetBase"));
-        QgsAdvancedDigitizingDockWidgetBase->resize(208, 220);
+        QgsAdvancedDigitizingDockWidgetBase->resize(252, 262);
         QgsAdvancedDigitizingDockWidgetBase->setMaximumSize(QSize(524287, 500));
         mToggleFloaterAction = new QAction(QgsAdvancedDigitizingDockWidgetBase);
         mToggleFloaterAction->setObjectName(QString::fromUtf8("mToggleFloaterAction"));
@@ -76,37 +87,42 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/images/themes/default/cadtools/floater.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mToggleFloaterAction->setIcon(icon);
+        mConstructionAction = new QAction(QgsAdvancedDigitizingDockWidgetBase);
+        mConstructionAction->setObjectName(QString::fromUtf8("mConstructionAction"));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/images/themes/default/algorithms/mAlgorithmExtractVertices.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mConstructionAction->setIcon(icon1);
         dockWidgetContents = new QWidget();
         dockWidgetContents->setObjectName(QString::fromUtf8("dockWidgetContents"));
         mEnableAction = new QAction(dockWidgetContents);
         mEnableAction->setObjectName(QString::fromUtf8("mEnableAction"));
-        QIcon icon1;
-        icon1.addFile(QString::fromUtf8(":/images/themes/default/cadtools/cad.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mEnableAction->setIcon(icon1);
         mEnableAction->setCheckable(true);
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/images/themes/default/cadtools/cad.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mEnableAction->setIcon(icon2);
         mConstructionModeAction = new QAction(dockWidgetContents);
         mConstructionModeAction->setObjectName(QString::fromUtf8("mConstructionModeAction"));
-        QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/images/themes/default/cadtools/construction.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mConstructionModeAction->setIcon(icon2);
         mConstructionModeAction->setCheckable(true);
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/images/themes/default/cadtools/construction.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mConstructionModeAction->setIcon(icon3);
         mParallelAction = new QAction(dockWidgetContents);
         mParallelAction->setObjectName(QString::fromUtf8("mParallelAction"));
-        QIcon icon3;
-        icon3.addFile(QString::fromUtf8(":/images/themes/default/cadtools/parallel.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mParallelAction->setIcon(icon3);
         mParallelAction->setCheckable(true);
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/images/themes/default/cadtools/parallel.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mParallelAction->setIcon(icon4);
         mPerpendicularAction = new QAction(dockWidgetContents);
         mPerpendicularAction->setObjectName(QString::fromUtf8("mPerpendicularAction"));
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/images/themes/default/cadtools/perpendicular.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mPerpendicularAction->setIcon(icon4);
         mPerpendicularAction->setCheckable(true);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/images/themes/default/cadtools/perpendicular.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mPerpendicularAction->setIcon(icon5);
         mSettingsAction = new QAction(dockWidgetContents);
         mSettingsAction->setObjectName(QString::fromUtf8("mSettingsAction"));
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/images/themes/default/propertyicons/settings.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mSettingsAction->setIcon(icon5);
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/images/themes/default/propertyicons/settings.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mSettingsAction->setIcon(icon6);
         parentLayout = new QVBoxLayout(dockWidgetContents);
         parentLayout->setSpacing(0);
         parentLayout->setObjectName(QString::fromUtf8("parentLayout"));
@@ -143,34 +159,6 @@ public:
         mInputLayout->setSpacing(3);
         mInputLayout->setObjectName(QString::fromUtf8("mInputLayout"));
         mInputLayout->setContentsMargins(0, 0, 0, 0);
-        label_4 = new QLabel(mInputWidgets);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-
-        mInputLayout->addWidget(label_4, 3, 1, 1, 1);
-
-        mYLineEdit = new QLineEdit(mInputWidgets);
-        mYLineEdit->setObjectName(QString::fromUtf8("mYLineEdit"));
-
-        mInputLayout->addWidget(mYLineEdit, 3, 2, 1, 1);
-
-        mLockYButton = new QToolButton(mInputWidgets);
-        mLockYButton->setObjectName(QString::fromUtf8("mLockYButton"));
-        QIcon icon6;
-        icon6.addFile(QString::fromUtf8(":/images/themes/default/cadtools/lock.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mLockYButton->setIcon(icon6);
-        mLockYButton->setCheckable(true);
-        mLockYButton->setAutoRaise(true);
-
-        mInputLayout->addWidget(mLockYButton, 3, 3, 1, 1);
-
-        mLockXButton = new QToolButton(mInputWidgets);
-        mLockXButton->setObjectName(QString::fromUtf8("mLockXButton"));
-        mLockXButton->setIcon(icon6);
-        mLockXButton->setCheckable(true);
-        mLockXButton->setAutoRaise(true);
-
-        mInputLayout->addWidget(mLockXButton, 2, 3, 1, 1);
-
         mRelativeYButton = new QToolButton(mInputWidgets);
         mRelativeYButton->setObjectName(QString::fromUtf8("mRelativeYButton"));
         QIcon icon7;
@@ -181,23 +169,10 @@ public:
 
         mInputLayout->addWidget(mRelativeYButton, 3, 0, 1, 1);
 
-        mLockAngleButton = new QToolButton(mInputWidgets);
-        mLockAngleButton->setObjectName(QString::fromUtf8("mLockAngleButton"));
-        mLockAngleButton->setIcon(icon6);
-        mLockAngleButton->setCheckable(true);
-        mLockAngleButton->setAutoRaise(true);
+        label = new QLabel(mInputWidgets);
+        label->setObjectName(QString::fromUtf8("label"));
 
-        mInputLayout->addWidget(mLockAngleButton, 1, 3, 1, 1);
-
-        mXLineEdit = new QLineEdit(mInputWidgets);
-        mXLineEdit->setObjectName(QString::fromUtf8("mXLineEdit"));
-
-        mInputLayout->addWidget(mXLineEdit, 2, 2, 1, 1);
-
-        label_2 = new QLabel(mInputWidgets);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-
-        mInputLayout->addWidget(label_2, 1, 1, 1, 1);
+        mInputLayout->addWidget(label, 0, 1, 1, 1);
 
         mRelativeAngleButton = new QToolButton(mInputWidgets);
         mRelativeAngleButton->setObjectName(QString::fromUtf8("mRelativeAngleButton"));
@@ -208,59 +183,33 @@ public:
 
         mInputLayout->addWidget(mRelativeAngleButton, 1, 0, 1, 1);
 
-        mAngleLineEdit = new QLineEdit(mInputWidgets);
-        mAngleLineEdit->setObjectName(QString::fromUtf8("mAngleLineEdit"));
+        mRelativeMButton = new QToolButton(mInputWidgets);
+        mRelativeMButton->setObjectName(QString::fromUtf8("mRelativeMButton"));
+        mRelativeMButton->setIcon(icon7);
+        mRelativeMButton->setCheckable(true);
+        mRelativeMButton->setAutoRaise(true);
 
-        mInputLayout->addWidget(mAngleLineEdit, 1, 2, 1, 1);
+        mInputLayout->addWidget(mRelativeMButton, 5, 0, 1, 1);
 
-        label_3 = new QLabel(mInputWidgets);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        mMLineEdit = new QLineEdit(mInputWidgets);
+        mMLineEdit->setObjectName(QString::fromUtf8("mMLineEdit"));
 
-        mInputLayout->addWidget(label_3, 2, 1, 1, 1);
-
-        label = new QLabel(mInputWidgets);
-        label->setObjectName(QString::fromUtf8("label"));
-
-        mInputLayout->addWidget(label, 0, 1, 1, 1);
-
-        mLockDistanceButton = new QToolButton(mInputWidgets);
-        mLockDistanceButton->setObjectName(QString::fromUtf8("mLockDistanceButton"));
-        mLockDistanceButton->setIcon(icon6);
-        mLockDistanceButton->setCheckable(true);
-        mLockDistanceButton->setAutoRaise(true);
-
-        mInputLayout->addWidget(mLockDistanceButton, 0, 3, 1, 1);
+        mInputLayout->addWidget(mMLineEdit, 5, 2, 1, 1);
 
         mDistanceLineEdit = new QLineEdit(mInputWidgets);
         mDistanceLineEdit->setObjectName(QString::fromUtf8("mDistanceLineEdit"));
 
         mInputLayout->addWidget(mDistanceLineEdit, 0, 2, 1, 1);
 
-        mRelativeXButton = new QToolButton(mInputWidgets);
-        mRelativeXButton->setObjectName(QString::fromUtf8("mRelativeXButton"));
-        mRelativeXButton->setIcon(icon7);
-        mRelativeXButton->setCheckable(true);
-        mRelativeXButton->setAutoRaise(true);
-
-        mInputLayout->addWidget(mRelativeXButton, 2, 0, 1, 1);
-
-        mRepeatingLockDistanceButton = new QToolButton(mInputWidgets);
-        mRepeatingLockDistanceButton->setObjectName(QString::fromUtf8("mRepeatingLockDistanceButton"));
+        mRepeatingLockMButton = new QToolButton(mInputWidgets);
+        mRepeatingLockMButton->setObjectName(QString::fromUtf8("mRepeatingLockMButton"));
         QIcon icon8;
         icon8.addFile(QString::fromUtf8(":/images/themes/default/locked_repeating.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mRepeatingLockDistanceButton->setIcon(icon8);
-        mRepeatingLockDistanceButton->setCheckable(true);
-        mRepeatingLockDistanceButton->setAutoRaise(true);
+        mRepeatingLockMButton->setIcon(icon8);
+        mRepeatingLockMButton->setCheckable(true);
+        mRepeatingLockMButton->setAutoRaise(true);
 
-        mInputLayout->addWidget(mRepeatingLockDistanceButton, 0, 4, 1, 1);
-
-        mRepeatingLockAngleButton = new QToolButton(mInputWidgets);
-        mRepeatingLockAngleButton->setObjectName(QString::fromUtf8("mRepeatingLockAngleButton"));
-        mRepeatingLockAngleButton->setIcon(icon8);
-        mRepeatingLockAngleButton->setCheckable(true);
-        mRepeatingLockAngleButton->setAutoRaise(true);
-
-        mInputLayout->addWidget(mRepeatingLockAngleButton, 1, 4, 1, 1);
+        mInputLayout->addWidget(mRepeatingLockMButton, 5, 4, 1, 1);
 
         mRepeatingLockXButton = new QToolButton(mInputWidgets);
         mRepeatingLockXButton->setObjectName(QString::fromUtf8("mRepeatingLockXButton"));
@@ -270,6 +219,136 @@ public:
 
         mInputLayout->addWidget(mRepeatingLockXButton, 2, 4, 1, 1);
 
+        mRepeatingLockDistanceButton = new QToolButton(mInputWidgets);
+        mRepeatingLockDistanceButton->setObjectName(QString::fromUtf8("mRepeatingLockDistanceButton"));
+        mRepeatingLockDistanceButton->setIcon(icon8);
+        mRepeatingLockDistanceButton->setCheckable(true);
+        mRepeatingLockDistanceButton->setAutoRaise(true);
+
+        mInputLayout->addWidget(mRepeatingLockDistanceButton, 0, 4, 1, 1);
+
+        mZLabel = new QLabel(mInputWidgets);
+        mZLabel->setObjectName(QString::fromUtf8("mZLabel"));
+
+        mInputLayout->addWidget(mZLabel, 4, 1, 1, 1);
+
+        mAngleLineEdit = new QLineEdit(mInputWidgets);
+        mAngleLineEdit->setObjectName(QString::fromUtf8("mAngleLineEdit"));
+
+        mInputLayout->addWidget(mAngleLineEdit, 1, 2, 1, 1);
+
+        mLockXButton = new QToolButton(mInputWidgets);
+        mLockXButton->setObjectName(QString::fromUtf8("mLockXButton"));
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/images/themes/default/cadtools/lock.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mLockXButton->setIcon(icon9);
+        mLockXButton->setCheckable(true);
+        mLockXButton->setAutoRaise(true);
+
+        mInputLayout->addWidget(mLockXButton, 2, 3, 1, 1);
+
+        mRelativeZButton = new QToolButton(mInputWidgets);
+        mRelativeZButton->setObjectName(QString::fromUtf8("mRelativeZButton"));
+        mRelativeZButton->setIcon(icon7);
+        mRelativeZButton->setCheckable(true);
+        mRelativeZButton->setAutoRaise(true);
+
+        mInputLayout->addWidget(mRelativeZButton, 4, 0, 1, 1);
+
+        label_2 = new QLabel(mInputWidgets);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+
+        mInputLayout->addWidget(label_2, 1, 1, 1, 1);
+
+        mLockAngleButton = new QToolButton(mInputWidgets);
+        mLockAngleButton->setObjectName(QString::fromUtf8("mLockAngleButton"));
+        mLockAngleButton->setIcon(icon9);
+        mLockAngleButton->setCheckable(true);
+        mLockAngleButton->setAutoRaise(true);
+
+        mInputLayout->addWidget(mLockAngleButton, 1, 3, 1, 1);
+
+        mXLineEdit = new QLineEdit(mInputWidgets);
+        mXLineEdit->setObjectName(QString::fromUtf8("mXLineEdit"));
+
+        mInputLayout->addWidget(mXLineEdit, 2, 2, 1, 1);
+
+        mLabelX = new QLabel(mInputWidgets);
+        mLabelX->setObjectName(QString::fromUtf8("mLabelX"));
+
+        mInputLayout->addWidget(mLabelX, 2, 1, 1, 1);
+
+        mLockMButton = new QToolButton(mInputWidgets);
+        mLockMButton->setObjectName(QString::fromUtf8("mLockMButton"));
+        mLockMButton->setIcon(icon9);
+        mLockMButton->setCheckable(true);
+        mLockMButton->setAutoRaise(true);
+
+        mInputLayout->addWidget(mLockMButton, 5, 3, 1, 1);
+
+        mLockZButton = new QToolButton(mInputWidgets);
+        mLockZButton->setObjectName(QString::fromUtf8("mLockZButton"));
+        mLockZButton->setIcon(icon9);
+        mLockZButton->setCheckable(true);
+        mLockZButton->setAutoRaise(true);
+
+        mInputLayout->addWidget(mLockZButton, 4, 3, 1, 1);
+
+        mYLineEdit = new QLineEdit(mInputWidgets);
+        mYLineEdit->setObjectName(QString::fromUtf8("mYLineEdit"));
+
+        mInputLayout->addWidget(mYLineEdit, 3, 2, 1, 1);
+
+        mLabelY = new QLabel(mInputWidgets);
+        mLabelY->setObjectName(QString::fromUtf8("mLabelY"));
+
+        mInputLayout->addWidget(mLabelY, 3, 1, 1, 1);
+
+        mRepeatingLockZButton = new QToolButton(mInputWidgets);
+        mRepeatingLockZButton->setObjectName(QString::fromUtf8("mRepeatingLockZButton"));
+        mRepeatingLockZButton->setIcon(icon8);
+        mRepeatingLockZButton->setCheckable(true);
+        mRepeatingLockZButton->setAutoRaise(true);
+
+        mInputLayout->addWidget(mRepeatingLockZButton, 4, 4, 1, 1);
+
+        mLockDistanceButton = new QToolButton(mInputWidgets);
+        mLockDistanceButton->setObjectName(QString::fromUtf8("mLockDistanceButton"));
+        mLockDistanceButton->setIcon(icon9);
+        mLockDistanceButton->setCheckable(true);
+        mLockDistanceButton->setAutoRaise(true);
+
+        mInputLayout->addWidget(mLockDistanceButton, 0, 3, 1, 1);
+
+        mRepeatingLockAngleButton = new QToolButton(mInputWidgets);
+        mRepeatingLockAngleButton->setObjectName(QString::fromUtf8("mRepeatingLockAngleButton"));
+        mRepeatingLockAngleButton->setIcon(icon8);
+        mRepeatingLockAngleButton->setCheckable(true);
+        mRepeatingLockAngleButton->setAutoRaise(true);
+
+        mInputLayout->addWidget(mRepeatingLockAngleButton, 1, 4, 1, 1);
+
+        mRelativeXButton = new QToolButton(mInputWidgets);
+        mRelativeXButton->setObjectName(QString::fromUtf8("mRelativeXButton"));
+        mRelativeXButton->setIcon(icon7);
+        mRelativeXButton->setCheckable(true);
+        mRelativeXButton->setAutoRaise(true);
+
+        mInputLayout->addWidget(mRelativeXButton, 2, 0, 1, 1);
+
+        mZLineEdit = new QLineEdit(mInputWidgets);
+        mZLineEdit->setObjectName(QString::fromUtf8("mZLineEdit"));
+
+        mInputLayout->addWidget(mZLineEdit, 4, 2, 1, 1);
+
+        mLockYButton = new QToolButton(mInputWidgets);
+        mLockYButton->setObjectName(QString::fromUtf8("mLockYButton"));
+        mLockYButton->setIcon(icon9);
+        mLockYButton->setCheckable(true);
+        mLockYButton->setAutoRaise(true);
+
+        mInputLayout->addWidget(mLockYButton, 3, 3, 1, 1);
+
         mRepeatingLockYButton = new QToolButton(mInputWidgets);
         mRepeatingLockYButton->setObjectName(QString::fromUtf8("mRepeatingLockYButton"));
         mRepeatingLockYButton->setIcon(icon8);
@@ -278,9 +357,14 @@ public:
 
         mInputLayout->addWidget(mRepeatingLockYButton, 3, 4, 1, 1);
 
+        mMLabel = new QLabel(mInputWidgets);
+        mMLabel->setObjectName(QString::fromUtf8("mMLabel"));
+
+        mInputLayout->addWidget(mMLabel, 5, 1, 1, 1);
+
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        mInputLayout->addItem(verticalSpacer, 4, 0, 1, 1);
+        mInputLayout->addItem(verticalSpacer, 6, 0, 1, 1);
 
 
         verticalLayout->addWidget(mInputWidgets);
@@ -306,6 +390,14 @@ public:
         QWidget::setTabOrder(mRelativeYButton, mYLineEdit);
         QWidget::setTabOrder(mYLineEdit, mLockYButton);
         QWidget::setTabOrder(mLockYButton, mRepeatingLockYButton);
+        QWidget::setTabOrder(mRepeatingLockYButton, mRelativeZButton);
+        QWidget::setTabOrder(mRelativeZButton, mZLineEdit);
+        QWidget::setTabOrder(mZLineEdit, mLockZButton);
+        QWidget::setTabOrder(mLockZButton, mRepeatingLockZButton);
+        QWidget::setTabOrder(mRepeatingLockZButton, mRelativeMButton);
+        QWidget::setTabOrder(mRelativeMButton, mMLineEdit);
+        QWidget::setTabOrder(mMLineEdit, mLockMButton);
+        QWidget::setTabOrder(mLockMButton, mRepeatingLockMButton);
 
         mToolbar->addAction(mEnableAction);
         mToolbar->addSeparator();
@@ -316,6 +408,8 @@ public:
         mToolbar->addAction(mSettingsAction);
         mToolbar->addSeparator();
         mToolbar->addAction(mToggleFloaterAction);
+        mToolbar->addSeparator();
+        mToolbar->addAction(mConstructionAction);
 
         retranslateUi(QgsAdvancedDigitizingDockWidgetBase);
 
@@ -326,6 +420,10 @@ public:
     {
         QgsAdvancedDigitizingDockWidgetBase->setWindowTitle(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "Advanced Digitizing", nullptr));
         mToggleFloaterAction->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "Toggle Floater", nullptr));
+        mConstructionAction->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "Construction", nullptr));
+#if QT_CONFIG(tooltip)
+        mConstructionAction->setToolTip(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "Construction", nullptr));
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         mEnableAction->setToolTip(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "<html><head/><body><p>Enable advanced digitizing tools</p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
@@ -339,22 +437,50 @@ public:
         mPerpendicularAction->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
         mErrorLabel->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "Error", nullptr));
-        label_4->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "y", nullptr));
 #if QT_CONFIG(tooltip)
-        mYLineEdit->setToolTip(QString());
+        mRelativeYButton->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        mRelativeYButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+        label->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "d", nullptr));
+#if QT_CONFIG(tooltip)
+        mRelativeAngleButton->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        mRelativeAngleButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+#if QT_CONFIG(tooltip)
+        mRelativeMButton->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        mRelativeMButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+#if QT_CONFIG(tooltip)
+        mMLineEdit->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
-        mLockYButton->setToolTip(QString());
+        mDistanceLineEdit->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
-        mLockYButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+#if QT_CONFIG(tooltip)
+        mRepeatingLockMButton->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        mRepeatingLockMButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+#if QT_CONFIG(tooltip)
+        mRepeatingLockXButton->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        mRepeatingLockXButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+#if QT_CONFIG(tooltip)
+        mRepeatingLockDistanceButton->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        mRepeatingLockDistanceButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+        mZLabel->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "z", nullptr));
+#if QT_CONFIG(tooltip)
+        mAngleLineEdit->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         mLockXButton->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
         mLockXButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
 #if QT_CONFIG(tooltip)
-        mRelativeYButton->setToolTip(QString());
+        mRelativeZButton->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
-        mRelativeYButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+        mRelativeZButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+        label_2->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "a", nullptr));
 #if QT_CONFIG(tooltip)
         mLockAngleButton->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
@@ -362,43 +488,47 @@ public:
 #if QT_CONFIG(tooltip)
         mXLineEdit->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
-        label_2->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "a", nullptr));
+        mLabelX->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "x", nullptr));
 #if QT_CONFIG(tooltip)
-        mRelativeAngleButton->setToolTip(QString());
+        mLockMButton->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
-        mRelativeAngleButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+        mLockMButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
 #if QT_CONFIG(tooltip)
-        mAngleLineEdit->setToolTip(QString());
+        mLockZButton->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
-        label_3->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "x", nullptr));
-        label->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "d", nullptr));
+        mLockZButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+#if QT_CONFIG(tooltip)
+        mYLineEdit->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        mLabelY->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "y", nullptr));
+#if QT_CONFIG(tooltip)
+        mRepeatingLockZButton->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        mRepeatingLockZButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
 #if QT_CONFIG(tooltip)
         mLockDistanceButton->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
         mLockDistanceButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
 #if QT_CONFIG(tooltip)
-        mDistanceLineEdit->setToolTip(QString());
+        mRepeatingLockAngleButton->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
+        mRepeatingLockAngleButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
 #if QT_CONFIG(tooltip)
         mRelativeXButton->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
         mRelativeXButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
 #if QT_CONFIG(tooltip)
-        mRepeatingLockDistanceButton->setToolTip(QString());
+        mZLineEdit->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
-        mRepeatingLockDistanceButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
 #if QT_CONFIG(tooltip)
-        mRepeatingLockAngleButton->setToolTip(QString());
+        mLockYButton->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
-        mRepeatingLockAngleButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
-#if QT_CONFIG(tooltip)
-        mRepeatingLockXButton->setToolTip(QString());
-#endif // QT_CONFIG(tooltip)
-        mRepeatingLockXButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+        mLockYButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
 #if QT_CONFIG(tooltip)
         mRepeatingLockYButton->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
         mRepeatingLockYButton->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "\342\200\246", nullptr));
+        mMLabel->setText(QCoreApplication::translate("QgsAdvancedDigitizingDockWidgetBase", "m", nullptr));
     } // retranslateUi
 
 };

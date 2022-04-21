@@ -57,7 +57,7 @@ public:
     {
         if (QgsStyleItemsListWidgetBase->objectName().isEmpty())
             QgsStyleItemsListWidgetBase->setObjectName(QString::fromUtf8("QgsStyleItemsListWidgetBase"));
-        QgsStyleItemsListWidgetBase->resize(386, 619);
+        QgsStyleItemsListWidgetBase->resize(563, 633);
         QgsStyleItemsListWidgetBase->setWindowTitle(QString::fromUtf8("Form"));
         gridLayout_4 = new QGridLayout(QgsStyleItemsListWidgetBase);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));

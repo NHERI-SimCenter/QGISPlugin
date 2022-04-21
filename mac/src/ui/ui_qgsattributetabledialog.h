@@ -52,7 +52,6 @@ public:
     QAction *mActionAddAttribute;
     QAction *mActionOpenFieldCalculator;
     QAction *mActionSetStyles;
-    QAction *mActionDockUndock;
     QAction *mActionOrganizeColumns;
     QAction *mActionAddFeatureViaAttributeTable;
     QAction *mActionAddFeatureViaAttributeForm;
@@ -188,25 +187,19 @@ public:
         QIcon icon20;
         icon20.addFile(QString::fromUtf8(":/images/themes/default/mActionConditionalFormatting.svg"), QSize(), QIcon::Normal, QIcon::Off);
         mActionSetStyles->setIcon(icon20);
-        mActionDockUndock = new QAction(QgsAttributeTableDialog);
-        mActionDockUndock->setObjectName(QString::fromUtf8("mActionDockUndock"));
-        mActionDockUndock->setCheckable(true);
-        QIcon icon21;
-        icon21.addFile(QString::fromUtf8(":/images/themes/default/mDockify.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionDockUndock->setIcon(icon21);
         mActionOrganizeColumns = new QAction(QgsAttributeTableDialog);
         mActionOrganizeColumns->setObjectName(QString::fromUtf8("mActionOrganizeColumns"));
-        QIcon icon22;
-        icon22.addFile(QString::fromUtf8(":/images/themes/default/mActionEditTable.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionOrganizeColumns->setIcon(icon22);
+        QIcon icon21;
+        icon21.addFile(QString::fromUtf8(":/images/themes/default/mActionEditTable.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionOrganizeColumns->setIcon(icon21);
         mActionAddFeatureViaAttributeTable = new QAction(QgsAttributeTableDialog);
         mActionAddFeatureViaAttributeTable->setObjectName(QString::fromUtf8("mActionAddFeatureViaAttributeTable"));
         mActionAddFeatureViaAttributeTable->setIcon(icon5);
         mActionAddFeatureViaAttributeForm = new QAction(QgsAttributeTableDialog);
         mActionAddFeatureViaAttributeForm->setObjectName(QString::fromUtf8("mActionAddFeatureViaAttributeForm"));
-        QIcon icon23;
-        icon23.addFile(QString::fromUtf8(":/images/themes/default/mIconFormSelect.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mActionAddFeatureViaAttributeForm->setIcon(icon23);
+        QIcon icon22;
+        icon22.addFile(QString::fromUtf8(":/images/themes/default/mIconFormSelect.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mActionAddFeatureViaAttributeForm->setIcon(icon22);
         gridLayout = new QGridLayout(QgsAttributeTableDialog);
         gridLayout->setSpacing(3);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -277,9 +270,9 @@ public:
         mMainViewButtonGroup->setObjectName(QString::fromUtf8("mMainViewButtonGroup"));
         mMainViewButtonGroup->addButton(mAttributeViewButton);
         mAttributeViewButton->setObjectName(QString::fromUtf8("mAttributeViewButton"));
-        QIcon icon24;
-        icon24.addFile(QString::fromUtf8(":/images/themes/default/mActionFormView.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mAttributeViewButton->setIcon(icon24);
+        QIcon icon23;
+        icon23.addFile(QString::fromUtf8(":/images/themes/default/mActionFormView.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mAttributeViewButton->setIcon(icon23);
         mAttributeViewButton->setCheckable(true);
         mAttributeViewButton->setAutoRaise(true);
 
@@ -288,9 +281,9 @@ public:
         mTableViewButton = new QToolButton(QgsAttributeTableDialog);
         mMainViewButtonGroup->addButton(mTableViewButton);
         mTableViewButton->setObjectName(QString::fromUtf8("mTableViewButton"));
-        QIcon icon25;
-        icon25.addFile(QString::fromUtf8(":/images/themes/default/mActionOpenTable.svg"), QSize(), QIcon::Normal, QIcon::Off);
-        mTableViewButton->setIcon(icon25);
+        QIcon icon24;
+        icon24.addFile(QString::fromUtf8(":/images/themes/default/mActionOpenTable.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        mTableViewButton->setIcon(icon24);
         mTableViewButton->setCheckable(true);
         mTableViewButton->setChecked(true);
         mTableViewButton->setAutoRaise(true);
@@ -343,7 +336,6 @@ public:
         mToolbar->addSeparator();
         mToolbar->addAction(mActionSetStyles);
         mToolbar->addSeparator();
-        mToolbar->addAction(mActionDockUndock);
 
         retranslateUi(QgsAttributeTableDialog);
         QObject::connect(mMainViewButtonGroup, SIGNAL(buttonClicked(int)), mMainView, SLOT(setCurrentIndex(int)));
@@ -466,10 +458,6 @@ public:
         mActionSetStyles->setText(QCoreApplication::translate("QgsAttributeTableDialog", "Conditional formatting", nullptr));
 #if QT_CONFIG(tooltip)
         mActionSetStyles->setToolTip(QCoreApplication::translate("QgsAttributeTableDialog", "Conditional formatting", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mActionDockUndock->setText(QCoreApplication::translate("QgsAttributeTableDialog", "Dock Attribute Table", nullptr));
-#if QT_CONFIG(tooltip)
-        mActionDockUndock->setToolTip(QCoreApplication::translate("QgsAttributeTableDialog", "Dock Attribute Table", nullptr));
 #endif // QT_CONFIG(tooltip)
         mActionOrganizeColumns->setText(QCoreApplication::translate("QgsAttributeTableDialog", "Organize Columns", nullptr));
         mActionAddFeatureViaAttributeTable->setText(QCoreApplication::translate("QgsAttributeTableDialog", "Add feature via attribute table", nullptr));

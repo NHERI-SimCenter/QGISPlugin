@@ -19,8 +19,8 @@
 
 #include "qgis_analysis.h"
 #include "qgsfeature.h"
-#include "qgsabstractgeometry.h"
-#include "qgspoint.h"
+#include "geometry/qgsabstractgeometry.h"
+#include "geometry/qgspoint.h"
 #include "qgsgeometrycheckcontext.h"
 #include <qmath.h>
 

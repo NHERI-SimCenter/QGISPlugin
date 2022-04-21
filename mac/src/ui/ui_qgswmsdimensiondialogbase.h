@@ -33,7 +33,7 @@ public:
     QSpacerItem *verticalSpacer;
     QLabel *mFieldLabel;
     QLabel *mNameLabel;
-    QLabel *mEndFiledLabel;
+    QLabel *mEndFieldLabel;
     QgsFieldComboBox *mEndFieldComboBox;
     QLabel *mUnitSymbolLabel;
     QLabel *mUnitsLabel;
@@ -85,10 +85,10 @@ public:
 
         gridLayout->addWidget(mNameLabel, 0, 0, 1, 1);
 
-        mEndFiledLabel = new QLabel(QgsWmsDimensionDialogBase);
-        mEndFiledLabel->setObjectName(QString::fromUtf8("mEndFiledLabel"));
+        mEndFieldLabel = new QLabel(QgsWmsDimensionDialogBase);
+        mEndFieldLabel->setObjectName(QString::fromUtf8("mEndFieldLabel"));
 
-        gridLayout->addWidget(mEndFiledLabel, 2, 0, 1, 1);
+        gridLayout->addWidget(mEndFieldLabel, 2, 0, 1, 1);
 
         mEndFieldComboBox = new QgsFieldComboBox(QgsWmsDimensionDialogBase);
         mEndFieldComboBox->setObjectName(QString::fromUtf8("mEndFieldComboBox"));
@@ -152,13 +152,13 @@ public:
 
     void retranslateUi(QDialog *QgsWmsDimensionDialogBase)
     {
-        QgsWmsDimensionDialogBase->setWindowTitle(QCoreApplication::translate("QgsWmsDimensionDialogBase", "Add WMS Dimension", nullptr));
+        QgsWmsDimensionDialogBase->setWindowTitle(QCoreApplication::translate("QgsWmsDimensionDialogBase", "Add WMS/OAPIF Dimension", nullptr));
         mFieldLabel->setText(QCoreApplication::translate("QgsWmsDimensionDialogBase", "Attribute", nullptr));
 #if QT_CONFIG(tooltip)
-        mNameLabel->setToolTip(QCoreApplication::translate("QgsWmsDimensionDialogBase", "OAPIF supports \"Name\" and \"Date\" only, \"WMS\" does not support \"Date\"", nullptr));
+        mNameLabel->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
         mNameLabel->setText(QCoreApplication::translate("QgsWmsDimensionDialogBase", "Name", nullptr));
-        mEndFiledLabel->setText(QCoreApplication::translate("QgsWmsDimensionDialogBase", "End attribute (optional)", nullptr));
+        mEndFieldLabel->setText(QCoreApplication::translate("QgsWmsDimensionDialogBase", "End attribute (optional)", nullptr));
         mUnitSymbolLabel->setText(QCoreApplication::translate("QgsWmsDimensionDialogBase", "Unit symbol", nullptr));
         mUnitsLabel->setText(QCoreApplication::translate("QgsWmsDimensionDialogBase", "Units", nullptr));
         mDefaultDisplayLabel->setText(QCoreApplication::translate("QgsWmsDimensionDialogBase", "Default display", nullptr));

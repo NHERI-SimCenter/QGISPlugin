@@ -41,6 +41,8 @@
 #include "qgsproject.h"
 #include "qgsapplication.h"
 
+#include <nlohmann/json.hpp>
+
 QgsClipboard::QgsClipboard()
 {
   connect( QApplication::clipboard(), &QClipboard::dataChanged, this, &QgsClipboard::systemClipboardChanged );
@@ -93,17 +95,22 @@ void QgsClipboard::generateClipboardText( QString &textContent, QString &htmlCon
       // first do the field names
       if ( format == AttributesWithWKT )
       {
-        textFields += QLatin1String( "wkt_geom" );
-        htmlFields += QLatin1String( "<td>wkt_geom</td>" );
+        // only include the "wkt_geom" field IF we have other fields -- otherwise it's redundant and we should just set the clipboard to WKT text directly
+        if ( !mFeatureFields.isEmpty() )
+          textFields += QStringLiteral( "wkt_geom" );
+
+        htmlFields += QStringLiteral( "<td>wkt_geom</td>" );
       }
 
-      const auto constMFeatureFields = mFeatureFields;
-      for ( const QgsField &field : constMFeatureFields )
+      textFields.reserve( mFeatureFields.size() );
+      htmlFields.reserve( mFeatureFields.size() );
+      for ( const QgsField &field : mFeatureFields )
       {
         textFields += field.name();
         htmlFields += QStringLiteral( "<td>%1</td>" ).arg( field.name() );
       }
-      textLines += textFields.join( QLatin1Char( '\t' ) );
+      if ( !textFields.empty() )
+        textLines += textFields.join( QLatin1Char( '\t' ) );
       htmlLines += htmlFields.join( QString() );
       textFields.clear();
       htmlFields.clear();
@@ -131,14 +138,33 @@ void QgsClipboard::generateClipboardText( QString &textContent, QString &htmlCon
 
         for ( int idx = 0; idx < attributes.count(); ++idx )
         {
-          QString value = attributes.at( idx ).toString();
+          QString value;
+          QVariant variant = attributes.at( idx );
+          const bool useJSONFromVariant = variant.type() == QVariant::StringList || variant.type() == QVariant::List || variant.type() == QVariant::Map;
+
+          if ( useJSONFromVariant )
+          {
+            value = QString::fromStdString( QgsJsonUtils::jsonFromVariant( attributes.at( idx ) ).dump() );
+          }
+          else
+          {
+            value = attributes.at( idx ).toString();
+          }
+
           if ( value.contains( '\n' ) || value.contains( '\t' ) )
             textFields += '"' + value.replace( '"', QLatin1String( "\"\"" ) ) + '\"';
           else
           {
             textFields += value;
           }
-          value = attributes.at( idx ).toString();
+          if ( useJSONFromVariant )
+          {
+            value = QString::fromStdString( QgsJsonUtils::jsonFromVariant( attributes.at( idx ) ).dump() );
+          }
+          else
+          {
+            value = attributes.at( idx ).toString();
+          }
           value.replace( '\n', QLatin1String( "<br>" ) ).replace( '\t', QLatin1String( "&emsp;" ) );
           htmlFields += QStringLiteral( "<td>%1</td>" ).arg( value );
         }
@@ -206,48 +232,95 @@ QgsFeatureList QgsClipboard::stringToFeatureList( const QString &string, const Q
     return features;
 
   // otherwise try to read in as WKT
-  const QStringList values = string.split( '\n' );
-  if ( values.isEmpty() || string.isEmpty() )
+  if ( string.isEmpty() || string.split( '\n' ).count() == 0 )
     return features;
 
-  const QgsFields sourceFields = retrieveFields();
+  // Poor man's csv parser
+  bool isInsideQuotes {false};
+  QgsAttributes attrs;
+  QgsGeometry geom;
+  QString attrVal;
+  bool isFirstLine {string.startsWith( QLatin1String( "wkt_geom" ) )};
+  // it seems there is no other way to check for header
+  const bool hasHeader{string.startsWith( QLatin1String( "wkt_geom" ) )};
+  QgsGeometry geometry;
+  bool setFields {fields.isEmpty()};
+  QgsFields fieldsFromClipboard;
 
-  const auto constValues = values;
-  for ( const QString &row : constValues )
+  auto parseFunc = [ & ]( const QChar & c )
   {
-    // Assume that it's just WKT for now. because GeoJSON is managed by
-    // previous QgsOgrUtils::stringToFeatureList call
-    // Get the first value of a \t separated list. WKT clipboard pasted
-    // feature has first element the WKT geom.
-    // This split is to fix the following issue: https://github.com/qgis/QGIS/issues/24769
-    // Value separators are set in generateClipboardText
-    QStringList fieldValues = row.split( '\t' );
-    if ( fieldValues.isEmpty() )
-      continue;
 
-    QgsFeature feature;
-    feature.setFields( sourceFields );
-    feature.initAttributes( fieldValues.size() - 1 );
-
-    //skip header line
-    if ( fieldValues.at( 0 ) == QLatin1String( "wkt_geom" ) )
+    // parse geom only if it wasn't successfully set before
+    if ( geometry.isNull() )
     {
-      continue;
+      geometry = QgsGeometry::fromWkt( attrVal );
     }
 
-    for ( int i = 1; i < fieldValues.size(); ++i )
+    if ( isFirstLine ) // ... name
     {
-      feature.setAttribute( i - 1, fieldValues.at( i ) );
+      if ( attrVal != QLatin1String( "wkt_geom" ) ) // ignore this one
+      {
+        fieldsFromClipboard.append( QgsField{attrVal, QVariant::String } );
+      }
+    }
+    else // ... or value
+    {
+      attrs.append( attrVal );
     }
 
-    const QgsGeometry geometry = QgsGeometry::fromWkt( fieldValues[0] );
-    if ( !geometry.isNull() )
+    // end of record, create a new feature if it's not the header
+    if ( c == QChar( '\n' ) )
     {
-      feature.setGeometry( geometry );
+      if ( isFirstLine )
+      {
+        isFirstLine = false;
+      }
+      else
+      {
+        QgsFeature feature{setFields ? fieldsFromClipboard : fields};
+        feature.setGeometry( geometry );
+        if ( hasHeader || !geometry.isNull() )
+        {
+          attrs.pop_front();
+        }
+        feature.setAttributes( attrs );
+        features.append( feature );
+        geometry = QgsGeometry();
+        attrs.clear();
+      }
     }
+    attrVal.clear();
+  };
 
-    features.append( feature );
+  for ( auto c = string.constBegin(); c < string.constEnd(); ++c )
+  {
+    if ( *c == QChar( '\n' ) || *c == QChar( '\t' ) )
+    {
+      if ( isInsideQuotes )
+      {
+        attrVal.append( *c );
+      }
+      else
+      {
+        parseFunc( *c );
+      }
+    }
+    else if ( *c == QChar( '\"' ) )
+    {
+      isInsideQuotes = !isInsideQuotes;
+    }
+    else
+    {
+      attrVal.append( *c );
+    }
   }
+
+  // handle missing newline
+  if ( !string.endsWith( QChar( '\n' ) ) )
+  {
+    parseFunc( QChar( '\n' ) );
+  }
+
   return features;
 }
 

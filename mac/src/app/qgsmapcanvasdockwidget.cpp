@@ -351,8 +351,9 @@ void QgsMapCanvasDockWidget::syncViewCenter( QgsMapCanvas *sourceCanvas )
   QgsMapCanvas *destCanvas = sourceCanvas == mMapCanvas ? mMainCanvas : mMapCanvas;
 
   // reproject extent
-  const QgsCoordinateTransform ct( sourceCanvas->mapSettings().destinationCrs(),
-                                   destCanvas->mapSettings().destinationCrs(), QgsProject::instance() );
+  QgsCoordinateTransform ct( sourceCanvas->mapSettings().destinationCrs(),
+                             destCanvas->mapSettings().destinationCrs(), QgsProject::instance() );
+  ct.setBallparkTransformsAreAppropriate( true );
   try
   {
     destCanvas->setCenter( ct.transform( sourceCanvas->center() ) );
@@ -514,11 +515,11 @@ void QgsMapCanvasDockWidget::updateExtentRect()
 
 void QgsMapCanvasDockWidget::showLabels( bool show )
 {
-  QgsMapSettings::Flags flags = mMapCanvas->mapSettings().flags();
+  Qgis::MapSettingsFlags flags = mMapCanvas->mapSettings().flags();
   if ( show )
-    flags = flags | QgsMapSettings::DrawLabeling;
+    flags = flags | Qgis::MapSettingsFlag::DrawLabeling;
   else
-    flags = flags & ~QgsMapSettings::DrawLabeling;
+    flags = flags & ~( static_cast< int >( Qgis::MapSettingsFlag::DrawLabeling ) );
   mMapCanvas->setMapSettingsFlags( flags );
 }
 

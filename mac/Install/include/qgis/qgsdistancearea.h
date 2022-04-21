@@ -26,7 +26,7 @@
 class QgsGeometry;
 class QgsAbstractGeometry;
 class QgsCurve;
-class geod_geodesic;
+struct geod_geodesic;
 
 /**
  * \ingroup core
@@ -234,8 +234,10 @@ class CORE_EXPORT QgsDistanceArea
 
     /**
      * Computes the bearing (in radians) between two points.
+     *
+     * \throws QgsCsException on invalid input coordinates
      */
-    double bearing( const QgsPointXY &p1, const QgsPointXY &p2 ) const;
+    double bearing( const QgsPointXY &p1, const QgsPointXY &p2 ) const SIP_THROW( QgsCsException );
 
     /**
      * Returns an distance formatted as a friendly string.

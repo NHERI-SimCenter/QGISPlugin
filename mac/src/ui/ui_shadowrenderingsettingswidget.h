@@ -37,7 +37,7 @@ public:
     {
         if (ShadowRenderingSettingsWidget->objectName().isEmpty())
             ShadowRenderingSettingsWidget->setObjectName(QString::fromUtf8("ShadowRenderingSettingsWidget"));
-        ShadowRenderingSettingsWidget->resize(416, 139);
+        ShadowRenderingSettingsWidget->resize(482, 139);
         gridLayout = new QGridLayout(ShadowRenderingSettingsWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         labelUsedDirectionalLight = new QLabel(ShadowRenderingSettingsWidget);
@@ -72,7 +72,7 @@ public:
         shadowBiasSpinBox->setDecimals(10);
         shadowBiasSpinBox->setMaximum(1.000000000000000);
         shadowBiasSpinBox->setSingleStep(0.000010000000000);
-        shadowBiasSpinBox->setValue(0.000010000000000);
+        shadowBiasSpinBox->setValue(0.000000000000000);
 
         gridLayout->addWidget(shadowBiasSpinBox, 2, 1, 1, 1);
 

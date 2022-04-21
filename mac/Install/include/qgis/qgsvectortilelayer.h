@@ -20,6 +20,7 @@
 #include "qgis_sip.h"
 
 #include "qgsmaplayer.h"
+#include "qgsvectortilematrixset.h"
 
 class QgsVectorTileLabeling;
 class QgsVectorTileRenderer;
@@ -85,8 +86,29 @@ class CORE_EXPORT QgsVectorTileLayer : public QgsMapLayer
     Q_OBJECT
 
   public:
+
+
+    /**
+     * Setting options for loading vector tile layers.
+     *
+     * \since QGIS 3.22
+     */
+    struct LayerOptions
+    {
+
+      /**
+       * Constructor for LayerOptions with optional \a transformContext.
+       */
+      explicit LayerOptions( const QgsCoordinateTransformContext &transformContext = QgsCoordinateTransformContext( ) )
+        : transformContext( transformContext )
+      {}
+
+      //! Coordinate transform context
+      QgsCoordinateTransformContext transformContext;
+    };
+
     //! Constructs a new vector tile layer
-    explicit QgsVectorTileLayer( const QString &path = QString(), const QString &baseName = QString() );
+    explicit QgsVectorTileLayer( const QString &path = QString(), const QString &baseName = QString(), const QgsVectorTileLayer::LayerOptions &options = QgsVectorTileLayer::LayerOptions() );
     ~QgsVectorTileLayer() override;
 
 #ifdef SIP_RUN
@@ -100,21 +122,18 @@ class CORE_EXPORT QgsVectorTileLayer : public QgsMapLayer
     // implementation of virtual functions from QgsMapLayer
 
     QgsVectorTileLayer *clone() const override SIP_FACTORY;
-
+    QgsDataProvider *dataProvider() override;
+    const QgsDataProvider *dataProvider() const override SIP_SKIP;
     QgsMapLayerRenderer *createMapRenderer( QgsRenderContext &rendererContext ) override SIP_FACTORY;
-
     bool readXml( const QDomNode &layerNode, QgsReadWriteContext &context ) override;
-
     bool writeXml( QDomNode &layerNode, QDomDocument &doc, const QgsReadWriteContext &context ) const override;
-
     bool readSymbology( const QDomNode &node, QString &errorMessage,
                         QgsReadWriteContext &context, StyleCategories categories = AllStyleCategories ) override;
-
     bool writeSymbology( QDomNode &node, QDomDocument &doc, QString &errorMessage, const QgsReadWriteContext &context,
                          StyleCategories categories = AllStyleCategories ) const override;
-
     void setTransformContext( const QgsCoordinateTransformContext &transformContext ) override;
     QString loadDefaultStyle( bool &resultFlag SIP_OUT ) override;
+    Qgis::MapLayerProperties properties() const override;
 
     /**
      * Loads the default style for the layer, and returns TRUE if the style was
@@ -137,15 +156,22 @@ class CORE_EXPORT QgsVectorTileLayer : public QgsMapLayer
 
     // new methods
 
+    /**
+     * Returns the vector tile matrix set.
+     *
+     * \since QGIS 3.22.6
+     */
+    QgsVectorTileMatrixSet &tileMatrixSet() { return mMatrixSet; }
+
     //! Returns type of the data source
     QString sourceType() const { return mSourceType; }
     //! Returns URL/path of the data source (syntax different to each data source type)
     QString sourcePath() const { return mSourcePath; }
 
     //! Returns minimum zoom level at which source has any valid tiles (negative = unconstrained)
-    int sourceMinZoom() const { return mSourceMinZoom; }
+    int sourceMinZoom() const { return mMatrixSet.minimumZoom(); }
     //! Returns maximum zoom level at which source has any valid tiles (negative = unconstrained)
-    int sourceMaxZoom() const { return mSourceMaxZoom; }
+    int sourceMaxZoom() const { return mMatrixSet.maximumZoom(); }
 
     /**
      * Fetches raw tile data for the give tile coordinates. If failed to fetch tile data,
@@ -185,10 +211,8 @@ class CORE_EXPORT QgsVectorTileLayer : public QgsMapLayer
     QString mSourceType;
     //! URL/Path of the data source
     QString mSourcePath;
-    //! Minimum zoom level at which source has any valid tiles (negative = unconstrained)
-    int mSourceMinZoom = -1;
-    //! Maximum zoom level at which source has any valid tiles (negative = unconstrained)
-    int mSourceMaxZoom = -1;
+
+    QgsVectorTileMatrixSet mMatrixSet;
 
     //! Renderer assigned to the layer to draw map
     std::unique_ptr<QgsVectorTileRenderer> mRenderer;
@@ -199,8 +223,42 @@ class CORE_EXPORT QgsVectorTileLayer : public QgsMapLayer
 
     QVariantMap mArcgisLayerConfiguration;
 
+    QgsCoordinateTransformContext mTransformContext;
+
+    std::unique_ptr< QgsDataProvider > mDataProvider;
+
     bool setupArcgisVectorTileServiceConnection( const QString &uri, const QgsDataSourceUri &dataSourceUri );
+
+    void setDataSourcePrivate( const QString &dataSource, const QString &baseName, const QString &provider,
+                               const QgsDataProvider::ProviderOptions &options, QgsDataProvider::ReadFlags flags ) override;
+
 };
+
+#ifndef SIP_RUN
+///@cond PRIVATE
+
+/**
+ * A minimal data provider for vector tile layers.
+ *
+ * \since QGIS 3.22
+ */
+class QgsVectorTileDataProvider : public QgsDataProvider
+{
+    Q_OBJECT
+
+  public:
+    QgsVectorTileDataProvider( const QgsDataProvider::ProviderOptions &providerOptions,
+                               QgsDataProvider::ReadFlags flags );
+    QgsCoordinateReferenceSystem crs() const override;
+    QString name() const override;
+    QString description() const override;
+    QgsRectangle extent() const override;
+    bool isValid() const override;
+    bool renderInPreview( const QgsDataProvider::PreviewContext &context ) override;
+
+};
+///@endcond
+#endif
 
 
 #endif // QGSVECTORTILELAYER_H

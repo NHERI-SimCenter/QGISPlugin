@@ -75,10 +75,19 @@ class CORE_EXPORT QgsTransaction : public QObject SIP_ABSTRACT
     ~QgsTransaction() override;
 
     /**
-     * Add the \a layer to the transaction. The layer must not be
-     * in edit mode and the connection string must match.
+     * Returns the connection string of the transaction
+     * \since QGIS 3.26
      */
-    bool addLayer( QgsVectorLayer *layer );
+    QString connectionString() const;
+
+    /**
+     * Add the \a layer to the transaction. The connection string
+     * must match.
+     * \param layer that will be added to the transaction
+     * \param addLayersInEditMode if set layers that are already
+     * in edit mode can be added to the transaction \since QGIS 3.26
+     */
+    bool addLayer( QgsVectorLayer *layer, bool addLayersInEditMode = false );
 
     /**
      * Begin transaction
@@ -132,13 +141,13 @@ class CORE_EXPORT QgsTransaction : public QObject SIP_ABSTRACT
      * returns empty string on error
      * \since QGIS 3.0
      */
-    QString createSavepoint( const QString &savePointId, QString &error SIP_OUT );
+    virtual QString createSavepoint( const QString &savePointId, QString &error SIP_OUT );
 
     /**
      * rollback to save point, the save point is maintained and is "undertied"
      * \since QGIS 3.0
      */
-    bool rollbackToSavepoint( const QString &name, QString &error SIP_OUT );
+    virtual bool rollbackToSavepoint( const QString &name, QString &error SIP_OUT );
 
     /**
      * dirty save point such that next call to createSavepoint will create a new one
@@ -179,17 +188,16 @@ class CORE_EXPORT QgsTransaction : public QObject SIP_ABSTRACT
     QgsTransaction( const QString &connString ) SIP_SKIP;
 
     QString mConnString;
+    bool mTransactionActive;
+    QStack< QString > mSavepoints;
+    bool mLastSavePointIsDirty;
 
   private slots:
     void onLayerDeleted();
 
   private:
 
-    bool mTransactionActive;
     QSet<QgsVectorLayer *> mLayers;
-
-    QStack< QString > mSavepoints;
-    bool mLastSavePointIsDirty;
 
     void setLayerTransactionIds( QgsTransaction *transaction );
 

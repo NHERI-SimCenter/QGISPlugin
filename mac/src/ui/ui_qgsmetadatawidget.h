@@ -22,7 +22,6 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListView>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
@@ -34,6 +33,7 @@
 #include "qgscollapsiblegroupbox.h"
 #include "qgsdatetimeedit.h"
 #include "qgsextentgroupbox.h"
+#include "qgsscrollarea.h"
 #include "qgsspinbox.h"
 
 QT_BEGIN_NAMESPACE
@@ -45,7 +45,7 @@ public:
     QTabWidget *tabWidget;
     QWidget *tabIdentificationDialog;
     QVBoxLayout *verticalLayout;
-    QScrollArea *scrollArea;
+    QgsScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents_2;
     QVBoxLayout *verticalLayout_15;
     QLabel *mIdLabel;
@@ -104,7 +104,7 @@ public:
     QTableWidget *tabKeywords;
     QWidget *tabAccessDialog;
     QVBoxLayout *verticalLayout_3;
-    QScrollArea *scrollArea_2;
+    QgsScrollArea *scrollArea_2;
     QWidget *scrollAreaWidgetContents_3;
     QVBoxLayout *verticalLayout_16;
     QLabel *label_5;
@@ -157,7 +157,7 @@ public:
     QVBoxLayout *verticalLayout_10;
     QLabel *mLabelContact;
     QHBoxLayout *horizontalLayout_3;
-    QScrollArea *panelDetails;
+    QgsScrollArea *panelDetails;
     QWidget *scrollAreaWidgetContents;
     QGridLayout *gridLayout_2;
     QLineEdit *lineEditContactPosition;
@@ -218,7 +218,7 @@ public:
         verticalLayout = new QVBoxLayout(tabIdentificationDialog);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        scrollArea = new QScrollArea(tabIdentificationDialog);
+        scrollArea = new QgsScrollArea(tabIdentificationDialog);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         scrollArea->setFrameShape(QFrame::NoFrame);
         scrollArea->setWidgetResizable(true);
@@ -556,7 +556,7 @@ public:
         verticalLayout_3 = new QVBoxLayout(tabAccessDialog);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        scrollArea_2 = new QScrollArea(tabAccessDialog);
+        scrollArea_2 = new QgsScrollArea(tabAccessDialog);
         scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
         scrollArea_2->setFrameShape(QFrame::NoFrame);
         scrollArea_2->setWidgetResizable(true);
@@ -823,7 +823,7 @@ public:
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
-        panelDetails = new QScrollArea(tabContactsDialog);
+        panelDetails = new QgsScrollArea(tabContactsDialog);
         panelDetails->setObjectName(QString::fromUtf8("panelDetails"));
         QSizePolicy sizePolicy3(QSizePolicy::Minimum, QSizePolicy::Expanding);
         sizePolicy3.setHorizontalStretch(0);

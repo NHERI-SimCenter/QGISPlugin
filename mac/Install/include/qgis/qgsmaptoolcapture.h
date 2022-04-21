@@ -23,7 +23,6 @@
 #include "qgsgeometry.h"
 #include "qobjectuniqueptr.h"
 #include "qgssnappingutils.h"
-#include "qgsgeometryrubberband.h"
 
 #include <QPoint>
 #include <QList>
@@ -35,89 +34,17 @@ class QgsVertexMarker;
 class QgsMapLayer;
 class QgsGeometryValidator;
 class QgsMapToolCaptureRubberBand;
+class QgsCurvePolygon;
+class QgsMapToolShapeAbstract;
+class QgsMapToolShapeMetadata;
 
-
-#ifndef SIP_RUN
-
-///@cond PRIVATE
-
-/**
- * Class that reprensents a rubber band that can be linear or circular.
- *
- * \since QGIS 3.16
- */
-class QgsMapToolCaptureRubberBand: public QgsGeometryRubberBand
-{
-  public:
-    //! Constructor
-    QgsMapToolCaptureRubberBand( QgsMapCanvas *mapCanvas, QgsWkbTypes::GeometryType geomType = QgsWkbTypes::LineGeometry );
-
-    //! Returns the curve defined by the rubber band, the caller has to take the ownership, nullptr if no curve is defined.
-    QgsCurve *curve();
-
-    /**
-     * Returns if the curve defined by the rubber band is complete :
-     * has more than 2 points for circular string and more than 1 point for linear string
-     */
-    bool curveIsComplete() const;
-
-    /**
-     * Resets the rubber band with the specified geometry type
-     * that must be line geometry or polygon geometry.
-     * \a firstPolygonPoint is the first point that will be used to render the polygon rubber band (if \a geomType is PolygonGeometry)
-     */
-    void reset( QgsWkbTypes::GeometryType geomType = QgsWkbTypes::LineGeometry, QgsWkbTypes::Type stringType = QgsWkbTypes::LineString, const QgsPoint &firstPolygonPoint = QgsPoint() );
-
-    //! Sets the geometry type of the rubberband without removing already existing points
-    void setRubberBandGeometryType( QgsWkbTypes::GeometryType geomType );
-
-    //! Adds point to the rubber band
-    void addPoint( const QgsPoint &point, bool doUpdate = true );
-
-    //! Moves the last point to the \a point position
-    void movePoint( const QgsPoint &point );
-
-    //! Moves the point with \a index to the \a point position
-    void movePoint( int index, const QgsPoint &point );
-
-    //! Returns the points count in the rubber band (except the first point if polygon)
-    int pointsCount();
-
-    //! Returns the type of the curve (linear string or circular string)
-    QgsWkbTypes::Type stringType() const;
-
-    //! Sets the type of the curve (linear string or circular string)
-    void setStringType( const QgsWkbTypes::Type &type );
-
-    //! Returns the last point of the rubber band
-    QgsPoint lastPoint() const;
-
-    //! Returns the point of the rubber band at position from end
-    QgsPoint pointFromEnd( int posFromEnd ) const;
-
-    //! Removes the last point of the rrubber band
-    void removeLastPoint();
-
-  private:
-    QgsWkbTypes::Type mStringType = QgsWkbTypes::LineString;
-
-    void setGeometry( QgsAbstractGeometry *geom ) override;
-    void updateCurve();
-
-    QgsCurve *createLinearString();
-    QgsCurve *createCircularString();
-
-    QgsPointSequence mPoints;
-    QgsPoint mFirstPolygonPoint;
-};
-
-/// @endcond
-
-#endif //SIP_RUN
 
 /**
  * \ingroup gui
- * \class QgsMapToolCapture
+ * QgsMapToolCapture is a base class capable of capturing point, lines and polygons.
+ * The tool supports different techniques: straight segments, curves, streaming and shapes
+ * Once the the geometry is captured the virtual private handler geometryCaptured is called
+ * as well as a more specific handler (pointCaptured, lineCaptured or polygonCaptured)
  */
 class GUI_EXPORT QgsMapToolCapture : public QgsMapToolAdvancedDigitizing
 {
@@ -134,23 +61,12 @@ class GUI_EXPORT QgsMapToolCapture : public QgsMapToolAdvancedDigitizing
       CapturePolygon  //!< Capture polygons
     };
 
-    /**
-     * Capture technique.
-     *
-     * \since QGIS 3.20
-     */
-    enum CaptureTechnique
-    {
-      StraightSegments, //!< Default capture mode - capture occurs with straight line segments
-      CircularString, //!< Capture in circular strings
-      Streaming, //!< Streaming points digitizing mode (points are automatically added as the mouse cursor moves). Since QGIS 3.20.
-    };
-
     //! Specific capabilities of the tool
     enum Capability
     {
-      NoCapabilities = 0,       //!< No specific capabilities
-      SupportsCurves = 1,       //!< Supports curved geometries input
+      NoCapabilities = 1 << 0, //!< No specific capabilities
+      SupportsCurves = 1 << 1, //!< Supports curved geometries input
+      ValidateGeometries = 1 << 2, //!< Tool supports geometry validation (since QGIS 3.22)
     };
 
     Q_DECLARE_FLAGS( Capabilities, Capability )
@@ -170,7 +86,20 @@ class GUI_EXPORT QgsMapToolCapture : public QgsMapToolAdvancedDigitizing
      *
      * \since QGIS 3.20
      */
-    virtual bool supportsTechnique( CaptureTechnique technique ) const;
+    virtual bool supportsTechnique( Qgis::CaptureTechnique technique ) const;
+
+    /**
+     * Sets the current capture if it is supported by the map tool
+     * \since QGIS 3.26
+     */
+    void setCurrentCaptureTechnique( Qgis::CaptureTechnique technique );
+
+    /**
+     * Sets the current shape tool
+     * \see QgsMapToolShapeRegistry
+     * \since QGIS 3.26
+     */
+    void setCurrentShapeMapTool( const QgsMapToolShapeMetadata *shapeMapToolMetadata ) SIP_SKIP;
 
     void activate() override;
     void deactivate() override;
@@ -207,6 +136,7 @@ class GUI_EXPORT QgsMapToolCapture : public QgsMapToolAdvancedDigitizing
     QList<QgsPointLocator::Match> snappingMatches() const;
 
     void cadCanvasMoveEvent( QgsMapMouseEvent *e ) override;
+    void cadCanvasReleaseEvent( QgsMapMouseEvent *e ) override;
 
     /**
      * Intercept key events like Esc or Del to delete the last point
@@ -230,15 +160,47 @@ class GUI_EXPORT QgsMapToolCapture : public QgsMapToolAdvancedDigitizing
      */
     QgsRubberBand *takeRubberBand() SIP_FACTORY;
 
+    /**
+     * Creates a QgsPoint with ZM support if necessary (according to the
+     * WkbType of the current layer). If the point is snapped, then the Z
+     * value is derived from the snapped point.
+     *
+     * \param e A mouse event
+     *
+     * \returns a point with ZM support if necessary
+     *
+     * \since QGIS 3.0
+     */
+    QgsPoint mapPoint( const QgsMapMouseEvent &e ) const;
+
+    /**
+     * Creates a QgsPoint with ZM support if necessary (according to the
+     * WkbType of the current layer).
+     *
+     * \param point A point in 2D
+     *
+     * \returns a point with ZM support if necessary
+     *
+     * \since QGIS 3.0
+     */
+    QgsPoint mapPoint( const QgsPointXY &point ) const;
+
+    // TODO QGIS 4.0 returns an enum instead of a magic constant
+
   public slots:
-    //! Enable the digitizing with curve
-    void setCircularDigitizingEnabled( bool enable );
+
+    /**
+     * Enable the digitizing with curve
+     * \deprecated since QGIS 3.26 use setCurrentCaptureTechnique() instead
+     */
+    Q_DECL_DEPRECATED void setCircularDigitizingEnabled( bool enable ) SIP_DEPRECATED;
 
     /**
      * Toggles the stream digitizing mode.
      * \since QGIS 3.20
+    * \deprecated since QGIS 3.26 use setCurrentCaptureTechnique() instead
      */
-    void setStreamDigitizingEnabled( bool enable );
+    Q_DECL_DEPRECATED void setStreamDigitizingEnabled( bool enable ) SIP_DEPRECATED;
 
   private slots:
     void addError( const QgsGeometry::Error &error );
@@ -256,7 +218,7 @@ class GUI_EXPORT QgsMapToolCapture : public QgsMapToolAdvancedDigitizing
      *  \param[in,out] layerPoint the point in layer coordinates
      *  \returns
      *   0 in case of success
-     *   1 if the current layer is NULLPTR or not a vector layer
+     *   1 if the current layer is NULLPTR
      *   2 if the transformation failed
      */
     int nextPoint( const QgsPoint &mapPoint, QgsPoint &layerPoint );
@@ -286,35 +248,8 @@ class GUI_EXPORT QgsMapToolCapture : public QgsMapToolAdvancedDigitizing
     int fetchLayerPoint( const QgsPointLocator::Match &match, QgsPoint &layerPoint );
 
     /**
-     * Creates a QgsPoint with ZM support if necessary (according to the
-     * WkbType of the current layer). If the point is snapped, then the Z
-     * value is took from the snapped point.
-     *
-     * \param e A mouse event
-     *
-     * \returns a point with ZM support if necessary
-     *
-     * \since QGIS 3.0
-     */
-    QgsPoint mapPoint( const QgsMapMouseEvent &e ) const;
-
-    /**
-     * Creates a QgsPoint with ZM support if necessary (according to the
-     * WkbType of the current layer).
-     *
-     * \param point A point in 2D
-     *
-     * \returns a point with ZM support if necessary
-     *
-     * \since QGIS 3.0
-     */
-    QgsPoint mapPoint( const QgsPointXY &point ) const;
-
-    // TODO QGIS 4.0 returns an enum instead of a magic constant
-
-    /**
      * Adds a point to the rubber band (in map coordinates) and to the capture list (in layer coordinates)
-     * \returns 0 in case of success, 1 if current layer is not a vector layer, 2 if coordinate transformation failed
+     * \returns 0 in case of success, 2 if coordinate transformation failed
      */
     int addVertex( const QgsPointXY &point );
 
@@ -398,6 +333,35 @@ class GUI_EXPORT QgsMapToolCapture : public QgsMapToolAdvancedDigitizing
     void stopCapturing();
 
   private:
+
+    /**
+     * Called when the geometry is captured
+     * A more specific handler is also called afterwards (pointCaptured, lineCaptured or polygonCaptured)
+     * \since QGIS 3.26
+     */
+    virtual void geometryCaptured( const QgsGeometry &geometry ) {Q_UNUSED( geometry )} SIP_FORCE
+
+    /**
+     * Called when a point is captured
+     * geometryCaptured is called just before
+     * \since QGIS 3.26
+     */
+    virtual void pointCaptured( const QgsPoint &point ) {Q_UNUSED( point )} SIP_FORCE
+
+    /**
+     * Called when a line is captured
+     * geometryCaptured is called just before
+     * \since QGIS 3.26
+     */
+    virtual void lineCaptured( const QgsCurve *line ) {Q_UNUSED( line )} SIP_FORCE
+
+    /**
+     * Called when a polygon is captured
+     * geometryCaptured is called just before
+     * \since QGIS 3.26
+     */
+    virtual void polygonCaptured( const QgsCurvePolygon *polygon ) {Q_UNUSED( polygon )} SIP_FORCE
+
     //! whether tracing has been requested by the user
     bool tracingEnabled();
     //! first point that will be used as a start of the trace
@@ -410,22 +374,16 @@ class GUI_EXPORT QgsMapToolCapture : public QgsMapToolAdvancedDigitizing
     //! create a curve rubber band
     QgsMapToolCaptureRubberBand *createCurveRubberBand() const;
 
-    //! Returns extemity point of the captured curve in map coordinates
-    QgsPoint firstCapturedMapPoint();
-    QgsPoint lastCapturedMapPoint();
-
     //! Reset the
     void resetRubberBand();
 
-  private:
     //! The capture mode in which this tool operates
     CaptureMode mCaptureMode;
-
-
 
     //! Flag to indicate a map canvas capture operation is taking place
     bool mCapturing = false;
 
+    //! extremity point of the captured curve in map coordinates
     QgsPoint mCaptureFirstPoint;
     QgsPoint mCaptureLastPoint;
 
@@ -465,15 +423,21 @@ class GUI_EXPORT QgsMapToolCapture : public QgsMapToolAdvancedDigitizing
     QgsPointXY mTracingStartPoint;
 
     //! Used to store the state of digitizing type (linear or circular)
-    QgsWkbTypes::Type mDigitizingType = QgsWkbTypes::LineString;
+    QgsWkbTypes::Type mLineDigitizingType = QgsWkbTypes::LineString;
 
-    bool mStreamingEnabled = false;
+    Qgis::CaptureTechnique mCurrentCaptureTechnique = Qgis::CaptureTechnique::StraightSegments;
+
+    QgsMapToolShapeAbstract *mCurrentShapeMapTool = nullptr;
+
     bool mAllowAddingStreamingPoints = false;
     int mStreamingToleranceInPixels = 1;
 
     bool mStartNewCurve = false;
 
     bool mIgnoreSubsequentAutoRepeatUndo = false;
+
+    friend class TestQgsMapToolCapture;
+
 
 };
 

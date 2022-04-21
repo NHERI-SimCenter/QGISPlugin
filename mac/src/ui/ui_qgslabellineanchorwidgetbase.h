@@ -36,9 +36,15 @@ public:
     QgsPropertyOverrideButton *mLinePlacementDDBtn;
     QgsDoubleSpinBox *mCustomPlacementSpinBox;
     QComboBox *mPercentPlacementComboBox;
+    QGroupBox *groupBox_3;
+    QGridLayout *gridLayout_5;
+    QComboBox *mAnchorTextPointComboBox;
+    QgsPropertyOverrideButton *mAnchorTextPointDDBtn;
+    QLabel *mAnchorTextPointHintLabel;
     QGroupBox *groupBox_2;
     QGridLayout *gridLayout_3;
     QComboBox *mAnchorTypeComboBox;
+    QgsPropertyOverrideButton *mAnchorTypeDDBtn;
     QLabel *mAnchorTypeHintLabel;
     QSpacerItem *verticalSpacer;
 
@@ -102,6 +108,29 @@ public:
 
         gridLayout->addWidget(groupBox, 0, 0, 1, 2);
 
+        groupBox_3 = new QGroupBox(QgsLabelLineAnchorWidgetBase);
+        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
+        gridLayout_5 = new QGridLayout(groupBox_3);
+        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
+        mAnchorTextPointComboBox = new QComboBox(groupBox_3);
+        mAnchorTextPointComboBox->setObjectName(QString::fromUtf8("mAnchorTextPointComboBox"));
+
+        gridLayout_5->addWidget(mAnchorTextPointComboBox, 0, 0, 1, 1);
+
+        mAnchorTextPointDDBtn = new QgsPropertyOverrideButton(groupBox_3);
+        mAnchorTextPointDDBtn->setObjectName(QString::fromUtf8("mAnchorTextPointDDBtn"));
+
+        gridLayout_5->addWidget(mAnchorTextPointDDBtn, 0, 1, 1, 1);
+
+        mAnchorTextPointHintLabel = new QLabel(groupBox_3);
+        mAnchorTextPointHintLabel->setObjectName(QString::fromUtf8("mAnchorTextPointHintLabel"));
+        mAnchorTextPointHintLabel->setWordWrap(true);
+
+        gridLayout_5->addWidget(mAnchorTextPointHintLabel, 1, 0, 1, 2);
+
+
+        gridLayout->addWidget(groupBox_3, 1, 0, 1, 2);
+
         groupBox_2 = new QGroupBox(QgsLabelLineAnchorWidgetBase);
         groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
         gridLayout_3 = new QGridLayout(groupBox_2);
@@ -111,14 +140,19 @@ public:
 
         gridLayout_3->addWidget(mAnchorTypeComboBox, 0, 0, 1, 1);
 
+        mAnchorTypeDDBtn = new QgsPropertyOverrideButton(groupBox_2);
+        mAnchorTypeDDBtn->setObjectName(QString::fromUtf8("mAnchorTypeDDBtn"));
+
+        gridLayout_3->addWidget(mAnchorTypeDDBtn, 0, 1, 1, 1);
+
         mAnchorTypeHintLabel = new QLabel(groupBox_2);
         mAnchorTypeHintLabel->setObjectName(QString::fromUtf8("mAnchorTypeHintLabel"));
         mAnchorTypeHintLabel->setWordWrap(true);
 
-        gridLayout_3->addWidget(mAnchorTypeHintLabel, 1, 0, 1, 1);
+        gridLayout_3->addWidget(mAnchorTypeHintLabel, 1, 0, 1, 2);
 
 
-        gridLayout->addWidget(groupBox_2, 1, 0, 1, 2);
+        gridLayout->addWidget(groupBox_2, 2, 0, 1, 2);
 
         verticalSpacer = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
@@ -141,7 +175,11 @@ public:
         mLineClippingDDBtn->setText(QCoreApplication::translate("QgsLabelLineAnchorWidgetBase", "\342\200\246", nullptr));
         mLinePlacementDDBtn->setText(QCoreApplication::translate("QgsLabelLineAnchorWidgetBase", "\342\200\246", nullptr));
         mCustomPlacementSpinBox->setSuffix(QCoreApplication::translate("QgsLabelLineAnchorWidgetBase", " %", nullptr));
+        groupBox_3->setTitle(QCoreApplication::translate("QgsLabelLineAnchorWidgetBase", "Text Anchor", nullptr));
+        mAnchorTextPointDDBtn->setText(QCoreApplication::translate("QgsLabelLineAnchorWidgetBase", "\342\200\246", nullptr));
+        mAnchorTextPointHintLabel->setText(QCoreApplication::translate("QgsLabelLineAnchorWidgetBase", "Hint", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("QgsLabelLineAnchorWidgetBase", "Placement Behavior", nullptr));
+        mAnchorTypeDDBtn->setText(QCoreApplication::translate("QgsLabelLineAnchorWidgetBase", "\342\200\246", nullptr));
         mAnchorTypeHintLabel->setText(QCoreApplication::translate("QgsLabelLineAnchorWidgetBase", "Hint", nullptr));
         (void)QgsLabelLineAnchorWidgetBase;
     } // retranslateUi

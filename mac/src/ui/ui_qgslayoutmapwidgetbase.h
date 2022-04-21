@@ -232,7 +232,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, -376, 548, 1398));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 548, 1336));
         sizePolicy1.setHeightForWidth(scrollAreaWidgetContents->sizePolicy().hasHeightForWidth());
         scrollAreaWidgetContents->setSizePolicy(sizePolicy1);
         mainLayout = new QVBoxLayout(scrollAreaWidgetContents);
@@ -516,6 +516,7 @@ public:
         sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(mStartDateTime->sizePolicy().hasHeightForWidth());
         mStartDateTime->setSizePolicy(sizePolicy2);
+        mStartDateTime->setCalendarPopup(true);
         mStartDateTime->setTimeSpec(Qt::UTC);
 
         gridLayout_5->addWidget(mStartDateTime, 0, 1, 1, 1);
@@ -535,6 +536,7 @@ public:
         mEndDateTime->setObjectName(QString::fromUtf8("mEndDateTime"));
         sizePolicy2.setHeightForWidth(mEndDateTime->sizePolicy().hasHeightForWidth());
         mEndDateTime->setSizePolicy(sizePolicy2);
+        mEndDateTime->setCalendarPopup(true);
         mEndDateTime->setTimeSpec(Qt::UTC);
 
         gridLayout_5->addWidget(mEndDateTime, 1, 1, 1, 1);

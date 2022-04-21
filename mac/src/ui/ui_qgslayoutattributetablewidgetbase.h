@@ -648,7 +648,7 @@ public:
         mMarginSpinBox->setSuffix(QCoreApplication::translate("QgsLayoutAttributeTableWidgetBase", " mm", nullptr));
         mEmptyMessageLabel->setText(QCoreApplication::translate("QgsLayoutAttributeTableWidgetBase", "Message to display", nullptr));
         mMarginLabel->setText(QCoreApplication::translate("QgsLayoutAttributeTableWidgetBase", "Cell margins", nullptr));
-        mUseConditionalStylingCheckBox->setText(QCoreApplication::translate("QgsLayoutAttributeTableWidgetBase", "Apply layer conditional styling colors", nullptr));
+        mUseConditionalStylingCheckBox->setText(QCoreApplication::translate("QgsLayoutAttributeTableWidgetBase", "Apply layer conditional styling rules", nullptr));
         mShowGridGroupCheckBox->setTitle(QCoreApplication::translate("QgsLayoutAttributeTableWidgetBase", "Show Grid", nullptr));
         mGridStrokeWidthLabel->setText(QCoreApplication::translate("QgsLayoutAttributeTableWidgetBase", "Line width", nullptr));
         mGridStrokeWidthSpinBox->setSuffix(QCoreApplication::translate("QgsLayoutAttributeTableWidgetBase", " mm", nullptr));

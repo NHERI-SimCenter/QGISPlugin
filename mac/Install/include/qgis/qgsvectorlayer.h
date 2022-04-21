@@ -35,7 +35,6 @@
 #include "qgsfields.h"
 #include "qgsvectordataprovider.h"
 #include "qgsvectorsimplifymethod.h"
-#include "qgsvectorlayerserverproperties.h"
 #include "qgseditformconfig.h"
 #include "qgsattributetableconfig.h"
 #include "qgsaggregatecalculator.h"
@@ -43,6 +42,7 @@
 #include "qgsexpressioncontextgenerator.h"
 #include "qgsexpressioncontextscopegenerator.h"
 #include "qgsexpressioncontext.h"
+#include "qgsabstractprofilesource.h"
 
 class QPainter;
 class QImage;
@@ -81,6 +81,7 @@ class QgsGeometryOptions;
 class QgsStyleEntityVisitorInterface;
 class QgsVectorLayerTemporalProperties;
 class QgsFeatureRendererGenerator;
+class QgsVectorLayerElevationProperties;
 
 typedef QList<int> QgsAttributeList;
 typedef QSet<int> QgsAttributeIds;
@@ -389,7 +390,7 @@ typedef QSet<int> QgsAttributeIds;
  *
  * \see QgsVectorLayerUtils()
  */
-class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionContextGenerator, public QgsExpressionContextScopeGenerator, public QgsFeatureSink, public QgsFeatureSource
+class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionContextGenerator, public QgsExpressionContextScopeGenerator, public QgsFeatureSink, public QgsFeatureSource, public QgsAbstractProfileSource
 {
     Q_OBJECT
 
@@ -571,6 +572,27 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionConte
      */
     QString capabilitiesString() const;
 
+
+    /**
+     * Returns TRUE if the layer is a query (SQL) layer.
+     *
+     * \note this is simply a shortcut to check if the SqlQuery flag
+     *       is set.
+     *
+     * \see vectorLayerTypeFlags()
+     * \since QGIS 3.24
+     */
+    bool isSqlQuery() const;
+
+    /**
+     * Returns the vector layer type flags.
+     *
+     * \see isSqlQuery()
+     * \since QGIS 3.24
+     */
+    Qgis::VectorLayerTypeFlags vectorLayerTypeFlags() const;
+
+
     /**
      * Returns a description for this layer as defined in the data provider.
      */
@@ -604,11 +626,9 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionConte
 
     QgsVectorDataProvider *dataProvider() FINAL;
     const QgsVectorDataProvider *dataProvider() const FINAL SIP_SKIP;
-
-    /**
-     * Returns temporal properties associated with the vector layer.
-     */
     QgsMapLayerTemporalProperties *temporalProperties() override;
+    QgsMapLayerElevationProperties *elevationProperties() override;
+    QgsAbstractProfileGenerator *createProfileGenerator( const QgsProfileRequest &request ) override SIP_FACTORY;
 
     /**
      * Sets the text \a encoding of the data provider.
@@ -730,12 +750,6 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionConte
     const QgsActionManager *actions() const SIP_SKIP { return mActions; }
 
     /**
-     * Returns QGIS Server Properties of the vector layer
-     * \since QGIS 3.10
-     */
-    QgsVectorLayerServerProperties *serverProperties() const { return mServerProperties.get(); }
-
-    /**
      * Returns the number of features that are selected in this layer.
      *
      * \see selectedFeatureIds()
@@ -758,11 +772,12 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionConte
      * \param expression expression to evaluate to select features
      * \param behavior selection type, allows adding to current selection, removing
      * from selection, etc.
+     * \param context since QGIS 3.26, specifies an optional expression context to use when selecting features. If not specified a default one will be built.
      * \see selectByRect()
      * \see selectByIds()
      * \since QGIS 2.16
      */
-    Q_INVOKABLE void selectByExpression( const QString &expression, Qgis::SelectBehavior behavior = Qgis::SelectBehavior::SetSelection );
+    Q_INVOKABLE void selectByExpression( const QString &expression, Qgis::SelectBehavior behavior = Qgis::SelectBehavior::SetSelection, QgsExpressionContext *context = nullptr );
 
     /**
      * Selects matching features using a list of feature IDs. Will emit the
@@ -974,6 +989,13 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionConte
      * \param useAsDefault Set to TRUE if style should be used as the default style for the layer
      * \param uiFileContent
      * \param msgError will be set to a descriptive error message if any occurs
+     *
+     *
+     * \note Prior to QGIS 3.24, this method would show a message box warning when a
+     * style with the same \a styleName already existed to confirm replacing the style with the user.
+     * Since 3.24, calling this method will ALWAYS overwrite any existing style with the same name.
+     * Use QgsProviderRegistry::styleExists() to test in advance if a style already exists and handle this appropriately
+     * in your client code.
      */
     virtual void saveStyleToDatabase( const QString &name, const QString &description,
                                       bool useAsDefault, const QString &uiFileContent,
@@ -2666,17 +2688,17 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionConte
      */
     void geometryChanged( QgsFeatureId fid, const QgsGeometry &geometry );
 
-    //! Emitted when attributes are deleted from the provider
+    //! Emitted when attributes are deleted from the provider if not in transaction mode.
     void committedAttributesDeleted( const QString &layerId, const QgsAttributeList &deletedAttributes );
-    //! Emitted when attributes are added to the provider
+    //! Emitted when attributes are added to the provider if not in transaction mode.
     void committedAttributesAdded( const QString &layerId, const QList<QgsField> &addedAttributes );
-    //! Emitted when features are added to the provider
+    //! Emitted when features are added to the provider if not in transaction mode.
     void committedFeaturesAdded( const QString &layerId, const QgsFeatureList &addedFeatures );
-    //! Emitted when features are deleted from the provider
+    //! Emitted when features are deleted from the provider if not in transaction mode.
     void committedFeaturesRemoved( const QString &layerId, const QgsFeatureIds &deletedFeatureIds );
-    //! Emitted when attribute value changes are saved to the provider
+    //! Emitted when attribute value changes are saved to the provider if not in transaction mode.
     void committedAttributeValuesChanges( const QString &layerId, const QgsChangedAttributesMap &changedAttributesValues );
-    //! Emitted when geometry changes are saved to the provider
+    //! Emitted when geometry changes are saved to the provider if not in transaction mode.
     void committedGeometriesChanges( const QString &layerId, const QgsGeometryMap &changedGeometries );
 
     //! Emitted when the font family defined for labeling layer is not found on system
@@ -2838,6 +2860,9 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionConte
     //! Returns the minimum or maximum value
     void minimumOrMaximumValue( int index, QVariant *minimum, QVariant *maximum ) const;
 
+    void createEditBuffer();
+    void clearEditBuffer();
+
     QgsConditionalLayerStyles *mConditionalStyles = nullptr;
 
     //! Pointer to data provider derived from the abastract base class QgsDataProvider
@@ -2845,6 +2870,8 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionConte
 
     //! Pointer to temporal properties
     QgsVectorLayerTemporalProperties *mTemporalProperties = nullptr;
+
+    QgsVectorLayerElevationProperties *mElevationProperties = nullptr;
 
     //! The preview expression used to generate a human readable preview string for features
     QString mDisplayExpression;
@@ -2925,13 +2952,11 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionConte
     //! stores information about uncommitted changes to layer
     QgsVectorLayerEditBuffer *mEditBuffer = nullptr;
     friend class QgsVectorLayerEditBuffer;
+    friend class QgsVectorLayerEditBufferGroup;
     friend class QgsVectorLayerEditPassthrough;
 
     //stores information about joined layers
     QgsVectorLayerJoinBuffer *mJoinBuffer = nullptr;
-
-    //!stores information about server properties
-    std::unique_ptr< QgsVectorLayerServerProperties > mServerProperties;
 
     //! stores information about expression fields on this layer
     QgsExpressionFieldBuffer *mExpressionFieldBuffer = nullptr;
@@ -2961,6 +2986,9 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionConte
     //! True while an undo command is active
     bool mEditCommandActive = false;
 
+    //! True while a commit is active
+    bool mCommitChangesActive = false;
+
     bool mReadExtentFromXml;
     QgsRectangle mXmlExtent;
 
@@ -2989,6 +3017,9 @@ class CORE_EXPORT QgsVectorLayer : public QgsMapLayer, public QgsExpressionConte
     bool mSetLegendFromStyle = false;
 
     QList< QgsFeatureRendererGenerator * > mRendererGenerators;
+
+    //! Timer for triggering automatic redraw of the layer based on feature renderer settings (e.g. animated symbols)
+    QTimer *mRefreshRendererTimer = nullptr;
 };
 
 

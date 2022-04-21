@@ -20,12 +20,12 @@
 #include "qgis_gui.h"
 #include "qgis_sip.h"
 #include "qgssettingsregistry.h"
-#include "qgssettingsentry.h"
+#include "qgssettingsentryimpl.h"
 
 /**
  * \ingroup gui
  * \class QgsSettingsRegistryGui
- * QgsSettingsRegistryGui is used for settings introspection and collects all
+ * \brief QgsSettingsRegistryGui is used for settings introspection and collects all
  * QgsSettingsEntry instances of gui.
  *
  * \since QGIS 3.22
@@ -46,7 +46,7 @@ class GUI_EXPORT QgsSettingsRegistryGui : public QgsSettingsRegistry
 
 #ifndef SIP_RUN
     //! Settings entry respect screen dpi
-    static const inline QgsSettingsEntryBool settingsRespectScreenDPI = QgsSettingsEntryBool( QStringLiteral( "qgis/respect_screen_dpi" ), QgsSettings::Gui, false );
+    static const inline QgsSettingsEntryBool settingsRespectScreenDPI = QgsSettingsEntryBool( QStringLiteral( "respect_screen_dpi" ), QgsSettings::Prefix::GUI_QGIS, false );
 #endif
 
 };

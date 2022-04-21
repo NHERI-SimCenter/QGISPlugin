@@ -23,8 +23,8 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableWidget>
@@ -33,6 +33,7 @@
 #include "qgscollapsiblegroupbox.h"
 #include "qgsfilewidget.h"
 #include "qgsprojectionselectionwidget.h"
+#include "qgsscrollarea.h"
 #include "qgsspinbox.h"
 
 QT_BEGIN_NAMESPACE
@@ -51,7 +52,7 @@ public:
     QLineEdit *txtLayerName;
     QLabel *lblEncoding;
     QComboBox *cmbEncoding;
-    QScrollArea *scrollArea;
+    QgsScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
     QVBoxLayout *verticalLayout_4;
     QgsCollapsibleGroupBox *fileFormatGroupBox;
@@ -90,18 +91,30 @@ public:
     QLineEdit *txtDelimiterRegexp;
     QLabel *lblRegexpError;
     QgsCollapsibleGroupBox *recordOptionsGroupBox;
-    QGridLayout *gridLayout_7;
+    QGridLayout *gridLayout_4;
+    QCheckBox *cbxTrimFields;
     QHBoxLayout *horizontalLayout_4;
     QLabel *label_4;
     QgsSpinBox *rowCounter;
-    QCheckBox *cbxUseHeader;
-    QCheckBox *cbxTrimFields;
-    QCheckBox *cbxPointIsComma;
     QCheckBox *cbxSkipEmptyFields;
     QCheckBox *cbxDetectTypes;
+    QCheckBox *cbxPointIsComma;
+    QCheckBox *cbxUseHeader;
+    QGroupBox *groupBox;
+    QHBoxLayout *horizontalLayout_10;
+    QHBoxLayout *horizontalLayout_9;
+    QHBoxLayout *horizontalLayout_8;
+    QLabel *mBoolTrueLabel;
+    QLineEdit *mBooleanTrue;
+    QLabel *mBooleanFalseLabel;
+    QLineEdit *mBooleanFalse;
     QgsCollapsibleGroupBox *geometryDefinitionGroupBox;
     QGridLayout *gridLayout;
-    QVBoxLayout *verticalLayout_5;
+    QVBoxLayout *verticalLayout_16;
+    QRadioButton *geomTypeXY;
+    QRadioButton *geomTypeWKT;
+    QRadioButton *geomTypeNone;
+    QVBoxLayout *mGeometryDetailsLayout;
     QStackedWidget *swGeomType;
     QWidget *swpGeomXY;
     QVBoxLayout *verticalLayout_8;
@@ -127,10 +140,6 @@ public:
     QLabel *textLabelCrs;
     QgsProjectionSelectionWidget *crsGeometry;
     QSpacerItem *verticalSpacer_2;
-    QVBoxLayout *verticalLayout_16;
-    QRadioButton *geomTypeXY;
-    QRadioButton *geomTypeWKT;
-    QRadioButton *geomTypeNone;
     QgsCollapsibleGroupBox *layerSettingsGroupBox;
     QVBoxLayout *verticalLayout_14;
     QGridLayout *gridLayout_6;
@@ -138,7 +147,13 @@ public:
     QCheckBox *cbxSubsetIndex;
     QCheckBox *cbxWatchFile;
     QGroupBox *sampleDataGroupBox;
-    QVBoxLayout *verticalLayout_15;
+    QVBoxLayout *verticalLayout_9;
+    QWidget *mScanWidget;
+    QHBoxLayout *horizontalLayout_7;
+    QHBoxLayout *mProgressLayout;
+    QLabel *mProgressLabel;
+    QSpacerItem *horizontalSpacer;
+    QPushButton *mCancelButton;
     QTableWidget *tblSample;
     QSpacerItem *verticalSpacer;
     QLabel *lblStatus;
@@ -171,8 +186,9 @@ public:
         widget_3->setAcceptDrops(true);
         verticalLayout = new QVBoxLayout(widget_3);
         verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setSpacing(6);
         horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
@@ -237,7 +253,7 @@ public:
 
         verticalLayout_17->addWidget(widget_3);
 
-        scrollArea = new QScrollArea(QgsDelimitedTextSourceSelectBase);
+        scrollArea = new QgsScrollArea(QgsDelimitedTextSourceSelectBase);
         scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
         QSizePolicy sizePolicy5(QSizePolicy::Expanding, QSizePolicy::Preferred);
         sizePolicy5.setHorizontalStretch(0);
@@ -248,7 +264,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 696, 648));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 703, 647));
         QSizePolicy sizePolicy6(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy6.setHorizontalStretch(0);
         sizePolicy6.setVerticalStretch(0);
@@ -314,8 +330,9 @@ public:
         swpDelimOptions->setObjectName(QString::fromUtf8("swpDelimOptions"));
         verticalLayout_11 = new QVBoxLayout(swpDelimOptions);
         verticalLayout_11->setSpacing(6);
-        verticalLayout_11->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_11->setContentsMargins(11, 11, 11, 11);
         verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
+        verticalLayout_11->setContentsMargins(0, 0, 0, 0);
         frameDelimiterCharacters = new QFrame(swpDelimOptions);
         frameDelimiterCharacters->setObjectName(QString::fromUtf8("frameDelimiterCharacters"));
         sizePolicy6.setHeightForWidth(frameDelimiterCharacters->sizePolicy().hasHeightForWidth());
@@ -324,8 +341,9 @@ public:
         frameDelimiterCharacters->setFrameShadow(QFrame::Raised);
         verticalLayout_3 = new QVBoxLayout(frameDelimiterCharacters);
         verticalLayout_3->setSpacing(0);
-        verticalLayout_3->setContentsMargins(2, 2, 2, 2);
+        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(2, 2, 2, 2);
         layoutDelimChars = new QGridLayout();
         layoutDelimChars->setSpacing(6);
         layoutDelimChars->setObjectName(QString::fromUtf8("layoutDelimChars"));
@@ -439,8 +457,9 @@ public:
         swpRegexpOptions->setObjectName(QString::fromUtf8("swpRegexpOptions"));
         verticalLayout_12 = new QVBoxLayout(swpRegexpOptions);
         verticalLayout_12->setSpacing(6);
-        verticalLayout_12->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_12->setContentsMargins(11, 11, 11, 11);
         verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
+        verticalLayout_12->setContentsMargins(0, 0, 0, 0);
         frame = new QFrame(swpRegexpOptions);
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setFrameShape(QFrame::StyledPanel);
@@ -484,10 +503,15 @@ public:
         sizePolicy1.setHeightForWidth(recordOptionsGroupBox->sizePolicy().hasHeightForWidth());
         recordOptionsGroupBox->setSizePolicy(sizePolicy1);
         recordOptionsGroupBox->setProperty("collapsed", QVariant(true));
-        gridLayout_7 = new QGridLayout(recordOptionsGroupBox);
-        gridLayout_7->setSpacing(6);
-        gridLayout_7->setContentsMargins(11, 11, 11, 11);
-        gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
+        gridLayout_4 = new QGridLayout(recordOptionsGroupBox);
+        gridLayout_4->setSpacing(6);
+        gridLayout_4->setContentsMargins(11, 11, 11, 11);
+        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
+        cbxTrimFields = new QCheckBox(recordOptionsGroupBox);
+        cbxTrimFields->setObjectName(QString::fromUtf8("cbxTrimFields"));
+
+        gridLayout_4->addWidget(cbxTrimFields, 1, 1, 1, 1);
+
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
@@ -510,35 +534,71 @@ public:
         horizontalLayout_4->addWidget(rowCounter);
 
 
-        gridLayout_7->addLayout(horizontalLayout_4, 0, 0, 1, 1);
-
-        cbxUseHeader = new QCheckBox(recordOptionsGroupBox);
-        cbxUseHeader->setObjectName(QString::fromUtf8("cbxUseHeader"));
-        cbxUseHeader->setChecked(true);
-
-        gridLayout_7->addWidget(cbxUseHeader, 1, 0, 1, 1);
-
-        cbxTrimFields = new QCheckBox(recordOptionsGroupBox);
-        cbxTrimFields->setObjectName(QString::fromUtf8("cbxTrimFields"));
-
-        gridLayout_7->addWidget(cbxTrimFields, 1, 1, 1, 1);
-
-        cbxPointIsComma = new QCheckBox(recordOptionsGroupBox);
-        cbxPointIsComma->setObjectName(QString::fromUtf8("cbxPointIsComma"));
-        cbxPointIsComma->setEnabled(true);
-
-        gridLayout_7->addWidget(cbxPointIsComma, 0, 1, 1, 1);
+        gridLayout_4->addLayout(horizontalLayout_4, 0, 0, 1, 1);
 
         cbxSkipEmptyFields = new QCheckBox(recordOptionsGroupBox);
         cbxSkipEmptyFields->setObjectName(QString::fromUtf8("cbxSkipEmptyFields"));
 
-        gridLayout_7->addWidget(cbxSkipEmptyFields, 2, 1, 1, 1);
+        gridLayout_4->addWidget(cbxSkipEmptyFields, 2, 1, 1, 1);
 
         cbxDetectTypes = new QCheckBox(recordOptionsGroupBox);
         cbxDetectTypes->setObjectName(QString::fromUtf8("cbxDetectTypes"));
         cbxDetectTypes->setChecked(true);
 
-        gridLayout_7->addWidget(cbxDetectTypes, 2, 0, 1, 1);
+        gridLayout_4->addWidget(cbxDetectTypes, 2, 0, 1, 1);
+
+        cbxPointIsComma = new QCheckBox(recordOptionsGroupBox);
+        cbxPointIsComma->setObjectName(QString::fromUtf8("cbxPointIsComma"));
+        cbxPointIsComma->setEnabled(true);
+
+        gridLayout_4->addWidget(cbxPointIsComma, 0, 1, 1, 1);
+
+        cbxUseHeader = new QCheckBox(recordOptionsGroupBox);
+        cbxUseHeader->setObjectName(QString::fromUtf8("cbxUseHeader"));
+        cbxUseHeader->setChecked(true);
+
+        gridLayout_4->addWidget(cbxUseHeader, 1, 0, 1, 1);
+
+        groupBox = new QGroupBox(recordOptionsGroupBox);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        horizontalLayout_10 = new QHBoxLayout(groupBox);
+        horizontalLayout_10->setSpacing(6);
+        horizontalLayout_10->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setSpacing(6);
+        horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
+        horizontalLayout_8 = new QHBoxLayout();
+        horizontalLayout_8->setSpacing(6);
+        horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
+        mBoolTrueLabel = new QLabel(groupBox);
+        mBoolTrueLabel->setObjectName(QString::fromUtf8("mBoolTrueLabel"));
+
+        horizontalLayout_8->addWidget(mBoolTrueLabel);
+
+        mBooleanTrue = new QLineEdit(groupBox);
+        mBooleanTrue->setObjectName(QString::fromUtf8("mBooleanTrue"));
+
+        horizontalLayout_8->addWidget(mBooleanTrue);
+
+
+        horizontalLayout_9->addLayout(horizontalLayout_8);
+
+        mBooleanFalseLabel = new QLabel(groupBox);
+        mBooleanFalseLabel->setObjectName(QString::fromUtf8("mBooleanFalseLabel"));
+
+        horizontalLayout_9->addWidget(mBooleanFalseLabel);
+
+        mBooleanFalse = new QLineEdit(groupBox);
+        mBooleanFalse->setObjectName(QString::fromUtf8("mBooleanFalse"));
+
+        horizontalLayout_9->addWidget(mBooleanFalse);
+
+
+        horizontalLayout_10->addLayout(horizontalLayout_9);
+
+
+        gridLayout_4->addWidget(groupBox, 3, 0, 1, 2);
 
 
         verticalLayout_4->addWidget(recordOptionsGroupBox);
@@ -553,9 +613,34 @@ public:
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setHorizontalSpacing(12);
-        verticalLayout_5 = new QVBoxLayout();
-        verticalLayout_5->setSpacing(0);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        verticalLayout_16 = new QVBoxLayout();
+        verticalLayout_16->setSpacing(6);
+        verticalLayout_16->setObjectName(QString::fromUtf8("verticalLayout_16"));
+        verticalLayout_16->setContentsMargins(-1, 0, -1, -1);
+        geomTypeXY = new QRadioButton(geometryDefinitionGroupBox);
+        geomTypeXY->setObjectName(QString::fromUtf8("geomTypeXY"));
+        geomTypeXY->setEnabled(true);
+        geomTypeXY->setChecked(true);
+
+        verticalLayout_16->addWidget(geomTypeXY);
+
+        geomTypeWKT = new QRadioButton(geometryDefinitionGroupBox);
+        geomTypeWKT->setObjectName(QString::fromUtf8("geomTypeWKT"));
+        geomTypeWKT->setEnabled(true);
+
+        verticalLayout_16->addWidget(geomTypeWKT);
+
+        geomTypeNone = new QRadioButton(geometryDefinitionGroupBox);
+        geomTypeNone->setObjectName(QString::fromUtf8("geomTypeNone"));
+
+        verticalLayout_16->addWidget(geomTypeNone);
+
+
+        gridLayout->addLayout(verticalLayout_16, 0, 0, 1, 1);
+
+        mGeometryDetailsLayout = new QVBoxLayout();
+        mGeometryDetailsLayout->setSpacing(0);
+        mGeometryDetailsLayout->setObjectName(QString::fromUtf8("mGeometryDetailsLayout"));
         swGeomType = new QStackedWidget(geometryDefinitionGroupBox);
         swGeomType->setObjectName(QString::fromUtf8("swGeomType"));
         swpGeomXY = new QWidget();
@@ -564,8 +649,9 @@ public:
         swpGeomXY->setSizePolicy(sizePolicy6);
         verticalLayout_8 = new QVBoxLayout(swpGeomXY);
         verticalLayout_8->setSpacing(6);
-        verticalLayout_8->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_8->setContentsMargins(11, 11, 11, 11);
         verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        verticalLayout_8->setContentsMargins(0, 0, 0, 0);
         gridLayout_5 = new QGridLayout();
         gridLayout_5->setSpacing(6);
         gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
@@ -655,8 +741,9 @@ public:
         swpGeomWKT->setSizePolicy(sizePolicy6);
         verticalLayout_6 = new QVBoxLayout(swpGeomWKT);
         verticalLayout_6->setSpacing(6);
-        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
+        verticalLayout_6->setContentsMargins(11, 11, 11, 11);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
         gridLayout_2 = new QGridLayout();
         gridLayout_2->setSpacing(6);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
@@ -708,7 +795,7 @@ public:
         swpGeomNone->setSizePolicy(sizePolicy10);
         swGeomType->addWidget(swpGeomNone);
 
-        verticalLayout_5->addWidget(swGeomType);
+        mGeometryDetailsLayout->addWidget(swGeomType);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
@@ -729,39 +816,14 @@ public:
         horizontalLayout_2->addWidget(crsGeometry);
 
 
-        verticalLayout_5->addLayout(horizontalLayout_2);
+        mGeometryDetailsLayout->addLayout(horizontalLayout_2);
 
         verticalSpacer_2 = new QSpacerItem(20, 20, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        verticalLayout_5->addItem(verticalSpacer_2);
+        mGeometryDetailsLayout->addItem(verticalSpacer_2);
 
 
-        gridLayout->addLayout(verticalLayout_5, 0, 1, 1, 1);
-
-        verticalLayout_16 = new QVBoxLayout();
-        verticalLayout_16->setSpacing(6);
-        verticalLayout_16->setObjectName(QString::fromUtf8("verticalLayout_16"));
-        verticalLayout_16->setContentsMargins(-1, 0, -1, -1);
-        geomTypeXY = new QRadioButton(geometryDefinitionGroupBox);
-        geomTypeXY->setObjectName(QString::fromUtf8("geomTypeXY"));
-        geomTypeXY->setEnabled(true);
-        geomTypeXY->setChecked(true);
-
-        verticalLayout_16->addWidget(geomTypeXY);
-
-        geomTypeWKT = new QRadioButton(geometryDefinitionGroupBox);
-        geomTypeWKT->setObjectName(QString::fromUtf8("geomTypeWKT"));
-        geomTypeWKT->setEnabled(true);
-
-        verticalLayout_16->addWidget(geomTypeWKT);
-
-        geomTypeNone = new QRadioButton(geometryDefinitionGroupBox);
-        geomTypeNone->setObjectName(QString::fromUtf8("geomTypeNone"));
-
-        verticalLayout_16->addWidget(geomTypeNone);
-
-
-        gridLayout->addLayout(verticalLayout_16, 0, 0, 1, 1);
+        gridLayout->addLayout(mGeometryDetailsLayout, 0, 1, 1, 1);
 
 
         verticalLayout_4->addWidget(geometryDefinitionGroupBox);
@@ -808,10 +870,40 @@ public:
         sizePolicy12.setHeightForWidth(sampleDataGroupBox->sizePolicy().hasHeightForWidth());
         sampleDataGroupBox->setSizePolicy(sizePolicy12);
         sampleDataGroupBox->setProperty("collapsed", QVariant(false));
-        verticalLayout_15 = new QVBoxLayout(sampleDataGroupBox);
-        verticalLayout_15->setSpacing(6);
-        verticalLayout_15->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_15->setObjectName(QString::fromUtf8("verticalLayout_15"));
+        verticalLayout_9 = new QVBoxLayout(sampleDataGroupBox);
+        verticalLayout_9->setSpacing(6);
+        verticalLayout_9->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
+        mScanWidget = new QWidget(sampleDataGroupBox);
+        mScanWidget->setObjectName(QString::fromUtf8("mScanWidget"));
+        horizontalLayout_7 = new QHBoxLayout(mScanWidget);
+        horizontalLayout_7->setSpacing(6);
+        horizontalLayout_7->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
+        horizontalLayout_7->setContentsMargins(0, 0, 0, 0);
+        mProgressLayout = new QHBoxLayout();
+        mProgressLayout->setSpacing(6);
+        mProgressLayout->setObjectName(QString::fromUtf8("mProgressLayout"));
+        mProgressLabel = new QLabel(mScanWidget);
+        mProgressLabel->setObjectName(QString::fromUtf8("mProgressLabel"));
+
+        mProgressLayout->addWidget(mProgressLabel);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        mProgressLayout->addItem(horizontalSpacer);
+
+        mCancelButton = new QPushButton(mScanWidget);
+        mCancelButton->setObjectName(QString::fromUtf8("mCancelButton"));
+
+        mProgressLayout->addWidget(mCancelButton);
+
+
+        horizontalLayout_7->addLayout(mProgressLayout);
+
+
+        verticalLayout_9->addWidget(mScanWidget);
+
         tblSample = new QTableWidget(sampleDataGroupBox);
         tblSample->setObjectName(QString::fromUtf8("tblSample"));
         QSizePolicy sizePolicy13(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -821,7 +913,7 @@ public:
         tblSample->setSizePolicy(sizePolicy13);
         tblSample->setLineWidth(1);
 
-        verticalLayout_15->addWidget(tblSample);
+        verticalLayout_9->addWidget(tblSample);
 
 
         verticalLayout_4->addWidget(sampleDataGroupBox);
@@ -1065,6 +1157,16 @@ public:
 #endif // QT_CONFIG(whatsthis)
         lblRegexpError->setText(QString());
         recordOptionsGroupBox->setTitle(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Record and Fields Options", nullptr));
+#if QT_CONFIG(tooltip)
+        cbxTrimFields->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Trim leading and trailing spaces from fields", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        cbxTrimFields->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Trim leading and trailing spaces from fields", nullptr));
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(whatsthis)
+        cbxTrimFields->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Trim leading and trailing spaces from fields", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        cbxTrimFields->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Trim fields", nullptr));
         label_4->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Number of header lines to discard", nullptr));
 #if QT_CONFIG(tooltip)
         rowCounter->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "The number of lines to discard from the beginning of the file", nullptr));
@@ -1076,25 +1178,16 @@ public:
         rowCounter->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "The number of lines to discard from the beginning of the file", nullptr));
 #endif // QT_CONFIG(whatsthis)
 #if QT_CONFIG(tooltip)
-        cbxUseHeader->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Field names are read from the first record. If not selected then fields are numbered", nullptr));
+        cbxSkipEmptyFields->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Discard empty fields in each record", nullptr));
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(statustip)
-        cbxUseHeader->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Field names are read from the first record. If not selected then fields are numbered", nullptr));
+        cbxSkipEmptyFields->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Discard empty fields in each record", nullptr));
 #endif // QT_CONFIG(statustip)
 #if QT_CONFIG(whatsthis)
-        cbxUseHeader->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Field names are read from the first record. If not selected then fields are numbered", nullptr));
+        cbxSkipEmptyFields->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Discard empty fields in each record", nullptr));
 #endif // QT_CONFIG(whatsthis)
-        cbxUseHeader->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "First record has field names", nullptr));
-#if QT_CONFIG(tooltip)
-        cbxTrimFields->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Trim leading and trailing spaces from fields", nullptr));
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        cbxTrimFields->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Trim leading and trailing spaces from fields", nullptr));
-#endif // QT_CONFIG(statustip)
-#if QT_CONFIG(whatsthis)
-        cbxTrimFields->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Trim leading and trailing spaces from fields", nullptr));
-#endif // QT_CONFIG(whatsthis)
-        cbxTrimFields->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Trim fields", nullptr));
+        cbxSkipEmptyFields->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Discard empty fields", nullptr));
+        cbxDetectTypes->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Detect field types", nullptr));
 #if QT_CONFIG(tooltip)
         cbxPointIsComma->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Number fields use comma for a decimal separator", nullptr));
 #endif // QT_CONFIG(tooltip)
@@ -1106,17 +1199,58 @@ public:
 #endif // QT_CONFIG(whatsthis)
         cbxPointIsComma->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Decimal separator is comma", nullptr));
 #if QT_CONFIG(tooltip)
-        cbxSkipEmptyFields->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Discard empty fields in each record", nullptr));
+        cbxUseHeader->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Field names are read from the first record. If not selected then fields are numbered", nullptr));
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(statustip)
-        cbxSkipEmptyFields->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Discard empty fields in each record", nullptr));
+        cbxUseHeader->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Field names are read from the first record. If not selected then fields are numbered", nullptr));
 #endif // QT_CONFIG(statustip)
 #if QT_CONFIG(whatsthis)
-        cbxSkipEmptyFields->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Discard empty fields in each record", nullptr));
+        cbxUseHeader->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Field names are read from the first record. If not selected then fields are numbered", nullptr));
 #endif // QT_CONFIG(whatsthis)
-        cbxSkipEmptyFields->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Discard empty fields", nullptr));
-        cbxDetectTypes->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Detect field types", nullptr));
+        cbxUseHeader->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "First record has field names", nullptr));
+#if QT_CONFIG(tooltip)
+        groupBox->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "<html><head/><body><p>Columns filled with '0/1', 'true/false', 't/f', and 'yes/no' (case insensitive) are automatically detected as boolean fields. Additional values for TRUE and FALSE can be entered here.</p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
+        groupBox->setTitle(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Custom boolean literals", nullptr));
+        mBoolTrueLabel->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "<html><head/><body><p>True</p></body></html>", nullptr));
+#if QT_CONFIG(tooltip)
+        mBooleanTrue->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "<html><head/><body><p>Additional custom value that will be interpreted as TRUE</p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
+        mBooleanFalseLabel->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "<html><head/><body><p>False</p></body></html>", nullptr));
+#if QT_CONFIG(tooltip)
+        mBooleanFalse->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "<html><head/><body><p>Additional custom value that will be interpreted as FALSE</p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
         geometryDefinitionGroupBox->setTitle(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry Definition", nullptr));
+#if QT_CONFIG(tooltip)
+        geomTypeXY->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is a point defined by X and Y coordinate fields", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        geomTypeXY->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is a point defined by X and Y coordinate fields", nullptr));
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(whatsthis)
+        geomTypeXY->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is a point defined by X and Y coordinate fields", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        geomTypeXY->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Point coordinates", nullptr));
+#if QT_CONFIG(tooltip)
+        geomTypeWKT->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is read as a well known text string from the selected fields", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        geomTypeWKT->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is read as a well known text string from the selected fields", nullptr));
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(whatsthis)
+        geomTypeWKT->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is read as a well known text string from the selected fields", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        geomTypeWKT->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Well known text (WKT)", nullptr));
+#if QT_CONFIG(tooltip)
+        geomTypeNone->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "The file contains only attribute information - it will not be displayed on the map", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(statustip)
+        geomTypeNone->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "The file contains only attribute information - it will not be displayed on the map", nullptr));
+#endif // QT_CONFIG(statustip)
+#if QT_CONFIG(whatsthis)
+        geomTypeNone->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "The file contains only attribute information - it will not be displayed on the map", nullptr));
+#endif // QT_CONFIG(whatsthis)
+        geomTypeNone->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "No geometry (attribute only table)", nullptr));
         textLabelY->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Y field", nullptr));
         textLabelZ->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Z field", nullptr));
         textLabelX->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "X field", nullptr));
@@ -1184,36 +1318,6 @@ public:
         cmbWktField->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Name of the field containing well known text value", nullptr));
 #endif // QT_CONFIG(whatsthis)
         textLabelCrs->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry CRS", nullptr));
-#if QT_CONFIG(tooltip)
-        geomTypeXY->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is a point defined by X and Y coordinate fields", nullptr));
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        geomTypeXY->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is a point defined by X and Y coordinate fields", nullptr));
-#endif // QT_CONFIG(statustip)
-#if QT_CONFIG(whatsthis)
-        geomTypeXY->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is a point defined by X and Y coordinate fields", nullptr));
-#endif // QT_CONFIG(whatsthis)
-        geomTypeXY->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Point coordinates", nullptr));
-#if QT_CONFIG(tooltip)
-        geomTypeWKT->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is read as a well known text string from the selected fields", nullptr));
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        geomTypeWKT->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is read as a well known text string from the selected fields", nullptr));
-#endif // QT_CONFIG(statustip)
-#if QT_CONFIG(whatsthis)
-        geomTypeWKT->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Geometry is read as a well known text string from the selected fields", nullptr));
-#endif // QT_CONFIG(whatsthis)
-        geomTypeWKT->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Well known text (WKT)", nullptr));
-#if QT_CONFIG(tooltip)
-        geomTypeNone->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "The file contains only attribute information - it will not be displayed on the map", nullptr));
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(statustip)
-        geomTypeNone->setStatusTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "The file contains only attribute information - it will not be displayed on the map", nullptr));
-#endif // QT_CONFIG(statustip)
-#if QT_CONFIG(whatsthis)
-        geomTypeNone->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "The file contains only attribute information - it will not be displayed on the map", nullptr));
-#endif // QT_CONFIG(whatsthis)
-        geomTypeNone->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "No geometry (attribute only table)", nullptr));
         layerSettingsGroupBox->setTitle(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Layer Settings", nullptr));
 #if QT_CONFIG(tooltip)
         cbxSpatialIndex->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Use a spatial index to improve performance of displaying and spatially selecting features", nullptr));
@@ -1245,7 +1349,12 @@ public:
         cbxWatchFile->setWhatsThis(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Watch for changes to the file by other applications while QGIS is running", nullptr));
 #endif // QT_CONFIG(whatsthis)
         cbxWatchFile->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Watch file", nullptr));
+#if QT_CONFIG(tooltip)
+        sampleDataGroupBox->setToolTip(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "<html><head/><body><p>Column data type is determined automatically scanning the file but it is possible to override the types through the type combo boxes.</p></body></html>", nullptr));
+#endif // QT_CONFIG(tooltip)
         sampleDataGroupBox->setTitle(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Sample Data", nullptr));
+        mProgressLabel->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Scanning file to determine data types ...", nullptr));
+        mCancelButton->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Cancel", nullptr));
         lblStatus->setText(QCoreApplication::translate("QgsDelimitedTextSourceSelectBase", "Sample data", nullptr));
     } // retranslateUi
 

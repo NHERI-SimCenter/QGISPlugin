@@ -51,6 +51,11 @@ public:
 
         mCboConnection = new QComboBox(QgsGeoPackageProjectStorageDialog);
         mCboConnection->setObjectName(QString::fromUtf8("mCboConnection"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(mCboConnection->sizePolicy().hasHeightForWidth());
+        mCboConnection->setSizePolicy(sizePolicy);
 
         gridLayout->addWidget(mCboConnection, 0, 1, 1, 1);
 

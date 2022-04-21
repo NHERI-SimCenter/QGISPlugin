@@ -94,6 +94,8 @@ public:
     QSpacerItem *verticalSpacer_4;
     QFrame *mFixedTimeRangeFrame;
     QGridLayout *gridLayout_2;
+    QComboBox *mLimitsComboBox;
+    QLabel *mLimitsLabel;
 
     void setupUi(QWidget *QgsVectorLayerTemporalPropertiesWidgetBase)
     {
@@ -367,7 +369,7 @@ public:
 
         mStackedWidget->addWidget(page_4);
 
-        gridLayout_3->addWidget(mStackedWidget, 1, 0, 1, 2);
+        gridLayout_3->addWidget(mStackedWidget, 2, 0, 1, 2);
 
         mFixedTimeRangeFrame = new QFrame(mTemporalGroupBox);
         mFixedTimeRangeFrame->setObjectName(QString::fromUtf8("mFixedTimeRangeFrame"));
@@ -379,7 +381,17 @@ public:
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setContentsMargins(-1, 0, -1, 0);
 
-        gridLayout_3->addWidget(mFixedTimeRangeFrame, 2, 0, 1, 1);
+        gridLayout_3->addWidget(mFixedTimeRangeFrame, 3, 0, 1, 1);
+
+        mLimitsComboBox = new QComboBox(mTemporalGroupBox);
+        mLimitsComboBox->setObjectName(QString::fromUtf8("mLimitsComboBox"));
+
+        gridLayout_3->addWidget(mLimitsComboBox, 1, 1, 1, 1);
+
+        mLimitsLabel = new QLabel(mTemporalGroupBox);
+        mLimitsLabel->setObjectName(QString::fromUtf8("mLimitsLabel"));
+
+        gridLayout_3->addWidget(mLimitsLabel, 1, 0, 1, 1);
 
         gridLayout_3->setColumnStretch(1, 1);
 
@@ -413,9 +425,6 @@ public:
 
     void retranslateUi(QWidget *QgsVectorLayerTemporalPropertiesWidgetBase)
     {
-#if QT_CONFIG(tooltip)
-        QgsVectorLayerTemporalPropertiesWidgetBase->setToolTip(QCoreApplication::translate("QgsVectorLayerTemporalPropertiesWidgetBase", "If checked, the layer will be dynamically filtered and visualised using the map's temporal range", nullptr));
-#endif // QT_CONFIG(tooltip)
         mTemporalGroupBox->setTitle(QCoreApplication::translate("QgsVectorLayerTemporalPropertiesWidgetBase", "Dynamic Temporal Control", nullptr));
         label->setText(QCoreApplication::translate("QgsVectorLayerTemporalPropertiesWidgetBase", "Configuration", nullptr));
         label_6->setText(QCoreApplication::translate("QgsVectorLayerTemporalPropertiesWidgetBase", "Start date", nullptr));
@@ -443,6 +452,8 @@ public:
         label_31->setText(QCoreApplication::translate("QgsVectorLayerTemporalPropertiesWidgetBase", "End expression", nullptr));
         label_32->setText(QCoreApplication::translate("QgsVectorLayerTemporalPropertiesWidgetBase", "Start expression", nullptr));
         label_7->setText(QCoreApplication::translate("QgsVectorLayerTemporalPropertiesWidgetBase", "<p><b>The layer will automatically be redrawn whenever the temporal range is changed, but no time based filtering will be applied to the features.<b></p><p>This configuration is useful when the layer has symbology settings which vary based on the temporal range. For instance, when it is using time-dependent rule-based renderer expressions or data-defined symbology expressions.</p>", nullptr));
+        mLimitsLabel->setText(QCoreApplication::translate("QgsVectorLayerTemporalPropertiesWidgetBase", "Limits", nullptr));
+        (void)QgsVectorLayerTemporalPropertiesWidgetBase;
     } // retranslateUi
 
 };

@@ -51,15 +51,15 @@ public:
     QVBoxLayout *verticalLayout;
     QToolBar *mIdentifyToolbar;
     QTreeWidget *lstResults;
-    QHBoxLayout *horizontalLayout_2;
-    QLabel *lblIdentifyMode;
-    QComboBox *cmbIdentifyMode;
     QWidget *stackedWidgetPage2;
     QVBoxLayout *verticalLayout_2;
     QTableWidget *tblResults;
     QWidget *stackedWidgetPage3;
     QVBoxLayout *verticalLayout_3;
     QwtPlot *mPlot;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *lblIdentifyMode;
+    QComboBox *cmbIdentifyMode;
     QHBoxLayout *horizontalLayout_3;
     QLabel *lblViewMode;
     QComboBox *cmbViewMode;
@@ -169,30 +169,6 @@ public:
 
         verticalLayout->addWidget(lstResults);
 
-        horizontalLayout_2 = new QHBoxLayout();
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(5, 5, 5, -1);
-        lblIdentifyMode = new QLabel(stackedWidgetPage1);
-        lblIdentifyMode->setObjectName(QString::fromUtf8("lblIdentifyMode"));
-
-        horizontalLayout_2->addWidget(lblIdentifyMode);
-
-        cmbIdentifyMode = new QComboBox(stackedWidgetPage1);
-        cmbIdentifyMode->setObjectName(QString::fromUtf8("cmbIdentifyMode"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(cmbIdentifyMode->sizePolicy().hasHeightForWidth());
-        cmbIdentifyMode->setSizePolicy(sizePolicy);
-        cmbIdentifyMode->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
-        cmbIdentifyMode->setMinimumContentsLength(6);
-
-        horizontalLayout_2->addWidget(cmbIdentifyMode);
-
-
-        verticalLayout->addLayout(horizontalLayout_2);
-
         stackedWidget->addWidget(stackedWidgetPage1);
         stackedWidgetPage2 = new QWidget();
         stackedWidgetPage2->setObjectName(QString::fromUtf8("stackedWidgetPage2"));
@@ -233,6 +209,30 @@ public:
         stackedWidget->addWidget(stackedWidgetPage3);
 
         verticalLayout_4->addWidget(stackedWidget);
+
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(5, 5, 5, -1);
+        lblIdentifyMode = new QLabel(QgsIdentifyResultsBase);
+        lblIdentifyMode->setObjectName(QString::fromUtf8("lblIdentifyMode"));
+
+        horizontalLayout_2->addWidget(lblIdentifyMode);
+
+        cmbIdentifyMode = new QComboBox(QgsIdentifyResultsBase);
+        cmbIdentifyMode->setObjectName(QString::fromUtf8("cmbIdentifyMode"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(cmbIdentifyMode->sizePolicy().hasHeightForWidth());
+        cmbIdentifyMode->setSizePolicy(sizePolicy);
+        cmbIdentifyMode->setSizeAdjustPolicy(QComboBox::AdjustToMinimumContentsLengthWithIcon);
+        cmbIdentifyMode->setMinimumContentsLength(6);
+
+        horizontalLayout_2->addWidget(cmbIdentifyMode);
+
+
+        verticalLayout_4->addLayout(horizontalLayout_2);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
@@ -320,10 +320,6 @@ public:
 #if QT_CONFIG(tooltip)
         mHelpToolAction->setToolTip(QCoreApplication::translate("QgsIdentifyResultsBase", "Help", nullptr));
 #endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
-        lblIdentifyMode->setToolTip(QCoreApplication::translate("QgsIdentifyResultsBase", "Select identify mode", nullptr));
-#endif // QT_CONFIG(tooltip)
-        lblIdentifyMode->setText(QCoreApplication::translate("QgsIdentifyResultsBase", "Mode", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tblResults->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("QgsIdentifyResultsBase", "Layer", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tblResults->horizontalHeaderItem(1);
@@ -332,6 +328,10 @@ public:
         ___qtablewidgetitem2->setText(QCoreApplication::translate("QgsIdentifyResultsBase", "Attribute", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = tblResults->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QCoreApplication::translate("QgsIdentifyResultsBase", "Value", nullptr));
+#if QT_CONFIG(tooltip)
+        lblIdentifyMode->setToolTip(QCoreApplication::translate("QgsIdentifyResultsBase", "Select identify mode", nullptr));
+#endif // QT_CONFIG(tooltip)
+        lblIdentifyMode->setText(QCoreApplication::translate("QgsIdentifyResultsBase", "Mode", nullptr));
 #if QT_CONFIG(tooltip)
         lblViewMode->setToolTip(QCoreApplication::translate("QgsIdentifyResultsBase", "Select view mode for raster layers", nullptr));
 #endif // QT_CONFIG(tooltip)

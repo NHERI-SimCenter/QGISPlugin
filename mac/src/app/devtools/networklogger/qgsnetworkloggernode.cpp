@@ -165,6 +165,21 @@ QVariant QgsNetworkLoggerValueNode::data( int role ) const
   return QVariant();
 }
 
+QList<QAction *> QgsNetworkLoggerValueNode::actions( QObject *parent )
+{
+  QList< QAction * > res;
+
+  QAction *copyAction = new QAction( QObject::tr( "Copy" ), parent );
+  QObject::connect( copyAction, &QAction::triggered, copyAction, [ = ]
+  {
+    QApplication::clipboard()->setText( QStringLiteral( "%1: %2" ).arg( mKey, mValue ) );
+  } );
+
+  res << copyAction;
+
+  return res;
+}
+
 //
 // QgsNetworkLoggerGroup
 //
@@ -250,7 +265,12 @@ QVariant QgsNetworkLoggerRequestGroup::data( int role ) const
         case QgsNetworkLoggerRequestGroup::Status::TimeOut:
           return QBrush( QColor( 235, 10, 10 ) );
         case QgsNetworkLoggerRequestGroup::Status::Complete:
+        {
+          if ( mReplyFromCache )
+            return QBrush( QColor( 10, 40, 85, 150 ) );
+
           break;
+        }
       }
       break;
     }
@@ -366,6 +386,7 @@ void QgsNetworkLoggerRequestGroup::setReply( const QgsNetworkReplyContent &reply
   mTotalTime = mTimer.elapsed();
   mHttpStatus = reply.attribute( QNetworkRequest::HttpStatusCodeAttribute ).toInt();
   mContentType = reply.rawHeader( "Content - Type" );
+  mReplyFromCache = reply.attribute( QNetworkRequest::SourceIsFromCacheAttribute ).toBool();
 
   std::unique_ptr< QgsNetworkLoggerReplyGroup > replyGroup = std::make_unique< QgsNetworkLoggerReplyGroup >( reply ) ;
   mReplyGroup = replyGroup.get();

@@ -18,14 +18,13 @@
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include "auth/qgsauthsettingswidget.h"
-#include "qgsfilterlineedit.h"
+#include "qgshttpheaderwidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -35,22 +34,6 @@ public:
     QGridLayout *gridLayout_4;
     QGroupBox *mGroupBox;
     QGridLayout *gridLayout;
-    QFrame *frame;
-    QGridLayout *gridLayout_5;
-    QLabel *TextLabel1_2;
-    QLineEdit *txtName;
-    QLabel *TextLabel1;
-    QLineEdit *txtUrl;
-    QGroupBox *mWmsOptionsGroupBox;
-    QGridLayout *gridLayout_2;
-    QCheckBox *cbxWmsIgnoreAxisOrientation;
-    QCheckBox *cbxIgnoreGetFeatureInfoURI;
-    QCheckBox *cbxIgnoreGetMapURI;
-    QCheckBox *cbxSmoothPixmapTransform;
-    QCheckBox *cbxWmsInvertAxisOrientation;
-    QComboBox *cmbDpiMode;
-    QLabel *lblDpiMode;
-    QCheckBox *cbxWmsIgnoreReportedLayerExtents;
     QGroupBox *mWfsOptionsGroupBox;
     QGridLayout *gridLayout1;
     QLabel *lblVersion;
@@ -64,15 +47,28 @@ public:
     QCheckBox *cbxWfsFeaturePaging;
     QLineEdit *txtMaxNumFeatures;
     QCheckBox *cbxWfsUseGml2EncodingForTransactions;
+    QPushButton *mTestConnectionButton;
+    QSpacerItem *verticalSpacer;
+    QGroupBox *mWmsOptionsGroupBox;
+    QGridLayout *gridLayout_2;
+    QCheckBox *cbxWmsIgnoreAxisOrientation;
+    QCheckBox *cbxIgnoreGetFeatureInfoURI;
+    QCheckBox *cbxIgnoreGetMapURI;
+    QCheckBox *cbxSmoothPixmapTransform;
+    QCheckBox *cbxWmsInvertAxisOrientation;
+    QComboBox *cmbDpiMode;
+    QLabel *lblDpiMode;
+    QCheckBox *cbxWmsIgnoreReportedLayerExtents;
+    QgsHttpHeaderWidget *mHttpHeaders;
+    QFrame *frame;
+    QGridLayout *gridLayout_5;
+    QLabel *TextLabel1_2;
+    QLineEdit *txtName;
+    QLabel *TextLabel1;
+    QLineEdit *txtUrl;
     QGroupBox *mAuthGroupBox;
     QVBoxLayout *verticalLayout;
     QgsAuthSettingsWidget *mAuthSettings;
-    QPushButton *mTestConnectionButton;
-    QGroupBox *mHttpGroupBox;
-    QHBoxLayout *horizontalLayout;
-    QLabel *label;
-    QgsFilterLineEdit *mRefererLineEdit;
-    QSpacerItem *verticalSpacer;
     QDialogButtonBox *buttonBox;
 
     void setupUi(QDialog *QgsNewHttpConnectionBase)
@@ -92,95 +88,6 @@ public:
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
-        frame = new QFrame(mGroupBox);
-        frame->setObjectName(QString::fromUtf8("frame"));
-        QSizePolicy sizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
-        frame->setSizePolicy(sizePolicy);
-        gridLayout_5 = new QGridLayout(frame);
-        gridLayout_5->setSpacing(6);
-        gridLayout_5->setContentsMargins(11, 11, 11, 11);
-        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
-        gridLayout_5->setContentsMargins(0, 0, 0, 0);
-        TextLabel1_2 = new QLabel(frame);
-        TextLabel1_2->setObjectName(QString::fromUtf8("TextLabel1_2"));
-        TextLabel1_2->setWordWrap(true);
-        TextLabel1_2->setMargin(5);
-
-        gridLayout_5->addWidget(TextLabel1_2, 0, 0, 1, 1);
-
-        txtName = new QLineEdit(frame);
-        txtName->setObjectName(QString::fromUtf8("txtName"));
-        txtName->setMinimumSize(QSize(0, 0));
-        txtName->setFrame(true);
-
-        gridLayout_5->addWidget(txtName, 0, 1, 1, 1);
-
-        TextLabel1 = new QLabel(frame);
-        TextLabel1->setObjectName(QString::fromUtf8("TextLabel1"));
-        TextLabel1->setMargin(5);
-
-        gridLayout_5->addWidget(TextLabel1, 1, 0, 1, 1);
-
-        txtUrl = new QLineEdit(frame);
-        txtUrl->setObjectName(QString::fromUtf8("txtUrl"));
-
-        gridLayout_5->addWidget(txtUrl, 1, 1, 1, 1);
-
-
-        gridLayout->addWidget(frame, 0, 0, 1, 2);
-
-        mWmsOptionsGroupBox = new QGroupBox(mGroupBox);
-        mWmsOptionsGroupBox->setObjectName(QString::fromUtf8("mWmsOptionsGroupBox"));
-        gridLayout_2 = new QGridLayout(mWmsOptionsGroupBox);
-        gridLayout_2->setSpacing(6);
-        gridLayout_2->setContentsMargins(11, 11, 11, 11);
-        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
-        cbxWmsIgnoreAxisOrientation = new QCheckBox(mWmsOptionsGroupBox);
-        cbxWmsIgnoreAxisOrientation->setObjectName(QString::fromUtf8("cbxWmsIgnoreAxisOrientation"));
-
-        gridLayout_2->addWidget(cbxWmsIgnoreAxisOrientation, 3, 0, 1, 2);
-
-        cbxIgnoreGetFeatureInfoURI = new QCheckBox(mWmsOptionsGroupBox);
-        cbxIgnoreGetFeatureInfoURI->setObjectName(QString::fromUtf8("cbxIgnoreGetFeatureInfoURI"));
-
-        gridLayout_2->addWidget(cbxIgnoreGetFeatureInfoURI, 2, 0, 1, 2);
-
-        cbxIgnoreGetMapURI = new QCheckBox(mWmsOptionsGroupBox);
-        cbxIgnoreGetMapURI->setObjectName(QString::fromUtf8("cbxIgnoreGetMapURI"));
-
-        gridLayout_2->addWidget(cbxIgnoreGetMapURI, 1, 0, 1, 2);
-
-        cbxSmoothPixmapTransform = new QCheckBox(mWmsOptionsGroupBox);
-        cbxSmoothPixmapTransform->setObjectName(QString::fromUtf8("cbxSmoothPixmapTransform"));
-
-        gridLayout_2->addWidget(cbxSmoothPixmapTransform, 9, 0, 1, 2);
-
-        cbxWmsInvertAxisOrientation = new QCheckBox(mWmsOptionsGroupBox);
-        cbxWmsInvertAxisOrientation->setObjectName(QString::fromUtf8("cbxWmsInvertAxisOrientation"));
-
-        gridLayout_2->addWidget(cbxWmsInvertAxisOrientation, 5, 0, 1, 2);
-
-        cmbDpiMode = new QComboBox(mWmsOptionsGroupBox);
-        cmbDpiMode->setObjectName(QString::fromUtf8("cmbDpiMode"));
-
-        gridLayout_2->addWidget(cmbDpiMode, 0, 1, 1, 1);
-
-        lblDpiMode = new QLabel(mWmsOptionsGroupBox);
-        lblDpiMode->setObjectName(QString::fromUtf8("lblDpiMode"));
-
-        gridLayout_2->addWidget(lblDpiMode, 0, 0, 1, 1);
-
-        cbxWmsIgnoreReportedLayerExtents = new QCheckBox(mWmsOptionsGroupBox);
-        cbxWmsIgnoreReportedLayerExtents->setObjectName(QString::fromUtf8("cbxWmsIgnoreReportedLayerExtents"));
-
-        gridLayout_2->addWidget(cbxWmsIgnoreReportedLayerExtents, 4, 0, 1, 2);
-
-
-        gridLayout->addWidget(mWmsOptionsGroupBox, 4, 0, 1, 2);
-
         mWfsOptionsGroupBox = new QGroupBox(mGroupBox);
         mWfsOptionsGroupBox->setObjectName(QString::fromUtf8("mWfsOptionsGroupBox"));
         gridLayout1 = new QGridLayout(mWfsOptionsGroupBox);
@@ -246,6 +153,114 @@ public:
 
         gridLayout->addWidget(mWfsOptionsGroupBox, 3, 0, 1, 2);
 
+        mTestConnectionButton = new QPushButton(mGroupBox);
+        mTestConnectionButton->setObjectName(QString::fromUtf8("mTestConnectionButton"));
+
+        gridLayout->addWidget(mTestConnectionButton, 5, 0, 1, 2);
+
+        verticalSpacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout->addItem(verticalSpacer, 6, 0, 1, 2);
+
+        mWmsOptionsGroupBox = new QGroupBox(mGroupBox);
+        mWmsOptionsGroupBox->setObjectName(QString::fromUtf8("mWmsOptionsGroupBox"));
+        gridLayout_2 = new QGridLayout(mWmsOptionsGroupBox);
+        gridLayout_2->setSpacing(6);
+        gridLayout_2->setContentsMargins(11, 11, 11, 11);
+        gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        cbxWmsIgnoreAxisOrientation = new QCheckBox(mWmsOptionsGroupBox);
+        cbxWmsIgnoreAxisOrientation->setObjectName(QString::fromUtf8("cbxWmsIgnoreAxisOrientation"));
+
+        gridLayout_2->addWidget(cbxWmsIgnoreAxisOrientation, 3, 0, 1, 2);
+
+        cbxIgnoreGetFeatureInfoURI = new QCheckBox(mWmsOptionsGroupBox);
+        cbxIgnoreGetFeatureInfoURI->setObjectName(QString::fromUtf8("cbxIgnoreGetFeatureInfoURI"));
+
+        gridLayout_2->addWidget(cbxIgnoreGetFeatureInfoURI, 2, 0, 1, 2);
+
+        cbxIgnoreGetMapURI = new QCheckBox(mWmsOptionsGroupBox);
+        cbxIgnoreGetMapURI->setObjectName(QString::fromUtf8("cbxIgnoreGetMapURI"));
+
+        gridLayout_2->addWidget(cbxIgnoreGetMapURI, 1, 0, 1, 2);
+
+        cbxSmoothPixmapTransform = new QCheckBox(mWmsOptionsGroupBox);
+        cbxSmoothPixmapTransform->setObjectName(QString::fromUtf8("cbxSmoothPixmapTransform"));
+
+        gridLayout_2->addWidget(cbxSmoothPixmapTransform, 9, 0, 1, 2);
+
+        cbxWmsInvertAxisOrientation = new QCheckBox(mWmsOptionsGroupBox);
+        cbxWmsInvertAxisOrientation->setObjectName(QString::fromUtf8("cbxWmsInvertAxisOrientation"));
+
+        gridLayout_2->addWidget(cbxWmsInvertAxisOrientation, 5, 0, 1, 2);
+
+        cmbDpiMode = new QComboBox(mWmsOptionsGroupBox);
+        cmbDpiMode->setObjectName(QString::fromUtf8("cmbDpiMode"));
+
+        gridLayout_2->addWidget(cmbDpiMode, 0, 1, 1, 1);
+
+        lblDpiMode = new QLabel(mWmsOptionsGroupBox);
+        lblDpiMode->setObjectName(QString::fromUtf8("lblDpiMode"));
+
+        gridLayout_2->addWidget(lblDpiMode, 0, 0, 1, 1);
+
+        cbxWmsIgnoreReportedLayerExtents = new QCheckBox(mWmsOptionsGroupBox);
+        cbxWmsIgnoreReportedLayerExtents->setObjectName(QString::fromUtf8("cbxWmsIgnoreReportedLayerExtents"));
+
+        gridLayout_2->addWidget(cbxWmsIgnoreReportedLayerExtents, 4, 0, 1, 2);
+
+
+        gridLayout->addWidget(mWmsOptionsGroupBox, 4, 0, 1, 2);
+
+        mHttpHeaders = new QgsHttpHeaderWidget(mGroupBox);
+        mHttpHeaders->setObjectName(QString::fromUtf8("mHttpHeaders"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(mHttpHeaders->sizePolicy().hasHeightForWidth());
+        mHttpHeaders->setSizePolicy(sizePolicy);
+
+        gridLayout->addWidget(mHttpHeaders, 2, 0, 1, 1);
+
+        frame = new QFrame(mGroupBox);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        QSizePolicy sizePolicy1(QSizePolicy::MinimumExpanding, QSizePolicy::Minimum);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(frame->sizePolicy().hasHeightForWidth());
+        frame->setSizePolicy(sizePolicy1);
+        gridLayout_5 = new QGridLayout(frame);
+        gridLayout_5->setSpacing(6);
+        gridLayout_5->setContentsMargins(11, 11, 11, 11);
+        gridLayout_5->setObjectName(QString::fromUtf8("gridLayout_5"));
+        gridLayout_5->setContentsMargins(0, 0, 0, 0);
+        TextLabel1_2 = new QLabel(frame);
+        TextLabel1_2->setObjectName(QString::fromUtf8("TextLabel1_2"));
+        TextLabel1_2->setWordWrap(true);
+        TextLabel1_2->setMargin(5);
+
+        gridLayout_5->addWidget(TextLabel1_2, 0, 0, 1, 1);
+
+        txtName = new QLineEdit(frame);
+        txtName->setObjectName(QString::fromUtf8("txtName"));
+        txtName->setMinimumSize(QSize(0, 0));
+        txtName->setFrame(true);
+
+        gridLayout_5->addWidget(txtName, 0, 1, 1, 1);
+
+        TextLabel1 = new QLabel(frame);
+        TextLabel1->setObjectName(QString::fromUtf8("TextLabel1"));
+        TextLabel1->setMargin(5);
+
+        gridLayout_5->addWidget(TextLabel1, 1, 0, 1, 1);
+
+        txtUrl = new QLineEdit(frame);
+        txtUrl->setObjectName(QString::fromUtf8("txtUrl"));
+
+        gridLayout_5->addWidget(txtUrl, 1, 1, 1, 1);
+
+
+        gridLayout->addWidget(frame, 0, 0, 1, 2);
+
         mAuthGroupBox = new QGroupBox(mGroupBox);
         mAuthGroupBox->setObjectName(QString::fromUtf8("mAuthGroupBox"));
         verticalLayout = new QVBoxLayout(mAuthGroupBox);
@@ -255,44 +270,16 @@ public:
         verticalLayout->setContentsMargins(6, 6, 6, 6);
         mAuthSettings = new QgsAuthSettingsWidget(mAuthGroupBox);
         mAuthSettings->setObjectName(QString::fromUtf8("mAuthSettings"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Maximum);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(mAuthSettings->sizePolicy().hasHeightForWidth());
-        mAuthSettings->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy2(QSizePolicy::Preferred, QSizePolicy::Maximum);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(mAuthSettings->sizePolicy().hasHeightForWidth());
+        mAuthSettings->setSizePolicy(sizePolicy2);
 
         verticalLayout->addWidget(mAuthSettings);
 
 
         gridLayout->addWidget(mAuthGroupBox, 1, 0, 1, 2);
-
-        mTestConnectionButton = new QPushButton(mGroupBox);
-        mTestConnectionButton->setObjectName(QString::fromUtf8("mTestConnectionButton"));
-
-        gridLayout->addWidget(mTestConnectionButton, 5, 0, 1, 2);
-
-        mHttpGroupBox = new QGroupBox(mGroupBox);
-        mHttpGroupBox->setObjectName(QString::fromUtf8("mHttpGroupBox"));
-        horizontalLayout = new QHBoxLayout(mHttpGroupBox);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label = new QLabel(mHttpGroupBox);
-        label->setObjectName(QString::fromUtf8("label"));
-
-        horizontalLayout->addWidget(label);
-
-        mRefererLineEdit = new QgsFilterLineEdit(mHttpGroupBox);
-        mRefererLineEdit->setObjectName(QString::fromUtf8("mRefererLineEdit"));
-
-        horizontalLayout->addWidget(mRefererLineEdit);
-
-
-        gridLayout->addWidget(mHttpGroupBox, 2, 0, 1, 2);
-
-        verticalSpacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout->addItem(verticalSpacer, 6, 0, 1, 2);
 
 
         gridLayout_4->addWidget(mGroupBox, 0, 0, 1, 1);
@@ -307,8 +294,7 @@ public:
         lblDpiMode->setBuddy(cmbDpiMode);
 #endif // QT_CONFIG(shortcut)
         QWidget::setTabOrder(txtName, txtUrl);
-        QWidget::setTabOrder(txtUrl, mRefererLineEdit);
-        QWidget::setTabOrder(mRefererLineEdit, cmbVersion);
+        QWidget::setTabOrder(txtUrl, cmbVersion);
         QWidget::setTabOrder(cmbVersion, mWfsVersionDetectButton);
         QWidget::setTabOrder(mWfsVersionDetectButton, txtMaxNumFeatures);
         QWidget::setTabOrder(txtMaxNumFeatures, cbxWfsFeaturePaging);
@@ -336,22 +322,6 @@ public:
     {
         QgsNewHttpConnectionBase->setWindowTitle(QCoreApplication::translate("QgsNewHttpConnectionBase", "Create a New Connection", nullptr));
         mGroupBox->setTitle(QCoreApplication::translate("QgsNewHttpConnectionBase", "Connection Details", nullptr));
-        TextLabel1_2->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Name", nullptr));
-#if QT_CONFIG(tooltip)
-        txtName->setToolTip(QCoreApplication::translate("QgsNewHttpConnectionBase", "Name of the new connection", nullptr));
-#endif // QT_CONFIG(tooltip)
-        TextLabel1->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "URL", nullptr));
-#if QT_CONFIG(tooltip)
-        txtUrl->setToolTip(QCoreApplication::translate("QgsNewHttpConnectionBase", "HTTP address of the Web Map Server", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mWmsOptionsGroupBox->setTitle(QCoreApplication::translate("QgsNewHttpConnectionBase", "WMS/WMTS Options", nullptr));
-        cbxWmsIgnoreAxisOrientation->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Ignore axis orientation (WMS 1.3/WMTS)", nullptr));
-        cbxIgnoreGetFeatureInfoURI->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Ignore GetFeatureInfo URI reported in capabilities", nullptr));
-        cbxIgnoreGetMapURI->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Ignore GetMap/GetTile/GetLegendGraphic URI reported in capabilities", nullptr));
-        cbxSmoothPixmapTransform->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Smooth pixmap transform", nullptr));
-        cbxWmsInvertAxisOrientation->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Invert axis orientation", nullptr));
-        lblDpiMode->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "DPI-&Mode", nullptr));
-        cbxWmsIgnoreReportedLayerExtents->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Ignore reported layer extents", nullptr));
         mWfsOptionsGroupBox->setTitle(QCoreApplication::translate("QgsNewHttpConnectionBase", "WFS Options", nullptr));
         lblVersion->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Version", nullptr));
         mWfsVersionDetectButton->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Detect", nullptr));
@@ -370,10 +340,24 @@ public:
         cbxWfsUseGml2EncodingForTransactions->setToolTip(QCoreApplication::translate("QgsNewHttpConnectionBase", "<html><head/><body><p>This might be necessary on some <span style=\" font-weight:600;\">broken</span> ESRI map servers when using WFS-T 1.1.0.</p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
         cbxWfsUseGml2EncodingForTransactions->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Use GML2 encoding for transactions", nullptr));
-        mAuthGroupBox->setTitle(QCoreApplication::translate("QgsNewHttpConnectionBase", "Authentication", nullptr));
         mTestConnectionButton->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "&Test Connection", nullptr));
-        mHttpGroupBox->setTitle(QCoreApplication::translate("QgsNewHttpConnectionBase", "HTTP", nullptr));
-        label->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Referer", nullptr));
+        mWmsOptionsGroupBox->setTitle(QCoreApplication::translate("QgsNewHttpConnectionBase", "WMS/WMTS Options", nullptr));
+        cbxWmsIgnoreAxisOrientation->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Ignore axis orientation (WMS 1.3/WMTS)", nullptr));
+        cbxIgnoreGetFeatureInfoURI->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Ignore GetFeatureInfo URI reported in capabilities", nullptr));
+        cbxIgnoreGetMapURI->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Ignore GetMap/GetTile/GetLegendGraphic URI reported in capabilities", nullptr));
+        cbxSmoothPixmapTransform->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Smooth pixmap transform", nullptr));
+        cbxWmsInvertAxisOrientation->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Invert axis orientation", nullptr));
+        lblDpiMode->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "DPI-&Mode", nullptr));
+        cbxWmsIgnoreReportedLayerExtents->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Ignore reported layer extents", nullptr));
+        TextLabel1_2->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "Name", nullptr));
+#if QT_CONFIG(tooltip)
+        txtName->setToolTip(QCoreApplication::translate("QgsNewHttpConnectionBase", "Name of the new connection", nullptr));
+#endif // QT_CONFIG(tooltip)
+        TextLabel1->setText(QCoreApplication::translate("QgsNewHttpConnectionBase", "URL", nullptr));
+#if QT_CONFIG(tooltip)
+        txtUrl->setToolTip(QCoreApplication::translate("QgsNewHttpConnectionBase", "HTTP address of the Web Map Server", nullptr));
+#endif // QT_CONFIG(tooltip)
+        mAuthGroupBox->setTitle(QCoreApplication::translate("QgsNewHttpConnectionBase", "Authentication", nullptr));
     } // retranslateUi
 
 };

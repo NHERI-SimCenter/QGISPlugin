@@ -195,7 +195,7 @@ void QgsMapToolPinLabels::highlightPinnedLabels()
   QList<QgsLabelPosition>::const_iterator it;
   for ( const QgsLabelPosition &pos : labelPosList )
   {
-    mCurrentLabel = LabelDetails( pos );
+    mCurrentLabel = LabelDetails( pos, canvas() );
 
     if ( isPinned() )
     {
@@ -208,7 +208,7 @@ void QgsMapToolPinLabels::highlightPinnedLabels()
       }
 
       QColor lblcolor = QColor( 54, 129, 255, 63 );
-      QgsMapLayer *layer = QgsProject::instance()->mapLayer( pos.layerID );
+      QgsMapLayer *layer = QgsMapTool::layer( pos.layerID );
       if ( !layer )
       {
         continue;
@@ -286,7 +286,7 @@ void QgsMapToolPinLabels::pinUnpinLabels( const QgsRectangle &ext, QMouseEvent *
   {
     const QgsLabelPosition &pos = *it;
 
-    mCurrentLabel = LabelDetails( pos );
+    mCurrentLabel = LabelDetails( pos, canvas() );
 
     if ( !mCurrentLabel.valid )
     {
@@ -340,14 +340,14 @@ bool QgsMapToolPinLabels::pinUnpinCurrentLabel( bool pin )
     return false;
   }
 
-  // verify attribute table has x, y fields mapped
-  int xCol, yCol;
+  // verify attribute table has x, y or point fields mapped
+  int xCol, yCol, pointCol;
   double xPosOrig, yPosOrig;
   bool xSuccess, ySuccess;
 
-  if ( !currentLabelDataDefinedPosition( xPosOrig, xSuccess, yPosOrig, ySuccess, xCol, yCol ) )
+  if ( !currentLabelDataDefinedPosition( xPosOrig, xSuccess, yPosOrig, ySuccess, xCol, yCol, pointCol ) )
   {
-    QgsDebugMsgLevel( QStringLiteral( "Label X or Y column not mapped, skipping" ), 2 );
+    QgsDebugMsgLevel( QStringLiteral( "Label X, Y or Point column not mapped, skipping" ), 2 );
     return false;
   }
 
@@ -373,7 +373,7 @@ bool QgsMapToolPinLabels::pinUnpinCurrentLabel( bool pin )
 //     QgsPointXY labelpoint = labelpos.cornerPoints.at( 0 );
 
     QgsPointXY referencePoint;
-    if ( !currentLabelRotationPoint( referencePoint, !preserveRot, false ) )
+    if ( !currentLabelRotationPoint( referencePoint, !preserveRot ) )
     {
       referencePoint.setX( labelpos.labelRect.xMinimum() );
       referencePoint.setY( labelpos.labelRect.yMinimum() );
@@ -454,11 +454,11 @@ bool QgsMapToolPinLabels::pinUnpinCurrentDiagram( bool pin )
     return false;
 
   // verify attribute table has x, y fields mapped
-  int xCol, yCol;
+  int xCol, yCol, pointCol;
   double xPosOrig, yPosOrig;
   bool xSuccess, ySuccess;
 
-  if ( !currentLabelDataDefinedPosition( xPosOrig, xSuccess, yPosOrig, ySuccess, xCol, yCol ) )
+  if ( !currentLabelDataDefinedPosition( xPosOrig, xSuccess, yPosOrig, ySuccess, xCol, yCol, pointCol ) )
     return false;
 
   // edit attribute table

@@ -24,10 +24,11 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "qgscollapsiblegroupbox.h"
 #include "qgscolorbutton.h"
 #include "qgsdoublespinbox.h"
 #include "qgspointcloudattributecombobox.h"
-#include "qgscolorrampshaderwidget.h"
+#include "raster/qgscolorrampshaderwidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -38,17 +39,26 @@ public:
     QGroupBox *mLayerRenderingGroupBox_2;
     QGridLayout *gridLayout_5;
     QGridLayout *gridLayout_7;
-    QgsDoubleSpinBox *mPointSizeSpinBox;
-    QgsDoubleSpinBox *mMaxScreenErrorSpinBox;
-    QLabel *mPointCloudSizeLabel;
     QDoubleSpinBox *mPointBudgetSpinBox;
-    QLabel *label_4;
+    QLabel *label;
+    QLabel *mPointCloudSizeLabel;
     QLabel *label_7;
     QLabel *lblTransparency_4;
-    QLabel *label;
+    QLabel *label_4;
+    QgsDoubleSpinBox *mMaxScreenErrorSpinBox;
+    QgsDoubleSpinBox *mPointSizeSpinBox;
     QCheckBox *mShowBoundingBoxesCheckBox;
+    QgsCollapsibleGroupBox *mTriangulateGroupBox;
+    QGridLayout *gridLayout_8;
+    QCheckBox *mHorizontalTriangleCheckBox;
+    QgsDoubleSpinBox *mHorizontalTriangleThresholdSpinBox;
+    QCheckBox *mVerticalTriangleCheckBox;
+    QgsDoubleSpinBox *mVerticalTriangleThresholdSpinBox;
     QStackedWidget *mStackedWidget;
     QWidget *noRendererPage;
+    QWidget *follow2DRendererPage;
+    QGridLayout *gridLayout_9;
+    QLabel *label_8;
     QWidget *singleColorRendererPage;
     QGridLayout *gridLayout_2;
     QLabel *label_6;
@@ -98,7 +108,7 @@ public:
     {
         if (QgsPointCloud3DSymbolWidget->objectName().isEmpty())
             QgsPointCloud3DSymbolWidget->setObjectName(QString::fromUtf8("QgsPointCloud3DSymbolWidget"));
-        QgsPointCloud3DSymbolWidget->resize(581, 491);
+        QgsPointCloud3DSymbolWidget->resize(581, 551);
         gridLayout = new QGridLayout(QgsPointCloud3DSymbolWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
@@ -111,30 +121,6 @@ public:
         gridLayout_5->setContentsMargins(0, -1, 3, -1);
         gridLayout_7 = new QGridLayout();
         gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
-        mPointSizeSpinBox = new QgsDoubleSpinBox(mLayerRenderingGroupBox_2);
-        mPointSizeSpinBox->setObjectName(QString::fromUtf8("mPointSizeSpinBox"));
-        QSizePolicy sizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(mPointSizeSpinBox->sizePolicy().hasHeightForWidth());
-        mPointSizeSpinBox->setSizePolicy(sizePolicy);
-        mPointSizeSpinBox->setMaximum(10.000000000000000);
-        mPointSizeSpinBox->setValue(2.000000000000000);
-
-        gridLayout_7->addWidget(mPointSizeSpinBox, 0, 1, 1, 2);
-
-        mMaxScreenErrorSpinBox = new QgsDoubleSpinBox(mLayerRenderingGroupBox_2);
-        mMaxScreenErrorSpinBox->setObjectName(QString::fromUtf8("mMaxScreenErrorSpinBox"));
-        mMaxScreenErrorSpinBox->setMaximum(100000.000000000000000);
-        mMaxScreenErrorSpinBox->setValue(1.000000000000000);
-
-        gridLayout_7->addWidget(mMaxScreenErrorSpinBox, 1, 1, 1, 2);
-
-        mPointCloudSizeLabel = new QLabel(mLayerRenderingGroupBox_2);
-        mPointCloudSizeLabel->setObjectName(QString::fromUtf8("mPointCloudSizeLabel"));
-
-        gridLayout_7->addWidget(mPointCloudSizeLabel, 3, 1, 1, 2);
-
         mPointBudgetSpinBox = new QDoubleSpinBox(mLayerRenderingGroupBox_2);
         mPointBudgetSpinBox->setObjectName(QString::fromUtf8("mPointBudgetSpinBox"));
         mPointBudgetSpinBox->setEnabled(true);
@@ -143,10 +129,15 @@ public:
 
         gridLayout_7->addWidget(mPointBudgetSpinBox, 2, 1, 1, 2);
 
-        label_4 = new QLabel(mLayerRenderingGroupBox_2);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label = new QLabel(mLayerRenderingGroupBox_2);
+        label->setObjectName(QString::fromUtf8("label"));
 
-        gridLayout_7->addWidget(label_4, 1, 0, 1, 1);
+        gridLayout_7->addWidget(label, 2, 0, 1, 1);
+
+        mPointCloudSizeLabel = new QLabel(mLayerRenderingGroupBox_2);
+        mPointCloudSizeLabel->setObjectName(QString::fromUtf8("mPointCloudSizeLabel"));
+
+        gridLayout_7->addWidget(mPointCloudSizeLabel, 3, 1, 1, 2);
 
         label_7 = new QLabel(mLayerRenderingGroupBox_2);
         label_7->setObjectName(QString::fromUtf8("label_7"));
@@ -155,18 +146,37 @@ public:
 
         lblTransparency_4 = new QLabel(mLayerRenderingGroupBox_2);
         lblTransparency_4->setObjectName(QString::fromUtf8("lblTransparency_4"));
-        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(lblTransparency_4->sizePolicy().hasHeightForWidth());
-        lblTransparency_4->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lblTransparency_4->sizePolicy().hasHeightForWidth());
+        lblTransparency_4->setSizePolicy(sizePolicy);
 
         gridLayout_7->addWidget(lblTransparency_4, 0, 0, 1, 1);
 
-        label = new QLabel(mLayerRenderingGroupBox_2);
-        label->setObjectName(QString::fromUtf8("label"));
+        label_4 = new QLabel(mLayerRenderingGroupBox_2);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
 
-        gridLayout_7->addWidget(label, 2, 0, 1, 1);
+        gridLayout_7->addWidget(label_4, 1, 0, 1, 1);
+
+        mMaxScreenErrorSpinBox = new QgsDoubleSpinBox(mLayerRenderingGroupBox_2);
+        mMaxScreenErrorSpinBox->setObjectName(QString::fromUtf8("mMaxScreenErrorSpinBox"));
+        mMaxScreenErrorSpinBox->setMaximum(100000.000000000000000);
+        mMaxScreenErrorSpinBox->setValue(1.000000000000000);
+
+        gridLayout_7->addWidget(mMaxScreenErrorSpinBox, 1, 1, 1, 2);
+
+        mPointSizeSpinBox = new QgsDoubleSpinBox(mLayerRenderingGroupBox_2);
+        mPointSizeSpinBox->setObjectName(QString::fromUtf8("mPointSizeSpinBox"));
+        QSizePolicy sizePolicy1(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(mPointSizeSpinBox->sizePolicy().hasHeightForWidth());
+        mPointSizeSpinBox->setSizePolicy(sizePolicy1);
+        mPointSizeSpinBox->setMaximum(10.000000000000000);
+        mPointSizeSpinBox->setValue(2.000000000000000);
+
+        gridLayout_7->addWidget(mPointSizeSpinBox, 0, 1, 1, 2);
 
 
         gridLayout_5->addLayout(gridLayout_7, 1, 0, 1, 1);
@@ -175,6 +185,38 @@ public:
         mShowBoundingBoxesCheckBox->setObjectName(QString::fromUtf8("mShowBoundingBoxesCheckBox"));
 
         gridLayout_5->addWidget(mShowBoundingBoxesCheckBox, 4, 0, 1, 2);
+
+        mTriangulateGroupBox = new QgsCollapsibleGroupBox(mLayerRenderingGroupBox_2);
+        mTriangulateGroupBox->setObjectName(QString::fromUtf8("mTriangulateGroupBox"));
+        mTriangulateGroupBox->setCheckable(true);
+        mTriangulateGroupBox->setChecked(false);
+        gridLayout_8 = new QGridLayout(mTriangulateGroupBox);
+        gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
+        gridLayout_8->setContentsMargins(0, 0, 0, 0);
+        mHorizontalTriangleCheckBox = new QCheckBox(mTriangulateGroupBox);
+        mHorizontalTriangleCheckBox->setObjectName(QString::fromUtf8("mHorizontalTriangleCheckBox"));
+
+        gridLayout_8->addWidget(mHorizontalTriangleCheckBox, 0, 0, 1, 1);
+
+        mHorizontalTriangleThresholdSpinBox = new QgsDoubleSpinBox(mTriangulateGroupBox);
+        mHorizontalTriangleThresholdSpinBox->setObjectName(QString::fromUtf8("mHorizontalTriangleThresholdSpinBox"));
+        mHorizontalTriangleThresholdSpinBox->setMaximum(10000000000000000000000.000000000000000);
+
+        gridLayout_8->addWidget(mHorizontalTriangleThresholdSpinBox, 0, 1, 1, 1);
+
+        mVerticalTriangleCheckBox = new QCheckBox(mTriangulateGroupBox);
+        mVerticalTriangleCheckBox->setObjectName(QString::fromUtf8("mVerticalTriangleCheckBox"));
+
+        gridLayout_8->addWidget(mVerticalTriangleCheckBox, 1, 0, 1, 1);
+
+        mVerticalTriangleThresholdSpinBox = new QgsDoubleSpinBox(mTriangulateGroupBox);
+        mVerticalTriangleThresholdSpinBox->setObjectName(QString::fromUtf8("mVerticalTriangleThresholdSpinBox"));
+        mVerticalTriangleThresholdSpinBox->setMaximum(10000000000000000000000.000000000000000);
+
+        gridLayout_8->addWidget(mVerticalTriangleThresholdSpinBox, 1, 1, 1, 1);
+
+
+        gridLayout_5->addWidget(mTriangulateGroupBox, 2, 0, 1, 1);
 
         gridLayout_5->setColumnStretch(0, 1);
 
@@ -185,6 +227,18 @@ public:
         noRendererPage = new QWidget();
         noRendererPage->setObjectName(QString::fromUtf8("noRendererPage"));
         mStackedWidget->addWidget(noRendererPage);
+        follow2DRendererPage = new QWidget();
+        follow2DRendererPage->setObjectName(QString::fromUtf8("follow2DRendererPage"));
+        gridLayout_9 = new QGridLayout(follow2DRendererPage);
+        gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
+        gridLayout_9->setContentsMargins(0, 0, 0, -1);
+        label_8 = new QLabel(follow2DRendererPage);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setAlignment(Qt::AlignCenter);
+
+        gridLayout_9->addWidget(label_8, 0, 0, 1, 1);
+
+        mStackedWidget->addWidget(follow2DRendererPage);
         singleColorRendererPage = new QWidget();
         singleColorRendererPage->setObjectName(QString::fromUtf8("singleColorRendererPage"));
         gridLayout_2 = new QGridLayout(singleColorRendererPage);
@@ -462,7 +516,7 @@ public:
 
         retranslateUi(QgsPointCloud3DSymbolWidget);
 
-        mStackedWidget->setCurrentIndex(1);
+        mStackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(QgsPointCloud3DSymbolWidget);
@@ -471,12 +525,22 @@ public:
     void retranslateUi(QWidget *QgsPointCloud3DSymbolWidget)
     {
         mLayerRenderingGroupBox_2->setTitle(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Point Symbol", nullptr));
+        label->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Point budget", nullptr));
         mPointCloudSizeLabel->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "10000", nullptr));
-        label_4->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Maximum screen space error", nullptr));
         label_7->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Point cloud size", nullptr));
         lblTransparency_4->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Point size", nullptr));
-        label->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Point budget", nullptr));
+        label_4->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Maximum screen space error", nullptr));
         mShowBoundingBoxesCheckBox->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Show bounding boxes", nullptr));
+        mTriangulateGroupBox->setTitle(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Render as a Surface (Triangulate)", nullptr));
+        mHorizontalTriangleCheckBox->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Skip triangles longer than", nullptr));
+#if QT_CONFIG(tooltip)
+        mHorizontalTriangleThresholdSpinBox->setToolTip(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Maximum Triangle Side Size in Horizontal Plan", nullptr));
+#endif // QT_CONFIG(tooltip)
+        mVerticalTriangleCheckBox->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Skip triangles taller than", nullptr));
+#if QT_CONFIG(tooltip)
+        mVerticalTriangleThresholdSpinBox->setToolTip(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Maximum Triangle Side 3D Height", nullptr));
+#endif // QT_CONFIG(tooltip)
+        label_8->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "See 2D Symbology settings", nullptr));
         label_6->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Color", nullptr));
         mSingleColorBtn->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "...", nullptr));
         label_5->setText(QCoreApplication::translate("QgsPointCloud3DSymbolWidget", "Attribute", nullptr));

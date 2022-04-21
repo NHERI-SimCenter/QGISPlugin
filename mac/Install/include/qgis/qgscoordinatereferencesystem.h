@@ -32,6 +32,7 @@
 
 //qgis includes
 #include "qgis_sip.h"
+#include "qgsconfig.h"
 #include "qgsunittypes.h"
 #include "qgsrectangle.h"
 #include "qgssqliteutils.h"
@@ -213,6 +214,8 @@ class CORE_EXPORT QgsCoordinateReferenceSystem
 
     Q_PROPERTY( QgsUnitTypes::DistanceUnit mapUnits READ mapUnits )
     Q_PROPERTY( bool isGeographic READ isGeographic )
+    Q_PROPERTY( QString authid READ authid )
+    Q_PROPERTY( QString description READ description )
 
   public:
 
@@ -222,13 +225,6 @@ class CORE_EXPORT QgsCoordinateReferenceSystem
       InternalCrsId,  //!< Internal ID used by QGIS in the local SQLite database
       PostgisCrsId,   //!< SRID used in PostGIS. DEPRECATED -- DO NOT USE
       EpsgCrsId       //!< EPSG code
-    };
-
-    //! Projection definition formats
-    enum Format
-    {
-      FormatWkt = 0, //!< WKT format (always recommended over proj string format)
-      FormatProj, //!< Proj string format
     };
 
     //! Constructs an invalid CRS object
@@ -846,6 +842,51 @@ class CORE_EXPORT QgsCoordinateReferenceSystem
     bool hasAxisInverted() const;
 
     /**
+     * Returns an ordered list of the axis directions reflecting the native axis order for the CRS.
+     *
+     * \since QGIS 3.26
+     */
+#ifndef SIP_RUN
+    QList< Qgis::CrsAxisDirection > axisOrdering() const;
+#else
+    SIP_PYOBJECT axisOrdering() const SIP_TYPEHINT( List[Qgis.CrsAxisDirection] );
+    % MethodCode
+    // adapted from the qpymultimedia_qlist.sip file from the PyQt6 sources
+
+    const QList< Qgis::CrsAxisDirection > cppRes = sipCpp->axisOrdering();
+
+    PyObject *l = PyList_New( cppRes.size() );
+
+    if ( !l )
+      sipIsErr = 1;
+    else
+    {
+      for ( int i = 0; i < cppRes.size(); ++i )
+      {
+        PyObject *eobj = sipConvertFromEnum( static_cast<int>( cppRes.at( i ) ),
+                                             sipType_Qgis_CrsAxisDirection );
+
+        if ( !eobj )
+        {
+          sipIsErr = 1;
+        }
+
+        PyList_SetItem( l, i, eobj );
+      }
+
+      if ( !sipIsErr )
+      {
+        sipRes = l;
+      }
+      else
+      {
+        Py_DECREF( l );
+      }
+    }
+    % End
+#endif
+
+    /**
      * Returns the units for the projection used by the CRS.
      */
     QgsUnitTypes::DistanceUnit mapUnits() const;
@@ -911,7 +952,40 @@ class CORE_EXPORT QgsCoordinateReferenceSystem
      *
      * \note Since QGIS 3.18, internally this calls QgsCoordinateReferenceSystemRegistry::addUserCrs().
      */
-    long saveAsUserCrs( const QString &name, Format nativeFormat = FormatWkt );
+    long saveAsUserCrs( const QString &name, Qgis::CrsDefinitionFormat nativeFormat = Qgis::CrsDefinitionFormat::Wkt );
+
+    /**
+     * Sets the native \a format for the CRS definition.
+     *
+     * \note This has no effect on the underlying definition of the CRS, rather it controls what format
+     * to use when displaying the CRS's definition to users.
+     *
+     * \see nativeFormat()
+     * \since QGIS 3.24
+     */
+    void setNativeFormat( Qgis::CrsDefinitionFormat format );
+
+    /**
+     * Returns the native format for the CRS definition.
+     *
+     * \note This has no effect on the underlying definition of the CRS, rather it controls what format
+     * to use when displaying the CRS's definition to users.
+     *
+     * \see setNativeFormat()
+     * \since QGIS 3.24
+     */
+    Qgis::CrsDefinitionFormat nativeFormat() const;
+
+    /**
+     * Returns the geographic CRS associated with this CRS object.
+     *
+     * May return an invalid CRS if the geographic CRS could not be determined.
+     *
+     * \note This method will always return a longitude, latitude ordered CRS.
+     *
+     * \since QGIS 3.24
+     */
+    QgsCoordinateReferenceSystem toGeographicCrs() const;
 
     //! Returns auth id of related geographic CRS
     QString geographicCrsAuthId() const;
@@ -938,6 +1012,28 @@ class CORE_EXPORT QgsCoordinateReferenceSystem
      * \since QGIS 3.8
      */
     PJ *projObject() const;
+
+    /**
+     * Constructs a QgsCoordinateReferenceSystem from a PROJ PJ object.
+     *
+     * The \a object must correspond to a PROJ CRS object.
+     *
+     * Ownership of \a object is not transferred.
+     *
+     * \note Not available in Python bindings
+     * \since QGIS 3.24
+     */
+    static QgsCoordinateReferenceSystem fromProjObject( PJ *object );
+
+    /**
+     * Sets this CRS by passing it a PROJ PJ \a object, corresponding to a PROJ CRS object.
+     *
+     * Ownership of \a object is not transferred.
+     *
+     * \note Not available in Python bindings
+     * \since QGIS 3.24
+     */
+    bool createFromProjObject( PJ *object );
 #endif
 
     /**
@@ -1064,6 +1160,8 @@ class CORE_EXPORT QgsCoordinateReferenceSystem
     QExplicitlySharedDataPointer<QgsCoordinateReferenceSystemPrivate> d;
 
     QString mValidationHint;
+
+    Qgis::CrsDefinitionFormat mNativeFormat = Qgis::CrsDefinitionFormat::Wkt;
 
     friend class QgsProjContext;
 

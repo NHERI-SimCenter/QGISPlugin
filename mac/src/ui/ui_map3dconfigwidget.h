@@ -106,6 +106,15 @@ public:
     QGroupBox *groupSkyboxSettings;
     QGridLayout *gridLayout_3;
     QSpacerItem *verticalSpacerCameraSkybox;
+    QWidget *mPage2DCanvasSync;
+    QGridLayout *gridLayout_4;
+    QgsScrollArea *scrollArea;
+    QWidget *scrollAreaWidgetContents;
+    QGridLayout *gridLayout_7;
+    QCheckBox *mSync2DTo3DCheckbox;
+    QCheckBox *mSync3DTo2DCheckbox;
+    QCheckBox *mVisualizeExtentCheckBox;
+    QSpacerItem *verticalSpacer;
     QWidget *mPageAdvanced;
     QVBoxLayout *verticalLayout_63;
     QgsScrollArea *scrollAreaAdvanced;
@@ -128,19 +137,20 @@ public:
     QgsDoubleSpinBox *mDebugDepthMapSizeSpinBox;
     QGridLayout *gridLayoutAdvanced;
     QgsDoubleSpinBox *spinScreenError;
-    QgsDoubleSpinBox *spinGroundError;
-    QCheckBox *chkShowCameraViewCenter;
-    QLabel *label_6;
-    QCheckBox *chkShowBoundingBoxes;
-    QgsSpinBox *spinMapResolution;
-    QLabel *labelZoomLevels;
-    QLabel *label_5;
-    QCheckBox *chkShowTileInfo;
-    QCheckBox *chkShowLabels;
-    QLabel *label_4;
     QCheckBox *chkShowLightSourceOrigins;
-    QLabel *label_7;
+    QCheckBox *chkShowBoundingBoxes;
+    QCheckBox *chkShowTileInfo;
+    QgsDoubleSpinBox *spinGroundError;
+    QLabel *label_5;
+    QCheckBox *chkShowLabels;
+    QgsSpinBox *spinMapResolution;
+    QCheckBox *chkShowCameraViewCenter;
+    QLabel *label_4;
     QCheckBox *mFpsCounterCheckBox;
+    QLabel *label_7;
+    QLabel *label_6;
+    QLabel *labelZoomLevels;
+    QCheckBox *chkShowCameraRotationCenter;
     QGroupBox *edlGroupBox;
     QGridLayout *gridLayout_2;
     QgsDoubleSpinBox *edlStrengthSpinBox;
@@ -196,9 +206,13 @@ public:
         QListWidgetItem *__qlistwidgetitem3 = new QListWidgetItem(m3DOptionsListWidget);
         __qlistwidgetitem3->setIcon(icon3);
         QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/images/themes/default/propertyicons/system.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        icon4.addFile(QString::fromUtf8(":/images/themes/default/sync_views.svg"), QSize(), QIcon::Normal, QIcon::Off);
         QListWidgetItem *__qlistwidgetitem4 = new QListWidgetItem(m3DOptionsListWidget);
         __qlistwidgetitem4->setIcon(icon4);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/images/themes/default/propertyicons/system.svg"), QSize(), QIcon::Normal, QIcon::Off);
+        QListWidgetItem *__qlistwidgetitem5 = new QListWidgetItem(m3DOptionsListWidget);
+        __qlistwidgetitem5->setIcon(icon5);
         m3DOptionsListWidget->setObjectName(QString::fromUtf8("m3DOptionsListWidget"));
         m3DOptionsListWidget->setMinimumSize(QSize(32, 0));
         m3DOptionsListWidget->setProperty("showDropIndicator", QVariant(false));
@@ -232,7 +246,7 @@ public:
         scrollAreaTerrain->setWidgetResizable(true);
         scrollAreaTerrainWidgetContents = new QWidget();
         scrollAreaTerrainWidgetContents->setObjectName(QString::fromUtf8("scrollAreaTerrainWidgetContents"));
-        scrollAreaTerrainWidgetContents->setGeometry(QRect(0, 0, 709, 604));
+        scrollAreaTerrainWidgetContents->setGeometry(QRect(0, 0, 722, 604));
         verticalLayoutTerrain = new QVBoxLayout(scrollAreaTerrainWidgetContents);
         verticalLayoutTerrain->setObjectName(QString::fromUtf8("verticalLayoutTerrain"));
         verticalLayoutTerrain->setContentsMargins(0, 0, 0, 0);
@@ -503,6 +517,42 @@ public:
         verticalLayout_62->addWidget(scrollAreaCameraSkybox);
 
         m3DOptionsStackedWidget->addWidget(mPageCameraSkybox);
+        mPage2DCanvasSync = new QWidget();
+        mPage2DCanvasSync->setObjectName(QString::fromUtf8("mPage2DCanvasSync"));
+        gridLayout_4 = new QGridLayout(mPage2DCanvasSync);
+        gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
+        scrollArea = new QgsScrollArea(mPage2DCanvasSync);
+        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setWidgetResizable(true);
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 711, 584));
+        gridLayout_7 = new QGridLayout(scrollAreaWidgetContents);
+        gridLayout_7->setObjectName(QString::fromUtf8("gridLayout_7"));
+        mSync2DTo3DCheckbox = new QCheckBox(scrollAreaWidgetContents);
+        mSync2DTo3DCheckbox->setObjectName(QString::fromUtf8("mSync2DTo3DCheckbox"));
+
+        gridLayout_7->addWidget(mSync2DTo3DCheckbox, 0, 0, 1, 2);
+
+        mSync3DTo2DCheckbox = new QCheckBox(scrollAreaWidgetContents);
+        mSync3DTo2DCheckbox->setObjectName(QString::fromUtf8("mSync3DTo2DCheckbox"));
+
+        gridLayout_7->addWidget(mSync3DTo2DCheckbox, 1, 0, 1, 1);
+
+        mVisualizeExtentCheckBox = new QCheckBox(scrollAreaWidgetContents);
+        mVisualizeExtentCheckBox->setObjectName(QString::fromUtf8("mVisualizeExtentCheckBox"));
+
+        gridLayout_7->addWidget(mVisualizeExtentCheckBox, 2, 0, 1, 2);
+
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_7->addItem(verticalSpacer, 3, 0, 1, 2);
+
+        scrollArea->setWidget(scrollAreaWidgetContents);
+
+        gridLayout_4->addWidget(scrollArea, 0, 0, 1, 1);
+
+        m3DOptionsStackedWidget->addWidget(mPage2DCanvasSync);
         mPageAdvanced = new QWidget();
         mPageAdvanced->setObjectName(QString::fromUtf8("mPageAdvanced"));
         verticalLayout_63 = new QVBoxLayout(mPageAdvanced);
@@ -514,7 +564,7 @@ public:
         scrollAreaAdvanced->setWidgetResizable(true);
         scrollAreaAdvancedWidgetContents = new QWidget();
         scrollAreaAdvancedWidgetContents->setObjectName(QString::fromUtf8("scrollAreaAdvancedWidgetContents"));
-        scrollAreaAdvancedWidgetContents->setGeometry(QRect(0, 0, 305, 661));
+        scrollAreaAdvancedWidgetContents->setGeometry(QRect(0, 0, 708, 690));
         verticalLayoutAdvanced = new QVBoxLayout(scrollAreaAdvancedWidgetContents);
         verticalLayoutAdvanced->setObjectName(QString::fromUtf8("verticalLayoutAdvanced"));
         verticalLayoutAdvanced->setContentsMargins(0, 0, 0, 0);
@@ -598,6 +648,21 @@ public:
 
         gridLayoutAdvanced->addWidget(spinScreenError, 1, 1, 1, 1);
 
+        chkShowLightSourceOrigins = new QCheckBox(groupAdvanced);
+        chkShowLightSourceOrigins->setObjectName(QString::fromUtf8("chkShowLightSourceOrigins"));
+
+        gridLayoutAdvanced->addWidget(chkShowLightSourceOrigins, 10, 0, 1, 2);
+
+        chkShowBoundingBoxes = new QCheckBox(groupAdvanced);
+        chkShowBoundingBoxes->setObjectName(QString::fromUtf8("chkShowBoundingBoxes"));
+
+        gridLayoutAdvanced->addWidget(chkShowBoundingBoxes, 7, 0, 1, 2);
+
+        chkShowTileInfo = new QCheckBox(groupAdvanced);
+        chkShowTileInfo->setObjectName(QString::fromUtf8("chkShowTileInfo"));
+
+        gridLayoutAdvanced->addWidget(chkShowTileInfo, 6, 0, 1, 2);
+
         spinGroundError = new QgsDoubleSpinBox(groupAdvanced);
         spinGroundError->setObjectName(QString::fromUtf8("spinGroundError"));
         spinGroundError->setDecimals(1);
@@ -607,20 +672,15 @@ public:
 
         gridLayoutAdvanced->addWidget(spinGroundError, 2, 1, 1, 1);
 
-        chkShowCameraViewCenter = new QCheckBox(groupAdvanced);
-        chkShowCameraViewCenter->setObjectName(QString::fromUtf8("chkShowCameraViewCenter"));
+        label_5 = new QLabel(groupAdvanced);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
 
-        gridLayoutAdvanced->addWidget(chkShowCameraViewCenter, 8, 0, 1, 2);
+        gridLayoutAdvanced->addWidget(label_5, 1, 0, 1, 1);
 
-        label_6 = new QLabel(groupAdvanced);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
+        chkShowLabels = new QCheckBox(groupAdvanced);
+        chkShowLabels->setObjectName(QString::fromUtf8("chkShowLabels"));
 
-        gridLayoutAdvanced->addWidget(label_6, 2, 0, 1, 1);
-
-        chkShowBoundingBoxes = new QCheckBox(groupAdvanced);
-        chkShowBoundingBoxes->setObjectName(QString::fromUtf8("chkShowBoundingBoxes"));
-
-        gridLayoutAdvanced->addWidget(chkShowBoundingBoxes, 7, 0, 1, 2);
+        gridLayoutAdvanced->addWidget(chkShowLabels, 5, 0, 1, 2);
 
         spinMapResolution = new QgsSpinBox(groupAdvanced);
         spinMapResolution->setObjectName(QString::fromUtf8("spinMapResolution"));
@@ -628,45 +688,40 @@ public:
 
         gridLayoutAdvanced->addWidget(spinMapResolution, 0, 1, 1, 1);
 
-        labelZoomLevels = new QLabel(groupAdvanced);
-        labelZoomLevels->setObjectName(QString::fromUtf8("labelZoomLevels"));
+        chkShowCameraViewCenter = new QCheckBox(groupAdvanced);
+        chkShowCameraViewCenter->setObjectName(QString::fromUtf8("chkShowCameraViewCenter"));
 
-        gridLayoutAdvanced->addWidget(labelZoomLevels, 3, 1, 1, 1);
-
-        label_5 = new QLabel(groupAdvanced);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-
-        gridLayoutAdvanced->addWidget(label_5, 1, 0, 1, 1);
-
-        chkShowTileInfo = new QCheckBox(groupAdvanced);
-        chkShowTileInfo->setObjectName(QString::fromUtf8("chkShowTileInfo"));
-
-        gridLayoutAdvanced->addWidget(chkShowTileInfo, 6, 0, 1, 2);
-
-        chkShowLabels = new QCheckBox(groupAdvanced);
-        chkShowLabels->setObjectName(QString::fromUtf8("chkShowLabels"));
-
-        gridLayoutAdvanced->addWidget(chkShowLabels, 5, 0, 1, 2);
+        gridLayoutAdvanced->addWidget(chkShowCameraViewCenter, 8, 0, 1, 2);
 
         label_4 = new QLabel(groupAdvanced);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
         gridLayoutAdvanced->addWidget(label_4, 0, 0, 1, 1);
 
-        chkShowLightSourceOrigins = new QCheckBox(groupAdvanced);
-        chkShowLightSourceOrigins->setObjectName(QString::fromUtf8("chkShowLightSourceOrigins"));
+        mFpsCounterCheckBox = new QCheckBox(groupAdvanced);
+        mFpsCounterCheckBox->setObjectName(QString::fromUtf8("mFpsCounterCheckBox"));
 
-        gridLayoutAdvanced->addWidget(chkShowLightSourceOrigins, 9, 0, 1, 2);
+        gridLayoutAdvanced->addWidget(mFpsCounterCheckBox, 11, 0, 1, 2);
 
         label_7 = new QLabel(groupAdvanced);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
         gridLayoutAdvanced->addWidget(label_7, 3, 0, 1, 1);
 
-        mFpsCounterCheckBox = new QCheckBox(groupAdvanced);
-        mFpsCounterCheckBox->setObjectName(QString::fromUtf8("mFpsCounterCheckBox"));
+        label_6 = new QLabel(groupAdvanced);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
 
-        gridLayoutAdvanced->addWidget(mFpsCounterCheckBox, 10, 0, 1, 2);
+        gridLayoutAdvanced->addWidget(label_6, 2, 0, 1, 1);
+
+        labelZoomLevels = new QLabel(groupAdvanced);
+        labelZoomLevels->setObjectName(QString::fromUtf8("labelZoomLevels"));
+
+        gridLayoutAdvanced->addWidget(labelZoomLevels, 3, 1, 1, 1);
+
+        chkShowCameraRotationCenter = new QCheckBox(groupAdvanced);
+        chkShowCameraRotationCenter->setObjectName(QString::fromUtf8("chkShowCameraRotationCenter"));
+
+        gridLayoutAdvanced->addWidget(chkShowCameraRotationCenter, 9, 0, 1, 1);
 
 
         gridLayout_11->addLayout(gridLayoutAdvanced, 0, 0, 1, 1);
@@ -760,7 +815,7 @@ public:
 
         retranslateUi(Map3DConfigWidget);
 
-        m3DOptionsStackedWidget->setCurrentIndex(0);
+        m3DOptionsStackedWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(Map3DConfigWidget);
@@ -793,9 +848,11 @@ public:
         ___qlistwidgetitem3->setToolTip(QCoreApplication::translate("Map3DConfigWidget", "Camera and skybox settings", nullptr));
 #endif // QT_CONFIG(tooltip)
         QListWidgetItem *___qlistwidgetitem4 = m3DOptionsListWidget->item(4);
-        ___qlistwidgetitem4->setText(QCoreApplication::translate("Map3DConfigWidget", "Advanced", nullptr));
+        ___qlistwidgetitem4->setText(QCoreApplication::translate("Map3DConfigWidget", "Navigation sync", nullptr));
+        QListWidgetItem *___qlistwidgetitem5 = m3DOptionsListWidget->item(5);
+        ___qlistwidgetitem5->setText(QCoreApplication::translate("Map3DConfigWidget", "Advanced", nullptr));
 #if QT_CONFIG(tooltip)
-        ___qlistwidgetitem4->setToolTip(QCoreApplication::translate("Map3DConfigWidget", "Advanced settings", nullptr));
+        ___qlistwidgetitem5->setToolTip(QCoreApplication::translate("Map3DConfigWidget", "Advanced settings", nullptr));
 #endif // QT_CONFIG(tooltip)
         m3DOptionsListWidget->setSortingEnabled(__sortingEnabled);
 
@@ -818,6 +875,9 @@ public:
         labelCameraNavigationMode->setText(QCoreApplication::translate("Map3DConfigWidget", "Navigation mode", nullptr));
         labelMovementSpeed->setText(QCoreApplication::translate("Map3DConfigWidget", "Movement speed", nullptr));
         groupSkyboxSettings->setTitle(QCoreApplication::translate("Map3DConfigWidget", "Show Skybox", nullptr));
+        mSync2DTo3DCheckbox->setText(QCoreApplication::translate("Map3DConfigWidget", "2D Map View Follows 3D Camera", nullptr));
+        mSync3DTo2DCheckbox->setText(QCoreApplication::translate("Map3DConfigWidget", "3D Camera Follows 2D Map View", nullptr));
+        mVisualizeExtentCheckBox->setText(QCoreApplication::translate("Map3DConfigWidget", "Show Visible Camera Area in 2D Map View", nullptr));
         groupAdvanced->setTitle(QCoreApplication::translate("Map3DConfigWidget", "Advanced Settings", nullptr));
         mDebugShadowMapGroupBox->setTitle(QCoreApplication::translate("Map3DConfigWidget", "Debug Shadow Map", nullptr));
         label_8->setText(QCoreApplication::translate("Map3DConfigWidget", "Corner", nullptr));
@@ -826,19 +886,20 @@ public:
         label_11->setText(QCoreApplication::translate("Map3DConfigWidget", "Size", nullptr));
         label_9->setText(QCoreApplication::translate("Map3DConfigWidget", "Corner", nullptr));
         spinScreenError->setSuffix(QCoreApplication::translate("Map3DConfigWidget", " px", nullptr));
-        spinGroundError->setSuffix(QCoreApplication::translate("Map3DConfigWidget", " map units", nullptr));
-        chkShowCameraViewCenter->setText(QCoreApplication::translate("Map3DConfigWidget", "Show camera's view center", nullptr));
-        label_6->setText(QCoreApplication::translate("Map3DConfigWidget", "Max. ground error", nullptr));
-        chkShowBoundingBoxes->setText(QCoreApplication::translate("Map3DConfigWidget", "Show bounding boxes", nullptr));
-        spinMapResolution->setSuffix(QCoreApplication::translate("Map3DConfigWidget", " px", nullptr));
-        labelZoomLevels->setText(QCoreApplication::translate("Map3DConfigWidget", "0", nullptr));
-        label_5->setText(QCoreApplication::translate("Map3DConfigWidget", "Max. screen error", nullptr));
-        chkShowTileInfo->setText(QCoreApplication::translate("Map3DConfigWidget", "Show map tile info", nullptr));
-        chkShowLabels->setText(QCoreApplication::translate("Map3DConfigWidget", "Show labels", nullptr));
-        label_4->setText(QCoreApplication::translate("Map3DConfigWidget", "Map tile resolution", nullptr));
         chkShowLightSourceOrigins->setText(QCoreApplication::translate("Map3DConfigWidget", "Show light sources", nullptr));
-        label_7->setText(QCoreApplication::translate("Map3DConfigWidget", "Zoom levels", nullptr));
+        chkShowBoundingBoxes->setText(QCoreApplication::translate("Map3DConfigWidget", "Show bounding boxes", nullptr));
+        chkShowTileInfo->setText(QCoreApplication::translate("Map3DConfigWidget", "Show map tile info", nullptr));
+        spinGroundError->setSuffix(QCoreApplication::translate("Map3DConfigWidget", " map units", nullptr));
+        label_5->setText(QCoreApplication::translate("Map3DConfigWidget", "Max. screen error", nullptr));
+        chkShowLabels->setText(QCoreApplication::translate("Map3DConfigWidget", "Show labels", nullptr));
+        spinMapResolution->setSuffix(QCoreApplication::translate("Map3DConfigWidget", " px", nullptr));
+        chkShowCameraViewCenter->setText(QCoreApplication::translate("Map3DConfigWidget", "Show camera's view center", nullptr));
+        label_4->setText(QCoreApplication::translate("Map3DConfigWidget", "Map tile resolution", nullptr));
         mFpsCounterCheckBox->setText(QCoreApplication::translate("Map3DConfigWidget", "Show frames per second (FPS)", nullptr));
+        label_7->setText(QCoreApplication::translate("Map3DConfigWidget", "Zoom levels", nullptr));
+        label_6->setText(QCoreApplication::translate("Map3DConfigWidget", "Max. ground error", nullptr));
+        labelZoomLevels->setText(QCoreApplication::translate("Map3DConfigWidget", "0", nullptr));
+        chkShowCameraRotationCenter->setText(QCoreApplication::translate("Map3DConfigWidget", "Show camera's rotation center", nullptr));
         edlGroupBox->setTitle(QCoreApplication::translate("Map3DConfigWidget", "Show Eye Dome Lighting", nullptr));
         label->setText(QCoreApplication::translate("Map3DConfigWidget", "Lighting strength", nullptr));
         label_2->setText(QCoreApplication::translate("Map3DConfigWidget", "Lighting distance", nullptr));

@@ -207,6 +207,8 @@ public:
         mActionType->addItem(QString());
         mActionType->addItem(QString());
         mActionType->addItem(QString());
+        mActionType->addItem(QString());
+        mActionType->addItem(QString());
         mActionType->setObjectName(QString::fromUtf8("mActionType"));
         QSizePolicy sizePolicy4(QSizePolicy::Expanding, QSizePolicy::Fixed);
         sizePolicy4.setHorizontalStretch(0);
@@ -302,7 +304,9 @@ public:
         mActionType->setItemText(2, QCoreApplication::translate("QgsAttributeActionPropertiesDialogBase", "Mac", nullptr));
         mActionType->setItemText(3, QCoreApplication::translate("QgsAttributeActionPropertiesDialogBase", "Windows", nullptr));
         mActionType->setItemText(4, QCoreApplication::translate("QgsAttributeActionPropertiesDialogBase", "Unix", nullptr));
-        mActionType->setItemText(5, QCoreApplication::translate("QgsAttributeActionPropertiesDialogBase", "Open", nullptr));
+        mActionType->setItemText(5, QCoreApplication::translate("QgsAttributeActionPropertiesDialogBase", "Open URL", nullptr));
+        mActionType->setItemText(6, QCoreApplication::translate("QgsAttributeActionPropertiesDialogBase", "Submit URL (urlencoded or JSON)", nullptr));
+        mActionType->setItemText(7, QCoreApplication::translate("QgsAttributeActionPropertiesDialogBase", "Submit URL (multipart)", nullptr));
 
         mActionScopesGroupBox->setTitle(QCoreApplication::translate("QgsAttributeActionPropertiesDialogBase", "Action Scopes", nullptr));
 #if QT_CONFIG(tooltip)

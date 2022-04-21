@@ -25,7 +25,6 @@
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QRadioButton>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSplitter>
@@ -34,12 +33,12 @@
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include "qgseffectstackpropertieswidget.h"
 #include "qgsblendmodecombobox.h"
 #include "qgscodeeditorexpression.h"
 #include "qgscollapsiblegroupbox.h"
 #include "qgscolorbutton.h"
 #include "qgsdoublespinbox.h"
+#include "qgseffectstackpropertieswidget.h"
 #include "qgsfieldexpressionwidget.h"
 #include "qgsopacitywidget.h"
 #include "qgspenstylecombobox.h"
@@ -141,9 +140,22 @@ public:
     QgsScrollArea *scrollArea_5;
     QWidget *scrollAreaWidgetContents_6;
     QGridLayout *gridLayout_42;
-    QLabel *mFontCapitalsLabel;
-    QComboBox *mTextOrientationComboBox;
+    QComboBox *mFontCapitalsComboBox;
+    QHBoxLayout *horizontalLayout_30;
+    QLabel *mFontWordSpacingLabel_3;
+    QgsDoubleSpinBox *mFontWordSpacingSpinBox;
+    QLabel *labelTextOrientation;
+    QHBoxLayout *horizontalLayout_29;
+    QLabel *mFontLetterSpacingLabel_3;
+    QgsDoubleSpinBox *mFontLetterSpacingSpinBox;
+    QLabel *label_10;
+    QLabel *labelBlendMode;
+    QCheckBox *mCheckBoxSubstituteText;
     QToolButton *mToolButtonConfigureSubstitutes;
+    QgsPropertyOverrideButton *mFontWordSpacingDDBtn;
+    QComboBox *mTextOrientationComboBox;
+    QgsPropertyOverrideButton *mFontCaseDDBtn;
+    QgsPropertyOverrideButton *mFontLetterSpacingDDBtn;
     QFrame *mDirectSymbolsFrame;
     QGridLayout *gridLayout_33;
     QSpacerItem *horizontalSpacer_9;
@@ -172,17 +184,8 @@ public:
     QRadioButton *mDirectSymbRadioBtnLR;
     QRadioButton *mDirectSymbRadioBtnAbove;
     QRadioButton *mDirectSymbRadioBtnBelow;
-    QgsPropertyOverrideButton *mFontCaseDDBtn;
-    QLabel *labelTextOrientation;
-    QHBoxLayout *horizontalLayout_29;
-    QLabel *mFontLetterSpacingLabel_3;
-    QgsDoubleSpinBox *mFontLetterSpacingSpinBox;
-    QgsPropertyOverrideButton *mTextOrientationDDBtn;
-    QLabel *labelBlendMode;
-    QCheckBox *mCheckBoxSubstituteText;
-    QgsPropertyOverrideButton *mFontWordSpacingDDBtn;
-    QgsPropertyOverrideButton *mFontLetterSpacingDDBtn;
-    QgsBlendModeComboBox *comboBlendMode;
+    QLabel *mFontCapitalsLabel;
+    QSpacerItem *verticalSpacer_6;
     QGridLayout *gridLayout_34;
     QSpacerItem *horizontalSpacer_8;
     QCheckBox *mFormatNumChkBx;
@@ -194,10 +197,8 @@ public:
     QgsPropertyOverrideButton *mFormatNumDecimalsDDBtn;
     QCheckBox *mFormatNumPlusSignChkBx;
     QgsPropertyOverrideButton *mFormatNumPlusSignDDBtn;
-    QHBoxLayout *horizontalLayout_30;
-    QLabel *mFontWordSpacingLabel_3;
-    QgsDoubleSpinBox *mFontWordSpacingSpinBox;
-    QComboBox *mFontCapitalsComboBox;
+    QgsPropertyOverrideButton *mFontBlendModeDDBtn;
+    QgsPropertyOverrideButton *mTextOrientationDDBtn;
     QGridLayout *gridLayout_35;
     QLabel *label_24;
     QFrame *mMultiLinesFrame;
@@ -215,10 +216,11 @@ public:
     QLabel *mFontLineHeightLabel;
     QLabel *mLabelWrapOnCharacter;
     QgsPropertyOverrideButton *mAutoWrapLengthDDBtn;
-    QSpacerItem *verticalSpacer_6;
-    QLabel *label_10;
-    QgsPropertyOverrideButton *mFontBlendModeDDBtn;
     QCheckBox *mKerningCheckBox;
+    QgsBlendModeComboBox *comboBlendMode;
+    QLabel *mLabelStretch;
+    QgsSpinBox *mSpinStretch;
+    QgsPropertyOverrideButton *mFontStretchDDBtn;
     QWidget *mLabelPage_Buffer;
     QVBoxLayout *verticalLayout_7;
     QgsScrollArea *scrollArea_7;
@@ -403,7 +405,7 @@ public:
     QSpacerItem *verticalSpacer_7;
     QWidget *mLabelPage_Callouts;
     QVBoxLayout *verticalLayout_14;
-    QScrollArea *scrollArea_6;
+    QgsScrollArea *scrollArea_6;
     QWidget *scrollAreaWidgetContents_7;
     QGridLayout *gridLayout_46;
     QGridLayout *gridLayout_43;
@@ -539,9 +541,17 @@ public:
     QComboBox *mGeometryGeneratorType;
     QGroupBox *mPlacementDDGroupBox;
     QGridLayout *gridLayout_4;
-    QLabel *mCoordAlignmentLabel;
+    QHBoxLayout *horizontalLayout_25;
+    QgsPropertyOverrideButton *mCoordRotationDDBtn;
+    QComboBox *mCoordRotationUnitComboBox;
+    QCheckBox *chkPreserveRotation;
+    QHBoxLayout *horizontalLayout_22;
+    QLabel *mCoordXLabel;
+    QgsPropertyOverrideButton *mCoordXDDBtn;
+    QLabel *mCoordYLabel;
+    QgsPropertyOverrideButton *mCoordYDDBtn;
+    QSpacerItem *horizontalSpacer_6;
     QLabel *mCoordLabel;
-    QLabel *mCoordRotationLabel;
     QFrame *mCoordAlignmentFrame;
     QHBoxLayout *horizontalLayout_27;
     QLabel *mCoordAlignmentHLabel;
@@ -549,15 +559,12 @@ public:
     QLabel *mCoordAlignmentVLabel;
     QgsPropertyOverrideButton *mCoordAlignmentVDDBtn;
     QSpacerItem *horizontalSpacer_21;
-    QHBoxLayout *horizontalLayout_22;
-    QLabel *mCoordXLabel;
-    QgsPropertyOverrideButton *mCoordXDDBtn;
-    QLabel *mCoordYLabel;
-    QgsPropertyOverrideButton *mCoordYDDBtn;
+    QLabel *mCoordRotationLabel;
+    QHBoxLayout *horizontalLayout_15;
+    QgsPropertyOverrideButton *mCoordPointDDBtn;
     QSpacerItem *horizontalSpacer_22;
-    QHBoxLayout *horizontalLayout_25;
-    QgsPropertyOverrideButton *mCoordRotationDDBtn;
-    QCheckBox *chkPreserveRotation;
+    QLabel *mCoordAlignmentLabel;
+    QLabel *label_44;
     QgsCollapsibleGroupBox *mPriorityGrpBx;
     QHBoxLayout *horizontalLayout_9;
     QLabel *label_34;
@@ -660,6 +667,7 @@ public:
         gridLayout_8->setSpacing(6);
         gridLayout_8->setContentsMargins(11, 11, 11, 11);
         gridLayout_8->setObjectName(QString::fromUtf8("gridLayout_8"));
+        gridLayout_8->setContentsMargins(0, 0, 0, 0);
         mLabelingFrame = new QFrame(QgsTextFormatWidgetBase);
         mLabelingFrame->setObjectName(QString::fromUtf8("mLabelingFrame"));
         mLabelingFrame->setMinimumSize(QSize(0, 300));
@@ -694,7 +702,7 @@ public:
         scrollArea_mPreview->setWidgetResizable(true);
         scrollAreaWidgetContents_mPreveiw = new QWidget();
         scrollAreaWidgetContents_mPreveiw->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_mPreveiw"));
-        scrollAreaWidgetContents_mPreveiw->setGeometry(QRect(0, 0, 480, 300));
+        scrollAreaWidgetContents_mPreveiw->setGeometry(QRect(0, 0, 499, 300));
         scrollAreaWidgetContents_mPreveiw->setMinimumSize(QSize(0, 300));
         scrollAreaWidgetContents_mPreveiw->setStyleSheet(QString::fromUtf8("background: rgb(255, 255, 255);"));
         verticalLayout_5 = new QVBoxLayout(scrollAreaWidgetContents_mPreveiw);
@@ -922,7 +930,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 455, 414));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 485, 429));
         verticalLayout_2 = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -1219,29 +1227,119 @@ public:
         scrollArea_5->setWidgetResizable(true);
         scrollAreaWidgetContents_6 = new QWidget();
         scrollAreaWidgetContents_6->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_6"));
-        scrollAreaWidgetContents_6->setGeometry(QRect(0, 0, 427, 931));
+        scrollAreaWidgetContents_6->setGeometry(QRect(0, 0, 471, 742));
         gridLayout_42 = new QGridLayout(scrollAreaWidgetContents_6);
         gridLayout_42->setSpacing(6);
         gridLayout_42->setContentsMargins(11, 11, 11, 11);
         gridLayout_42->setObjectName(QString::fromUtf8("gridLayout_42"));
         gridLayout_42->setContentsMargins(0, -1, 6, -1);
-        mFontCapitalsLabel = new QLabel(scrollAreaWidgetContents_6);
-        mFontCapitalsLabel->setObjectName(QString::fromUtf8("mFontCapitalsLabel"));
-        sizePolicy8.setHeightForWidth(mFontCapitalsLabel->sizePolicy().hasHeightForWidth());
-        mFontCapitalsLabel->setSizePolicy(sizePolicy8);
+        mFontCapitalsComboBox = new QComboBox(scrollAreaWidgetContents_6);
+        mFontCapitalsComboBox->setObjectName(QString::fromUtf8("mFontCapitalsComboBox"));
+        mFontCapitalsComboBox->setEnabled(true);
+        QSizePolicy sizePolicy10(QSizePolicy::Preferred, QSizePolicy::Fixed);
+        sizePolicy10.setHorizontalStretch(0);
+        sizePolicy10.setVerticalStretch(0);
+        sizePolicy10.setHeightForWidth(mFontCapitalsComboBox->sizePolicy().hasHeightForWidth());
+        mFontCapitalsComboBox->setSizePolicy(sizePolicy10);
+        mFontCapitalsComboBox->setMaximumSize(QSize(16777215, 16777215));
 
-        gridLayout_42->addWidget(mFontCapitalsLabel, 0, 0, 1, 1);
+        gridLayout_42->addWidget(mFontCapitalsComboBox, 0, 1, 1, 2);
 
-        mTextOrientationComboBox = new QComboBox(scrollAreaWidgetContents_6);
-        mTextOrientationComboBox->setObjectName(QString::fromUtf8("mTextOrientationComboBox"));
+        horizontalLayout_30 = new QHBoxLayout();
+        horizontalLayout_30->setSpacing(6);
+        horizontalLayout_30->setObjectName(QString::fromUtf8("horizontalLayout_30"));
+        mFontWordSpacingLabel_3 = new QLabel(scrollAreaWidgetContents_6);
+        mFontWordSpacingLabel_3->setObjectName(QString::fromUtf8("mFontWordSpacingLabel_3"));
+        sizePolicy8.setHeightForWidth(mFontWordSpacingLabel_3->sizePolicy().hasHeightForWidth());
+        mFontWordSpacingLabel_3->setSizePolicy(sizePolicy8);
 
-        gridLayout_42->addWidget(mTextOrientationComboBox, 4, 1, 1, 2);
+        horizontalLayout_30->addWidget(mFontWordSpacingLabel_3);
+
+        mFontWordSpacingSpinBox = new QgsDoubleSpinBox(scrollAreaWidgetContents_6);
+        mFontWordSpacingSpinBox->setObjectName(QString::fromUtf8("mFontWordSpacingSpinBox"));
+        sizePolicy10.setHeightForWidth(mFontWordSpacingSpinBox->sizePolicy().hasHeightForWidth());
+        mFontWordSpacingSpinBox->setSizePolicy(sizePolicy10);
+        mFontWordSpacingSpinBox->setDecimals(4);
+        mFontWordSpacingSpinBox->setMinimum(-1000.000000000000000);
+        mFontWordSpacingSpinBox->setMaximum(999999999.000000000000000);
+        mFontWordSpacingSpinBox->setSingleStep(0.100000000000000);
+        mFontWordSpacingSpinBox->setProperty("showClearButton", QVariant(true));
+
+        horizontalLayout_30->addWidget(mFontWordSpacingSpinBox);
+
+
+        gridLayout_42->addLayout(horizontalLayout_30, 2, 1, 1, 2);
+
+        labelTextOrientation = new QLabel(scrollAreaWidgetContents_6);
+        labelTextOrientation->setObjectName(QString::fromUtf8("labelTextOrientation"));
+
+        gridLayout_42->addWidget(labelTextOrientation, 5, 0, 1, 1);
+
+        horizontalLayout_29 = new QHBoxLayout();
+        horizontalLayout_29->setSpacing(6);
+        horizontalLayout_29->setObjectName(QString::fromUtf8("horizontalLayout_29"));
+        mFontLetterSpacingLabel_3 = new QLabel(scrollAreaWidgetContents_6);
+        mFontLetterSpacingLabel_3->setObjectName(QString::fromUtf8("mFontLetterSpacingLabel_3"));
+        sizePolicy8.setHeightForWidth(mFontLetterSpacingLabel_3->sizePolicy().hasHeightForWidth());
+        mFontLetterSpacingLabel_3->setSizePolicy(sizePolicy8);
+
+        horizontalLayout_29->addWidget(mFontLetterSpacingLabel_3);
+
+        mFontLetterSpacingSpinBox = new QgsDoubleSpinBox(scrollAreaWidgetContents_6);
+        mFontLetterSpacingSpinBox->setObjectName(QString::fromUtf8("mFontLetterSpacingSpinBox"));
+        sizePolicy10.setHeightForWidth(mFontLetterSpacingSpinBox->sizePolicy().hasHeightForWidth());
+        mFontLetterSpacingSpinBox->setSizePolicy(sizePolicy10);
+        mFontLetterSpacingSpinBox->setDecimals(4);
+        mFontLetterSpacingSpinBox->setMinimum(-1000.000000000000000);
+        mFontLetterSpacingSpinBox->setMaximum(999999999.000000000000000);
+        mFontLetterSpacingSpinBox->setSingleStep(0.100000000000000);
+        mFontLetterSpacingSpinBox->setProperty("showClearButton", QVariant(true));
+
+        horizontalLayout_29->addWidget(mFontLetterSpacingSpinBox);
+
+
+        gridLayout_42->addLayout(horizontalLayout_29, 1, 1, 1, 2);
+
+        label_10 = new QLabel(scrollAreaWidgetContents_6);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+
+        gridLayout_42->addWidget(label_10, 1, 0, 1, 1);
+
+        labelBlendMode = new QLabel(scrollAreaWidgetContents_6);
+        labelBlendMode->setObjectName(QString::fromUtf8("labelBlendMode"));
+
+        gridLayout_42->addWidget(labelBlendMode, 6, 0, 1, 1);
+
+        mCheckBoxSubstituteText = new QCheckBox(scrollAreaWidgetContents_6);
+        mCheckBoxSubstituteText->setObjectName(QString::fromUtf8("mCheckBoxSubstituteText"));
+
+        gridLayout_42->addWidget(mCheckBoxSubstituteText, 7, 0, 1, 3);
 
         mToolButtonConfigureSubstitutes = new QToolButton(scrollAreaWidgetContents_6);
         mToolButtonConfigureSubstitutes->setObjectName(QString::fromUtf8("mToolButtonConfigureSubstitutes"));
         mToolButtonConfigureSubstitutes->setEnabled(false);
 
-        gridLayout_42->addWidget(mToolButtonConfigureSubstitutes, 6, 3, 1, 1);
+        gridLayout_42->addWidget(mToolButtonConfigureSubstitutes, 7, 3, 1, 1);
+
+        mFontWordSpacingDDBtn = new QgsPropertyOverrideButton(scrollAreaWidgetContents_6);
+        mFontWordSpacingDDBtn->setObjectName(QString::fromUtf8("mFontWordSpacingDDBtn"));
+
+        gridLayout_42->addWidget(mFontWordSpacingDDBtn, 2, 3, 1, 1);
+
+        mTextOrientationComboBox = new QComboBox(scrollAreaWidgetContents_6);
+        mTextOrientationComboBox->setObjectName(QString::fromUtf8("mTextOrientationComboBox"));
+
+        gridLayout_42->addWidget(mTextOrientationComboBox, 5, 1, 1, 2);
+
+        mFontCaseDDBtn = new QgsPropertyOverrideButton(scrollAreaWidgetContents_6);
+        mFontCaseDDBtn->setObjectName(QString::fromUtf8("mFontCaseDDBtn"));
+
+        gridLayout_42->addWidget(mFontCaseDDBtn, 0, 3, 1, 1);
+
+        mFontLetterSpacingDDBtn = new QgsPropertyOverrideButton(scrollAreaWidgetContents_6);
+        mFontLetterSpacingDDBtn->setObjectName(QString::fromUtf8("mFontLetterSpacingDDBtn"));
+
+        gridLayout_42->addWidget(mFontLetterSpacingDDBtn, 1, 3, 1, 1);
 
         mDirectSymbolsFrame = new QFrame(scrollAreaWidgetContents_6);
         mDirectSymbolsFrame->setObjectName(QString::fromUtf8("mDirectSymbolsFrame"));
@@ -1262,11 +1360,11 @@ public:
 
         mDirectSymbChkBx = new QCheckBox(mDirectSymbolsFrame);
         mDirectSymbChkBx->setObjectName(QString::fromUtf8("mDirectSymbChkBx"));
-        QSizePolicy sizePolicy10(QSizePolicy::Maximum, QSizePolicy::Fixed);
-        sizePolicy10.setHorizontalStretch(0);
-        sizePolicy10.setVerticalStretch(0);
-        sizePolicy10.setHeightForWidth(mDirectSymbChkBx->sizePolicy().hasHeightForWidth());
-        mDirectSymbChkBx->setSizePolicy(sizePolicy10);
+        QSizePolicy sizePolicy11(QSizePolicy::Maximum, QSizePolicy::Fixed);
+        sizePolicy11.setHorizontalStretch(0);
+        sizePolicy11.setVerticalStretch(0);
+        sizePolicy11.setHeightForWidth(mDirectSymbChkBx->sizePolicy().hasHeightForWidth());
+        mDirectSymbChkBx->setSizePolicy(sizePolicy11);
 
         gridLayout_33->addWidget(mDirectSymbChkBx, 0, 0, 1, 1);
 
@@ -1288,11 +1386,8 @@ public:
         horizontalLayout_6->setContentsMargins(0, 0, 0, 0);
         mDirectSymbRightLineEdit = new QLineEdit(mDirectSymbRightFrame);
         mDirectSymbRightLineEdit->setObjectName(QString::fromUtf8("mDirectSymbRightLineEdit"));
-        QSizePolicy sizePolicy11(QSizePolicy::Preferred, QSizePolicy::Fixed);
-        sizePolicy11.setHorizontalStretch(0);
-        sizePolicy11.setVerticalStretch(0);
-        sizePolicy11.setHeightForWidth(mDirectSymbRightLineEdit->sizePolicy().hasHeightForWidth());
-        mDirectSymbRightLineEdit->setSizePolicy(sizePolicy11);
+        sizePolicy10.setHeightForWidth(mDirectSymbRightLineEdit->sizePolicy().hasHeightForWidth());
+        mDirectSymbRightLineEdit->setSizePolicy(sizePolicy10);
         mDirectSymbRightLineEdit->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout_6->addWidget(mDirectSymbRightLineEdit);
@@ -1354,8 +1449,8 @@ public:
         horizontalLayout_21->setContentsMargins(0, 0, 0, 0);
         mDirectSymbLeftLineEdit = new QLineEdit(mDirectSymbLeftFrame);
         mDirectSymbLeftLineEdit->setObjectName(QString::fromUtf8("mDirectSymbLeftLineEdit"));
-        sizePolicy11.setHeightForWidth(mDirectSymbLeftLineEdit->sizePolicy().hasHeightForWidth());
-        mDirectSymbLeftLineEdit->setSizePolicy(sizePolicy11);
+        sizePolicy10.setHeightForWidth(mDirectSymbLeftLineEdit->sizePolicy().hasHeightForWidth());
+        mDirectSymbLeftLineEdit->setSizePolicy(sizePolicy10);
         mDirectSymbLeftLineEdit->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
 
         horizontalLayout_21->addWidget(mDirectSymbLeftLineEdit);
@@ -1383,16 +1478,16 @@ public:
         horizontalLayout_17->setContentsMargins(0, 0, 0, 0);
         mDirectSymbRadioBtnLR = new QRadioButton(mDirectSymbPlacementFrame);
         mDirectSymbRadioBtnLR->setObjectName(QString::fromUtf8("mDirectSymbRadioBtnLR"));
-        sizePolicy10.setHeightForWidth(mDirectSymbRadioBtnLR->sizePolicy().hasHeightForWidth());
-        mDirectSymbRadioBtnLR->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mDirectSymbRadioBtnLR->sizePolicy().hasHeightForWidth());
+        mDirectSymbRadioBtnLR->setSizePolicy(sizePolicy11);
         mDirectSymbRadioBtnLR->setChecked(true);
 
         horizontalLayout_17->addWidget(mDirectSymbRadioBtnLR);
 
         mDirectSymbRadioBtnAbove = new QRadioButton(mDirectSymbPlacementFrame);
         mDirectSymbRadioBtnAbove->setObjectName(QString::fromUtf8("mDirectSymbRadioBtnAbove"));
-        sizePolicy10.setHeightForWidth(mDirectSymbRadioBtnAbove->sizePolicy().hasHeightForWidth());
-        mDirectSymbRadioBtnAbove->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mDirectSymbRadioBtnAbove->sizePolicy().hasHeightForWidth());
+        mDirectSymbRadioBtnAbove->setSizePolicy(sizePolicy11);
 
         horizontalLayout_17->addWidget(mDirectSymbRadioBtnAbove);
 
@@ -1408,72 +1503,18 @@ public:
         gridLayout_33->addWidget(mDirectSymbFrame, 1, 0, 1, 3);
 
 
-        gridLayout_42->addWidget(mDirectSymbolsFrame, 8, 0, 1, 4);
+        gridLayout_42->addWidget(mDirectSymbolsFrame, 9, 0, 1, 4);
 
-        mFontCaseDDBtn = new QgsPropertyOverrideButton(scrollAreaWidgetContents_6);
-        mFontCaseDDBtn->setObjectName(QString::fromUtf8("mFontCaseDDBtn"));
+        mFontCapitalsLabel = new QLabel(scrollAreaWidgetContents_6);
+        mFontCapitalsLabel->setObjectName(QString::fromUtf8("mFontCapitalsLabel"));
+        sizePolicy8.setHeightForWidth(mFontCapitalsLabel->sizePolicy().hasHeightForWidth());
+        mFontCapitalsLabel->setSizePolicy(sizePolicy8);
 
-        gridLayout_42->addWidget(mFontCaseDDBtn, 0, 3, 1, 1);
+        gridLayout_42->addWidget(mFontCapitalsLabel, 0, 0, 1, 1);
 
-        labelTextOrientation = new QLabel(scrollAreaWidgetContents_6);
-        labelTextOrientation->setObjectName(QString::fromUtf8("labelTextOrientation"));
+        verticalSpacer_6 = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
-        gridLayout_42->addWidget(labelTextOrientation, 4, 0, 1, 1);
-
-        horizontalLayout_29 = new QHBoxLayout();
-        horizontalLayout_29->setSpacing(6);
-        horizontalLayout_29->setObjectName(QString::fromUtf8("horizontalLayout_29"));
-        mFontLetterSpacingLabel_3 = new QLabel(scrollAreaWidgetContents_6);
-        mFontLetterSpacingLabel_3->setObjectName(QString::fromUtf8("mFontLetterSpacingLabel_3"));
-        sizePolicy8.setHeightForWidth(mFontLetterSpacingLabel_3->sizePolicy().hasHeightForWidth());
-        mFontLetterSpacingLabel_3->setSizePolicy(sizePolicy8);
-
-        horizontalLayout_29->addWidget(mFontLetterSpacingLabel_3);
-
-        mFontLetterSpacingSpinBox = new QgsDoubleSpinBox(scrollAreaWidgetContents_6);
-        mFontLetterSpacingSpinBox->setObjectName(QString::fromUtf8("mFontLetterSpacingSpinBox"));
-        sizePolicy11.setHeightForWidth(mFontLetterSpacingSpinBox->sizePolicy().hasHeightForWidth());
-        mFontLetterSpacingSpinBox->setSizePolicy(sizePolicy11);
-        mFontLetterSpacingSpinBox->setDecimals(4);
-        mFontLetterSpacingSpinBox->setMinimum(-1000.000000000000000);
-        mFontLetterSpacingSpinBox->setMaximum(999999999.000000000000000);
-        mFontLetterSpacingSpinBox->setSingleStep(0.100000000000000);
-        mFontLetterSpacingSpinBox->setProperty("showClearButton", QVariant(true));
-
-        horizontalLayout_29->addWidget(mFontLetterSpacingSpinBox);
-
-
-        gridLayout_42->addLayout(horizontalLayout_29, 1, 1, 1, 2);
-
-        mTextOrientationDDBtn = new QgsPropertyOverrideButton(scrollAreaWidgetContents_6);
-        mTextOrientationDDBtn->setObjectName(QString::fromUtf8("mTextOrientationDDBtn"));
-
-        gridLayout_42->addWidget(mTextOrientationDDBtn, 4, 3, 1, 1);
-
-        labelBlendMode = new QLabel(scrollAreaWidgetContents_6);
-        labelBlendMode->setObjectName(QString::fromUtf8("labelBlendMode"));
-
-        gridLayout_42->addWidget(labelBlendMode, 5, 0, 1, 1);
-
-        mCheckBoxSubstituteText = new QCheckBox(scrollAreaWidgetContents_6);
-        mCheckBoxSubstituteText->setObjectName(QString::fromUtf8("mCheckBoxSubstituteText"));
-
-        gridLayout_42->addWidget(mCheckBoxSubstituteText, 6, 0, 1, 3);
-
-        mFontWordSpacingDDBtn = new QgsPropertyOverrideButton(scrollAreaWidgetContents_6);
-        mFontWordSpacingDDBtn->setObjectName(QString::fromUtf8("mFontWordSpacingDDBtn"));
-
-        gridLayout_42->addWidget(mFontWordSpacingDDBtn, 2, 3, 1, 1);
-
-        mFontLetterSpacingDDBtn = new QgsPropertyOverrideButton(scrollAreaWidgetContents_6);
-        mFontLetterSpacingDDBtn->setObjectName(QString::fromUtf8("mFontLetterSpacingDDBtn"));
-
-        gridLayout_42->addWidget(mFontLetterSpacingDDBtn, 1, 3, 1, 1);
-
-        comboBlendMode = new QgsBlendModeComboBox(scrollAreaWidgetContents_6);
-        comboBlendMode->setObjectName(QString::fromUtf8("comboBlendMode"));
-
-        gridLayout_42->addWidget(comboBlendMode, 5, 1, 1, 2);
+        gridLayout_42->addItem(verticalSpacer_6, 11, 3, 1, 1);
 
         gridLayout_34 = new QGridLayout();
         gridLayout_34->setSpacing(6);
@@ -1485,8 +1526,8 @@ public:
 
         mFormatNumChkBx = new QCheckBox(scrollAreaWidgetContents_6);
         mFormatNumChkBx->setObjectName(QString::fromUtf8("mFormatNumChkBx"));
-        sizePolicy10.setHeightForWidth(mFormatNumChkBx->sizePolicy().hasHeightForWidth());
-        mFormatNumChkBx->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mFormatNumChkBx->sizePolicy().hasHeightForWidth());
+        mFormatNumChkBx->setSizePolicy(sizePolicy11);
 
         gridLayout_34->addWidget(mFormatNumChkBx, 0, 0, 1, 1);
 
@@ -1537,41 +1578,17 @@ public:
         gridLayout_34->addWidget(mFormatNumFrame, 1, 0, 1, 3);
 
 
-        gridLayout_42->addLayout(gridLayout_34, 9, 0, 1, 4);
+        gridLayout_42->addLayout(gridLayout_34, 10, 0, 1, 4);
 
-        horizontalLayout_30 = new QHBoxLayout();
-        horizontalLayout_30->setSpacing(6);
-        horizontalLayout_30->setObjectName(QString::fromUtf8("horizontalLayout_30"));
-        mFontWordSpacingLabel_3 = new QLabel(scrollAreaWidgetContents_6);
-        mFontWordSpacingLabel_3->setObjectName(QString::fromUtf8("mFontWordSpacingLabel_3"));
-        sizePolicy8.setHeightForWidth(mFontWordSpacingLabel_3->sizePolicy().hasHeightForWidth());
-        mFontWordSpacingLabel_3->setSizePolicy(sizePolicy8);
+        mFontBlendModeDDBtn = new QgsPropertyOverrideButton(scrollAreaWidgetContents_6);
+        mFontBlendModeDDBtn->setObjectName(QString::fromUtf8("mFontBlendModeDDBtn"));
 
-        horizontalLayout_30->addWidget(mFontWordSpacingLabel_3);
+        gridLayout_42->addWidget(mFontBlendModeDDBtn, 6, 3, 1, 1);
 
-        mFontWordSpacingSpinBox = new QgsDoubleSpinBox(scrollAreaWidgetContents_6);
-        mFontWordSpacingSpinBox->setObjectName(QString::fromUtf8("mFontWordSpacingSpinBox"));
-        sizePolicy11.setHeightForWidth(mFontWordSpacingSpinBox->sizePolicy().hasHeightForWidth());
-        mFontWordSpacingSpinBox->setSizePolicy(sizePolicy11);
-        mFontWordSpacingSpinBox->setDecimals(4);
-        mFontWordSpacingSpinBox->setMinimum(-1000.000000000000000);
-        mFontWordSpacingSpinBox->setMaximum(999999999.000000000000000);
-        mFontWordSpacingSpinBox->setSingleStep(0.100000000000000);
-        mFontWordSpacingSpinBox->setProperty("showClearButton", QVariant(true));
+        mTextOrientationDDBtn = new QgsPropertyOverrideButton(scrollAreaWidgetContents_6);
+        mTextOrientationDDBtn->setObjectName(QString::fromUtf8("mTextOrientationDDBtn"));
 
-        horizontalLayout_30->addWidget(mFontWordSpacingSpinBox);
-
-
-        gridLayout_42->addLayout(horizontalLayout_30, 2, 1, 1, 2);
-
-        mFontCapitalsComboBox = new QComboBox(scrollAreaWidgetContents_6);
-        mFontCapitalsComboBox->setObjectName(QString::fromUtf8("mFontCapitalsComboBox"));
-        mFontCapitalsComboBox->setEnabled(true);
-        sizePolicy11.setHeightForWidth(mFontCapitalsComboBox->sizePolicy().hasHeightForWidth());
-        mFontCapitalsComboBox->setSizePolicy(sizePolicy11);
-        mFontCapitalsComboBox->setMaximumSize(QSize(16777215, 16777215));
-
-        gridLayout_42->addWidget(mFontCapitalsComboBox, 0, 1, 1, 2);
+        gridLayout_42->addWidget(mTextOrientationDDBtn, 5, 3, 1, 1);
 
         gridLayout_35 = new QGridLayout();
         gridLayout_35->setSpacing(6);
@@ -1679,26 +1696,35 @@ public:
         gridLayout_35->addWidget(mMultiLinesFrame, 2, 0, 1, 1);
 
 
-        gridLayout_42->addLayout(gridLayout_35, 7, 0, 1, 4);
-
-        verticalSpacer_6 = new QSpacerItem(20, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_42->addItem(verticalSpacer_6, 10, 3, 1, 1);
-
-        label_10 = new QLabel(scrollAreaWidgetContents_6);
-        label_10->setObjectName(QString::fromUtf8("label_10"));
-
-        gridLayout_42->addWidget(label_10, 1, 0, 1, 1);
-
-        mFontBlendModeDDBtn = new QgsPropertyOverrideButton(scrollAreaWidgetContents_6);
-        mFontBlendModeDDBtn->setObjectName(QString::fromUtf8("mFontBlendModeDDBtn"));
-
-        gridLayout_42->addWidget(mFontBlendModeDDBtn, 5, 3, 1, 1);
+        gridLayout_42->addLayout(gridLayout_35, 8, 0, 1, 4);
 
         mKerningCheckBox = new QCheckBox(scrollAreaWidgetContents_6);
         mKerningCheckBox->setObjectName(QString::fromUtf8("mKerningCheckBox"));
 
-        gridLayout_42->addWidget(mKerningCheckBox, 3, 0, 1, 3);
+        gridLayout_42->addWidget(mKerningCheckBox, 4, 0, 1, 3);
+
+        comboBlendMode = new QgsBlendModeComboBox(scrollAreaWidgetContents_6);
+        comboBlendMode->setObjectName(QString::fromUtf8("comboBlendMode"));
+
+        gridLayout_42->addWidget(comboBlendMode, 6, 1, 1, 2);
+
+        mLabelStretch = new QLabel(scrollAreaWidgetContents_6);
+        mLabelStretch->setObjectName(QString::fromUtf8("mLabelStretch"));
+
+        gridLayout_42->addWidget(mLabelStretch, 3, 0, 1, 1);
+
+        mSpinStretch = new QgsSpinBox(scrollAreaWidgetContents_6);
+        mSpinStretch->setObjectName(QString::fromUtf8("mSpinStretch"));
+        mSpinStretch->setMinimum(1);
+        mSpinStretch->setMaximum(4000);
+        mSpinStretch->setValue(100);
+
+        gridLayout_42->addWidget(mSpinStretch, 3, 1, 1, 2);
+
+        mFontStretchDDBtn = new QgsPropertyOverrideButton(scrollAreaWidgetContents_6);
+        mFontStretchDDBtn->setObjectName(QString::fromUtf8("mFontStretchDDBtn"));
+
+        gridLayout_42->addWidget(mFontStretchDDBtn, 3, 3, 1, 1);
 
         scrollArea_5->setWidget(scrollAreaWidgetContents_6);
 
@@ -1718,7 +1744,7 @@ public:
         scrollArea_7->setWidgetResizable(true);
         scrollAreaWidgetContents_3 = new QWidget();
         scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
-        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 338, 401));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 299, 308));
         verticalLayout_12 = new QVBoxLayout(scrollAreaWidgetContents_3);
         verticalLayout_12->setSpacing(6);
         verticalLayout_12->setContentsMargins(11, 11, 11, 11);
@@ -1734,8 +1760,8 @@ public:
 
         mBufferDrawChkBx = new QCheckBox(scrollAreaWidgetContents_3);
         mBufferDrawChkBx->setObjectName(QString::fromUtf8("mBufferDrawChkBx"));
-        sizePolicy10.setHeightForWidth(mBufferDrawChkBx->sizePolicy().hasHeightForWidth());
-        mBufferDrawChkBx->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mBufferDrawChkBx->sizePolicy().hasHeightForWidth());
+        mBufferDrawChkBx->setSizePolicy(sizePolicy11);
 
         gridLayout_36->addWidget(mBufferDrawChkBx, 1, 0, 1, 1);
 
@@ -1915,7 +1941,7 @@ public:
         scrollArea_71->setWidgetResizable(true);
         scrollAreaWidgetContents_31 = new QWidget();
         scrollAreaWidgetContents_31->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_31"));
-        scrollAreaWidgetContents_31->setGeometry(QRect(0, 0, 338, 351));
+        scrollAreaWidgetContents_31->setGeometry(QRect(0, 0, 296, 291));
         verticalLayout_121 = new QVBoxLayout(scrollAreaWidgetContents_31);
         verticalLayout_121->setSpacing(6);
         verticalLayout_121->setContentsMargins(11, 11, 11, 11);
@@ -1936,8 +1962,8 @@ public:
 
         mEnableMaskChkBx = new QCheckBox(scrollAreaWidgetContents_31);
         mEnableMaskChkBx->setObjectName(QString::fromUtf8("mEnableMaskChkBx"));
-        sizePolicy10.setHeightForWidth(mEnableMaskChkBx->sizePolicy().hasHeightForWidth());
-        mEnableMaskChkBx->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mEnableMaskChkBx->sizePolicy().hasHeightForWidth());
+        mEnableMaskChkBx->setSizePolicy(sizePolicy11);
 
         gridLayout_361->addWidget(mEnableMaskChkBx, 1, 0, 1, 1);
 
@@ -2073,7 +2099,7 @@ public:
         scrollArea_2->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 513, 1053));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 438, 753));
         verticalLayout_21 = new QVBoxLayout(scrollAreaWidgetContents_2);
         verticalLayout_21->setSpacing(6);
         verticalLayout_21->setContentsMargins(11, 11, 11, 11);
@@ -2088,8 +2114,8 @@ public:
 
         mShapeDrawChkBx = new QCheckBox(scrollAreaWidgetContents_2);
         mShapeDrawChkBx->setObjectName(QString::fromUtf8("mShapeDrawChkBx"));
-        sizePolicy10.setHeightForWidth(mShapeDrawChkBx->sizePolicy().hasHeightForWidth());
-        mShapeDrawChkBx->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mShapeDrawChkBx->sizePolicy().hasHeightForWidth());
+        mShapeDrawChkBx->setSizePolicy(sizePolicy11);
 
         gridLayout_37->addWidget(mShapeDrawChkBx, 1, 0, 1, 1);
 
@@ -2242,8 +2268,8 @@ public:
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         mShapeRadiusXDbSpnBx = new QgsDoubleSpinBox(mShapeFrame);
         mShapeRadiusXDbSpnBx->setObjectName(QString::fromUtf8("mShapeRadiusXDbSpnBx"));
-        sizePolicy11.setHeightForWidth(mShapeRadiusXDbSpnBx->sizePolicy().hasHeightForWidth());
-        mShapeRadiusXDbSpnBx->setSizePolicy(sizePolicy11);
+        sizePolicy10.setHeightForWidth(mShapeRadiusXDbSpnBx->sizePolicy().hasHeightForWidth());
+        mShapeRadiusXDbSpnBx->setSizePolicy(sizePolicy10);
         mShapeRadiusXDbSpnBx->setDecimals(4);
         mShapeRadiusXDbSpnBx->setMaximum(999999999.990000009536743);
         mShapeRadiusXDbSpnBx->setSingleStep(0.100000000000000);
@@ -2252,8 +2278,8 @@ public:
 
         mShapeRadiusYDbSpnBx = new QgsDoubleSpinBox(mShapeFrame);
         mShapeRadiusYDbSpnBx->setObjectName(QString::fromUtf8("mShapeRadiusYDbSpnBx"));
-        sizePolicy11.setHeightForWidth(mShapeRadiusYDbSpnBx->sizePolicy().hasHeightForWidth());
-        mShapeRadiusYDbSpnBx->setSizePolicy(sizePolicy11);
+        sizePolicy10.setHeightForWidth(mShapeRadiusYDbSpnBx->sizePolicy().hasHeightForWidth());
+        mShapeRadiusYDbSpnBx->setSizePolicy(sizePolicy10);
         mShapeRadiusYDbSpnBx->setDecimals(4);
         mShapeRadiusYDbSpnBx->setMaximum(999999999.990000009536743);
         mShapeRadiusYDbSpnBx->setSingleStep(0.100000000000000);
@@ -2319,8 +2345,8 @@ public:
         horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
         mShapeOffsetXSpnBx = new QgsDoubleSpinBox(mShapeFrame);
         mShapeOffsetXSpnBx->setObjectName(QString::fromUtf8("mShapeOffsetXSpnBx"));
-        sizePolicy11.setHeightForWidth(mShapeOffsetXSpnBx->sizePolicy().hasHeightForWidth());
-        mShapeOffsetXSpnBx->setSizePolicy(sizePolicy11);
+        sizePolicy10.setHeightForWidth(mShapeOffsetXSpnBx->sizePolicy().hasHeightForWidth());
+        mShapeOffsetXSpnBx->setSizePolicy(sizePolicy10);
         mShapeOffsetXSpnBx->setDecimals(4);
         mShapeOffsetXSpnBx->setMinimum(-9999999.000000000000000);
         mShapeOffsetXSpnBx->setMaximum(9999999.000000000000000);
@@ -2330,8 +2356,8 @@ public:
 
         mShapeOffsetYSpnBx = new QgsDoubleSpinBox(mShapeFrame);
         mShapeOffsetYSpnBx->setObjectName(QString::fromUtf8("mShapeOffsetYSpnBx"));
-        sizePolicy11.setHeightForWidth(mShapeOffsetYSpnBx->sizePolicy().hasHeightForWidth());
-        mShapeOffsetYSpnBx->setSizePolicy(sizePolicy11);
+        sizePolicy10.setHeightForWidth(mShapeOffsetYSpnBx->sizePolicy().hasHeightForWidth());
+        mShapeOffsetYSpnBx->setSizePolicy(sizePolicy10);
         mShapeOffsetYSpnBx->setDecimals(4);
         mShapeOffsetYSpnBx->setMinimum(-9999999.000000000000000);
         mShapeOffsetYSpnBx->setMaximum(9999999.000000000000000);
@@ -2528,7 +2554,7 @@ public:
         scrollArea_8->setWidgetResizable(true);
         scrollAreaWidgetContents_8 = new QWidget();
         scrollAreaWidgetContents_8->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_8"));
-        scrollAreaWidgetContents_8->setGeometry(QRect(0, 0, 356, 592));
+        scrollAreaWidgetContents_8->setGeometry(QRect(0, 0, 324, 457));
         verticalLayout_22 = new QVBoxLayout(scrollAreaWidgetContents_8);
         verticalLayout_22->setSpacing(6);
         verticalLayout_22->setContentsMargins(11, 11, 11, 11);
@@ -2543,8 +2569,8 @@ public:
 
         mShadowDrawChkBx = new QCheckBox(scrollAreaWidgetContents_8);
         mShadowDrawChkBx->setObjectName(QString::fromUtf8("mShadowDrawChkBx"));
-        sizePolicy10.setHeightForWidth(mShadowDrawChkBx->sizePolicy().hasHeightForWidth());
-        mShadowDrawChkBx->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mShadowDrawChkBx->sizePolicy().hasHeightForWidth());
+        mShadowDrawChkBx->setSizePolicy(sizePolicy11);
 
         gridLayout_38->addWidget(mShadowDrawChkBx, 1, 0, 1, 1);
 
@@ -2778,13 +2804,13 @@ public:
         verticalLayout_14->setContentsMargins(11, 11, 11, 11);
         verticalLayout_14->setObjectName(QString::fromUtf8("verticalLayout_14"));
         verticalLayout_14->setContentsMargins(0, 0, 0, 0);
-        scrollArea_6 = new QScrollArea(mLabelPage_Callouts);
+        scrollArea_6 = new QgsScrollArea(mLabelPage_Callouts);
         scrollArea_6->setObjectName(QString::fromUtf8("scrollArea_6"));
         scrollArea_6->setFrameShape(QFrame::NoFrame);
         scrollArea_6->setWidgetResizable(true);
         scrollAreaWidgetContents_7 = new QWidget();
         scrollAreaWidgetContents_7->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_7"));
-        scrollAreaWidgetContents_7->setGeometry(QRect(0, 0, 181, 227));
+        scrollAreaWidgetContents_7->setGeometry(QRect(0, 0, 159, 211));
         gridLayout_46 = new QGridLayout(scrollAreaWidgetContents_7);
         gridLayout_46->setSpacing(6);
         gridLayout_46->setContentsMargins(11, 11, 11, 11);
@@ -2795,8 +2821,8 @@ public:
         gridLayout_43->setObjectName(QString::fromUtf8("gridLayout_43"));
         mCalloutsDrawCheckBox = new QCheckBox(scrollAreaWidgetContents_7);
         mCalloutsDrawCheckBox->setObjectName(QString::fromUtf8("mCalloutsDrawCheckBox"));
-        sizePolicy10.setHeightForWidth(mCalloutsDrawCheckBox->sizePolicy().hasHeightForWidth());
-        mCalloutsDrawCheckBox->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mCalloutsDrawCheckBox->sizePolicy().hasHeightForWidth());
+        mCalloutsDrawCheckBox->setSizePolicy(sizePolicy11);
 
         gridLayout_43->addWidget(mCalloutsDrawCheckBox, 1, 0, 1, 1);
 
@@ -2881,7 +2907,7 @@ public:
         scrollArea_3->setWidgetResizable(true);
         scrollAreaWidgetContents_4 = new QWidget();
         scrollAreaWidgetContents_4->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_4"));
-        scrollAreaWidgetContents_4->setGeometry(QRect(0, 0, 510, 2074));
+        scrollAreaWidgetContents_4->setGeometry(QRect(0, 0, 472, 1690));
         verticalLayout_11 = new QVBoxLayout(scrollAreaWidgetContents_4);
         verticalLayout_11->setSpacing(6);
         verticalLayout_11->setContentsMargins(11, 11, 11, 11);
@@ -2939,8 +2965,8 @@ public:
         gridLayout_25->setContentsMargins(0, 0, 0, 0);
         mCentroidRadioVisible = new QRadioButton(mPlacementCentroidFrame);
         mCentroidRadioVisible->setObjectName(QString::fromUtf8("mCentroidRadioVisible"));
-        sizePolicy10.setHeightForWidth(mCentroidRadioVisible->sizePolicy().hasHeightForWidth());
-        mCentroidRadioVisible->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mCentroidRadioVisible->sizePolicy().hasHeightForWidth());
+        mCentroidRadioVisible->setSizePolicy(sizePolicy11);
         mCentroidRadioVisible->setChecked(true);
 
         gridLayout_25->addWidget(mCentroidRadioVisible, 1, 1, 1, 1);
@@ -2952,8 +2978,8 @@ public:
 
         mCentroidRadioWhole = new QRadioButton(mPlacementCentroidFrame);
         mCentroidRadioWhole->setObjectName(QString::fromUtf8("mCentroidRadioWhole"));
-        sizePolicy11.setHeightForWidth(mCentroidRadioWhole->sizePolicy().hasHeightForWidth());
-        mCentroidRadioWhole->setSizePolicy(sizePolicy11);
+        sizePolicy10.setHeightForWidth(mCentroidRadioWhole->sizePolicy().hasHeightForWidth());
+        mCentroidRadioWhole->setSizePolicy(sizePolicy10);
 
         gridLayout_25->addWidget(mCentroidRadioWhole, 1, 2, 1, 1);
 
@@ -3132,16 +3158,16 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         chkLineAbove = new QCheckBox(mPlacementLineFrame);
         chkLineAbove->setObjectName(QString::fromUtf8("chkLineAbove"));
-        sizePolicy10.setHeightForWidth(chkLineAbove->sizePolicy().hasHeightForWidth());
-        chkLineAbove->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(chkLineAbove->sizePolicy().hasHeightForWidth());
+        chkLineAbove->setSizePolicy(sizePolicy11);
         chkLineAbove->setChecked(true);
 
         horizontalLayout->addWidget(chkLineAbove);
 
         chkLineOn = new QCheckBox(mPlacementLineFrame);
         chkLineOn->setObjectName(QString::fromUtf8("chkLineOn"));
-        sizePolicy10.setHeightForWidth(chkLineOn->sizePolicy().hasHeightForWidth());
-        chkLineOn->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(chkLineOn->sizePolicy().hasHeightForWidth());
+        chkLineOn->setSizePolicy(sizePolicy11);
 
         horizontalLayout->addWidget(chkLineOn);
 
@@ -3206,8 +3232,8 @@ public:
         gridLayout_15->setContentsMargins(0, 0, 0, 0);
         mPointOffsetYSpinBox = new QgsDoubleSpinBox(mPlacementOffsetFrame);
         mPointOffsetYSpinBox->setObjectName(QString::fromUtf8("mPointOffsetYSpinBox"));
-        sizePolicy11.setHeightForWidth(mPointOffsetYSpinBox->sizePolicy().hasHeightForWidth());
-        mPointOffsetYSpinBox->setSizePolicy(sizePolicy11);
+        sizePolicy10.setHeightForWidth(mPointOffsetYSpinBox->sizePolicy().hasHeightForWidth());
+        mPointOffsetYSpinBox->setSizePolicy(sizePolicy10);
         mPointOffsetYSpinBox->setDecimals(4);
         mPointOffsetYSpinBox->setMinimum(-9999999.000000000000000);
         mPointOffsetYSpinBox->setMaximum(9999999.000000000000000);
@@ -3227,8 +3253,8 @@ public:
 
         mPointOffsetXSpinBox = new QgsDoubleSpinBox(mPlacementOffsetFrame);
         mPointOffsetXSpinBox->setObjectName(QString::fromUtf8("mPointOffsetXSpinBox"));
-        sizePolicy11.setHeightForWidth(mPointOffsetXSpinBox->sizePolicy().hasHeightForWidth());
-        mPointOffsetXSpinBox->setSizePolicy(sizePolicy11);
+        sizePolicy10.setHeightForWidth(mPointOffsetXSpinBox->sizePolicy().hasHeightForWidth());
+        mPointOffsetXSpinBox->setSizePolicy(sizePolicy10);
         mPointOffsetXSpinBox->setDecimals(4);
         mPointOffsetXSpinBox->setMinimum(-9999999.000000000000000);
         mPointOffsetXSpinBox->setMaximum(9999999.000000000000000);
@@ -3595,20 +3621,67 @@ public:
         gridLayout_4->setContentsMargins(11, 11, 11, 11);
         gridLayout_4->setObjectName(QString::fromUtf8("gridLayout_4"));
         gridLayout_4->setContentsMargins(8, -1, 8, -1);
-        mCoordAlignmentLabel = new QLabel(mPlacementDDGroupBox);
-        mCoordAlignmentLabel->setObjectName(QString::fromUtf8("mCoordAlignmentLabel"));
+        horizontalLayout_25 = new QHBoxLayout();
+        horizontalLayout_25->setSpacing(6);
+        horizontalLayout_25->setObjectName(QString::fromUtf8("horizontalLayout_25"));
+        mCoordRotationDDBtn = new QgsPropertyOverrideButton(mPlacementDDGroupBox);
+        mCoordRotationDDBtn->setObjectName(QString::fromUtf8("mCoordRotationDDBtn"));
 
-        gridLayout_4->addWidget(mCoordAlignmentLabel, 1, 0, 1, 1);
+        horizontalLayout_25->addWidget(mCoordRotationDDBtn);
+
+        mCoordRotationUnitComboBox = new QComboBox(mPlacementDDGroupBox);
+        mCoordRotationUnitComboBox->setObjectName(QString::fromUtf8("mCoordRotationUnitComboBox"));
+
+        horizontalLayout_25->addWidget(mCoordRotationUnitComboBox);
+
+        chkPreserveRotation = new QCheckBox(mPlacementDDGroupBox);
+        chkPreserveRotation->setObjectName(QString::fromUtf8("chkPreserveRotation"));
+        chkPreserveRotation->setStyleSheet(QString::fromUtf8("margin-left: 12px; margin-top: 3px;"));
+        chkPreserveRotation->setChecked(true);
+
+        horizontalLayout_25->addWidget(chkPreserveRotation);
+
+
+        gridLayout_4->addLayout(horizontalLayout_25, 3, 1, 1, 1);
+
+        horizontalLayout_22 = new QHBoxLayout();
+        horizontalLayout_22->setSpacing(6);
+        horizontalLayout_22->setObjectName(QString::fromUtf8("horizontalLayout_22"));
+        mCoordXLabel = new QLabel(mPlacementDDGroupBox);
+        mCoordXLabel->setObjectName(QString::fromUtf8("mCoordXLabel"));
+        sizePolicy8.setHeightForWidth(mCoordXLabel->sizePolicy().hasHeightForWidth());
+        mCoordXLabel->setSizePolicy(sizePolicy8);
+
+        horizontalLayout_22->addWidget(mCoordXLabel);
+
+        mCoordXDDBtn = new QgsPropertyOverrideButton(mPlacementDDGroupBox);
+        mCoordXDDBtn->setObjectName(QString::fromUtf8("mCoordXDDBtn"));
+
+        horizontalLayout_22->addWidget(mCoordXDDBtn);
+
+        mCoordYLabel = new QLabel(mPlacementDDGroupBox);
+        mCoordYLabel->setObjectName(QString::fromUtf8("mCoordYLabel"));
+        sizePolicy8.setHeightForWidth(mCoordYLabel->sizePolicy().hasHeightForWidth());
+        mCoordYLabel->setSizePolicy(sizePolicy8);
+
+        horizontalLayout_22->addWidget(mCoordYLabel);
+
+        mCoordYDDBtn = new QgsPropertyOverrideButton(mPlacementDDGroupBox);
+        mCoordYDDBtn->setObjectName(QString::fromUtf8("mCoordYDDBtn"));
+
+        horizontalLayout_22->addWidget(mCoordYDDBtn);
+
+        horizontalSpacer_6 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_22->addItem(horizontalSpacer_6);
+
+
+        gridLayout_4->addLayout(horizontalLayout_22, 0, 1, 1, 1);
 
         mCoordLabel = new QLabel(mPlacementDDGroupBox);
         mCoordLabel->setObjectName(QString::fromUtf8("mCoordLabel"));
 
         gridLayout_4->addWidget(mCoordLabel, 0, 0, 1, 1);
-
-        mCoordRotationLabel = new QLabel(mPlacementDDGroupBox);
-        mCoordRotationLabel->setObjectName(QString::fromUtf8("mCoordRotationLabel"));
-
-        gridLayout_4->addWidget(mCoordRotationLabel, 2, 0, 1, 1);
 
         mCoordAlignmentFrame = new QFrame(mPlacementDDGroupBox);
         mCoordAlignmentFrame->setObjectName(QString::fromUtf8("mCoordAlignmentFrame"));
@@ -3646,59 +3719,37 @@ public:
         horizontalLayout_27->addItem(horizontalSpacer_21);
 
 
-        gridLayout_4->addWidget(mCoordAlignmentFrame, 1, 1, 1, 1);
+        gridLayout_4->addWidget(mCoordAlignmentFrame, 2, 1, 1, 1);
 
-        horizontalLayout_22 = new QHBoxLayout();
-        horizontalLayout_22->setSpacing(6);
-        horizontalLayout_22->setObjectName(QString::fromUtf8("horizontalLayout_22"));
-        mCoordXLabel = new QLabel(mPlacementDDGroupBox);
-        mCoordXLabel->setObjectName(QString::fromUtf8("mCoordXLabel"));
-        sizePolicy8.setHeightForWidth(mCoordXLabel->sizePolicy().hasHeightForWidth());
-        mCoordXLabel->setSizePolicy(sizePolicy8);
+        mCoordRotationLabel = new QLabel(mPlacementDDGroupBox);
+        mCoordRotationLabel->setObjectName(QString::fromUtf8("mCoordRotationLabel"));
 
-        horizontalLayout_22->addWidget(mCoordXLabel);
+        gridLayout_4->addWidget(mCoordRotationLabel, 3, 0, 1, 1);
 
-        mCoordXDDBtn = new QgsPropertyOverrideButton(mPlacementDDGroupBox);
-        mCoordXDDBtn->setObjectName(QString::fromUtf8("mCoordXDDBtn"));
+        horizontalLayout_15 = new QHBoxLayout();
+        horizontalLayout_15->setSpacing(6);
+        horizontalLayout_15->setObjectName(QString::fromUtf8("horizontalLayout_15"));
+        mCoordPointDDBtn = new QgsPropertyOverrideButton(mPlacementDDGroupBox);
+        mCoordPointDDBtn->setObjectName(QString::fromUtf8("mCoordPointDDBtn"));
 
-        horizontalLayout_22->addWidget(mCoordXDDBtn);
-
-        mCoordYLabel = new QLabel(mPlacementDDGroupBox);
-        mCoordYLabel->setObjectName(QString::fromUtf8("mCoordYLabel"));
-        sizePolicy8.setHeightForWidth(mCoordYLabel->sizePolicy().hasHeightForWidth());
-        mCoordYLabel->setSizePolicy(sizePolicy8);
-
-        horizontalLayout_22->addWidget(mCoordYLabel);
-
-        mCoordYDDBtn = new QgsPropertyOverrideButton(mPlacementDDGroupBox);
-        mCoordYDDBtn->setObjectName(QString::fromUtf8("mCoordYDDBtn"));
-
-        horizontalLayout_22->addWidget(mCoordYDDBtn);
+        horizontalLayout_15->addWidget(mCoordPointDDBtn);
 
         horizontalSpacer_22 = new QSpacerItem(0, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
-        horizontalLayout_22->addItem(horizontalSpacer_22);
+        horizontalLayout_15->addItem(horizontalSpacer_22);
 
 
-        gridLayout_4->addLayout(horizontalLayout_22, 0, 1, 1, 1);
+        gridLayout_4->addLayout(horizontalLayout_15, 1, 1, 1, 1);
 
-        horizontalLayout_25 = new QHBoxLayout();
-        horizontalLayout_25->setSpacing(6);
-        horizontalLayout_25->setObjectName(QString::fromUtf8("horizontalLayout_25"));
-        mCoordRotationDDBtn = new QgsPropertyOverrideButton(mPlacementDDGroupBox);
-        mCoordRotationDDBtn->setObjectName(QString::fromUtf8("mCoordRotationDDBtn"));
+        mCoordAlignmentLabel = new QLabel(mPlacementDDGroupBox);
+        mCoordAlignmentLabel->setObjectName(QString::fromUtf8("mCoordAlignmentLabel"));
 
-        horizontalLayout_25->addWidget(mCoordRotationDDBtn);
+        gridLayout_4->addWidget(mCoordAlignmentLabel, 2, 0, 1, 1);
 
-        chkPreserveRotation = new QCheckBox(mPlacementDDGroupBox);
-        chkPreserveRotation->setObjectName(QString::fromUtf8("chkPreserveRotation"));
-        chkPreserveRotation->setStyleSheet(QString::fromUtf8("margin-left: 12px; margin-top: 3px;"));
-        chkPreserveRotation->setChecked(true);
+        label_44 = new QLabel(mPlacementDDGroupBox);
+        label_44->setObjectName(QString::fromUtf8("label_44"));
 
-        horizontalLayout_25->addWidget(chkPreserveRotation);
-
-
-        gridLayout_4->addLayout(horizontalLayout_25, 2, 1, 1, 1);
+        gridLayout_4->addWidget(label_44, 1, 0, 1, 1);
 
 
         verticalLayout_11->addWidget(mPlacementDDGroupBox);
@@ -3815,7 +3866,7 @@ public:
         scrollArea_4->setWidgetResizable(true);
         scrollAreaWidgetContents_5 = new QWidget();
         scrollAreaWidgetContents_5->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_5"));
-        scrollAreaWidgetContents_5->setGeometry(QRect(0, 0, 461, 858));
+        scrollAreaWidgetContents_5->setGeometry(QRect(0, 0, 430, 708));
         verticalLayout_8 = new QVBoxLayout(scrollAreaWidgetContents_5);
         verticalLayout_8->setSpacing(6);
         verticalLayout_8->setContentsMargins(11, 11, 11, 11);
@@ -3835,8 +3886,8 @@ public:
         gridLayout_9->setVerticalSpacing(6);
         mScaleBasedVisibilityChkBx = new QCheckBox(mRenderingLabelGrpBx);
         mScaleBasedVisibilityChkBx->setObjectName(QString::fromUtf8("mScaleBasedVisibilityChkBx"));
-        sizePolicy10.setHeightForWidth(mScaleBasedVisibilityChkBx->sizePolicy().hasHeightForWidth());
-        mScaleBasedVisibilityChkBx->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mScaleBasedVisibilityChkBx->sizePolicy().hasHeightForWidth());
+        mScaleBasedVisibilityChkBx->setSizePolicy(sizePolicy11);
 
         gridLayout_9->addWidget(mScaleBasedVisibilityChkBx, 0, 0, 1, 1);
 
@@ -3954,8 +4005,8 @@ public:
 
         mFontLimitPixelChkBox = new QCheckBox(mRenderingLabelGrpBx);
         mFontLimitPixelChkBox->setObjectName(QString::fromUtf8("mFontLimitPixelChkBox"));
-        sizePolicy10.setHeightForWidth(mFontLimitPixelChkBox->sizePolicy().hasHeightForWidth());
-        mFontLimitPixelChkBox->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mFontLimitPixelChkBox->sizePolicy().hasHeightForWidth());
+        mFontLimitPixelChkBox->setSizePolicy(sizePolicy11);
 
         gridLayout_16->addWidget(mFontLimitPixelChkBox, 0, 0, 1, 2);
 
@@ -4072,16 +4123,16 @@ public:
 
         mUpsidedownRadioOff = new QRadioButton(mUpsidedownFrame);
         mUpsidedownRadioOff->setObjectName(QString::fromUtf8("mUpsidedownRadioOff"));
-        sizePolicy10.setHeightForWidth(mUpsidedownRadioOff->sizePolicy().hasHeightForWidth());
-        mUpsidedownRadioOff->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mUpsidedownRadioOff->sizePolicy().hasHeightForWidth());
+        mUpsidedownRadioOff->setSizePolicy(sizePolicy11);
         mUpsidedownRadioOff->setChecked(true);
 
         gridLayout->addWidget(mUpsidedownRadioOff, 1, 1, 1, 1);
 
         mUpsidedownRadioDefined = new QRadioButton(mUpsidedownFrame);
         mUpsidedownRadioDefined->setObjectName(QString::fromUtf8("mUpsidedownRadioDefined"));
-        sizePolicy10.setHeightForWidth(mUpsidedownRadioDefined->sizePolicy().hasHeightForWidth());
-        mUpsidedownRadioDefined->setSizePolicy(sizePolicy10);
+        sizePolicy11.setHeightForWidth(mUpsidedownRadioDefined->sizePolicy().hasHeightForWidth());
+        mUpsidedownRadioDefined->setSizePolicy(sizePolicy11);
 
         gridLayout->addWidget(mUpsidedownRadioDefined, 1, 2, 1, 1);
 
@@ -4288,7 +4339,9 @@ public:
         QWidget::setTabOrder(mFontLetterSpacingSpinBox, mFontLetterSpacingDDBtn);
         QWidget::setTabOrder(mFontLetterSpacingDDBtn, mFontWordSpacingSpinBox);
         QWidget::setTabOrder(mFontWordSpacingSpinBox, mFontWordSpacingDDBtn);
-        QWidget::setTabOrder(mFontWordSpacingDDBtn, mKerningCheckBox);
+        QWidget::setTabOrder(mFontWordSpacingDDBtn, mSpinStretch);
+        QWidget::setTabOrder(mSpinStretch, mFontStretchDDBtn);
+        QWidget::setTabOrder(mFontStretchDDBtn, mKerningCheckBox);
         QWidget::setTabOrder(mKerningCheckBox, mTextOrientationComboBox);
         QWidget::setTabOrder(mTextOrientationComboBox, mTextOrientationDDBtn);
         QWidget::setTabOrder(mTextOrientationDDBtn, comboBlendMode);
@@ -4477,7 +4530,8 @@ public:
         QWidget::setTabOrder(mGeometryGeneratorExpressionButton, mGeometryGeneratorType);
         QWidget::setTabOrder(mGeometryGeneratorType, mCoordXDDBtn);
         QWidget::setTabOrder(mCoordXDDBtn, mCoordYDDBtn);
-        QWidget::setTabOrder(mCoordYDDBtn, mCoordAlignmentHDDBtn);
+        QWidget::setTabOrder(mCoordYDDBtn, mCoordPointDDBtn);
+        QWidget::setTabOrder(mCoordPointDDBtn, mCoordAlignmentHDDBtn);
         QWidget::setTabOrder(mCoordAlignmentHDDBtn, mCoordAlignmentVDDBtn);
         QWidget::setTabOrder(mCoordAlignmentVDDBtn, mCoordRotationDDBtn);
         QWidget::setTabOrder(mCoordRotationDDBtn, chkPreserveRotation);
@@ -4514,6 +4568,7 @@ public:
         QWidget::setTabOrder(mLimitLabelChkBox, mLimitLabelSpinBox);
         QWidget::setTabOrder(mLimitLabelSpinBox, mMinSizeSpinBox);
         QWidget::setTabOrder(mMinSizeSpinBox, mFitInsidePolygonCheckBox);
+        QWidget::setTabOrder(mFitInsidePolygonCheckBox, mCoordRotationUnitComboBox);
 
         retranslateUi(QgsTextFormatWidgetBase);
         QObject::connect(mOptionsTab, SIGNAL(currentChanged(int)), mLabelStackedWidget, SLOT(setCurrentIndex(int)));
@@ -4647,11 +4702,31 @@ public:
         mFontColorDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
         mFontItalicDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
         label_36->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Formatting", nullptr));
-        mFontCapitalsLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Type case", nullptr));
+#if QT_CONFIG(tooltip)
+        mFontCapitalsComboBox->setToolTip(QCoreApplication::translate("QgsTextFormatWidgetBase", "Capitalization style of text", nullptr));
+#endif // QT_CONFIG(tooltip)
+        mFontWordSpacingLabel_3->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "word", nullptr));
+#if QT_CONFIG(tooltip)
+        mFontWordSpacingSpinBox->setToolTip(QCoreApplication::translate("QgsTextFormatWidgetBase", "Space in pixels or map units, relative to size unit choice", nullptr));
+#endif // QT_CONFIG(tooltip)
+        labelTextOrientation->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Text orientation", nullptr));
+        mFontLetterSpacingLabel_3->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "letter", nullptr));
+#if QT_CONFIG(tooltip)
+        mFontLetterSpacingSpinBox->setToolTip(QCoreApplication::translate("QgsTextFormatWidgetBase", "Space in pixels or map units, relative to size unit choice", nullptr));
+#endif // QT_CONFIG(tooltip)
+        label_10->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Spacing", nullptr));
+        labelBlendMode->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Blend mode", nullptr));
+#if QT_CONFIG(tooltip)
+        mCheckBoxSubstituteText->setToolTip(QCoreApplication::translate("QgsTextFormatWidgetBase", "If enabled, the label text will automatically be modified using a preset list of substitutes", nullptr));
+#endif // QT_CONFIG(tooltip)
+        mCheckBoxSubstituteText->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Apply label text substitutes", nullptr));
 #if QT_CONFIG(tooltip)
         mToolButtonConfigureSubstitutes->setToolTip(QCoreApplication::translate("QgsTextFormatWidgetBase", "Configure substitutes", nullptr));
 #endif // QT_CONFIG(tooltip)
         mToolButtonConfigureSubstitutes->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
+        mFontWordSpacingDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
+        mFontCaseDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
+        mFontLetterSpacingDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
         mDirectSymbDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
         mDirectSymbChkBx->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Line direction symbol", nullptr));
         mDirectSymbRightLineEdit->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", ">", nullptr));
@@ -4669,33 +4744,15 @@ public:
         mDirectSymbRadioBtnLR->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "left/right", nullptr));
         mDirectSymbRadioBtnAbove->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "above", nullptr));
         mDirectSymbRadioBtnBelow->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "below", nullptr));
-        mFontCaseDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
-        labelTextOrientation->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Text orientation", nullptr));
-        mFontLetterSpacingLabel_3->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "letter", nullptr));
-#if QT_CONFIG(tooltip)
-        mFontLetterSpacingSpinBox->setToolTip(QCoreApplication::translate("QgsTextFormatWidgetBase", "Space in pixels or map units, relative to size unit choice", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mTextOrientationDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
-        labelBlendMode->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Blend mode", nullptr));
-#if QT_CONFIG(tooltip)
-        mCheckBoxSubstituteText->setToolTip(QCoreApplication::translate("QgsTextFormatWidgetBase", "If enabled, the label text will automatically be modified using a preset list of substitutes", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mCheckBoxSubstituteText->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Apply label text substitutes", nullptr));
-        mFontWordSpacingDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
-        mFontLetterSpacingDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
+        mFontCapitalsLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Type case", nullptr));
         mFormatNumChkBx->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Formatted numbers", nullptr));
         mFormatNumDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
         mFormatNumDecimalsLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Decimal places ", nullptr));
         mFormatNumDecimalsDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
         mFormatNumPlusSignChkBx->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Show plus sign", nullptr));
         mFormatNumPlusSignDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
-        mFontWordSpacingLabel_3->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "word", nullptr));
-#if QT_CONFIG(tooltip)
-        mFontWordSpacingSpinBox->setToolTip(QCoreApplication::translate("QgsTextFormatWidgetBase", "Space in pixels or map units, relative to size unit choice", nullptr));
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
-        mFontCapitalsComboBox->setToolTip(QCoreApplication::translate("QgsTextFormatWidgetBase", "Capitalization style of text", nullptr));
-#endif // QT_CONFIG(tooltip)
+        mFontBlendModeDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
+        mTextOrientationDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
         label_24->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Multiple lines", nullptr));
         mLabelWrapLinesTo->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Wrap lines to", nullptr));
 #if QT_CONFIG(tooltip)
@@ -4723,9 +4780,10 @@ public:
         mFontLineHeightLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Line height", nullptr));
         mLabelWrapOnCharacter->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Wrap on character", nullptr));
         mAutoWrapLengthDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
-        label_10->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Spacing", nullptr));
-        mFontBlendModeDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
         mKerningCheckBox->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Enable kerning", nullptr));
+        mLabelStretch->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Stretch", nullptr));
+        mSpinStretch->setSuffix(QCoreApplication::translate("QgsTextFormatWidgetBase", " %", nullptr));
+        mFontStretchDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
         mBufferDrawDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
         mBufferDrawChkBx->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Draw text buffer", nullptr));
         mBufferColorDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
@@ -4911,22 +4969,24 @@ public:
         mGeometryGeneratorExpressionButton->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "...", nullptr));
         mGeometryGeneratorWarningLabel->setText(QString());
         mPlacementDDGroupBox->setTitle(QCoreApplication::translate("QgsTextFormatWidgetBase", "Data defined", nullptr));
-        mCoordAlignmentLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Alignment", nullptr));
-        mCoordLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Coordinate", nullptr));
-        mCoordRotationLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Rotation", nullptr));
-        mCoordAlignmentHLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "horizontal", nullptr));
-        mCoordAlignmentHDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
-        mCoordAlignmentVLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "vertical", nullptr));
-        mCoordAlignmentVDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
-        mCoordXLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "X", nullptr));
-        mCoordXDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
-        mCoordYLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Y", nullptr));
-        mCoordYDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
         mCoordRotationDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
 #if QT_CONFIG(tooltip)
         chkPreserveRotation->setToolTip(QCoreApplication::translate("QgsTextFormatWidgetBase", "Uncheck to write labeling engine derived rotation on pin and NULL on unpin", nullptr));
 #endif // QT_CONFIG(tooltip)
         chkPreserveRotation->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Preserve data rotation values", nullptr));
+        mCoordXLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "X", nullptr));
+        mCoordXDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
+        mCoordYLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Y", nullptr));
+        mCoordYDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
+        mCoordLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Coordinate", nullptr));
+        mCoordAlignmentHLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "horizontal", nullptr));
+        mCoordAlignmentHDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
+        mCoordAlignmentVLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "vertical", nullptr));
+        mCoordAlignmentVDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
+        mCoordRotationLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Rotation", nullptr));
+        mCoordPointDDBtn->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "\342\200\246", nullptr));
+        mCoordAlignmentLabel->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Alignment", nullptr));
+        label_44->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Point", nullptr));
         mPriorityGrpBx->setTitle(QCoreApplication::translate("QgsTextFormatWidgetBase", "Priority", nullptr));
         label_34->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "Low", nullptr));
         label_35->setText(QCoreApplication::translate("QgsTextFormatWidgetBase", "High", nullptr));

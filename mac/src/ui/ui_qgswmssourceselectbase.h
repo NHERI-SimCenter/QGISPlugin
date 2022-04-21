@@ -80,16 +80,19 @@ public:
     QTreeWidget *mLayerOrderTreeWidget;
     QWidget *tabTilesets;
     QGridLayout *gridLayout_3;
-    QTableWidget *lstTilesets;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_3;
     QgsFilterLineEdit *mTilesetsFilterLineEdit;
+    QHBoxLayout *mEncodingSchemeLayout;
+    QLabel *label_5;
+    QHBoxLayout *mInterpretationLayout;
+    QTableWidget *lstTilesets;
 
     void setupUi(QDialog *QgsWMSSourceSelectBase)
     {
         if (QgsWMSSourceSelectBase->objectName().isEmpty())
             QgsWMSSourceSelectBase->setObjectName(QString::fromUtf8("QgsWMSSourceSelectBase"));
-        QgsWMSSourceSelectBase->resize(744, 595);
+        QgsWMSSourceSelectBase->resize(744, 592);
         QIcon icon;
         icon.addFile(QString::fromUtf8("."), QSize(), QIcon::Normal, QIcon::Off);
         QgsWMSSourceSelectBase->setWindowIcon(icon);
@@ -333,6 +336,44 @@ public:
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_3);
+
+        mTilesetsFilterLineEdit = new QgsFilterLineEdit(tabTilesets);
+        mTilesetsFilterLineEdit->setObjectName(QString::fromUtf8("mTilesetsFilterLineEdit"));
+        sizePolicy3.setHeightForWidth(mTilesetsFilterLineEdit->sizePolicy().hasHeightForWidth());
+        mTilesetsFilterLineEdit->setSizePolicy(sizePolicy3);
+        mTilesetsFilterLineEdit->setProperty("showSearchIcon", QVariant(true));
+        mTilesetsFilterLineEdit->setProperty("qgisRelation", QVariant(QString::fromUtf8("")));
+
+        horizontalLayout_4->addWidget(mTilesetsFilterLineEdit);
+
+
+        gridLayout_3->addLayout(horizontalLayout_4, 0, 0, 1, 1);
+
+        mEncodingSchemeLayout = new QHBoxLayout();
+        mEncodingSchemeLayout->setSpacing(6);
+        mEncodingSchemeLayout->setObjectName(QString::fromUtf8("mEncodingSchemeLayout"));
+        mEncodingSchemeLayout->setContentsMargins(-1, 0, -1, -1);
+        label_5 = new QLabel(tabTilesets);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+
+        mEncodingSchemeLayout->addWidget(label_5);
+
+        mInterpretationLayout = new QHBoxLayout();
+        mInterpretationLayout->setSpacing(6);
+        mInterpretationLayout->setObjectName(QString::fromUtf8("mInterpretationLayout"));
+
+        mEncodingSchemeLayout->addLayout(mInterpretationLayout);
+
+        mEncodingSchemeLayout->setStretch(1, 1);
+
+        gridLayout_3->addLayout(mEncodingSchemeLayout, 3, 0, 1, 1);
+
         lstTilesets = new QTableWidget(tabTilesets);
         if (lstTilesets->columnCount() < 6)
             lstTilesets->setColumnCount(6);
@@ -356,25 +397,6 @@ public:
         lstTilesets->verticalHeader()->setVisible(false);
 
         gridLayout_3->addWidget(lstTilesets, 2, 0, 1, 1);
-
-        horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setSpacing(6);
-        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
-        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
-
-        horizontalLayout_4->addItem(horizontalSpacer_3);
-
-        mTilesetsFilterLineEdit = new QgsFilterLineEdit(tabTilesets);
-        mTilesetsFilterLineEdit->setObjectName(QString::fromUtf8("mTilesetsFilterLineEdit"));
-        sizePolicy3.setHeightForWidth(mTilesetsFilterLineEdit->sizePolicy().hasHeightForWidth());
-        mTilesetsFilterLineEdit->setSizePolicy(sizePolicy3);
-        mTilesetsFilterLineEdit->setProperty("showSearchIcon", QVariant(true));
-        mTilesetsFilterLineEdit->setProperty("qgisRelation", QVariant(QString::fromUtf8("")));
-
-        horizontalLayout_4->addWidget(mTilesetsFilterLineEdit);
-
-
-        gridLayout_3->addLayout(horizontalLayout_4, 0, 0, 1, 1);
 
         tabServers->addTab(tabTilesets, QString());
 
@@ -412,7 +434,7 @@ public:
         retranslateUi(QgsWMSSourceSelectBase);
         QObject::connect(buttonBox, SIGNAL(rejected()), QgsWMSSourceSelectBase, SLOT(reject()));
 
-        tabServers->setCurrentIndex(0);
+        tabServers->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(QgsWMSSourceSelectBase);
@@ -486,6 +508,7 @@ public:
         ___qtreewidgetitem1->setText(1, QCoreApplication::translate("QgsWMSSourceSelectBase", "Style", nullptr));
         ___qtreewidgetitem1->setText(0, QCoreApplication::translate("QgsWMSSourceSelectBase", "Layer", nullptr));
         tabServers->setTabText(tabServers->indexOf(tabLayerOrder), QCoreApplication::translate("QgsWMSSourceSelectBase", "Layer Order", nullptr));
+        label_5->setText(QCoreApplication::translate("QgsWMSSourceSelectBase", "Interpretation", nullptr));
         QTableWidgetItem *___qtablewidgetitem = lstTilesets->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("QgsWMSSourceSelectBase", "Layer", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = lstTilesets->horizontalHeaderItem(1);

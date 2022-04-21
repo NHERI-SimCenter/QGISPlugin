@@ -24,6 +24,7 @@
 
 class QgsMapLayerModel;
 class QgsMapLayer;
+class QgsProject;
 
 /**
  * \ingroup core
@@ -53,7 +54,9 @@ class CORE_EXPORT QgsMapLayerProxyModel : public QSortFilterProxyModel
       MeshLayer = 128, //!< QgsMeshLayer \since QGIS 3.6
       VectorTileLayer = 256, //!< QgsVectorTileLayer \since QGIS 3.14
       PointCloudLayer = 512, //!< QgsPointCloudLayer \since QGIS 3.18
-      All = RasterLayer | VectorLayer | PluginLayer | MeshLayer | VectorTileLayer | PointCloudLayer
+      AnnotationLayer = 1024, //!< QgsAnnotationLayer \since QGIS 3.22
+      All = RasterLayer | VectorLayer | PluginLayer | MeshLayer | VectorTileLayer | PointCloudLayer | AnnotationLayer,
+      SpatialLayer = RasterLayer | HasGeometry | PluginLayer | MeshLayer | VectorTileLayer | PointCloudLayer | AnnotationLayer //!< \since QGIS 3.24
     };
     Q_DECLARE_FLAGS( Filters, Filter )
     Q_FLAG( Filters )
@@ -86,6 +89,15 @@ class CORE_EXPORT QgsMapLayerProxyModel : public QSortFilterProxyModel
      * \since QGIS 2.3
      */
     const Filters &filters() const { return mFilters; }
+
+    /**
+     * Sets the \a project from which map layers are shown.
+     *
+     * If \a project is NULLPTR then QgsProject::instance() will be used.
+     *
+     * \since QGIS 3.24
+     */
+    void setProject( QgsProject *project );
 
     /**
      * Returns if the \a layer matches the given \a filters

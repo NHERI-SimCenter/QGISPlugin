@@ -74,6 +74,8 @@ class CORE_EXPORT QgsSymbolLayer
           sipType = sipType_QgsSvgMarkerSymbolLayer;
         else if ( sipCpp->layerType() == "RasterMarker" )
           sipType = sipType_QgsRasterMarkerSymbolLayer;
+        else if ( sipCpp->layerType() == "AnimatedMarker" )
+          sipType = sipType_QgsAnimatedMarkerSymbolLayer;
         else if ( sipCpp->layerType() == "VectorField" )
           sipType = sipType_QgsVectorFieldSymbolLayer;
         else if ( sipCpp->layerType() == "MaskMarker" )
@@ -87,10 +89,16 @@ class CORE_EXPORT QgsSymbolLayer
           sipType = sipType_QgsMarkerLineSymbolLayer;
         else if ( sipCpp->layerType() == "SimpleLine" )
           sipType = sipType_QgsSimpleLineSymbolLayer;
+        else if ( sipCpp->layerType() == "HashLine" )
+          sipType = sipType_QgsHashedLineSymbolLayer;
         else if ( sipCpp->layerType() == "ArrowLine" )
           sipType = sipType_QgsArrowSymbolLayer;
         else if ( sipCpp->layerType() == "InterpolatedLine" )
           sipType = sipType_QgsInterpolatedLineSymbolLayer;
+        else if ( sipCpp->layerType() == "RasterLine" )
+          sipType = sipType_QgsRasterLineSymbolLayer;
+        else if ( sipCpp->layerType() == "Lineburst" )
+          sipType = sipType_QgsLineburstSymbolLayer;
         else
           sipType = sipType_QgsLineSymbolLayer;
         break;
@@ -194,6 +202,14 @@ class CORE_EXPORT QgsSymbolLayer
       PropertyDashPatternOffset, //!< Dash pattern offset,
       PropertyTrimStart, //!< Trim distance from start of line (since QGIS 3.20)
       PropertyTrimEnd, //!< Trim distance from end of line (since QGIS 3.20)
+      PropertyLineStartWidthValue, //!< Start line width for interpolated line renderer (since QGIS 3.22)
+      PropertyLineEndWidthValue, //!< End line width for interpolated line renderer (since QGIS 3.22)
+      PropertyLineStartColorValue, //!< Start line color for interpolated line renderer (since QGIS 3.22)
+      PropertyLineEndColorValue, //!< End line color for interpolated line renderer (since QGIS 3.22)
+      PropertyMarkerClipping, //!< Marker clipping mode (since QGIS 3.24)
+      PropertyRandomOffsetX, //!< Random offset X (since QGIS 3.24)
+      PropertyRandomOffsetY, //!< Random offset Y (since QGIS 3.24)
+      PropertyLineClipping, //!< Line clipping mode (since QGIS 3.24)
     };
 
     /**
@@ -209,6 +225,13 @@ class CORE_EXPORT QgsSymbolLayer
 
     //! QgsSymbolLayer cannot be copied
     QgsSymbolLayer &operator=( const QgsSymbolLayer &other ) = delete;
+
+    /**
+     * Returns flags which control the symbol layer's behavior.
+     *
+     * \since QGIS 3.22
+     */
+    virtual Qgis::SymbolLayerFlags flags() const;
 
     /**
      * Returns TRUE if symbol layer is enabled and will be drawn.
@@ -227,38 +250,87 @@ class CORE_EXPORT QgsSymbolLayer
     void setEnabled( bool enabled ) { mEnabled = enabled; }
 
     /**
-     * The fill color.
+     * Returns the "representative" color of the symbol layer.
+     *
+     * Depending on the symbol layer type, this will have different meaning. For instance, a line
+     * symbol layer will generally return the stroke color of the layer, while a fill symbol layer
+     * will return the "fill" color instead of stroke.
+     *
+     * Some symbol layer types will return an invalid QColor if they have no representative
+     * color associated (e.g. raster image based symbol layers).
+     *
+     * \see setColor()
+     * \see strokeColor()
+     * \see fillColor()
      */
-    virtual QColor color() const { return mColor; }
+    virtual QColor color() const;
 
     /**
-     * The fill color.
+     * Sets the "representative" color for the symbol layer.
+     *
+     * Depending on the symbol layer type, this will have different meaning. For instance, a line
+     * symbol layer will generally set the stroke color of the layer, while a fill symbol layer
+     * will set the "fill" color instead of stroke.
+     *
+     * \see color()
+     * \see setStrokeColor()
+     * \see setFillColor()
      */
-    virtual void setColor( const QColor &color ) { mColor = color; }
+    virtual void setColor( const QColor &color );
 
     /**
-     * Set stroke color. Supported by marker and fill layers.
+     * Sets the stroke \a color for the symbol layer.
+     *
+     * This property is not supported by all symbol layer types, only those with a stroke component.
+     *
+     * \see strokeColor()
+     * \see setColor()
+     * \see setFillColor()
+     *
      * \since QGIS 2.1
     */
-    virtual void setStrokeColor( const QColor &color ) { Q_UNUSED( color ) }
+    virtual void setStrokeColor( const QColor &color );
 
     /**
-     * Gets stroke color. Supported by marker and fill layers.
+     * Returns the stroke color for the symbol layer.
+     *
+     * This property is not supported by all symbol layer types, only those with a stroke component. Symbol
+     * layers without a stroke component will return an invalid QColor.
+     *
+     * \see setStrokeColor()
+     * \see color()
+     * \see fillColor()
+     *
      * \since QGIS 2.1
     */
-    virtual QColor strokeColor() const { return QColor(); }
+    virtual QColor strokeColor() const;
 
     /**
-     * Set fill color. Supported by marker and fill layers.
+     * Sets the fill \a color for the symbol layer.
+     *
+     * This property is not supported by all symbol layer types, only those with a fill component.
+     *
+     * \see fillColor()
+     * \see setColor()
+     * \see setStrokeColor()
+     *
      * \since QGIS 2.1
     */
-    virtual void setFillColor( const QColor &color ) { Q_UNUSED( color ) }
+    virtual void setFillColor( const QColor &color );
 
     /**
-     * Gets fill color. Supported by marker and fill layers.
+     * Returns the fill color for the symbol layer.
+     *
+     * This property is not supported by all symbol layer types, only those with a fill component. Symbol
+     * layers without a fill component will return an invalid QColor.
+     *
+     * \see setFillColor()
+     * \see color()
+     * \see strokeColor()
+     *
      * \since QGIS 2.1
     */
-    virtual QColor fillColor() const { return QColor(); }
+    virtual QColor fillColor() const;
 
     /**
      * Returns a string that represents this layer type. Used for serialization.

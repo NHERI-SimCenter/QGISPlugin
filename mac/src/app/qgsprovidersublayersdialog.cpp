@@ -47,7 +47,7 @@ QVariant QgsProviderSublayerDialogModel::data( const QModelIndex &index, int rol
   {
     const QgsProviderSublayerDetails details = mSublayers.at( index.row() );
 
-    if ( details.type() == QgsMapLayerType::VectorLayer && details.wkbType() == QgsWkbTypes::Unknown )
+    if ( details.type() == QgsMapLayerType::VectorLayer && details.wkbType() == QgsWkbTypes::Unknown && !mGeometryTypesResolved )
     {
       switch ( role )
       {
@@ -59,6 +59,18 @@ QVariant QgsProviderSublayerDialogModel::data( const QModelIndex &index, int rol
           break;
         }
 
+        case Qt::FontRole:
+        {
+          QFont f =  QgsProviderSublayerModel::data( index, role ).value< QFont >();
+          f.setItalic( true );
+          return f;
+        }
+      }
+    }
+    else if ( details.flags() & Qgis::SublayerFlag::SystemTable )
+    {
+      switch ( role )
+      {
         case Qt::FontRole:
         {
           QFont f =  QgsProviderSublayerModel::data( index, role ).value< QFont >();
@@ -83,13 +95,19 @@ Qt::ItemFlags QgsProviderSublayerDialogModel::flags( const QModelIndex &index ) 
   {
     const QgsProviderSublayerDetails details = mSublayers.at( index.row() );
 
-    if ( details.type() == QgsMapLayerType::VectorLayer && details.wkbType() == QgsWkbTypes::Unknown )
+    if ( details.type() == QgsMapLayerType::VectorLayer && details.wkbType() == QgsWkbTypes::Unknown && !mGeometryTypesResolved )
     {
       // unknown geometry item can't be selected
       return Qt::ItemFlags();
     }
   }
   return QgsProviderSublayerModel::flags( index );
+}
+
+void QgsProviderSublayerDialogModel::setGeometryTypesResolved( bool resolved )
+{
+  mGeometryTypesResolved = resolved;
+  emit dataChanged( index( 0, 0 ), index( rowCount( QModelIndex() ), columnCount() ) );
 }
 
 QgsProviderSublayersDialog::QgsProviderSublayersDialog( const QString &uri, const QString &filePath, const QList<QgsProviderSublayerDetails> initialDetails, const QList<QgsMapLayerType> &acceptableTypes, QWidget *parent, Qt::WindowFlags fl )
@@ -114,7 +132,7 @@ QgsProviderSublayersDialog::QgsProviderSublayersDialog( const QString &uri, cons
     const QUrl url( link );
     const QFileInfo file( url.toLocalFile() );
     if ( file.exists() && !file.isDir() )
-      QgsGui::instance()->nativePlatformInterface()->openFileExplorerAndSelectFile( url.toLocalFile() );
+      QgsGui::nativePlatformInterface()->openFileExplorerAndSelectFile( url.toLocalFile() );
     else
       QDesktopServices::openUrl( url );
   } );
@@ -145,7 +163,7 @@ QgsProviderSublayersDialog::QgsProviderSublayersDialog( const QString &uri, cons
   if ( QgsProviderUtils::sublayerDetailsAreIncomplete( initialDetails ) )
   {
     // initial details are incomplete, so fire up a task in the background to fully populate the model...
-    mTask = new QgsProviderSublayerTask( uri );
+    mTask = new QgsProviderSublayerTask( uri, true );
     connect( mTask.data(), &QgsProviderSublayerTask::taskCompleted, this, [ = ]
     {
       QList< QgsProviderSublayerDetails > res = mTask->results();
@@ -155,6 +173,7 @@ QgsProviderSublayersDialog::QgsProviderSublayersDialog( const QString &uri, cons
       } ), res.end() );
 
       mModel->setSublayerDetails( res );
+      mModel->setGeometryTypesResolved( true );
       mTask = nullptr;
       selectAll();
     } );
@@ -165,6 +184,7 @@ QgsProviderSublayersDialog::QgsProviderSublayersDialog( const QString &uri, cons
   connect( mBtnDeselectAll, &QAbstractButton::pressed, this, [ = ] { mLayersTree->selectionModel()->clear(); } );
   connect( mLayersTree->selectionModel(), &QItemSelectionModel::selectionChanged, this, &QgsProviderSublayersDialog::treeSelectionChanged );
   connect( mSearchLineEdit, &QgsFilterLineEdit::textChanged, mProxyModel, &QgsProviderSublayerProxyModel::setFilterString );
+  connect( mCheckShowSystem, &QCheckBox::toggled, mProxyModel, &QgsProviderSublayerProxyModel::setIncludeSystemTables );
   connect( mLayersTree, &QTreeView::doubleClicked, this, [ = ]( const QModelIndex & index )
   {
     mLayersTree->selectionModel()->select( QItemSelection( mLayersTree->model()->index( index.row(), 0, index.parent() ),
@@ -237,8 +257,6 @@ QString QgsProviderSublayersDialog::groupName() const
 {
   if ( !mCbxAddToGroup->isChecked() )
     return QString();
-
-  const QFileInfo fi( mFilePath );
 
   QString res = QgsProviderUtils::suggestLayerNameFromFilePath( mFilePath );
 
@@ -328,4 +346,5 @@ void QgsProviderSublayersDialog::selectAll()
                                              QItemSelectionModel::Select );
     }
   }
+  mButtonBox->button( QDialogButtonBox::Ok )->setFocus();
 }

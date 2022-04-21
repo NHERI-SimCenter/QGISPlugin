@@ -180,9 +180,6 @@ public:
 
     void retranslateUi(QWidget *QgsRasterLayerTemporalPropertiesWidgetBase)
     {
-#if QT_CONFIG(tooltip)
-        mTemporalGroupBox->setToolTip(QCoreApplication::translate("QgsRasterLayerTemporalPropertiesWidgetBase", "If checked, the layer will be dynamically filtered and visualised using the map's temporal range", nullptr));
-#endif // QT_CONFIG(tooltip)
         mTemporalGroupBox->setTitle(QCoreApplication::translate("QgsRasterLayerTemporalPropertiesWidgetBase", "Dynamic Temporal Control", nullptr));
         mModeRedrawLayer->setText(QCoreApplication::translate("QgsRasterLayerTemporalPropertiesWidgetBase", "Redraw layer only", nullptr));
 #if QT_CONFIG(tooltip)

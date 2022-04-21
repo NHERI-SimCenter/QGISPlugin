@@ -12,7 +12,6 @@
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDateTimeEdit>
 #include <QtWidgets/QDialog>
@@ -75,7 +74,6 @@ public:
     QLabel *label_11;
     QFrame *line_2;
     QgsMeshDatasetGroupTreeWidget *mDatasetGroupTreeWidget;
-    QCheckBox *mTemporalStaticDatasetCheckBox;
     QgsCollapsibleGroupBoxBasic *mStaticDatasetGroupBox;
     QVBoxLayout *verticalLayout_7;
     QgsMeshStaticDatasetWidget *mStaticDatasetWidget;
@@ -298,13 +296,9 @@ public:
 
         verticalLayout_4->addWidget(mDatasetGroupTreeWidget);
 
-        mTemporalStaticDatasetCheckBox = new QCheckBox(scrollAreaWidgetContents_3);
-        mTemporalStaticDatasetCheckBox->setObjectName(QString::fromUtf8("mTemporalStaticDatasetCheckBox"));
-
-        verticalLayout_4->addWidget(mTemporalStaticDatasetCheckBox);
-
         mStaticDatasetGroupBox = new QgsCollapsibleGroupBoxBasic(scrollAreaWidgetContents_3);
         mStaticDatasetGroupBox->setObjectName(QString::fromUtf8("mStaticDatasetGroupBox"));
+        mStaticDatasetGroupBox->setCheckable(true);
         verticalLayout_7 = new QVBoxLayout(mStaticDatasetGroupBox);
         verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
         mStaticDatasetWidget = new QgsMeshStaticDatasetWidget(mStaticDatasetGroupBox);
@@ -539,8 +533,8 @@ public:
         QWidget::setTabOrder(scrollArea_3, mLayerOrigNameLineEd);
         QWidget::setTabOrder(mLayerOrigNameLineEd, mCrsGroupBox);
         QWidget::setTabOrder(mCrsGroupBox, mCrsSelector);
-        QWidget::setTabOrder(mCrsSelector, mTemporalStaticDatasetCheckBox);
-        QWidget::setTabOrder(mTemporalStaticDatasetCheckBox, scrollArea);
+        QWidget::setTabOrder(mCrsSelector, mStaticDatasetGroupBox);
+        QWidget::setTabOrder(mStaticDatasetGroupBox, scrollArea);
         QWidget::setTabOrder(scrollArea, mSimplifyMeshGroupBox);
         QWidget::setTabOrder(mSimplifyMeshGroupBox, mSimplifyReductionFactorSpinBox);
         QWidget::setTabOrder(mSimplifyReductionFactorSpinBox, mSimplifyMeshResolutionSpinBox);
@@ -603,14 +597,13 @@ public:
         mCrsGroupBox->setTitle(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Assigned Coordinate Reference System (CRS)", nullptr));
         label_11->setText(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "<html><head/><body><p><span style=\" font-weight:600;\">Changing this option does not modify the original data source or perform any reprojection of the mesh. Rather, it can be used to override the layer's CRS within this project if it could not be detected or has been incorrectly detected.</span></p></body></html>", nullptr));
 #if QT_CONFIG(tooltip)
-        mTemporalStaticDatasetCheckBox->setToolTip(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Static dataset even if the temporal navigation is on", nullptr));
+        mStaticDatasetGroupBox->setToolTip(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Always treat as a static dataset even if the temporal navigation is on", nullptr));
 #endif // QT_CONFIG(tooltip)
-        mTemporalStaticDatasetCheckBox->setText(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Always treat as a static dataset, regardless of temporal properties", nullptr));
-        mStaticDatasetGroupBox->setTitle(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Static Dataset", nullptr));
+        mStaticDatasetGroupBox->setTitle(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Treat as Static Dataset", nullptr));
         mSimplifyMeshGroupBox->setTitle(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Simplify Mesh", nullptr));
         label_5->setText(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Reduction factor", nullptr));
-        label_2->setText(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Maximal mesh resolution", nullptr));
-        mSimplifyMeshResolutionSpinBox->setSuffix(QCoreApplication::translate("QgsMeshLayerPropertiesBase", " pixels/triangle", nullptr));
+        label_2->setText(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Minimum triangle size", nullptr));
+        mSimplifyMeshResolutionSpinBox->setSuffix(QCoreApplication::translate("QgsMeshLayerPropertiesBase", " pixels", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Provider Time Settings", nullptr));
         label_12->setText(QCoreApplication::translate("QgsMeshLayerPropertiesBase", "Time unit", nullptr));
 #if QT_CONFIG(tooltip)

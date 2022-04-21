@@ -224,6 +224,9 @@ class CORE_EXPORT QgsFeature
      * Sets the feature \a id for this feature.
      * \param id feature id
      * \see id()
+     * \warning Feature IDs will be automatically changed whenever a feature is added to vector layer or data provider.
+     *  This method is not designed to allow a specific feature ID to be assigned to a feature which will be added to a
+     *  layer or data provider, and the results will be unpredictable
      */
     void setId( QgsFeatureId id );
 
@@ -241,9 +244,57 @@ class CORE_EXPORT QgsFeature
      * \endcode
      *
      * \see setAttributes()
+     * \see attributeMap()
      * \since QGIS 2.9
      */
     QgsAttributes attributes() const;
+
+#ifndef SIP_RUN
+
+    /**
+     * Returns the feature's attributes as a map of field name to value.
+     *
+     * \note The fields definition must be associated with the feature using setFields() before this method can be used.
+     *
+     * \see attributes()
+     * \see setAttributes()
+     * \since QGIS 3.22.2
+     */
+    QVariantMap attributeMap() const;
+#else
+
+    /**
+     * Returns the feature's attributes as a map of field name to value.
+     *
+     * \note The fields definition must be associated with the feature using setFields() before this method can be used.
+     *
+     * \throws ValueError if the field definition is unset or the size of the fields does not match the size of the feature's attributes()
+     *
+     * \see attributes()
+     * \see setAttributes()
+     * \since QGIS 3.22.2
+     */
+    SIP_PYOBJECT attributeMap() const SIP_TYPEHINT( Dict[str, Optional[object]] );
+    % MethodCode
+    const int fieldSize = sipCpp->fields().size();
+    const int attributeSize = sipCpp->attributes().size();
+    if ( fieldSize == 0 && attributeSize != 0 )
+    {
+      PyErr_SetString( PyExc_ValueError, QStringLiteral( "Field definition has not been set for feature" ).toUtf8().constData() );
+      sipIsErr = 1;
+    }
+    else if ( fieldSize != attributeSize )
+    {
+      PyErr_SetString( PyExc_ValueError, QStringLiteral( "Feature attribute size (%1) does not match number of fields (%2)" ).arg( attributeSize ).arg( fieldSize ).toUtf8().constData() );
+      sipIsErr = 1;
+    }
+    else
+    {
+      QVariantMap *v = new QVariantMap( sipCpp->attributeMap() );
+      sipRes = sipConvertFromNewType( v, sipType_QVariantMap, Py_None );
+    }
+    % End
+#endif
 
     /**
      * Returns the number of attributes attached to the feature.

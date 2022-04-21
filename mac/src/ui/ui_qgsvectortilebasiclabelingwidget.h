@@ -22,6 +22,7 @@
 #include <QtWidgets/QTreeView>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "qgsfilterlineedit.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -29,6 +30,9 @@ class Ui_QgsVectorTileBasicLabelingWidget
 {
 public:
     QVBoxLayout *verticalLayout;
+    QHBoxLayout *horizontalLayout_2;
+    QgsFilterLineEdit *mFilterLineEdit;
+    QCheckBox *mCheckVisibleOnly;
     QTreeView *viewStyles;
     QHBoxLayout *horizontalLayout;
     QToolButton *btnAddRule;
@@ -36,7 +40,6 @@ public:
     QPushButton *btnEditRule;
     QSpacerItem *horizontalSpacer;
     QLabel *mLabelCurrentZoom;
-    QCheckBox *mCheckVisibleOnly;
 
     void setupUi(QWidget *QgsVectorTileBasicLabelingWidget)
     {
@@ -45,6 +48,22 @@ public:
         QgsVectorTileBasicLabelingWidget->resize(557, 424);
         verticalLayout = new QVBoxLayout(QgsVectorTileBasicLabelingWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(-1, -1, -1, 0);
+        mFilterLineEdit = new QgsFilterLineEdit(QgsVectorTileBasicLabelingWidget);
+        mFilterLineEdit->setObjectName(QString::fromUtf8("mFilterLineEdit"));
+
+        horizontalLayout_2->addWidget(mFilterLineEdit);
+
+        mCheckVisibleOnly = new QCheckBox(QgsVectorTileBasicLabelingWidget);
+        mCheckVisibleOnly->setObjectName(QString::fromUtf8("mCheckVisibleOnly"));
+
+        horizontalLayout_2->addWidget(mCheckVisibleOnly);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
         viewStyles = new QTreeView(QgsVectorTileBasicLabelingWidget);
         viewStyles->setObjectName(QString::fromUtf8("viewStyles"));
         viewStyles->setAcceptDrops(true);
@@ -92,14 +111,14 @@ public:
 
         horizontalLayout->addWidget(mLabelCurrentZoom);
 
-        mCheckVisibleOnly = new QCheckBox(QgsVectorTileBasicLabelingWidget);
-        mCheckVisibleOnly->setObjectName(QString::fromUtf8("mCheckVisibleOnly"));
-
-        horizontalLayout->addWidget(mCheckVisibleOnly);
-
 
         verticalLayout->addLayout(horizontalLayout);
 
+        QWidget::setTabOrder(mFilterLineEdit, mCheckVisibleOnly);
+        QWidget::setTabOrder(mCheckVisibleOnly, viewStyles);
+        QWidget::setTabOrder(viewStyles, btnAddRule);
+        QWidget::setTabOrder(btnAddRule, btnRemoveRule);
+        QWidget::setTabOrder(btnRemoveRule, btnEditRule);
 
         retranslateUi(QgsVectorTileBasicLabelingWidget);
 
@@ -108,6 +127,10 @@ public:
 
     void retranslateUi(QWidget *QgsVectorTileBasicLabelingWidget)
     {
+#if QT_CONFIG(tooltip)
+        mCheckVisibleOnly->setToolTip(QCoreApplication::translate("QgsVectorTileBasicLabelingWidget", "Hides any rules which are invisible because they fall outside the current map canvas zoom level", nullptr));
+#endif // QT_CONFIG(tooltip)
+        mCheckVisibleOnly->setText(QCoreApplication::translate("QgsVectorTileBasicLabelingWidget", "Visible rules only", nullptr));
 #if QT_CONFIG(tooltip)
         btnAddRule->setToolTip(QCoreApplication::translate("QgsVectorTileBasicLabelingWidget", "Add rule", nullptr));
 #endif // QT_CONFIG(tooltip)
@@ -121,10 +144,6 @@ public:
 #endif // QT_CONFIG(tooltip)
         btnEditRule->setText(QString());
         mLabelCurrentZoom->setText(QString());
-#if QT_CONFIG(tooltip)
-        mCheckVisibleOnly->setToolTip(QCoreApplication::translate("QgsVectorTileBasicLabelingWidget", "Hides any rules which are invisible because they fall outside the current map canvas zoom level", nullptr));
-#endif // QT_CONFIG(tooltip)
-        mCheckVisibleOnly->setText(QCoreApplication::translate("QgsVectorTileBasicLabelingWidget", "Visible rules only", nullptr));
         (void)QgsVectorTileBasicLabelingWidget;
     } // retranslateUi
 

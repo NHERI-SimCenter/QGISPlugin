@@ -40,7 +40,7 @@ public:
     {
         if (PhongMaterialWidget->objectName().isEmpty())
             PhongMaterialWidget->setObjectName(QString::fromUtf8("PhongMaterialWidget"));
-        PhongMaterialWidget->resize(394, 134);
+        PhongMaterialWidget->resize(394, 186);
         PhongMaterialWidget->setWindowTitle(QString::fromUtf8("Form"));
         gridLayout = new QGridLayout(PhongMaterialWidget);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
@@ -126,9 +126,21 @@ public:
 
     void retranslateUi(QWidget *PhongMaterialWidget)
     {
+#if QT_CONFIG(tooltip)
+        lblShininess->setToolTip(QCoreApplication::translate("PhongMaterialWidget", "How shiny smooth surfaces are.", nullptr));
+#endif // QT_CONFIG(tooltip)
         lblShininess->setText(QCoreApplication::translate("PhongMaterialWidget", "Shininess", nullptr));
+#if QT_CONFIG(tooltip)
+        lblSpecular->setToolTip(QCoreApplication::translate("PhongMaterialWidget", "Color of light reflecting from smooth surfaces.", nullptr));
+#endif // QT_CONFIG(tooltip)
         lblSpecular->setText(QCoreApplication::translate("PhongMaterialWidget", "Specular", nullptr));
+#if QT_CONFIG(tooltip)
+        lblDiffuse->setToolTip(QCoreApplication::translate("PhongMaterialWidget", "Color of light reflected from rough surfaces.", nullptr));
+#endif // QT_CONFIG(tooltip)
         lblDiffuse->setText(QCoreApplication::translate("PhongMaterialWidget", "Diffuse", nullptr));
+#if QT_CONFIG(tooltip)
+        lblAmbient->setToolTip(QCoreApplication::translate("PhongMaterialWidget", "Color of light that is scattered around the entire scene.", nullptr));
+#endif // QT_CONFIG(tooltip)
         lblAmbient->setText(QCoreApplication::translate("PhongMaterialWidget", "Ambient", nullptr));
         mDiffuseDataDefinedButton->setText(QCoreApplication::translate("PhongMaterialWidget", "...", nullptr));
         mAmbientDataDefinedButton->setText(QCoreApplication::translate("PhongMaterialWidget", "...", nullptr));

@@ -15,13 +15,12 @@
 #include <QtWidgets/QDialogButtonBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include "auth/qgsauthsettingswidget.h"
-#include "qgsfilterlineedit.h"
+#include "qgshttpheaderwidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -30,26 +29,23 @@ class Ui_QgsNewArcGisRestConnectionBase
 public:
     QGridLayout *gridLayout_4;
     QDialogButtonBox *buttonBox;
-    QGroupBox *mHttpGroupBox;
-    QHBoxLayout *horizontalLayout;
-    QLabel *label;
-    QgsFilterLineEdit *mRefererLineEdit;
-    QGroupBox *mGroupBox;
-    QGridLayout *gridLayout;
-    QLabel *TextLabel1;
-    QLineEdit *txtUrl;
-    QLineEdit *txtName;
-    QLabel *TextLabel1_2;
-    QSpacerItem *verticalSpacer;
-    QGroupBox *mAuthGroupBox;
-    QVBoxLayout *verticalLayout;
-    QgsAuthSettingsWidget *mAuthSettings;
     QGroupBox *groupBox;
     QGridLayout *gridLayout1;
     QLineEdit *mCommunityEndPointLineEdit;
     QLabel *TextLabel1_3;
     QLabel *TextLabel1_4;
     QLineEdit *mContentEndPointLineEdit;
+    QSpacerItem *verticalSpacer;
+    QgsHttpHeaderWidget *mHttpHeaders;
+    QGroupBox *mGroupBox;
+    QGridLayout *gridLayout;
+    QLabel *TextLabel1;
+    QLineEdit *txtUrl;
+    QLineEdit *txtName;
+    QLabel *TextLabel1_2;
+    QGroupBox *mAuthGroupBox;
+    QVBoxLayout *verticalLayout;
+    QgsAuthSettingsWidget *mAuthSettings;
 
     void setupUi(QDialog *QgsNewArcGisRestConnectionBase)
     {
@@ -68,24 +64,45 @@ public:
 
         gridLayout_4->addWidget(buttonBox, 5, 0, 1, 1);
 
-        mHttpGroupBox = new QGroupBox(QgsNewArcGisRestConnectionBase);
-        mHttpGroupBox->setObjectName(QString::fromUtf8("mHttpGroupBox"));
-        horizontalLayout = new QHBoxLayout(mHttpGroupBox);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        label = new QLabel(mHttpGroupBox);
-        label->setObjectName(QString::fromUtf8("label"));
+        groupBox = new QGroupBox(QgsNewArcGisRestConnectionBase);
+        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        gridLayout1 = new QGridLayout(groupBox);
+        gridLayout1->setSpacing(6);
+        gridLayout1->setContentsMargins(11, 11, 11, 11);
+        gridLayout1->setObjectName(QString::fromUtf8("gridLayout1"));
+        mCommunityEndPointLineEdit = new QLineEdit(groupBox);
+        mCommunityEndPointLineEdit->setObjectName(QString::fromUtf8("mCommunityEndPointLineEdit"));
 
-        horizontalLayout->addWidget(label);
+        gridLayout1->addWidget(mCommunityEndPointLineEdit, 0, 1, 1, 1);
 
-        mRefererLineEdit = new QgsFilterLineEdit(mHttpGroupBox);
-        mRefererLineEdit->setObjectName(QString::fromUtf8("mRefererLineEdit"));
+        TextLabel1_3 = new QLabel(groupBox);
+        TextLabel1_3->setObjectName(QString::fromUtf8("TextLabel1_3"));
+        TextLabel1_3->setMargin(5);
 
-        horizontalLayout->addWidget(mRefererLineEdit);
+        gridLayout1->addWidget(TextLabel1_3, 0, 0, 1, 1);
+
+        TextLabel1_4 = new QLabel(groupBox);
+        TextLabel1_4->setObjectName(QString::fromUtf8("TextLabel1_4"));
+        TextLabel1_4->setMargin(5);
+
+        gridLayout1->addWidget(TextLabel1_4, 1, 0, 1, 1);
+
+        mContentEndPointLineEdit = new QLineEdit(groupBox);
+        mContentEndPointLineEdit->setObjectName(QString::fromUtf8("mContentEndPointLineEdit"));
+
+        gridLayout1->addWidget(mContentEndPointLineEdit, 1, 1, 1, 1);
 
 
-        gridLayout_4->addWidget(mHttpGroupBox, 3, 0, 1, 1);
+        gridLayout_4->addWidget(groupBox, 1, 0, 1, 1);
+
+        verticalSpacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        gridLayout_4->addItem(verticalSpacer, 4, 0, 1, 1);
+
+        mHttpHeaders = new QgsHttpHeaderWidget(QgsNewArcGisRestConnectionBase);
+        mHttpHeaders->setObjectName(QString::fromUtf8("mHttpHeaders"));
+
+        gridLayout_4->addWidget(mHttpHeaders, 3, 0, 1, 1);
 
         mGroupBox = new QGroupBox(QgsNewArcGisRestConnectionBase);
         mGroupBox->setObjectName(QString::fromUtf8("mGroupBox"));
@@ -121,10 +138,6 @@ public:
 
         gridLayout_4->addWidget(mGroupBox, 0, 0, 1, 1);
 
-        verticalSpacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
-
-        gridLayout_4->addItem(verticalSpacer, 4, 0, 1, 1);
-
         mAuthGroupBox = new QGroupBox(QgsNewArcGisRestConnectionBase);
         mAuthGroupBox->setObjectName(QString::fromUtf8("mAuthGroupBox"));
         verticalLayout = new QVBoxLayout(mAuthGroupBox);
@@ -146,42 +159,10 @@ public:
 
         gridLayout_4->addWidget(mAuthGroupBox, 2, 0, 1, 1);
 
-        groupBox = new QGroupBox(QgsNewArcGisRestConnectionBase);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        gridLayout1 = new QGridLayout(groupBox);
-        gridLayout1->setSpacing(6);
-        gridLayout1->setContentsMargins(11, 11, 11, 11);
-        gridLayout1->setObjectName(QString::fromUtf8("gridLayout1"));
-        mCommunityEndPointLineEdit = new QLineEdit(groupBox);
-        mCommunityEndPointLineEdit->setObjectName(QString::fromUtf8("mCommunityEndPointLineEdit"));
-
-        gridLayout1->addWidget(mCommunityEndPointLineEdit, 0, 1, 1, 1);
-
-        TextLabel1_3 = new QLabel(groupBox);
-        TextLabel1_3->setObjectName(QString::fromUtf8("TextLabel1_3"));
-        TextLabel1_3->setMargin(5);
-
-        gridLayout1->addWidget(TextLabel1_3, 0, 0, 1, 1);
-
-        TextLabel1_4 = new QLabel(groupBox);
-        TextLabel1_4->setObjectName(QString::fromUtf8("TextLabel1_4"));
-        TextLabel1_4->setMargin(5);
-
-        gridLayout1->addWidget(TextLabel1_4, 1, 0, 1, 1);
-
-        mContentEndPointLineEdit = new QLineEdit(groupBox);
-        mContentEndPointLineEdit->setObjectName(QString::fromUtf8("mContentEndPointLineEdit"));
-
-        gridLayout1->addWidget(mContentEndPointLineEdit, 1, 1, 1, 1);
-
-
-        gridLayout_4->addWidget(groupBox, 1, 0, 1, 1);
-
         QWidget::setTabOrder(txtName, txtUrl);
         QWidget::setTabOrder(txtUrl, mCommunityEndPointLineEdit);
         QWidget::setTabOrder(mCommunityEndPointLineEdit, mContentEndPointLineEdit);
         QWidget::setTabOrder(mContentEndPointLineEdit, mAuthSettings);
-        QWidget::setTabOrder(mAuthSettings, mRefererLineEdit);
 
         retranslateUi(QgsNewArcGisRestConnectionBase);
         QObject::connect(buttonBox, SIGNAL(accepted()), QgsNewArcGisRestConnectionBase, SLOT(accept()));
@@ -193,18 +174,6 @@ public:
     void retranslateUi(QDialog *QgsNewArcGisRestConnectionBase)
     {
         QgsNewArcGisRestConnectionBase->setWindowTitle(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "Create a New Connection", nullptr));
-        mHttpGroupBox->setTitle(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "HTTP", nullptr));
-        label->setText(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "Referer", nullptr));
-        mGroupBox->setTitle(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "Connection Details", nullptr));
-        TextLabel1->setText(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "URL", nullptr));
-#if QT_CONFIG(tooltip)
-        txtUrl->setToolTip(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "HTTP address of the Web Map Server", nullptr));
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
-        txtName->setToolTip(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "Name of the new connection", nullptr));
-#endif // QT_CONFIG(tooltip)
-        TextLabel1_2->setText(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "Name", nullptr));
-        mAuthGroupBox->setTitle(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "Authentication", nullptr));
         groupBox->setTitle(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "ArcGIS Portal Details", nullptr));
 #if QT_CONFIG(tooltip)
         mCommunityEndPointLineEdit->setToolTip(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "HTTP address of the Web Map Server", nullptr));
@@ -216,6 +185,16 @@ public:
         mContentEndPointLineEdit->setToolTip(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "HTTP address of the Web Map Server", nullptr));
 #endif // QT_CONFIG(tooltip)
         mContentEndPointLineEdit->setPlaceholderText(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "https://mysite.com/portal/sharing/rest/content/", nullptr));
+        mGroupBox->setTitle(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "Connection Details", nullptr));
+        TextLabel1->setText(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "URL", nullptr));
+#if QT_CONFIG(tooltip)
+        txtUrl->setToolTip(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "HTTP address of the Web Map Server", nullptr));
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        txtName->setToolTip(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "Name of the new connection", nullptr));
+#endif // QT_CONFIG(tooltip)
+        TextLabel1_2->setText(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "Name", nullptr));
+        mAuthGroupBox->setTitle(QCoreApplication::translate("QgsNewArcGisRestConnectionBase", "Authentication", nullptr));
     } // retranslateUi
 
 };
