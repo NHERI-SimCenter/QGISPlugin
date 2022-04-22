@@ -18,7 +18,7 @@ if errorlevel 1 (echo "Could not copy DLLs from %DLLdir%" & goto error)
 
 REM Copy over the plugins directory
 
-xcopy "%DLLdir%/plugins" "%CurrDir%/plugins" /e /i /h /y
+xcopy "%Installdir%/plugins" "%CurrDir%/plugins" /e /i /h /y
 
 if errorlevel 1 (echo "Could not copy plugins folder" & goto error)
 
