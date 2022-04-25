@@ -49,23 +49,33 @@ Copy over the 'ogr' folder from \QGIS\src\gui to QGISPlugin\win\src\app
 
 Copy over the 'processing' folder from \QGIS\src\analysis to QGISPlugin\win\src\app
 
+Copy over the 'processing' folder from \QGIS\src\core to QGISPlugin\win\src\app\processing
+
 Copy over the 'scalebar' folder from \QGIS\src\core to QGISPlugin\win\src\app
 
 Copy over the 'raster' folder from  \QGIS\src\gui to QGISPlugin\win\src\app
+
+Copy over the 'layout' folder from  \QGIS\src\gui to QGISPlugin\win\src\app
+
+Copy over the 'effects' folder from  \QGIS\src\gui to QGISPlugin\win\src\app
 
 Copy over the 'diagram' folder from  \QGIS\src\core to QGISPlugin\win\src\app
 
 Copy over the 'auth' folder from  \QGIS\src\gui to QGISPlugin\win\src\app
 
-Copy over the 'attribute' folder from  \QGIS\src\gui to QGISPlugin\win\src\app
+Copy over the 'attributetable' folder from  \QGIS\src\gui to QGISPlugin\win\src\app
 
 Copy over the 'geometry' folder from  \QGIS\src\core to QGISPlugin\win\src\app
 
 Copy over the 'mesh' folder from  \QGIS\src\core to QGISPlugin\win\src\app
 
+Copy over the 'mesh' folder from  \QGIS\src\gui to QGISPlugin\win\src\app
+
 Copy over the contents of the 'mesh' folder from  \QGIS\src\gui\mesh to QGISPlugin\win\src\app\mesh
 
 Copy over the 'plugins' folder from  \QGIS\src to QGISPlugin\win\src\app
+
+Copy over the '3d' folder from \QGIS\src\3d to QGISPlugin\win\src\app\3d
 
 
 ISSUES: In debug config, I needed to compile protobuf myself and upload it to the OSGeo4W lib/bin/include folders; due to a symbol mismatch error that is thrown
