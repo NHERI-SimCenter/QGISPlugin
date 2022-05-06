@@ -707,14 +707,24 @@ INCLUDEPATH +=  $$PATH_TO_QGIS_EXT \
 
 #### QGIS libs ####
 
-unix {
+mac {
 
 INCLUDEPATH +=  $$PATH_TO_INSTALL/include \
                 $$PATH_TO_INSTALL/include/qgis \
 
 LIBS += -L$$PATH_TO_INSTALL/lib/ -lqgis_core -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d -lqgisgrass7
 
-} else {
+} else:linux {
+
+
+INCLUDEPATH +=  $$PATH_TO_INSTALL/include \
+                $$PATH_TO_INSTALL/include/qgis \
+
+LIBS += -L$$PATH_TO_INSTALL/lib/ -lqgis_core -lqgis_gui -lqgis_analysis -lqgis_native -lqgis_3d 
+
+
+}
+else {
 
 
 CONFIG(debug, debug|release) {
@@ -758,7 +768,21 @@ LIBS += -framework opencl
 # Do not use the system sqlite will cause a crash
 #LIBS += -L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/lib -lsqlite3
 
-} else {
+} else:linux {
+
+LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lqca-qt5 -lqwt -lqt5keychain -lqscintilla2_qt5
+
+LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lproj -lgdal -lsqlite3 -lOpenCL
+
+INCLUDEPATH +=  $$PATH_TO_QGIS_DEPS/include \
+                $$PATH_TO_QGIS_DEPS/include \
+                $$PATH_TO_QGIS_DEPS/include/qt5keychain \
+                $$PATH_TO_QGIS_DEPS/include/qwt \
+                $$PATH_TO_QGIS_DEPS/include/Qca-qt5/QtCrypto \
+
+
+}
+else {
 
 CONFIG(release, debug|release): LIBS += -L$$PATH_TO_QGIS_DEPS/apps/Qt5/lib/ -lqca-qt5 -lqwt -lqt5keychain -lqscintilla2_qt5
 CONFIG(debug, debug|release): LIBS += -L$$PATH_TO_QGIS_DEPS/apps/Qt5/lib/ -lqca-qt5d -lqwtd -lqt5keychaind -lqscintilla2_qt5d
