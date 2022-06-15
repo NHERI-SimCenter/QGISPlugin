@@ -107,6 +107,9 @@ public:
     // Hides the map legend
     void hideLegend(void);
 
+    // Helper function to get the index of some attribute
+    int getIndexOfVal(const QStringList& headersStr, const QString val);
+
 signals:
     // Emit a screen shot of the current GIS view
     void emitScreenshot(QImage img);

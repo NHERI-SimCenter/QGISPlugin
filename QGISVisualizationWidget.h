@@ -157,6 +157,9 @@ public:
     // The attributes should be sorted according to feature id, ascending from lowest to highest
     int addNewFeatureAttributesToLayer(QgsVectorLayer* layer, const QStringList& fieldNames, const QVector<QgsAttributes>& values, QString& error);
 
+    // Join layers - the feature attributes from the left layer will be added to the right layer
+    int joinLayers(const QgsVectorLayer* left, QgsVectorLayer* right, const QString& tag, QString& errMsg);
+
 public slots:
 
     void handleSelectButton(void);

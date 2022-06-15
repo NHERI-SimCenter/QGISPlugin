@@ -1456,6 +1456,156 @@ double QGISVisualizationWidget::sampleRaster(const double& x, const double& y, Q
 }
 
 
+int  QGISVisualizationWidget::joinLayers(const QgsVectorLayer* left, QgsVectorLayer* right, const QString& tag, QString& errMsg)
+{
+    if(left == nullptr || right == nullptr)
+    {
+        this->errorMessage("Error, in join layers, provided layers are nullptrs");
+        return -1;
+    }
+
+    auto blockLayerFields = left->fields();
+
+    QStringList fieldNames;
+    for(int i = 0; i<blockLayerFields.count(); ++i)
+    {
+        auto field = blockLayerFields.at(i);
+        auto fieldName = field.name();
+
+        if(fieldName.compare("fid") == 0)
+            continue;
+
+        fieldNames.append(tag+fieldName);
+    }
+
+    std::vector<QgsFeature> lhsFeatVec;
+    lhsFeatVec.reserve(left->featureCount());
+
+    auto lhsFeatures = left->getFeatures();
+    QgsFeature lhsFeat;
+
+    // Coordinate transformation to transform from the block layer crs to the building layer crs - in the case where they are different
+    if(right->crs() != left->crs())
+    {
+        QgsCoordinateTransform coordTrans(left->crs(), right->crs(), QgsProject::instance());
+        while (lhsFeatures.nextFeature(lhsFeat))
+        {
+            auto geom = lhsFeat.geometry();
+            geom.get()->transform(coordTrans);
+            lhsFeat.setGeometry(geom);
+            lhsFeatVec.push_back(lhsFeat);
+        }
+    }
+    else
+    {
+        while (lhsFeatures.nextFeature(lhsFeat))
+            lhsFeatVec.push_back(lhsFeat);
+    }
+
+    auto numFeat = right->featureCount();
+
+    if(numFeat == 0)
+    {
+        errMsg = "Error, number of features is zero in the buildings layer "+right->name();
+        return -1;
+    }
+
+
+    auto testInPolygon = [](const QgsGeometry& polygonGeom, const QgsPointXY& featCentroid, const QgsGeometryEngine* polygonGeometryEngine) -> bool
+    {
+
+        // Do initial bounding box check which is very fast to exclude points that are far away
+        auto bb = polygonGeom.boundingBox();
+
+        if(bb.contains(featCentroid))
+        {
+            if(polygonGeometryEngine->intersects(polygonGeom.constGet()))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    };
+
+
+    QVector< QgsAttributes > fieldAttributes(numFeat, QgsAttributes(fieldNames.size()));
+
+    // Need to return the features with ascending ids so that when we set the updated features to the layer, things will be in order
+    QgsFeatureRequest featRequest;
+    QgsFeatureRequest::OrderByClause orderByClause(QString("id"),true);
+    QList<QgsFeatureRequest::OrderByClause> obcList = {orderByClause};
+    QgsFeatureRequest::OrderBy orderBy(obcList);
+    featRequest.setOrderBy(orderBy);
+
+    auto rhsFeatures = right->getFeatures(featRequest);
+    QgsFeature rhsFeat;
+    int count = 0;
+    while (rhsFeatures.nextFeature(rhsFeat))
+    {
+        auto featGeom = rhsFeat.geometry();
+
+        // Get the building centroid
+        auto featCentroidPoint = featGeom.centroid().asPoint();
+
+        std::unique_ptr< QgsGeometryEngine > polygonGeometryEngine(QgsGeometry::createGeometryEngine(featGeom.constGet()));
+
+        polygonGeometryEngine->prepareGeometry();
+
+        // Did we find the information that we are looking for
+        bool found = false;
+
+        //Iterate through the lhs layer features
+        for(auto&& it : lhsFeatVec)
+        {
+            auto lhsFeatGeom = it.geometry();
+
+            // Do bounding box check which is very fast to check if building is within a block group
+            auto bb = lhsFeatGeom.boundingBox();
+            if(bb.contains(featCentroidPoint))
+            {
+                if(testInPolygon(lhsFeatGeom,featCentroidPoint,polygonGeometryEngine.get()) == true)
+                {
+                    QgsAttributes featAtrbs = it.attributes();
+
+                    //                auto fieldIDx = it.fieldNameIndex("fid");
+
+                    for(int i = 0; i<featAtrbs.size(); ++i)
+                    {
+                        auto atrb = featAtrbs.at(i);
+
+                        fieldAttributes[count][i] = atrb;
+                    }
+
+                    found = true;
+                    break;
+                }
+            }
+        }
+
+        if(!found)
+        {
+            errMsg = "Error: could not find a census block for the feature  "+QString::number(rhsFeat.id());
+            return -1;
+        }
+
+        ++count;
+    }
+
+    if(fieldNames.size() != fieldAttributes.front().size())
+    {
+        errMsg = "Error: inconsistency between the field names and number of attributes  "+QString::number(rhsFeat.id());
+        return -1;
+    }
+
+    auto res = this->addNewFeatureAttributesToLayer(right,fieldNames,fieldAttributes,errMsg);
+    if(res != 0)
+        return res;
+
+    return 0;
+}
+
+
 int QGISVisualizationWidget::addNewFeatureAttributesToLayer(QgsVectorLayer* layer, const QStringList& fieldNames, const QVector<QgsAttributes>& values, QString& error)
 {
     if(layer == nullptr)
