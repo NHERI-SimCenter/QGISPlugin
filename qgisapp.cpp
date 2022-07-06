@@ -3326,19 +3326,21 @@ void QgisApp::createMenus()
   connect( actionPrefs, &QAction::triggered, this, &QgisApp::options );
   mProjectMenu->addAction( actionPrefs );
 
+  // SG add start
   // Window Menu
 
-  mWindowMenu = new QMenu( tr( "Window" ), this );
+  //mWindowMenu = new QMenu( tr( "Window" ), this );
 
-  mWindowMenu->addAction( mActionWindowMinimize );
-  mWindowMenu->addAction( mActionWindowZoom );
-  mWindowMenu->addSeparator();
+  // mWindowMenu->addAction( mActionWindowMinimize );
+  //mWindowMenu->addAction( mActionWindowZoom );
+  //mWindowMenu->addSeparator();
 
-  mWindowMenu->addAction( mActionWindowAllToFront );
-  mWindowMenu->addSeparator();
+  //  mWindowMenu->addAction( mActionWindowAllToFront );
+  //  mWindowMenu->addSeparator();
 
-  // insert before Help menu, as per Mac OS convention
-  menuBar()->insertMenu( mHelpMenu->menuAction(), mWindowMenu );
+  //  // insert before Help menu, as per Mac OS convention
+  //  menuBar()->insertMenu( mHelpMenu->menuAction(), mWindowMenu );
+  // SG add end
 #endif
 
   // Database Menu
@@ -8100,7 +8102,7 @@ void QgisApp::addWindow( QAction *action )
 {
 #ifdef Q_OS_MAC
   mWindowActions->addAction( action );
-  mWindowMenu->addAction( action );
+  //  mWindowMenu->addAction( action ); // SG add
   action->setCheckable( true );
   action->setChecked( true );
 #else
@@ -8112,7 +8114,7 @@ void QgisApp::removeWindow( QAction *action )
 {
 #ifdef Q_OS_MAC
   mWindowActions->removeAction( action );
-  mWindowMenu->removeAction( action );
+  // mWindowMenu->removeAction( action ); // SG add
 #else
   Q_UNUSED( action )
 #endif
@@ -15564,7 +15566,7 @@ void QgisApp::activateDeactivateLayerRelatedActions( QgsMapLayer *layer )
     mActionZoomToLayers->setEnabled( false );
     mActionZoomToLayer->setEnabled( false );
 
-    enableMeshEditingTools( false );
+    //enableMeshEditingTools( false ); // SG add
     mDigitizingTechniqueManager->enableDigitizingTechniqueActions( false );
 
     return;
@@ -15614,7 +15616,7 @@ void QgisApp::activateDeactivateLayerRelatedActions( QgsMapLayer *layer )
       mActionReverseLine->setEnabled( false );
       mActionTrimExtendFeature->setEnabled( false );
 
-      enableMeshEditingTools( false );
+      //enableMeshEditingTools( false ); // SG add
 
       mActionSelectFeatures->setEnabled( isSpatial );
       mActionSelectPolygon->setEnabled( isSpatial );
@@ -15893,7 +15895,7 @@ void QgisApp::activateDeactivateLayerRelatedActions( QgsMapLayer *layer )
       mActionLabeling->setEnabled( false );
       mActionDiagramProperties->setEnabled( false );
 
-      enableMeshEditingTools( false );
+      //enableMeshEditingTools( false ); // SG add
       mDigitizingTechniqueManager->enableDigitizingTechniqueActions( false );
 
       //NOTE: This check does not really add any protection, as it is called on load not on layer select/activate
@@ -15990,7 +15992,7 @@ void QgisApp::activateDeactivateLayerRelatedActions( QgsMapLayer *layer )
       mActionToggleEditing->setEnabled( canSupportEditing );
       mActionToggleEditing->setChecked( canSupportEditing && isEditable );
       mActionSaveLayerEdits->setEnabled( canSupportEditing && isEditable && mlayer->isModified() );
-      enableMeshEditingTools( isEditable );
+      //enableMeshEditingTools( isEditable ); // SG add
       mUndoDock->widget()->setEnabled( canSupportEditing && isEditable );
       mActionUndo->setEnabled( canSupportEditing && isEditable );
       mActionRedo->setEnabled( canSupportEditing && isEditable );
@@ -16064,7 +16066,7 @@ void QgisApp::activateDeactivateLayerRelatedActions( QgsMapLayer *layer )
       mActionDiagramProperties->setEnabled( false );
       mActionIdentify->setEnabled( true );
       mDigitizingTechniqueManager->enableDigitizingTechniqueActions( false );
-      enableMeshEditingTools( false );
+      //enableMeshEditingTools( false ); // SG add
       break;
 
     case QgsMapLayerType::PointCloudLayer:
@@ -16134,7 +16136,7 @@ void QgisApp::activateDeactivateLayerRelatedActions( QgsMapLayer *layer )
       mActionDiagramProperties->setEnabled( false );
       mActionIdentify->setEnabled( true );
       mDigitizingTechniqueManager->enableDigitizingTechniqueActions( false );
-      enableMeshEditingTools( false );
+      //enableMeshEditingTools( false ); // SG add
       break;
     }
     case QgsMapLayerType::PluginLayer:
@@ -19873,7 +19875,7 @@ void QgisApp::setupMenus(QMainWindow *mainWindow)
     mLayerMenu->addAction(mActionSetProjectCRSFromLayer);
     mLayerMenu->addAction(mActionLayerProperties);
     mLayerMenu->addAction(mActionLayerSubsetString);
-    mLayerMenu->addAction(mActionLabeling);
+   // mLayerMenu->addAction(mActionLabeling); // SG Add
     mLayerMenu->addSeparator();
     mLayerMenu->addAction(mActionAddToOverview);
     mLayerMenu->addAction(mActionAddAllToOverview);
