@@ -1173,7 +1173,8 @@ QgsGeometry QGISVisualizationWidget::getPolygonGeometryFromJson(const QString& g
     {
         auto points = it.split(",");
 
-        if(points.size() != 2)
+        // Point could have 2 or 3 dims, x,y or x,y,z
+        if(points.size() < 2 || points.size() > 3)
             return QgsGeometry();
 
         bool OK = false;
@@ -1353,7 +1354,8 @@ QgsGeometry QGISVisualizationWidget::getMultilineStringGeometryFromJson(const QS
     {
         auto points = it.split(",");
 
-        if(points.size() < 2)
+        // Point could have 2 or 3 dims, x,y or x,y,z
+        if(points.size() < 2 || points.size() > 3)
             return QgsGeometry();
 
         bool OK = false;

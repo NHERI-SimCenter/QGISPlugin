@@ -54,8 +54,6 @@ class SimCenterMapcanvasWidget;
 class QgsMapCanvas;
 #endif
 
-class ComponentInputWidget;
-class QGraphicsView;
 class QVBoxLayout;
 
 class VisualizationWidget : public  SimCenterAppWidget

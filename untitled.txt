@@ -1,6 +1,0 @@
-
-for f in $pathToInstall/qgis/plugins/*.so; do
-
-    otool -L $f
-
-done
