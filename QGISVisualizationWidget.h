@@ -115,7 +115,7 @@ public:
 
     void createSymbolRenderer(Qgis::MarkerShape symbolShape, QColor color, double size, QgsVectorLayer * layer);
 
-    void createPrettyGraduatedRenderer(const QString attrName, const QColor color1, const QColor color2, const int nclasses, QgsVectorLayer* vlayer);
+    void createPrettyGraduatedRenderer(const QString attrName, const QColor color1, const QColor color2, const int nclasses, QgsVectorLayer* vlayer, QgsSymbol* symbol = nullptr);
 
     void createCategoryRenderer(const QString attrName, QgsVectorLayer * vlayer, QgsSymbol* symbol, QVector<QColor> colors = QVector<QColor>());
 

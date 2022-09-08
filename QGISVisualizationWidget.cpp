@@ -918,7 +918,7 @@ int QGISVisualizationWidget::createCustomClassBreakRenderer(const QString attrNa
 }
 
 
-void QGISVisualizationWidget::createPrettyGraduatedRenderer(const QString attrName, const QColor color1, const QColor color2, const int nclasses, QgsVectorLayer * vlayer)
+void QGISVisualizationWidget::createPrettyGraduatedRenderer(const QString attrName, const QColor color1, const QColor color2, const int nclasses, QgsVectorLayer * vlayer, QgsSymbol* symbol)
 {
 
     if(vlayer == nullptr)
@@ -938,6 +938,9 @@ void QGISVisualizationWidget::createPrettyGraduatedRenderer(const QString attrNa
     QgsClassificationMethod *method = QgsApplication::classificationMethodRegistry()->method(methodId);
 
     QgsGraduatedSymbolRenderer* renderer = new QgsGraduatedSymbolRenderer(attrName);
+
+    if(symbol != nullptr)
+        renderer->setSourceSymbol(symbol);
 
     // set method to renderer
     renderer->setClassificationMethod(method);
@@ -1099,6 +1102,8 @@ void QGISVisualizationWidget::clear(void)
     for(auto&& it: selectedLayers)
         this->removeLayer(it);
 
+    mapSelectableAssetWidgets.clear();
+
     // This will clear everything including background layers
     // qgis->layerTreeView()->layerTreeModel()->rootGroup()->clear();
 }
@@ -1108,6 +1113,8 @@ void QGISVisualizationWidget::removeLayer(QgsMapLayer* layer)
 {
     if(layer == nullptr)
         return;
+
+    this->deregisterLayerForSelection(layer->id());
 
     auto layerTreeView = qgis->layerTreeView();
 
