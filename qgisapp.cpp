@@ -13683,32 +13683,33 @@ T *QgisApp::addLayerPrivate( QgsMapLayerType type, const QString &uri, const QSt
       // since the layer is bad, stomp on it
       return nullptr;
     }
+// SG change comment out lines below to load all sublayers without a dialog
     else if ( sublayers.size() > 1 || QgsProviderUtils::sublayerDetailsAreIncomplete( sublayers, QgsProviderUtils::SublayerCompletenessFlag::IgnoreUnknownFeatureCount ) )
     {
       // ask user for sublayers (unless user settings dictate otherwise!)
-      switch ( shouldAskUserForSublayers( sublayers ) )
-      {
-        case SublayerHandling::AskUser:
-        {
-          QgsProviderSublayersDialog dlg( updatedUri, path, sublayers, {type}, this );
-          if ( dlg.exec() )
-          {
-            const QList< QgsProviderSublayerDetails > selectedLayers = dlg.selectedLayers();
-            if ( !selectedLayers.isEmpty() )
-            {
-              result = qobject_cast< T * >( addSublayers( selectedLayers, baseName, dlg.groupName() ).value( 0 ) );
-            }
-          }
-          break;
-        }
-        case SublayerHandling::LoadAll:
-        {
+//      switch ( shouldAskUserForSublayers( sublayers ) )
+//      {
+//        case SublayerHandling::AskUser:
+//        {
+//          QgsProviderSublayersDialog dlg( updatedUri, path, sublayers, {type}, this );
+//          if ( dlg.exec() )
+//          {
+//            const QList< QgsProviderSublayerDetails > selectedLayers = dlg.selectedLayers();
+//            if ( !selectedLayers.isEmpty() )
+//            {
+//              result = qobject_cast< T * >( addSublayers( selectedLayers, baseName, dlg.groupName() ).value( 0 ) );
+//            }
+//          }
+//          break;
+//        }
+//        case SublayerHandling::LoadAll:
+//        {
           result = qobject_cast< T * >( addSublayers( sublayers, baseName, QString() ).value( 0 ) );
-          break;
-        }
-        case SublayerHandling::AbortLoading:
-          break;
-      };
+//          break;
+//        }
+//        case SublayerHandling::AbortLoading:
+//          break;
+//      };
     }
     else
     {
