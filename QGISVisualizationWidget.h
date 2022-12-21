@@ -92,6 +92,9 @@ public:
     //     4) Use provider key "gdal" if the layer is a raster layer being loaded from a file on the users computer
     QgsVectorLayer* addVectorLayer(const QString &layerPath, const QString &name, const QString &providerKey = "memory");
 
+    // BZ - 221220
+    QList<QgsMapLayer*> addVectorInGroup(const QString &layerPath, const QString &name, const QString &providerKey = "memory");
+
     QgsRasterLayer* addRasterLayer(const QString &layerPath, const QString &name, const QString &providerKey);
 
     // Duplicates an exisiting layer and returns the layer. Returns a nullptr if resulting layer is invalid.
@@ -199,7 +202,6 @@ private:
 
     // Returns the screen point from a map point in WGS84 format (lat/lon)
     QgsPointXY getScreenCoordFromPoint(const QgsPointXY& point, const QgsMapCanvas* canvas);
-
 };
 
 #endif // QGISVISUALIZATIONWIDGET_H

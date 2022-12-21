@@ -81,6 +81,8 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 #include <qgssinglesymbolrenderer.h>
 #include <qgsrasterlayer.h>
 #include <qgsrasterdataprovider.h>
+#include "qgsproviderregistry.h"
+#include "qgsprovidersublayerdetails.h"
 
 #include <QStandardPaths>
 #include <QSplitter>
@@ -116,7 +118,12 @@ QGISVisualizationWidget::QGISVisualizationWidget(QMainWindow *parent) : Visualiz
 
     qgis->mapCanvas()->setCenter(QgsPointXY(37.8717450069,-122.2609607382));
 
+//#ifdef OpenSRA
+//    auto crs = QgsCoordinateReferenceSystem(QStringLiteral("EPSG:4326"));
+//#else
     auto crs = QgsCoordinateReferenceSystem(QStringLiteral("EPSG:3857"));
+//#endif
+
     qgis->mapCanvas()->setDestinationCrs(crs);
 
     auto leftHandWidget = new QWidget();
@@ -183,7 +190,11 @@ QGISVisualizationWidget::QGISVisualizationWidget(QMainWindow *parent) : Visualiz
 
     this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 
+#ifdef OpenSRA
+    handleBasemapSelection(6);
+#else
     handleBasemapSelection(0);
+#endif
 
     // Set the map tool to select
     handleClearAssetsMap();
@@ -269,7 +280,12 @@ SimCenterMapcanvasWidget* QGISVisualizationWidget::getMapViewWidget(const QStrin
     mapCanvas->setExtent( qgis->mapCanvas()->extent() );
     QgsDebugMsgLevel( QStringLiteral( "QgisApp::createNewMapCanvas -2- : QgsProject::instance()->crs().description[%1]ellipsoid[%2]" ).arg( QgsProject::instance()->crs().description(), QgsProject::instance()->crs().ellipsoidAcronym() ), 3 );
     //    mapCanvas->setDestinationCrs( QgsProject::instance()->crs() );
+
+//#ifdef OpenSRA
+//    mapCanvas->setDestinationCrs(QgsCoordinateReferenceSystem(QStringLiteral("EPSG:4326")));
+//#else
     mapCanvas->setDestinationCrs(QgsCoordinateReferenceSystem(QStringLiteral("EPSG:3857")));
+//#endif
     mapCanvas->freeze(false);
 
     return mapCanvasWidget;
@@ -396,6 +412,14 @@ void QGISVisualizationWidget::handleBasemapSelection(int index)
 
         baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
     }
+    else if(index == 6)
+    {
+        auto uri = "tilePixelRatio=2&type=xyz&url=https://stamen-tiles.a.ssl.fastly.net/toner-lite/%7Bz%7D/%7Bx%7D/%7By%7D.png&zmax=20&zmin=0";
+        auto baseName = "Stamen Toner Lite";
+        auto key = "wms";
+
+        baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
+    }
 
     // Make the basemap non-removable so that it does not get deleted when the project is cleared
     QgsMapLayer::LayerFlags flags = baseMapLayer->flags();
@@ -414,7 +438,11 @@ void QGISVisualizationWidget::handleBasemapSelection(int index)
 
     baseMapLayer->setFlags( flags );
 
+//#ifdef OpenSRA
+//    auto crs = QgsCoordinateReferenceSystem(QStringLiteral("EPSG:4326"));
+//#else
     auto crs = QgsCoordinateReferenceSystem(QStringLiteral("EPSG:3857"));
+//#endif
     baseMapLayer->setCrs(crs);
 }
 
@@ -483,7 +511,6 @@ QgsVectorLayer* QGISVisualizationWidget::addVectorLayer(const QString &layerPath
 
     return layer;
 }
-
 
 QgsVectorLayer* QGISVisualizationWidget::duplicateExistingLayer(QgsVectorLayer* layer)
 {
@@ -1771,4 +1798,33 @@ int QGISVisualizationWidget::addNewFeatureAttributesToLayer(QgsVectorLayer* laye
     layer->updateExtents();
 
     return 0;
+}
+
+// BZ - 221220
+QList<QgsMapLayer*> QGISVisualizationWidget::addVectorInGroup(const QString &layerPath, const QString &name, const QString &providerKey)
+{
+    QVariantMap uriElements = QgsProviderRegistry::instance()->decodeUri( providerKey, layerPath );
+    QString path = layerPath;
+    if ( uriElements.contains( QStringLiteral( "path" ) ) )
+    {
+      // run layer path through QgsPathResolver so that all inbuilt paths and other localised paths are correctly expanded
+      path = QgsPathResolver().readPath( uriElements.value( QStringLiteral( "path" ) ).toString() );
+      uriElements[ QStringLiteral( "path" ) ] = path;
+    }
+    // Not all providers implement decodeUri(), so use original uri if uriElements is empty
+    const QString updatedUri = uriElements.isEmpty() ? layerPath : QgsProviderRegistry::instance()->encodeUri( providerKey, uriElements );
+
+    // query sublayers
+    QList< QgsProviderSublayerDetails > sublayers = QgsProviderRegistry::instance()->providerMetadata( providerKey ) ?
+        QgsProviderRegistry::instance()->providerMetadata( providerKey )->querySublayers( updatedUri, Qgis::SublayerQueryFlag::IncludeSystemTables )
+        : QgsProviderRegistry::instance()->querySublayers( updatedUri );
+
+    // now add sublayers
+    QList<QgsMapLayer*> mapLayers;
+    if ( sublayers.empty() )
+        this->errorMessage("Vector file does not contain any layers.");
+    else
+        mapLayers << qgis->addSublayers( sublayers, name, name);
+
+    return mapLayers;
 }
