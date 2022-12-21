@@ -916,6 +916,10 @@ class APP_EXPORT QgisApp : public QMainWindow
     //! Identify feature(s) on the currently selected layer
     void identify();
 
+    // BZ - 221220
+    //! Returns list of layers under groupName
+    QList< QgsMapLayer * > addSublayers( const QList< QgsProviderSublayerDetails> &layers, const QString &baseName, const QString &groupName );
+
   public slots:
     //! save current vector layer
     QString saveAsFile( QgsMapLayer *layer = nullptr, bool onlySelected = false, bool defaultToAddToMap = true );
@@ -2420,7 +2424,7 @@ class APP_EXPORT QgisApp : public QMainWindow
     };
     SublayerHandling shouldAskUserForSublayers( const QList< QgsProviderSublayerDetails > &layers, bool hasNonLayerItems = false ) const;
 
-    QList< QgsMapLayer * > addSublayers( const QList< QgsProviderSublayerDetails> &layers, const QString &baseName, const QString &groupName );
+    //QList< QgsMapLayer * > addSublayers( const QList< QgsProviderSublayerDetails> &layers, const QString &baseName, const QString &groupName );
 
     void postProcessAddedLayer( QgsMapLayer *layer );
 
