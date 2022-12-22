@@ -503,6 +503,8 @@ void QGISVisualizationWidget::handleClearAssetsMap(void)
 
 QgsRasterLayer* QGISVisualizationWidget::addRasterLayer(const QString &layerPath, const QString &name, const QString &providerKey)
 {
+    this->deselectAllTreeItems();
+
     auto layer = qgis->addRasterLayer(layerPath, name, providerKey);
 
     if(layer != nullptr)
@@ -514,6 +516,8 @@ QgsRasterLayer* QGISVisualizationWidget::addRasterLayer(const QString &layerPath
 
 QgsVectorLayer* QGISVisualizationWidget::addVectorLayer(const QString &layerPath, const QString &name, const QString &providerKey)
 {
+    this->deselectAllTreeItems();
+
     auto layer = qgis->addVectorLayer(layerPath, name, providerKey);
 
     if(layer != nullptr)
@@ -764,9 +768,13 @@ QgsLayerTreeGroup* QGISVisualizationWidget::createLayerGroup(const QVector<QgsMa
     auto group = layerTreeView->currentGroupNode();
 
     if(group != nullptr)
+    {
         group->setName(groupName);
+        group->setExpanded(false);
+    }
     else
         this->errorMessage("Failed to create a group layer");
+
 
     // Clear the selection otherwise future layers added to the map will automatically be part of the group
     this->deselectAllTreeItems();
@@ -785,9 +793,7 @@ QgsLayerTreeGroup* QGISVisualizationWidget::getLayerGroup(const QString groupNam
 
 void QGISVisualizationWidget::deselectAllTreeItems(void)
 {
-    auto selectModel = layerTreeView->selectionModel();
-    selectModel->clearSelection();
-    selectModel->clearCurrentIndex();
+    layerTreeView->setCurrentLayer(nullptr);
 }
 
 
