@@ -142,6 +142,8 @@ QGISVisualizationWidget::QGISVisualizationWidget(QMainWindow *parent) : Visualiz
     baseMapCombo->addItem("Google Road");
     baseMapCombo->addItem("Google Road & Satellite");
     baseMapCombo->addItem("Bing Aerial");
+    baseMapCombo->addItem("Stamen Toner Lite");
+    baseMapCombo->addItem("ESRI World Topo");
 
     connect(baseMapCombo, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &QGISVisualizationWidget::handleBasemapSelection);
 
@@ -191,7 +193,7 @@ QGISVisualizationWidget::QGISVisualizationWidget(QMainWindow *parent) : Visualiz
     this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 
 #ifdef OpenSRA
-    handleBasemapSelection(6);
+    handleBasemapSelection(7);
 #else
     handleBasemapSelection(0);
 #endif
@@ -416,6 +418,14 @@ void QGISVisualizationWidget::handleBasemapSelection(int index)
     {
         auto uri = "tilePixelRatio=2&type=xyz&url=https://stamen-tiles.a.ssl.fastly.net/toner-lite/%7Bz%7D/%7Bx%7D/%7By%7D.png&zmax=20&zmin=0";
         auto baseName = "Stamen Toner Lite";
+        auto key = "wms";
+
+        baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
+    }
+    else if(index == 7)
+    {
+        auto uri = "tilePixelRatio=2&type=xyz&url=https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/%7Bz%7D/%7By%7D/%7Bx%7D&zmax=20&zmin=0";
+        auto baseName = "ESRI World Topo";
         auto key = "wms";
 
         baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
@@ -1831,6 +1841,12 @@ QList<QgsMapLayer*> QGISVisualizationWidget::addVectorInGroup(const QString &lay
         this->errorMessage("Vector file does not contain any layers.");
     else
         mapLayers << qgis->addSublayers( sublayers, name, name);
+
+#ifdef OpenSRA
+    // force CRS=4326 - temp solution for incorrect inference of CRS during import
+    for (int i=0; i<mapLayers.count(); ++i)
+        mapLayers.value(i)->setCrs(QgsCoordinateReferenceSystem("EPSG:4326"));
+#endif
 
     return mapLayers;
 }
