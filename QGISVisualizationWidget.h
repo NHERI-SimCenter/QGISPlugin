@@ -126,6 +126,7 @@ public:
 
     // The same symbol will be used to render every feature
     void createSimpleRenderer(QgsSymbol* symbol, QgsVectorLayer * layer);
+    void createSimpleRenderer(QColor color, QgsVectorLayer * layer);
 
     void setLayerVisibility(QgsMapLayer* layer, bool value);
 

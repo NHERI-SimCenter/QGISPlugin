@@ -1086,6 +1086,38 @@ void QGISVisualizationWidget::createSimpleRenderer(QgsSymbol* symbol, QgsVectorL
 }
 
 
+void QGISVisualizationWidget::createSimpleRenderer(QColor color, QgsVectorLayer * layer)
+{
+
+    QgsSymbol* symbol = nullptr;
+
+    auto geomType = layer->geometryType();
+
+    if(geomType == QgsWkbTypes::GeometryType::PolygonGeometry)
+    {
+        symbol = new QgsFillSymbol();
+    }
+    else if(geomType == QgsWkbTypes::GeometryType::PointGeometry)
+    {
+        symbol = new QgsMarkerSymbol();
+    }
+    else if(geomType == QgsWkbTypes::GeometryType::LineGeometry)
+    {
+        symbol = new QgsLineSymbol();
+    }
+    else
+    {
+        this->errorMessage("Error, could not parse the geometry type");
+        return;
+    }
+
+    symbol->setColor(color);
+
+    QgsSingleSymbolRenderer* renderer = new QgsSingleSymbolRenderer(symbol);
+
+    layer->setRenderer(renderer);
+}
+
 void QGISVisualizationWidget::createSymbolRenderer(Qgis::MarkerShape symbolShape, QColor color, double size, QgsVectorLayer * layer)
 {
     QgsSimpleMarkerSymbolLayer *mSimpleMarkerLayer = new QgsSimpleMarkerSymbolLayer();
