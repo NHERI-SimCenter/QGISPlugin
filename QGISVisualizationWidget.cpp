@@ -137,7 +137,7 @@ QGISVisualizationWidget::QGISVisualizationWidget(QMainWindow *parent) : Visualiz
 
     baseMapCombo = new QComboBox();
     baseMapCombo->addItem("OpenStreetMap");
-    baseMapCombo->addItem("OpenStreetMap Topo");
+//    baseMapCombo->addItem("OpenStreetMap Topo");
     baseMapCombo->addItem("Google Satellite");
     baseMapCombo->addItem("Google Road");
     baseMapCombo->addItem("Google Road & Satellite");
@@ -193,8 +193,9 @@ QGISVisualizationWidget::QGISVisualizationWidget(QMainWindow *parent) : Visualiz
     this->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
 
 #ifdef OpenSRA
-    handleBasemapSelection(7);
+    baseMapCombo->setCurrentIndex(6);
 #else
+    baseMapCombo->setCurrentIndex(0);
     handleBasemapSelection(0);
 #endif
 
