@@ -92,8 +92,6 @@ public:
     //     4) Use provider key "gdal" if the layer is a raster layer being loaded from a file on the users computer
     QgsVectorLayer* addVectorLayer(const QString &layerPath, const QString &name, const QString &providerKey = "memory");
 
-    // BZ - 221220
-    QList<QgsMapLayer*> addVectorInGroup(const QString &layerPath, const QString &name, const QString &providerKey = "memory");
 
     QgsRasterLayer* addRasterLayer(const QString &layerPath, const QString &name, const QString &providerKey);
 
@@ -133,8 +131,10 @@ public:
     // Create a group of layers
     // Must pass at least one layer
     QgsLayerTreeGroup* createLayerGroup(const QVector<QgsMapLayer*>& layers, const QString groupName);
-
     QgsLayerTreeGroup* getLayerGroup(const QString groupName);
+    // BZ - 221220
+    QList<QgsMapLayer*> addVectorInGroup(const QString &layerPath, const QString &name, const QString &providerKey = "memory");
+    void removeLayerGroup(const QString& name);
 
     void turnOnSelectionTool();
 
@@ -182,6 +182,7 @@ public slots:
 
 private:
     QgsLayerTreeView* layerTreeView = nullptr;
+    QgsMapLayer* baseMapLayer = nullptr;
 
     QPointer<QgisApp> qgis;
 
