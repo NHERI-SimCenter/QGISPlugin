@@ -47,6 +47,7 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 // Test to delete end
 
 #include <qgsuserprofilemanager.h>
+#include <qgslayertreeutils.h>
 #include <qgslayertreeview.h>
 #include <qgisapp.h>
 #include <qgsmaplayer.h>
@@ -365,7 +366,6 @@ SimCenterMapcanvasWidget* QGISVisualizationWidget::testNewMapCanvas()
 
 void QGISVisualizationWidget::handleBasemapSelection(int index)
 {
-    QgsMapLayer* baseMapLayer = nullptr;
 
     if(index == 0)
     {
@@ -430,6 +430,16 @@ void QGISVisualizationWidget::handleBasemapSelection(int index)
         auto key = "wms";
 
         baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
+    }
+    else
+    {
+        baseMapLayer = nullptr;
+    }
+
+    if (baseMapLayer == nullptr)
+    {
+        this->errorMessage("Error setting basemap layer");
+        return;
     }
 
     // Make the basemap non-removable so that it does not get deleted when the project is cleared
@@ -786,10 +796,37 @@ QgsLayerTreeGroup* QGISVisualizationWidget::createLayerGroup(const QVector<QgsMa
 
 QgsLayerTreeGroup* QGISVisualizationWidget::getLayerGroup(const QString groupName)
 {
-    auto grp = layerTreeView->currentGroupNode()->findGroup(groupName);
+
+    // Get the root group
+    QgsLayerTreeGroup *rootGroup = layerTreeView->layerTreeModel()->rootGroup();
+
+    // Find group node with specified name. Searches recursively the whole sub-tree. - will return nullptr if not found!
+    auto grp = rootGroup->findGroup(groupName);
 
     return grp;
 }
+
+
+
+void QGISVisualizationWidget::removeLayerGroup(const QString& name)
+{
+    // Get the layer group
+    auto lyrGroup = this->getLayerGroup(name);
+
+    if(!lyrGroup)
+    {
+        this->errorMessage("Error deleting the layer group. "+name+" Could not find the layer group.");
+        return;
+    }
+
+    // Get the layers recursively
+    auto layerList = lyrGroup->findLayers();
+
+    // When all layers are removed from the group the group will disappear
+    for(auto&& it : layerList)
+        this->removeLayer(it->layer());
+}
+
 
 
 void QGISVisualizationWidget::deselectAllTreeItems(void)
@@ -1303,6 +1340,30 @@ void QGISVisualizationWidget::zoomToLayer(QgsMapLayer* layer)
     this->selectLayerInTree(layer);
 
     qgis->zoomToLayerExtent();
+
+    // Ensure that we are not zoomed in too far
+    if ( baseMapLayer)
+    {
+      baseMapLayer->setScaleBasedVisibility(true);
+      auto mMapCanvas = qgis->mapCanvas();
+      const double scale = mMapCanvas->scale();
+
+      auto minScale = baseMapLayer->minimumScale();
+      auto maxScale = baseMapLayer->maximumScale();
+
+      // Clip the max scale at 3000 - no point in zooming in too far
+      if (maxScale < 3000.0)
+          maxScale = 3000.0;
+
+      if ( scale > minScale && minScale > 0 )
+      {
+        mMapCanvas->zoomScale( minScale * Qgis::SCALE_PRECISION );
+      }
+      else if ( scale <= maxScale && maxScale > 0 )
+      {
+        mMapCanvas->zoomScale(maxScale);
+      }
+    }
 
     return;
 }
