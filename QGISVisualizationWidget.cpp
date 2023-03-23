@@ -53,6 +53,7 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 #include <qgsmaplayer.h>
 #include <qgslayertree.h>
 #include <qgslayertreemodel.h>
+#include <qgslayertreenode.h>
 #include <qgslayertreegroup.h>
 #include <qgslayertreeviewdefaultactions.h>
 #include <qgsmapcanvas.h>
@@ -367,80 +368,102 @@ SimCenterMapcanvasWidget* QGISVisualizationWidget::testNewMapCanvas()
 void QGISVisualizationWidget::handleBasemapSelection(int index)
 {
 
+    QString uri;
+    QString baseName;
+    QString key;
+
     if(index == 0)
     {
-        auto uri = "tilePixelRatio=2&type=xyz&url=http://tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png&zmax=19&zmin=0";
-        auto baseName = "Open Street Map";
-        auto key = "wms";
-
-        baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
+        uri = "tilePixelRatio=2&type=xyz&url=http://tile.openstreetmap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png&zmax=19&zmin=0";
+        baseName = "Open Street Map";
+        key = "wms";
     }
     else if(index == 1)
     {
-        auto uri = "tilePixelRatio=2&type=xyz&url=http://tile.opentopomap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png&zmax=19&zmin=0";
-        auto baseName = "Open Street Map Topo";
-        auto key = "wms";
 
-        baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
+        uri = "tilePixelRatio=2&type=xyz&url=http://tile.opentopomap.org/%7Bz%7D/%7Bx%7D/%7By%7D.png&zmax=19&zmin=0";
+        baseName = "Open Street Map Topo";
+        key = "wms";
     }
     else if(index == 2)
     {
-        auto uri = "tilePixelRatio=2&type=xyz&url=https://mt1.google.com/vt/lyrs%3Ds%26x%3D%7Bx%7D%26y%3D%7By%7D%26z%3D%7Bz%7D&zmax=19&zmin=0";
-        auto baseName = "Google Satellite";
-        auto key = "wms";
-
-        baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
+        uri = "tilePixelRatio=2&type=xyz&url=https://mt1.google.com/vt/lyrs%3Ds%26x%3D%7Bx%7D%26y%3D%7By%7D%26z%3D%7Bz%7D&zmax=19&zmin=0";
+        baseName = "Google Satellite";
+        key = "wms";
     }
     else if(index == 3)
     {
-        auto uri = "tilePixelRatio=2&type=xyz&url=https://mt1.google.com/vt/lyrs%3Dm%26x%3D%7Bx%7D%26y%3D%7By%7D%26z%3D%7Bz%7D&zmax=19&zmin=0";
-        auto baseName = "Google Road";
-        auto key = "wms";
+        uri = "tilePixelRatio=2&type=xyz&url=https://mt1.google.com/vt/lyrs%3Dm%26x%3D%7Bx%7D%26y%3D%7By%7D%26z%3D%7Bz%7D&zmax=19&zmin=0";
+        baseName = "Google Road";
+        key = "wms";
 
-        baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
     }
     else if(index == 4)
     {
-        auto uri = "tilePixelRatio=2&type=xyz&url=https://mt1.google.com/vt/lyrs%3Dy%26x%3D%7Bx%7D%26y%3D%7By%7D%26z%3D%7Bz%7D&zmax=19&zmin=0";
-        auto baseName = "Google Road and Satellite";
-        auto key = "wms";
+        uri = "tilePixelRatio=2&type=xyz&url=https://mt1.google.com/vt/lyrs%3Dy%26x%3D%7Bx%7D%26y%3D%7By%7D%26z%3D%7Bz%7D&zmax=19&zmin=0";
+        baseName = "Google Road and Satellite";
+        key = "wms";
 
-        baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
     }
     else if(index == 5)
     {
-        auto uri = "tilePixelRatio=2&type=xyz&url=http://ecn.t3.tiles.virtualearth.net/tiles/a%7Bq%7D.jpeg?g%3D1&zmax=18&zmin=0";
-        auto baseName = "Bing Aerial";
-        auto key = "wms";
+        uri = "tilePixelRatio=2&type=xyz&url=http://ecn.t3.tiles.virtualearth.net/tiles/a%7Bq%7D.jpeg?g%3D1&zmax=18&zmin=0";
+        baseName = "Bing Aerial";
+        key = "wms";
 
-        baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
     }
     else if(index == 6)
     {
-        auto uri = "tilePixelRatio=2&type=xyz&url=https://stamen-tiles.a.ssl.fastly.net/toner-lite/%7Bz%7D/%7Bx%7D/%7By%7D.png&zmax=20&zmin=0";
-        auto baseName = "Stamen Toner Lite";
-        auto key = "wms";
+        uri = "tilePixelRatio=2&type=xyz&url=https://stamen-tiles.a.ssl.fastly.net/toner-lite/%7Bz%7D/%7Bx%7D/%7By%7D.png&zmax=20&zmin=0";
+        baseName = "Stamen Toner Lite";
+        key = "wms";
 
-        baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
     }
     else if(index == 7)
     {
-        auto uri = "tilePixelRatio=2&type=xyz&url=https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/%7Bz%7D/%7By%7D/%7Bx%7D&zmax=20&zmin=0";
-        auto baseName = "ESRI World Topo";
-        auto key = "wms";
+        uri = "tilePixelRatio=2&type=xyz&url=https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/%7Bz%7D/%7By%7D/%7Bx%7D&zmax=20&zmin=0";
+        baseName = "ESRI World Topo";
+        key = "wms";
 
-        baseMapLayer = qgis->addRasterLayer(uri,baseName,key);
     }
     else
     {
-        baseMapLayer = nullptr;
+        uri = QString();
+        baseName = QString();
+        key = QString();
     }
 
-    if (baseMapLayer == nullptr)
+    if(baseName.isEmpty() || uri.isEmpty() || key.isEmpty())
     {
         this->errorMessage("Error setting basemap layer");
         return;
     }
+
+
+    if(baseMapLayer)
+    {
+        if(baseMapLayer->name() == baseName)
+            return;
+
+        QgsMapLayer::LayerFlags flags = baseMapLayer->flags();
+        flags |= QgsMapLayer::Removable;
+        baseMapLayer->setFlags( flags );
+
+        this->removeLayer(baseMapLayer);
+    }
+
+
+    QgsMapLayer* newBaseMapLayer = qgis->addRasterLayer(uri,baseName,key);
+
+    if (newBaseMapLayer == nullptr)
+    {
+        this->errorMessage("Error setting basemap layer");
+        return;
+    }
+
+    moveLayerToBottom(newBaseMapLayer->id());
+
+    baseMapLayer = newBaseMapLayer ;
 
     // Make the basemap non-removable so that it does not get deleted when the project is cleared
     QgsMapLayer::LayerFlags flags = baseMapLayer->flags();
@@ -521,7 +544,28 @@ QgsRasterLayer* QGISVisualizationWidget::addRasterLayer(const QString &layerPath
     if(layer != nullptr)
         layer->setCrs(QgsCoordinateReferenceSystem("EPSG:4326"));
 
+
     return layer;
+}
+
+
+
+void QGISVisualizationWidget::moveLayerToBottom(const QString& layerID)
+{
+    auto root = QgsProject::instance()->layerTreeRoot();
+
+    QgsLayerTreeLayer* myExistingLayer = root->findLayer(layerID);
+
+    if(myExistingLayer==nullptr)
+        return;
+
+    auto myClone = myExistingLayer->clone();
+
+    root->addChildNode(myClone);
+
+    auto parent = myExistingLayer->parent();
+
+    parent->takeChild(myExistingLayer);
 }
 
 
@@ -536,6 +580,7 @@ QgsVectorLayer* QGISVisualizationWidget::addVectorLayer(const QString &layerPath
 
     return layer;
 }
+
 
 QgsVectorLayer* QGISVisualizationWidget::duplicateExistingLayer(QgsVectorLayer* layer)
 {
