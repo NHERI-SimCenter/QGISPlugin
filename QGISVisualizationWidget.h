@@ -184,6 +184,8 @@ private:
     QgsLayerTreeView* layerTreeView = nullptr;
     QgsMapLayer* baseMapLayer = nullptr;
 
+    void moveLayerToBottom(const QString& layerID);
+
     QPointer<QgisApp> qgis;
 
     QComboBox* baseMapCombo = nullptr;
