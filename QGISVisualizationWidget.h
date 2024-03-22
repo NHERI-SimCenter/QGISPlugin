@@ -39,6 +39,7 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 // Written by: Stevan Gavrilovic
 
 #include "VisualizationWidget.h"
+#include "qgssinglesymbolrenderer.h"
 
 #include <qgsfeatureid.h>
 #include <qgsgeometry.h>
@@ -113,6 +114,12 @@ public:
     SimCenterMapcanvasWidget* getMapViewWidget(const QString& name);
 
     void markDirty();
+
+    void zoomToExtent(QgsRectangle zoomRectangle);
+
+    void zoomToActiveLayer(void);
+
+    void setActiveLayerFillNull(void);
 
     void createSymbolRenderer(Qgis::MarkerShape symbolShape, QColor color, double size, QgsVectorLayer * layer);
 

@@ -83,8 +83,11 @@ UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
 #include <qgssinglesymbolrenderer.h>
 #include <qgsrasterlayer.h>
 #include <qgsrasterdataprovider.h>
+#include "qgsfillsymbollayer.h"
 #include "qgsproviderregistry.h"
 #include "qgsprovidersublayerdetails.h"
+#include <qgscoordinatetransform.h>
+#include <qgssinglesymbolrenderer.h>
 
 #include <QStandardPaths>
 #include <QSplitter>
@@ -323,6 +326,57 @@ void QGISVisualizationWidget::markDirty()
 void QGISVisualizationWidget::turnOnSelectionTool()
 {
     qgis->selectFeatures();
+}
+
+void QGISVisualizationWidget::zoomToExtent(QgsRectangle zoomRectangle)
+{
+    auto mapCanvas = qgis->mapCanvas();
+    mapCanvas->setExtent(zoomRectangle);
+    mapCanvas->refresh();
+}
+
+void QGISVisualizationWidget::zoomToActiveLayer(void)
+{
+    auto mapCanvas = qgis->mapCanvas();
+    QgsMapLayer* activeLayer = mapCanvas->currentLayer();
+    QgsRectangle extent = activeLayer->extent();
+
+    QgsCoordinateReferenceSystem srcCrs("EPSG:4326");
+    QgsCoordinateReferenceSystem destCrs("EPSG:3857");
+
+    // Create a coordinate transform object
+    QgsCoordinateTransform transform(srcCrs, destCrs, QgsProject::instance());
+
+    // Transform the extent from EPSG 4326 to EPSG 3857
+    QgsRectangle extent3857 = transform.transform(extent);
+
+    mapCanvas->setExtent(extent3857);
+    mapCanvas->refresh();
+}
+
+
+void QGISVisualizationWidget::setActiveLayerFillNull(void)
+{
+    auto mapCanvas = qgis->mapCanvas();
+    QgsMapLayer* activeLayer = mapCanvas->currentLayer();
+    QgsVectorLayer* vectorLayer = dynamic_cast<QgsVectorLayer*>(activeLayer);
+    QgsSymbol* symbol = nullptr;
+
+    //auto geomType = vectorLayer->geometryType();
+
+    QgsSimpleFillSymbolLayer* fillLayer = new QgsSimpleFillSymbolLayer();
+    fillLayer->setStrokeColor(Qt::red);
+    fillLayer->setFillColor(QColor(0, 0, 0, 0));
+    fillLayer->setStrokeWidth(1);
+    symbol = new QgsFillSymbol();
+    symbol->deleteSymbolLayer(0);
+    symbol->appendSymbolLayer(fillLayer->clone());
+
+    QgsSingleSymbolRenderer* renderer = new QgsSingleSymbolRenderer(symbol);
+
+    vectorLayer->setRenderer(renderer);
+    vectorLayer->triggerRepaint();
+
 }
 
 
