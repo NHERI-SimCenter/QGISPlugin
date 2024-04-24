@@ -862,6 +862,8 @@ QgsLayerTreeGroup* QGISVisualizationWidget::createLayerGroup(const QVector<QgsMa
         return nullptr;
     }
 
+    this->deselectAllTreeItems();
+
     // First select the layers
     this->selectLayersInTree(layers);
 
