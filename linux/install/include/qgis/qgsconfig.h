@@ -76,7 +76,7 @@
 #define HAVE_OAUTH2_PLUGIN
 
 #define HAVE_OPENCL
-#define OPENCL_USE_NEW_HEADER
+/* #undef OPENCL_USE_NEW_HEADER */
 
 /* #undef ENABLE_MODELTEST */
 

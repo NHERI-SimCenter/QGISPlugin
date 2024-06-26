@@ -15,6 +15,8 @@ PATH_TO_INSTALL=$$PWD/mac/Install
 
 DEFINES += HAVE_STATIC_PROVIDERS #WITH_QTWEBKIT
 
+INCLUDEPATH += /usr/include/Qca-qt5/QtCrypto
+
 PATH_TO_QGIS_DEPS=$$PWD/linux/deps
 PATH_TO_QGIS_SRC=$$PWD/linux/src
 PATH_TO_INSTALL=$$PWD/linux/install

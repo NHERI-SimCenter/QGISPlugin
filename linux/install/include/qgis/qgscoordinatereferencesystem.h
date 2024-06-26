@@ -21,6 +21,7 @@
 //Standard includes
 #include "qgis_core.h"
 #include <ostream>
+#include <proj.h>
 
 //qt includes
 #include <QString>
@@ -50,7 +51,7 @@ typedef struct PJconsts PJ;
 
 #if PROJ_VERSION_MAJOR>=8
 struct pj_ctx;
-typedef struct pj_ctx PJ_CONTEXT;
+// typedef struct pj_ctx PJ_CONTEXT;
 #else
 struct projCtx_t;
 typedef struct projCtx_t PJ_CONTEXT;

@@ -770,9 +770,15 @@ LIBS += -framework opencl
 
 } else:linux {
 
-LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lqca-qt5 -lqwt -lqt5keychain -lqscintilla2_qt5
 
-LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lproj -lgdal -lsqlite3 -lOpenCL
+QMAKE_LFLAGS += $$PATH_TO_QGIS_DEPS/lib/libqt5keychain.so.1
+LIBS += -L$$PATH_TO_QGIS_DEPS/lib -l:libqt5keychain.so.1
+
+LIBS += -L$$PATH_TO_QGIS_DEPS/lib/ -lqca-qt5 -lqwt -lqscintilla2_qt5
+
+LIBS += -L/usr/lib/x86_64-linux-gnu/ -lproj -lsqlite3 -lOpenCL
+LIBS += -L/usr/lib/ -lgdal -lsqlite3 -lOpenCL
+
 
 INCLUDEPATH +=  $$PATH_TO_QGIS_DEPS/include \
                 $$PATH_TO_QGIS_DEPS/include \
